@@ -1,9 +1,15 @@
-- name: Install jq, nkf
+- name: Install nkf
   become: yes
   apt:
     name: '{{ item }}'
     state: latest
   with_items:
-    - jq
     - nkf
 
+- name: Install jq
+  become: yes
+  get_url:
+    url: https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+    dest: /usr/bin/jq
+    mode: u+x,g+x,o+x
+  
