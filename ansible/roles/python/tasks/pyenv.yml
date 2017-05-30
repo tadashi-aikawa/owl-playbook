@@ -1,0 +1,29 @@
+- name: Check pyenv installed
+  stat:
+    path: ~/.pyenv
+  register: check_pyenv_installed
+- name: Install dependencies
+  become: yes
+  apt:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - make
+    - build-essential
+    - libssl-dev
+    - zlib1g-dev
+    - libbz2-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - wget
+    - curl
+    - llvm
+    - libncurses5-dev
+    - libncursesw5-dev
+    - xz-utils
+    - tk-dev
+  when: not check_pyenv_installed.stat.exists
+- name: Install pyenv
+  shell: git clone --depth 1 https://github.com/pyenv/pyenv.git ~/.pyenv
+  when: not check_pyenv_installed.stat.exists
+

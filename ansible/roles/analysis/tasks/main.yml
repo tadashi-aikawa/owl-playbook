@@ -1,0 +1,9 @@
+- name: Install jq, nkf
+  become: yes
+  apt:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - jq
+    - nkf
+

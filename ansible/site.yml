@@ -1,0 +1,9 @@
+- hosts: local
+  connection: local
+  tasks:
+    - group_by:
+        key: '{{ env }}'
+- include: bootstrap.yml
+- include: homedir.yml
+- include: develop.yml
+

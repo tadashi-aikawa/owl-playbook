@@ -1,0 +1,21 @@
+- name: Create symlinks to files in home dir
+  file:
+    src: '{{ ubuntu_mnt }}/{{ item }}'
+    dest: ~/{{ item }}
+    state: link
+  with_items:
+    - .zshrc
+    - .vimrc
+    - .tmux.conf
+    - .inputrc
+    - .zshenv
+    - .gitconfig
+- name: Create profiles
+  file:
+    src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
+    dest: ~/{{ item }}.profile
+    state: link
+  with_items:
+    - .zshenv
+    - .gitconfig
+

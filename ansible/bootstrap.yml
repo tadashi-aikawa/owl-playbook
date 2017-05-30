@@ -1,0 +1,7 @@
+- name: Preparation before exec others
+  hosts: local
+  connection: local
+  roles:
+    - shell
+    - vcs
+

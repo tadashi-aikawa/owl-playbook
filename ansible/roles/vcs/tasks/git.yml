@@ -1,0 +1,11 @@
+- name: Add Git repository
+  become: yes
+  apt_repository:
+    repo: ppa:git-core/ppa
+
+- name: Install Git
+  become: yes
+  apt:
+    name: git
+    state: latest
+
