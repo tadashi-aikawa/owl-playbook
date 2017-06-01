@@ -1,7 +1,3 @@
-- name: Check pyenv installed
-  stat:
-    path: ~/.pyenv
-  register: check_pyenv_installed
 - name: Install dependencies
   become: yes
   apt:
@@ -22,8 +18,22 @@
     - libncursesw5-dev
     - xz-utils
     - tk-dev
-  when: not check_pyenv_installed.stat.exists
+
+
+- name: Check pyenv installed
+  stat:
+    path: ~/.pyenv
+  register: check_pyenv_installed
 - name: Install pyenv
   shell: git clone --depth 1 https://github.com/pyenv/pyenv.git ~/.pyenv
   when: not check_pyenv_installed.stat.exists
+
+
+- name: Check pyenv-virtualenv installed
+  stat:
+    path: ~/.pyenv/plugins/pyenv-virtualenv
+  register: check_pyenv_virtualenv_installed
+- name: Install pyenv-virtualenv
+  shell: git clone --depth 1 https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+  when: not check_pyenv_virtualenv_installed.stat.exists
 
