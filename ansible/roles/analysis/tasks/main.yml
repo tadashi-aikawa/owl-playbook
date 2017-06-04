@@ -1,15 +1,4 @@
-- name: Install nkf
-  become: yes
-  apt:
-    name: '{{ item }}'
-    state: latest
-  with_items:
-    - nkf
+- include: nkf.yml
+- include: jq.yml
+- include: icdiff.yml
 
-- name: Install jq
-  become: yes
-  get_url:
-    url: https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
-    dest: /usr/bin/jq
-    mode: u+x,g+x,o+x
-  

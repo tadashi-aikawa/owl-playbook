@@ -1,0 +1,8 @@
+- name: Install nkf
+  become: yes
+  apt:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - nkf
+

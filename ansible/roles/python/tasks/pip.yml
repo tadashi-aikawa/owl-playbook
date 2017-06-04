@@ -1,0 +1,4 @@
+- name: Install get-pip
+  become: true
+  shell: curl https://bootstrap.pypa.io/get-pip.py | python
+
