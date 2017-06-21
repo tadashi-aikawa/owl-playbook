@@ -1,6 +1,6 @@
-- name: Install nkf
+- name: Install unzip
   become: yes
   apt:
-    name: nkf
+    name: unzip
     state: latest
 
