@@ -1,5 +1,6 @@
 - include: nkf.yml
 - include: unzip.yml
 - include: jq.yml
+- include: xmllint.yml
 - include: icdiff.yml
 
