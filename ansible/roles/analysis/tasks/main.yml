@@ -3,4 +3,5 @@
 - include: jq.yml
 - include: xmllint.yml
 - include: icdiff.yml
+- include: tree.yml
 
