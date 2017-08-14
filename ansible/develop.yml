@@ -3,6 +3,7 @@
   connection: local
   roles:
     - python
+    - haskell
     - analysis
     - aws
 
