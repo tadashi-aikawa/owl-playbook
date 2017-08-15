@@ -1,4 +1,0 @@
-- name: Install Haskell Stack
-  become: true
-  shell: wget -qO- https://get.haskellstack.org/ | sh
-
