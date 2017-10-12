@@ -1,0 +1,6 @@
+- name: Install pipenv
+  pip:
+    name: pipenv
+    extra_args: --user
+    state: latest
+

@@ -1,3 +1,4 @@
 - include: pyenv.yml
 - include: pip.yml
+- include: pipenv.yml
 

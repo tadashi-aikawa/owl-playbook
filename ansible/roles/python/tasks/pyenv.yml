@@ -28,12 +28,3 @@
   shell: git clone --depth 1 https://github.com/pyenv/pyenv.git ~/.pyenv
   when: not check_pyenv_installed.stat.exists
 
-
-- name: Check pyenv-virtualenv installed
-  stat:
-    path: ~/.pyenv/plugins/pyenv-virtualenv
-  register: check_pyenv_virtualenv_installed
-- name: Install pyenv-virtualenv
-  shell: git clone --depth 1 https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
-  when: not check_pyenv_virtualenv_installed.stat.exists
-
