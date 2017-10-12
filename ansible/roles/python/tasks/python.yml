@@ -1,0 +1,10 @@
+- name: Add python2.7 latest repository from PPA and install its signing key.
+  apt_repository:
+    repo: 'ppa:jonathonf/python-2.7'
+
+- name: Install latest python2.7
+  apt:
+    name: python2.7
+    state: latest
+    update_cache: yes
+

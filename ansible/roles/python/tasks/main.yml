@@ -1,3 +1,5 @@
+- include: python.yml
+  become: true
 - include: pyenv.yml
 - include: pip.yml
 - include: pipenv.yml
