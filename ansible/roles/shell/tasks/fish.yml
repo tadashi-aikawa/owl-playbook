@@ -1,0 +1,32 @@
+- name: Add fish repository from PPA and install its signing key.
+  become: yes
+  apt_repository:
+    repo: 'ppa:fish-shell/release-2'
+
+- name: Install fish
+  become: yes
+  apt:
+    name: fish
+    update_cache: yes
+    state: latest
+
+- name: Install fisherman
+  shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+
+- name: Clone fzf
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: ~/.fzf
+    depth: 1
+
+- name: Install fzf
+  shell: ~/.fzf/install --all
+
+- name: Install by fisher
+  shell: fish -c "fisher {{ item }}"
+  with_items:
+    - oh-my-fish/theme-agnoster
+    - 0rax/fish-bd
+    - fisherman/fzf
+    - fisherman/z
+

@@ -10,6 +10,7 @@
     - .inputrc
     - .zshenv
     - .gitconfig
+
 - name: Create profiles
   file:
     src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
