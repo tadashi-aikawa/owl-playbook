@@ -25,7 +25,7 @@
 - name: Install by fisher
   shell: fish -c "fisher {{ item }}"
   with_items:
-    - oh-my-fish/theme-agnoster
+    - omf/theme-bobthefish
     - 0rax/fish-bd
     - fisherman/fzf
     - fisherman/z
