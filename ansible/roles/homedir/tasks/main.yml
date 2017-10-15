@@ -10,6 +10,7 @@
     - .inputrc
     - .zshenv
     - .gitconfig
+    - .tigrc
 
 - name: Create profiles
   file:
