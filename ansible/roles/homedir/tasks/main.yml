@@ -11,6 +11,7 @@
     - .zshenv
     - .gitconfig
     - .tigrc
+    - .config/fish/config.fish
 
 - name: Create profiles
   file:
