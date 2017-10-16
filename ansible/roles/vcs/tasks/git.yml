@@ -10,10 +10,3 @@
     update_cache: yes
     state: latest
 
-- name: Install tig
-  become: yes
-  apt:
-    name: tig
-    update_cache: yes
-    state: latest
-

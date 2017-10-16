@@ -1,0 +1,14 @@
+- name: Clone tig repository 
+  git:
+    repo: https://github.com/jonas/tig.git
+    dest: /tmp/tig
+    depth: 1
+
+- name: Install tig
+  make:
+    chdir: /tmp/tig
+    target: '{{ item }}'
+  with_items:
+    - all
+    - install
+
