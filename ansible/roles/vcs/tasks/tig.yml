@@ -1,12 +1,22 @@
-- name: Clone tig repository 
-  git:
-    repo: https://github.com/jonas/tig.git
-    dest: /tmp/tig
-    depth: 1
+- name: Download tig
+  get_url:
+    url: https://github.com/jonas/tig/releases/download/tig-{{ version }}/tig-{{ version }}.tar.gz
+    dest: /tmp/tig.tar.gz
+
+- name: Extract tig.tar.gz
+  unarchive:
+    src: /tmp/tig.tar.gz
+    dest: /tmp
+
+- name: Preinstall tig
+  shell: ./configure  --enable-widec
+  args:
+    chdir: /tmp/tig-{{ version }}
 
 - name: Install tig
+  become: yes
   make:
-    chdir: /tmp/tig
+    chdir: /tmp/tig-{{ version }}
     target: '{{ item }}'
   with_items:
     - all
