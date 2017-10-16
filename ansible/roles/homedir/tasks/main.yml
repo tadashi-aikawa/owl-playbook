@@ -4,11 +4,8 @@
     dest: ~/{{ item }}
     state: link
   with_items:
-    - .zshrc
     - .vimrc
-    - .tmux.conf
     - .inputrc
-    - .zshenv
     - .gitconfig
     - .tigrc
     - .config/fish/config.fish
@@ -19,6 +16,5 @@
     dest: ~/{{ item }}.profile
     state: link
   with_items:
-    - .zshenv
     - .gitconfig
 
