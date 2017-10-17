@@ -1,2 +1,2 @@
-- include: awscli.yml
+- import_tasks: awscli.yml
 

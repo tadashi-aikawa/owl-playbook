@@ -1,7 +1,7 @@
-- include: nkf.yml
-- include: unzip.yml
-- include: jq.yml
-- include: xmllint.yml
-- include: icdiff.yml
-- include: tree.yml
+- import_tasks: nkf.yml
+- import_tasks: unzip.yml
+- import_tasks: jq.yml
+- import_tasks: xmllint.yml
+- import_tasks: icdiff.yml
+- import_tasks: tree.yml
 

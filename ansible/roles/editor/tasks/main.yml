@@ -1,2 +1,2 @@
-- include: vim.yml
+- import_tasks: vim.yml
 

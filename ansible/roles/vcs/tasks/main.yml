@@ -1,5 +1,5 @@
-- include: git.yml
-- include: tig.yml
+- import_tasks: git.yml
+- import_tasks: tig.yml
   vars:
     version: 2.3.0  
 
