@@ -7,4 +7,3 @@
     name: python2.7
     state: latest
     update_cache: yes
-

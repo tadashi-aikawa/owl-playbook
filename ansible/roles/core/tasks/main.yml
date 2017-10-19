@@ -4,6 +4,7 @@
     name: '{{ item }}'
     state: latest
   with_items:
+    # pyenv
     - make
     - build-essential
     - libssl-dev
@@ -18,12 +19,3 @@
     - libncursesw5-dev
     - xz-utils
     - tk-dev
-
-
-- name: Check pyenv installed
-  stat:
-    path: ~/.pyenv
-  register: check_pyenv_installed
-- name: Install pyenv
-  shell: git clone --depth 1 https://github.com/pyenv/pyenv.git ~/.pyenv
-  when: not check_pyenv_installed.stat.exists

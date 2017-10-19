@@ -1,6 +1,4 @@
 - import_tasks: python.yml
   become: true
 - import_tasks: pyenv.yml
-- import_tasks: pip.yml
 - import_tasks: pipenv.yml
-

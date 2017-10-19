@@ -9,25 +9,3 @@
     name: fish
     update_cache: yes
     state: latest
-
-- name: Install fisherman
-  shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-
-- name: Clone fzf
-  git:
-    repo: https://github.com/junegunn/fzf.git
-    dest: ~/.fzf
-    depth: 1
-
-- name: Install fzf
-  shell: ~/.fzf/install --all
-
-- name: Install by fisher
-  shell: fish -c "fisher {{ item }}"
-  with_items:
-    - omf/theme-bobthefish
-    - 0rax/fish-bd
-    - fisherman/fzf
-    - fisherman/z
-    - edc/bass
-

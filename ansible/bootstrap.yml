@@ -2,7 +2,6 @@
   hosts: local
   connection: local
   roles:
-    - shell
+    - core
     - vcs
-    - editor
-
+    - pm

@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   roles:
+    - shell
+    - editor
     - python
-    - analysis
-    - aws
-
+    - tools

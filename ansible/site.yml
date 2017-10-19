@@ -4,6 +4,5 @@
     - group_by:
         key: '{{ env }}'
 - import_playbook: bootstrap.yml
-- import_playbook: homedir.yml
 - import_playbook: develop.yml
-
+- import_playbook: homedir.yml
