@@ -1,0 +1,12 @@
+# Need to set
+#   - $GOPATH in config.fish
+#   - $PATH => /usr/local/go/bin
+- name: Download golang
+  get_url:
+    url: https://storage.googleapis.com/golang/go{{ version }}.linux-amd64.tar.gz
+    dest: /tmp/go.tar.gz
+
+- name: Extract go.tar.gz
+  unarchive:
+    src: /tmp/go.tar.gz
+    dest: /usr/local

@@ -1,0 +1,4 @@
+- import_tasks: golang.yml
+  become: yes
+  vars:
+    version: 1.9.1
