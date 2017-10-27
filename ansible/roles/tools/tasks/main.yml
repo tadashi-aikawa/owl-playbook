@@ -5,7 +5,6 @@
 - import_tasks: icdiff.yml
 - import_tasks: tree.yml
 - import_tasks: awscli.yml
-- import_tasks: gotop.yml
 - import_tasks: tig.yml
   vars:
     version: 2.3.0  
