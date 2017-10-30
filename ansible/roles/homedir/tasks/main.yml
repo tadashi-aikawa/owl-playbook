@@ -16,5 +16,6 @@
     dest: ~/{{ item }}.profile
     state: link
   with_items:
+    - config.fish
     - .gitconfig
 
