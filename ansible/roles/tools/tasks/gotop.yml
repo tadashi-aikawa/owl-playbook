@@ -1,3 +1,0 @@
-- name: Install gotop
-  shell: go get github.com/bunbunjp/gotop
-
