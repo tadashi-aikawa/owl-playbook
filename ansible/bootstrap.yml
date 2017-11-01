@@ -2,6 +2,9 @@
   hosts: local
   connection: local
   roles:
-    - core
-    - vcs
-    - pm
+    - role: core
+      tags: skip-engsvr
+    - role: vcs
+      tags: skip-engsvr
+    - role: pm
+

@@ -3,7 +3,10 @@
   connection: local
   roles:
     - shell
-    - editor
-    - python
-    - go
+    - role: editor
+      tags: skip-engsvr
+    - role: python
+      tags: skip-engsvr
+    - role: go
+      tags: skip-engsvr
     - tools

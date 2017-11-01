@@ -4,11 +4,19 @@
     dest: ~/{{ item }}
     state: link
   with_items:
-    - .vimrc
     - .inputrc
     - .gitconfig
     - .tigrc
     - .config/fish/config.fish
+
+- name: Create symlinks to files in home dir (skip if engsvr)
+  file:
+    src: '{{ ubuntu_mnt }}/{{ item }}'
+    dest: ~/{{ item }}
+    state: link
+  with_items:
+    - .vimrc
+  tags: skip-engsvr
 
 - name: Create profiles
   file:
