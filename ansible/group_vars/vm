@@ -1,3 +1,4 @@
+profile: 'vm'
+whome: /whome
 ubuntu_mnt: /whome/Dropbox/itmemo/ubuntu-mnt
-profile: 'office-vm'
 

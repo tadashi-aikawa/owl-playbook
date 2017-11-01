@@ -1,3 +1,4 @@
-ubuntu_mnt: /mnt/c/Users/tadashi-aikawa/Dropbox/itmemo/ubuntu-mnt
 profile: 'office'
+whome: /mnt/c/Users/tadashi-aikawa
+ubuntu_mnt: '{{ whome }}/Dropbox/itmemo/ubuntu-mnt'
 

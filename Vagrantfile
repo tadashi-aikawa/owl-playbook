@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     ansible.limit = "localhost"
     ansible.raw_arguments = ["-K"]
     ansible.extra_vars = {
-      env: "home-vm"
+      env: 'vm'
     }
   end
 end

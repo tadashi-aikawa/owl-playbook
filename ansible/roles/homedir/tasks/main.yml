@@ -17,5 +17,4 @@
     state: link
   with_items:
     - config.fish
-    - .gitconfig
 

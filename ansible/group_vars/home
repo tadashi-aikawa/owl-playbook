@@ -1,3 +1,4 @@
-ubuntu_mnt: /mnt/c/Users/syoum/Dropbox/itmemo/ubuntu-mnt
 profile: 'home'
+whome: /mnt/c/Users/syoum
+ubuntu_mnt: '{{ whome }}/Dropbox/itmemo/ubuntu-mnt'
 
