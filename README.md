@@ -23,3 +23,9 @@ You can specify `$env` in `ansible/group_vars`, and add your original env.
 $ vagrant up --provision
 ```
 
+### For engsvr (with Ubuntu GUI)
+
+```
+$ ansible-playbook -K --extra-vars "env=vm" --tags engsvr -i local site.yml
+```
+
