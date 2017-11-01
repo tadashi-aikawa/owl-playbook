@@ -3,8 +3,7 @@
   connection: local
   roles:
     - role: core
-      tags: skip-engsvr
     - role: vcs
-      tags: skip-engsvr
     - role: pm
+      tags: engsvr
 

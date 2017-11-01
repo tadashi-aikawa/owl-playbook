@@ -1,16 +1,12 @@
 - import_tasks: nkf.yml
-  tags: skip-engsvr
 - import_tasks: unzip.yml
-  tags: skip-engsvr
 - import_tasks: jq.yml
-  tags: skip-engsvr
 - import_tasks: xmllint.yml
-  tags: skip-engsvr
 - import_tasks: icdiff.yml
+  tags: engsvr
 - import_tasks: tree.yml
-  tags: skip-engsvr
 - import_tasks: awscli.yml
-  tags: skip-engsvr
 - import_tasks: tig.yml
+  tags: engsvr
   vars:
     version: 2.3.0  

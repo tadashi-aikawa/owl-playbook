@@ -2,11 +2,10 @@
   hosts: local
   connection: local
   roles:
-    - shell
+    - role: shell
+      tags: engsvr
     - role: editor
-      tags: skip-engsvr
     - role: python
-      tags: skip-engsvr
     - role: go
-      tags: skip-engsvr
     - tools
+
