@@ -18,7 +18,8 @@ Vagrant.configure("2") do |config|
   end
 
   # sync
-  config.vm.synced_folder "../../", "/whome"
+  config.vm.synced_folder "../../", "/vagrant"
+  config.vm.synced_folder "../../../../", "/whome"
 
   # timezone
   config.vm.provision "shell", inline: "ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
