@@ -8,6 +8,7 @@
     - .gitconfig
     - .tigrc
     - .config/fish/config.fish
+  tags: engsvr
 
 - name: Create symlinks to files in home dir (skip if engsvr)
   file:
@@ -16,7 +17,6 @@
     state: link
   with_items:
     - .vimrc
-  tags: skip-engsvr
 
 - name: Create profiles
   file:
@@ -25,4 +25,5 @@
     state: link
   with_items:
     - config.fish
+  tags: engsvr
 
