@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: "ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
 
   # Provisioning with ansible
+  config.vm.provision "docker"
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "ansible/site.yml"
     ansible.inventory_path = "ansible/local"
