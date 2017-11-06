@@ -1,3 +1,25 @@
+- name: Download ncurses
+  get_url:
+    url: http://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.7.tar.gz
+    dest: /tmp/ncurses.tar.gz
+
+- name: Extract ncurses.tar.gz
+  unarchive:
+    src: /tmp/ncurses.tar.gz
+    dest: /tmp
+
+- name: Preinstall ncurses
+  shell: ./configure  --enable-widec
+  args:
+    chdir: /tmp/ncurses-5.7
+
+- name: Install ncurses
+  become: yes
+  make:
+    chdir: /tmp/ncurses-5.7
+    target: install
+
+
 - name: Download tig
   get_url:
     url: https://github.com/jonas/tig/releases/download/tig-{{ version }}/tig-{{ version }}.tar.gz
