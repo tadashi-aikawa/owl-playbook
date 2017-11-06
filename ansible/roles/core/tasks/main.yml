@@ -2,8 +2,8 @@
   become: yes
   apt:
     name: '{{ item }}'
+    update_cache: yes
     state: latest
-  update_cache: yes
   with_items:
     # pyenv
     - make
