@@ -3,6 +3,7 @@
   apt:
     name: '{{ item }}'
     state: latest
+  update_cache: yes
   with_items:
     # pyenv
     - make
@@ -19,3 +20,4 @@
     - libncursesw5-dev
     - xz-utils
     - tk-dev
+
