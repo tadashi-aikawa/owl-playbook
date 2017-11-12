@@ -8,6 +8,7 @@
     - .gitconfig
     - .tigrc
     - .config/fish/config.fish
+    - .vim
   tags: engsvr
 
 - name: Create symlinks to files in home dir (skip if engsvr)
