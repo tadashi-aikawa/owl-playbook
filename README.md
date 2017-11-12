@@ -19,10 +19,18 @@ You can specify `$env` in `ansible/group_vars`, and add your original env.
 
 ### VM on windows
 
+#### Not in VM (windows)
+
 `cd vagrant/ubuntu-{gui,cui}`
 
 ```
 $ vagrant up --provision
+```
+
+#### In VM (not windows)
+
+```
+$ ansible-playbook -K --extra-vars "env=vm" -i local site.yml
 ```
 
 ### For engsvr (with Ubuntu desktop)
