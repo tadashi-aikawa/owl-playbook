@@ -1,0 +1,13 @@
+- name: Preinstall Git LFS
+  become: yes
+  shell: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+
+- name: Install Git LFS
+  become: yes
+  apt:
+    name: git-lfs
+    update_cache: yes
+    state: latest
+
+- name: Enable Git LFS
+  shell: git lfs install
