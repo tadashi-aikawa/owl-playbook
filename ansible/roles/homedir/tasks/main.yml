@@ -3,6 +3,7 @@
     src: '{{ ubuntu_mnt }}/{{ item }}'
     dest: ~/{{ item }}
     state: link
+    force: yes
   with_items:
     - .inputrc
     - .gitconfig
