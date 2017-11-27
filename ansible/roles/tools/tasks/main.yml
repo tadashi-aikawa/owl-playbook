@@ -1,5 +1,6 @@
-- import_tasks: nkf.yml
 - import_tasks: unzip.yml
+- import_tasks: hugo.yml
+- import_tasks: nkf.yml
 - import_tasks: jq.yml
 - import_tasks: xmllint.yml
 - import_tasks: icdiff.yml

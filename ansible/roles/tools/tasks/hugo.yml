@@ -1,0 +1,8 @@
+- name: Install Hugo
+  become: yes
+  unarchive:
+    src: https://github.com/gohugoio/hugo/releases/download/v0.31/hugo_0.31_Linux-64bit.tar.gz
+    dest: /usr/bin
+    mode: u+x,g+x,o+x
+    remote_src: yes
+  
