@@ -1,25 +1,8 @@
-- name: Check The Platinum Searcher is already installed
-  stat:
-    path: /usr/bin/pt
-  register: pt
-
 - name: Install The Platinum Searcher
   become: yes
-  when: not pt.stat.exists
-  block:
-    - name: "[The Platinum Searcher] Download"
-      get_url:
-        url: https://github.com/monochromegane/the_platinum_searcher/releases/download/v2.1.5/pt_linux_amd64.tar.gz
-        dest: /tmp/pt_linux_amd64.tar.gz
-
-    - name: "[The Platinum Searcher] Extract"
-      unarchive:
-        src: /tmp/pt_linux_amd64.tar.gz
-        dest: /tmp
-
-    - name: "[The Platinum Searcher] Install"
-      copy:
-        src: /tmp/pt_linux_amd64/pt
-        dest: /usr/bin/pt
-        mode: u+x,g+x,o+x
+  unarchive:
+    src: https://github.com/monochromegane/the_platinum_searcher/releases/download/v{{ version }}/pt_linux_amd64.tar.gz
+    dest: /usr/bin
+    mode: u+x,g+x,o+x
+    remote_src: yes
 

@@ -1,5 +1,7 @@
 - import_tasks: unzip.yml
 - import_tasks: hugo.yml
+  vars:
+    version: 0.31
 - import_tasks: nkf.yml
 - import_tasks: jq.yml
 - import_tasks: xmllint.yml
@@ -13,4 +15,6 @@
     version: 2.3.0  
 - import_tasks: pt.yml
   tags: engsvr
+  vars:
+    version: 2.1.5
 
