@@ -1,0 +1,21 @@
+- name: Check tmux installed
+  stat:
+    path: /usr/local/bin/tmux
+  register: tmux_installed
+
+- git:
+    repo: https://github.com/tmux/tmux.git
+    dest: /tmp/tmux
+
+- name: Install tmux
+  shell: '{{ item }}'
+  become: yes
+  args:
+    chdir: /tmp/tmux
+  with_items:
+    - ./autogen.sh
+    - ./configure
+    - make
+    - make install
+  when: not tmux_installed.stat.exists
+
