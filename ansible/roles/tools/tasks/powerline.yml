@@ -1,0 +1,5 @@
+- name: Install powerline
+  become: yes
+  pip:
+    name: powerline-status
+
