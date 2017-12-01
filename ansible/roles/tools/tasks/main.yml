@@ -18,4 +18,5 @@
   vars:
     version: 2.1.5
 - import_tasks: powerline.yml
+- import_tasks: gi.yml
 
