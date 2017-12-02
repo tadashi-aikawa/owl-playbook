@@ -30,7 +30,13 @@ $ vagrant up --provision
 #### In VM (not windows)
 
 ```
-$ ansible-playbook -K --extra-vars "env=vm" -i local site.yml
+$ ansible-playbook -K --extra-vars "env=vm-cui" -i local site.yml
+```
+
+or
+
+```
+$ ansible-playbook -K --extra-vars "env=vm-gui" -i local site.yml
 ```
 
 ### For engsvr (with Ubuntu desktop)
@@ -38,6 +44,6 @@ $ ansible-playbook -K --extra-vars "env=vm" -i local site.yml
 Login Ubuntu desktop and
 
 ```
-$ ansible-playbook -K --extra-vars "env=vm" --tags engsvr -i local site.yml
+$ ansible-playbook -K --extra-vars "env=vm-engsvr" --tags engsvr -i local site.yml
 ```
 
