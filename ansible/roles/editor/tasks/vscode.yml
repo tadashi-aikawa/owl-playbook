@@ -1,0 +1,15 @@
+- name: "[VS Code] Download .deb package"
+  become: yes
+  get_url:
+    url: https://go.microsoft.com/fwlink/?LinkID=760868
+    dest: /tmp/vscode.deb
+
+- name: "[VS Code] Install"
+  become: yes
+  apt:
+    deb: /tmp/vscode.deb
+
+- name: "[VS Code] Install dependencies"
+  become: yes
+  command: apt-get install -f
+

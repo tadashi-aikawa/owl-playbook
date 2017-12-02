@@ -1,2 +1,4 @@
 - import_tasks: vim.yml
+- import_tasks: vscode.yml
+  when: env == "vm-gui"
 
