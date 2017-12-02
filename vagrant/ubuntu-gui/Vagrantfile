@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-14.04"
-  config.vm.box_version = "201710.25.0"
+  config.vm.box = "bento/ubuntu-16.04"
 
   # port forward
   (8080..8081).to_a.push(80).to_a.push(80).each do |port|
@@ -11,21 +10,57 @@ Vagrant.configure("2") do |config|
   end
   config.vm.network "private_network", ip: "192.168.33.10"
 
-  # provider
-  config.vm.provider "virtualbox" do |vb|
-    vb.gui = true
-    vb.cpus = 2 
-    vb.memory = "2048"
-  end
+   # VirtualBox VM options
+   config.vm.provider "virtualbox" do |vb|
+       vb.name = "ubuntu-gui"
+       vb.cpus = "2"
+       vb.memory = "8192"
+       # GUI settings
+       vb.gui = true
+       vb.customize [
+           "modifyvm", :id,
+           "--vram", "256",
+           "--accelerate3d", "on",
+           "--hwvirtex", "on",
+           "--nestedpaging", "on",
+           "--largepages", "on",
+           "--ioapic", "on",
+           "--pae", "on",
+           "--paravirtprovider", "kvm",
+           "--clipboard", "bidirectional",
+           "--draganddrop", "bidirectional",
+       ]
+   end
 
   # sync
   config.vm.synced_folder "../../", "/vagrant"
   config.vm.synced_folder "../../../../", "/whome"
 
-  # timezone
-  config.vm.provision "shell", inline: "ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
-
   # Provisioning with ansible
+  config.vm.provision "shell", inline: <<-SHELL
+    # Install ubuntu-desktop
+    sudo apt -y update
+    sudo apt-get -y upgrade
+    sudo apt-get -y dist-upgrade
+    sudo apt-get -y install ubuntu-desktop
+
+    # Install for japanese
+    wget -q https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg -O- | sudo apt-key add -
+    wget -q https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -O- | sudo apt-key add -
+    sudo wget https://www.ubuntulinux.jp/sources.list.d/xenial.list -O /etc/apt/sources.list.d/ubuntu-ja.list
+    sudo apt -y update
+    sudo apt-get -y upgrade
+    sudo apt-get -y install ubuntu-defaults-ja
+
+    # Set timezone and locale
+    sudo timedatectl set-timezone Asia/Tokyo
+    sudo localectl set-locale LANG=ja_JP.utf8
+  SHELL
+
+  # Install docker
+  config.vm.provision "docker"
+
+  # Install ansible and provisioning
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "ansible/site.yml"
     ansible.inventory_path = "ansible/local"
