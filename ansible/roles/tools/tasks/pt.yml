@@ -2,7 +2,11 @@
   become: yes
   unarchive:
     src: https://github.com/monochromegane/the_platinum_searcher/releases/download/v{{ version }}/pt_linux_amd64.tar.gz
-    dest: /usr/bin
+    dest: /tmp
     mode: u+x,g+x,o+x
     remote_src: yes
+
+- name: Install The Platinum Searcher
+  become: yes
+  command: mv /tmp/pt_linux_amd64/pt /usr/bin/pt
 
