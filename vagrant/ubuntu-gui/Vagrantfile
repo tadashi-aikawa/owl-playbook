@@ -10,28 +10,28 @@ Vagrant.configure("2") do |config|
   end
   config.vm.network "private_network", ip: "192.168.33.10"
 
-   # VirtualBox VM options
-   config.vm.provider "virtualbox" do |vb|
-       vb.name = "ubuntu-gui"
-       vb.cpus = "2"
-       vb.memory = "4096"
-       # GUI settings
-       vb.gui = true
-       vb.customize [
-           "modifyvm", :id,
-           "--vram", "256",
-           "--accelerate3d", "on",
-           "--hwvirtex", "on",
-           "--nestedpaging", "on",
-           "--largepages", "on",
-           "--ioapic", "on",
-           "--pae", "on",
-           "--paravirtprovider", "kvm",
-           "--clipboard", "bidirectional",
-           "--draganddrop", "bidirectional",
-           "--monitorcount", "1",
-       ]
-   end
+  # VirtualBox VM options
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "ubuntu-gui"
+    vb.cpus = "2"
+    vb.memory = "4096"
+    # GUI settings
+    vb.gui = true
+    vb.customize [
+      "modifyvm", :id,
+      "--vram", "256",
+      "--accelerate3d", "on",
+      "--hwvirtex", "on",
+      "--nestedpaging", "on",
+      "--largepages", "on",
+      "--ioapic", "on",
+      "--pae", "on",
+      "--paravirtprovider", "kvm",
+      "--clipboard", "bidirectional",
+      "--draganddrop", "bidirectional",
+      "--monitorcount", "1",
+    ]
+  end
 
   # sync
   config.vm.synced_folder "../../", "/vagrant"
@@ -71,5 +71,14 @@ Vagrant.configure("2") do |config|
       env: 'vm-gui'
     }
   end
+
+  # Install jenkins
+  config.vm.provision "shell", inline: <<-SHELL
+    wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+    sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+    sudo apt-get -y update
+    sudo apt-get -y install jenkins
+  SHELL
+  
 end
 
