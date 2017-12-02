@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
    config.vm.provider "virtualbox" do |vb|
        vb.name = "ubuntu-gui"
        vb.cpus = "2"
-       vb.memory = "8192"
+       vb.memory = "4096"
        # GUI settings
        vb.gui = true
        vb.customize [
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
            "--paravirtprovider", "kvm",
            "--clipboard", "bidirectional",
            "--draganddrop", "bidirectional",
-           "--monitorcount", "2",
+           "--monitorcount", "1",
        ]
    end
 
