@@ -19,5 +19,6 @@
     version: 2.1.5
 - import_tasks: gi.yml
 - import_tasks: gitkraken.yml
+  when: env == "vm-gui"
   tags: engsvr
 
