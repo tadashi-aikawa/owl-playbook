@@ -1,0 +1,7 @@
+- name: Install IntelliJ
+  become: yes
+  unarchive:
+    src: https://download.jetbrains.com/idea/ideaIU-{{ version }}.tar.gz
+    dest: /opt
+    remote_src: yes
+
