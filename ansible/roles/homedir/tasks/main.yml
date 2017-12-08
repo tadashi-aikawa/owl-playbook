@@ -9,6 +9,7 @@
     - .gitconfig
     - .tigrc
     - .config/fish/config.fish
+    - .config/fish/functions/ghurls.fish
     - .vim
     - .tmux.conf
   tags: engsvr
