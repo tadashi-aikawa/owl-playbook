@@ -1,3 +1,4 @@
+# Required: ~/guake.png
 - name: Install Guake
   become: yes
   apt:

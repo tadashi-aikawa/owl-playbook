@@ -13,14 +13,6 @@
     - .vim
     - .tmux.conf
     - .gconf
-  tags: engsvr
-
-- name: "[Homedir] Create symlinks without engsvr"
-  file:
-    src: '{{ ubuntu_mnt }}/{{ item }}'
-    dest: ~/{{ item }}
-    state: link
-  with_items:
     - .vimrc
 
 - name: "[Homedir] Create profiles different for each target"
@@ -31,5 +23,4 @@
   with_items:
     - config.fish
     - .tmux.conf
-  tags: engsvr
 
