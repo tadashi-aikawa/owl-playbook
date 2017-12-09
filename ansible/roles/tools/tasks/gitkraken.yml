@@ -1,11 +1,15 @@
-- name: "[GitKraken] Download .deb package"
-  become: yes
-  get_url:
-    url: https://release.gitkraken.com/linux/gitkraken-amd64.deb
-    dest: /tmp/gitkraken.deb
+- name: "[GitKraken] Check already installed"
+  stat:
+    path: /usr/bin/gitkraken
+  register: gitkraken_installed
 
 - name: "[GitKraken] Install"
+  when: not gitkraken_installed.stat.exists
   become: yes
-  apt:
-    deb: /tmp/gitkraken.deb
+  block:
+    - get_url:
+        url: https://release.gitkraken.com/linux/gitkraken-amd64.deb
+        dest: /tmp/gitkraken.deb
+    - apt:
+        deb: /tmp/gitkraken.deb
 

@@ -1,13 +1,20 @@
-- name: Preinstall Git LFS
-  become: yes
-  shell: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+- name: "[Git LFS] Check already installed"
+  stat:
+    path: /usr/bin/git-lfs
+  register: gitlfs_installed
 
-- name: Install Git LFS
+- name: "[Git LFS] Install"
   become: yes
-  apt:
-    name: git-lfs
-    update_cache: yes
-    state: latest
+  when: not gitlfs_installed.stat.exists
+  block:
+    - get_url:
+        url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
+        dest: /tmp/git-lfs.sh
+        mode: u+x,g+x,o+x
+    - shell: /tmp/git-lfs.sh
+    - apt:
+        name: git-lfs
+        update_cache: yes
+        state: latest
+    - shell: git lfs install
 
-- name: Enable Git LFS
-  shell: git lfs install
