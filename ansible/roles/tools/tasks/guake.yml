@@ -1,0 +1,6 @@
+- name: Install Guake
+  become: yes
+  apt:
+    name: guake
+    state: latest
+

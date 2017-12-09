@@ -21,4 +21,6 @@
 - import_tasks: gitkraken.yml
   when: env == "vm-gui"
   tags: engsvr
+- import_tasks: guake.yml
+  when: env == "vm-gui"
 

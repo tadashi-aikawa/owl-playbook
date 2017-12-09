@@ -12,6 +12,7 @@
     - .config/fish/functions/ghurls.fish
     - .vim
     - .tmux.conf
+    - .gconf
   tags: engsvr
 
 - name: "[Homedir] Create symlinks without engsvr"
