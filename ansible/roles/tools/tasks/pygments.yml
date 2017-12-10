@@ -1,0 +1,6 @@
+- name: Install Pygments
+  become: yes
+  pip:
+    name: Pygments
+    editable: false
+

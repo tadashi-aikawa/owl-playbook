@@ -23,4 +23,6 @@
   tags: engsvr
 - import_tasks: guake.yml
   when: env == "vm-gui"
+- import_tasks: pygments.yml
+  tags: [engsvr, tmp]
 
