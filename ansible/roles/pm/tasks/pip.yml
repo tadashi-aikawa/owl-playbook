@@ -1,4 +1,11 @@
-- name: Install get-pip
+- name: Install Pip2
   become: true
   shell: curl https://bootstrap.pypa.io/get-pip.py | python
+
+- name: Install Pip3
+  become: true
+  apt:
+    name: python3-pip
+    state: latest
+    update_cache: yes
 
