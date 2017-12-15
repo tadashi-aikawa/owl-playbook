@@ -3,4 +3,5 @@
     name: pipenv
     extra_args: --user
     state: latest
+    executable: pip3
 
