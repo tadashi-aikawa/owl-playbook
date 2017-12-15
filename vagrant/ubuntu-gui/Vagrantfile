@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-16.04"
 
   # port forward
-  ([80, 1313, 3000, 6006, 8000] + (8080..8090).to_a).each do |port|
+  ([80, 1313, 3000, 4200, 6006, 8000] + (8080..8090).to_a).each do |port|
     config.vm.network "forwarded_port", guest: port, host: port + 10000, host_ip: "127.0.0.1"
   end
   config.vm.network "private_network", ip: "192.168.33.10"
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
       "--paravirtprovider", "kvm",
       "--clipboard", "bidirectional",
       "--draganddrop", "bidirectional",
-      "--monitorcount", "1",
+      "--monitorcount", "2",
     ]
   end
 
