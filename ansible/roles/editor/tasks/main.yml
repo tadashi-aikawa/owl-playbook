@@ -1,7 +1,7 @@
 - import_tasks: vim.yml
 - import_tasks: vscode.yml
   when: env == "vm-gui"
-- import_tasks: intellij.yml
+- import_tasks: idea.yml
   when: env == "vm-gui"
   vars:
     version: 2017.3

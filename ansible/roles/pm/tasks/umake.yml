@@ -1,0 +1,12 @@
+- name: Install Ubuntu Make Repo
+  become: yes
+  apt_repository:
+    repo: ppa:ubuntu-desktop/ubuntu-make
+
+- name: Install umake
+  become: yes
+  apt:
+    name: ubuntu-make
+    state: latest
+    update_cache: yes
+

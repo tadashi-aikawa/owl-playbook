@@ -1,0 +1,9 @@
+- name: Check IntelliJ IDEA is already installed
+  stat:
+    path: ~/.local/share/umake/ide/idea
+  register: idea
+
+- name: Install IntelliJ IDEA
+  shell: umake ide idea-ultimate ~/.local/share/umake/ide/idea
+  when: not idea.stat.exists
+
