@@ -1,0 +1,3 @@
+- import_tasks: haskell.yml
+  when: env == "vm-gui"
+

@@ -7,5 +7,7 @@
     - role: editor
     - role: python
     - role: go
-    - tools
+    - role: haskell
+      tags: tmp
+    - role: tools
 

@@ -1,0 +1,6 @@
+- name: Install Haskell
+  become: yes
+  apt:
+    name: haskell-platform
+    state: latest
+
