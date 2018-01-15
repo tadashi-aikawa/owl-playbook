@@ -10,6 +10,9 @@
     - .tigrc
     - .config/fish/config.fish
     - .config/fish/functions/ghurls.fish
+    - .config/Code/User/keybindings.json
+    - .config/Code/User/settings.json
+    - .config/Code/User/snippets
     - .vim
     - .tmux.conf
     - .gconf

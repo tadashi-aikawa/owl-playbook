@@ -8,6 +8,5 @@
     - role: python
     - role: go
     - role: haskell
-      tags: tmp
     - role: tools
 
