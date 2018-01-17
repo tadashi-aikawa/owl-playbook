@@ -18,6 +18,17 @@
     - .gconf
     - .vimrc
 
+- name: "[Homedir] Create symlinks for IntelliJ IDEA"
+  file:
+    src: '{{ ubuntu_mnt }}/.IntelliJIdea/{{ item }}'
+    dest: ~/{{ intellij_dir }}/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - config/colors/mamansoft.icls
+    - config/keymaps/mamansoft.xml
+    - config/options/editor.xml
+
 - name: "[Homedir] Create profiles different for each target"
   file:
     src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
