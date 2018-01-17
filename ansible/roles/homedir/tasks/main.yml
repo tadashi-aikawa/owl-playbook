@@ -18,6 +18,16 @@
     - .gconf
     - .vimrc
 
+- name: "[Homedir] Create directories for IntelliJ IDEA"
+  file:
+    path: ~/{{ intellij_dir }}/{{ item }}
+    state: directory
+    mode: 0775
+  with_items:
+    - config/colors
+    - config/keymaps
+  when: env == "vm-gui"
+
 - name: "[Homedir] Create symlinks for IntelliJ IDEA"
   file:
     src: '{{ ubuntu_mnt }}/.IntelliJIdea/{{ item }}'
@@ -28,6 +38,7 @@
     - config/colors/mamansoft.icls
     - config/keymaps/mamansoft.xml
     - config/options/editor.xml
+  when: env == "vm-gui"
 
 - name: "[Homedir] Create profiles different for each target"
   file:
@@ -37,4 +48,5 @@
   with_items:
     - config.fish
     - .tmux.conf
+  when: env == "vm-gui"
 
