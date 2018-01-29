@@ -3,6 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box_version = "201710.25.0"
 
   # port forward
   ([80, 1313, 3000, 4200, 6006, 8000] + (8080..8090).to_a).each do |port|
