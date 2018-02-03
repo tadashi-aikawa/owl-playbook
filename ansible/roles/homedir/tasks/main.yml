@@ -13,7 +13,6 @@
     - .config/Code/User/keybindings.json
     - .config/Code/User/settings.json
     - .config/Code/User/snippets
-    - .vim
     - .tmux.conf
     - .gconf
     - .vimrc
