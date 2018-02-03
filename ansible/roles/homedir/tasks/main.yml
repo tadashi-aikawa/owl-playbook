@@ -39,6 +39,13 @@
     - config/options/editor.xml
   when: env == "vm-gui"
 
+- name: "[Homedir] Create symlinks for .ideavimrc"
+  file:
+    src: '{{ ubuntu_mnt }}/.vimrc'
+    dest: ~/.ideavimrc
+    state: link
+    force: yes
+
 - name: "[Homedir] Create profiles different for each target"
   file:
     src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
