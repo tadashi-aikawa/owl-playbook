@@ -16,6 +16,7 @@
     - .tmux.conf
     - .gconf
     - .vimrc
+    - .ideavimrc
 
 - name: "[Homedir] Create directories for IntelliJ IDEA"
   file:
@@ -38,13 +39,6 @@
     - config/keymaps/mamansoft.xml
     - config/options/editor.xml
   when: env == "vm-gui"
-
-- name: "[Homedir] Create symlinks for .ideavimrc"
-  file:
-    src: '{{ ubuntu_mnt }}/.vimrc'
-    dest: ~/.ideavimrc
-    state: link
-    force: yes
 
 - name: "[Homedir] Create profiles different for each target"
   file:
