@@ -15,6 +15,7 @@
     - libsqlite3-dev
     - wget
     - curl
+    - httpie
     - llvm
     - libncurses5-dev
     - libncursesw5-dev
