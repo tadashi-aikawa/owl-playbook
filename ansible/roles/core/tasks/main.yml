@@ -23,4 +23,5 @@
     # tmux
     - automake
     - libevent-dev
-
+    # ntp
+    - ntp
