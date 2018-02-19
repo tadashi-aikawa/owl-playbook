@@ -9,8 +9,17 @@
   args:
     chdir: /tmp/fonts
 
-- name: "[Powerline] Install powerline status"
+- name: "[Powerline] Install powerline status (python2)"
+  become: yes
+  state: latest
+  pip:
+    name: powerline-status
+
+- name: "[Powerline] Install powerline status (python3 for vim)"
   become: yes
   pip:
     name: powerline-status
+    state: latest
+    executable: pip3
+
 
