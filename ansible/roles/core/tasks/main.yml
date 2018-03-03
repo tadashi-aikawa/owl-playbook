@@ -24,5 +24,7 @@
     # tmux
     - automake
     - libevent-dev
+    # migemo
+    - cmigemo
     # ntp
     - ntp
