@@ -4,3 +4,9 @@
     name: vim-gtk
     state: latest
 
+- name: Install ctags
+  become: yes
+  apt:
+    name: ctags
+    state: latest
+
