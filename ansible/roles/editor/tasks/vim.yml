@@ -15,3 +15,10 @@
     name: ctags
     state: latest
 
+- name: Install neovim for denite
+  become: yes
+  pip:
+    name: neovim
+    state: latest
+    executable: pip3
+
