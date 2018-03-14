@@ -4,8 +4,7 @@
   roles:
     - role: core
     - role: vcs
+    - role: shell
     - role: pm
-      tags: engsvr
     - role: font
-      tags: engsvr
 

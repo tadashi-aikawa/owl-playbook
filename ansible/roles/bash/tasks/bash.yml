@@ -1,0 +1,4 @@
+- name: Install bash language server
+  npm:
+    name: bash-language-server
+    global: yes

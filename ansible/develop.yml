@@ -2,9 +2,8 @@
   hosts: local
   connection: local
   roles:
-    - role: shell
-      tags: engsvr
     - role: editor
+    - role: bash
     - role: python
     - role: go
     - role: haskell
