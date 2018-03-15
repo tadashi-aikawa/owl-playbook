@@ -1,0 +1,11 @@
+- name: Clone bats
+  git:
+    repo: https://github.com/sstephenson/bats.git
+    dest: /tmp/bats
+
+- name: Install bats
+  become: yes
+  shell: ./install.sh /usr/local
+  args:
+    chdir: /tmp/bats
+

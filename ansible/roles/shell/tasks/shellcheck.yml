@@ -4,4 +4,3 @@
     name: shellcheck
     update_cache: yes
     state: latest
-  tags: tmp
