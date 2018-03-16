@@ -1,0 +1,18 @@
+- name: "[exa] Check already installed"
+  stat:
+    path: /usr/bin/exa
+  register: exa_installed
+
+- name: "[exa] Install"
+  when: not exa_installed.stat.exists
+  become: yes
+  block:
+    - unarchive:
+        src: https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
+        mode: u+x,g+x,o+x
+        dest: /usr/bin
+        remote_src: yes
+    - shell: mv exa-linux-x86_64 exa
+      args:
+        chdir: /usr/bin
+

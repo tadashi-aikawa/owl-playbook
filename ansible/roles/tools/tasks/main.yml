@@ -21,4 +21,4 @@
   when: env == "vm-gui"
 - import_tasks: pygments.yml
 - import_tasks: bats.yml
-  tags: tmp
+- import_tasks: exa.yml
