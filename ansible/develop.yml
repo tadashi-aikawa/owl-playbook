@@ -7,5 +7,6 @@
     - role: python
     - role: go
     - role: haskell
+    - role: rust
     - role: tools
 

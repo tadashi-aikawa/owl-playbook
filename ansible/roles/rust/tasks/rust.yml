@@ -1,0 +1,3 @@
+- name: Install rust
+  shell: ~/.cargo/bin/rustup install stable
+
