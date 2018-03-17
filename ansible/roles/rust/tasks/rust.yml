@@ -1,3 +1,8 @@
-- name: Install rust
-  shell: ~/.cargo/bin/rustup install stable
+- name: "[rust] Check already installed"
+  stat:
+    path: ~/.cargo/bin/rustc
+  register: rust_installed
 
+- name: "[rust] Install"
+  when: not rust_installed.stat.exists
+  shell: ~/.cargo/bin/rustup install stable

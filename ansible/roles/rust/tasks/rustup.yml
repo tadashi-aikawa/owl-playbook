@@ -1,5 +1,12 @@
 # - Path in config.fish
 # - $PATH => $HOME/.cargo/bin
-- name: Install rustup
+
+- name: "[rustup] Check already installed"
+  stat:
+    path: ~/.cargo/bin/rustup
+  register: rustup_installed
+
+- name: "[rustup] Install"
+  when: not rustup_installed.stat.exists
   shell: "curl https://sh.rustup.rs -sSf | sh -s -- -y"
 
