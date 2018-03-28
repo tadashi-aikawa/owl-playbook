@@ -17,6 +17,7 @@
     - .gconf
     - .vimrc
     - .ideavimrc
+    - .vim-snippets
 
 - name: "[Homedir] Create directories for IntelliJ IDEA"
   file:
