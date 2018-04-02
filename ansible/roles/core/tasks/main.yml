@@ -28,3 +28,6 @@
     - cmigemo
     # ntp
     - ntp
+    # for arch
+    - cifs-utils
+
