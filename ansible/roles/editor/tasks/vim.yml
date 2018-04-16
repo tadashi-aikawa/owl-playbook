@@ -21,4 +21,5 @@
     name: neovim
     state: latest
     executable: pip3
+  tags: pip3
 
