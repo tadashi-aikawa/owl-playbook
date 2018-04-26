@@ -1,4 +1,5 @@
 - import_tasks: pip.yml
 - import_tasks: npm.yml
 - import_tasks: umake.yml
+- import_tasks: conan.yml
 
