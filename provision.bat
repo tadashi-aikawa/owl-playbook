@@ -13,6 +13,7 @@ choco install /y visualstudiocode
 choco install /y intellijidea-ultimate
 choco install /y winmerge
 choco install /y lightshot.install
+choco install /y emeditor
 
 rem ------------------
 rem Sym links
