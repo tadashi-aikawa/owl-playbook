@@ -1,0 +1,11 @@
+- name: "[docker-compose] Install"
+  become: yes
+  shell: curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  args:
+    creates: /usr/local/bin/docker-compose
+
+- name: "[docker-compose] Update permission"
+  become: yes
+  file:
+    path: /usr/local/bin/docker-compose
+    mode: 0755
