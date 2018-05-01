@@ -30,4 +30,7 @@
     - ntp
     # for arch
     - cifs-utils
+    # for C++++++++++++++++++
+    - cmake
+    - libboost-all-dev
 
