@@ -5,15 +5,7 @@ rem ------------------
 rem Install
 rem ------------------
 
-choco install /y git
-choco install /y autohotkey
-choco install /y python2
-choco install /y python3
-choco install /y visualstudiocode
-choco install /y intellijidea-ultimate
-choco install /y winmerge
-choco install /y lightshot.install
-choco install /y emeditor
+cinst .\packages.config
 
 rem ------------------
 rem Sym links
