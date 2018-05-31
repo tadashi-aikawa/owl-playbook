@@ -5,7 +5,7 @@ rem ------------------
 rem Install
 rem ------------------
 
-cinst .\packages.config
+cinst /y .\packages.config
 
 rem ------------------
 rem Sym links
