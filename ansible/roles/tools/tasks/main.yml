@@ -2,6 +2,7 @@
 - import_tasks: hugo.yml
   vars:
     version: 0.31
+  when: env == "vm-gui"
 - import_tasks: nkf.yml
 - import_tasks: jq.yml
 - import_tasks: xmllint.yml
@@ -23,4 +24,6 @@
 - import_tasks: bats.yml
 - import_tasks: exa.yml
 - import_tasks: stow.yml
+  when: env == "vm-gui"
 - import_tasks: docker-compose.yml
+  when: env == "vm-gui"

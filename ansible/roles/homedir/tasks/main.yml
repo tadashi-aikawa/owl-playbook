@@ -10,14 +10,25 @@
     - .tigrc
     - .config/fish/config.fish
     - .config/fish/functions/ghurls.fish
-    - .config/Code/User/keybindings.json
-    - .config/Code/User/settings.json
-    - .config/Code/User/snippets
     - .tmux.conf
     - .gconf
     - .vimrc
     - .ideavimrc
     - .vim-snippets
+
+
+- name: "[Homedir] Create symlinks for VS Code"
+  file:
+    src: '{{ ubuntu_mnt }}/{{ item }}'
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - .config/Code/User/keybindings.json
+    - .config/Code/User/settings.json
+    - .config/Code/User/snippets
+  when: env == "vm-gui"
+
 
 - name: "[Homedir] Create directories for IntelliJ IDEA"
   file:
@@ -55,5 +66,4 @@
   with_items:
     - config.fish
     - .tmux.conf
-  when: env == "vm-gui"
 

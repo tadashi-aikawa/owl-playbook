@@ -6,7 +6,10 @@
     - role: bash
     - role: python
     - role: go
+      when: env == "vm-gui"
     - role: haskell
+      when: env == "vm-gui"
     - role: rust
+      when: env == "vm-gui"
     - role: tools
 
