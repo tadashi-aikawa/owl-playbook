@@ -9,6 +9,8 @@ rem ------------------
 
 cinst /y .\packages.config
 
+rem Manually!!  Tablacus Explorer
+
 rem ------------------
 rem IntelliJ IDEA
 rem ------------------
