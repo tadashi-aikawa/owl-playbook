@@ -3,17 +3,17 @@
 set UBUNTU_MNT=%USERPROFILE%\Dropbox\ubuntu-mnt
 set WINDOWS_MNT=%USERPROFILE%\Dropbox\windows-mnt
 
-rem ------------------
-rem Install
-rem ------------------
+echo ------------------
+echo Install
+echo ------------------
 
 cinst /y .\packages.config
 
-rem Manually!!  Tablacus Explorer
+echo Manually!!  Tablacus Explorer
 
-rem ------------------
-rem IntelliJ IDEA
-rem ------------------
+echo ------------------
+echo IntelliJ IDEA
+echo ------------------
 
 set IDEA_DIR=.IntelliJIdea2018.1
 
@@ -32,9 +32,9 @@ call :link_idea_file options\vim_settings.xml
 call :link_file %USERPROFILE%\.ideavimrc %UBUNTU_MNT%\.ideavimrc
 
 
-rem ------------------
-rem VS Code 
-rem ------------------
+echo ------------------
+echo VS Code 
+echo ------------------
 
 set VSCODE_ORIGIN_USER_DIR=%UBUNTU_MNT%\.config\Code\User
 set VSCODE_USER_DIR=%USERPROFILE%\AppData\Roaming\Code\User
@@ -43,9 +43,9 @@ call :link_vscode_file keybindings.json
 call :link_vscode_file settings.json
 call :link_vscode_dir snippets
 
-rem ------------------
-rem Homedir
-rem ------------------
+echo ------------------
+echo Homedir
+echo ------------------
 
 call :link_windows_home .bashrc
 call :link_windows_home .minttyrc
