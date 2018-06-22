@@ -23,6 +23,7 @@
 - import_tasks: pygments.yml
 - import_tasks: bats.yml
 - import_tasks: exa.yml
+- import_tasks: bat.yml
 - import_tasks: stow.yml
   when: env == "vm-gui"
 - import_tasks: docker-compose.yml
