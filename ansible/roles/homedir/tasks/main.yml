@@ -58,6 +58,7 @@
     - config/options/vcs.xml
     - config/options/vim_settings.xml
     - config/templates/Python.xml
+    - config/templates/Rust.xml
   when: env == "vm-gui"
 
 - name: "[Homedir] Create profiles different for each target"
