@@ -1,10 +1,4 @@
-- name: "[exa] Check already installed"
-  stat:
-    path: /usr/bin/exa
-  register: exa_installed
-
 - name: "[exa] Install"
-  when: not exa_installed.stat.exists
   become: yes
   block:
     - unarchive:
@@ -12,7 +6,9 @@
         mode: u+x,g+x,o+x
         dest: /usr/bin
         remote_src: yes
+        creates: /usr/bin/exa
     - shell: mv exa-linux-x86_64 exa
       args:
         chdir: /usr/bin
+        creates: /usr/bin/exa
 

@@ -1,4 +1,4 @@
-- name: Install Pygments
+- name: "[Pygments] Install"
   become: yes
   pip:
     name: Pygments

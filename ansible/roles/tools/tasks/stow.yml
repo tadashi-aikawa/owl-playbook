@@ -1,4 +1,4 @@
-- name: Install stow
+- name: "[stow] Install"
   become: yes
   apt:
     name: stow

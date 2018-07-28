@@ -1,7 +1,4 @@
 - import_tasks: pip.yml
 - import_tasks: npm.yml
 - import_tasks: umake.yml
-  when: env == "vm-gui"
-- import_tasks: conan.yml
-  when: env == "vm-gui"
-
+#- import_tasks: conan.yml

@@ -1,4 +1,4 @@
-- name: Install xmllint
+- name: "[xmllint] Install"
   become: yes
   apt:
     name: libxml2-utils

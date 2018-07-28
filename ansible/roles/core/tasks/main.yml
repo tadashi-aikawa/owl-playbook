@@ -15,22 +15,14 @@
     - libsqlite3-dev
     - wget
     - curl
-    - httpie
     - llvm
     - libncurses5-dev
     - libncursesw5-dev
     - xz-utils
     - tk-dev
+    - ntp
     # tmux
     - automake
     - libevent-dev
     # migemo
     - cmigemo
-    # ntp
-    - ntp
-    # for arch
-    - cifs-utils
-    # for C++++++++++++++++++
-    - cmake
-    - libboost-all-dev
-

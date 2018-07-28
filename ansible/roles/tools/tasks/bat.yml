@@ -1,17 +1,13 @@
-- name: "[bat] Check already installed"
-  stat:
-    path: /usr/bin/bat
-  register: bat_installed
-
 - name: "[bat] Install"
-  when: not bat_installed.stat.exists
   become: yes
   block:
     - unarchive:
         src: https://github.com/sharkdp/bat/releases/download/v0.4.1/bat-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
         dest: /tmp
         remote_src: yes
+        creates: /usr/bin/bat
     - shell: mv bat-v0.4.1-x86_64-unknown-linux-gnu/bat /usr/bin/bat
       args:
         chdir: /tmp
+        creates: /usr/bin/bat
 

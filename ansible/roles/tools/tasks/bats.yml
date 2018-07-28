@@ -1,11 +1,12 @@
-- name: Clone bats
+- name: "[bats] Clone"
   git:
     repo: https://github.com/sstephenson/bats.git
     dest: /tmp/bats
 
-- name: Install bats
+- name: "[bats] Install"
   become: yes
   shell: ./install.sh /usr/local
   args:
     chdir: /tmp/bats
+    creates: /usr/local/bin/bats
 

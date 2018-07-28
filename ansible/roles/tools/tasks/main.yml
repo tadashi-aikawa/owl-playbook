@@ -1,30 +1,29 @@
+- import_tasks: awscli.yml
+- import_tasks: bats.yml
+- import_tasks: bat.yml
+- import_tasks: docker-compose.yml
+- import_tasks: exa.yml
+- import_tasks: gitkraken.yml
+  when: env == "vm-gui"
+- import_tasks: gi.yml
+- import_tasks: httpie.yml
+- import_tasks: icdiff.yml
+- import_tasks: jq.yml
+- import_tasks: nkf.yml
+- import_tasks: pygments.yml
+- import_tasks: stow.yml
+- import_tasks: tree.yml
 - import_tasks: unzip.yml
+- import_tasks: xmllint.yml
+
+# Version specified
 - import_tasks: hugo.yml
   vars:
     version: 0.31
-  when: env == "vm-gui"
-- import_tasks: nkf.yml
-- import_tasks: jq.yml
-- import_tasks: xmllint.yml
-- import_tasks: icdiff.yml
-- import_tasks: tree.yml
-- import_tasks: awscli.yml
 - import_tasks: tig.yml
   vars:
     version: 2.3.0  
 - import_tasks: pt.yml
   vars:
     version: 2.1.5
-- import_tasks: gi.yml
-- import_tasks: gitkraken.yml
-  when: env == "vm-gui"
-- import_tasks: guake.yml
-  when: env == "vm-gui"
-- import_tasks: pygments.yml
-- import_tasks: bats.yml
-- import_tasks: exa.yml
-- import_tasks: bat.yml
-- import_tasks: stow.yml
-  when: env == "vm-gui"
-- import_tasks: docker-compose.yml
-  when: env == "vm-gui"
+

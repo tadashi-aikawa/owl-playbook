@@ -1,4 +1,4 @@
-- name: Install tree
+- name: "[tree] Install"
   become: yes
   apt:
     name: tree
