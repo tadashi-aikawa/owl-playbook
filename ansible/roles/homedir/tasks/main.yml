@@ -13,6 +13,7 @@
     - .tmux.conf
     - .gconf
     - .vimrc
+    - .vim
     - .ideavimrc
     - .vim-snippets
 
