@@ -1,9 +1,9 @@
-- name: Check tig is already installed
+- name: "[tig] Check already installed"
   stat:
     path: /usr/local/bin/tig
   register: tig
 
-- name: Install tig
+- name: "[tig] Install"
   when: not tig.stat.exists
   block:
     - name: Download ncurses

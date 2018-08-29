@@ -3,6 +3,7 @@
   tasks:
     - group_by:
         key: '{{ env }}'
+  tags: tmp
 - import_playbook: bootstrap.yml
 - import_playbook: develop.yml
 - import_playbook: homedir.yml

@@ -13,8 +13,19 @@
     - .tmux.conf
     - .gconf
     - .vimrc
+    - .vim
     - .ideavimrc
     - .vim-snippets
+
+
+- name: "[Homedir] Create profiles different for each target"
+  file:
+    src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
+    dest: ~/{{ item }}.profile
+    state: link
+  with_items:
+    - config.fish
+    - .tmux.conf
 
 
 - name: "[Homedir] Create symlinks for VS Code"
@@ -60,13 +71,4 @@
     - config/templates/Python.xml
     - config/templates/Rust.xml
   when: env == "vm-gui"
-
-- name: "[Homedir] Create profiles different for each target"
-  file:
-    src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
-    dest: ~/{{ item }}.profile
-    state: link
-  with_items:
-    - config.fish
-    - .tmux.conf
 

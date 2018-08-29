@@ -1,4 +1,4 @@
-- name: Install nkf
+- name: "[nkf] Install"
   become: yes
   apt:
     name: nkf

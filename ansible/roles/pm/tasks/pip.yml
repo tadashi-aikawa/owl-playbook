@@ -1,11 +1,20 @@
-- name: Install Pip2
+- name: "[Pip2] Install"
   become: true
   shell: curl https://bootstrap.pypa.io/get-pip.py | python
+  args:
+    creates: /usr/local/bin/pip2
 
-- name: Install Pip3
+- name: "[Pip3] Install"
   become: true
   apt:
     name: python3-pip
     state: latest
     update_cache: yes
+
+- name: "[Pip3] Upgrade"
+  become: true
+  pip:
+    name: pip
+    executable: pip3
+    extra_args: --upgrade
 

@@ -1,4 +1,4 @@
-- name: Install jq
+- name: "[jq] Install"
   become: yes
   get_url:
     url: https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64

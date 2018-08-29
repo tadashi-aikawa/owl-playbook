@@ -1,4 +1,4 @@
-- name: Install AWS CLI
+- name: "[AWS CLI] install"
   become: yes
   pip:
     name: awscli

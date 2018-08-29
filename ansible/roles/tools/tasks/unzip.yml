@@ -1,4 +1,4 @@
-- name: Install unzip
+- name: "[unzip] Install"
   become: yes
   apt:
     name: unzip

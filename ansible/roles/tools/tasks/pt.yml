@@ -1,10 +1,4 @@
-- name: "[Platinum Searcher] Check already installed"
-  stat:
-    path: /usr/bin/pt
-  register: pt_installed
-
 - name: "[Platinum Searcher] Install"
-  when: not pt_installed.stat.exists
   become: yes
   block:
     - unarchive:
@@ -12,4 +6,7 @@
         dest: /tmp
         mode: u+x,g+x,o+x
         remote_src: yes
-    - command: mv /tmp/pt_linux_amd64/pt /usr/bin/pt
+        creates: /usr/bin/pt
+    - shell: mv /tmp/pt_linux_amd64/pt /usr/bin/pt
+      args:
+        creates: /usr/bin/pt

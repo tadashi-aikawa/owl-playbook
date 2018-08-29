@@ -1,49 +1,44 @@
 owl-playbook
 ============
 
-Ansible playbook for WSL(Ubuntu) or VM(Ubuntu) on windows
+`owl-playbook` includes as following both
+
+* Windows setup script by using chocolatey and others
+* Ubuntu setup for VM(Ubuntu) by using vagrant and ansible
 
 
-Usage
------
+Windows setup
+-------------
+
+### Requirements
+
+* [Chocolatey](https://chocolatey.org/)
+
+### Usage
+
+Run `provision.bat` as administrator mode.
 
 
-### WSL
+Ubuntu setup
+------------
+
+### Requirements
+
+* [Vagrant](https://www.vagrantup.com/)
+  * I use `1.9.5`
+* [Virtualbox](https://www.virtualbox.org/)
+  * I use `5.1.30 r118389`
+
+### Provisioning VM (Only once)
 
 ```
-$ ansible-playbook -K --extra-vars "env=${env}" -i local site.yml
-```
-
-You can specify `$env` in `ansible/group_vars`, and add your original env.
-
-
-### VM on windows
-
-#### Not in VM (windows)
-
-`cd vagrant/ubuntu-{gui,cui}`
-
-```
+$ cd vagrant/ubuntu-gui
 $ vagrant up --provision
 ```
 
-#### In VM (not windows)
+### Usage
 
 ```
-$ ansible-playbook -K --extra-vars "env=vm-cui" -i local site.yml
-```
-
-or
-
-```
-$ ansible-playbook -K --extra-vars "env=vm-gui" -i local site.yml
-```
-
-### For engsvr (with Ubuntu desktop)
-
-Login Ubuntu desktop and
-
-```
-$ ansible-playbook -K --extra-vars "env=vm-engsvr" --tags engsvr -i local site.yml
+$ make run
 ```
 
