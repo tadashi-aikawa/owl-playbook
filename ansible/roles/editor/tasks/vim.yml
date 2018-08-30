@@ -1,12 +1,7 @@
-- name: Install Vim8 Repo
-  become: yes
-  apt_repository:
-    repo: ppa:jonathonf/vim
-
 - name: Install Vim8
   become: yes
   apt:
-    name: vim
+    name: vim-gtk
     state: latest
 
 - name: Install ctags

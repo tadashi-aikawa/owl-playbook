@@ -22,7 +22,7 @@
     version: 0.31
 - import_tasks: tig.yml
   vars:
-    version: 2.3.0  
+    version: 2.4.1
 - import_tasks: pt.yml
   vars:
     version: 2.1.5

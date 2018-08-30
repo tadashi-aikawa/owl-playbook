@@ -8,7 +8,7 @@
   block:
     - name: Download ncurses
       get_url:
-        url: http://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.7.tar.gz
+        url: http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz
         dest: /tmp/ncurses.tar.gz
 
     - name: Extract ncurses.tar.gz
@@ -19,12 +19,12 @@
     - name: Preinstall ncurses
       shell: ./configure  --enable-widec
       args:
-        chdir: /tmp/ncurses-5.7
+        chdir: /tmp/ncurses-6.1
 
     - name: Install ncurses
       become: yes
       make:
-        chdir: /tmp/ncurses-5.7
+        chdir: /tmp/ncurses-6.1
         target: install
 
     - name: Download tig
