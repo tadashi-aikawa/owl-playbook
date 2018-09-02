@@ -28,4 +28,7 @@
 - import_tasks: pt.yml
   vars:
     version: 2.1.5
+- import_tasks: fd.yml
+  vars:
+    version: 7.1.0
 
