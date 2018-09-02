@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
   ([80, 1313, 3000, 4200, 6006, 8000] + (8080..8090).to_a).each do |port|
     config.vm.network "forwarded_port", guest: port, host: port + 10000, host_ip: "127.0.0.1"
   end
+  config.vm.network "forwarded_port", guest: 61208, host: 61208, host_ip: "127.0.0.1"
   config.vm.network "private_network", ip: "192.168.33.10"
 
   # VirtualBox VM options
