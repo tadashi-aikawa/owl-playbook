@@ -1,0 +1,9 @@
+- name: "[ncdu] Install"
+  become: yes
+  unarchive:
+    src: https://dev.yorhel.nl/download/ncdu-linux-i486-{{ version }}.tar.gz
+    dest: /usr/bin
+    mode: u+x,g+x,o+x
+    remote_src: yes
+    creates: /usr/bin/ncdu
+

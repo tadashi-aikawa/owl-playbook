@@ -33,4 +33,6 @@
 - import_tasks: ripgrep.yml
   vars:
     version: 0.9.0
-
+- import_tasks: ncdu.yml
+  vars:
+    version: 1.13
