@@ -1,8 +1,14 @@
-- name: Clone fzf
+- name: "[fzf] Clone"
   git:
     repo: https://github.com/junegunn/fzf.git
     dest: ~/.fzf
     depth: 1
 
-- name: Install fzf
+- name: "[fzf] Install"
   shell: ~/.fzf/install --all
+
+- name: "[fzf] key binding settings"
+  template:
+    src: fish_user_key_bindings.fish
+    dest: ~/.config/fish/functions/fish_user_key_bindings.fish
+    mode: "u=rwx,g=rx,o=rx"
