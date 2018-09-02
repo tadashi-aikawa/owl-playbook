@@ -26,3 +26,9 @@
     - libevent-dev
     # migemo
     - cmigemo
+
+- name: Set LC_ALL
+  lineinfile:
+    path: ~/.bashrc
+    line: 'export LC_ALL=en_US.UTF8'
+
