@@ -15,6 +15,7 @@
 - import_tasks: tree.yml
 - import_tasks: unzip.yml
 - import_tasks: xmllint.yml
+- import_tasks: glances.yml
 
 # Version specified
 - import_tasks: hugo.yml

@@ -1,0 +1,6 @@
+- name: "[Glances] Install"
+  become: yes
+  pip:
+    name: glances
+    extra_args: "glances[docker,ip,web]"
+
