@@ -16,6 +16,7 @@
 - import_tasks: unzip.yml
 - import_tasks: xmllint.yml
 - import_tasks: glances.yml
+- import_tasks: diff-so-fancy.yml
 
 # Version specified
 - import_tasks: hugo.yml
