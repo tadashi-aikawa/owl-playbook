@@ -1,6 +1,5 @@
 - import_tasks: awscli.yml
 - import_tasks: bats.yml
-- import_tasks: bat.yml
 - import_tasks: docker-compose.yml
 - import_tasks: exa.yml
 - import_tasks: gitkraken.yml
@@ -31,4 +30,7 @@
 - import_tasks: fd.yml
   vars:
     version: 7.1.0
+- import_tasks: bat.yml
+  vars:
+    version: 0.6.1
 
