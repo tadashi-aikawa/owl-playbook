@@ -24,13 +24,13 @@
 - import_tasks: tig.yml
   vars:
     version: 2.4.1
-- import_tasks: pt.yml
-  vars:
-    version: 2.1.5
 - import_tasks: fd.yml
   vars:
     version: 7.1.0
 - import_tasks: bat.yml
   vars:
     version: 0.6.1
+- import_tasks: ripgrep.yml
+  vars:
+    version: 0.9.0
 
