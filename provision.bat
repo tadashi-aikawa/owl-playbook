@@ -12,6 +12,12 @@ cinst /y .\packages.config
 echo Manually!!  Tablacus Explorer
 
 echo ------------------
+echo Vagrant
+echo ------------------
+
+vagrant plugin install vagrant-vbguest vagrant-disksize
+
+echo ------------------
 echo IntelliJ IDEA
 echo ------------------
 
