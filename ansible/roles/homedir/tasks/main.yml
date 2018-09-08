@@ -49,7 +49,6 @@
   with_items:
     - config/colors
     - config/keymaps
-    - config/templates
   when: env == "vm-gui"
 
 - name: "[Homedir] Create symlinks for IntelliJ IDEA"
@@ -68,7 +67,6 @@
     - config/options/markdown.xml
     - config/options/vcs.xml
     - config/options/vim_settings.xml
-    - config/templates/Python.xml
-    - config/templates/Rust.xml
+    - config/templates
   when: env == "vm-gui"
 
