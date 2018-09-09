@@ -4,7 +4,7 @@ owl-playbook
 `owl-playbook` includes as following both
 
 * Windows setup script by using chocolatey and others
-* Ubuntu setup for VM(Ubuntu) by using vagrant and ansible
+* Ubuntu setup for VM(Ubuntu 18.04) by using vagrant and ansible
 
 
 Windows setup
@@ -25,9 +25,11 @@ Ubuntu setup
 ### Requirements
 
 * [Vagrant](https://www.vagrantup.com/)
-  * I use `1.9.5`
+  * I use `2.1.2`
 * [Virtualbox](https://www.virtualbox.org/)
-  * I use `5.1.30 r118389`
+  * I use `5.2.18 r124319`
+
+You can install above tools by `provision.bat`.
 
 ### Provisioning VM (Only once)
 
