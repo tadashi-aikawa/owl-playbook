@@ -12,5 +12,7 @@
         dest: /tmp/vscode.deb
     - apt:
         deb: /tmp/vscode.deb
-    - command: apt-get install -f
+    - command: apt install -f
+      args:
+        warn: false
 
