@@ -62,6 +62,8 @@ call code --install-extension shuworks.vscode-table-formatter
 call code --install-extension patrys.vscode-code-outline
 call code --install-extension PeterJausovec.vscode-docker
 call code --install-extension ms-python.python
+call code --install-extension mechatroner.rainbow-csv
+call code --install-extension 2gua.rainbow-brackets
 
 
 echo ------------------
