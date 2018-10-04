@@ -61,6 +61,8 @@ call code --install-extension sgryjp.japanese-word-handler
 call code --install-extension shuworks.vscode-table-formatter
 call code --install-extension patrys.vscode-code-outline
 call code --install-extension PeterJausovec.vscode-docker
+call code --install-extension ms-python.python
+
 
 echo ------------------
 echo Homedir
