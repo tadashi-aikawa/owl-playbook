@@ -43,26 +43,6 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "../../../../", "/whome"
 
   # Provisioning with ansible
-  config.vm.provision "shell", inline: <<-SHELL
-    # Install ubuntu-desktop
-    sudo apt -y update
-    # See https://github.com/chef/bento/issues/661
-    #sudo apt-get -y upgrade
-    DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
-    sudo apt-get -y dist-upgrade
-
-    # Install for japanese
-    wget -q https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg -O- | sudo apt-key add -
-    wget -q https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -O- | sudo apt-key add -
-    sudo wget https://www.ubuntulinux.jp/sources.list.d/xenial.list -O /etc/apt/sources.list.d/ubuntu-ja.list
-    sudo apt -y update
-    sudo apt -y upgrade
-    sudo apt -y install ubuntu-defaults-ja
-
-    # Set timezone and locale
-    sudo timedatectl set-timezone Asia/Tokyo
-    sudo localectl set-locale LANG=ja_JP.utf8
-  SHELL
 
   # Install docker
   config.vm.provision "docker"
