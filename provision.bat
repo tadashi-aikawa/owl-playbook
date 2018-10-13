@@ -66,7 +66,17 @@ call code --install-extension sgryjp.japanese-word-handler
 call code --install-extension shuworks.vscode-table-formatter
 call code --install-extension slevesque.vscode-autohotkey
 call code --install-extension vscodevim.vim
+call code --install-extension taichi.vscode-textlint
 
+echo ------------------
+echo npm
+echo ------------------
+
+npm install -global ^
+    textlint ^
+    textlint-rule-preset-ja-technical-writing ^
+    textlint-filter-rule-comments ^
+    textlint-filter-rule-whitelist
 
 echo ------------------
 echo Homedir
