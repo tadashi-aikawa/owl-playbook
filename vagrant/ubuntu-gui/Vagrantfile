@@ -35,6 +35,7 @@ Vagrant.configure("2") do |config|
       "--monitorcount", "1",
       "--nictype1", "virtio",
       "--nictype2", "virtio",
+      "--natdnshostresolver1", "on",
     ]
   end
 
