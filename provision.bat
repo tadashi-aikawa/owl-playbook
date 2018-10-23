@@ -67,6 +67,8 @@ call code --install-extension shuworks.vscode-table-formatter
 call code --install-extension slevesque.vscode-autohotkey
 call code --install-extension vscodevim.vim
 call code --install-extension taichi.vscode-textlint
+call code --install-extension robertohuertasm.vscode-icons
+call code --install-extension shardulm94.trailing-spaces
 
 echo ------------------
 echo npm
