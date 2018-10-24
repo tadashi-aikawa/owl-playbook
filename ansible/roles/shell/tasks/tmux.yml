@@ -15,3 +15,9 @@
     - make
     - make install
 
+- name: "[tmux] Install tmux-theme"
+  shell: git clone --depth 1 https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+  args:
+    creates: ~/.tmux-themepack
+  tags: tmp
+
