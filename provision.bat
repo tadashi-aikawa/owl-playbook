@@ -69,6 +69,7 @@ call code --install-extension vscodevim.vim
 call code --install-extension taichi.vscode-textlint
 call code --install-extension robertohuertasm.vscode-icons
 call code --install-extension shardulm94.trailing-spaces
+call code --install-extension ms-vscode.cpptools
 
 echo ------------------
 echo npm
