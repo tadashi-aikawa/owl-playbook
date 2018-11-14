@@ -73,22 +73,14 @@ call code --install-extension ms-vscode.cpptools
 call code --install-extension eg2.tslint
 
 echo ------------------
-echo npm
-echo ------------------
-
-npm install -global ^
-    textlint ^
-    textlint-rule-preset-ja-technical-writing ^
-    textlint-filter-rule-comments ^
-    textlint-filter-rule-whitelist
-
-echo ------------------
 echo Homedir
 echo ------------------
 
 call :link_windows_home .bashrc
 call :link_windows_home .minttyrc
 call :link_windows_home .vimrc
+
+call :link_dir C:\tools\Cmder\config %WINDOWS_MNT%\cmder\config
 
 exit /b
 
