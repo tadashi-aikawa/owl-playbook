@@ -81,6 +81,9 @@ call :link_windows_home .minttyrc
 call :link_windows_home .vimrc
 
 call :link_dir C:\tools\Cmder\config %WINDOWS_MNT%\cmder\config
+call :link_file C:\tools\Cmder\bin\cdg.bat %WINDOWS_MNT%\cmder\bin\cdg.bat
+call :link_file C:\tools\Cmder\bin\cdr.bat %WINDOWS_MNT%\cmder\bin\cdr.bat
+call :link_file C:\tools\Cmder\bin\cdra.bat %WINDOWS_MNT%\cmder\bin\cdra.bat
 
 exit /b
 
