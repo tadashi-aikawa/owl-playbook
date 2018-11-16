@@ -85,6 +85,12 @@ call :link_file C:\tools\Cmder\bin\cdg.bat %WINDOWS_MNT%\cmder\bin\cdg.bat
 call :link_file C:\tools\Cmder\bin\cdr.bat %WINDOWS_MNT%\cmder\bin\cdr.bat
 call :link_file C:\tools\Cmder\bin\cdra.bat %WINDOWS_MNT%\cmder\bin\cdra.bat
 
+echo ------------------
+echo gitconfig
+echo ------------------
+
+git config --global pager.diff "diff-so-fancy | less --tabs=4 -RFX"
+
 exit /b
 
 rem ---------------------------------------------------------

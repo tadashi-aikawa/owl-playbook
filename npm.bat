@@ -6,4 +6,5 @@ npm install -global ^
     textlint ^
     textlint-rule-preset-ja-technical-writing ^
     textlint-filter-rule-comments ^
-    textlint-filter-rule-whitelist
+    textlint-filter-rule-whitelist ^
+    diff-so-fancy
