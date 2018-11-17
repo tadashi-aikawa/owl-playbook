@@ -13,6 +13,7 @@ Windows setup
 ### Requirements
 
 * [Chocolatey](https://chocolatey.org/)
+* [Scoop](https://github.com/lukesampson/scoop)
 
 ### Usage
 
