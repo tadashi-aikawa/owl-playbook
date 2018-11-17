@@ -8,8 +8,8 @@ echo Install
 echo ------------------
 
 cinst /y .\packages.config
-
-echo Manually!!  Tablacus Explorer
+call scoop-install.bat
+call npm-install.bat
 
 echo ------------------
 echo Vagrant
@@ -85,6 +85,12 @@ call :link_dir C:\tools\Cmder\config %WINDOWS_MNT%\cmder\config
 call :link_file C:\tools\Cmder\bin\cdg.bat %WINDOWS_MNT%\cmder\bin\cdg.bat
 call :link_file C:\tools\Cmder\bin\d.bat %WINDOWS_MNT%\cmder\bin\d.bat
 call :link_file C:\tools\Cmder\bin\f.bat %WINDOWS_MNT%\cmder\bin\f.bat
+
+echo ------------------------------------
+echo To be continued.. (Not administrator
+echo ------------------------------------
+
+echo Install Tablacus Explorer manually!
 
 exit /b
 
