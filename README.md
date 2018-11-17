@@ -17,7 +17,8 @@ Windows setup
 
 ### Usage
 
-Run `provision.bat` as administrator mode.
+1. Move `windows`
+2. Run `provision.bat` as administrator mode.
 
 
 Ubuntu setup
