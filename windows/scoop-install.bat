@@ -4,5 +4,7 @@ scoop install ^
   fd ^
   7zip ^
   fzf ^
+  less ^
+  ripgrep ^
   make
 
