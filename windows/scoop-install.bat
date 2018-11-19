@@ -6,5 +6,6 @@ scoop install ^
   fzf ^
   less ^
   ripgrep ^
-  make
+  make ^
+  docker
 

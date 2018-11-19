@@ -90,6 +90,12 @@ call :link_file C:\tools\Cmder\bin\gitc.bat %WINDOWS_MNT%\cmder\bin\gitc.bat
 call :link_file C:\tools\Cmder\bin\gitrc.bat %WINDOWS_MNT%\cmder\bin\gitrc.bat
 
 echo ------------------------------------
+echo git config
+echo ------------------------------------
+
+git config --global core.autoCRLF false
+
+echo ------------------------------------
 echo To be continued.. (Not administrator
 echo ------------------------------------
 
