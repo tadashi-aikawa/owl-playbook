@@ -87,6 +87,7 @@ call :link_file C:\tools\Cmder\bin\d.bat %WINDOWS_MNT%\cmder\bin\d.bat
 call :link_file C:\tools\Cmder\bin\f.bat %WINDOWS_MNT%\cmder\bin\f.bat
 call :link_file C:\tools\Cmder\bin\ff.bat %WINDOWS_MNT%\cmder\bin\ff.bat
 call :link_file C:\tools\Cmder\bin\gitc.bat %WINDOWS_MNT%\cmder\bin\gitc.bat
+call :link_file C:\tools\Cmder\bin\gitrc.bat %WINDOWS_MNT%\cmder\bin\gitrc.bat
 
 echo ------------------------------------
 echo To be continued.. (Not administrator
