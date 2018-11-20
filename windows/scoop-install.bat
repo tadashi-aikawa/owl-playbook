@@ -7,5 +7,6 @@ scoop install ^
   less ^
   ripgrep ^
   make ^
+  node-lts ^
   docker
 
