@@ -80,6 +80,7 @@ echo ------------------
 call :link_windows_home .bashrc
 call :link_windows_home .minttyrc
 call :link_windows_home .vimrc
+call :link_windows_home .vim
 
 call :link_dir C:\tools\Cmder\config %WINDOWS_MNT%\cmder\config
 call :link_file C:\tools\Cmder\bin\cdg.bat %WINDOWS_MNT%\cmder\bin\cdg.bat
