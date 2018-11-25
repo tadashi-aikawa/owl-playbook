@@ -103,6 +103,9 @@ echo To be continued.. (Not administrator
 echo ------------------------------------
 
 echo Install Tablacus Explorer manually!
+echo Install gowl (go get -u github.com/tadashi-aikawa/gowl)
+echo Install owl-cmder-tool
+echo Install spinal-reflex-bindings-template
 
 exit /b
 
