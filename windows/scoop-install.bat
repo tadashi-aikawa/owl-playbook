@@ -1,5 +1,6 @@
 scoop install ^
   sudo ^
+  wget ^
   bat ^
   fd ^
   7zip ^
