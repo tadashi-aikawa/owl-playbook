@@ -88,6 +88,8 @@ echo ------------------------------------
 echo git config
 echo ------------------------------------
 
+git config --global core.preloadindex true
+git config --global core.fscache true
 git config --global core.autoCRLF false
 
 echo ------------------------------------
