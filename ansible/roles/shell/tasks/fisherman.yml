@@ -4,12 +4,12 @@
     warn: false
 
 - name: Install by fisher
-  shell: fish -c "fisher {{ item }}"
+  shell: fish -c "fisher add {{ item }}"
   with_items:
-    - omf/theme-bobthefish
+    - oh-my-fish/theme-bobthefish
     - 0rax/fish-bd
     - fisherman/fzf
     - fisherman/z
     - edc/bass
-    - fnm
+    - fisherman/fnm
 
