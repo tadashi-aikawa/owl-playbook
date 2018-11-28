@@ -1,0 +1,3 @@
+- name: '[npm] Install LTS'
+  shell: fish -c "fnm lts"
+

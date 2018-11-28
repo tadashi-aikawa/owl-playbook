@@ -16,11 +16,11 @@ help: ## Print this help
 
 run: ## Run vm-gui
 	@echo Start $@
-	@ansible-playbook -K --extra-vars "env=vm-gui" -i local site.yml
+	@ansible-playbook -K --extra-vars "env=home" -i local ubuntu-gui.yml
 	@echo End $@
 
 run-tmp: ## Run vm-gui with only tmp tags
 	@echo Start $@
-	@ansible-playbook -K --extra-vars "env=vm-gui" --tags tmp -i local site.yml
+	@ansible-playbook -K --extra-vars "env=vm-gui" --tags tmp -i local ubuntu-gui.yml
 	@echo End $@
 

@@ -1,5 +1,0 @@
-- import_tasks: fish.yml
-- import_tasks: fzf.yml
-- import_tasks: fisherman.yml
-- import_tasks: tmux.yml
-- import_tasks: shellcheck.yml

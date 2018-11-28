@@ -1,0 +1,28 @@
+- name: "[tmux] Check"
+  shell: 'tmux -V'
+  ignore_errors: True
+  register: result
+
+- name: "[tmux] Clone"
+  when: result.rc
+  git:
+    repo: https://github.com/tmux/tmux.git
+    dest: /tmp/tmux
+
+- name: "[tmux] Install"
+  when: result.rc
+  shell: '{{ item }}'
+  become: yes
+  args:
+    chdir: /tmp/tmux
+  with_items:
+    - ./autogen.sh
+    - ./configure
+    - make
+    - make install
+
+- name: "[tmux] Install tmux-theme"
+  shell: git clone --depth 1 https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+  args:
+    creates: ~/.tmux-themepack
+

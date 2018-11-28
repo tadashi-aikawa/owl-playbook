@@ -1,0 +1,43 @@
+- hosts: local
+  connection: local
+  tasks:
+    - group_by:
+        key: '{{ env }}'
+  tags: tmp
+
+- name: "1. Core setup"
+  hosts: local
+  connection: local
+  roles:
+    - role: core/env
+    - role: core/curl
+    - role: core/wget
+    - role: core/make
+    - role: core/ntp
+    - role: core/cmigemo
+    - role: core/git
+
+- name: "2. Terminal setup"
+  hosts: local
+  connection: local
+  roles:
+    - role: terminal/fish
+    - role: terminal/fisherman
+    - role: terminal/fzf
+    - role: terminal/tmux
+  tags: tmp
+
+- name: "3. Package manager setup"
+  hosts: local
+  connection: local
+  roles:
+    - role: package_manager/umake
+    - role: package_manager/npm
+    - role: package_manager/pip2
+    - role: package_manager/pip3
+
+- name: "4. Font setup"
+  hosts: local
+  connection: local
+  roles:
+    - role: font/powerline

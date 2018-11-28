@@ -1,0 +1,5 @@
+- name: '[curl] Install'
+  become: yes
+  apt:
+    name: curl
+

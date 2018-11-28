@@ -1,0 +1,12 @@
+- name: "[Pip3] Install"
+  become: true
+  apt:
+    name: python3-pip
+
+- name: "[Pip3] Upgrade"
+  become: true
+  pip:
+    name: pip
+    executable: pip3
+    extra_args: --upgrade
+

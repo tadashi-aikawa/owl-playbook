@@ -1,0 +1,10 @@
+- name: '[Fish] Add repository'
+  become: yes
+  apt_repository:
+    repo: 'ppa:fish-shell/release-2'
+
+- name: '[Fish] Install'
+  become: yes
+  apt:
+    name: fish
+

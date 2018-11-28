@@ -1,0 +1,22 @@
+- name: "[fisherman] Check"
+  shell: 'fish -c "fisher version"'
+  ignore_errors: True
+  register: result
+
+- name: "[fisherman] Install"
+  when: result.rc
+  shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+  args:
+    warn: false
+
+- name: "[fisherman] Install by fisher"
+  when: result.rc
+  shell: fish -c "fisher add {{ item }}"
+  with_items:
+    - 0rax/fish-bd
+    - edc/bass
+    - fisherman/fnm
+    - fisherman/fzf
+    - fisherman/z
+    - oh-my-fish/theme-bobthefish
+

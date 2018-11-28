@@ -1,0 +1,22 @@
+- name: "[fzf] Check"
+  shell: 'fzf --version'
+  ignore_errors: True
+  register: result
+
+- name: "[fzf] Clone"
+  when: result.rc
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: ~/.fzf
+    depth: 1
+
+- name: "[fzf] Install"
+  when: result.rc
+  shell: ~/.fzf/install --all
+
+- name: "[fzf] Key binding settings"
+  when: result.rc
+  template:
+    src: fish_user_key_bindings.fish
+    dest: ~/.config/fish/functions/fish_user_key_bindings.fish
+    mode: "u=rwx,g=rx,o=rx"

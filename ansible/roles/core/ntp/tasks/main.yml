@@ -1,0 +1,5 @@
+- name: '[ntp] Install'
+  become: yes
+  apt:
+    name: ntp
+

@@ -1,0 +1,10 @@
+- name: "[Git] Add repository"
+  become: yes
+  apt_repository:
+    repo: ppa:git-core/ppa
+
+- name: "[Git] Install"
+  become: yes
+  apt:
+    name: git
+

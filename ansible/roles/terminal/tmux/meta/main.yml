@@ -1,0 +1,5 @@
+dependencies:
+  - { role: core/git }
+  - { role: core/make }
+  - { role: core/tmux_deps }
+

@@ -1,0 +1,18 @@
+- name: "[Powerline] Check"
+  shell: 'ls ~/.local/share/fonts/*Powerline*'
+  ignore_errors: True
+  register: result
+
+- name: "[Powerline] Clone font"
+  when: result.rc
+  git:
+    repo: https://github.com/powerline/fonts.git
+    dest: /tmp/fonts
+    depth: 1
+
+- name: "[Powerline] Install"
+  when: result.rc
+  shell: ./install.sh
+  args:
+    chdir: /tmp/fonts
+
