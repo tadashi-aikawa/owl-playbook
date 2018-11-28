@@ -40,10 +40,16 @@
     - .config/Code/User/snippets
   when: env == "vm-gui"
 
+- name: "[Homedir] Create IntelliJ IDEA symlinks"
+  file:
+    src: '~/{{ intellij_dir }}'
+    dest: ~/.IntelliJIdea
+    state: link
+    force: yes
 
 - name: "[Homedir] Create directories for IntelliJ IDEA"
   file:
-    path: ~/{{ intellij_dir }}/{{ item }}
+    path: ~/.IntelliJIdea/{{ item }}
     state: directory
     mode: 0775
   with_items:
@@ -54,7 +60,7 @@
 - name: "[Homedir] Create symlinks for IntelliJ IDEA"
   file:
     src: '{{ ubuntu_mnt }}/.IntelliJIdea/{{ item }}'
-    dest: ~/{{ intellij_dir }}/{{ item }}
+    dest: ~/.IntelliJIdea/{{ item }}
     state: link
     force: yes
   with_items:
