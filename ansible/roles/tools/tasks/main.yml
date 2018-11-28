@@ -18,6 +18,9 @@
 - import_tasks: diff-so-fancy.yml
 
 # Version specified
+- import_tasks: gowl.yml
+  vars:
+    version: 0.5.2
 - import_tasks: hugo.yml
   vars:
     version: 0.31
