@@ -14,13 +14,15 @@ help: ## Print this help
 
 #------
 
-run: ## Run vm-gui
-	@echo Start $@
+run-home: ## Run vm-gui (home)
 	@ansible-playbook -K --extra-vars "env=home" -i local ubuntu-gui.yml
-	@echo End $@
 
-run-tmp: ## Run vm-gui with only tmp tags
-	@echo Start $@
-	@ansible-playbook -K --extra-vars "env=vm-gui" --tags tmp -i local ubuntu-gui.yml
-	@echo End $@
+run-office: ## Run vm-gui (office)
+	@ansible-playbook -K --extra-vars "env=office" -i local ubuntu-gui.yml
+
+run-home-tmp: ## Run vm-gui with only tmp tags (home)
+	@ansible-playbook -K --extra-vars "env=home" --tags tmp -i local ubuntu-gui.yml
+
+run-office-tmp: ## Run vm-gui with only tmp tags (office)
+	@ansible-playbook -K --extra-vars "env=office" --tags tmp -i local ubuntu-gui.yml
 
