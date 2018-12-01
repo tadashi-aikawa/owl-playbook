@@ -1,3 +1,4 @@
 dependencies:
-  - { role: core/git }
+  - role: core/git
+    when: not git
 

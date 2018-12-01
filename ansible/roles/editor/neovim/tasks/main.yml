@@ -1,0 +1,6 @@
+- name: Install neovim for denite
+  become: yes
+  pip:
+    name: neovim
+    executable: pip3
+

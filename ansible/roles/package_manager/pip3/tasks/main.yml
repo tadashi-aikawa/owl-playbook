@@ -10,3 +10,6 @@
     executable: pip3
     extra_args: --upgrade
 
+- set_fact:
+    pip3: true
+

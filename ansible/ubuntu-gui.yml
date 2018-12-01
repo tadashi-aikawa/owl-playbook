@@ -41,3 +41,13 @@
   connection: local
   roles:
     - role: font/powerline
+
+- name: "5. Editor/IDE"
+  hosts: local
+  connection: local
+  roles:
+    - role: editor/vim
+    - role: editor/neovim
+    - role: editor/vscode
+    - role: editor/idea
+

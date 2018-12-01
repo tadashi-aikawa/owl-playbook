@@ -1,3 +1,4 @@
 dependencies:
-  - { role: core/curl }
+  - role: core/curl
+    when: not curl
 

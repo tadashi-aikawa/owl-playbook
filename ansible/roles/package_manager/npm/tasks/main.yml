@@ -1,3 +1,9 @@
+- name: "[npm] Check"
+  shell: 'fish -c "npm --version"'
+  ignore_errors: True
+  register: check
+
 - name: '[npm] Install LTS'
+  when: check.rc
   shell: fish -c "fnm lts"
 

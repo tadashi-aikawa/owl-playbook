@@ -8,3 +8,5 @@
   apt:
     name: git
 
+- set_fact:
+    git: true

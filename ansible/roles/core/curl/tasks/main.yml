@@ -3,3 +3,6 @@
   apt:
     name: curl
 
+- set_fact:
+    curl: true
+

@@ -1,0 +1,19 @@
+- name: "[Vim] Install Vim8"
+  become: yes
+  apt:
+    name: vim-gtk
+
+- name: "[Vim(dein)] Check"
+  shell: 'ls ~/.cache/dein'
+  ignore_errors: True
+  register: check
+
+- name: "[Vim(dein)] Install"
+  when: check.rc
+  block:
+    - get_url:
+        url: https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+        dest: /tmp/installer.sh
+        mode: u+x,g+x,o+x
+    - shell: /tmp/installer.sh ~/.cache/dein
+

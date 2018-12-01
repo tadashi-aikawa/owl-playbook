@@ -8,3 +8,6 @@
   apt:
     name: ubuntu-make
 
+- set_fact:
+    umake: true
+

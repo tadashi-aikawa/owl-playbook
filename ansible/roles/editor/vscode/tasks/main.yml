@@ -1,10 +1,10 @@
-- name: "[VS Code] Check already installed"
-  stat:
-    path: /usr/bin/code
-  register: vscode_installed
+- name: "[VSCode] Check"
+  shell: 'code --version'
+  ignore_errors: True
+  register: result
 
-- name: "[VS Code] Install"
-  when: not vscode_installed.stat.exists
+- name: "[VSCode] Install"
+  when: result.rc
   become: yes
   block:
     - get_url:
@@ -15,4 +15,3 @@
     - command: apt install -f
       args:
         warn: false
-
