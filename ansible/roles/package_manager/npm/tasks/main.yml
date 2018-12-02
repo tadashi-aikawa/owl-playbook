@@ -1,14 +1,7 @@
-- name: "[node/npm] Check"
-  shell: 'node --version | grep v10'
-  failed_when: no
-  changed_when: no
-  register: check
+- import_role: { name: check/absent }
+  vars:
+    target: npm
+    command: 'npm --version | grep -E ^6'
 
-- name: "[node/npm] Install"
-  when: check.rc
-  shell: "curl -L https://git.io/n-install | bash -s -- -y"
-  args:
-    warn: false
-
-- set_fact:
-    npm: true
+- import_tasks: install.yml
+  when: npm_is_absent

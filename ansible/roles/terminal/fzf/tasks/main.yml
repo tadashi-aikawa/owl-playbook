@@ -1,23 +1,7 @@
-- name: "[fzf] Check"
-  shell: 'fzf --version'
-  failed_when: no
-  changed_when: no
-  register: result
+- import_role: { name: check/absent }
+  vars:
+    target: fzf
+    command: 'fzf --version'
 
-- name: "[fzf] Clone"
-  when: result.rc
-  git:
-    repo: https://github.com/junegunn/fzf.git
-    dest: ~/.fzf
-    depth: 1
-
-- name: "[fzf] Install"
-  when: result.rc
-  shell: ~/.fzf/install --all
-
-- name: "[fzf] Key binding settings"
-  when: result.rc
-  template:
-    src: fish_user_key_bindings.fish
-    dest: ~/.config/fish/functions/fish_user_key_bindings.fish
-    mode: "u=rwx,g=rx,o=rx"
+- import_tasks: install.yml
+  when: fzf_is_absent

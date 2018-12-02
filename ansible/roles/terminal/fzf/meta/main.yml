@@ -1,4 +1,4 @@
 dependencies:
   - role: core/git
-    when: not git
+    when: git is undefined
 

@@ -1,7 +1,7 @@
 dependencies:
   - role: core/make
-    when: not make
-  - role: core/tmux_deps
+    when: make is undefined
   - role: core/git
-    when: not git
+    when: git is undefined
+  - role: dependency/tmux_deps
 

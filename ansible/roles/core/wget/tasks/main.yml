@@ -1,4 +1,4 @@
-- name: '[wget] Install'
+- name: 'Install'
   become: yes
   apt:
     name: wget

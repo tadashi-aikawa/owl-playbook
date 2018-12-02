@@ -1,4 +1,4 @@
-- name: Install neovim for denite
+- name: Install
   become: yes
   pip:
     name: neovim

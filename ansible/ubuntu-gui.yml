@@ -22,9 +22,10 @@
   connection: local
   roles:
     - role: terminal/fish
-    - role: terminal/fisherman
+    - role: terminal/fish/fisherman
     - role: terminal/fzf
     - role: terminal/tmux
+    - role: terminal/tmux/theme
   tags: tmp
 
 - name: "3. Package manager setup"
@@ -47,6 +48,7 @@
   connection: local
   roles:
     - role: editor/vim
+    - role: editor/vim/dein
     - role: editor/neovim
     - role: editor/vscode
     - role: editor/idea
@@ -56,4 +58,5 @@
   connection: local
   roles:
     - role: language/bash
+  tags: tmp
 

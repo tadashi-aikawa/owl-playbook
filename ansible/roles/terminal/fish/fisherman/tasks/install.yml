@@ -1,17 +1,9 @@
-- name: "[fisherman] Check"
-  shell: 'fish -c "fisher version"'
-  failed_when: no
-  changed_when: no
-  register: result
-
-- name: "[fisherman] Install"
-  when: result.rc
+- name: "Install"
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
   args:
     warn: false
 
-- name: "[fisherman] Install by fisher"
-  when: result.rc
+- name: "Install by fisher"
   shell: fish -c "fisher add {{ item }}"
   with_items:
     - 0rax/fish-bd

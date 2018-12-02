@@ -1,9 +1,9 @@
-- name: "[Git] Add repository"
+- name: "Add repository"
   become: yes
   apt_repository:
     repo: ppa:git-core/ppa
 
-- name: "[Git] Install"
+- name: "Install"
   become: yes
   apt:
     name: git

@@ -1,4 +1,4 @@
-- name: '[cmigemo] Install'
+- name: 'Install'
   become: yes
   apt:
     name: cmigemo

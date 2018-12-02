@@ -1,7 +1,0 @@
-- name: '[tmux depenedencies] Install'
-  become: yes
-  apt:
-    name:
-      - automake
-      - libevent-dev
-

@@ -1,19 +1,7 @@
-- name: "[Powerline] Check"
-  shell: 'ls ~/.local/share/fonts/*Powerline*'
-  failed_when: no
-  changed_when: no
-  register: result
+- import_role: { name: check/absent }
+  vars:
+    target: powerline
+    command: 'ls ~/.local/share/fonts/*Powerline*'
 
-- name: "[Powerline] Clone font"
-  when: result.rc
-  git:
-    repo: https://github.com/powerline/fonts.git
-    dest: /tmp/fonts
-    depth: 1
-
-- name: "[Powerline] Install"
-  when: result.rc
-  shell: ./install.sh
-  args:
-    chdir: /tmp/fonts
-
+- import_tasks: install.yml
+  when: powerline_is_absent

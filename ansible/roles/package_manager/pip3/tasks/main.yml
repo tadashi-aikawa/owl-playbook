@@ -1,9 +1,9 @@
-- name: "[Pip3] Install"
+- name: "Install"
   become: true
   apt:
     name: python3-pip
 
-- name: "[Pip3] Upgrade"
+- name: "Upgrade"
   become: true
   pip:
     name: pip

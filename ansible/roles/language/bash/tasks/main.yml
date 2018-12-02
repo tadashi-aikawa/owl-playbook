@@ -1,12 +1,7 @@
-- name: "[bash-language-server] Check"
-  shell: 'bash-language-server --version'
-  failed_when: no
-  changed_when: no
-  register: check
+- import_role: { name: check/absent }
+  vars:
+    target: bash_language_server
+    command: 'bash-language-server --version'
 
-- name: "[Install bash-language-server] Install"
-  when: check.rc
-  npm:
-    name: bash-language-server
-    global: yes
-
+- import_tasks: install.yml
+  when: bash_language_server_is_absent

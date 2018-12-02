@@ -1,4 +1,4 @@
-- name: '[curl] Install'
+- name: 'Install'
   become: yes
   apt:
     name: curl

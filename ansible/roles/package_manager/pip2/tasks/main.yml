@@ -1,4 +1,4 @@
-- name: "[Pip2] Install"
+- name: Install
   become: true
   shell: curl https://bootstrap.pypa.io/get-pip.py | python
   args:

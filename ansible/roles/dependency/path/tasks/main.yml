@@ -1,3 +1,0 @@
-- name: "[Path] Check"
-  shell: 'echo $PATH | grep {{ target }}'
-
