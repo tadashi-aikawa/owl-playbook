@@ -1,0 +1,8 @@
+- name: Install
+  become: true
+  shell: curl https://bootstrap.pypa.io/get-pip.py | python
+  args:
+    creates: /usr/local/bin/pip2
+
+- set_fact:
+    pip2: true

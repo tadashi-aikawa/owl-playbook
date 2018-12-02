@@ -1,0 +1,13 @@
+- name: 'Add repository'
+  become: yes
+  apt_repository:
+    repo: ppa:ubuntu-desktop/ubuntu-make
+
+- name: 'Install'
+  become: yes
+  apt:
+    name: ubuntu-make
+
+- set_fact:
+    umake: true
+

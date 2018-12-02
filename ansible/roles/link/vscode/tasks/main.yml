@@ -1,0 +1,10 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/{{ item }}'
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - .config/Code/User/keybindings.json
+    - .config/Code/User/settings.json
+    - .config/Code/User/snippets

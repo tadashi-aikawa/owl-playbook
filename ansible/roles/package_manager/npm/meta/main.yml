@@ -1,0 +1,9 @@
+dependencies:
+  - role: core/git
+    when: git is undefined
+  - role: core/curl
+    when: curl is undefined
+  - role: core/make
+    when: make is undefined
+  - role: check/path
+    target: ~/n/bin

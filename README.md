@@ -43,6 +43,6 @@ $ vagrant up --provision
 ### Usage
 
 ```
-$ make run
+$ make-run-???
 ```
 

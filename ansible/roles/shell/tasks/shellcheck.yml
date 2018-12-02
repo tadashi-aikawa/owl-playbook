@@ -1,6 +1,0 @@
-- name: Install ShellCheck
-  become: yes
-  apt:
-    name: shellcheck
-    update_cache: yes
-    state: latest

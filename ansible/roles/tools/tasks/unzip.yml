@@ -1,6 +1,0 @@
-- name: "[unzip] Install"
-  become: yes
-  apt:
-    name: unzip
-    state: latest
-

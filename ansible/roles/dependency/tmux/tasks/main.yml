@@ -1,0 +1,7 @@
+- name: Install
+  become: yes
+  apt:
+    name:
+      - automake
+      - libevent-dev
+

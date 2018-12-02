@@ -1,0 +1,3 @@
+dependencies:
+  - role: core/curl
+    when: curl is undefined

@@ -1,0 +1,7 @@
+- import_role: { name: check/absent }
+  vars:
+    target: dein
+    command: 'ls ~/.cache/dein'
+
+- import_tasks: install.yml
+  when: dein_is_absent

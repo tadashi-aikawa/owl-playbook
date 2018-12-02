@@ -1,2 +1,0 @@
-- name: Install bash language server
-  shell: fish -c "npm install -g bash-language-server"

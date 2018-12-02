@@ -1,7 +1,0 @@
-- name: Install conan
-  become: yes
-  pip:
-    name: conan
-    state: latest
-    executable: pip3
-  tags: pip3

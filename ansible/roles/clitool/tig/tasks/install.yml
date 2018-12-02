@@ -1,0 +1,22 @@
+- name: Download
+  get_url:
+    url: https://github.com/jonas/tig/releases/download/tig-{{ tig_version }}/tig-{{ tig_version }}.tar.gz
+    dest: /tmp/tig.tar.gz
+
+- name: Extract
+  unarchive:
+    src: /tmp/tig.tar.gz
+    dest: /tmp
+
+- name: Configure
+  shell: ./configure --enable-widec
+  args:
+    chdir: /tmp/tig-{{ tig_version }}
+
+- name: Install
+  make:
+    chdir: /tmp/tig-{{ tig_version }}
+    target: '{{ item }}'
+  with_items:
+    - all
+    - install

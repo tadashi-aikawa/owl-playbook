@@ -1,0 +1,8 @@
+- import_role: { name: check/absent }
+  vars:
+    target: tig
+    command: "tig --version | head -1 | grep -E 'version {{ tig_version }}$'"
+
+- import_tasks: install.yml
+  when: tig_is_absent
+  become: yes

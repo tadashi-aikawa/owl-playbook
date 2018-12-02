@@ -1,0 +1,7 @@
+- import_role: { name: check/absent }
+  vars:
+    target: vscode
+    command: 'code --version'
+
+- import_tasks: install.yml
+  when: vscode_is_absent

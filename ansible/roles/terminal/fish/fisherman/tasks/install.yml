@@ -1,0 +1,15 @@
+- name: "Install"
+  shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+  args:
+    warn: false
+
+- name: "Install by fisher"
+  shell: fish -c "fisher add {{ item }}"
+  with_items:
+    - 0rax/fish-bd
+    - edc/bass
+    - fisherman/fnm
+    - fisherman/fzf
+    - fisherman/z
+    - oh-my-fish/theme-bobthefish
+

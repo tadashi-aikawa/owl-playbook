@@ -1,6 +1,0 @@
-- name: "[httpie] Install"
-  become: yes
-  apt:
-    name: httpie
-    state: latest
-

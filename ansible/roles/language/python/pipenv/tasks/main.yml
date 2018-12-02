@@ -1,0 +1,6 @@
+- name: Install
+  pip:
+    name: pipenv
+    extra_args: --user
+    executable: pip3
+

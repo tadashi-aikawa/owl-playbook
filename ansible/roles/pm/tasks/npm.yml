@@ -1,3 +1,0 @@
-- name: Install node by fnm
-  shell: fish -c "fnm lts"
-

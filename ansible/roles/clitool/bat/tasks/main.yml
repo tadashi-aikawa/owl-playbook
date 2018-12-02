@@ -1,0 +1,8 @@
+- import_role: { name: check/absent }
+  vars:
+    target: bat
+    command: 'bat -V | grep "bat {{ bat_version }}"'
+
+- import_tasks: install.yml
+  when: bat_is_absent
+  become: yes

@@ -1,0 +1,6 @@
+- name: Install
+  get_url:
+    url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-linux64
+    dest: /usr/bin/jq
+    mode: u+x,g+x,o+x
+    force: yes

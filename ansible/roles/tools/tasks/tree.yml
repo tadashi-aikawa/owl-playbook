@@ -1,6 +1,0 @@
-- name: "[tree] Install"
-  become: yes
-  apt:
-    name: tree
-    state: latest
-

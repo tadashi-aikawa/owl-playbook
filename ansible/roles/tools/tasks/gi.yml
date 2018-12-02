@@ -1,3 +1,0 @@
-- name: "[gi] Install"
-  shell: printf "function gi\n\tcurl -L -s https://www.gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
-

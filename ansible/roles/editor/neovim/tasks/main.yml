@@ -1,0 +1,6 @@
+- name: Install
+  become: yes
+  pip:
+    name: neovim
+    executable: pip3
+

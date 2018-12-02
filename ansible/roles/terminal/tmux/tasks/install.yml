@@ -1,0 +1,15 @@
+- name: "[tmux] Clone"
+  git:
+    repo: https://github.com/tmux/tmux.git
+    dest: /tmp/tmux
+
+- name: "[tmux] Install"
+  shell: '{{ item }}'
+  become: yes
+  args:
+    chdir: /tmp/tmux
+  with_items:
+    - ./autogen.sh
+    - ./configure
+    - make
+    - make install

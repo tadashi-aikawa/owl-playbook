@@ -1,6 +1,0 @@
-- name: "[stow] Install"
-  become: yes
-  apt:
-    name: stow
-    state: latest
-

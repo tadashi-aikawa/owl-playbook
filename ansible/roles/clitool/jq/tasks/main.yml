@@ -1,0 +1,8 @@
+- import_role: { name: check/absent }
+  vars:
+    target: jq
+    command: "jq -V | grep -E 'jq-{{ jq_version }}$'"
+
+- import_tasks: install.yml
+  when: jq_is_absent
+  become: yes
