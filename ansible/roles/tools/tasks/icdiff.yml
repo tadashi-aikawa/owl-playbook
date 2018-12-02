@@ -1,6 +1,0 @@
-- name: "[icdiff] Install"
-  become: yes
-  pip:
-    name: git+https://github.com/jeffkaufman/icdiff.git
-    editable: false
-

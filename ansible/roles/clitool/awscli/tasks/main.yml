@@ -1,0 +1,7 @@
+- name: Install
+  become: yes
+  pip:
+    name: awscli
+    executable: pip3
+    editable: false
+

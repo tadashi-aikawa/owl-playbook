@@ -1,0 +1,8 @@
+- import_role: { name: check/absent }
+  vars:
+    target: docker_compose
+    command: 'docker-compose --version | grep "version {{ docker_compose_version }},"'
+
+- import_tasks: install.yml
+  when: docker_compose_is_absent
+  become: yes

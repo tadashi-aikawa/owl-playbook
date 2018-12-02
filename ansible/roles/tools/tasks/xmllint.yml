@@ -1,6 +1,0 @@
-- name: "[xmllint] Install"
-  become: yes
-  apt:
-    name: libxml2-utils
-    state: latest
-

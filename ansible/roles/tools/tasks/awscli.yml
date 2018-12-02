@@ -1,6 +1,0 @@
-- name: "[AWS CLI] install"
-  become: yes
-  pip:
-    name: awscli
-    editable: false
-

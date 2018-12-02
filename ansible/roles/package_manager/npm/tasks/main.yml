@@ -1,7 +1,7 @@
 - import_role: { name: check/absent }
   vars:
     target: npm
-    command: 'npm --version | grep -E ^6'
+    command: "npm --version | grep -E ^6"
 
 - import_tasks: install.yml
   when: npm_is_absent

@@ -1,0 +1,19 @@
+- name: "CLI tool"
+  hosts: local
+  connection: local
+  roles:
+    - role: clitool/awscli
+    - role: clitool/bat
+    - role: clitool/bats
+    - role: clitool/diff-so-fancy
+    - role: clitool/docker-compose
+    - role: clitool/exa
+    - role: clitool/fd
+    - role: clitool/glances
+    - role: clitool/gowl
+    - role: clitool/jq
+    - role: clitool/ncdu
+    - role: clitool/nkf
+    - role: clitool/ripgrep
+    - role: clitool/tig
+  tags: tmp

@@ -1,6 +1,0 @@
-- name: "[nkf] Install"
-  become: yes
-  apt:
-    name: nkf
-    state: latest
-
