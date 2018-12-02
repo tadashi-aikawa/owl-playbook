@@ -1,6 +1,7 @@
 - name: "[VSCode] Check"
   shell: 'code --version'
-  ignore_errors: True
+  failed_when: no
+  changed_when: no
   register: result
 
 - name: "[VSCode] Install"

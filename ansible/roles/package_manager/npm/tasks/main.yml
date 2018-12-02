@@ -1,9 +1,14 @@
-- name: "[npm] Check"
-  shell: 'fish -c "npm --version"'
-  ignore_errors: True
+- name: "[node/npm] Check"
+  shell: 'node --version | grep v10'
+  failed_when: no
+  changed_when: no
   register: check
 
-- name: '[npm] Install LTS'
+- name: "[node/npm] Install"
   when: check.rc
-  shell: fish -c "fnm lts"
+  shell: "curl -L https://git.io/n-install | bash -s -- -y"
+  args:
+    warn: false
 
+- set_fact:
+    npm: true

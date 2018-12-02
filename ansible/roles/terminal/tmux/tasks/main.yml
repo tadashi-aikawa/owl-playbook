@@ -1,6 +1,7 @@
 - name: "[tmux] Check"
   shell: 'tmux -V'
-  ignore_errors: True
+  failed_when: no
+  changed_when: no
   register: result
 
 - name: "[tmux] Clone"

@@ -1,6 +1,7 @@
 - name: "[Gowl] Check"
   shell: 'gowl -V | grep {{ version }}'
-  ignore_errors: True
+  failed_when: no
+  changed_when: no
   register: result
 
 - name: "[Gowl] Install"

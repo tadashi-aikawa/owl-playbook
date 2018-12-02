@@ -1,0 +1,9 @@
+dependencies:
+  - role: core/git
+    when: not git
+  - role: core/curl
+    when: not curl
+  - role: core/make
+    when: not make
+  - role: dependency/path
+    target: ~/n/bin

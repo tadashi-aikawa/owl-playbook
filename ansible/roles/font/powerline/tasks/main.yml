@@ -1,6 +1,7 @@
 - name: "[Powerline] Check"
   shell: 'ls ~/.local/share/fonts/*Powerline*'
-  ignore_errors: True
+  failed_when: no
+  changed_when: no
   register: result
 
 - name: "[Powerline] Clone font"

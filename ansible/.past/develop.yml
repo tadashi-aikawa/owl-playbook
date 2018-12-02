@@ -2,8 +2,6 @@
   hosts: local
   connection: local
   roles:
-    - role: editor
-    - role: bash
     - role: python
     - role: go
     - role: haskell

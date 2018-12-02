@@ -1,0 +1,12 @@
+- name: "[bash-language-server] Check"
+  shell: 'bash-language-server --version'
+  failed_when: no
+  changed_when: no
+  register: check
+
+- name: "[Install bash-language-server] Install"
+  when: check.rc
+  npm:
+    name: bash-language-server
+    global: yes
+

@@ -51,3 +51,9 @@
     - role: editor/vscode
     - role: editor/idea
 
+- name: "6. Language"
+  hosts: local
+  connection: local
+  roles:
+    - role: language/bash
+

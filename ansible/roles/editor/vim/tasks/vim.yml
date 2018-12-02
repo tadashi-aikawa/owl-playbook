@@ -7,10 +7,10 @@
   shell: 'ls ~/.cache/dein'
   failed_when: no
   changed_when: no
-  register: check
+  register: result
 
 - name: "[Vim(dein)] Install"
-  when: check.rc
+  when: result.rc
   block:
     - get_url:
         url: https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
