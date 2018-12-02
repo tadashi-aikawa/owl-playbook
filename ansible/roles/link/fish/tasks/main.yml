@@ -1,0 +1,16 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/{{ item }}'
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - .config/fish/config.fish
+
+- name: Create profile links
+  file:
+    src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
+    dest: ~/{{ item }}.profile
+    state: link
+  with_items:
+    - config.fish

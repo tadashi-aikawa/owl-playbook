@@ -1,13 +1,17 @@
-- hosts: local
+---
+
+- &base
+  hosts: local
   connection: local
+  vars:
+    profile: vm-gui
   tasks:
     - group_by:
         key: '{{ env }}'
-  tags: tmp
 
-- name: "1. Core setup"
-  hosts: local
-  connection: local
+
+- name: "=============== 1. Core setup ==============="
+  <<: *base
   roles:
     - role: core/env
     - role: core/curl
@@ -17,9 +21,8 @@
     - role: core/cmigemo
     - role: core/git
 
-- name: "2. Terminal setup"
-  hosts: local
-  connection: local
+- name: "=============== 2. Terminal setup ==============="
+  <<: *base
   roles:
     - role: terminal/fish
     - role: terminal/fish/fisherman
@@ -27,24 +30,21 @@
     - role: terminal/tmux
     - role: terminal/tmux/theme
 
-- name: "3. Package manager setup"
-  hosts: local
-  connection: local
+- name: "=============== 3. Package manager setup =============="
+  <<: *base
   roles:
     - role: package_manager/umake
     - role: package_manager/npm
     - role: package_manager/pip2
     - role: package_manager/pip3
 
-- name: "4. Font setup"
-  hosts: local
-  connection: local
+- name: "=============== 4. Font setup ==============="
+  <<: *base
   roles:
     - role: font/powerline
 
-- name: "5. Editor/IDE"
-  hosts: local
-  connection: local
+- name: "=============== 5. Editor/IDE ==============="
+  <<: *base
   roles:
     - role: editor/vim
     - role: editor/vim/dein
@@ -52,9 +52,8 @@
     - role: editor/vscode
     - role: editor/idea
 
-- name: "6. Language"
-  hosts: local
-  connection: local
+- name: "=============== 6. Language ==============="
+  <<: *base
   roles:
     - role: language/bash/language_server
     - role: language/bash/shellcheck
@@ -64,9 +63,8 @@
     - role: language/python/pyenv
     - role: language/python/pipenv
 
-- name: "7. CLI tool"
-  hosts: local
-  connection: local
+- name: "=============== 7. CLI tool ==============="
+  <<: *base
   roles:
     - role: clitool/awscli
     - role: clitool/bat
@@ -82,4 +80,13 @@
     - role: clitool/nkf
     - role: clitool/ripgrep
     - role: clitool/tig
+
+- name: "=============== 8. Link ==============="
+  <<: *base
+  roles:
+    - role: link/common
+    - role: link/fish
+    # - role: link/vscode
+    # - role: link/idea
+
 

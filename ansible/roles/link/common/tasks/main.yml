@@ -1,0 +1,22 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/{{ item }}'
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+  with_items:
+    - .inputrc
+    - .gitconfig
+    - .tigrc
+    - .tmux.conf
+    - .vimrc
+    - .vim
+    - .vim-snippets
+
+- name: Create profile links
+  file:
+    src: '{{ ubuntu_mnt }}/.profile/{{ profile }}/{{ item }}'
+    dest: ~/{{ item }}.profile
+    state: link
+  with_items:
+    - .tmux.conf
