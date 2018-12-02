@@ -1,7 +1,0 @@
-# - Path in config.fish
-# - $PATH => $HOME/.cargo/bin
-- name: "[rustup] Install"
-  shell: "curl https://sh.rustup.rs -sSf | sh -s -- -y"
-  args:
-    creates: ~/.cargo/bin/rustup
-

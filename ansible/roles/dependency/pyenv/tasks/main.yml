@@ -1,4 +1,4 @@
-- name: '[pyenv-dependencies] Install'
+- name: Install
   become: yes
   apt:
     name:

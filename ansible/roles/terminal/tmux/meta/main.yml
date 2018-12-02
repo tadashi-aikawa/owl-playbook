@@ -3,5 +3,5 @@ dependencies:
     when: make is undefined
   - role: core/git
     when: git is undefined
-  - role: dependency/tmux_deps
+  - role: dependency/tmux
 

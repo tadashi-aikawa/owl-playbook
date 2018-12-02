@@ -1,0 +1,12 @@
+# Need to set
+#   - $GOPATH in config.fish
+#   - $PATH => /usr/local/go/bin
+- name: Install
+  block:
+    - get_url:
+        url: https://storage.googleapis.com/golang/go{{ version }}.linux-amd64.tar.gz
+        dest: /tmp/go.tar-{{ version }}.gz
+    - unarchive:
+        src: /tmp/go.tar-{{ version }}.gz
+        dest: /usr/local
+      become: yes

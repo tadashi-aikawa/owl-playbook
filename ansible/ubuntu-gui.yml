@@ -26,7 +26,6 @@
     - role: terminal/fzf
     - role: terminal/tmux
     - role: terminal/tmux/theme
-  tags: tmp
 
 - name: "3. Package manager setup"
   hosts: local
@@ -57,6 +56,11 @@
   hosts: local
   connection: local
   roles:
-    - role: language/bash
-  tags: tmp
+    - role: language/bash/language_server
+    - role: language/bash/shellcheck
+    - role: language/go
+    - role: language/haskell
+    - role: language/python/python2
+    - role: language/python/pyenv
+    - role: language/python/pipenv
 

@@ -1,4 +1,0 @@
-- name: "[rust] Install"
-  shell: ~/.cargo/bin/rustup install stable
-  args:
-    creates: ~/.cargo/bin/rustc

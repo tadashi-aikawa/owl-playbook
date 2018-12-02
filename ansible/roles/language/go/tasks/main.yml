@@ -1,4 +1,7 @@
-- import_tasks: golang.yml
-  become: yes
+- import_role: { name: check/absent }
   vars:
-    version: 1.11
+    target: golang
+    command: 'go version | grep "go{{ version }} "'
+
+- import_tasks: install.yml
+  when: golang_is_absent

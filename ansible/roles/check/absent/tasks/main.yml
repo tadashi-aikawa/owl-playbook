@@ -8,4 +8,4 @@
   register: check
 
 - set_fact:
-    "{{ target }}_is_absent": check.rc
+    "{{ target }}_is_absent": '{{ check.rc != 0 }}'
