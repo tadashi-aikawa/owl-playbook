@@ -72,6 +72,7 @@ call code --install-extension shardulm94.trailing-spaces
 call code --install-extension ms-vscode.cpptools
 call code --install-extension eg2.tslint
 call code --install-extension octref.vetur
+call code --install-extension editorconfig.editorconfig
 
 echo ------------------
 echo Homedir
