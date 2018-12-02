@@ -86,7 +86,7 @@
   roles:
     - role: link/common
     - role: link/fish
-    # - role: link/vscode
-    # - role: link/idea
+    - role: link/vscode
+    - role: link/idea
 
 

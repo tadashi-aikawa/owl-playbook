@@ -1,4 +1,3 @@
-- debug: {msg: '{{ profile }}'}
 - name: 'Set LC_ALL to {{ lcall }}'
   lineinfile:
     path: ~/.bashrc
