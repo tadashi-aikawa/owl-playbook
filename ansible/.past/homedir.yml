@@ -1,6 +1,0 @@
-- name: Home directory configuration
-  hosts: local
-  connection: local
-  roles:
-    - homedir
-
