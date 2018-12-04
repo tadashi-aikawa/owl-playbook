@@ -1,0 +1,15 @@
+- name: Download
+  get_url:
+    url: https://github.com/facebook/zstd/releases/download/v{{ zstd_version }}/zstd-{{ zstd_version }}.tar.gz
+    dest: /tmp/zstd.tar.gz
+
+- name: Extract
+  unarchive:
+    src: /tmp/zstd.tar.gz
+    dest: /tmp
+
+- name: Install
+  make:
+    chdir: /tmp/zstd-{{ zstd_version }}
+    target: install
+

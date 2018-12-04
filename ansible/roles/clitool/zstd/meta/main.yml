@@ -1,5 +1,4 @@
 dependencies:
   - role: core/make
     when: make is undefined
-  - role: dependency/ncursesw
-    when: ncursesw is undefined
+

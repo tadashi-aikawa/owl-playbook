@@ -80,6 +80,7 @@
     - role: clitool/nkf
     - role: clitool/ripgrep
     - role: clitool/tig
+    - role: clitool/zstd
 
 - name: "=============== 8. Link ==============="
   <<: *base
