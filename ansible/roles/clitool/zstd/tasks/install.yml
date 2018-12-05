@@ -8,8 +8,13 @@
     src: /tmp/zstd.tar.gz
     dest: /tmp
 
-- name: Install
+- name: Install zstd
   make:
     chdir: /tmp/zstd-{{ zstd_version }}
+    target: install
+
+- name: Install pzstd
+  make:
+    chdir: /tmp/zstd-{{ zstd_version }}/contrib/pzstd/
     target: install
 
