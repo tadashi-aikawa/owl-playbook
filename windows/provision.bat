@@ -39,7 +39,7 @@ call :link_file %USERPROFILE%\.ideavimrc %UBUNTU_MNT%\.ideavimrc
 
 
 echo ------------------
-echo VS Code 
+echo VS Code
 echo ------------------
 
 set VSCODE_ORIGIN_USER_DIR=%UBUNTU_MNT%\.config\Code\User
@@ -101,6 +101,7 @@ echo Install Tablacus Explorer manually!
 echo Install gowl (go get -u github.com/tadashi-aikawa/gowl)
 echo Install owl-cmder-tool
 echo Install spinal-reflex-bindings-template
+echo Install Keypirinha (https://github.com/Keypirinha/Keypirinha/releases/download)
 
 exit /b
 
