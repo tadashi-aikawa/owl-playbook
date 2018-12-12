@@ -73,6 +73,7 @@
     - role: clitool/docker-compose
     - role: clitool/exa
     - role: clitool/fd
+    - role: clitool/fx
     - role: clitool/glances
     - role: clitool/gowl
     - role: clitool/jq
