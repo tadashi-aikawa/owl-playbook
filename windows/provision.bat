@@ -55,11 +55,9 @@ call code --install-extension MS-CEINTL.vscode-language-pack-ja
 call code --install-extension PeterJausovec.vscode-docker
 call code --install-extension bungcip.better-toml
 call code --install-extension donjayamanne.githistory
-call code --install-extension eamodio.gitlens
 call code --install-extension formulahendry.code-runner
 call code --install-extension mechatroner.rainbow-csv
 call code --install-extension ms-python.python
-call code --install-extension patrys.vscode-code-outline
 call code --install-extension quicktype.quicktype
 call code --install-extension ryu1kn.edit-with-shell
 call code --install-extension sgryjp.japanese-word-handler
