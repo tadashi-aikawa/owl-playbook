@@ -1,7 +1,7 @@
 @echo off
 
-set UBUNTU_MNT=%USERPROFILE%\Dropbox\ubuntu-mnt
-set WINDOWS_MNT=%USERPROFILE%\Dropbox\windows-mnt
+set UBUNTU_MNT="%USERPROFILE%\Box Sync\ubuntu-mnt"
+set WINDOWS_MNT="%USERPROFILE%\Box Sync\windows-mnt"
 
 echo ------------------
 echo Install
