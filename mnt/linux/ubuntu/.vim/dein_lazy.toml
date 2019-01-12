@@ -49,6 +49,13 @@ on_ft = ['vue']
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
+#-----------------
+# Jedi
+#-----------------
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
 
 #-----------------
 # ALE
@@ -56,7 +63,7 @@ on_ft = ['toml']
 
 [[plugins]]
 repo = 'w0rp/ale'
-on_ft = ['sh', 'python', 'rust', 'nim', 'go']
+on_ft = ['sh', 'python']
 hook_add = '''
 " エラー行に表示するマーク
 let g:ale_sign_error = '☠'
@@ -103,33 +110,16 @@ let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
-on_ft = ['sh', 'python', 'rust']
+on_ft = ['sh']
 hook_add = '''
 " ---------------------------------------------------
 " lsp (Use pipenv shell)
 " ---------------------------------------------------
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Pipfile'))},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-
 if executable('bash-language-server')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'bash-language-server',
         \ 'cmd': {server_info->['bash-language-server', 'start']},
         \ 'whitelist': ['sh'],
-        \ })
-endif
-
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-        \ 'whitelist': ['rust'],
         \ })
 endif
 '''

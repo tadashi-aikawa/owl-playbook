@@ -245,6 +245,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 "---- Ctrl -------
 
+let g:jedi#goto_command = "<Space>d"
+let g:jedi#goto_assignments_command = "<Space>g"
+let g:jedi#documentation_command = "K"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#usages_command = "<Space>H"
+" let g:jedi#goto_definitions_command = ""
+" let g:jedi#rename_command = "<leader>r"
+
 " <C-Space>でオートコンプリート
 imap <Nul> <C-x><C-o>
 " [multi-cursor] 作成
@@ -298,7 +306,7 @@ noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 " [deopelete] 有効
 nnoremap <Space>a :call deoplete#enable()<CR>
 " [lsp] 定義
-nmap <silent> <Space>d :LspDefinition<CR>
+" nmap <silent> <Space>d :LspDefinition<CR>
 " [ctrlp] MRU files
 nnoremap <silent> <Space>e :CtrlPMRUFiles<CR>
 " ウィンドウ左移動
