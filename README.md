@@ -49,8 +49,8 @@ gowlを使ってowl-playbookを再取得しましょう。
 2. `provision.bat`を実行
 
 
-Ubutu simple setup
-------------------
+Ubuntu simple setup
+-------------------
 
 ### 前提
 
