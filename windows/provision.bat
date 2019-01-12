@@ -50,28 +50,8 @@ call :link_vscode_file settings.json
 call :link_vscode_dir snippets
 
 rem See https://blog.mamansoft.net/2018/09/17/vscode-satisfies-vimmer/
-call code --install-extension 2gua.rainbow-brackets
-call code --install-extension MS-CEINTL.vscode-language-pack-ja
-call code --install-extension PeterJausovec.vscode-docker
-call code --install-extension bungcip.better-toml
-call code --install-extension donjayamanne.githistory
-call code --install-extension formulahendry.code-runner
-call code --install-extension mechatroner.rainbow-csv
-call code --install-extension ms-python.python
-call code --install-extension quicktype.quicktype
-call code --install-extension ryu1kn.edit-with-shell
-call code --install-extension sgryjp.japanese-word-handler
-call code --install-extension shuworks.vscode-table-formatter
-call code --install-extension slevesque.vscode-autohotkey
-call code --install-extension vscodevim.vim
-call code --install-extension taichi.vscode-textlint
-call code --install-extension robertohuertasm.vscode-icons
-call code --install-extension shardulm94.trailing-spaces
-call code --install-extension ms-vscode.cpptools
-call code --install-extension eg2.tslint
-call code --install-extension octref.vetur
-call code --install-extension editorconfig.editorconfig
-call code --install-extension patricklee.vsnotes
+call :each vscode_extension_install vscode-extensions.txt
+
 
 echo ------------------
 echo Homedir
@@ -89,17 +69,7 @@ echo ------------------
 set CMDER_ORIGIN_CONFIG_DIR=%WINDOWS_MNT%\cmder\config
 set CMDER_CONFIG_DIR=C:\tools\Cmder\config
 
-call :link_cmder_file cdz.lua
-call :link_cmder_file fukurou.jpg
-call :link_cmder_file powerline_core.lua
-call :link_cmder_file powerline_git.lua
-call :link_cmder_file powerline_hg.lua
-call :link_cmder_file powerline_npm.lua
-call :link_cmder_file powerline_prompt.lua
-call :link_cmder_file settings
-call :link_cmder_file user_aliases.cmd
-call :link_cmder_file user_profile.cmd
-call :link_cmder_file user-ConEmu.xml
+call :each link_cmder_file cmder-files.txt
 
 echo ------------------------------------
 echo git config
@@ -122,6 +92,11 @@ echo Install Keypirinha (https://github.com/Keypirinha/Keypirinha/releases/downl
 exit /b
 
 rem ---------------------------------------------------------
+
+:each
+@FOR /F "usebackq" %%t IN (`cat %2`) DO call :%1 %%t
+exit /b
+
 
 :link_windows_home
 call :link_file %USERPROFILE%\%1 %WINDOWS_MNT%\%1
@@ -146,6 +121,11 @@ exit /b
 :link_cmder_file
 call :link_file %CMDER_CONFIG_DIR%\%1 %CMDER_ORIGIN_CONFIG_DIR%\%1
 exit /b
+
+:vscode_extension_install
+call code --install-extension %1
+exit /b
+
 
 rem ----- common ------
 
