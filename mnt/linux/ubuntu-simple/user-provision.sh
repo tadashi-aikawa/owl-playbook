@@ -16,9 +16,6 @@ else
   echo "[SKIP] pureline-inspiredは既にインストール済みです"
 fi
 
-# ssh
-chmod 600 .ssh/id_rsa*
-
 # dein
 if [ ! -e ~/.cache/dein ]; then
   curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
@@ -26,6 +23,9 @@ if [ ! -e ~/.cache/dein ]; then
 else
   echo "[SKIP] deinは既にインストール済みです"
 fi
+
+# ssh
+chmod 600 .ssh/id_rsa*
 
 # sync
 ln -snf /mnt/ubuntu/.vim        .vim
