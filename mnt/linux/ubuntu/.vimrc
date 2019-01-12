@@ -35,6 +35,7 @@ set ttyfast
 
 " Color scheme
 syntax on
+" xterm-Color256用. screen系の場合は外す必要あり
 " set termguicolors
 set background=dark
 

@@ -31,6 +31,7 @@ chmod 600 .ssh/id_rsa*
 ln -snf /mnt/ubuntu/.vim        .vim
 ln -snf /mnt/ubuntu/.vimrc      .vimrc
 ln -snf /mnt/ubuntu/.tmux.conf  .tmux.conf
+ln -snf /mnt/ubuntu/.inputrc    .inputrc
 
 cat << 'EOF'
 Please manually....
