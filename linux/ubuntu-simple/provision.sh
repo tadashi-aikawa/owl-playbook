@@ -2,8 +2,6 @@
 
 set -eu
 
-cd /tmp
-
 function info() {
   echo "□ ${1}"
 }
@@ -141,6 +139,13 @@ function github_install_targz() {
 
 
 #==============================================================================
+
+
+# タイムゾーン
+ln -snf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+cd /tmp
+
 
 # gowl
 github_install_targz gowl \
