@@ -1,4 +1,4 @@
 *.retry
 .vagrant
 /.idea
-/vagrant/ubuntu-gui/ubuntu-bionic-18.04-cloudimg-console.log
+*.log

@@ -1,0 +1,40 @@
+pipeline {
+    agent { label 'master' }
+
+    options {
+        buildDiscarder(
+            logRotator(
+                numToKeepStr: '10'
+            )
+        )
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                cleanWs()
+                checkout scm
+            }
+        }
+
+        stage('Fetch AccessLog') {
+            environment {
+                DATE = "${params.DATE}"
+            }
+            steps {
+                sh '''\
+                echo hello
+                '''
+            }
+        }
+
+        stage('Archive TestCase') {
+            steps {
+                archiveArtifacts 'testcases/**/*'
+            }
+        }
+
+    }
+
+}

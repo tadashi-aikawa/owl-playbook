@@ -49,28 +49,26 @@ gowlを使ってowl-playbookを再取得しましょう。
 2. `provision.bat`を実行
 
 
-Ubuntu setup
-------------
+Ubutu simple setup
+------------------
 
-### Requirements
+### 前提
+
+以下がインストールされていること
 
 * [Vagrant](https://www.vagrantup.com/)
   * I use `2.1.2`
 * [Virtualbox](https://www.virtualbox.org/)
   * I use `5.2.18 r124319`
 
-You can install above tools by `provision.bat`.
+本プロジェクトでWindowsのセットアップをしていればインストールされています。
 
-### Provisioning VM (Only once)
+
+### 実行
 
 ```
-$ cd vagrant/ubuntu-gui
+$ cd linux/ubuntu-simple
 $ vagrant up --provision
+$ vagrant ssh
+$ sh user-provision.sh
 ```
-
-### Usage
-
-```
-$ make-run-???
-```
-

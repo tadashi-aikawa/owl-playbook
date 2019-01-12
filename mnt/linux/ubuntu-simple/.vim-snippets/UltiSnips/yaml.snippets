@@ -1,0 +1,18 @@
+snippet meta
+dependencies:
+  - role: $1
+    when: not $2
+$0
+endsnippet
+
+snippet check
+- name: "[$1] Check"
+  shell: '${2:ls / version / grep...}'
+  ignore_errors: True
+  register: check
+endsnippet
+
+snippet install
+- name: "[$1] Install"
+  when: check.rc
+endsnippet
