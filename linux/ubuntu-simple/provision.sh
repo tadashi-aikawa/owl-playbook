@@ -188,6 +188,8 @@ wget_install z \
   "which z" \
   "/usr/local/bin/z"
 
+# jq
+apt_install jq
 # pip
 apt_install python-pip
 # tree
