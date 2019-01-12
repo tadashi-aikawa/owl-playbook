@@ -143,6 +143,7 @@ function github_install_targz() {
 
 # タイムゾーン
 ln -snf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+echo Asia/Tokyo > /etc/timezone
 
 cd /tmp
 
