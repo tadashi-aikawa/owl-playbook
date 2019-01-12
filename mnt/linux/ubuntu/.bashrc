@@ -34,3 +34,5 @@ alias gs='git status --short'
 alias gsv='git status -v'
 
 alias ll='exa -l'
+
+alias pj='pipenv run python jumeaux/executor.py'

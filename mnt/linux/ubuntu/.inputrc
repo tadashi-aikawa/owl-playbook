@@ -13,9 +13,8 @@ $if Bash
 
   # 入力候補リストのディレクトリや実行可能ファイルに印をつける
   set visible-stats on
-  #
+
   # 履歴の特殊文字を展開する
   space: magic-space
-fi
-
+$endif
 
