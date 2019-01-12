@@ -3,6 +3,10 @@
 set WINDOWS_MNT="%~dp0..\mnt\windows"
 set COMMON_MNT="%~dp0..\mnt\common"
 
+rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
+goto :tmp
+:tmp
+
 call :******************** Install by Chocolatey
 call chocolatey\install.bat
 
@@ -57,6 +61,14 @@ set CMDER_CONFIG_DIR=C:\tools\Cmder\config
 call :each link_cmder_file cmder-files.txt
 
 
+call :******************** Keypirinha
+
+set KEYPIRINHA_ORIGIN_DIR=%WINDOWS_MNT%\keypirinha
+set KEYPIRINHA_DIR=C:\Users\syoum\AppData\Roaming\Keypirinha
+
+call :link_file %KEYPIRINHA_DIR%\User\Keypirinha.ini %KEYPIRINHA_ORIGIN_DIR%\User\Keypirinha.ini
+
+
 call :******************** git config
 
 git config --global core.preloadindex true
@@ -70,6 +82,7 @@ echo Install Tablacus Explorer manually!
 echo Clone...
 echo   * owl-cmder-tool
 echo   * spinal-reflex-bindings-template
+echo   * keypirinha-OwlTodoist
 echo Install Keypirinha (https://github.com/Keypirinha/Keypirinha/releases/download)
 
 exit /b
@@ -122,7 +135,7 @@ exit /b
 exit /b
 
 :********************
-echo ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+echo ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 echo ┃ %*
-echo ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+echo ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 exit /b
