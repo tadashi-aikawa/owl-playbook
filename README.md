@@ -9,9 +9,10 @@ WindowsとLinuxの環境構築用スクリプト群です。
 Windows setup
 -------------
 
-### 準備
+### 初回
 
 初回だけいくつか準備が必要です。
+2回目以降は必要ありません。
 
 #### 必要なツールのインストール
 
@@ -22,11 +23,26 @@ Windows setup
 
 1. 管理者モードでコマンドプロンプトを立ち上げて`owl-playbook\windows\chocolatey`ディレクトリに移動
 2. `install.bat`を実行
+3. `owl-playbook\windows\scoop`ディレクトリに移動
+4. `install.bat`を実行
+5. Intellij IDEAを立ち上げてライセンスを通す
+6. VS Codeを起動する
+
+これで以降の構成管理に必要なツールおよび環境変数が設定されます。
+5と6はsymbolic linkが参照するディレクトリ構成作成のために必要です。
+
+#### `2回目以降`を実行
+
+少し下のセクションに従って下さい。
 
 
-### 使い方
+#### 後処理
 
-初回以降に構成を変更した場合はこの手順です。
+gowlを使ってowl-playbookを再取得しましょう。
+今ある場所は初回だけで適切ではないため。
+
+
+### 2回目以降
 
 1. 管理者モードでCmderを立ち上げて`owl-playbook\windows`ディレクトリに移動
 2. `provision.bat`を実行

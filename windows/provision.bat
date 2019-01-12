@@ -4,20 +4,19 @@ set WINDOWS_MNT="%~dp0..\mnt\windows"
 set COMMON_MNT="%~dp0..\mnt\common"
 
 call :******************** Install by Chocolatey
-REM call chocolatey\install.bat
+call chocolatey\install.bat
 
 call :******************** Install by Scoop
-REM call scoop\install.bat
+call scoop\install.bat
 
 call :******************** Install by npm
-REM call npm\install.bat
+call npm\install.bat
 
 call :******************** Install Vagrant plugins
-REM call vagrant\install.bat
+call vagrant\install.bat
 
 call :******************** Install go tools
 call go get -u github.com/tadashi-aikawa/gowl
-exit /b
 
 call :******************** IntelliJ IDEA
 
@@ -31,8 +30,6 @@ call :link_idea_dir keymaps
 call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\.IntelliJIdea\.ideavimrc
 
 call :each link_idea_file idea-files.txt
-
-exit /b
 
 
 call :******************** VS Code
@@ -125,8 +122,7 @@ exit /b
 exit /b
 
 :********************
-echo ------------------------------------------------------------------------------------
-echo ^| %*
-echo ------------------------------------------------------------------------------------
+echo „¬„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
+echo „« %*
+echo „¯„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
 exit /b
-
