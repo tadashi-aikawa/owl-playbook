@@ -2,8 +2,9 @@ owl-playbook
 ============
 
 WindowsとLinuxの環境構築用スクリプト群です。
-
 自分向けに完全カスタマイズしています。
+
+各種同期設定は **mnt配下** に集約されます。
 
 
 Windows setup
