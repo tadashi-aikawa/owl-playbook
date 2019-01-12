@@ -32,3 +32,5 @@ alias glll="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format
 
 alias gs='git status --short'
 alias gsv='git status -v'
+
+alias ll='exa -l'

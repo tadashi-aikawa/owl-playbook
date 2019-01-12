@@ -63,7 +63,40 @@ function wget_install() {
   success "★ All good!!"
 }
 
-function github_install() {
+function github_install_zip() {
+  local name="$1"
+  local url="$2"
+  local from="$3"
+  local check_command="${4:-'pwd'}"
+  local skip_if_expected="${5:-'null'}"
+
+  local zip=${name}.zip
+  local dst=/usr/local/bin/${name}
+
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "┃ [GitHub] Install ${name}"
+  echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  if [[ $(eval ${check_command}) =~ ${skip_if_expected} ]]; then
+    warn "Skip install ${name} because \`${check_command}\` =~ \"${skip_if_expected}\""
+    return
+  fi
+
+  info "Download ${zip} from ${url}."
+  wget -q "${url}" -O ${zip}
+  success "Download ${zip}."
+
+  info "Extract ${zip}."
+  unzip ${zip}
+  success "Extract ${zip}."
+
+  info "Move ${name} from ${from} to ${dst}."
+  mv ${from} ${dst}
+  chmod +x ${dst}
+  success "★ All good!!"
+}
+
+function github_install_targz() {
   local name="$1"
   local url="$2"
   local from="$3"
@@ -100,28 +133,35 @@ function github_install() {
 #==============================================================================
 
 # gowl
-github_install gowl \
+github_install_targz gowl \
   "https://github.com/tadashi-aikawa/gowl/releases/download/v0.5.2/gowl-0.5.2-x86_64-linux.tar.gz" \
   "dist/*" \
   "gowl -V | head -1" \
   "0.5.2"
 
 # bat
-github_install bat \
+github_install_targz bat \
   "https://github.com/sharkdp/bat/releases/download/v0.9.0/bat-v0.9.0-x86_64-unknown-linux-musl.tar.gz" \
   "bat-*-unknown-linux-musl/bat" \
   "bat -V" \
   "bat 0.9.0"
 
+# exa
+github_install_zip exa \
+  "https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip" \
+  "exa-linux-x86_64" \
+  "exa -v" \
+  "exa 0.8.0"
+
 # fd
-github_install fd \
+github_install_targz fd \
   "https://github.com/sharkdp/fd/releases/download/v7.2.0/fd-v7.2.0-x86_64-unknown-linux-musl.tar.gz" \
   "fd-*-unknown-linux-musl/fd" \
   "fd -V" \
   "fd 7.2.0"
 
 # ripgrep
-github_install rg \
+github_install_targz rg \
   "https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz" \
   "ripgrep-*-unknown-linux-musl/rg" \
   "rg -V" \
@@ -137,6 +177,8 @@ wget_install z \
 apt_install python-pip
 # tree
 apt_install tree
+# unzip
+apt_install unzip
 
 # awscli
 pip_install awscli
