@@ -1,0 +1,4 @@
+.bashrc
+.minttyrc
+.vimrc
+.vim

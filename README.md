@@ -1,24 +1,35 @@
 owl-playbook
 ============
 
-`owl-playbook` includes as following both
+WindowsとLinuxの環境構築用スクリプト群です。
 
-* Windows setup script by using chocolatey and others
-* Ubuntu setup for VM(Ubuntu 18.04) by using vagrant and ansible
+自分向けに完全カスタマイズしています。
 
 
 Windows setup
 -------------
 
-### Requirements
+### 準備
 
-* [Chocolatey](https://chocolatey.org/)
-* [Scoop](https://github.com/lukesampson/scoop)
+初回だけいくつか準備が必要です。
 
-### Usage
+#### 必要なツールのインストール
 
-1. Move `windows`
-2. Run `provision.bat` as administrator mode.
+1. [Chocolatey](https://chocolatey.org/)
+2. [Scoop](https://github.com/lukesampson/scoop)
+
+#### 依存packageインストール
+
+1. 管理者モードでコマンドプロンプトを立ち上げて`owl-playbook\windows\chocolatey`ディレクトリに移動
+2. `install.bat`を実行
+
+
+### 使い方
+
+初回以降に構成を変更した場合はこの手順です。
+
+1. 管理者モードでCmderを立ち上げて`owl-playbook\windows`ディレクトリに移動
+2. `provision.bat`を実行
 
 
 Ubuntu setup

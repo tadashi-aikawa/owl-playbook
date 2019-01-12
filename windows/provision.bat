@@ -3,23 +3,23 @@
 set WINDOWS_MNT="%~dp0..\mnt\windows"
 set COMMON_MNT="%~dp0..\mnt\common"
 
-echo ------------------
-echo Install
-echo ------------------
+call :******************** Install by Chocolatey
+REM call chocolatey\install.bat
 
-cinst /y .\packages.config
-call scoop-install.bat
-call npm-install.bat
+call :******************** Install by Scoop
+REM call scoop\install.bat
 
-echo ------------------
-echo Vagrant
-echo ------------------
+call :******************** Install by npm
+REM call npm\install.bat
 
-vagrant plugin install vagrant-vbguest vagrant-disksize
+call :******************** Install Vagrant plugins
+REM call vagrant\install.bat
 
-echo ------------------
-echo IntelliJ IDEA
-echo ------------------
+call :******************** Install go tools
+call go get -u github.com/tadashi-aikawa/gowl
+exit /b
+
+call :******************** IntelliJ IDEA
 
 set IDEA_DIR=.IntelliJIdea2018.1
 
@@ -28,19 +28,14 @@ set IDEA_CONFIG_DIR=%USERPROFILE%\%IDEA_DIR%\config
 
 call :link_idea_dir colors
 call :link_idea_dir keymaps
-call :link_idea_file options\editor.xml
-call :link_idea_file options\colors.scheme.xml
-call :link_idea_file options\ide.general.xml
-call :link_idea_file options\keymap.xml
-call :link_idea_file options\markdown.xml
-call :link_idea_file options\vcs.xml
-call :link_idea_file options\vim_settings.xml
 call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\.IntelliJIdea\.ideavimrc
 
+call :each link_idea_file idea-files.txt
 
-echo ------------------
-echo VS Code
-echo ------------------
+exit /b
+
+
+call :******************** VS Code
 
 set VSCODE_ORIGIN_USER_DIR=%COMMON_MNT%\VSCode\User
 set VSCODE_USER_DIR=%USERPROFILE%\AppData\Roaming\Code\User
@@ -53,50 +48,36 @@ rem See https://blog.mamansoft.net/2018/09/17/vscode-satisfies-vimmer/
 call :each vscode_extension_install vscode-extensions.txt
 
 
-echo ------------------
-echo Homedir
-echo ------------------
+call :******************** Homedir
+call :each link_windows_home windows-home-dots.txt
 
-call :link_windows_home .bashrc
-call :link_windows_home .minttyrc
-call :link_windows_home .vimrc
-call :link_windows_home .vim
 
-echo ------------------
-echo Cmder
-echo ------------------
+call :******************** Cmder
 
 set CMDER_ORIGIN_CONFIG_DIR=%WINDOWS_MNT%\cmder\config
 set CMDER_CONFIG_DIR=C:\tools\Cmder\config
 
 call :each link_cmder_file cmder-files.txt
 
-echo ------------------------------------
-echo git config
-echo ------------------------------------
+
+call :******************** git config
 
 git config --global core.preloadindex true
 git config --global core.fscache true
 git config --global core.autoCRLF false
 
-echo ------------------------------------
-echo To be continued.. (Not administrator
-echo ------------------------------------
+
+call :******************** To be continued.. (Not administrator
 
 echo Install Tablacus Explorer manually!
-echo Install gowl (go get -u github.com/tadashi-aikawa/gowl)
-echo Install owl-cmder-tool
-echo Install spinal-reflex-bindings-template
+echo Clone...
+echo   * owl-cmder-tool
+echo   * spinal-reflex-bindings-template
 echo Install Keypirinha (https://github.com/Keypirinha/Keypirinha/releases/download)
 
 exit /b
 
 rem ---------------------------------------------------------
-
-:each
-@FOR /F "usebackq" %%t IN (`cat %2`) DO call :%1 %%t
-exit /b
-
 
 :link_windows_home
 call :link_file %USERPROFILE%\%1 %WINDOWS_MNT%\%1
@@ -138,3 +119,14 @@ exit /b
 rd /s /q %1
 Mklink /D %1 %2
 exit /b
+
+:each
+@FOR /F "usebackq" %%t IN (`cat %2`) DO call :%1 %%t
+exit /b
+
+:********************
+echo ------------------------------------------------------------------------------------
+echo ^| %*
+echo ------------------------------------------------------------------------------------
+exit /b
+

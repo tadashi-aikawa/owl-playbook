@@ -1,0 +1,7 @@
+options\editor.xml
+options\colors.scheme.xml
+options\ide.general.xml
+options\keymap.xml
+options\markdown.xml
+options\vcs.xml
+options\vim_settings.xml
