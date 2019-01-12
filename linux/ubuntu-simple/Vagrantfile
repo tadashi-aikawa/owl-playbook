@@ -18,14 +18,13 @@ Vagrant.configure("2") do |config|
   end
 
   # sync
-  config.vm.synced_folder "../../mnt/linux/ubuntu-simple", "/mnt"
+  config.vm.synced_folder "../../mnt/linux", "/mnt"
 
   # Install docker
   config.vm.provision "docker"
 
   # Provision others
   config.vm.provision :shell, :path => "provision.sh"
-  config.vm.provision "file", source: "./user-provision.sh", destination: "user-provision.sh"
 
   # Secret
   config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"

@@ -70,5 +70,5 @@ Ubutu simple setup
 $ cd linux/ubuntu-simple
 $ vagrant up --provision
 $ vagrant ssh
-$ sh /mnt/user-provision.sh
+$ sh /mnt/ubuntu-simple/user-provision.sh
 ```

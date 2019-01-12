@@ -28,9 +28,9 @@ else
 fi
 
 # sync
-ln -snf /mnt/.vim        .vim
-ln -snf /mnt/.vimrc      .vimrc
-ln -snf /mnt/.tmux.conf  .tmux.conf
+ln -snf /mnt/ubuntu/.vim        .vim
+ln -snf /mnt/ubuntu/.vimrc      .vimrc
+ln -snf /mnt/ubuntu/.tmux.conf  .tmux.conf
 
 cat << 'EOF'
 Please manually....
