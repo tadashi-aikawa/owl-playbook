@@ -151,7 +151,7 @@ github_install_zip exa \
   "https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip" \
   "exa-linux-x86_64" \
   "exa -v" \
-  "exa 0.8.0"
+  "exa v0.8.0"
 
 # fd
 github_install_targz fd \
@@ -179,6 +179,8 @@ apt_install python-pip
 apt_install tree
 # unzip
 apt_install unzip
+# pip3
+apt_install python3-pip
 
 # awscli
 pip_install awscli
