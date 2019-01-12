@@ -26,6 +26,16 @@ function pip_install() {
   success "★ All good!!"
 }
 
+function pip3_install() {
+  local name="$1"
+
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "┃ Install ${name}"
+  echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  pip3 install ${name}
+  success "★ All good!!"
+}
+
 function apt_install() {
   local name="$1"
 
@@ -184,6 +194,9 @@ apt_install python3-pip
 
 # awscli
 pip_install awscli
+
+# pipenv
+pip3_install pipenv
 
 # node/npm (必要なら)
 # apt-get install -y nodejs npm
