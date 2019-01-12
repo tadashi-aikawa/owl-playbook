@@ -1,0 +1,12 @@
+<templateSet group="Python">
+  <template name="main-tmpl" value="#!/usr/bin/env python&#10;# -*- coding: utf-8 -*-&#10;&#10;&#10;def main():&#10;    print(&quot;Hello&quot;)&#10;&#10;&#10;if __name__ == '__main__':&#10;    main()&#10;" description="Python template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="test-tmpl" value="#!/usr/bin/env python&#10;# -*- coding:utf-8 -*-&#10;&#10;import pytest&#10;&#10;&#10;class TestExec:&#10;    @pytest.mark.parametrize(&#10;        'title, param, expected', [&#10;            (&#10;                &quot;Normal&quot;,&#10;                20,&#10;                100&#10;            ),&#10;        ]&#10;    )&#10;    def test_normal(self, title, param, expected):&#10;        actual = param * 5&#10;        assert expected == actual&#10;" description="Test template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+</templateSet>

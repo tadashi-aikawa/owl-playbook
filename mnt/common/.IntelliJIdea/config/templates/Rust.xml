@@ -1,0 +1,15 @@
+<templateSet group="Rust">
+  <template name="st" value="struct $NAME$ {&#10;    $END$&#10;}" description="struct" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="RUST_MOD" value="true" />
+      <option name="RUST_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="l" value="let $NAME$ = $END$;" description="let ? =" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="RUST_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

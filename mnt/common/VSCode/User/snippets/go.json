@@ -1,0 +1,235 @@
+{
+	// ----------------------------------------------
+	// Receiver
+	// ----------------------------------------------
+	"receiver": {
+		"prefix": "rec",
+		"body": [
+			"func (r *$1) $2($3) $4 {",
+			"\t$5",
+			"}"
+		]
+	},
+	// ----------------------------------------------
+	// Print
+	// ----------------------------------------------
+	"fmt.Println": {
+		"prefix": "fpn",
+		"body": [
+			"fmt.Println($1)",
+		]
+	},
+	"fmt.Printf": {
+		"prefix": "fpf",
+		"body": [
+			"fmt.Printf(\"%v\\n\", $1)",
+		]
+	},
+	"fmt.Sprintf": {
+		"prefix": "spf",
+		"body": [
+			"fmt.Sprintf($0)",
+		]
+	},
+	// ----------------------------------------------
+	// Log
+	// ----------------------------------------------
+	"log.Fatal": {
+		"prefix": "lof",
+		"body": [
+			"log.Fatal($1)",
+		]
+	},
+	"log.Printf": {
+		"prefix": "lopf",
+		"body": [
+			"log.Printf(\"%v\", $1)",
+		]
+	},
+	// ----------------------------------------------
+	// Iterator
+	// ----------------------------------------------
+	"for iterator": {
+		"prefix": "fori",
+		"body": [
+			"for _, ${1:x} := range ${2:xs} {",
+			"    $3",
+			"}"
+		]
+	},
+	"for index": {
+		"prefix": "for",
+		"body": [
+			"for $1 := 0; $1 < ${2:count}; $1++ {",
+			"    $3",
+			"}"
+		]
+	},
+	// ----------------------------------------------
+	// Error handling
+	// ----------------------------------------------
+	"if return error": {
+		"prefix": "ife",
+		"body": [
+			"if err != nil {",
+			"\treturn $1, err",
+			"}"
+		]
+	},
+	"if return error wrapper": {
+		"prefix": "ifew",
+		"body": [
+			"if err != nil {",
+			"\treturn $1, errors.Wrap(err, \"$2\")",
+			"}"
+		]
+	},
+	"if error panic": {
+		"prefix": "ifep",
+		"body": [
+			"if err != nil {",
+			"\tpanic(err)",
+			"}"
+		]
+	},
+	"if error log": {
+		"prefix": "ifel",
+		"body": [
+			"if err != nil {",
+			"\tlog.Fatal(errors.Wrap(err, \"$1\"))",
+			"}"
+		]
+	},
+	// ----------------------------------------------
+	// File handling
+	// ----------------------------------------------
+	"load file list in directory": {
+		"prefix": "ls",
+		"body": [
+			"files, err := ioutil.ReadDir($1)",
+			"if err != nil {",
+			"\t$2",
+			"}",
+			"",
+			"for _, x := range files {",
+			"\tfmt.Printf(filepath.Join($1, x.Name()))",
+			"}"
+		]
+	},
+	// ----------------------------------------------
+	// Sort
+	// ----------------------------------------------
+	"sort by asc": {
+		"prefix": "sort",
+		"body": [
+			"sort.Slice($1, func(i, j int) bool {",
+			"\treturn $1[i] < $1[j]",
+			"})"
+		]
+	},
+	// ----------------------------------------------
+	// HTTP
+	// ----------------------------------------------
+	"httpget": {
+		"prefix": "httpget",
+		"body": [
+			"res, err := http.Get($1)",
+			"if err != nil {",
+			"\tlog.Fatal(errors.Wrap(err, \"$2との通信に失敗しました\"))",
+			"}",
+			"defer res.Body.Close()",
+			"var r ${3:Response}",
+			"json.NewDecoder(res.Body).Decode(&r)"
+		]
+	},
+	// ----------------------------------------------
+	// File snippet
+	// ----------------------------------------------
+	"argsfile (dep ensure --add github.com/docopt/docopt-go@master)": {
+		"prefix": "argsfile",
+		"body": [
+			"package main",
+			"",
+			"import (",
+			"\t\"log\"",
+			"\t\"os\"",
+			"",
+			"\t\"github.com/docopt/docopt-go\"",
+			"\t\"github.com/pkg/errors\"",
+			")",
+			"",
+			"const version = \"0.1.0\"",
+			"const usage = `$1.",
+			"",
+			"Usage:",
+			"  $1 search <word> [--max=<max>]",
+			"  $1 -h | --help",
+			"  $1 --version",
+			"",
+			"Options:",
+			"  <word>           Search word",
+			"  --max=<max>      Maximum number of responses [default: 5]",
+			"  -h --help        Show usage",
+			"  -v --version     Show version",
+			"`",
+			"",
+			"// Args created by CLI args",
+			"type Args struct {",
+			"\tCmdSearch bool `docopt:\"search\"`",
+			"",
+			"\tWord string `docopt:\"<word>\"`",
+			"\tMax  int    `docopt:\"--max\"`",
+			"}",
+			"",
+			"// CreateArgs creates Args",
+			"func CreateArgs() Args {",
+			"\tparser := &docopt.Parser{",
+			"\t\tHelpHandler:  docopt.PrintHelpOnly,",
+			"\t\tOptionsFirst: false,",
+			"\t}",
+			"",
+			"\topts, err := parser.ParseArgs(usage, os.Args[1:], version)",
+			"\tif err != nil {",
+			"\t\tlog.Fatal(errors.Wrap(err, \"Fail to parse arguments.\"))",
+			"\t}",
+			"",
+			"\tvar args Args",
+			"\topts.Bind(&args)",
+			"",
+			"\treturn args",
+			"}"
+		]
+	},
+	"configfile (dep ensure --add github.com/BurntSushi/toml)": {
+		"prefix": "configfile",
+		"body": [
+			"package main",
+			"",
+			"import (",
+			"\t\"github.com/BurntSushi/toml\"",
+			")",
+			"",
+			"// Config configuration",
+			"type Config struct {",
+			"\tparam    string",
+			"\tparams   []string",
+			"\tparampam map[string]string",
+			"}",
+			"",
+			"// CreateConfig creates configurations from filepath",
+			"func CreateConfig(filepath string) (Config, error) {",
+			"\tvar conf Config",
+			"\tif _, err := toml.DecodeFile(filepath, &conf); err != nil {",
+			"\t\treturn Config{}, err",
+			"\t}",
+			"",
+			"\treturn conf, nil",
+			"}"
+		]
+	},
+	"hoge": {
+		"prefix": "hoge",
+		"body": [
+		]
+	}
+}

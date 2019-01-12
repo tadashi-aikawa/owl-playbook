@@ -1,0 +1,59 @@
+{
+    "editor.fontSize": 16,
+    // "editor.fontFamily": "Ricty Diminished",
+    "editor.fontFamily": "Source Code Pro for Powerline",
+    "workbench.colorTheme": "Monokai",
+    "files.eol": "\n",
+    "explorer.confirmDragAndDrop": false,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "[plaintext]": {
+        "files.autoGuessEncoding": true,
+    },
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "vim.enableNeovim": true,
+    // "github.hosts": [
+    // {
+    // "host": "https://github.com",
+    // "username": "oauth",
+    // "token": "system"
+    // }
+    // ],
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.enabled": true,
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "top",
+    "editWithShell.shell.windows": "bash",
+    "editWithShell.shellArgs.windows": [
+        "-c"
+    ],
+    "editWithShell.processEntireTextIfNoneSelected": true,
+    "vim.disableExtension": false,
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#3fd6fc79",
+        "editor.selectionHighlightBackground": "#3fd6fc79",
+    },
+    "breadcrumbs.enabled": true,
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 0,
+    "vim.foldfix": true,
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
+    "terminal.integrated.rendererType": "dom",
+    "explorer.confirmDelete": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "vsicons.projectDetection.disableDetect": true,
+    "vsnotes.defaultNotePath": "~\\Box Sync\\itmemo",
+    "vsnotes.defaultNoteTitle": "{title}_{dt}.{ext}",
+    "markdown.styles": [
+        "style.css"
+    ],
+}

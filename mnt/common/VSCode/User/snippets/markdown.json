@@ -1,0 +1,121 @@
+{
+	"Header LV3": {
+		"prefix": "hhh",
+		"body": [
+			"### $1",
+		],
+		"description": "Header LV3"
+	},
+	"Header LV4": {
+		"prefix": "h4",
+		"body": [
+			"#### $1",
+		],
+		"description": "Header LV4"
+	},
+	"Header LV5": {
+		"prefix": "h5",
+		"body": [
+			"##### $1",
+		],
+		"description": "Header LV5"
+	},
+	"ブログのsummary": {
+		"prefix": "blog_summary",
+		"body": ["{{<summary \"${1:URL}\">}}"]
+	},
+	"ブログの横長画像": {
+		"prefix": "blog_himg",
+		"body": ["{{<himg \"${1:URL}\">}}"]
+	},
+	"ブログの縦長画像": {
+		"prefix": "blog_vimg",
+		"body": ["{{<vimg \"${1:URL}\">}}"]
+	},
+	"ブログの折りたたみファイル/コード": {
+		"prefix": "blog_file",
+		"body": [
+			"{{<file \"${1:Summary}\">}}",
+			"${2:Detail}",
+			"{{</file>}}",
+			"$0",
+		]
+	},
+	"ブログの付随情報": {
+		"prefix": "blog_info",
+		"body": [
+			"{{<info \"${1:Summary}\">}}",
+			"${2:Detail}",
+			"{{</info>}}",
+			"$0",
+		]
+	},
+	"ブログのよくあるトラブルの対処法": {
+		"prefix": "blog_trouble",
+		"body": [
+			"{{<warn \"${1:Summary}\">}}",
+			"${2:Detail}",
+			"{{</warn>}}",
+			"$0",
+		]
+	},
+	"ブログの疑問に対する回答": {
+		"prefix": "blog_why",
+		"body": [
+			"{{<why \"${1:Summary}\">}}",
+			"${2:Detail}",
+			"{{</why>}}",
+			"$0",
+		]
+	},
+	"ブログのErrorの対処法": {
+		"prefix": "blog_error",
+		"body": [
+			"{{<error \"${1:Summary}\">}}",
+			"${2:Detail}",
+			"{{</error>}}",
+			"$0",
+		]
+	},
+	"ブログの参考リンク": {
+		"prefix": "blog_refer",
+		"body": [
+			"{{<refer \"${1:Title}\" \"${2:URL}\">}}",
+			"$0",
+		]
+	},
+	"ブログの新規投稿テンプレ": {
+		"prefix": "blog_new",
+		"body":[
+			"---",
+			"title: ${1:Title}",
+			"slug: ${2:Slug}",
+			"date: ${3:2018-10-01T01:48:57+09:00}",
+			"thumbnailImage: $4",
+			"categories:",
+  			"  - engineering",
+			"tags:",
+  			"  - ${5:Tags}",
+			"---",
+			"",
+			"${6:Summary}",
+			"",
+			"<!--more-->",
+			"",
+			"<img src=\"$4\"/>",
+			"",
+			"<!--toc-->",
+			"",
+			"",
+			"はじめに",
+			"--------",
+			"",
+			"",
+			"総括",
+			"----",
+			"",
+			""
+		],
+		"description": "ブログの新規投稿記事"
+	}
+}

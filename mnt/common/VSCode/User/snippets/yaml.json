@@ -1,0 +1,41 @@
+{
+	// Place your snippets for yaml here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Ansible check block (ok or ng)": {
+		"prefix": "ansible_check_result",
+		"body": [
+			"- name: \"[$1] Check\"",
+			"  shell: '$2 -V'",
+			"  failed_when: no",
+			"  changed_when: no",
+			"  register: result"
+		],
+	},
+	"Ansible main.yml": {
+		"prefix": "ansible_main",
+		"body": [
+			"- import_role: { name: check/absent }",
+			"  vars:",
+			"    target: $1",
+			"    command: \"$2 -V | grep -E '{{ version }}'\"",
+			"",
+			"- import_tasks: install.yml",
+			"  when: $1_is_absent"
+		],
+	}
+	// "Ansible check block (installed or not)": {
+	// 	"prefix": "ansible_check_installed",
+	// 	"body": [
+	// 		"- name: \"[$1] Check\"",
+	// 		"  stat",
+	// 		"    path: $2",
+	// 		"  register: installed",
+	// 		"",
+	// 		"- name: \"[$1] Install\"",
+	// 		"  when: not installed.stat.exists"
+	// 	],
+	// }
+}

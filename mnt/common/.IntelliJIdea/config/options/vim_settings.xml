@@ -1,0 +1,1531 @@
+<application>
+  <component name="VimSettings">
+    <state version="4" enabled="true" />
+    <globalmarks />
+    <filemarks>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/res2res/test_json_sort.py" timestamp="1529595092545">
+        <mark key="'" line="58" column="19" />
+        <mark key="[" line="299" column="72" />
+        <mark key="]" line="300" column="7" />
+        <mark key="^" line="300" column="7" />
+        <mark key="." line="300" column="7" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/conftest.py" timestamp="1528303002819">
+        <mark key="'" line="8" column="11" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="14" column="14" />
+        <mark key="." line="7" column="10" />
+        <mark key="^" line="7" column="10" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/node_modules/vue/types/index.d.ts" timestamp="1531176940700">
+        <mark key="'" line="34" column="2" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/root/root.component.ts" timestamp="1536376909177">
+        <mark key="'" line="92" column="0" />
+        <mark key="[" line="1" column="34" />
+        <mark key="]" line="1" column="34" />
+        <mark key="^" line="123" column="51" />
+        <mark key="." line="1" column="34" />
+      </file>
+      <file name="$USER_HOME$/git/x-viewer/models/DiaPassInfo.ts" timestamp="1531468942221">
+        <mark key="'" line="4" column="6" />
+        <mark key="[" line="125" column="1" />
+        <mark key="]" line="125" column="0" />
+        <mark key="." line="125" column="0" />
+        <mark key="^" line="125" column="0" />
+      </file>
+      <file name="$USER_HOME$/.virtualenvs/jumeaux-7t6F1N3m/lib/python3.6/site-packages/owlmixin/owlcollections.py" timestamp="1532696701836">
+        <mark key="'" line="409" column="8" />
+      </file>
+      <file name="$USER_HOME$/tmp/rust-test/github/src/main.rs" timestamp="1529824951744">
+        <mark key="'" line="9" column="16" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="11" column="0" />
+        <mark key="." line="10" column="27" />
+        <mark key="^" line="10" column="27" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/res2res/tmp.py" timestamp="1529240541076">
+        <mark key="'" line="20" column="0" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="^" line="0" column="32" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/tina/chalicelib/config.yml" timestamp="1518359544103">
+        <mark key="'" line="1" column="0" />
+        <mark key="[" line="25" column="0" />
+        <mark key="]" line="25" column="2" />
+        <mark key="." line="25" column="2" />
+        <mark key="^" line="25" column="2" />
+      </file>
+      <file name="$USER_HOME$/git/dia-pass-info-viewer/nuxt.config.js" timestamp="1530884273340">
+        <mark key="'" line="62" column="41" />
+        <mark key="[" line="62" column="42" />
+        <mark key="]" line="62" column="42" />
+        <mark key="." line="62" column="42" />
+        <mark key="^" line="62" column="42" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/judgement/same.py" timestamp="1529949667740">
+        <mark key="'" line="40" column="38" />
+        <mark key="[" line="33" column="0" />
+        <mark key="]" line="47" column="71" />
+        <mark key="." line="39" column="13" />
+        <mark key="^" line="39" column="13" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/assets/monaco/vs/language/typescript/src/worker.js" timestamp="1530585585254">
+        <mark key="'" line="6" column="542661" />
+      </file>
+      <file name="$USER_HOME$/.virtualenvs/jumeaux-7t6F1N3m/lib/python3.6/site-packages/owlmixin/transformers.py" timestamp="1532843271277">
+        <mark key="'" line="31" column="33" />
+      </file>
+      <file name="$USER_HOME$/.local/share/virtualenvs/jumeaux-Iex7rkC0/lib/python3.6/site-packages/owlmixin/owlcollections.py" timestamp="1543363975988">
+        <mark key="'" line="239" column="10" />
+        <mark key="[" line="19" column="0" />
+        <mark key="]" line="19" column="41" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/owlmixin/tests/test_TList.py" timestamp="1543755001909">
+        <mark key="'" line="59" column="34" />
+        <mark key="[" line="56" column="11" />
+        <mark key="]" line="56" column="11" />
+        <mark key="." line="56" column="11" />
+        <mark key="^" line="56" column="11" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/log2reqs/test_csv.py" timestamp="1529593956148">
+        <mark key="'" line="36" column="30" />
+        <mark key="[" line="36" column="24" />
+        <mark key="]" line="36" column="31" />
+        <mark key="^" line="36" column="31" />
+        <mark key="." line="36" column="24" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/reqs2reqs/rename.py" timestamp="1544568350978">
+        <mark key="'" line="32" column="29" />
+        <mark key="[" line="28" column="40" />
+        <mark key="]" line="29" column="73" />
+        <mark key="^" line="29" column="73" />
+        <mark key="." line="29" column="73" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/diff-viewer/diff-viewer.component.ts" timestamp="1536464440351">
+        <mark key="'" line="93" column="8" />
+        <mark key="[" line="37" column="15" />
+        <mark key="]" line="37" column="29" />
+        <mark key="." line="60" column="107" />
+        <mark key="^" line="60" column="107" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/miroir-cli/src/main.rs" timestamp="1537438963082">
+        <mark key="'" line="66" column="8" />
+      </file>
+      <file name="$USER_HOME$/git/owlmixin/tests/test_TDict.py" timestamp="1532670340581">
+        <mark key="'" line="13" column="12" />
+        <mark key="[" line="75" column="34" />
+        <mark key="]" line="75" column="34" />
+        <mark key="." line="75" column="34" />
+        <mark key="^" line="75" column="34" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/dump/test_xml.py" timestamp="1527318281070">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="73" column="63" />
+        <mark key="]" line="74" column="39" />
+        <mark key="^" line="74" column="39" />
+        <mark key="." line="74" column="39" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/node_modules/axios/index.d.ts" timestamp="1530984420949">
+        <mark key="'" line="111" column="63" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/setup.py" timestamp="1532859870447">
+        <mark key="'" line="44" column="29" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/handlers/viewer.py" timestamp="1525842815669">
+        <mark key="'" line="11" column="0" />
+        <mark key="[" line="15" column="25" />
+        <mark key="]" line="15" column="37" />
+        <mark key="." line="15" column="37" />
+        <mark key="^" line="15" column="37" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/sagas/index.ts" timestamp="1534926811730">
+        <mark key="'" line="18" column="25" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/summary/summary.component.ts" timestamp="1536504395292">
+        <mark key="'" line="296" column="10" />
+        <mark key="[" line="296" column="11" />
+        <mark key="]" line="297" column="7" />
+        <mark key="." line="297" column="7" />
+        <mark key="^" line="297" column="7" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/handlers/server.py" timestamp="1525336673502">
+        <mark key="'" line="24" column="13" />
+        <mark key="[" line="24" column="0" />
+        <mark key="]" line="24" column="0" />
+        <mark key="." line="24" column="0" />
+        <mark key="^" line="24" column="45" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/containers/TopContainer.ts" timestamp="1535256436024">
+        <mark key="'" line="41" column="6" />
+        <mark key="[" line="40" column="34" />
+        <mark key="]" line="40" column="34" />
+        <mark key="." line="40" column="42" />
+        <mark key="^" line="40" column="16" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/res2dict/html.py" timestamp="1527206366408">
+        <mark key="'" line="29" column="24" />
+        <mark key="[" line="35" column="0" />
+        <mark key="]" line="35" column="74" />
+        <mark key="." line="44" column="0" />
+        <mark key="^" line="41" column="80" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/sample/addon/addon_sample/judgement/ignore_value.py" timestamp="1518653872941">
+        <mark key="'" line="29" column="14" />
+        <mark key="[" line="32" column="32" />
+        <mark key="]" line="32" column="36" />
+        <mark key="." line="32" column="36" />
+        <mark key="^" line="32" column="36" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/components/Icebox.stories.tsx" timestamp="1530454993374">
+        <mark key="'" line="20" column="3" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/node_modules/puppeteer/node6/lib/Puppeteer.js" timestamp="1532520541616">
+        <mark key="'" line="60" column="30" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/dump/test_json.py" timestamp="1527318255006">
+        <mark key="'" line="35" column="33" />
+        <mark key="[" line="76" column="35" />
+        <mark key="]" line="76" column="36" />
+        <mark key="^" line="76" column="36" />
+        <mark key="." line="76" column="36" />
+      </file>
+      <file name="$USER_HOME$/git/miroir-cli/src/handlers/get/report.rs" timestamp="1534339052229">
+        <mark key="'" line="6" column="0" />
+        <mark key="[" line="7" column="0" />
+        <mark key="]" line="11" column="79" />
+        <mark key="^" line="6" column="55" />
+        <mark key="." line="6" column="55" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" timestamp="1544568300741">
+        <mark key="'" line="45" column="37" />
+        <mark key="[" line="43" column="63" />
+        <mark key="]" line="43" column="69" />
+        <mark key="." line="43" column="69" />
+        <mark key="^" line="43" column="69" />
+      </file>
+      <file name="$USER_HOME$/git/x-viewer/pages/dpi.vue" timestamp="1534414300435">
+        <mark key="'" line="35" column="0" />
+        <mark key="[" line="15" column="0" />
+        <mark key="]" line="50" column="13" />
+        <mark key="^" line="8" column="55" />
+        <mark key="." line="8" column="68" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/actions/index.ts" timestamp="1535256444157">
+        <mark key="'" line="188" column="64" />
+        <mark key="[" line="193" column="29" />
+        <mark key="]" line="193" column="41" />
+        <mark key="^" line="185" column="59" />
+        <mark key="." line="185" column="59" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/reqs2reqs/test_filter.py" timestamp="1529594640210">
+        <mark key="'" line="67" column="74" />
+        <mark key="[" line="27" column="69" />
+        <mark key="]" line="27" column="94" />
+        <mark key="^" line="67" column="73" />
+        <mark key="." line="27" column="69" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/app.component.css" timestamp="1530023082139">
+        <mark key="'" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/analystic/analytics.component.html" timestamp="1526861814413">
+        <mark key="'" line="43" column="41" />
+        <mark key="[" line="88" column="34" />
+        <mark key="]" line="88" column="35" />
+        <mark key="." line="88" column="35" />
+        <mark key="^" line="88" column="35" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/logger.py" timestamp="1529502054034">
+        <mark key="'" line="95" column="21" />
+        <mark key="[" line="95" column="21" />
+        <mark key="]" line="95" column="20" />
+        <mark key="^" line="95" column="20" />
+        <mark key="." line="95" column="20" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/storybook-camera.js" timestamp="1532520916476">
+        <mark key="'" line="18" column="14" />
+        <mark key="[" line="33" column="29" />
+        <mark key="]" line="33" column="45" />
+        <mark key="^" line="33" column="45" />
+        <mark key="." line="33" column="45" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/res2res/type.py" timestamp="1529949868329">
+        <mark key="'" line="25" column="43" />
+        <mark key="[" line="4" column="0" />
+        <mark key="]" line="4" column="44" />
+        <mark key="." line="40" column="42" />
+        <mark key="^" line="40" column="42" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/utils.py" timestamp="1532944346330">
+        <mark key="'" line="12" column="38" />
+        <mark key="[" line="12" column="26" />
+        <mark key="]" line="12" column="25" />
+        <mark key="^" line="12" column="25" />
+        <mark key="." line="12" column="25" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/app.module.ts" timestamp="1536332819986">
+        <mark key="'" line="71" column="8" />
+        <mark key="[" line="116" column="22" />
+        <mark key="]" line="116" column="30" />
+        <mark key="." line="116" column="30" />
+        <mark key="^" line="116" column="30" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/components/NaviBar.vue" timestamp="1531177866213">
+        <mark key="'" line="13" column="0" />
+        <mark key="[" line="33" column="14" />
+        <mark key="]" line="33" column="17" />
+        <mark key="." line="33" column="17" />
+        <mark key="^" line="33" column="17" />
+      </file>
+      <file name="$USER_HOME$/git/miroir-cli/src/main.rs" timestamp="1537332022476">
+        <mark key="'" line="72" column="39" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/judgement/test_same.py" timestamp="1529536255746">
+        <mark key="'" line="35" column="5" />
+        <mark key="[" line="73" column="0" />
+        <mark key="]" line="75" column="39" />
+        <mark key="^" line="56" column="23" />
+        <mark key="." line="86" column="23" />
+      </file>
+      <file name="$USER_HOME$/git/dia-pass-info-viewer/store/index.ts" timestamp="1530885467384">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="13" column="90" />
+        <mark key="]" line="13" column="92" />
+        <mark key="^" line="13" column="92" />
+        <mark key="." line="13" column="92" />
+      </file>
+      <file name="$USER_HOME$/git/tina/chalicelib/apis/slack.py" timestamp="1518363209613">
+        <mark key="'" line="28" column="0" />
+        <mark key="[" line="6" column="30" />
+        <mark key="]" line="6" column="34" />
+        <mark key="^" line="6" column="34" />
+        <mark key="." line="6" column="34" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/summary/summary.css" timestamp="1532872056234">
+        <mark key="'" line="180" column="0" />
+        <mark key="[" line="179" column="0" />
+        <mark key="]" line="194" column="0" />
+        <mark key="^" line="191" column="18" />
+        <mark key="." line="191" column="18" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/index.tsx" timestamp="1533679145817">
+        <mark key="'" line="21" column="43" />
+        <mark key="[" line="16" column="39" />
+        <mark key="]" line="16" column="34" />
+        <mark key="." line="16" column="34" />
+        <mark key="^" line="16" column="34" />
+      </file>
+      <file name="$USER_HOME$/git/x-viewer/main.ts" timestamp="1531228772672">
+        <mark key="'" line="46" column="0" />
+        <mark key="[" line="23" column="62" />
+        <mark key="]" line="23" column="64" />
+        <mark key="." line="23" column="64" />
+        <mark key="^" line="23" column="64" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/judgement/free.py" timestamp="1529493499154">
+        <mark key="'" line="15" column="10" />
+        <mark key="[" line="4" column="0" />
+        <mark key="]" line="4" column="0" />
+        <mark key="." line="4" column="0" />
+        <mark key="^" line="3" column="38" />
+      </file>
+      <file name="$USER_HOME$/.virtualenvs/jumeaux-7t6F1N3m/lib/python3.6/re.py" timestamp="1532944733475">
+        <mark key="'" line="99" column="43" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/trials-table/trials-table.component.ts" timestamp="1536464743174">
+        <mark key="'" line="252" column="13" />
+        <mark key="[" line="252" column="13" />
+        <mark key="]" line="252" column="36" />
+        <mark key="." line="260" column="0" />
+        <mark key="^" line="261" column="13" />
+      </file>
+      <file name="$USER_HOME$/git/tina/app.py" timestamp="1527378063224">
+        <mark key="'" line="14" column="10" />
+        <mark key="[" line="23" column="55" />
+        <mark key="]" line="24" column="13" />
+        <mark key="." line="24" column="13" />
+        <mark key="^" line="24" column="13" />
+      </file>
+      <file name="$USER_HOME$/git/owlmixin/owlmixin/owlcollections.py" timestamp="1532855070879">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="409" column="0" />
+        <mark key="]" line="441" column="62" />
+        <mark key="." line="436" column="28" />
+        <mark key="^" line="436" column="28" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/log2reqs/test_plain.py" timestamp="1529607528750">
+        <mark key="'" line="79" column="20" />
+        <mark key="[" line="79" column="23" />
+        <mark key="]" line="79" column="23" />
+        <mark key="^" line="79" column="23" />
+        <mark key="." line="79" column="23" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/services/TodoistSyncService.ts" timestamp="1535468620707">
+        <mark key="'" line="66" column="31" />
+        <mark key="[" line="97" column="39" />
+        <mark key="]" line="97" column="3" />
+        <mark key="." line="97" column="3" />
+        <mark key="^" line="97" column="3" />
+      </file>
+      <file name="$USER_HOME$/git/tina/tina/app.py" timestamp="1518359354901">
+        <mark key="'" line="22" column="0" />
+        <mark key="[" line="5" column="5" />
+        <mark key="]" line="5" column="4" />
+        <mark key="." line="5" column="4" />
+        <mark key="^" line="5" column="4" />
+      </file>
+      <file name="$USER_HOME$/git/aws-sam-sample/aws_sam_sample/libs/dao.py" timestamp="1519743663620">
+        <mark key="'" line="17" column="0" />
+        <mark key="[" line="11" column="16" />
+        <mark key="]" line="11" column="22" />
+        <mark key="^" line="11" column="22" />
+        <mark key="." line="11" column="22" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/services/aws-service.ts" timestamp="1531569212492">
+        <mark key="'" line="64" column="4" />
+        <mark key="[" line="85" column="0" />
+        <mark key="]" line="93" column="14" />
+        <mark key="^" line="86" column="36" />
+        <mark key="." line="86" column="36" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/parser.py" timestamp="1525334829501">
+        <mark key="'" line="48" column="11" />
+        <mark key="[" line="55" column="22" />
+        <mark key="]" line="55" column="22" />
+        <mark key="." line="55" column="22" />
+        <mark key="^" line="55" column="29" />
+      </file>
+      <file name="$USER_HOME$/git/x-viewer/store/index.ts" timestamp="1540000868236">
+        <mark key="'" line="74" column="33" />
+        <mark key="[" line="15" column="47" />
+        <mark key="]" line="15" column="46" />
+        <mark key="." line="15" column="46" />
+        <mark key="^" line="15" column="46" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/components/DailyCards.stories.tsx" timestamp="1533574640236">
+        <mark key="'" line="161" column="75" />
+        <mark key="[" line="162" column="53" />
+        <mark key="]" line="162" column="55" />
+        <mark key="." line="162" column="55" />
+        <mark key="^" line="157" column="49" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/dump/xml.py" timestamp="1527206762713">
+        <mark key="'" line="41" column="41" />
+        <mark key="[" line="17" column="0" />
+        <mark key="]" line="17" column="0" />
+        <mark key="." line="17" column="0" />
+        <mark key="^" line="41" column="41" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/badge/badge-component.ts" timestamp="1536414948899">
+        <mark key="'" line="10" column="25" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/owlmixin/owlmixin/owlcollections.py" timestamp="1543755202168">
+        <mark key="[" line="20" column="21" />
+        <mark key="]" line="20" column="30" />
+        <mark key="." line="20" column="30" />
+        <mark key="^" line="20" column="30" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/dump/test_html.py" timestamp="1527318271342">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="48" column="35" />
+        <mark key="]" line="48" column="36" />
+        <mark key="." line="48" column="36" />
+        <mark key="^" line="48" column="36" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/models/Repetition.ts" timestamp="1535211221999">
+        <mark key="'" line="21" column="19" />
+        <mark key="[" line="2" column="0" />
+        <mark key="]" line="2" column="0" />
+        <mark key="." line="2" column="0" />
+        <mark key="^" line="2" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/reqs2reqs/empty_guard.py" timestamp="1517762386972">
+        <mark key="'" line="34" column="31" />
+        <mark key="[" line="25" column="15" />
+        <mark key="]" line="25" column="19" />
+        <mark key="." line="25" column="19" />
+        <mark key="^" line="25" column="19" />
+      </file>
+      <file name="$USER_HOME$/git/x-viewer/app.html" timestamp="1531458011234">
+        <mark key="'" line="18" column="6" />
+        <mark key="[" line="5" column="69" />
+        <mark key="]" line="6" column="1" />
+        <mark key="^" line="6" column="1" />
+        <mark key="." line="6" column="1" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/sample/addon/addon_sample/judgement/ignore_ichiro.py" timestamp="1518624737822">
+        <mark key="'" line="30" column="59" />
+        <mark key="[" line="30" column="28" />
+        <mark key="]" line="30" column="28" />
+        <mark key="^" line="30" column="36" />
+        <mark key="." line="30" column="28" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2dict/json.py" timestamp="1543332025601">
+        <mark key="[" line="29" column="0" />
+        <mark key="]" line="29" column="74" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" timestamp="1543343051498">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="289" column="0" />
+        <mark key="]" line="298" column="27" />
+        <mark key="^" line="321" column="18" />
+        <mark key="." line="321" column="18" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/log2reqs/plain.py" timestamp="1529607329906">
+        <mark key="'" line="56" column="11" />
+        <mark key="[" line="19" column="4" />
+        <mark key="]" line="19" column="30" />
+        <mark key="." line="55" column="11" />
+        <mark key="^" line="55" column="11" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/store/index.ts" timestamp="1531033121340">
+        <mark key="'" line="97" column="3" />
+        <mark key="[" line="82" column="16" />
+        <mark key="]" line="82" column="25" />
+        <mark key="." line="82" column="25" />
+        <mark key="^" line="82" column="25" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/reqs2reqs/test_rename.py" timestamp="1544568193037">
+        <mark key="[" line="41" column="55" />
+        <mark key="]" line="42" column="57" />
+        <mark key="^" line="42" column="57" />
+        <mark key="." line="42" column="57" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/README.md" timestamp="1530455381121">
+        <mark key="'" line="131" column="0" />
+        <mark key="[" line="42" column="13" />
+        <mark key="]" line="42" column="17" />
+        <mark key="^" line="42" column="12" />
+        <mark key="." line="42" column="13" />
+      </file>
+      <file name="$USER_HOME$/git/todoistools/todoistools/models.py" timestamp="1530330431547">
+        <mark key="'" line="16" column="19" />
+        <mark key="[" line="40" column="0" />
+        <mark key="]" line="44" column="0" />
+        <mark key="^" line="44" column="0" />
+        <mark key="." line="44" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/owlmixin/tests/test_OwlMixin.py" timestamp="1532855105908">
+        <mark key="'" line="449" column="16" />
+        <mark key="[" line="441" column="24" />
+        <mark key="]" line="441" column="23" />
+        <mark key="^" line="441" column="23" />
+        <mark key="." line="441" column="23" />
+      </file>
+      <file name="/Dummy.txt" timestamp="1544568243803">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="31" />
+        <mark key="." line="0" column="31" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/analystic/analytics.component.ts" timestamp="1536427858215">
+        <mark key="'" line="194" column="32" />
+        <mark key="[" line="160" column="34" />
+        <mark key="]" line="160" column="35" />
+        <mark key="." line="160" column="35" />
+        <mark key="^" line="160" column="35" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/dialogs/confirm-dialog/simple-dialog.component.ts" timestamp="1530003352036">
+        <mark key="'" line="24" column="0" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="24" column="0" />
+        <mark key="." line="10" column="0" />
+        <mark key="^" line="9" column="71" />
+      </file>
+      <file name="$USER_HOME$/works/jumeaux-addon-template/add.py" timestamp="1518425866529">
+        <mark key="'" line="20" column="65" />
+        <mark key="[" line="20" column="61" />
+        <mark key="]" line="15" column="59" />
+        <mark key="." line="15" column="59" />
+        <mark key="^" line="15" column="59" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/node_modules/@angular/animations/src/animation_metadata.d.ts" timestamp="1530106408478">
+        <mark key="'" line="815" column="39" />
+      </file>
+      <file name="$USER_HOME$/git/tina/chalicelib/models.py" timestamp="1527446441909">
+        <mark key="'" line="46" column="34" />
+        <mark key="[" line="46" column="49" />
+        <mark key="]" line="46" column="61" />
+        <mark key="." line="46" column="49" />
+        <mark key="^" line="46" column="48" />
+      </file>
+      <file name="$USER_HOME$/git/owlmixin/setup.py" timestamp="1532843628153">
+        <mark key="'" line="52" column="0" />
+        <mark key="[" line="21" column="0" />
+        <mark key="]" line="21" column="0" />
+        <mark key="^" line="21" column="0" />
+        <mark key="." line="21" column="0" />
+      </file>
+      <file name="$USER_HOME$/tmp/pipenvtest/Pipfile" timestamp="1524884568630">
+        <mark key="'" line="10" column="0" />
+        <mark key="[" line="10" column="0" />
+        <mark key="]" line="10" column="15" />
+        <mark key="." line="10" column="16" />
+        <mark key="^" line="10" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/node_modules/@nuxtjs/font-awesome/index.js" timestamp="1530977604237">
+        <mark key="'" line="2" column="54" />
+      </file>
+      <file name="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" timestamp="1526307801890">
+        <mark key="'" line="339" column="0" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="540" column="10" />
+        <mark key="^" line="1051" column="0" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="/usr/lib/python3.6/datetime.py" timestamp="1540889807377">
+        <mark key="'" line="1466" column="23" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/sample/template/force_json/config.yml" timestamp="1527319778339">
+        <mark key="'" line="25" column="15" />
+        <mark key="[" line="0" column="7" />
+        <mark key="]" line="0" column="16" />
+        <mark key="^" line="0" column="16" />
+        <mark key="." line="0" column="16" />
+      </file>
+      <file name="$USER_HOME$/tmp/hello-dsuke/tsconfig.json" timestamp="1534238437234">
+        <mark key="'" line="38" column="28" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/final/slack.py" timestamp="1529500968312">
+        <mark key="'" line="73" column="12" />
+        <mark key="[" line="49" column="0" />
+        <mark key="]" line="50" column="110" />
+        <mark key="." line="73" column="27" />
+        <mark key="^" line="73" column="27" />
+      </file>
+      <file name="$USER_HOME$/git/dia-pass-info-viewer/pages/index.vue" timestamp="1530888760950">
+        <mark key="'" line="16" column="31" />
+        <mark key="[" line="58" column="0" />
+        <mark key="]" line="58" column="26" />
+        <mark key="^" line="58" column="3" />
+        <mark key="." line="58" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/__init__.py" timestamp="1525964008173">
+        <mark key="'" line="37" column="35" />
+        <mark key="[" line="31" column="0" />
+        <mark key="]" line="31" column="36" />
+        <mark key="." line="32" column="14" />
+        <mark key="^" line="32" column="14" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/reducers/index.ts" timestamp="1534936680611">
+        <mark key="'" line="144" column="0" />
+        <mark key="[" line="144" column="0" />
+        <mark key="]" line="144" column="1" />
+        <mark key="." line="144" column="1" />
+        <mark key="^" line="144" column="1" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" timestamp="1543336579734">
+        <mark key="'" line="768" column="32" />
+        <mark key="[" line="958" column="0" />
+        <mark key="]" line="958" column="31" />
+        <mark key="." line="958" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/test.bats" timestamp="1532859676169">
+        <mark key="'" line="112" column="2" />
+        <mark key="[" line="34" column="5" />
+        <mark key="]" line="34" column="52" />
+        <mark key="^" line="34" column="52" />
+        <mark key="." line="34" column="52" />
+      </file>
+      <file name="$USER_HOME$/git/x-viewer/components/NaviBar.vue" timestamp="1531227832278">
+        <mark key="'" line="3" column="15" />
+        <mark key="[" line="14" column="0" />
+        <mark key="]" line="25" column="9" />
+        <mark key="^" line="10" column="67" />
+        <mark key="." line="4" column="4" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/components/Icebox.tsx" timestamp="1535256524293">
+        <mark key="'" line="70" column="19" />
+      </file>
+      <file name="$USER_HOME$/tmp/hello-dsuke/main.ts" timestamp="1534238633378">
+        <mark key="'" line="2" column="2" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="9" column="18" />
+        <mark key="." line="0" column="0" />
+        <mark key="^" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" timestamp="1544567842652">
+        <mark key="'" line="3" column="84" />
+        <mark key="[" line="100" column="32" />
+        <mark key="]" line="100" column="70" />
+        <mark key="^" line="100" column="70" />
+        <mark key="." line="100" column="70" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/utils.py" timestamp="1544568363052">
+        <mark key="'" line="30" column="76" />
+        <mark key="[" line="37" column="4" />
+        <mark key="]" line="37" column="10" />
+        <mark key="^" line="37" column="10" />
+        <mark key="." line="37" column="10" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/node_modules/@types/jest/index.d.ts" timestamp="1532489830037">
+        <mark key="'" line="751" column="71" />
+      </file>
+      <file name="$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/rusoto_core-0.32.0/src/region.rs" timestamp="1534160761444">
+        <mark key="'" line="36" column="9" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/components/config/ConfigEditor.tsx" timestamp="1534960068351">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="89" column="37" />
+        <mark key="]" line="89" column="36" />
+        <mark key="^" line="89" column="36" />
+        <mark key="." line="89" column="36" />
+      </file>
+      <file name="$USER_HOME$/git/miroir-cli/src/clients/aws.rs" timestamp="1537332115355">
+        <mark key="'" line="90" column="27" />
+      </file>
+      <file name="$USER_HOME$/git/tina/.tinaconfig" timestamp="1518352898183">
+        <mark key="'" line="6" column="7" />
+        <mark key="[" line="1" column="0" />
+        <mark key="]" line="1" column="3" />
+        <mark key="^" line="1" column="3" />
+        <mark key="." line="1" column="3" />
+      </file>
+      <file name="$USER_HOME$/git/slackego/setup.py" timestamp="1523771264494">
+        <mark key="'" line="23" column="0" />
+        <mark key="[" line="27" column="0" />
+        <mark key="]" line="27" column="0" />
+        <mark key="^" line="27" column="33" />
+        <mark key="." line="27" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/res2res/json.py" timestamp="1529240629768">
+        <mark key="'" line="61" column="0" />
+        <mark key="[" line="59" column="8" />
+        <mark key="]" line="60" column="25" />
+        <mark key="^" line="60" column="25" />
+        <mark key="." line="60" column="25" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/reqs2reqs/rename.py" timestamp="1529493457176">
+        <mark key="'" line="11" column="0" />
+        <mark key="[" line="11" column="0" />
+        <mark key="]" line="17" column="32" />
+        <mark key="^" line="11" column="0" />
+        <mark key="." line="11" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/components/Top.tsx" timestamp="1535256516072">
+        <mark key="'" line="277" column="52" />
+        <mark key="[" line="21" column="49" />
+        <mark key="]" line="21" column="35" />
+        <mark key="." line="21" column="35" />
+        <mark key="^" line="21" column="35" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" timestamp="1543331885329">
+        <mark key="'" line="21" column="4" />
+        <mark key="[" line="20" column="0" />
+        <mark key="]" line="20" column="0" />
+        <mark key="^" line="20" column="0" />
+        <mark key="." line="20" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/log2reqs/csv.py" timestamp="1528299783237">
+        <mark key="'" line="37" column="29" />
+        <mark key="[" line="14" column="0" />
+        <mark key="]" line="14" column="28" />
+        <mark key="." line="14" column="0" />
+        <mark key="^" line="42" column="63" />
+      </file>
+      <file name="$USER_HOME$/git/aws-sam-api-sample/app.py" timestamp="1519345902782">
+        <mark key="'" line="10" column="12" />
+        <mark key="[" line="7" column="19" />
+        <mark key="]" line="7" column="33" />
+        <mark key="." line="7" column="33" />
+        <mark key="^" line="7" column="33" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/res2res/json_sort.py" timestamp="1527317870720">
+        <mark key="'" line="96" column="17" />
+        <mark key="[" line="97" column="0" />
+        <mark key="]" line="97" column="47" />
+        <mark key="^" line="87" column="3" />
+        <mark key="." line="97" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/miroir-cli/src/handlers/get/summaries.rs" timestamp="1537332038971">
+        <mark key="'" line="4" column="33" />
+        <mark key="[" line="1" column="0" />
+        <mark key="]" line="1" column="27" />
+        <mark key="." line="4" column="68" />
+        <mark key="^" line="4" column="68" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/store_criterion/test_free.py" timestamp="1529949522725">
+        <mark key="'" line="54" column="39" />
+        <mark key="[" line="40" column="4" />
+        <mark key="]" line="40" column="5" />
+        <mark key="." line="40" column="5" />
+        <mark key="^" line="40" column="5" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/package.json" timestamp="1536376882664">
+        <mark key="'" line="10" column="21" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/res2dict/xml.py" timestamp="1527206103769">
+        <mark key="'" line="36" column="0" />
+        <mark key="[" line="26" column="0" />
+        <mark key="]" line="36" column="0" />
+        <mark key="^" line="34" column="79" />
+        <mark key="." line="15" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/final/miroir.py" timestamp="1529934473341">
+        <mark key="'" line="125" column="0" />
+        <mark key="[" line="139" column="0" />
+        <mark key="]" line="139" column="37" />
+        <mark key="." line="139" column="0" />
+        <mark key="^" line="141" column="36" />
+      </file>
+      <file name="$USER_HOME$/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libcore/str/mod.rs" timestamp="1533457751419">
+        <mark key="'" line="1145" column="15" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/node_modules/electron/electron.d.ts" timestamp="1531154915300">
+        <mark key="'" line="1639" column="21" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/reqs2reqs/empty_guard.py" timestamp="1544568339556">
+        <mark key="'" line="47" column="9" />
+        <mark key="[" line="39" column="16" />
+        <mark key="]" line="39" column="74" />
+        <mark key="^" line="39" column="74" />
+        <mark key="." line="39" column="74" />
+      </file>
+      <file name="$USER_HOME$/git/dia-pass-info-viewer/modules/typescript.js" timestamp="1530868756713">
+        <mark key="'" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/slackego/config.yml" timestamp="1523770317181">
+        <mark key="'" line="16" column="8" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="16" column="7" />
+        <mark key="^" line="16" column="8" />
+        <mark key="." line="16" column="8" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/client/TodoistClient.ts" timestamp="1533828680454">
+        <mark key="'" line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/dump/encoding.py" timestamp="1519735518674">
+        <mark key="'" line="27" column="0" />
+        <mark key="[" line="11" column="0" />
+        <mark key="]" line="12" column="33" />
+        <mark key="." line="12" column="0" />
+        <mark key="^" line="9" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/node_modules/aws-sdk/clients/dynamodb.d.ts" timestamp="1531568825234">
+        <mark key="'" line="265" column="33" />
+      </file>
+      <file name="$USER_HOME$/git/jina/chalicelib/services/transition.py" timestamp="1518498843041">
+        <mark key="'" line="28" column="65" />
+        <mark key="[" line="28" column="71" />
+        <mark key="]" line="28" column="77" />
+        <mark key="." line="28" column="77" />
+        <mark key="^" line="28" column="77" />
+      </file>
+      <file name="$USER_HOME$/git/owlmixin/tests/test_OwlObjectEnum.py" timestamp="1532843652732">
+        <mark key="'" line="25" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/utils/regexp.ts" timestamp="1531575506295">
+        <mark key="'" line="18" column="14" />
+        <mark key="[" line="18" column="14" />
+        <mark key="]" line="18" column="26" />
+        <mark key="." line="8" column="51" />
+        <mark key="^" line="8" column="51" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/services/settings-service.ts" timestamp="1526782710599">
+        <mark key="'" line="40" column="0" />
+        <mark key="[" line="190" column="0" />
+        <mark key="]" line="190" column="0" />
+        <mark key="^" line="174" column="24" />
+        <mark key="." line="190" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/Pipfile.lock" timestamp="1540883562576">
+        <mark key="'" line="11" column="30" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/sample/addon/addon_sample/judgement/ignore_apple.py" timestamp="1518653131824">
+        <mark key="'" line="33" column="35" />
+        <mark key="[" line="30" column="20" />
+        <mark key="]" line="30" column="36" />
+        <mark key="." line="30" column="36" />
+        <mark key="^" line="30" column="36" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/res2dict/json.py" timestamp="1529496241985">
+        <mark key="'" line="11" column="0" />
+        <mark key="[" line="24" column="0" />
+        <mark key="]" line="24" column="83" />
+        <mark key="^" line="35" column="81" />
+        <mark key="." line="16" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/services/TodoistSyncService.spec.ts" timestamp="1535258656599">
+        <mark key="'" line="37" column="62" />
+        <mark key="[" line="24" column="16" />
+        <mark key="]" line="24" column="16" />
+        <mark key="^" line="24" column="16" />
+        <mark key="." line="24" column="16" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/components/DailyCard.tsx" timestamp="1534964120947">
+        <mark key="'" line="77" column="56" />
+        <mark key="[" line="214" column="69" />
+        <mark key="]" line="214" column="90" />
+        <mark key="." line="214" column="69" />
+        <mark key="^" line="214" column="103" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/test_models.py" timestamp="1519916672455">
+        <mark key="'" line="78" column="19" />
+        <mark key="[" line="17" column="40" />
+        <mark key="]" line="17" column="44" />
+        <mark key="^" line="17" column="44" />
+        <mark key="." line="17" column="44" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/reqs2reqs/test_rename.py" timestamp="1529594674939">
+        <mark key="'" line="65" column="0" />
+        <mark key="[" line="23" column="103" />
+        <mark key="]" line="23" column="128" />
+        <mark key="." line="23" column="103" />
+        <mark key="^" line="82" column="29" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/badge/badge-component.css" timestamp="1536415331845">
+        <mark key="'" line="17" column="0" />
+        <mark key="[" line="15" column="0" />
+        <mark key="]" line="15" column="0" />
+        <mark key="^" line="38" column="12" />
+        <mark key="." line="15" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/package.json" timestamp="1533677955478">
+        <mark key="'" line="46" column="5" />
+        <mark key="[" line="24" column="42" />
+        <mark key="]" line="24" column="40" />
+        <mark key="." line="24" column="40" />
+        <mark key="^" line="24" column="40" />
+      </file>
+      <file name="$USER_HOME$/git/addictpy/addictpy/models/addict/group.py" timestamp="1518510179061">
+        <mark key="'" line="14" column="33" />
+        <mark key="[" line="14" column="8" />
+        <mark key="]" line="14" column="12" />
+        <mark key="^" line="14" column="12" />
+        <mark key="." line="14" column="12" />
+      </file>
+      <file name="$USER_HOME$/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/collections/hash/map.rs" timestamp="1534081278769">
+        <mark key="'" line="620" column="22" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/components/DailyCard.stories.tsx" timestamp="1530444275828">
+        <mark key="'" line="1065" column="17" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" timestamp="1543334574478">
+        <mark key="'" line="30" column="75" />
+        <mark key="[" line="345" column="23" />
+        <mark key="]" line="345" column="56" />
+        <mark key="^" line="345" column="56" />
+        <mark key="." line="345" column="56" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/node_modules/element-ui/lib/mixins/emitter.js" timestamp="1530984571015">
+        <mark key="'" line="16" column="47" />
+      </file>
+      <file name="$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/rusoto_dynamodb-0.32.0/src/generated.rs" timestamp="1534487428037">
+        <mark key="'" line="1038" column="36" />
+        <mark key="[" line="4610" column="50" />
+        <mark key="]" line="4610" column="49" />
+        <mark key="^" line="4610" column="49" />
+        <mark key="." line="4610" column="49" />
+      </file>
+      <file name="$USER_HOME$/git/aws-sam-sample/aws_sam_sample/libs/session.py" timestamp="1519747593720">
+        <mark key="'" line="19" column="22" />
+        <mark key="[" line="28" column="48" />
+        <mark key="]" line="28" column="57" />
+        <mark key="." line="28" column="57" />
+        <mark key="^" line="28" column="57" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" timestamp="1544567345474">
+        <mark key="'" line="206" column="4" />
+        <mark key="[" line="206" column="15" />
+        <mark key="]" line="206" column="0" />
+        <mark key="^" line="206" column="0" />
+        <mark key="." line="206" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/detail-dialog/detail-dialog.component.html" timestamp="1532909350484">
+        <mark key="'" line="48" column="73" />
+        <mark key="[" line="48" column="76" />
+        <mark key="]" line="48" column="73" />
+        <mark key="^" line="48" column="73" />
+        <mark key="." line="48" column="73" />
+      </file>
+      <file name="$USER_HOME$/git/owlmixin/owlmixin/transformers.py" timestamp="1532850465158">
+        <mark key="'" line="378" column="75" />
+        <mark key="[" line="39" column="38" />
+        <mark key="]" line="39" column="46" />
+        <mark key="." line="39" column="46" />
+        <mark key="^" line="39" column="46" />
+      </file>
+      <file name="$USER_HOME$/git/slackego/slackego/main.py" timestamp="1523686677305">
+        <mark key="'" line="56" column="31" />
+        <mark key="[" line="65" column="41" />
+        <mark key="]" line="65" column="46" />
+        <mark key="." line="65" column="46" />
+        <mark key="^" line="65" column="46" />
+      </file>
+      <file name="$APPLICATION_CONFIG_DIR$/scratches/buffer1" timestamp="1517676816038">
+        <mark key="'" line="19" column="0" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="19" column="0" />
+        <mark key="^" line="19" column="0" />
+        <mark key="." line="19" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/tina/chalicelib/apis/todoist.py" timestamp="1518355197661">
+        <mark key="'" line="18" column="33" />
+        <mark key="[" line="2" column="0" />
+        <mark key="]" line="2" column="0" />
+        <mark key="^" line="15" column="45" />
+        <mark key="." line="2" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/.prettierrc" timestamp="1535257911919">
+        <mark key="'" line="9" column="21" />
+        <mark key="[" line="1" column="18" />
+        <mark key="]" line="1" column="17" />
+        <mark key="." line="1" column="17" />
+        <mark key="^" line="1" column="17" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/utils/filters.ts" timestamp="1526944403727">
+        <mark key="'" line="17" column="20" />
+        <mark key="[" line="0" column="92" />
+        <mark key="]" line="16" column="28" />
+        <mark key="." line="16" column="28" />
+        <mark key="^" line="16" column="28" />
+      </file>
+      <file name="$USER_HOME$/git/miroir-cli/src/clients/s3.rs" timestamp="1533391428277">
+        <mark key="'" line="27" column="0" />
+        <mark key="[" line="4" column="0" />
+        <mark key="]" line="4" column="3" />
+        <mark key="." line="4" column="3" />
+        <mark key="^" line="4" column="3" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/index.html" timestamp="1526720732726">
+        <mark key="'" line="0" column="10" />
+        <mark key="[" line="10" column="4" />
+        <mark key="]" line="10" column="81" />
+        <mark key="^" line="10" column="3" />
+        <mark key="." line="10" column="4" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/res2dict/test_xml.py" timestamp="1527318310900">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="88" column="60" />
+        <mark key="]" line="89" column="36" />
+        <mark key="." line="89" column="36" />
+        <mark key="^" line="89" column="36" />
+      </file>
+      <file name="$USER_HOME$/git/miroir-cli/src/clients/dynamodb.rs" timestamp="1533391259832">
+        <mark key="'" line="4" column="28" />
+        <mark key="[" line="1" column="41" />
+        <mark key="]" line="1" column="40" />
+        <mark key="^" line="1" column="40" />
+        <mark key="." line="1" column="40" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/store_criterion/general.py" timestamp="1529935939664">
+        <mark key="'" line="33" column="42" />
+        <mark key="[" line="9" column="17" />
+        <mark key="]" line="9" column="22" />
+        <mark key="." line="9" column="22" />
+        <mark key="^" line="9" column="22" />
+      </file>
+      <file name="$USER_HOME$/git/x-viewer/components/FooterBar.vue" timestamp="1534415228622">
+        <mark key="'" line="17" column="50" />
+        <mark key="[" line="17" column="30" />
+        <mark key="]" line="17" column="33" />
+        <mark key="^" line="17" column="33" />
+        <mark key="." line="17" column="33" />
+      </file>
+      <file name="$USER_HOME$/git/todoistools/todoistools/api.py" timestamp="1530330525917">
+        <mark key="'" line="12" column="0" />
+        <mark key="[" line="9" column="59" />
+        <mark key="]" line="9" column="58" />
+        <mark key="." line="9" column="58" />
+        <mark key="^" line="9" column="58" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/final/miroir.py" timestamp="1540893072939">
+        <mark key="'" line="2" column="0" />
+        <mark key="[" line="16" column="12" />
+        <mark key="]" line="16" column="12" />
+        <mark key="^" line="16" column="12" />
+        <mark key="." line="16" column="12" />
+      </file>
+      <file name="$USER_HOME$/git/todoistools/todoistools/main.py" timestamp="1530332226086">
+        <mark key="'" line="38" column="51" />
+        <mark key="[" line="19" column="0" />
+        <mark key="]" line="20" column="0" />
+        <mark key="^" line="20" column="0" />
+        <mark key="." line="20" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/todoistools/config.yml" timestamp="1530330679135">
+        <mark key="'" line="0" column="46" />
+        <mark key="[" line="0" column="6" />
+        <mark key="]" line="0" column="46" />
+        <mark key="^" line="0" column="46" />
+        <mark key="." line="0" column="46" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/summary/summary.component.html" timestamp="1536473812912">
+        <mark key="'" line="31" column="34" />
+        <mark key="[" line="32" column="44" />
+        <mark key="]" line="32" column="60" />
+        <mark key="." line="32" column="60" />
+        <mark key="^" line="32" column="60" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/reqs2reqs/test_empty_guard.py" timestamp="1529594513306">
+        <mark key="'" line="44" column="0" />
+        <mark key="[" line="51" column="71" />
+        <mark key="]" line="51" column="71" />
+        <mark key="^" line="51" column="70" />
+        <mark key="." line="51" column="71" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/res2dict/test_html.py" timestamp="1527318297257">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="42" column="59" />
+        <mark key="]" line="43" column="35" />
+        <mark key="." line="43" column="35" />
+        <mark key="^" line="43" column="35" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/utils/DateUtil.spec.ts" timestamp="1535213159906">
+        <mark key="'" line="149" column="108" />
+        <mark key="[" line="137" column="20" />
+        <mark key="]" line="137" column="21" />
+        <mark key="." line="137" column="21" />
+        <mark key="^" line="137" column="12" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/dump/html.py" timestamp="1527206748470">
+        <mark key="'" line="27" column="0" />
+        <mark key="[" line="16" column="0" />
+        <mark key="]" line="16" column="0" />
+        <mark key="^" line="31" column="42" />
+        <mark key="." line="16" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/res2dict/test_block.py" timestamp="1527318290061">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="120" column="64" />
+        <mark key="]" line="121" column="40" />
+        <mark key="^" line="121" column="40" />
+        <mark key="." line="121" column="40" />
+      </file>
+      <file name="$USER_HOME$/git/tina/tina/chalicelib/models.py" timestamp="1518358989291">
+        <mark key="'" line="52" column="17" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="23" />
+        <mark key="^" line="4" column="0" />
+        <mark key="." line="2" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/tests/addons/res2dict/test_json.py" timestamp="1527318304104">
+        <mark key="'" line="0" column="0" />
+        <mark key="[" line="116" column="61" />
+        <mark key="]" line="117" column="37" />
+        <mark key="^" line="117" column="37" />
+        <mark key="." line="117" column="37" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/plugins/font-awesome.js" timestamp="1531033365543">
+        <mark key="'" line="24" column="1" />
+        <mark key="[" line="12" column="12" />
+        <mark key="]" line="19" column="1" />
+        <mark key="." line="19" column="1" />
+        <mark key="^" line="19" column="1" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/notification_handlers/__init__.py" timestamp="1517762594888">
+        <mark key="'" line="22" column="0" />
+        <mark key="[" line="9" column="17" />
+        <mark key="]" line="9" column="31" />
+        <mark key="." line="9" column="31" />
+        <mark key="^" line="9" column="31" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/nuxt.config.js" timestamp="1530979148281">
+        <mark key="'" line="53" column="3" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/pages/repositories.vue" timestamp="1531155521046">
+        <mark key="'" line="45" column="4" />
+        <mark key="[" line="28" column="0" />
+        <mark key="]" line="28" column="10" />
+        <mark key="." line="17" column="45" />
+        <mark key="^" line="12" column="16" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/final/slack.py" timestamp="1544568310449">
+        <mark key="'" line="65" column="39" />
+        <mark key="[" line="66" column="24" />
+        <mark key="]" line="66" column="81" />
+        <mark key="^" line="66" column="81" />
+        <mark key="." line="66" column="81" />
+      </file>
+      <file name="$USER_HOME$/git/jumeaux/jumeaux/addons/dump/json.py" timestamp="1527206754088">
+        <mark key="'" line="29" column="33" />
+        <mark key="[" line="28" column="71" />
+        <mark key="]" line="28" column="71" />
+        <mark key="." line="28" column="71" />
+        <mark key="^" line="28" column="71" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/node_modules/moment/moment.d.ts" timestamp="1532515928255">
+        <mark key="'" line="692" column="18" />
+      </file>
+      <file name="$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/2and3/datetime.pyi" timestamp="1540868729431">
+        <mark key="'" line="181" column="40" />
+      </file>
+      <file name="$USER_HOME$/git/miroir-cli/src/handlers/prune.rs" timestamp="1534339221177">
+        <mark key="'" line="25" column="23" />
+        <mark key="[" line="5" column="61" />
+        <mark key="]" line="5" column="68" />
+        <mark key="^" line="5" column="68" />
+        <mark key="." line="5" column="68" />
+      </file>
+      <file name="$USER_HOME$/git/github-viewer/components/Card.vue" timestamp="1531033317939">
+        <mark key="'" line="18" column="0" />
+        <mark key="[" line="16" column="35" />
+        <mark key="]" line="16" column="42" />
+        <mark key="." line="16" column="42" />
+        <mark key="^" line="16" column="42" />
+      </file>
+      <file name="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/reqs2reqs/test_empty_guard.py" timestamp="1544567940596">
+        <mark key="[" line="16" column="28" />
+        <mark key="]" line="16" column="44" />
+        <mark key="^" line="16" column="44" />
+        <mark key="." line="16" column="44" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/src/reducers/selectors.ts" timestamp="1533738256858">
+        <mark key="'" line="6" column="0" />
+        <mark key="[" line="7" column="46" />
+        <mark key="]" line="8" column="18" />
+        <mark key="." line="8" column="18" />
+        <mark key="^" line="8" column="18" />
+      </file>
+      <file name="$USER_HOME$/git/dia-pass-info-viewer/node_modules/nuxt-property-decorator/lib/nuxt-property-decorator.d.ts" timestamp="1530878226498">
+        <mark key="'" line="67" column="20" />
+      </file>
+      <file name="$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/rusoto_s3-0.32.0/src/generated.rs" timestamp="1534481027537">
+        <mark key="'" line="21017" column="0" />
+        <mark key="[" line="21017" column="0" />
+        <mark key="]" line="21030" column="1" />
+        <mark key="^" line="20672" column="13" />
+        <mark key="." line="20672" column="13" />
+      </file>
+      <file name="$USER_HOME$/git/owlora/node_modules/puppeteer/lib/Page.js" timestamp="1532520652678">
+        <mark key="'" line="482" column="18" />
+      </file>
+      <file name="$USER_HOME$/git/miroir/src/app/components/response-time-chart/response-time-chart.component.ts" timestamp="1536210388730">
+        <mark key="[" line="54" column="0" />
+        <mark key="]" line="54" column="0" />
+        <mark key="." line="54" column="0" />
+      </file>
+      <file name="$USER_HOME$/git/owlmixin/README.rst" timestamp="1532355310919">
+        <mark key="'" line="12" column="51" />
+        <mark key="[" line="12" column="43" />
+        <mark key="]" line="12" column="51" />
+        <mark key="." line="12" column="51" />
+        <mark key="^" line="12" column="51" />
+      </file>
+    </filemarks>
+    <jumps>
+      <jump line="2" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" />
+      <jump line="48" column="8" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" />
+      <jump line="1" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" />
+      <jump line="15" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" />
+      <jump line="47" column="44" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" />
+      <jump line="31" column="28" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" />
+      <jump line="21" column="4" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/res2res/type.py" />
+      <jump line="36" column="23" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="29" column="29" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="374" column="13" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" />
+      <jump line="39" column="31" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="8" column="17" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="40" column="24" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="34" column="39" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="51" column="15" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="47" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="448" column="46" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="345" column="22" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="0" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="450" column="42" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="29" column="73" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="30" column="75" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/executor.py" />
+      <jump line="375" column="12" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" />
+      <jump line="32" column="33" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="28" column="41" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/reqs2reqs/rename.py" />
+      <jump line="834" column="20" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="175" column="22" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="211" column="25" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="263" column="12" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="297" column="25" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="331" column="12" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="352" column="25" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="357" column="35" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="456" column="92" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="457" column="15" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="848" column="8" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="986" column="15" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="171" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="768" column="32" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/test_executor.py" />
+      <jump line="34" column="29" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="75" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="13" column="51" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="16" column="30" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="336" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" />
+      <jump line="24" column="41" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="25" column="47" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="26" column="43" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="27" column="42" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="30" column="43" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="324" column="9" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" />
+      <jump line="28" column="46" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="22" column="39" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="23" column="40" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="21" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="35" column="35" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" />
+      <jump line="273" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" />
+      <jump line="0" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/models.py" />
+      <jump line="29" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="10" column="10" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="42" column="28" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="33" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="43" column="24" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="65" column="33" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="32" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="100" column="29" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="31" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="98" column="84" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/tests/addons/did_challenge/test_tag.py" />
+      <jump line="47" column="42" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="241" column="29" filename="$USER_HOME$/.local/share/virtualenvs/jumeaux-Iex7rkC0/lib/python3.6/site-packages/owlmixin/owlcollections.py" />
+      <jump line="240" column="10" filename="$USER_HOME$/.local/share/virtualenvs/jumeaux-Iex7rkC0/lib/python3.6/site-packages/owlmixin/owlcollections.py" />
+      <jump line="38" column="15" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="57" column="47" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/owlmixin/tests/test_TList.py" />
+      <jump line="58" column="40" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/owlmixin/tests/test_TList.py" />
+      <jump line="59" column="34" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/owlmixin/tests/test_TList.py" />
+      <jump line="22" column="36" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="15" column="27" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="45" column="45" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="52" column="186" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="56" column="37" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="109" column="10" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="110" column="15" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="192" column="50" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="193" column="9" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="195" column="15" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="196" column="12" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="198" column="69" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="205" column="43" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="206" column="4" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/.pylintrc" />
+      <jump line="26" column="27" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="43" column="63" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="5" column="62" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="0" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/final/slack.py" />
+      <jump line="31" column="12" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/final/slack.py" />
+      <jump line="0" column="0" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/reqs2reqs/empty_guard.py" />
+      <jump line="38" column="26" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/reqs2reqs/empty_guard.py" />
+      <jump line="45" column="37" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/did_challenge/tag.py" />
+      <jump line="65" column="39" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/final/slack.py" />
+      <jump line="47" column="9" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/reqs2reqs/empty_guard.py" />
+      <jump line="32" column="29" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/reqs2reqs/rename.py" />
+      <jump line="30" column="76" filename="$USER_HOME$/git/src/github.com/tadashi-aikawa/jumeaux/jumeaux/addons/utils.py" />
+    </jumps>
+    <registers>
+      <register name="a" type="2">
+        <keys>
+          <key char="105" code="0" mods="0" />
+          <key char="109" code="0" mods="0" />
+          <key char="112" code="0" mods="0" />
+          <key char="111" code="0" mods="0" />
+          <key char="114" code="0" mods="0" />
+          <key char="116" code="0" mods="0" />
+          <key char="32" code="0" mods="0" />
+          <key char="105" code="0" mods="0" />
+          <key char="111" code="0" mods="0" />
+          <key char="10" code="0" mods="0" />
+          <key char="65" code="0" mods="0" />
+          <key char="44" code="0" mods="0" />
+          <key char="65535" code="27" mods="0" />
+          <key char="112" code="0" mods="0" />
+        </keys>
+      </register>
+      <register name="&quot;" type="4">
+        <text encoding="base64">IyEvdXNyL2Jpbi9lbnYgcHl0aG9uCiMgLSotIGNvZGluZzp1dGYtOCAtKi0KCmltcG9ydCBweXRlc3QKZnJvbSBvd2xtaXhpbi51dGlsIGltcG9ydCBsb2FkX3lhbWwKCmZyb20ganVtZWF1eC5hZGRvbnMuZGlkX2NoYWxsZW5nZS50YWcgaW1wb3J0IEV4ZWN1dG9yCmZyb20ganVtZWF1eC5tb2RlbHMgaW1wb3J0IERpZENoYWxsZW5nZUFkZE9uUGF5bG9hZAoKQUREX1RBR19XSVRIX0NPTkRJVElPTiA9ICgiQWRkIHRhZyB3aXRoIGEgY29uZGl0aW9uIiwKICAgICAgICAgICAgICAgICAgICAgICAgICIiIgogICAgICAgICAgICAgICAgICAgICAgICAgY29uZGl0aW9uczoKICAgICAgICAgICAgICAgICAgICAgICAgICAgLSBuYW1lOiB0YWdnZWQKICAgICAgICAgICAgICAgICAgICAgICAgICAgICB3aGVuOiA=</text>
+      </register>
+      <register name="d" type="4">
+        <text>.</text>
+      </register>
+      <register name="e" type="2">
+        <text encoding="base64">ICAtLW1heC1yZXRyaWVzID0gPG1heF9yZXRyaWVzPiAgICBUaGUgbWF4IG51bWJlciBvZiByZXRyaWVzIHdoaWNoIGFjY2Vzc2VzIHRvIEFQSQo=</text>
+      </register>
+      <register name="+" type="4">
+        <text>name == 'hoge'</text>
+      </register>
+      <register name="-" type="4">
+        <text encoding="base64">dmFsdWVzIA==</text>
+      </register>
+      <register name="/" type="4">
+        <text>format</text>
+      </register>
+      <register name="0" type="2">
+        <text encoding="base64">ICAgICAgICBhc3NlcnQgWzEsIDJdID09IFRMaXN0KDEpICsgVExpc3QoMikKICAgICAgICBhc3NlcnQgWzEsIDJdID09IFRMaXN0KDIpICsgVExpc3QoMSkK</text>
+      </register>
+      <register name="p" type="2">
+        <text encoding="base64">ICAgICAgICBwYXlsb2FkOiBKdWRnZW1lbnRBZGRPblBheWxvYWQgPSBKdWRnZW1lbnRBZGRPblBheWxvYWQuZnJvbV9kaWN0KHsKICAgICAgICAgICAgJ3JlbWFpbmluZ19kaWZmX2tleXMnOiB7Cg==</text>
+      </register>
+      <register name="1" type="2">
+        <text encoding="base64">ICAgICAgICBhc3NlcnQgWzEsIDJdID09IFRMaXN0KFsxXSkgKyBUTGlzdChbMl0pCiAgICAgICAgYXNzZXJ0IFsxLCAyXSA9PSBbMV0gKyBUTGlzdCgyKQo=</text>
+      </register>
+      <register name="q" type="4">
+        <keys>
+          <key char="100" code="0" mods="0" />
+          <key char="102" code="0" mods="0" />
+          <key char="40" code="0" mods="0" />
+          <key char="102" code="0" mods="0" />
+          <key char="41" code="0" mods="0" />
+          <key char="120" code="0" mods="0" />
+          <key char="65535" code="27" mods="0" />
+          <key char="106" code="0" mods="0" />
+          <key char="98" code="0" mods="0" />
+        </keys>
+      </register>
+      <register name="2" type="2">
+        <text encoding="base64">ICAgIGRlZiB0ZXNfZXhjaGFuZ2VfcnVsZShzZWxmKToKICAgICAgICBhc3NlcnQgWzEsIDJdID09IFRMaXN0KFsxXSkgKyBUTGlzdCgyKQo=</text>
+      </register>
+      <register name="r" type="2">
+        <text encoding="base64">ICAgICAgICB9KQogICAgICAgIHJlZmVyZW5jZTogSnVkZ2VtZW50QWRkT25SZWZlcmVuY2UgPSBKdWRnZW1lbnRBZGRPblJlZmVyZW5jZS5mcm9tX2RpY3Qoewo=</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">ICAgICAgICBhc3NlcnQgWzEsIDJdID09IFRMaXN0KDEpICsgWzJdCgo=</text>
+      </register>
+      <register name="4" type="2">
+        <text encoding="base64">ICAgICAgICBhc3NlcnQgWzEsIDJdID09IFRMaXN0KDEpICsgVExpc3QoMikK</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">ZnJvbSBvd2xtaXhpbgo=</text>
+      </register>
+      <register name="6" type="2">
+        <text encoding="base64">ICAgICAgICAjIHR5cGU6IChUTGlzdFtUXSkgLT4gVExpc3RbVF0K</text>
+      </register>
+      <register name="7" type="2">
+        <text encoding="base64">ICAgICAgICBkZWYgaG9nZSh0LCB4KToKICAgICAgICAgICAgcHJpbnQoIi0tLS1ob2dlLS0tLSIpCiAgICAgICAgICAgIHByaW50KHQpCiAgICAgICAgICAgIHByaW50KFtwYXlsb2FkLnRyaWFsLnN0cl9mb3JtYXQoeC50YWcpXSkKICAgICAgICAgICAgIyByID0gdCArIFtwYXlsb2FkLnRyaWFsLnN0cl9mb3JtYXQoeC50YWcpXQogICAgICAgICAgICByID0gWyJob2dlIl0gKyBbImhvZ2Vob2dlIl0KICAgICAgICAgICAgcHJpbnQocikKICAgICAgICAgICAgcHJpbnQoIi0tLS0tLS0tLS0tLS0tIikKICAgICAgICAgICAgcmV0dXJuIHIKCg==</text>
+      </register>
+      <register name="8" type="2">
+        <text encoding="base64">ICAgICAgICAgICAgUkVOQU1FX0FMTCwK</text>
+      </register>
+      <register name="9" type="2">
+        <text encoding="base64">ICAgICAgICAgICAgUkVOQU1FX1dJVEhfQ09ORElUSU9OUywK</text>
+      </register>
+      <register name=":" type="4">
+        <text>w</text>
+      </register>
+      <register name="z" type="2">
+        <text encoding="base64">ICAgIGF1dGg6IHBhdGhUb0pTKHN0YXRlLmZpcmViYXNlLCAnYXV0aCcpLAo=</text>
+      </register>
+    </registers>
+    <search>
+      <last-search>format</last-search>
+      <last-offset />
+      <last-pattern>format</last-pattern>
+      <last-replace>(x: string, row: DynamoRow)</last-replace>
+      <last-substitute>wait</last-substitute>
+      <last-dir>1</last-dir>
+      <show-last>true</show-last>
+    </search>
+    <history>
+      <history-search>
+        <entry>get_local</entry>
+        <entry>tzlocal</entry>
+        <entry encoding="base64">XDxkYXRldGltZVw+</entry>
+        <entry>datetime.datetime</entry>
+        <entry>timezone</entry>
+        <entry>pytz</entry>
+        <entry>timezo</entry>
+        <entry>datetime</entry>
+        <entry>00:00</entry>
+        <entry>get_localzone</entry>
+        <entry>when</entry>
+        <entry encoding="base64">XDxhcHBseV9maXJzdF9jb25kaXRpb25cPg==</entry>
+        <entry encoding="base64">XDxDaGFsbGVuZ2VBcmdcPg==</entry>
+        <entry encoding="base64">XDxjaGFsbGVuZ2VcPg==</entry>
+        <entry>tag</entry>
+        <entry>expected</entry>
+        <entry>trial</entry>
+        <entry>pay</entry>
+        <entry>line</entry>
+        <entry>format</entry>
+      </history-search>
+      <history-cmd>
+        <entry>e .</entry>
+        <entry>sp Makefile</entry>
+        <entry>!</entry>
+        <entry>14-24t.</entry>
+        <entry>%s/&quot;elapsed_sec&quot;: 1/&quot;elapsed_sec&quot;: 1.0/gc</entry>
+        <entry>%s//path/gc</entry>
+        <entry>a!</entry>
+        <entry>tabnew</entry>
+        <entry>new</entry>
+        <entry>%s//(x: string, row: DynamoRow)/gc</entry>
+        <entry>action emacsIDEAs.AceJumpSelect</entry>
+        <entry>416y</entry>
+        <entry>Q</entry>
+        <entry>W</entry>
+        <entry>58y</entry>
+        <entry>s</entry>
+        <entry>68t.</entry>
+        <entry>q</entry>
+        <entry>action emacsIDEAs.AceJumpWord</entry>
+        <entry>w</entry>
+      </history-cmd>
+      <history-expr />
+      <history-input />
+    </history>
+    <shortcut-conflicts>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed E</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed A</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed W</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed OPEN_BRACKET</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed N</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed O</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed Y</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed P</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed R</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed V</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed X</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed I</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed U</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed G</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed F</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed S</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed D</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed C</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed B</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed CLOSE_BRACKET</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed Q</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed M</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>shift pressed INSERT</text>
+      </shortcut-conflict>
+    </shortcut-conflicts>
+  </component>
+</application>

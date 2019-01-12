@@ -1,0 +1,15 @@
+BoldAsFont=-1
+Font=Source Code Pro for Powerline
+FontHeight=12
+Locale=ja_JP
+Charset=UTF-8
+Term=xterm-256color
+BellType=0
+Transparency=off
+OpaqueWhenFocused=no
+BellFlash=no
+BellTaskbar=yes
+ThemeFile=rosipov
+FontSmoothing=default
+FontWeight=700
+FontIsBold=yes

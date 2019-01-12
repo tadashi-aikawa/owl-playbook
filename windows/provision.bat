@@ -1,7 +1,7 @@
 @echo off
 
-set UBUNTU_MNT="%USERPROFILE%\Box Sync\ubuntu-mnt"
-set WINDOWS_MNT="%USERPROFILE%\Box Sync\windows-mnt"
+set WINDOWS_MNT="%~dp0..\mnt\windows"
+set COMMON_MNT="%~dp0..\mnt\common"
 
 echo ------------------
 echo Install
@@ -23,7 +23,7 @@ echo ------------------
 
 set IDEA_DIR=.IntelliJIdea2018.1
 
-set IDEA_ORIGIN_CONFIG_DIR=%UBUNTU_MNT%\.IntelliJIdea\config
+set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\.IntelliJIdea\config
 set IDEA_CONFIG_DIR=%USERPROFILE%\%IDEA_DIR%\config
 
 call :link_idea_dir colors
@@ -35,14 +35,14 @@ call :link_idea_file options\keymap.xml
 call :link_idea_file options\markdown.xml
 call :link_idea_file options\vcs.xml
 call :link_idea_file options\vim_settings.xml
-call :link_file %USERPROFILE%\.ideavimrc %UBUNTU_MNT%\.ideavimrc
+call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\.IntelliJIdea\.ideavimrc
 
 
 echo ------------------
 echo VS Code
 echo ------------------
 
-set VSCODE_ORIGIN_USER_DIR=%UBUNTU_MNT%\.config\Code\User
+set VSCODE_ORIGIN_USER_DIR=%COMMON_MNT%\VSCode\User
 set VSCODE_USER_DIR=%USERPROFILE%\AppData\Roaming\Code\User
 
 call :link_vscode_file keybindings.json
@@ -82,7 +82,24 @@ call :link_windows_home .minttyrc
 call :link_windows_home .vimrc
 call :link_windows_home .vim
 
-call :link_dir C:\tools\Cmder\config %WINDOWS_MNT%\cmder\config
+echo ------------------
+echo Cmder
+echo ------------------
+
+set CMDER_ORIGIN_CONFIG_DIR=%WINDOWS_MNT%\cmder\config
+set CMDER_CONFIG_DIR=C:\tools\Cmder\config
+
+call :link_cmder_file cdz.lua
+call :link_cmder_file fukurou.jpg
+call :link_cmder_file powerline_core.lua
+call :link_cmder_file powerline_git.lua
+call :link_cmder_file powerline_hg.lua
+call :link_cmder_file powerline_npm.lua
+call :link_cmder_file powerline_prompt.lua
+call :link_cmder_file settings
+call :link_cmder_file user_aliases.cmd
+call :link_cmder_file user_profile.cmd
+call :link_cmder_file user-ConEmu.xml
 
 echo ------------------------------------
 echo git config
@@ -124,6 +141,10 @@ exit /b
 
 :link_vscode_dir
 call :link_dir %VSCODE_USER_DIR%\%1 %VSCODE_ORIGIN_USER_DIR%\%1
+exit /b
+
+:link_cmder_file
+call :link_file %CMDER_CONFIG_DIR%\%1 %CMDER_ORIGIN_CONFIG_DIR%\%1
 exit /b
 
 rem ----- common ------
