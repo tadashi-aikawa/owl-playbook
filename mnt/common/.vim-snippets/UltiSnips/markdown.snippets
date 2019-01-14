@@ -1,0 +1,214 @@
+#-------------------------------------------------
+# Markdown
+#-------------------------------------------------
+snippet h
+# ${1:Title}
+
+$0
+endsnippet
+
+snippet hh
+## ${1:Title}
+
+$0
+endsnippet
+
+snippet hhh
+### ${1:Title}
+
+$0
+endsnippet
+
+snippet h4
+#### ${1:Title}
+
+$0
+endsnippet
+
+snippet h5
+##### ${1:Title}
+
+$0
+endsnippet
+
+snippet table2
+| ${1} | ${2} |
+|-|-|
+| ${3} | ${4} |
+endsnippet
+
+snippet table3
+| ${1} | ${2} | ${3} |
+|-|-|-|
+| ${4} | ${5} | ${6} |
+endsnippet
+
+snippet table4
+| ${1} | ${2} | ${3} | ${4} |
+|-|-|-|-|
+| ${5} | ${6} | ${7} | ${8} |
+endsnippet
+
+#-------------------------------------------------
+# Jumeaux
+#-------------------------------------------------
+snippet jumeaux_release
+## :package: ${1:x.y.z}
+
+:fa-calendar: \``!v strftime("%Y-%m-%d")`\`
+
+$0
+endsnippet
+
+snippet jumeaux_breaking_changes
+??? danger "${1:Summary} ([${2}])"
+
+    ${3:detail}
+endsnippet
+
+snippet jumeaux_improvement
+??? hint "${1:Summary} ([${2}])"
+
+    ${3:detail}
+endsnippet
+
+snippet jumeaux_new_features
+??? info "${1:Summary} ([${2}])"
+
+    ${3:detail}
+endsnippet
+
+snippet jumeaux_bugfix
+??? bug "${1:Summary}な不具合を修正しました ([${2}])"
+
+    ${3:detail}
+endsnippet
+
+snippet jumeaux_other
+??? note "${1:Summary} ([${2}])"
+
+    ${3:detail}
+endsnippet
+
+
+#-------------------------------------------------
+# Blog
+#-------------------------------------------------
+
+snippet info "ブログの情報"
+{{<alert "info">}}
+$0
+{{</alert>}}
+endsnippet
+
+snippet hint "ブログのヒント"
+{{<alert "success">}}
+$0
+{{</alert>}}
+endsnippet
+
+snippet warn "ブログの注意"
+{{<alert "warning">}}
+$0
+{{</alert>}}
+endsnippet
+
+snippet danger "ブログの警告"
+{{<alert "danger">}}
+$0
+{{</alert>}}
+endsnippet
+
+
+snippet file "ブログの折りたたみファイル/コード"
+{{<file "${1:Summary}">}}
+${2:Detail}
+{{</file>}}
+$0
+endsnippet
+
+snippet info "付随情報"
+{{<info "${1:summary}">}}
+${2:Detail}
+{{</info>}}
+$0
+endsnippet
+
+snippet why "疑問に対する回答"
+{{<why "${1:summary}">}}
+${2:Detail}
+{{</why>}}
+$0
+endsnippet
+
+snippet trouble "よくあるトラブルの対処法"
+{{<warn "${1:summary}">}}
+${2:Detail}
+{{</warn>}}
+$0
+endsnippet
+
+snippet error "Errorの対処法"
+{{<error "${1:summary}">}}
+${2:Detail}
+{{</error>}}
+$0
+endsnippet
+
+snippet refer "ブログの参考リンク"
+{{<refer "${1:Title}" "${2:URL}">}}
+$0
+endsnippet
+
+
+snippet no-icon "ブログのその他情報"
+{{<alert "no-icon">}}
+${2:Detail}
+{{</alert>}}
+$0
+endsnippet
+
+snippet summary "ブログのsummary"
+{{<summary "${1:URL}">}}
+endsnippet
+
+snippet himg "ブログの横長画像"
+{{<himg "${1:URL}">}}
+endsnippet
+
+snippet vimg "ブログの縦長画像"
+{{<vimg "${1:URL}">}}
+endsnippet
+
+snippet new_article "ブログの新規投稿テンプレ"
+---
+title: "`!v expand("%:r")`"
+slug: ${1:Slug}
+date: `!v strftime("%Y-%m-%dT%H:%M:%S+09:00")`
+thumbnailImage: ${2:URL}
+categories:
+  - engineering
+tags:
+  - ${3:Tags}
+---
+
+${4:Summary}
+
+<!--more-->
+
+<img src="$2"/>
+
+<!--toc-->
+
+
+はじめに
+--------
+
+
+
+総括
+----
+
+
+endsnippet
+

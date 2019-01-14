@@ -265,6 +265,8 @@ imap <C-l> <C-x><C-l>
 "---- Alt -------
 " [quick-run] Golangの実行
 autocmd FileType go nnoremap <M-r> :QuickRun<CR>
+" [quick-run] Pythonの実行
+autocmd FileType python nnoremap <M-r> :QuickRun<CR>
 " [vim-go] 定義異動した後に元の場所へ戻る
 autocmd FileType go nnoremap <A-Left> :GoDefPop <CR>
 " ---------------- g -------------------

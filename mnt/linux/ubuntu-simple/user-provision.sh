@@ -28,10 +28,12 @@ fi
 chmod 600 .ssh/id_rsa*
 
 # sync
-ln -snf /mnt/ubuntu/.vim        .vim
-ln -snf /mnt/ubuntu/.vimrc      .vimrc
-ln -snf /mnt/ubuntu/.tmux.conf  .tmux.conf
-ln -snf /mnt/ubuntu/.inputrc    .inputrc
+ln -snf /mnt/ubuntu/.vim              .vim
+ln -snf /mnt/ubuntu/.vimrc            .vimrc
+ln -snf /mnt/ubuntu/.vim-snippets     .vim-snippets
+ln -snf /mnt/ubuntu/.tmux.conf        .tmux.conf
+ln -snf /mnt/ubuntu/.inputrc          .inputrc
+
 
 cat << 'EOF'
 Please manually....
