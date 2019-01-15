@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-01-11 11:56:33" build="180626">
+		<key name=".Vanilla" modified="2019-01-15 08:43:52" build="180626">
 			<value name="ColorTable00" type="dword" data="00222827"/>
 			<value name="ColorTable01" type="dword" data="009e5401"/>
 			<value name="ColorTable02" type="dword" data="0004aa74"/>
@@ -10,7 +10,7 @@
 			<value name="ColorTable05" type="dword" data="009c5689"/>
 			<value name="ColorTable06" type="dword" data="0049b6b6"/>
 			<value name="ColorTable07" type="dword" data="00cacaca"/>
-			<value name="ColorTable08" type="dword" data="00000000"/>
+			<value name="ColorTable08" type="dword" data="007c7c7c"/>
 			<value name="ColorTable09" type="dword" data="00f58303"/>
 			<value name="ColorTable10" type="dword" data="0006d08d"/>
 			<value name="ColorTable11" type="dword" data="00e5c258"/>
@@ -116,19 +116,19 @@
 			<value name="bgImageColors" type="dword" data="00000001"/>
 			<value name="bgOperation" type="hex" data="07"/>
 			<value name="bgPluginAllowed" type="hex" data="01"/>
-			<value name="AlphaValue" type="hex" data="FF"/>
+			<value name="AlphaValue" type="hex" data="EB"/>
 			<value name="AlphaValueSeparate" type="hex" data="01"/>
-			<value name="AlphaValueInactive" type="hex" data="E7"/>
+			<value name="AlphaValueInactive" type="hex" data="E9"/>
 			<value name="UserScreenTransparent" type="hex" data="01"/>
 			<value name="ColorKeyTransparent" type="hex" data="00"/>
 			<value name="ColorKeyValue" type="dword" data="00010101"/>
 			<value name="UseCurrentSizePos" type="hex" data="01"/>
-			<value name="WindowMode" type="dword" data="00000520"/>
+			<value name="WindowMode" type="dword" data="0000051f"/>
 			<value name="ConWnd Width" type="dword" data="000000bd"/>
-			<value name="ConWnd Height" type="dword" data="00000032"/>
+			<value name="ConWnd Height" type="dword" data="0000002b"/>
 			<value name="Cascaded" type="hex" data="01"/>
-			<value name="ConWnd X" type="long" data="4007"/>
-			<value name="ConWnd Y" type="long" data="-993"/>
+			<value name="ConWnd X" type="long" data="1200"/>
+			<value name="ConWnd Y" type="long" data="-301"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="AutoSaveSizePos" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
@@ -485,13 +485,14 @@
 			<value name="WndDragKey" type="dword" data="00121101"/>
 			<key name="Tasks" modified="2018-02-22 06:02:12" build="171109">
 				<value name="Count" type="long" data="9"/>
-				<key name="Task1" modified="2018-11-14 20:07:37" build="180626">
+				<key name="Task1" modified="2018-11-16 22:46:04" build="180626">
 					<value name="Name" type="string" data="{cmd::Cmder as Admin}"/>
 					<value name="GuiArgs" type="string" data=' /icon "%CMDER_ROOT%\icons\cmder.ico"'/>
 					<value name="Active" type="long" data="0"/>
-					<value name="Count" type="long" data="0"/>
+					<value name="Count" type="long" data="1"/>
 					<value name="Hotkey" type="dword" data="00000000"/>
 					<value name="Flags" type="dword" data="00000000"/>
+					<value name="Cmd1" type="string" data='cmd /k ""%ConEmuDir%\..\init.bat"  -new_console:d:%USERPROFILE% "'/>
 				</key>
 				<key name="Task2" modified="2018-11-14 20:14:12" build="180626">
 					<value name="Name" type="string" data="{cmd::Cmder}"/>
@@ -673,7 +674,7 @@
 			<value name="StatusBar.Hide.Dpi" type="hex" data="01"/>
 			<value name="TabFlashChanged" type="long" data="8"/>
 			<value name="TabModifiedSuffix" type="string" data="[*]"/>
-			<key name="HotKeys" modified="2018-12-21 16:31:11" build="180626">
+			<key name="HotKeys" modified="2018-11-24 21:44:03" build="180626">
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="00000011"/>
 				<value name="Multi.ArrowsModifier" type="dword" data="0000005b"/>
@@ -731,7 +732,7 @@
 				<value name="Multi.MoveRight" type="dword" data="00125b27"/>
 				<value name="CTS.VkBlockStart" type="dword" data="00000000"/>
 				<value name="CTS.VkTextStart" type="dword" data="00000000"/>
-				<value name="CTS.VkCopyFmt0" type="dword" data="00001143"/>
+				<value name="CTS.VkCopyFmt0" type="dword" data="00000000"/>
 				<value name="CTS.VkCopyFmt1" type="dword" data="00101143"/>
 				<value name="CTS.VkCopyFmt2" type="dword" data="00000000"/>
 				<value name="CTS.VkCopyAll" type="dword" data="00000000"/>
@@ -865,14 +866,14 @@
 				<value name="Key.JumpActiveMonitor" type="dword" data="00000000"/>
 				<value name="Key.BufPrUp" type="dword" data="00121121"/>
 				<value name="Key.BufPrDn" type="dword" data="00121122"/>
-				<value name="Key.ResetTerm" type="dword" data="0000a24c"/>
+				<value name="Key.ResetTerm" type="dword" data="00000000"/>
 				<value name="CheckUpdates" type="dword" data="00105b55"/>
 				<value name="Multi.NewWndConfirm" type="dword" data="00000000"/>
 				<value name="CloseToRightKey" type="dword" data="00000000"/>
 			</key>
 			<value name="StartCreateDelay" type="ulong" data="100"/>
 			<value name="DefaultTerminalDebugLog" type="hex" data="00"/>
-			<value name="LastMonitor" type="string" data="0,0,0,0"/>
+			<value name="LastMonitor" type="string" data="1200,-307,3120,1573"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
 			<value name="DownShowExOnTopMessage" type="hex" data="00"/>
 			<value name="EnvironmentSet" type="multi">
