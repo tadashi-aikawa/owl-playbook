@@ -147,6 +147,24 @@ echo Asia/Tokyo > /etc/timezone
 
 cd /tmp
 
+# unzip
+apt_install unzip
+# jq
+apt_install jq
+# pip
+apt_install python-pip
+# tree
+apt_install tree
+# unzip
+apt_install unzip
+# pip3
+apt_install python3-pip
+
+# awscli
+pip_install awscli
+# pipenv
+pip3_install pipenv
+
 
 # gowl
 github_install_targz gowl \
@@ -189,22 +207,6 @@ wget_install z \
   "which z" \
   "/usr/local/bin/z"
 
-# jq
-apt_install jq
-# pip
-apt_install python-pip
-# tree
-apt_install tree
-# unzip
-apt_install unzip
-# pip3
-apt_install python3-pip
-
-# awscli
-pip_install awscli
-
-# pipenv
-pip3_install pipenv
 
 # node/npm (必要なら)
 # apt-get install -y nodejs npm
