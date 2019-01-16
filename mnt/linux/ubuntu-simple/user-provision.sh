@@ -28,6 +28,7 @@ fi
 chmod 600 .ssh/id_rsa*
 
 # sync
+ln -snf /mnt/ubuntu/.bashrc           .bashrc.org
 ln -snf /mnt/ubuntu/.vim              .vim
 ln -snf /mnt/ubuntu/.vimrc            .vimrc
 ln -snf /mnt/ubuntu/.vim-snippets     .vim-snippets

@@ -72,3 +72,5 @@ $ vagrant up --provision
 $ vagrant ssh
 $ sh /mnt/ubuntu-simple/user-provision.sh
 ```
+
+`.bashrc`の最後に`. ~/.bashrc.org`を追加します。 (TODO: 冪等性を持つ仕組みを作りたい)
