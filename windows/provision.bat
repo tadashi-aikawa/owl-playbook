@@ -3,6 +3,8 @@
 set WINDOWS_MNT="%~dp0..\mnt\windows"
 set COMMON_MNT="%~dp0..\mnt\common"
 
+set ROAMING="%USERPROFILE%\AppData\Roaming"
+
 rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
 :tmp
@@ -39,7 +41,7 @@ call :each link_idea_file idea-files.txt
 call :******************** VS Code
 
 set VSCODE_ORIGIN_USER_DIR=%COMMON_MNT%\VSCode\User
-set VSCODE_USER_DIR=%USERPROFILE%\AppData\Roaming\Code\User
+set VSCODE_USER_DIR=%ROAMING%\Code\User
 
 call :link_vscode_file keybindings.json
 call :link_vscode_file settings.json
@@ -64,7 +66,7 @@ call :each link_cmder_file cmder-files.txt
 call :******************** Keypirinha
 
 set KEYPIRINHA_ORIGIN_DIR=%WINDOWS_MNT%\keypirinha
-set KEYPIRINHA_DIR=C:\Users\syoum\AppData\Roaming\Keypirinha
+set KEYPIRINHA_DIR=%ROAMING%\Keypirinha
 
 call :link_file %KEYPIRINHA_DIR%\User\Keypirinha.ini %KEYPIRINHA_ORIGIN_DIR%\User\Keypirinha.ini
 
@@ -83,7 +85,6 @@ echo Clone...
 echo   * owl-cmder-tool
 echo   * spinal-reflex-bindings-template
 echo   * keypirinha-OwlTodoist
-echo Install Keypirinha (https://github.com/Keypirinha/Keypirinha/releases/download)
 
 exit /b
 
