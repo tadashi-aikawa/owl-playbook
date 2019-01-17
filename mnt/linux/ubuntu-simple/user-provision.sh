@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+# write_if_not_exist user-provision.sh 'target line'
+function write_if_not_exist() {
+  local file=$1
+  local line=$2
+
+  grep -F "$line" $file > /dev/null || echo "$line" >> $file
+}
+
 # fzf
 if [ ! -e ~/.fzf ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
