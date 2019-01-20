@@ -2,3 +2,5 @@
 .vagrant
 /.idea
 *.log
+
+user-ConEmu.xml
