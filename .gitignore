@@ -3,4 +3,4 @@
 /.idea
 *.log
 
-user-ConEmu.xml
+/mnt/windows/cmder/config/user-ConEmu.xml

@@ -28,7 +28,7 @@ Windows setup
 4. `install.bat`を実行
 5. Intellij IDEAを立ち上げてライセンスを通す
 6. VS Codeを起動する
-7. `mnt\windows\cmder\config\user-ConEmu.xml`を別途用意する (TODO: symlinkしないところに用意してgit管理)
+7. `windows\chocolatey\user-ConEmu.xml`を`mnt\windows\cmder\config`配下にコピー
 
 これで以降の構成管理に必要なツールおよび環境変数が設定されます。
 5と6はsymbolic linkが参照するディレクトリ構成作成のために必要です。
