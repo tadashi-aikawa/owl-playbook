@@ -159,6 +159,8 @@ apt_install tree
 apt_install unzip
 # pip3
 apt_install python3-pip
+# bats
+apt_install bats
 
 # awscli
 pip_install awscli
