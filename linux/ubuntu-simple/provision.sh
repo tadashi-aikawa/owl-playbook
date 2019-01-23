@@ -211,10 +211,10 @@ wget_install z \
 
 
 # node/npm (必要なら)
-# apt-get install -y nodejs npm
-# npm install n -g
-# n lts
-# ln -sf /usr/local/bin/node /usr/bin/node
+apt-get install -y nodejs npm
+npm install n -g
+n lts
+ln -snf /usr/local/bin/node /usr/bin/node
 
 # Uninstall nano
 
