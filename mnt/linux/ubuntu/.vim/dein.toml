@@ -55,12 +55,44 @@ let g:EasyMotion_use_migemo = 1
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
+# [[plugins]]
+# repo = 'ctrlpvim/ctrlp.vim'
+# hook_add = '''
+# " node_modules,build,distは無視
+# let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|dist)$'
+# '''
+
 [[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
 hook_add = '''
-" node_modules,build,distは無視
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|build|dist)$'
+fun! FzfOmniFiles()
+  let is_git = system('git status')
+  if v:shell_error
+    :Files
+  else
+    :GitFiles
+  endif
+endfun
+
+let g:fzf_layout = { 'down': '~70%' }
+
+command! -bang -nargs=? -complete=dir Files
+\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 '''
+
 
 [[plugins]]
 # マークが表示される
@@ -85,13 +117,6 @@ repo = 'osyo-manga/vim-anzu'
 hook_add = '''
 
 '''
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
-depends = ['unite']
-repo = 'Shougo/unite-outline'
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'

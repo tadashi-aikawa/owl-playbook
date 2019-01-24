@@ -216,6 +216,14 @@ endif
 "  Key bindings
 " ---------------------------------------------------
 
+
+
+nnoremap <C-e> :Buffers<CR>
+nnoremap <C-h> :History<CR>
+nnoremap <C-g> :Rg<Space>
+nnoremap <C-p> :call FzfOmniFiles()<CR>
+
+
 " MetaキーにAltを割り当てる
 let c = 'a'
 while c <= 'z'
