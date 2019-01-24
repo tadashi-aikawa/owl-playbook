@@ -198,27 +198,6 @@ augroup END
 
 
 #-----------------
-# deoplete
-#-----------------
-
-# [[plugins]]
-# repo = 'roxma/nvim-yarp'
-
-# [[plugins]]
-# repo = 'roxma/vim-hug-neovim-rpc'
-
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
-# hook_add = '''
-#     let g:python3_host_prog = '/usr/bin/python3'
-#     let g:deoplete#enable_at_startup = 0
-#     let g:deoplete#auto_complete_delay = 0
-#     set completeopt+=noinsert
-# '''
-
-
-#-----------------
 # snippets
 #-----------------
 

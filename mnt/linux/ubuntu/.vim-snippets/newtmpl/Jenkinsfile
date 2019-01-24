@@ -1,6 +1,14 @@
 pipeline {
     agent { label 'master' }
 
+    parameters {
+        string(
+            name: 'PARAMETER',
+            defaultValue: 'default parameter',
+            description: 'parameter description',
+        )
+    }
+
     options {
         buildDiscarder(
             logRotator(
@@ -10,7 +18,6 @@ pipeline {
     }
 
     stages {
-
         stage('Checkout') {
             steps {
                 cleanWs()
@@ -20,7 +27,7 @@ pipeline {
 
         stage('Fetch AccessLog') {
             environment {
-                DATE = "${params.DATE}"
+                DATE = "${params.PARAMETER}"
             }
             steps {
                 sh '''\
@@ -34,7 +41,15 @@ pipeline {
                 archiveArtifacts 'testcases/**/*'
             }
         }
-
     }
 
+    post {
+        success {
+            echo "success"
+        }
+
+        failure {
+            echo "failure"
+        }
+    }
 }
