@@ -106,8 +106,6 @@ let g:ale_list_window_size = 5
 
 " <<<<<  ALE ====> python  >>>>>>
 
-" pycodestyleのバグ修正がリリースされれば... (https://github.com/PyCQA/pycodestyle/issues/682)
-let g:ale_python_flake8_args = '--max-line-length=140 --ignore=W391,E402,E701,E704,E131,E128,E124'
 " importエラーは無視 https://github.com/python/mypy/issues/3905
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 '''
