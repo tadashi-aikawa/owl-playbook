@@ -44,6 +44,34 @@ function apt_install() {
   success "★ All good!!"
 }
 
+function _make_install() {
+  local name="$1"
+  local url="$2"
+  local check_command="${3:-'pwd'}"
+  local skip_if_expected="${4:-'null'}"
+
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "┃ [make] Install ${name}"
+  echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  if [[ $(eval ${check_command}) =~ ${skip_if_expected} ]]; then
+    warn "Skip install ${name} because \`${check_command}\` =~ \"${skip_if_expected}\""
+    return
+  fi
+
+  info "Clone ${name} from ${url}."
+  git clone ${url} ${name}
+  success "Clone ${name}."
+
+  info "Make operations"
+  cd ${name}
+  ./autogen.sh
+  ./configure --prefix=/usr/local
+  make
+  sudo make install
+  success "★ All good!!"
+}
+
 function wget_install() {
   local name="$1"
   local url="$2"
@@ -162,6 +190,10 @@ apt_install python3-pip
 # bats
 apt_install bats
 
+# for ctags
+apt_install autoconf
+apt_install pkg-config
+
 # awscli
 pip_install awscli
 # pipenv
@@ -208,6 +240,12 @@ wget_install z \
   "https://raw.githubusercontent.com/rupa/z/master/z.sh" \
   "which z" \
   "/usr/local/bin/z"
+
+# universal ctags
+_make_install ctags \
+  "https://github.com/universal-ctags/ctags.git" \
+  "ctags --version" \
+  "^Universal Ctags.*"
 
 
 # node/npm (必要なら)
