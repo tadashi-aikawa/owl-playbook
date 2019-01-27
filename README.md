@@ -65,6 +65,17 @@ Ubuntu simple setup
 本プロジェクトでWindowsのセットアップをしていればインストールされています。
 
 
+### Boxの追加
+
+`linux/lubuntu-base`をベースにして作成した`lubuntu-jp.box`を追加します。
+
+```
+$ vagrant box add "tadashi-aikawa/lubuntu-jp" lubuntu-jp.box
+```
+
+TODO: 作り方の記事
+
+
 ### 実行
 
 ```
