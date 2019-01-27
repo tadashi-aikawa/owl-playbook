@@ -8,9 +8,17 @@
     src: /tmp/tig.tar.gz
     dest: /tmp
 
-- name: Install
+- name: Build
   make:
     chdir: /tmp/tig-{{ tig_version }}
     params:
+      prefix: /usr/local
       LDLIBS: -lncursesw
       CPPFLAGS: -DHAVE_NCURSESW_CURSES_H
+
+- name: Install
+  make:
+    chdir: /tmp/tig-{{ tig_version }}
+    target: install
+    params:
+      prefix: /usr/local
