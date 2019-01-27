@@ -1,16 +1,28 @@
 # クリップボード連携
 export DISPLAY=:0
 
+# Ctrl+Sの画面ロックを無効
+stty stop undef
+
 # z
 . /usr/bin/z
 
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# fzfの設定
+# [fzf] 設定
 export FZF_DEFAULT_OPTS="--reverse --border --height 50%"
+# デフォルトコマンドfd
+export FZF_DEFAULT_COMMAND='fd -HL --exclude ".git" .'
 # fzfのCtrl+T設定 ファイルの中身を表示して200行をプレビュー
 export FZF_CTRL_T_OPTS="--preview 'bat --color \"always\" {}' --height 90%"
 # fzfのALt+C設定 ツリー表示して200行をプレビュー
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200' --height 90%"
+
+# [fzf] オートコンプリートのデフォルトコマンド
+_fzf_compgen_path() {
+  fd -HL --exclude ".git" . "$1"
+}
+_fzf_compgen_dir() {
+  fd --type d -HL --exclude ".git" . "$1"
+}
 
 
 source ~/pureline-inspired/pureline ~/pureline-inspired/.pureline.conf

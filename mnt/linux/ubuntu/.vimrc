@@ -216,14 +216,6 @@ endif
 "  Key bindings
 " ---------------------------------------------------
 
-
-
-nnoremap <C-e> :Buffers<CR>
-nnoremap <C-h> :History<CR>
-nnoremap <C-g> :Rg<Space>
-nnoremap <C-p> :call FzfOmniFiles()<CR>
-
-
 " MetaキーにAltを割り当てる
 let c = 'a'
 while c <= 'z'
@@ -252,14 +244,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
 "---- Ctrl -------
-
-let g:jedi#goto_command = "<Space>d"
-let g:jedi#goto_assignments_command = "<Space>g"
-let g:jedi#documentation_command = "K"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#usages_command = "<Space>H"
-" let g:jedi#goto_definitions_command = ""
-" let g:jedi#rename_command = "<leader>r"
 
 " <C-Space>でオートコンプリート
 imap <Nul> <C-x><C-o>
@@ -310,19 +294,35 @@ noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
 " [incsearch-fuzzy] ?
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 
+" jedi
+let g:jedi#documentation_command = "K"
+let g:jedi#completions_command = "<C-Space>"
 
 " ------------- <Space> ----------------
 
+" ウィンドウ切り替え
+nnoremap <silent> <Space><Space> <C-w>w
+" [Markdown] テーブルをフォーマッティングする
+nnoremap <silent> <Space>@ :<C-u>TableFormat<CR>
+" [vim-over]
+nnoremap <silent> <Space>// :OverCommandLine<CR>%s/
+
 " [deopelete] 有効
 nnoremap <Space>a :call deoplete#enable()<CR>
-" [lsp] 定義
-" nmap <silent> <Space>d :LspDefinition<CR>
-" [ctrlp] MRU files
-nnoremap <silent> <Space>e :CtrlPMRUFiles<CR>
+" [fzf] バッファから開く
+nnoremap <Space>b :Buffers<CR>
+" [jedi] 定義へ移動
+let g:jedi#goto_command = "<Space>d"
+" [fzf] 履歴から開く
+nnoremap <Space>e :History<CR>
+" [fzf] 全文検索
+nnoremap <Space>g :Rg<Space>
 " ウィンドウ左移動
 nnoremap <silent> <Space>h <C-w>h
-" 呼び出し履歴
+" [vim-go] 呼び出し履歴
 autocmd FileType go nnoremap <silent> <Space>H :GoReferrers<CR>
+" [jedi] Usage
+let g:jedi#usages_command = "<Space>H"
 "次のエラー
 "Golang
 autocmd FileType go nnoremap <Space>j :cnext<CR>
@@ -331,47 +331,27 @@ autocmd FileType go nnoremap <Space>j :cnext<CR>
 autocmd FileType go nnoremap <Space>k :cprevious<CR>
 "ウィンドウ右移動
 nnoremap <silent> <Space>l <C-w>l
-" [ctrlp] Line
-nnoremap <silent> <Space>L :CtrlPLine<CR>
-"ウィンドウ切り替え
-nnoremap <silent> <Space><Space> <C-w>w
+" [fzf] タグへ移動
+nnoremap <Space>o :Tags<CR>
+" [fzf] ファイルのfuzzy検索
+nnoremap <Space>p :call FzfOmniFiles()<CR>
 " [NERDTree] ON/OFF切り替え
 nnoremap <silent> <Space>n :<C-u>:NERDTreeTabsToggle<CR>
-" [unite-outline] アウトライン
-nnoremap <silent> <Space>o :Unite -vertical -winwidth=40 -no-quit outline<CR>
-" [vim-go] Goの場合はGoDecls
-autocmd FileType go nnoremap <Space>o :GoDecls<CR>
-" [lsp] Hover
-nmap <silent> <Space>p :LspHover<CR>
 " バッファ切り替え
 nnoremap <Space>r :b#<CR>
-
-"
-" URL Encode
-vnoremap <Space>sen :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
-" URL Decode
-vnoremap <Space>sde :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
-" Dropbox URL transform
-nnoremap <silent> <Space>sdr v:!python -c 'import sys; print sys.stdin.read().strip().replace("https://www.dropbox.com/s", "https://dl.dropboxusercontent.com/s").replace("?dl=0", "")'<cr>
-" Markdown h1 header
-nnoremap <silent> <Space>sh= v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"="*l)'<cr>
-" Markdown h2 header
-nnoremap <silent> <Space>sh- v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"-"*l)'<cr>
-" URL query parsing
-vnoremap <Space>spq :!python -c 'import sys,urllib;print urllib.parse_qs(sys.stdin.read().strip())'<cr>
-
+" [fzf] Gitステータス
+nnoremap <Space>s :GFiles?<CR>
 " [Encoding] => cp932
 nnoremap <silent> <Space>S :e ++enc=cp932<cr>
-" [ctrlp] Buffer
-nnoremap <silent> <Space>t :CtrlPBuffer<CR>
 " [NERDTree] Treeに移動し、カレントファイルをフォーカス
 nnoremap <silent> <Space>w :<C-u>:NERDTreeTabsFind<CR>
-"
-" [Markdown] テーブルをフォーマッティングする
-nnoremap <silent> <Space>@ :<C-u>TableFormat<CR>
-" [vim-over]
-nnoremap <silent> <Space>// :OverCommandLine<CR>%s/
 
+
+"
+" Markdown h1 header
+" nnoremap <silent> <Space>sh= v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"="*l)'<cr>
+" Markdown h2 header
+" nnoremap <silent> <Space>sh- v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"-"*l)'<cr>
 
 
 " ---------------------------------------------------
