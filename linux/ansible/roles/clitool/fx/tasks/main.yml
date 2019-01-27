@@ -1,7 +1,7 @@
 - import_role: { name: check/absent }
   vars:
     target: fx
-    command: 'fx 2>| grep Usage'
+    command: 'fx 2>&1 | grep Usage'
 
 - import_tasks: install.yml
   when: fx_is_absent
