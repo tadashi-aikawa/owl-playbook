@@ -1,0 +1,4 @@
+- name: Install
+  shell: git clone --depth 1 https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+  args:
+    creates: ~/.tmux-themepack

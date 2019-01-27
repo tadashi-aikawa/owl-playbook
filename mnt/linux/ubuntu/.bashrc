@@ -1,4 +1,6 @@
-. /usr/local/bin/z
+. /usr/bin/z
+
+export PATH="$PATH:~/n/bin"
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # fzfの設定

@@ -1,0 +1,8 @@
+- import_role: { name: check/absent }
+  vars:
+    target: gowl
+    command: "gowl -V | grep -E '^{{ gowl_version }}$'"
+
+- import_tasks: install.yml
+  when: gowl_is_absent
+  become: yes

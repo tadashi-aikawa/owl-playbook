@@ -1,7 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: fzf
-    command: 'fzf --version'
-
-- import_tasks: install.yml
-  when: fzf_is_absent

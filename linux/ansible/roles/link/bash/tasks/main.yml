@@ -1,0 +1,10 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/.bashrc'
+    dest: ~/.bashrc.org
+    state: link
+    force: yes
+
+- lineinfile:
+    path: ~/.bashrc
+    line: '. ~/.bashrc.org'

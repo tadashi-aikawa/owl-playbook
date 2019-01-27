@@ -1,3 +1,0 @@
-dependencies:
-  - role: core/git
-    when: git is undefined

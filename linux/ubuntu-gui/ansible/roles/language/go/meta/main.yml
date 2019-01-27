@@ -1,4 +1,0 @@
-dependencies:
-  - role: check/path
-    target: /usr/local/go/bin
-

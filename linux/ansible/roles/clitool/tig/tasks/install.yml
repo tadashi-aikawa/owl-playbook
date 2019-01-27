@@ -1,0 +1,16 @@
+- name: Download
+  get_url:
+    url: https://github.com/jonas/tig/releases/download/tig-{{ tig_version }}/tig-{{ tig_version }}.tar.gz
+    dest: /tmp/tig.tar.gz
+
+- name: Extract
+  unarchive:
+    src: /tmp/tig.tar.gz
+    dest: /tmp
+
+- name: Install
+  make:
+    chdir: /tmp/tig-{{ tig_version }}
+    params:
+      LDLIBS: -lncursesw
+      CPPFLAGS: -DHAVE_NCURSESW_CURSES_H

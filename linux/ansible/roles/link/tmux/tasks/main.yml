@@ -1,0 +1,6 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/.tmux.conf'
+    dest: ~/.tmux.conf
+    state: link
+    force: yes

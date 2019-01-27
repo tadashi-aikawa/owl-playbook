@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: ncursesw
-    command: "ncursesw6-config --version | grep -E '^{{ ncursesw_version }}\\.'"
-
-- import_tasks: install.yml
-  when: ncursesw_is_absent
-  become: yes

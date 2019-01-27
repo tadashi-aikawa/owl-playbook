@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: exa
-    command: "exa --version | grep -E 'v{{ exa_version }}$'"
-
-- import_tasks: install.yml
-  when: exa_is_absent
-  become: yes

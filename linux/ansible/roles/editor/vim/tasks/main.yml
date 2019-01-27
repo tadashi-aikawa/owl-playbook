@@ -1,0 +1,4 @@
+- name: "Install"
+  become: yes
+  apt:
+    name: vim-gtk

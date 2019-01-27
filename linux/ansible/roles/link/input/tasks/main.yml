@@ -1,0 +1,6 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/.inputrc'
+    dest: ~/.inputrc
+    state: link
+    force: yes

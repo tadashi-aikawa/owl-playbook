@@ -1,7 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: fisherman
-    command: 'fish -c "fisher version"'
-
-- import_tasks: install.yml
-  when: fisherman_is_absent

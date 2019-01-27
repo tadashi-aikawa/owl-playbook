@@ -46,4 +46,7 @@
   "markdown.styles": [
     "style.css"
   ],
+  "files.associations": {
+    "Vagrantfile": "ruby"
+  },
 }

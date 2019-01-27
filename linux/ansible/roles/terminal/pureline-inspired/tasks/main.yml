@@ -1,0 +1,7 @@
+- import_role: { name: check/absent }
+  vars:
+    target: pureline_inspired
+    command: 'ls ~/pureline-inspired'
+
+- import_tasks: install.yml
+  when: pureline_inspired_is_absent

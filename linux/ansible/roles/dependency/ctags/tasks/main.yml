@@ -1,0 +1,6 @@
+- name: Install
+  become: yes
+  apt:
+    name:
+      - autoconf
+      - pkg-config

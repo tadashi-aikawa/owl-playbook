@@ -1,0 +1,7 @@
+- import_role: { name: check/absent }
+  vars:
+    target: bash_language_server
+    command: 'bash-language-server --version'
+
+- import_tasks: install.yml
+  when: bash_language_server_is_absent

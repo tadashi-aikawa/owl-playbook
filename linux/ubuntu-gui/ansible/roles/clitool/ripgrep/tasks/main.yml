@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: ripgrep
-    command: "rg -V | grep -E ' {{ ripgrep_version }}$'"
-
-- import_tasks: install.yml
-  when: ripgrep_is_absent
-  become: yes

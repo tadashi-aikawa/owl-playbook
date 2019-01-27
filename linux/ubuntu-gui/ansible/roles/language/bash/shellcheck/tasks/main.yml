@@ -1,4 +1,0 @@
-- name: Install
-  become: yes
-  apt:
-    name: shellcheck

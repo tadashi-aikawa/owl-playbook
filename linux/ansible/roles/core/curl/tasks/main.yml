@@ -1,0 +1,8 @@
+- name: 'Install'
+  become: yes
+  apt:
+    name: curl
+
+- set_fact:
+    curl: true
+

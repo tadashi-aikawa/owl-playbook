@@ -68,10 +68,6 @@ Ubuntu simple setup
 ### 実行
 
 ```
-$ cd linux/ubuntu-simple
-$ vagrant up --provision
-$ vagrant ssh
-$ bash /mnt/ubuntu-simple/user-provision.sh
+$ cd /mnt-ansible
+$ make lubuntu-jp
 ```
-
-`.bashrc`の最後に`. ~/.bashrc.org`を追加します。 (TODO: 冪等性を持つ仕組みを作りたい)

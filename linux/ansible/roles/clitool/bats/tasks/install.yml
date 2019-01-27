@@ -1,0 +1,10 @@
+- name: Install
+  git:
+    repo: https://github.com/sstephenson/bats.git
+    dest: /tmp/bats
+
+- name: Install
+  shell: ./install.sh /usr/local
+  become: yes
+  args:
+    chdir: /tmp/bats

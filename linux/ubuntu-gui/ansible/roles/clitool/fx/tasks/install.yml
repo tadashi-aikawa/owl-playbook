@@ -1,5 +1,0 @@
-- name: Install
-  npm:
-    name: fx
-    global: yes
-

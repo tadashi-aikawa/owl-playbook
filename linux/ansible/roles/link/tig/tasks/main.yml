@@ -1,0 +1,6 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/.tigrc'
+    dest: ~/.tigrc
+    state: link
+    force: yes

@@ -1,4 +1,0 @@
-- name: Install
-  shell: git clone --depth 1 https://github.com/pyenv/pyenv.git ~/.pyenv
-  args:
-    creates: ~/.pyenv

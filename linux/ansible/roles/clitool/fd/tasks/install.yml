@@ -1,0 +1,12 @@
+- name: Install
+  unarchive:
+    src: https://github.com/sharkdp/fd/releases/download/v{{ fd_version }}/fd-v{{ fd_version }}-x86_64-unknown-linux-musl.tar.gz
+    dest: /tmp
+    mode: u+x,g+x,o+x
+    remote_src: yes
+
+- name: Install
+  shell: mv fd-v{{ fd_version }}-x86_64-unknown-linux-musl/fd /usr/bin/fd
+  args:
+    chdir: /tmp
+

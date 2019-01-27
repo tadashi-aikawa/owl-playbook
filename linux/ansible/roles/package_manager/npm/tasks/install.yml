@@ -1,0 +1,7 @@
+- name: "Install"
+  shell: "curl -L https://git.io/n-install | bash -s -- -y"
+  args:
+    warn: false
+
+- set_fact:
+    npm: true

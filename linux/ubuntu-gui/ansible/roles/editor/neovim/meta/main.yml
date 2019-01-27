@@ -1,4 +1,0 @@
-dependencies:
-  - role: "package_manager/pip3"
-    when: pip3 is undefined
-
