@@ -1,7 +1,5 @@
 . /usr/bin/z
 
-export PATH="$PATH:~/n/bin"
-
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # fzfの設定
 export FZF_DEFAULT_OPTS="--reverse --border --height 50%"
