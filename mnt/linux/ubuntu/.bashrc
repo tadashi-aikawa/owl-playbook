@@ -1,3 +1,7 @@
+# クリップボード連携
+export DISPLAY=:0
+
+# z
 . /usr/bin/z
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
