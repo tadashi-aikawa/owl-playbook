@@ -1,3 +1,5 @@
+# shellcheck disable=SC1090,SC2012
+
 # クリップボード連携
 export DISPLAY=:0
 
