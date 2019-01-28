@@ -5,5 +5,3 @@ dependencies:
     when: curl is undefined
   - role: core/make
     when: make is undefined
-  - role: check/path
-    target: ~/n/bin
