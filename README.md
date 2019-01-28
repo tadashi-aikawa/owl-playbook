@@ -102,3 +102,5 @@ Ansibleを実行して環境を構築します。
 $ cd /mnt-ansible
 $ make lubuntu-jp
 ```
+
+TODO: 1度目の実行が必ずbash-language-serverで落ちるのを修正 (nインストール後、.bashrcに書かれた環境変数が再設定されないため)
