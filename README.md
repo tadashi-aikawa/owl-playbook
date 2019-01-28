@@ -89,6 +89,13 @@ $ vagrant up --provision
 
 ### 環境構築
 
+まずはイメージにsshログインします。
+
+```
+$ vagrant ssh
+# vagrant ssh-configの情報を~/.ssh/configに記載してもOK
+```
+
 Ansibleを実行して環境を構築します。
 
 ```
