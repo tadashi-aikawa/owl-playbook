@@ -36,7 +36,7 @@ alias cdg='cd $(gowl list | fzf)'
 
 alias ga='git add'
 alias gaa='git add --all'
-alias gc='git checkout $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
+alias gc='git checkout $(git branch -l | grep -vE "^\*" | tr -d " " | fzf --preview "git log --oneline --all --graph --decorate $(git rev-parse --abbrev-ref HEAD)..{}")'
 alias gcb='git checkout -b'
 alias gcm='git commit -m'
 alias gcr='git branch -rl | grep -vE "HEAD|master" | tr -d " " | sed -r "s@origin/@@g" | fzf | xargs -i git checkout -b {} origin/{}'
@@ -48,7 +48,7 @@ alias gll='git log --oneline --all --graph --decorate'
 alias gls='git log -3'
 alias glll="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b'"
 alias glls="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -10"
-alias gm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
+alias gm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf --preview "git log --oneline --all --graph --decorate $(git rev-parse --abbrev-ref HEAD)..{}")'
 alias gs='git status --short'
 alias gsv='git status -v'
 
