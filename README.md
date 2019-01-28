@@ -73,7 +73,9 @@ Ubuntu simple setup
 $ vagrant box add "tadashi-aikawa/lubuntu-jp" lubuntu-jp.box
 ```
 
-TODO: 作り方の記事
+ベースイメージの作り方は以下を参考にしてください。
+
+https://blog.mamansoft.net/2019/01/25/clean-ubuntu-infra/
 
 
 ### 実行
