@@ -78,7 +78,18 @@ $ vagrant box add "tadashi-aikawa/lubuntu-jp" lubuntu-jp.box
 https://blog.mamansoft.net/2019/01/25/clean-ubuntu-infra/
 
 
-### 実行
+### イメージの作成
+
+`linux\lubuntu-jp`の中で以下コマンドを実行します。
+
+```
+$ vagrant up --provision
+```
+
+
+### 環境構築
+
+Ansibleを実行して環境を構築します。
 
 ```
 $ cd /mnt-ansible
