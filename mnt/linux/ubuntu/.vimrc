@@ -254,6 +254,24 @@ let g:multi_cursor_next_key='<C-k>'
 " 行オートコンプリート
 imap <C-l> <C-x><C-l>
 
+"---- Ctrl + j からの... -------
+" [fzf] バッファから開く
+nnoremap <C-j>b :Buffers<CR>
+" [fzf] 履歴から開く
+nnoremap <C-j>e :History<CR>
+" [fzf] 全文検索
+nnoremap <C-j>f :Rg<Space>
+" [NERDTree] ON/OFF切り替え
+nnoremap <C-j>n :<C-u>:NERDTreeTabsToggle<CR>
+" [fzf] タグへ移動
+nnoremap <C-j>o :Tags<CR>
+" [fzf] ファイルのfuzzy検索
+nnoremap <C-j>p :call FzfOmniFiles()<CR>
+" [fzf] Gitステータス
+nnoremap <C-j>s :GFiles?<CR>
+" [NERDTree] Treeに移動し、カレントファイルをフォーカス
+nnoremap <C-j>w :<C-u>:NERDTreeTabsFind<CR>
+
 "---- Alt -------
 " [quick-run] Golangの実行
 autocmd FileType go nnoremap <M-r> :QuickRun<CR>
@@ -309,14 +327,8 @@ nnoremap <silent> <Space>// :OverCommandLine<CR>%s/
 
 " [deopelete] 有効
 nnoremap <Space>a :call deoplete#enable()<CR>
-" [fzf] バッファから開く
-nnoremap <Space>b :Buffers<CR>
 " [jedi] 定義へ移動
 let g:jedi#goto_command = "<Space>d"
-" [fzf] 履歴から開く
-nnoremap <Space>e :History<CR>
-" [fzf] 全文検索
-nnoremap <Space>g :Rg<Space>
 " ウィンドウ左移動
 nnoremap <silent> <Space>h <C-w>h
 " [vim-go] 呼び出し履歴
@@ -331,20 +343,10 @@ autocmd FileType go nnoremap <Space>j :cnext<CR>
 autocmd FileType go nnoremap <Space>k :cprevious<CR>
 "ウィンドウ右移動
 nnoremap <silent> <Space>l <C-w>l
-" [fzf] タグへ移動
-nnoremap <Space>o :Tags<CR>
-" [fzf] ファイルのfuzzy検索
-nnoremap <Space>p :call FzfOmniFiles()<CR>
-" [NERDTree] ON/OFF切り替え
-nnoremap <silent> <Space>n :<C-u>:NERDTreeTabsToggle<CR>
 " バッファ切り替え
 nnoremap <Space>r :b#<CR>
-" [fzf] Gitステータス
-nnoremap <Space>s :GFiles?<CR>
 " [Encoding] => cp932
 nnoremap <silent> <Space>S :e ++enc=cp932<cr>
-" [NERDTree] Treeに移動し、カレントファイルをフォーカス
-nnoremap <silent> <Space>w :<C-u>:NERDTreeTabsFind<CR>
 
 
 "
