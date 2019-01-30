@@ -7,7 +7,7 @@
         "command": "workbench.action.tasks.build"
     },
     {
-        "key": "ctrl+e",
+        "key": "ctrl+j e",
         "command": "workbench.action.openRecent"
     },
     {
@@ -52,13 +52,6 @@
         "command": "extension.vim_ctrl+w"
     },
     {
-        "key": "ctrl+1",
-        "command": "workbench.actions.view.problems"
-    },
-    // ----------------
-    // Ctrl + J + ...
-    // ----------------
-    {
         "key": "ctrl+j ctrl+d",
         "command": "workbench.view.debug"
     },
@@ -67,7 +60,7 @@
         "command": "workbench.debug.action.toggleRepl"
     },
     {
-        "key": "ctrl+j f",
+        "key": "ctrl+j g",
         "command": "workbench.view.search",
     },
     {
@@ -566,7 +559,7 @@
         "when": "!inDebugMode"
     },
     {
-        "key": "ctrl+shift+p",
+        "key": "ctrl+j f",
         "command": "workbench.action.quickOpen"
     },
     {
@@ -789,7 +782,7 @@
         "command": "workbench.files.action.compareWithClipboard"
     },
     {
-        "key": "ctrl+oem_comma ctrl+i",
+        "key": "ctrl+1",
         "command": "editor.action.showHover",
         "when": "editorTextFocus"
     },
