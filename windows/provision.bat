@@ -26,7 +26,7 @@ call go get -u github.com/tadashi-aikawa/gowl
 
 call :******************** IntelliJ IDEA
 
-set IDEA_DIR=.IntelliJIdea2018.1
+set IDEA_DIR=.IntelliJIdea2018.3
 
 set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\.IntelliJIdea\config
 set IDEA_CONFIG_DIR=%USERPROFILE%\%IDEA_DIR%\config
