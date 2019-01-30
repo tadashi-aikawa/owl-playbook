@@ -19,6 +19,12 @@
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="c" />
   </action>
   <action id="CloseActiveTab" />
+  <action id="CloseAllEditors">
+    <keyboard-shortcut first-keystroke="shift ctrl f4" />
+  </action>
+  <action id="CloseAllEditorsButActive">
+    <keyboard-shortcut first-keystroke="shift ctrl w" />
+  </action>
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="ctrl w" />
   </action>
@@ -66,7 +72,7 @@
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="o" />
   </action>
   <action id="FindInPath">
-    <keyboard-shortcut first-keystroke="ctrl g" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="g" />
   </action>
   <action id="FindNext" />
   <action id="FindPrevious" />
@@ -140,6 +146,9 @@
     <mouse-shortcut keystroke="alt button2" />
     <keyboard-shortcut first-keystroke="shift ctrl space" />
   </action>
+  <action id="RecentFiles">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="e" />
+  </action>
   <action id="RefactoringMenuRenameFile">
     <keyboard-shortcut first-keystroke="f2" />
   </action>
@@ -164,7 +173,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl s" />
   </action>
   <action id="SearchEverywhere">
-    <keyboard-shortcut first-keystroke="shift ctrl p" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="p" />
   </action>
   <action id="SelectInProjectView">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="w" />
@@ -195,6 +204,7 @@
     <keyboard-shortcut first-keystroke="ctrl f8" />
   </action>
   <action id="TypeHierarchy" />
+  <action id="UML.ApplyCurrentLayout" />
   <action id="Unwrap" />
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Push" />
@@ -212,6 +222,9 @@
     <keyboard-shortcut first-keystroke="shift alt k" />
   </action>
   <action id="ViewSource" />
+  <action id="VimRedo">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
   <action id="XDebugger.EditWatch" />
   <action id="XDebugger.Inspect" />
   <action id="XDebugger.SetValue" />
