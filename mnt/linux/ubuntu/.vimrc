@@ -260,13 +260,13 @@ nnoremap <C-j>b :Buffers<CR>
 " [fzf] 履歴から開く
 nnoremap <C-j>e :History<CR>
 " [fzf] 全文検索
-nnoremap <C-j>f :Rg<Space>
+nnoremap <C-j>g :Rg<Space>
 " [NERDTree] ON/OFF切り替え
 nnoremap <C-j>n :<C-u>:NERDTreeTabsToggle<CR>
 " [fzf] タグへ移動
 nnoremap <C-j>o :Tags<CR>
 " [fzf] ファイルのfuzzy検索
-nnoremap <C-j>p :call FzfOmniFiles()<CR>
+nnoremap <C-j>f :call FzfOmniFiles()<CR>
 " [fzf] Gitステータス
 nnoremap <C-j>s :GFiles?<CR>
 " [NERDTree] Treeに移動し、カレントファイルをフォーカス
