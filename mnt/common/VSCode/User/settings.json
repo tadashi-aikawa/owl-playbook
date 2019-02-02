@@ -8,7 +8,7 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
-  "vim.easymotion": true,
+  "vim.sneak": true,
   "vim.leader": "<space>",
   "[plaintext]": {
     "files.autoGuessEncoding": true,

@@ -44,12 +44,9 @@ let g:quickrun_config._ = {
 '''
 
 [[plugins]]
-repo = 'easymotion/vim-easymotion'
+repo = 'justinmk/vim-sneak'
 hook_add = '''
-" 大文字を含む場合だけ大文字/小文字を区別する
-let g:EasyMotion_smartcase = 1
-" MIGEMOを使用する
-let g:EasyMotion_use_migemo = 1
+let g:sneak#label = 1
 '''
 
 [[plugins]]
@@ -157,15 +154,6 @@ hook_add = '''
 let g:comfortable_motion_friction = 300
 let g:comfortable_motion_air_drag = 1.0
 '''
-
-[[plugins]]
-repo = 'haya14busa/incsearch-fuzzy.vim'
-
-[[plugins]]
-repo = 'haya14busa/incsearch.vim'
-depends = ['incsearch-fuzzy']
-# [key bindings] z/, z?
-
 
 #-----------------
 # textobj

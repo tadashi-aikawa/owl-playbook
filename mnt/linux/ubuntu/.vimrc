@@ -229,8 +229,6 @@ endw
 " [vim-anzu] 検索強化
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
-" [Easy Motion] 2文字で絞り込む
-nmap s <Plug>(easymotion-overwin-f2)
 " [operator-replace] オペレータリプレイス
 nmap _ <Plug>(operator-replace)
 " [vim-anzu] 検索強化
@@ -297,20 +295,6 @@ nmap gip <Plug>GitGutterPreviewHunk
 
 " 全て閉じる
 nnoremap <silent> go :qa<CR>
-
-" ---------------- z -------------------
-function! s:config_fuzzyall(...) abort
-  return extend(copy({
-  \   'converters': [
-  \     incsearch#config#fuzzy#converter(),
-  \     incsearch#config#fuzzyspell#converter()
-  \   ],
-  \ }), get(a:, 1, {}))
-endfunction
-" [incsearch-fuzzy] /
-noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
-" [incsearch-fuzzy] ?
-noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 
 " jedi
 let g:jedi#documentation_command = "K"
