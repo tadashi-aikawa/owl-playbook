@@ -8,12 +8,34 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
-  "vim.sneak": true,
+  // "vim.sneak": true,
+  "vim.easymotion": true,
+  "vim.foldfix": true,
   "vim.leader": "<space>",
-  "[plaintext]": {
-    "files.autoGuessEncoding": true,
-  },
   "vim.enableNeovim": true,
+  "vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<C-k>",
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        "<C-k>",
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
+    }
+  ],
   "editor.minimap.showSlider": "always",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.enabled": true,
@@ -32,7 +54,6 @@
   "breadcrumbs.enabled": true,
   "workbench.iconTheme": "vscode-icons",
   "window.zoomLevel": 0,
-  "vim.foldfix": true,
   "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
   "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
@@ -49,5 +70,8 @@
   "files.associations": {
     "Vagrantfile": "ruby"
   },
-  "vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "[plaintext]": {
+    "files.autoGuessEncoding": true,
+  },
 }
