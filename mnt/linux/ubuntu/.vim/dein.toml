@@ -162,6 +162,8 @@ let g:comfortable_motion_air_drag = 1.0
 [[plugins]]
 repo = 'kana/vim-textobj-user'
 
+[[plugins]]
+repo = 'michaeljsmith/vim-indent-object'
 
 #-----------------
 # operator
