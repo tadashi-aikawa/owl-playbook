@@ -49,4 +49,5 @@
   "files.associations": {
     "Vagrantfile": "ruby"
   },
+  "vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
 }
