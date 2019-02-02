@@ -10,6 +10,12 @@
   "vim.visualstar": true,
   // "vim.sneak": true,
   "vim.easymotion": true,
+  "vim.easymotionMarkerBackgroundColor": "rgba(0, 0, 0, 0.7)",
+  "vim.easymotionMarkerForegroundColorOneChar": "pink",
+  "vim.easymotionMarkerWidthPerChar": 12,
+  "vim.easymotionMarkerHeight": 24,
+  "vim.easymotionMarkerFontSize": "24",
+  "vim.easymotionMarkerYOffset": 5,
   "vim.foldfix": true,
   "vim.leader": "<space>",
   "vim.enableNeovim": true,
@@ -17,11 +23,24 @@
   "vim.normalModeKeyBindings": [
     {
       "before": [
-        "<C-k>",
+        "<C-k>"
       ],
       "after": [
         "g",
         "b"
+      ]
+    },
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "2",
+        "s",
+        "<char>",
+        "<char>"
       ]
     }
   ],
@@ -60,7 +79,6 @@
   "terminal.integrated.rendererType": "dom",
   "explorer.confirmDelete": false,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "vsicons.projectDetection.disableDetect": true,
   "vsnotes.defaultNotePath": "~\\Box Sync\\itmemo",
   "vsnotes.defaultNoteTitle": "{title}_{dt}.{ext}",
