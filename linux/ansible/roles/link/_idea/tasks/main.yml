@@ -36,5 +36,4 @@
     - config/options/keymap.xml
     - config/options/markdown.xml
     - config/options/vcs.xml
-    - config/options/vim_settings.xml
     - config/templates
