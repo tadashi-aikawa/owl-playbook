@@ -84,7 +84,6 @@ call :******************** To be continued.. (Not administrator
 
 echo Install Tablacus Explorer manually!
 echo Clone...
-echo   * owl-cmder-tool
 echo   * spinal-reflex-bindings-template
 echo   * keypirinha-OwlTodoist
 
