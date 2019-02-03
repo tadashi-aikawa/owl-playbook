@@ -58,9 +58,11 @@ call :each link_windows_home windows-home-dots.txt
 call :******************** Cmder
 
 set CMDER_ORIGIN_CONFIG_DIR=%WINDOWS_MNT%\cmder\config
+set OWL_CMDER_TOOLS_CONFIG_DIR=%WINDOWS_MNT%\cmder\owl-cmder-tools\config
 set CMDER_CONFIG_DIR=C:\tools\Cmder\config
 
 call :each link_cmder_file cmder-files.txt
+call :each link_cmder_tools_file owl-cmder-tools-files.txt
 
 
 call :******************** Keypirinha
@@ -112,6 +114,11 @@ exit /b
 
 :link_cmder_file
 call :link_file %CMDER_CONFIG_DIR%\%1 %CMDER_ORIGIN_CONFIG_DIR%\%1
+exit /b
+
+REM submodule‚Ìcmder-tools‚ÉƒŠƒ“ƒN‚·‚é
+:link_cmder_tools_file
+call :link_file %CMDER_CONFIG_DIR%\%1 %OWL_CMDER_TOOLS_CONFIG_DIR%\%1
 exit /b
 
 :vscode_extension_install

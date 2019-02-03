@@ -1,0 +1,3 @@
+cdz.lua
+powerline_git.lua
+powerline_prompt.lua
