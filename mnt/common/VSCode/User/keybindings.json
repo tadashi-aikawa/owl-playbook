@@ -7,6 +7,16 @@
         "command": "workbench.action.tasks.build"
     },
     {
+        "key": "ctrl+d",
+        "command": "-list.focusPageDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+j e",
         "command": "workbench.action.openRecent"
     },
@@ -25,9 +35,17 @@
         "when": "editorFocus && vim.mode == 'Normal'"
     },
     {
+        "key": "ctrl+k",
+        "command": "extension.vim_ctrl+k"
+    },
+    {
         "key": "ctrl+l",
         "command": "workbench.action.nextEditor",
         "when": "editorFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.action.togglePanel",
     },
     {
         "key": "ctrl+p",
@@ -46,6 +64,13 @@
         "key": "ctrl+w",
         "command": "extension.vim_ctrl+w"
     },
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.closeOtherEditors"
+    },
+    // ----------------
+    // Ctrl + j
+    // ----------------
     {
         "key": "ctrl+j ctrl+d",
         "command": "workbench.view.debug"
@@ -95,11 +120,6 @@
         "command": "workbench.view.scm"
     },
     {
-        "key": "ctrl+i",
-        "command": "workbench.action.focusFirstEditorGroup",
-        "when": "terminalFocus"
-    },
-    {
         "key": "ctrl+j t",
         "command": "workbench.action.terminal.toggleTerminal",
     },
@@ -124,10 +144,6 @@
         "key": "ctrl+j ctrl+l",
         "command": "editor.unfoldRecursively",
         "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "workbench.action.togglePanel",
     },
     {
         "key": "ctrl+j shift+s",
@@ -473,6 +489,92 @@
         "command": "-extension.vim_ctrl+k",
         "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
     },
+    {
+        "key": "ctrl+k down",
+        "command": "-workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+k up",
+        "command": "-workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+w",
+        "command": "-workbench.action.closeAllGroups"
+    },
+    {
+        "key": "ctrl+k ctrl+oem_2",
+        "command": "-editor.foldAllBlockComments",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+down",
+        "command": "-workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "-workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+oem_4",
+        "command": "-editor.foldRecursively",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+oem_6",
+        "command": "-editor.unfoldRecursively",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "-editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+q",
+        "command": "-workbench.action.navigateToLastEditLocation"
+    },
+    {
+        "key": "ctrl+k ctrl+up",
+        "command": "-workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "-editor.action.formatSelection",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k f12",
+        "command": "-editor.action.revealDefinitionAside",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+c",
+        "command": "-copyRelativeFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+k",
+        "command": "-editor.action.defineKeybinding",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == 'jsonc'"
+    },
+    {
+        "key": "ctrl+k ctrl+k",
+        "command": "-keybindings.editor.defineKeybinding",
+        "when": "inKeybindings && keybindingFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+s",
+        "command": "-workbench.action.files.saveWithoutFormatting"
+    },
     //-------------------------------
     {
         "key": "ctrl+/",
@@ -537,6 +639,10 @@
     {
         "key": "alt+w",
         "command": "workbench.action.switchWindow"
+    },
+    {
+        "key": "alt+p",
+        "command": "markdown.showPreview"
     },
     {
         "key": "alt+shift+r",
@@ -1121,107 +1227,4 @@
         "command": "-extension.vim_winCtrlQ",
         "when": "editorTextFocus && vim.active && vim.use<C-q> && !inDebugRepl"
     },
-    {
-        "key": "alt+p",
-        "command": "markdown.showPreview"
-    },
-    {
-        "key": "ctrl+shift+w",
-        "command": "workbench.action.closeOtherEditors"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "-list.focusPageDown",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "ctrl+k down",
-        "command": "-workbench.action.moveActiveEditorGroupDown"
-    },
-    {
-        "key": "ctrl+k up",
-        "command": "-workbench.action.moveActiveEditorGroupUp"
-    },
-    {
-        "key": "ctrl+k ctrl+shift+w",
-        "command": "-workbench.action.closeAllGroups"
-    },
-    {
-        "key": "ctrl+k ctrl+oem_2",
-        "command": "-editor.foldAllBlockComments",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+right",
-        "command": "-workbench.action.focusRightGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+down",
-        "command": "-workbench.action.focusBelowGroup"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+k ctrl+left",
-        "command": "-workbench.action.focusLeftGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+oem_4",
-        "command": "-editor.foldRecursively",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+oem_6",
-        "command": "-editor.unfoldRecursively",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+d",
-        "command": "-editor.action.moveSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+q",
-        "command": "-workbench.action.navigateToLastEditLocation"
-    },
-    {
-        "key": "ctrl+k ctrl+up",
-        "command": "-workbench.action.focusAboveGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+f",
-        "command": "-editor.action.formatSelection",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+k f12",
-        "command": "-editor.action.revealDefinitionAside",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "ctrl+k ctrl+shift+c",
-        "command": "-copyRelativeFilePath",
-        "when": "!editorFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+k",
-        "command": "-editor.action.defineKeybinding",
-        "when": "editorTextFocus && !editorReadonly && editorLangId == 'jsonc'"
-    },
-    {
-        "key": "ctrl+k ctrl+k",
-        "command": "-keybindings.editor.defineKeybinding",
-        "when": "inKeybindings && keybindingFocus"
-    },
-    {
-        "key": "ctrl+k ctrl+shift+s",
-        "command": "-workbench.action.files.saveWithoutFormatting"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "extension.vim_ctrl+k"
-    }
 ]
