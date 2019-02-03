@@ -228,8 +228,6 @@ endw
 " [vim-anzu] 検索強化
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
-" [Easy Motion] 2文字で絞り込む
-nmap s <Plug>(easymotion-overwin-f2)
 " [operator-replace] オペレータリプレイス
 nmap _ <Plug>(operator-replace)
 " [vim-anzu] 検索強化
@@ -253,9 +251,29 @@ let g:multi_cursor_next_key='<C-k>'
 " 行オートコンプリート
 imap <C-l> <C-x><C-l>
 
+"---- Ctrl + j からの... -------
+" [fzf] バッファから開く
+nnoremap <C-j>b :Buffers<CR>
+" [fzf] 履歴から開く
+nnoremap <C-j>e :History<CR>
+" [fzf] 全文検索
+nnoremap <C-j>g :Rg<Space>
+" [NERDTree] ON/OFF切り替え
+nnoremap <C-j>n :<C-u>:NERDTreeTabsToggle<CR>
+" [fzf] タグへ移動
+nnoremap <C-j>o :Tags<CR>
+" [fzf] ファイルのfuzzy検索
+nnoremap <C-j>f :call FzfOmniFiles()<CR>
+" [fzf] Gitステータス
+nnoremap <C-j>s :GFiles?<CR>
+" [NERDTree] Treeに移動し、カレントファイルをフォーカス
+nnoremap <C-j>w :<C-u>:NERDTreeTabsFind<CR>
+
 "---- Alt -------
 " [quick-run] Golangの実行
 autocmd FileType go nnoremap <M-r> :QuickRun<CR>
+" [quick-run] Pythonの実行
+autocmd FileType python nnoremap <M-r> :QuickRun<CR>
 " [vim-go] 定義異動した後に元の場所へ戻る
 autocmd FileType go nnoremap <A-Left> :GoDefPop <CR>
 " ---------------- g -------------------
@@ -277,33 +295,29 @@ nmap gip <Plug>GitGutterPreviewHunk
 " 全て閉じる
 nnoremap <silent> go :qa<CR>
 
-" ---------------- z -------------------
-function! s:config_fuzzyall(...) abort
-  return extend(copy({
-  \   'converters': [
-  \     incsearch#config#fuzzy#converter(),
-  \     incsearch#config#fuzzyspell#converter()
-  \   ],
-  \ }), get(a:, 1, {}))
-endfunction
-" [incsearch-fuzzy] /
-noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
-" [incsearch-fuzzy] ?
-noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-
+" jedi
+let g:jedi#documentation_command = "K"
+let g:jedi#completions_command = "<C-Space>"
 
 " ------------- <Space> ----------------
 
+" ウィンドウ切り替え
+nnoremap <silent> <Space><Space> <C-w>w
+" [Markdown] テーブルをフォーマッティングする
+nnoremap <silent> <Space>@ :<C-u>TableFormat<CR>
+" [vim-over]
+nnoremap <silent> <Space>// :OverCommandLine<CR>%s/
+
 " [deopelete] 有効
 nnoremap <Space>a :call deoplete#enable()<CR>
-" [lsp] 定義
-nmap <silent> <Space>d :LspDefinition<CR>
-" [ctrlp] MRU files
-nnoremap <silent> <Space>e :CtrlPMRUFiles<CR>
+" [jedi] 定義へ移動
+let g:jedi#goto_command = "<Space>d"
 " ウィンドウ左移動
 nnoremap <silent> <Space>h <C-w>h
-" 呼び出し履歴
+" [vim-go] 呼び出し履歴
 autocmd FileType go nnoremap <silent> <Space>H :GoReferrers<CR>
+" [jedi] Usage
+let g:jedi#usages_command = "<Space>H"
 "次のエラー
 "Golang
 autocmd FileType go nnoremap <Space>j :cnext<CR>
@@ -312,46 +326,10 @@ autocmd FileType go nnoremap <Space>j :cnext<CR>
 autocmd FileType go nnoremap <Space>k :cprevious<CR>
 "ウィンドウ右移動
 nnoremap <silent> <Space>l <C-w>l
-" [ctrlp] Line
-nnoremap <silent> <Space>L :CtrlPLine<CR>
-"ウィンドウ切り替え
-nnoremap <silent> <Space><Space> <C-w>w
-" [NERDTree] ON/OFF切り替え
-nnoremap <silent> <Space>n :<C-u>:NERDTreeTabsToggle<CR>
-" [unite-outline] アウトライン
-nnoremap <silent> <Space>o :Unite -vertical -winwidth=40 -no-quit outline<CR>
-" [vim-go] Goの場合はGoDecls
-autocmd FileType go nnoremap <Space>o :GoDecls<CR>
-" [lsp] Hover
-nmap <silent> <Space>p :LspHover<CR>
 " バッファ切り替え
 nnoremap <Space>r :b#<CR>
-
-"
-" URL Encode
-vnoremap <Space>sen :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
-" URL Decode
-vnoremap <Space>sde :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
-" Dropbox URL transform
-nnoremap <silent> <Space>sdr v:!python -c 'import sys; print sys.stdin.read().strip().replace("https://www.dropbox.com/s", "https://dl.dropboxusercontent.com/s").replace("?dl=0", "")'<cr>
-" Markdown h1 header
-nnoremap <silent> <Space>sh= v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"="*l)'<cr>
-" Markdown h2 header
-nnoremap <silent> <Space>sh- v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"-"*l)'<cr>
-" URL query parsing
-vnoremap <Space>spq :!python -c 'import sys,urllib;print urllib.parse_qs(sys.stdin.read().strip())'<cr>
-
 " [Encoding] => cp932
 nnoremap <silent> <Space>S :e ++enc=cp932<cr>
-" [ctrlp] Buffer
-nnoremap <silent> <Space>t :CtrlPBuffer<CR>
-" [NERDTree] Treeに移動し、カレントファイルをフォーカス
-nnoremap <silent> <Space>w :<C-u>:NERDTreeTabsFind<CR>
-"
-" [Markdown] テーブルをフォーマッティングする
-nnoremap <silent> <Space>@ :<C-u>TableFormat<CR>
-" [vim-over]
-nnoremap <silent> <Space>// :OverCommandLine<CR>%s/
 
 
 
