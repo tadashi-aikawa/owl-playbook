@@ -28,6 +28,9 @@
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="ctrl w" />
   </action>
+  <action id="CloseEditor">
+    <keyboard-shortcut first-keystroke="shift ctrl q" />
+  </action>
   <action id="CollapseRegion" />
   <action id="CollapseRegionRecursively">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl h" />
