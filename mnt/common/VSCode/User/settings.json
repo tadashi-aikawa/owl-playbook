@@ -8,7 +8,6 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
-  "vim.foldfix": true,
   "vim.leader": "<space>",
   // "vim.sneak": true,
   "vim.easymotion": true,
@@ -28,6 +27,26 @@
       "after": [
         "g",
         "b"
+      ]
+    },
+    {
+      "before": [
+        "<C-o>"
+      ],
+      "commands": [
+        {
+          "command": "workbench.action.navigateBack"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<C-i>"
+      ],
+      "commands": [
+        {
+          "command": "workbench.action.navigateForward"
+        }
       ]
     },
     {
@@ -90,4 +109,5 @@
     "files.autoGuessEncoding": true,
   },
   "workbench.editor.showTabs": true,
+  "vim.foldfix": true,
 }
