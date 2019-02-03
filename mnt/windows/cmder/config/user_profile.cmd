@@ -17,6 +17,6 @@
 :: %ccall% "/customOption" "command/program"
 
 set FZF_DEFAULT_OPTS=--reverse --border
-set "PATH=%HOME%\Go\src\github.com\tadashi-aikawa\owl-cmder-tools\bin;%PATH%"
+set "PATH=%HOME%\Go\src\github.com\tadashi-aikawa\owl-playbook\mnt\windows\cmder\owl-cmder-tools\bin;%PATH%"
 
 @echo off
