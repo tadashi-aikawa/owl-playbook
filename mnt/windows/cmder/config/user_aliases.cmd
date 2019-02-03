@@ -33,6 +33,7 @@ gll=git log --oneline --all --graph --decorate $*
 gls=git log -3 $*
 glll=git log --graph --all --date=format:"%Y-%m-%d %H:%M" --pretty=format:"%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b"
 glls=git log --graph --all --date=format:"%Y-%m-%d %H:%M" --pretty=format:"%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b" -10
+gcb=git checkout -b $*
 gcv=git commit -v $*
 gcm=git commit -m $*
 ga=git add $*
