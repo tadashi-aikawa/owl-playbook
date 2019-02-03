@@ -6,6 +6,12 @@ WindowsとLinuxの環境構築用スクリプト群です。
 
 各種同期設定は **mnt配下** に集約されます。
 
+サブモジュールを使用しているため`--recursive`オプションを付けてcloneしてください。
+
+```
+$ git clone git@github.com:tadashi-aikawa/owl-playbook.git --recursive
+```
+
 
 Windows setup
 -------------
