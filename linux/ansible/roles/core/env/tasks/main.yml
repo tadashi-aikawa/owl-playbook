@@ -5,9 +5,6 @@
 
 - name: 'Set timezone to {{ timezone }}'
   become: yes
-  file:
-    src: '/usr/share/zoneinfo/{{ timezone }}'
-    dest: /etc/localtime
-    state: link
-    force: true
+  timezone:
+    name: "{{ timezone }}"
 
