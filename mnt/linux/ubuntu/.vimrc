@@ -229,6 +229,8 @@ endw
 " [vim-anzu] 検索強化
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
+" [Easy Motion] 2文字で絞り込む
+nmap s <Plug>(easymotion-overwin-f2)
 " [operator-replace] オペレータリプレイス
 nmap _ <Plug>(operator-replace)
 " [vim-anzu] 検索強化
@@ -332,6 +334,8 @@ nnoremap <Space>r :b#<CR>
 " [Encoding] => cp932
 nnoremap <silent> <Space>S :e ++enc=cp932<cr>
 
+
+nnoremap <silent> <space>j VG!jq .<CR>
 
 "
 " Markdown h1 header

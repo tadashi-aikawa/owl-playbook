@@ -44,9 +44,12 @@ let g:quickrun_config._ = {
 '''
 
 [[plugins]]
-repo = 'justinmk/vim-sneak'
+repo ='easymotion/vim-easymotion'
 hook_add = '''
-let g:sneak#label = 1
+" 大文字を含む場合だけ大文字/小文字を区別する
+let g:EasyMotion_smartcase = 1
+" (重いので無効に...)MIGEMOを使用する
+" let g:EasyMotion_use_migemo = 1
 '''
 
 [[plugins]]
