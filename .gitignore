@@ -4,3 +4,5 @@
 *.log
 
 /mnt/windows/cmder/config/user-ConEmu.xml
+
+vim_settings.xml
