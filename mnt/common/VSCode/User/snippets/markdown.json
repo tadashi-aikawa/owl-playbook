@@ -84,13 +84,21 @@
 			"$0",
 		]
 	},
+	"ブログの追記": {
+		"prefix": "blog_add",
+		"body": [
+			"{{<update \"${1:yyyy/MM/dd}: ${2:Title}\">}}",
+			"$0",
+			"{{</update>}}"
+		]
+	},
 	"ブログの新規投稿テンプレ": {
 		"prefix": "blog_new",
 		"body":[
 			"---",
 			"title: ${1:Title}",
 			"slug: ${2:Slug}",
-			"date: ${3:2018-10-01T01:48:57+09:00}",
+			"date: ${3}",
 			"thumbnailImage: $4",
 			"categories:",
   			"  - engineering",
