@@ -277,6 +277,8 @@ nnoremap <C-j>w :<C-u>:NERDTreeTabsFind<CR>
 autocmd FileType go nnoremap <M-r> :QuickRun<CR>
 " [quick-run] Pythonの実行
 autocmd FileType python nnoremap <M-r> :QuickRun<CR>
+" [quick-run] Nodeの実行
+autocmd FileType javascript nnoremap <M-r> :QuickRun<CR>
 " [vim-go] 定義異動した後に元の場所へ戻る
 autocmd FileType go nnoremap <A-Left> :GoDefPop <CR>
 " ---------------- g -------------------
