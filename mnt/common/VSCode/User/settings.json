@@ -110,4 +110,5 @@
   },
   "workbench.editor.showTabs": true,
   "vim.foldfix": true,
+  "git.autofetch": true,
 }
