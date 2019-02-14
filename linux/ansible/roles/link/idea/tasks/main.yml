@@ -1,10 +1,3 @@
-- name: Vim
-  file:
-    src: '{{ ubuntu_mnt }}/.ideavimrc'
-    dest: ~/.ideavimrc
-    state: link
-    force: yes
-
 - name: Directory link
   file:
     src: '~/{{ intellij_dir }}'
@@ -23,7 +16,7 @@
 
 - name: Create symlinks
   file:
-    src: '{{ ubuntu_mnt }}/{{ intellij_fix_dir }}/{{ item }}'
+    src: '{{ common_mnt }}/{{ intellij_fix_dir }}/{{ item }}'
     dest: ~/{{ intellij_fix_dir }}/{{ item }}
     state: link
     force: yes
@@ -37,3 +30,11 @@
     - config/options/markdown.xml
     - config/options/vcs.xml
     - config/templates
+
+- name: Vim
+  file:
+    src: '{{ common_mnt }}/{{ intellij_fix_dir }}/.ideavimrc'
+    dest: ~/.ideavimrc
+    state: link
+    force: yes
+
