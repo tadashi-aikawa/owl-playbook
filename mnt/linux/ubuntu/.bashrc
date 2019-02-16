@@ -1,7 +1,7 @@
 # shellcheck disable=SC1090,SC2012
 
 export PATH="$PATH:/usr/local/go/bin:~/go/bin"
-export GOPATH="~/go"
+export GOPATH="$HOME/go"
 
 # クリップボード連携
 export DISPLAY=:0
