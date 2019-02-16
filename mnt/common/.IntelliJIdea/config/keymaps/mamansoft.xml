@@ -228,6 +228,9 @@
   <action id="VimRedo">
     <keyboard-shortcut first-keystroke="f5" />
   </action>
+  <action id="WelcomeScreen.Settings">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="shift s" />
+  </action>
   <action id="XDebugger.EditWatch" />
   <action id="XDebugger.Inspect" />
   <action id="XDebugger.SetValue" />
