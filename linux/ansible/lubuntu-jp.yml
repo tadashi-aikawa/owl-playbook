@@ -9,76 +9,81 @@
     intellij_dir: .IntelliJIdea2018.3
 
 
-- name: "=============== 1. Core setup ==============="
-  <<: *base
-  roles:
-    - role: core/env
-    - role: core/curl
-    - role: core/wget
-    - role: core/make
-    - role: core/ntp
-    - role: core/cmigemo
-    - role: core/git
+# - name: "=============== 1. Core setup ==============="
+#   <<: *base
+#   roles:
+#     - role: core/env
+#     - role: core/curl
+#     - role: core/wget
+#     - role: core/make
+#     - role: core/ntp
+#     - role: core/cmigemo
+#     - role: core/git
 
-- name: "=============== 2. Terminal setup ==============="
-  <<: *base
-  roles:
-    - role: link/bash
-    - role: link/input
-    - role: terminal/pureline-inspired
-    - role: terminal/fzf
-    - role: terminal/tmux
-    - role: terminal/tmux/theme
-    - role: link/tmux
+# - name: "=============== 2. Terminal setup ==============="
+#   <<: *base
+#   roles:
+#     - role: link/bash
+#     - role: link/input
+#     - role: terminal/pureline-inspired
+#     - role: terminal/fzf
+#     - role: terminal/tmux
+#     - role: terminal/tmux/theme
+#     - role: link/tmux
 
-- name: "=============== 3. Package manager setup =============="
-  <<: *base
-  roles:
-    - role: package_manager/umake
-    - role: package_manager/npm
-    - role: package_manager/pip2
-    - role: package_manager/pip3
+# - name: "=============== 3. Package manager setup =============="
+#   <<: *base
+#   roles:
+#     - role: package_manager/umake
+#     - role: package_manager/npm
+#     - role: package_manager/pip2
+#     - role: package_manager/pip3
 
-- name: "=============== 4. Editor/IDE ==============="
-  <<: *base
-  roles:
-    - role: editor/vim
-    - role: editor/vim/dein
-    - role: editor/neovim
-    - role: link/vim
-    - role: editor/idea
-    - role: link/idea
+# - name: "=============== 4. Editor/IDE ==============="
+#   <<: *base
+#   roles:
+#     - role: editor/vim
+#     - role: editor/vim/dein
+#     - role: editor/neovim
+#     - role: link/vim
+#     - role: editor/idea
+#     - role: link/idea
 
-- name: "=============== 5. Language ==============="
-  <<: *base
-  roles:
-    - role: language/bash/language_server
-    - role: language/bash/shellcheck
-    - role: language/python/pyenv
-    - role: language/python/pipenv
-    - role: language/go
+# - name: "=============== 5. Language ==============="
+#   <<: *base
+#   roles:
+#     - role: language/bash/language_server
+#     - role: language/bash/shellcheck
+#     - role: language/python/pyenv
+#     - role: language/python/pipenv
+#     - role: language/go
 
-- name: "=============== 6. CLI tool ==============="
+# - name: "=============== 6. CLI tool ==============="
+#   <<: *base
+#   roles:
+#     - role: clitool/awscli
+#     - role: clitool/bat
+#     - role: clitool/bats
+#     - role: clitool/ctags
+#     - role: clitool/diff-so-fancy
+#     - role: clitool/docker-compose
+#     - role: clitool/exa
+#     - role: clitool/fd
+#     - role: clitool/fx
+#     - role: clitool/glances
+#     - role: clitool/gowl
+#     - role: clitool/jq
+#     - role: clitool/ncdu
+#     - role: clitool/nkf
+#     - role: clitool/ripgrep
+#     - role: clitool/tig
+#     - role: link/tig
+#     - role: clitool/tree
+#     - role: clitool/xclip
+#     - role: clitool/zstd
+#     - role: clitool/z
+
+- name: "=============== 7. Font ==============="
   <<: *base
   roles:
-    - role: clitool/awscli
-    - role: clitool/bat
-    - role: clitool/bats
-    - role: clitool/ctags
-    - role: clitool/diff-so-fancy
-    - role: clitool/docker-compose
-    - role: clitool/exa
-    - role: clitool/fd
-    - role: clitool/fx
-    - role: clitool/glances
-    - role: clitool/gowl
-    - role: clitool/jq
-    - role: clitool/ncdu
-    - role: clitool/nkf
-    - role: clitool/ripgrep
-    - role: clitool/tig
-    - role: link/tig
-    - role: clitool/tree
-    - role: clitool/xclip
-    - role: clitool/zstd
-    - role: clitool/z
+    - role: font/powerline
