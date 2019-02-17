@@ -53,18 +53,18 @@ on_ft = ['toml']
 # Jedi
 #-----------------
 
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = ['python']
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
+# on_ft = ['python']
 
-hook_add = '''
-" .入力時に補完候補を表示しない
-let g:jedi#popup_on_dot = 0
-" 勝手に最初の候補を入力しない
-let g:jedi#popup_select_first = 0
-" docstringは表示しない
-autocmd FileType python setlocal completeopt-=preview
-'''
+# hook_add = '''
+# " .入力時に補完候補を表示しない
+# let g:jedi#popup_on_dot = 0
+# " 勝手に最初の候補を入力しない
+# let g:jedi#popup_select_first = 0
+# " docstringは表示しない
+# autocmd FileType python setlocal completeopt-=preview
+# '''
 
 #-----------------
 # ALE
