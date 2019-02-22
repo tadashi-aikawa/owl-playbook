@@ -140,7 +140,7 @@ set statusline+=%{matchstr(fugitive#statusline(),'(\\zs.*\\ze)')}
 set statusline+=%{strlen(fugitive#statusline())>0?'\ \ ⮁\ ':'\ '}
 set statusline+=%f\ %{&ro?'⭤':''}%{&mod?'+':''}%<
 set statusline+=%3*\ 
-set statusline+=%{LinterStatus()}
+" set statusline+=%{LinterStatus()}
 "
 set statusline+=\ %4*⮀
 set statusline+=%#warningmsg#
