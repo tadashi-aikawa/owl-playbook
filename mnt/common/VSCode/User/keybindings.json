@@ -84,22 +84,16 @@
         "command": "workbench.view.search",
     },
     {
-        // サイドバーのカーソル切り替え
-        "key": "ctrl+j h",
-        "command": "workbench.action.focusSideBar",
-        "when": "editorFocus"
-    },
-    {
         "key": "ctrl+j shift+h",
         "command": "git.viewHistory"
     },
     {
-        "key": "ctrl+j j",
+        "key": "shift+alt+j",
         "command": "workbench.action.editor.nextChange",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+j k",
+        "key": "shift+alt+k",
         "command": "workbench.action.editor.previousChange",
         "when": "editorTextFocus"
     },
@@ -1230,5 +1224,15 @@
     {
         "key": "ctrl+j ctrl+e",
         "command": "workbench.action.editor.changeEncoding"
+    },
+    {
+        "key": "ctrl+j h",
+        "command": "references-view.find",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+alt+f12",
+        "command": "-references-view.find",
+        "when": "editorHasReferenceProvider"
     }
 ]
