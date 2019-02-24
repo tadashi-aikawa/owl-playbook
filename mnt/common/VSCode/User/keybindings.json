@@ -1227,4 +1227,8 @@
         "command": "-extension.vim_winCtrlQ",
         "when": "editorTextFocus && vim.active && vim.use<C-q> && !inDebugRepl"
     },
+    {
+        "key": "ctrl+j ctrl+e",
+        "command": "workbench.action.editor.changeEncoding"
+    }
 ]
