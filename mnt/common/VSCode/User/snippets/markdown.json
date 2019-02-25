@@ -20,6 +20,14 @@
 		],
 		"description": "Header LV5"
 	},
+	"Table 2column": {
+		"prefix": "tt",
+		"body": [
+			"| $1  | $2  |",
+			"| --- | --- |",
+			"| $3  | $4  |",
+		]
+	},
 	"ブログのsummary": {
 		"prefix": "blog_summary",
 		"body": ["{{<summary \"${1:URL}\">}}"]
