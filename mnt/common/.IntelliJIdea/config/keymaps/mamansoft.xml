@@ -110,6 +110,9 @@
     <keyboard-shortcut first-keystroke="shift ctrl k" />
   </action>
   <action id="Groovy.Shell.Execute" />
+  <action id="HideActiveWindow">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="m" />
+  </action>
   <action id="HideSideWindows">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="j" />
   </action>
