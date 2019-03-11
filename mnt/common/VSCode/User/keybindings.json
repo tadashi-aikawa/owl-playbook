@@ -1234,5 +1234,15 @@
         "key": "shift+alt+f12",
         "command": "-references-view.find",
         "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "editor.action.organizeImports",
+        "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+    },
+    {
+        "key": "shift+alt+o",
+        "command": "-editor.action.organizeImports",
+        "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
     }
 ]
