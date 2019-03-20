@@ -99,8 +99,7 @@
   "explorer.confirmDelete": false,
   "editor.formatOnPaste": true,
   "vsicons.projectDetection.disableDetect": true,
-  "vsnotes.defaultNotePath": "~\\Box Sync\\itmemo",
-  "vsnotes.defaultNoteTitle": "{title}_{dt}.{ext}",
+  "vsnotes.defaultNotePath": "c:\\Users\\tadashi-aikawa\\backup\\notes",
   "files.associations": {
     "Vagrantfile": "ruby"
   },

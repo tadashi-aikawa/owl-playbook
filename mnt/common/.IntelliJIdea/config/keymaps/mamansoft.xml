@@ -165,6 +165,9 @@
   <action id="ReformatWithPrettierAction">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="p" />
   </action>
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="r" />
+  </action>
   <action id="ReopenClosedTab">
     <keyboard-shortcut first-keystroke="shift ctrl t" />
   </action>
