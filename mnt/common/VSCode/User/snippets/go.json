@@ -191,23 +191,41 @@
 			"\tMax  int    `docopt:\"--max\"`",
 			"}",
 			"",
-			"// CreateArgs creates Args",
-			"func CreateArgs() Args {",
+			"/*",
+			"CreateArgs creates Args.",
+			"",
+			"Example:",
+			"",
+			"\targs, appEnd, err := CreateArgs(usage, os.Args[1:], version)",
+			"\tif err != nil {",
+			"\t\tlog.Fatal(errors.Wrap(err, \"Fail to create arguments.\"))",
+			"\t}",
+			"\tif appEnd {",
+			"\t\treturn",
+			"\t}",
+			"",
+			"\tfmt.Println(args)",
+			"*/",
+			"func CreateArgs(usage string, argv []string, version string) (Args, bool, error) {",
 			"\tparser := &docopt.Parser{",
 			"\t\tHelpHandler:  docopt.PrintHelpOnly,",
 			"\t\tOptionsFirst: false,",
 			"\t}",
 			"",
-			"\topts, err := parser.ParseArgs(usage, os.Args[1:], version)",
+			"\topts, err := parser.ParseArgs(usage, argv, version)",
 			"\tif err != nil {",
-			"\t\tlog.Fatal(errors.Wrap(err, \"Fail to parse arguments.\"))",
+			"\t\treturn Args{}, false, errors.Wrap(err, \"Fail to parse arguments.\")",
+			"\t}",
+			"",
+			"\tif len(opts) == 0 {",
+			"\t\treturn Args{}, true, nil",
 			"\t}",
 			"",
 			"\tvar args Args",
 			"\topts.Bind(&args)",
 			"",
-			"\treturn args",
-			"}"
+			"\treturn args, false, nil",
+			"}",
 		]
 	},
 	"configfile (dep ensure --add github.com/BurntSushi/toml)": {
@@ -239,7 +257,6 @@
 	},
 	"hoge": {
 		"prefix": "hoge",
-		"body": [
-		]
+		"body": []
 	}
 }
