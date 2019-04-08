@@ -99,7 +99,7 @@
   "explorer.confirmDelete": false,
   "editor.formatOnPaste": true,
   "vsicons.projectDetection.disableDetect": true,
-  "vsnotes.defaultNotePath": "c:\\Users\\tadashi-aikawa\\backup\\notes",
+  "vsnotes.defaultNotePath": "~\\backup\\notes",
   "files.associations": {
     "Vagrantfile": "ruby"
   },
