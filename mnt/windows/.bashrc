@@ -29,7 +29,7 @@ function te() {
 }
 
 
-source ~/go/src/github.com/tadashi-aikawa/pureline-inspired/pureline ~/go/src/github.com/tadashi-aikawa/pureline-inspired/.pureline.conf
+source ~/git/github.com/tadashi-aikawa/pureline-inspired/pureline ~/git/github.com/tadashi-aikawa/pureline-inspired/.pureline.conf
 
 # Copyright (c) 2009 rupa deadwyler. Licensed under the WTFPL license, Version 2
 
