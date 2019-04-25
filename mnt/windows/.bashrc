@@ -1,3 +1,4 @@
+alias su='iconv -f Shift-Jis -t utf-8'
 # for symlink in windows
 export MSYS=winsymlinks:nativestrict
 

@@ -90,7 +90,6 @@
     "editor.selectionHighlightBackground": "#3fd6fc79",
   },
   "breadcrumbs.enabled": true,
-  "workbench.iconTheme": "vscode-icons",
   "window.zoomLevel": 0,
   "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
@@ -98,7 +97,6 @@
   "terminal.integrated.rendererType": "dom",
   "explorer.confirmDelete": false,
   "editor.formatOnPaste": true,
-  "vsicons.projectDetection.disableDetect": true,
   "vsnotes.defaultNotePath": "~\\backup\\notes",
   "files.associations": {
     "Vagrantfile": "ruby"
@@ -109,5 +107,5 @@
   },
   "workbench.editor.showTabs": true,
   "vim.foldfix": true,
-  "git.autofetch": true,
+  "git.autofetch": true
 }
