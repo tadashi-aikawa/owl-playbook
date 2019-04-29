@@ -50,6 +50,7 @@
     - role: link/idea
     - role: editor/vscode
     - role: link/vscode
+    - role: editor/vscode/extensions
 
 - name: "=============== 5. Language ==============="
   <<: *base
