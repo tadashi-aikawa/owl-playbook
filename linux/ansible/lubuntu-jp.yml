@@ -48,6 +48,8 @@
     - role: link/vim
     - role: editor/idea
     - role: link/idea
+    - role: editor/vscode
+    - role: link/vscode
 
 - name: "=============== 5. Language ==============="
   <<: *base
