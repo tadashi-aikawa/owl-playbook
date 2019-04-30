@@ -17,5 +17,8 @@ help: ## Print this help
 lubuntu-jp: ## Run lubuntu-jp
 	@ansible-playbook -K -i local lubuntu-jp.yml
 
+ubuntu: ## Run ubuntu
+	@ansible-playbook -K -i local ubuntu.yml
+
 lubuntu-jp-tmp: ## Run lubuntu-jp with only tmp tags
 	@ansible-playbook -K --tags tmp -i local lubuntu-jp.yml

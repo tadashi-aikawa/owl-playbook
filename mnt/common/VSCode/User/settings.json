@@ -107,5 +107,6 @@
   },
   "workbench.editor.showTabs": true,
   "vim.foldfix": true,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "go.useLanguageServer": true
 }
