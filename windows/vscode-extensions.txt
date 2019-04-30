@@ -13,10 +13,8 @@ shuworks.vscode-table-formatter
 slevesque.vscode-autohotkey
 vscodevim.vim
 taichi.vscode-textlint
-robertohuertasm.vscode-icons
 shardulm94.trailing-spaces
 ms-vscode.cpptools
 eg2.tslint
-octref.vetur
 editorconfig.editorconfig
 patricklee.vsnotes
