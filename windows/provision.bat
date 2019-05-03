@@ -7,7 +7,6 @@ set ROAMING="%USERPROFILE%\AppData\Roaming"
 
 rem :tmp‚ğ“®‚©‚·‚±‚Æ‚ÅÀsŠJn‰ÓŠ‚ğ§Œä. ƒfƒoƒbƒO‚â“®ìŠm”F—p
 goto :tmp
-:tmp
 
 call :******************** Install by Chocolatey
 call chocolatey\install.bat
@@ -38,18 +37,27 @@ call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\.IntelliJIdea\.ideavimrc
 call :each link_idea_file idea-files.txt
 
 
+:tmp
 call :******************** VS Code
 
 set VSCODE_ORIGIN_USER_DIR=%COMMON_MNT%\VSCode\User
 set VSCODE_USER_DIR=%ROAMING%\Code\User
+set VSCODE_INSIDER_USER_DIR=%ROAMING%\Code - Insiders\User
 
 call :link_vscode_file keybindings.json
 call :link_vscode_file settings.json
 call :link_vscode_dir snippets
 
-rem See https://blog.mamansoft.net/2018/09/17/vscode-satisfies-vimmer/
-call :each vscode_extension_install vscode-extensions.txt
+call :link_vscode_insider_file keybindings.json
+call :link_vscode_insider_file settings.json
+call :link_vscode_insider_dir snippets
 
+rem See https://blog.mamansoft.net/2018/09/17/vscode-satisfies-vimmer/
+REM call :each vscode_extension_install vscode-extensions.txt
+
+REM TODO: Insider‚ğg‚í‚È‚­‚È‚Á‚½‚çÁ‚·
+call :each vscode_insider_extension_install vscode-extensions.txt
+goto :end
 
 call :******************** Homedir
 call :each link_windows_home windows-home-dots.txt
@@ -115,6 +123,15 @@ exit /b
 call :link_file %CMDER_CONFIG_DIR%\%1 %CMDER_ORIGIN_CONFIG_DIR%\%1
 exit /b
 
+REM TODO: Insider‚ğg‚í‚È‚­‚È‚Á‚½‚çÁ‚·
+:link_vscode_insider_file
+call :link_file "%VSCODE_INSIDER_USER_DIR%\%1" %VSCODE_ORIGIN_USER_DIR%\%1
+exit /b
+
+:link_vscode_insider_dir
+call :link_dir "%VSCODE_INSIDER_USER_DIR%\%1" %VSCODE_ORIGIN_USER_DIR%\%1
+exit /b
+
 REM submodule‚Ìcmder-tools‚ÉƒŠƒ“ƒN‚·‚é
 :link_cmder_tools_file
 call :link_file %CMDER_CONFIG_DIR%\%1 %OWL_CMDER_TOOLS_CONFIG_DIR%\%1
@@ -122,6 +139,11 @@ exit /b
 
 :vscode_extension_install
 call code --install-extension %1
+exit /b
+
+REM TODO: Insider‚ğg‚í‚È‚­‚È‚Á‚½‚çÁ‚·
+:vscode_insider_extension_install
+call code-insiders --install-extension %1
 exit /b
 
 
@@ -146,3 +168,6 @@ echo „¬„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„
 echo „« %*
 echo „¯„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
 exit /b
+
+REM “r’†‚Å~‚ß‚½‚¢ê‡‚Í‚±‚±‚É..
+:end
