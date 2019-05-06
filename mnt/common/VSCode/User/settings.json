@@ -108,5 +108,11 @@
   "workbench.editor.showTabs": true,
   "vim.foldfix": true,
   "git.autofetch": true,
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+  "python.formatting.provider": "yapf",
+  "python.linting.pylintArgs": [
+    "--enable=W0614",
+    "--disable=missing-docstring,C0103,C0301"
+  ],
+  "editor.formatOnSave": true
 }

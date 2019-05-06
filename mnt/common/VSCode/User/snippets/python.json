@@ -12,4 +12,11 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"Class constructor": {
+		"prefix": "init",
+		"body": [
+			"    def __init__(self$1):",
+			"        $2",
+		]
+	}
 }
