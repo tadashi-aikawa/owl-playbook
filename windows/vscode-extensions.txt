@@ -1,4 +1,5 @@
 2gua.rainbow-brackets
+alefragnani.bookmarks
 bierner.emojisense
 bungcip.better-toml
 donjayamanne.githistory

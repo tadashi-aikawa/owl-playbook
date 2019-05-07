@@ -44,7 +44,7 @@
         "when": "editorFocus && vim.mode == 'Normal'"
     },
     {
-        "key": "ctrl+m",
+        "key": "alt+s",
         "command": "workbench.action.togglePanel",
     },
     {
@@ -1274,5 +1274,40 @@
         "key": "ctrl+l",
         "command": "workbench.action.terminal.clear",
         "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+m",
+        "command": "bookmarks.toggle"
+    },
+    {
+        "key": "ctrl+m m",
+        "command": "bookmarks.toggleLabeled"
+    },
+    {
+        "key": "ctrl+m o",
+        "command": "bookmarks.listFromAllFiles"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "-bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "-bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+j",
+        "command": "bookmarks.jumpToNext"
+    },
+    {
+        "key": "ctrl+m ctrl+k",
+        "command": "bookmarks.jumpToPrevious"
     }
 ]
