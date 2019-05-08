@@ -6,10 +6,10 @@
       - libssl-dev
       - zlib1g-dev
       - libbz2-dev
+      - libffi-dev
       - libreadline-dev
       - libsqlite3-dev
       - libncurses5-dev
       - libncursesw5-dev
       - xz-utils
       - tk-dev
-
