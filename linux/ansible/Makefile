@@ -22,3 +22,7 @@ ubuntu: ## Run ubuntu
 
 lubuntu-jp-tmp: ## Run lubuntu-jp with only tmp tags
 	@ansible-playbook -K --tags tmp -i local lubuntu-jp.yml
+
+ubuntu-tmp: ## Run ubuntu with only tmp tags
+	@ansible-playbook -K --tags tmp -i local ubuntu.yml
+
