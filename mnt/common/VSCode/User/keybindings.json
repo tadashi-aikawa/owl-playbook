@@ -1309,5 +1309,9 @@
     {
         "key": "ctrl+m ctrl+k",
         "command": "bookmarks.jumpToPrevious"
+    },
+    {
+        "key": "alt+f",
+        "command": "workbench.action.toggleMaximizedPanel"
     }
 ]
