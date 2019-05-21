@@ -7,6 +7,7 @@ editorconfig.editorconfig
 eg2.tslint
 formulahendry.code-runner
 mechatroner.rainbow-csv
+mksafi.simple-autocomplete
 MS-CEINTL.vscode-language-pack-ja
 ms-python.python
 ms-vscode.cpptools
