@@ -72,14 +72,6 @@
     // Ctrl + j
     // ----------------
     {
-        "key": "ctrl+j ctrl+d",
-        "command": "workbench.view.debug"
-    },
-    {
-        "key": "ctrl+j d",
-        "command": "workbench.debug.action.toggleRepl"
-    },
-    {
         "key": "ctrl+j g",
         "command": "workbench.view.search",
     },
@@ -571,11 +563,6 @@
     },
     //-------------------------------
     {
-        "key": "ctrl+/",
-        "command": "editor.action.addCommentLine",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
         "key": "alt+up",
         "command": "editor.action.insertCursorAbove",
         "when": "editorTextFocus"
@@ -639,19 +626,9 @@
         "command": "markdown.showPreview"
     },
     {
-        "key": "alt+shift+r",
-        "command": "workbench.action.debug.stop",
-        "when": "inDebugMode"
-    },
-    {
         "key": "alt+r",
         "command": "workbench.action.debug.continue",
         "when": "inDebugMode"
-    },
-    {
-        "key": "shift+alt+r",
-        "command": "workbench.action.debug.start",
-        "when": "!inDebugMode"
     },
     {
         "key": "ctrl+j f",
@@ -1187,10 +1164,6 @@
         "command": "workbench.action.focusNextGroup"
     },
     {
-        "key": "ctrl+alt+z",
-        "command": "git.revertChange"
-    },
-    {
         "key": "ctrl+j",
         "command": "-extension.vim_ctrl+j",
         "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
@@ -1244,11 +1217,6 @@
         "key": "shift+alt+o",
         "command": "-editor.action.organizeImports",
         "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
-    },
-    {
-        "key": "ctrl+j r",
-        "command": "editor.action.rename",
-        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
     {
         "key": "f2",
@@ -1313,5 +1281,47 @@
     {
         "key": "alt+f",
         "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "editor.action.rename"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "-revealFileInOS",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+j d",
+        "command": "editor.action.revealDefinition"
+    },
+    {
+        "key": "shift+space",
+        "command": "simpleAutocomplete.next"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.openNextRecentlyUsedEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.openPreviousRecentlyUsedEditor"
+    },
+    {
+        "key": "ctrl+alt+z",
+        "command": "git.revertSelectedRanges"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.openNextRecentlyUsedEditorInGroup"
     }
 ]
