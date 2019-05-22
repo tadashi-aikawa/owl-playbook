@@ -30,15 +30,21 @@
 	},
 	"ブログのsummary": {
 		"prefix": "blog_summary",
-		"body": ["{{<summary \"${1:URL}\">}}"]
+		"body": [
+			"{{<summary \"${1:URL}\">}}"
+		]
 	},
 	"ブログの横長画像": {
 		"prefix": "blog_himg",
-		"body": ["{{<himg \"${1:URL}\">}}"]
+		"body": [
+			"{{<himg \"${1:URL}\">}}"
+		]
 	},
 	"ブログの縦長画像": {
 		"prefix": "blog_vimg",
-		"body": ["{{<vimg \"${1:URL}\">}}"]
+		"body": [
+			"{{<vimg \"${1:URL}\">}}"
+		]
 	},
 	"ブログの折りたたみファイル/コード": {
 		"prefix": "blog_file",
@@ -95,23 +101,23 @@
 	"ブログの追記": {
 		"prefix": "blog_add",
 		"body": [
-			"{{<update \"${1:yyyy/MM/dd}: ${2:Title}\">}}",
+			"{{<update \"${1:yyyy-MM-dd}: ${2:Title}\">}}",
 			"$0",
 			"{{</update>}}"
 		]
 	},
 	"ブログの新規投稿テンプレ": {
 		"prefix": "blog_new",
-		"body":[
+		"body": [
 			"---",
 			"title: ${1:Title}",
 			"slug: ${2:Slug}",
 			"date: ${3}",
 			"thumbnailImage: $4",
 			"categories:",
-  			"  - engineering",
+			"  - engineering",
 			"tags:",
-  			"  - ${5:Tags}",
+			"  - ${5:Tags}",
 			"---",
 			"",
 			"${6:Summary}",

@@ -116,5 +116,6 @@
   ],
   "editor.formatOnSave": true,
   "cmake.configureOnOpen": true,
-  "git.ignoreLegacyWarning": true
+  "git.ignoreLegacyWarning": true,
+  "workbench.editor.enablePreview": false
 }
