@@ -109,4 +109,5 @@ $ cd /mnt-ansible
 $ make lubuntu-jp
 ```
 
-TODO: 1度目の実行が必ずbash-language-serverで落ちるのを修正 (nインストール後、.bashrcに書かれた環境変数が再設定されないため)
+TODO: 1度目の実行が必ずbash-language-serverで落ちるのを修正 (インストール後、.bashrcに書かれた環境変数が再設定されないため)
+
