@@ -17,10 +17,6 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+j e",
-        "command": "workbench.action.openRecent"
-    },
-    {
         "key": "ctrl+f",
         "command": "actions.find"
     },
@@ -44,7 +40,7 @@
         "when": "editorFocus && vim.mode == 'Normal'"
     },
     {
-        "key": "alt+s",
+        "key": "alt+w",
         "command": "workbench.action.togglePanel",
     },
     {
@@ -598,11 +594,6 @@
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
     {
-        "key": "alt+d",
-        "command": "editor.action.previewDeclaration",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    },
-    {
         "key": "alt+enter",
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
@@ -618,10 +609,6 @@
         "when": "editorFocus && !editorReadonly"
     },
     {
-        "key": "alt+w",
-        "command": "workbench.action.switchWindow"
-    },
-    {
         "key": "alt+p",
         "command": "markdown.showPreview"
     },
@@ -629,10 +616,6 @@
         "key": "alt+r",
         "command": "workbench.action.debug.continue",
         "when": "inDebugMode"
-    },
-    {
-        "key": "ctrl+j f",
-        "command": "workbench.action.quickOpen"
     },
     {
         "key": "ctrl+shift+a",
@@ -958,7 +941,7 @@
         "when": "isInDiffEditor"
     },
     {
-        "key": "shift+f3",
+        "key": "ctrl+j i",
         "command": "editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
@@ -1323,5 +1306,53 @@
     {
         "key": "ctrl+tab",
         "command": "workbench.action.openNextRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "extension.vim_ctrl+p",
+        "when": "suggestWidgetVisible && vim.active && vim.use<C-p>"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "suggestWidgetVisible && vim.active && vim.use<C-p>"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+j e",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "alt+f12",
+        "command": "-editor.action.peekDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.peekDefinition"
+    },
+    {
+        "key": "shift+alt+m",
+        "command": "python.refactorExtractMethod"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "editor.action.formatSelection.multiple"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "editor.action.smartSelect.expand"
     }
 ]
