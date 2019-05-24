@@ -1322,7 +1322,7 @@
         "command": "-workbench.action.quickOpen"
     },
     {
-        "key": "ctrl+j e",
+        "key": "ctrl+j f",
         "command": "workbench.action.quickOpen"
     },
     {
@@ -1354,5 +1354,9 @@
     {
         "key": "ctrl+s",
         "command": "editor.action.smartSelect.expand"
+    },
+    {
+        "key": "ctrl+j e",
+        "command": "workbench.action.openRecent"
     }
 ]
