@@ -1,4 +1,10 @@
 <keymap version="1" name="mamansoft" parent="Eclipse">
+  <action id="ActivateProjectToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl j" />
+  </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="t" />
+  </action>
   <action id="AddToFavoritesPopup" />
   <action id="Arrangement.Alias.Rule.Edit" />
   <action id="Arrangement.Alias.Rule.Match.Condition.Move.Up" />
@@ -12,9 +18,13 @@
   <action id="CallHierarchy">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="h" />
   </action>
+  <action id="ChangeFileEncodingAction">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl e" />
+  </action>
   <action id="ChangesView.Refresh">
     <keyboard-shortcut first-keystroke="shift ctrl r" />
   </action>
+  <action id="ChangesView.Rename" />
   <action id="CheckinProject">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="c" />
   </action>
@@ -39,6 +49,7 @@
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="d" />
   </action>
   <action id="Console.Execute.Multiline" />
+  <action id="Console.Jpa.GenerateSql" />
   <action id="Debugger.EditArrayFilter" />
   <action id="Debugger.EditCustomField" />
   <action id="DirDiffMenu.SynchronizeDiff.All" />
@@ -50,21 +61,20 @@
   <action id="EditorCloneCaretBelow">
     <keyboard-shortcut first-keystroke="alt down" />
   </action>
-  <action id="EditorCompleteStatement" />
   <action id="EditorJoinLines" />
   <action id="EditorMatchBrace">
     <keyboard-shortcut first-keystroke="shift ctrl b" />
   </action>
+  <action id="EditorScrollToCenter" />
   <action id="EditorSelectWord">
     <keyboard-shortcut first-keystroke="shift ctrl alt s" />
+    <keyboard-shortcut first-keystroke="ctrl s" />
   </action>
   <action id="EditorSplitLine" />
   <action id="EditorStartNewLine">
     <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
-  <action id="EditorStartNewLineBefore">
-    <keyboard-shortcut first-keystroke="shift ctrl enter" />
-  </action>
+  <action id="EditorStartNewLineBefore" />
   <action id="ExpandRegion" />
   <action id="ExpandRegionRecursively">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl l" />
@@ -79,16 +89,20 @@
   </action>
   <action id="FindNext" />
   <action id="FindPrevious" />
-  <action id="FindUsages" />
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="u" />
+  </action>
   <action id="Forward">
     <keyboard-shortcut first-keystroke="alt right" />
   </action>
   <action id="Git.Branches">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="b" />
   </action>
+  <action id="Git.Commit.And.Push.Executor" />
   <action id="Git.Fetch">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="f" />
   </action>
+  <action id="Git.Reword.Commit" />
   <action id="GotoBookmark0" />
   <action id="GotoBookmark1" />
   <action id="GotoChangedFile" />
@@ -102,19 +116,22 @@
   <action id="GotoImplementation">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="i" />
   </action>
-  <action id="GotoLine" />
+  <action id="GotoNextBookmark">
+    <keyboard-shortcut first-keystroke="ctrl m" second-keystroke="ctrl j" />
+  </action>
   <action id="GotoNextError">
     <keyboard-shortcut first-keystroke="shift ctrl j" />
+  </action>
+  <action id="GotoPreviousBookmark">
+    <keyboard-shortcut first-keystroke="ctrl m" second-keystroke="ctrl k" />
   </action>
   <action id="GotoPreviousError">
     <keyboard-shortcut first-keystroke="shift ctrl k" />
   </action>
   <action id="Groovy.Shell.Execute" />
+  <action id="Hg.Commit.And.Push.Executor" />
   <action id="HideActiveWindow">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="m" />
-  </action>
-  <action id="HideSideWindows">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="j" />
+    <keyboard-shortcut first-keystroke="alt w" />
   </action>
   <action id="HippieCompletion">
     <keyboard-shortcut first-keystroke="shift space" />
@@ -130,6 +147,10 @@
     <keyboard-shortcut first-keystroke="ctrl i" />
   </action>
   <action id="KotlinShellExecute" />
+  <action id="MaximizeToolWindow">
+    <keyboard-shortcut first-keystroke="shift ctrl quote" />
+    <keyboard-shortcut first-keystroke="alt f" />
+  </action>
   <action id="MethodDown" />
   <action id="MethodHierarchy" />
   <action id="MethodUp" />
@@ -138,22 +159,33 @@
   <action id="NextDiff">
     <keyboard-shortcut first-keystroke="alt j" />
   </action>
+  <action id="NextOccurence">
+    <keyboard-shortcut first-keystroke="ctrl alt j" />
+  </action>
+  <action id="OptimizeImports">
+    <keyboard-shortcut first-keystroke="shift ctrl o" />
+  </action>
   <action id="ParameterInfo">
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="PreviousDiff">
     <keyboard-shortcut first-keystroke="alt k" />
   </action>
+  <action id="PreviousOccurence">
+    <keyboard-shortcut first-keystroke="ctrl alt k" />
+  </action>
   <action id="Print" />
   <action id="QuickImplementations">
     <keyboard-shortcut first-keystroke="alt d" />
   </action>
   <action id="QuickJavaDoc">
-    <mouse-shortcut keystroke="alt button2" />
-    <keyboard-shortcut first-keystroke="shift ctrl space" />
+    <keyboard-shortcut first-keystroke="alt s" />
   </action>
   <action id="RecentFiles">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="e" />
+  </action>
+  <action id="RecentLocations">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="l" />
   </action>
   <action id="RefactoringMenuRenameFile">
     <keyboard-shortcut first-keystroke="f2" />
@@ -164,9 +196,6 @@
   </action>
   <action id="ReformatWithPrettierAction">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="p" />
-  </action>
-  <action id="RenameElement">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="r" />
   </action>
   <action id="ReopenClosedTab">
     <keyboard-shortcut first-keystroke="shift ctrl t" />
@@ -181,6 +210,7 @@
   <action id="SaveAll">
     <keyboard-shortcut first-keystroke="shift ctrl s" />
   </action>
+  <action id="ScrollTreeToCenter" />
   <action id="SearchEverywhere">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="p" />
   </action>
@@ -190,7 +220,10 @@
   <action id="SelectNextOccurrence">
     <keyboard-shortcut first-keystroke="ctrl k" />
   </action>
-  <action id="ShowBookmarks" />
+  <action id="ShelvedChanges.Rename" />
+  <action id="ShowBookmarks">
+    <keyboard-shortcut first-keystroke="ctrl m" second-keystroke="o" />
+  </action>
   <action id="ShowContent" />
   <action id="ShowErrorDescription">
     <keyboard-shortcut first-keystroke="ctrl 1" />
@@ -209,6 +242,14 @@
   <action id="StepOver">
     <keyboard-shortcut first-keystroke="f10" />
   </action>
+  <action id="SurroundWithLiveTemplate" />
+  <action id="TodoViewGroupByShowModules" />
+  <action id="ToggleBookmark">
+    <keyboard-shortcut first-keystroke="ctrl m" second-keystroke="ctrl m" />
+  </action>
+  <action id="ToggleBookmarkWithMnemonic">
+    <keyboard-shortcut first-keystroke="ctrl m" second-keystroke="m" />
+  </action>
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="ctrl f8" />
   </action>
@@ -223,6 +264,10 @@
   </action>
   <action id="Vcs.Show.Log">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="l" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="shift h" />
+  </action>
+  <action id="Vcs.ShowMessageHistory">
+    <keyboard-shortcut first-keystroke="ctrl e" />
   </action>
   <action id="VcsShowNextChangeMarker">
     <keyboard-shortcut first-keystroke="shift alt j" />
