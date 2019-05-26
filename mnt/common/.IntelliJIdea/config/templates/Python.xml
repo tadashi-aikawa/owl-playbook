@@ -9,4 +9,10 @@
       <option name="Python" value="true" />
     </context>
   </template>
+  <template name="init" value="def __init__(self$ARGS$):&#10;    $END$" description="__init__" toReformat="false" toShortenFQNames="true">
+    <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
 </templateSet>

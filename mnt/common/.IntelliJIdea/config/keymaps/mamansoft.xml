@@ -128,6 +128,7 @@
   <action id="GotoPreviousError">
     <keyboard-shortcut first-keystroke="shift ctrl k" />
   </action>
+  <action id="Graph.ApplyCurrentLayout" />
   <action id="Groovy.Shell.Execute" />
   <action id="Hg.Commit.And.Push.Executor" />
   <action id="HideActiveWindow">
