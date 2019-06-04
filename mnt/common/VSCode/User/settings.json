@@ -109,13 +109,9 @@
   "vim.foldfix": true,
   "git.autofetch": true,
   "go.useLanguageServer": true,
-  "python.formatting.provider": "yapf",
-  "python.linting.pylintArgs": [
-    "--enable=W0614",
-    "--disable=missing-docstring,C0103,C0301"
-  ],
+  "python.formatting.provider": "black",
   "editor.formatOnSave": true,
   "cmake.configureOnOpen": true,
   "git.ignoreLegacyWarning": true,
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
 }
