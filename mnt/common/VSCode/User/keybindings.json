@@ -1222,11 +1222,6 @@
         "when": "inQuickOpen && inRecentFilesPicker"
     },
     {
-        "key": "ctrl+l",
-        "command": "workbench.action.terminal.clear",
-        "when": "terminalFocus"
-    },
-    {
         "key": "ctrl+alt+k",
         "command": "-bookmarks.toggle",
         "when": "editorTextFocus"
