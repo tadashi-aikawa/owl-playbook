@@ -1112,9 +1112,9 @@
         "command": "workbench.action.files.saveAll"
     },
     {
-        "key": "f5",
+        "key": "ctrl+r",
         "command": "extension.vim_ctrl+r",
-        "when": "!terminalFocus && editorTextFocus && vim.active && vim.use<C-r> && !inDebugRepl"
+        "when": "editorTextFocus && vim.active && vim.use<C-r> && !inDebugRepl && !terminalFocus"
     },
     {
         "key": "ctrl+shift+m",
