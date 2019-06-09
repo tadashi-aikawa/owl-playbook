@@ -86,8 +86,6 @@ echo Clone...
 echo   * spinal-reflex-bindings-template
 echo   * keypirinha-OwlTodoist
 
-exit /b
-
 rem ---------------------------------------------------------
 
 :link_windows_home
