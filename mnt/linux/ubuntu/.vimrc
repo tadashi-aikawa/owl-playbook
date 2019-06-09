@@ -341,9 +341,9 @@ nnoremap <silent> <space>j VG!jq .<CR>
 
 "
 " Markdown h1 header
-" nnoremap <silent> <Space>sh= v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"="*l)'<cr>
+nnoremap <silent> <space>h= v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"="*l)'<cr>
 " Markdown h2 header
-" nnoremap <silent> <Space>sh- v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"-"*l)'<cr>
+nnoremap <silent> <space>h- v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"-"*l)'<cr>
 
 
 " ---------------------------------------------------
