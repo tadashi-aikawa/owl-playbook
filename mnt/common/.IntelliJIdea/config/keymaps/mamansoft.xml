@@ -106,7 +106,9 @@
   <action id="GotoBookmark0" />
   <action id="GotoBookmark1" />
   <action id="GotoChangedFile" />
-  <action id="GotoClass" />
+  <action id="GotoClass">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="c" />
+  </action>
   <action id="GotoDeclaration">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="d" />
   </action>

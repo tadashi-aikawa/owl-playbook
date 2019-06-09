@@ -946,11 +946,6 @@
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "ctrl+shift+n",
-        "command": "editor.action.peekImplementation",
-        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
         "key": "ctrl+shift+f12",
         "command": "-editor.action.peekImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -1353,5 +1348,9 @@
     {
         "key": "ctrl+j e",
         "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.newWindow"
     }
 ]
