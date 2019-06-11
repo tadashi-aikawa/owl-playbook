@@ -114,4 +114,5 @@
   "cmake.configureOnOpen": true,
   "git.ignoreLegacyWarning": true,
   "workbench.editor.enablePreview": false,
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
 }
