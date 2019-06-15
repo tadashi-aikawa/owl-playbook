@@ -3,4 +3,7 @@
     <option name="FONT_SIZE" value="16" />
     <option name="FONT_FAMILY" value="Source Code Pro" />
   </component>
+  <component name="XmlEditorOptions">
+    <option name="automaticallyInsertClosingTag" value="false" />
+  </component>
 </application>
