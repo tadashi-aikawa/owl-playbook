@@ -115,4 +115,5 @@
   "git.ignoreLegacyWarning": true,
   "workbench.editor.enablePreview": false,
   "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "python.formatting.autopep8Path": "black",
 }
