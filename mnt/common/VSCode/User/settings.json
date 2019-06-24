@@ -105,6 +105,9 @@
   "[plaintext]": {
     "files.autoGuessEncoding": true,
   },
+  "[bat]": {
+    "files.encoding": "shiftjis"
+  },
   "workbench.editor.showTabs": true,
   "vim.foldfix": true,
   "git.autofetch": true,
