@@ -139,5 +139,11 @@
 			""
 		],
 		"description": "ブログの新規投稿記事"
-	}
+	},
+	"Siteのsummary": {
+		"prefix": "site_summary",
+		"body": [
+			"{{summary(\"${1:URL}\")}}"
+		]
+	},
 }
