@@ -1130,7 +1130,7 @@
         "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+w h",
+        "key": "ctrl+j oem_minus",
         "command": "workbench.action.splitEditorOrthogonal"
     },
     {
@@ -1352,5 +1352,9 @@
     {
         "key": "ctrl+shift+n",
         "command": "workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+j shift+oem_5",
+        "command": "workbench.action.splitEditor"
     }
 ]
