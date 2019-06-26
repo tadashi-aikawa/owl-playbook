@@ -239,6 +239,12 @@
     <keyboard-shortcut first-keystroke="shift ctrl m" />
   </action>
   <action id="ShowProjectStructureSettings" />
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="minus" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="shift back_slash" />
+  </action>
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="f11" />
   </action>

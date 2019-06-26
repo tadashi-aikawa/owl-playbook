@@ -119,4 +119,5 @@
   "workbench.editor.enablePreview": false,
   "C_Cpp.intelliSenseEngine": "Tag Parser",
   "pythonTestExplorer.testFramework": "pytest",
+  "vsicons.dontShowNewVersionMessage": true,
 }
