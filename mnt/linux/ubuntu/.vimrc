@@ -102,7 +102,7 @@ function! Mode()
       hi User2 guifg=#4e4e4e guibg=#ffaf00 ctermfg=239 ctermbg=214
       hi User3 guifg=#ffaf00 ctermfg=214
     endif
-  endif 
+  endif
 
   if l:mode ==# "n"
     return "  NORMAL "
@@ -139,7 +139,7 @@ set statusline+=%{strlen(fugitive#statusline())>0?'\ ⭠\ ':''}
 set statusline+=%{matchstr(fugitive#statusline(),'(\\zs.*\\ze)')}
 set statusline+=%{strlen(fugitive#statusline())>0?'\ \ ⮁\ ':'\ '}
 set statusline+=%f\ %{&ro?'⭤':''}%{&mod?'+':''}%<
-set statusline+=%3*\ 
+set statusline+=%3*\
 " set statusline+=%{LinterStatus()}
 "
 set statusline+=\ %4*⮀
@@ -151,8 +151,8 @@ set statusline+=\ %{strlen(&fileformat)>0?&fileformat.'\ ⮃\ ':''}
 set statusline+=%{strlen(&fileencoding)>0?&fileencoding.'\ ⮃\ ':''}
 set statusline+=%{strlen(&filetype)>0?&filetype:''}
 set statusline+=\ %8*⮂
-set statusline+=%7*\ %p%%\ 
-set statusline+=%6*⮂%5*⭡\ \ %l:%c\ 
+set statusline+=%7*\ %p%%\
+set statusline+=%6*⮂%5*⭡\ \ %l:%c\
 
 
 " ---------------------------------------------------
@@ -353,3 +353,4 @@ nnoremap <silent> <space>h- v:!python3 -c 'import sys; from unicodedata import e
 autocmd BufNewFile *.py 0r ~/.vim-snippets/newtmpl/python.py
 autocmd BufNewFile *.sh 0r ~/.vim-snippets/newtmpl/bash.sh
 
+set nomodeline

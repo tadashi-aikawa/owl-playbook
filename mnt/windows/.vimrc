@@ -340,3 +340,5 @@ nnoremap <silent> <Space>S :e ++enc=cp932<cr>
 autocmd BufNewFile *.py 0r ~/.vim-snippets/newtmpl/python.py
 autocmd BufNewFile *.sh 0r ~/.vim-snippets/newtmpl/bash.sh
 
+set nomodeline
+
