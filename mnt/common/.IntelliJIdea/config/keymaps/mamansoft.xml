@@ -50,6 +50,11 @@
   </action>
   <action id="Console.Execute.Multiline" />
   <action id="Console.Jpa.GenerateSql" />
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="shift alt d" />
+    <keyboard-shortcut first-keystroke="shift f9" />
+    <keyboard-shortcut first-keystroke="ctrl alt r" />
+  </action>
   <action id="Debugger.EditArrayFilter" />
   <action id="Debugger.EditCustomField" />
   <action id="DirDiffMenu.SynchronizeDiff.All" />
