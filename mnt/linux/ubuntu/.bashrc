@@ -63,6 +63,8 @@ alias ll='exa -l'
 
 alias pj='pipenv run python jumeaux/executor.py'
 
+alias vimn='vim -u NONE -N'
+
 # function
 function gfx() {
   for d in $(ls | fzf --multi); do
