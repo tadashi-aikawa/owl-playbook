@@ -28,11 +28,9 @@ set lazyredraw
 " 再描画の速度が速くなるらしいけど最近の端末では無意味との噂も..
 set ttyfast
 
-
 " ---------------------------------------------------
 "  見た目
 " ---------------------------------------------------
-
 " Color scheme
 syntax on
 " set termguicolors
@@ -53,6 +51,7 @@ let &t_ti.="\e[2 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[2 q"
 let &t_te.="\e[0 q"
+
 " " TABなどを可視化
 set list
 set listchars=tab:»˙,trail:˙,eol:↲,extends:»,precedes:«,nbsp:%
@@ -215,16 +214,6 @@ endif
 "  Key bindings
 " ---------------------------------------------------
 
-" MetaキーにAltを割り当てる
-let c = 'a'
-while c <= 'z'
-    execute "set <M-" . c . ">=\e" . c
-    execute "imap \e" . c . " <M-" . c . ">"
-    execute "set <M-S-" . c . ">=\e" . toupper(c)
-    execute "imap \e" . toupper(c) . " <M-" . c . ">"
-    let c = nr2char(1+char2nr(c))
-endw
-
 " [vim-anzu] 検索強化
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
@@ -269,13 +258,6 @@ nnoremap <C-j>s :GFiles?<CR>
 " [NERDTree] Treeに移動し、カレントファイルをフォーカス
 nnoremap <C-j>w :<C-u>:NERDTreeTabsFind<CR>
 
-"---- Alt -------
-" [quick-run] Golangの実行
-autocmd FileType go nnoremap <M-r> :QuickRun<CR>
-" [quick-run] Pythonの実行
-autocmd FileType python nnoremap <M-r> :QuickRun<CR>
-" [vim-go] 定義異動した後に元の場所へ戻る
-autocmd FileType go nnoremap <A-Left> :GoDefPop <CR>
 " ---------------- g -------------------
 
 " [ALE] 次のポイントへ移動
