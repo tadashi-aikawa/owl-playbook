@@ -6,6 +6,6 @@
 
 - name: Install
   copy:
-    src: /tmp/dist/gowl
+    src: /tmp/dist/linux/gowl
     dest: /usr/bin/gowl
     mode: 0755
