@@ -58,6 +58,7 @@
     <keyboard-shortcut first-keystroke="shift alt d" />
     <keyboard-shortcut first-keystroke="shift f9" />
     <keyboard-shortcut first-keystroke="ctrl alt r" />
+    <keyboard-shortcut first-keystroke="alt d" />
   </action>
   <action id="Debugger.EditArrayFilter" />
   <action id="Debugger.EditCustomField" />
@@ -139,6 +140,10 @@
   <action id="GotoPreviousError">
     <keyboard-shortcut first-keystroke="shift ctrl k" />
   </action>
+  <action id="GotoSymbol">
+    <keyboard-shortcut first-keystroke="shift ctrl alt n" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="s" />
+  </action>
   <action id="Graph.ApplyCurrentLayout" />
   <action id="Groovy.Shell.Execute" />
   <action id="Hg.Commit.And.Push.Executor" />
@@ -191,7 +196,6 @@
     <keyboard-shortcut first-keystroke="shift ctrl l" />
   </action>
   <action id="QuickImplementations">
-    <keyboard-shortcut first-keystroke="alt d" />
     <keyboard-shortcut first-keystroke="alt a" />
   </action>
   <action id="QuickJavaDoc">
