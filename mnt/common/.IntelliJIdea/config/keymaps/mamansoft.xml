@@ -192,6 +192,7 @@
   </action>
   <action id="QuickImplementations">
     <keyboard-shortcut first-keystroke="alt d" />
+    <keyboard-shortcut first-keystroke="alt a" />
   </action>
   <action id="QuickJavaDoc">
     <keyboard-shortcut first-keystroke="alt s" />
