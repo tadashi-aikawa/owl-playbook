@@ -120,4 +120,9 @@
   "C_Cpp.intelliSenseEngine": "Tag Parser",
   "pythonTestExplorer.testFramework": "pytest",
   "vsicons.dontShowNewVersionMessage": true,
+  "revealjs.highlightTheme": "",
+  "revealjs.browserPath": "",
+  "revealjs.transition": "convex",
+  "revealjs.exportHTMLPath": "",
+  "python.formatting.blackPath": "C:\\Python37\\Scripts\\black",
 }
