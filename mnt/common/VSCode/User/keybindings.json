@@ -1130,7 +1130,7 @@
         "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+j oem_minus",
+        "key": "ctrl+w s",
         "command": "workbench.action.splitEditorOrthogonal"
     },
     {
@@ -1354,7 +1354,17 @@
         "command": "workbench.action.newWindow"
     },
     {
-        "key": "ctrl+j shift+oem_5",
+        "key": "ctrl+w v",
         "command": "workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+w t",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus"
     }
 ]
