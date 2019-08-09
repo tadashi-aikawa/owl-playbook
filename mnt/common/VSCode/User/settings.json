@@ -125,4 +125,5 @@
   "revealjs.transition": "convex",
   "revealjs.exportHTMLPath": "",
   "python.formatting.blackPath": "C:\\Python37\\Scripts\\black",
+  "livereload.exts": "html,htm,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,twig,jade",
 }

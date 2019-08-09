@@ -22,3 +22,6 @@ slevesque.vscode-autohotkey
 taichi.vscode-textlint
 vscodevim.vim
 ms-vscode-remote.vscode-remote-extensionpack
+esbenp.prettier-vscode
+ziishaned.livereload
+
