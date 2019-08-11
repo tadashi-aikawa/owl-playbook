@@ -21,18 +21,11 @@
   "vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
   "vim.normalModeKeyBindings": [
     {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "g",
-        "b"
-      ]
+      "before": ["<C-k>"],
+      "after": ["g", "b"]
     },
     {
-      "before": [
-        "<C-o>"
-      ],
+      "before": ["<C-o>"],
       "commands": [
         {
           "command": "workbench.action.navigateBack"
@@ -40,9 +33,7 @@
       ]
     },
     {
-      "before": [
-        "<C-i>"
-      ],
+      "before": ["<C-i>"],
       "commands": [
         {
           "command": "workbench.action.navigateForward"
@@ -50,28 +41,14 @@
       ]
     },
     {
-      "before": [
-        "s"
-      ],
-      "after": [
-        "<leader>",
-        "<leader>",
-        "2",
-        "s",
-        "<char>",
-        "<char>"
-      ]
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "2", "s", "<char>", "<char>"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": [
-        "<C-k>",
-      ],
-      "after": [
-        "g",
-        "b"
-      ]
+      "before": ["<C-k>"],
+      "after": ["g", "b"]
     }
   ],
   "editor.minimap.showSlider": "always",
@@ -80,14 +57,12 @@
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
   "editWithShell.shell.windows": "bash",
-  "editWithShell.shellArgs.windows": [
-    "-c"
-  ],
+  "editWithShell.shellArgs.windows": ["-c"],
   "editWithShell.processEntireTextIfNoneSelected": true,
   "vim.disableExtension": false,
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#3fd6fc79",
-    "editor.selectionHighlightBackground": "#3fd6fc79",
+    "editor.selectionHighlightBackground": "#3fd6fc79"
   },
   "breadcrumbs.enabled": true,
   "window.zoomLevel": 0,
@@ -103,7 +78,7 @@
   },
   "editor.multiCursorModifier": "ctrlCmd",
   "[plaintext]": {
-    "files.autoGuessEncoding": true,
+    "files.autoGuessEncoding": true
   },
   "[bat]": {
     "files.encoding": "shiftjis"
@@ -126,4 +101,5 @@
   "revealjs.exportHTMLPath": "",
   "python.formatting.blackPath": "C:\\Python37\\Scripts\\black",
   "livereload.exts": "html,htm,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,twig,jade",
+  "prettier.disableLanguages": ["markdown"]
 }
