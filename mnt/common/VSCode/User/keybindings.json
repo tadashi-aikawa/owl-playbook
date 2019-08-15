@@ -803,11 +803,6 @@
         "when": "!editorFocus && !searchInputBoxFocus"
     },
     {
-        "key": "ctrl+shift+b",
-        "command": "editor.action.jumpToBracket",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+shift+oem_5",
         "command": "-editor.action.jumpToBracket",
         "when": "editorTextFocus"
@@ -1325,7 +1320,7 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
     {
-        "key": "alt+d",
+        "key": "alt+a",
         "command": "editor.action.peekDefinition"
     },
     {
@@ -1366,5 +1361,13 @@
         "key": "ctrl+shift+5",
         "command": "-workbench.action.terminal.split",
         "when": "terminalFocus"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.action.debug.start"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "editor.debug.action.toggleBreakpoint"
     }
 ]
