@@ -101,5 +101,13 @@
   "revealjs.exportHTMLPath": "",
   "python.formatting.blackPath": "C:\\Python37\\Scripts\\black",
   "livereload.exts": "html,htm,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,twig,jade",
-  "prettier.disableLanguages": ["markdown"]
+  "prettier.disableLanguages": [
+    "markdown"
+  ],
+  "rest-client.decodeEscapedUnicodeCharacters": true,
+  "rest-client.enableTelemetry": false,
+  "rest-client.previewResponsePanelTakeFocus": false,
+  "rest-client.previewOption": "exchange",
+  "rest-client.previewResponseInUntitledDocument": true,
+  "rest-client.fontSize": null
 }
