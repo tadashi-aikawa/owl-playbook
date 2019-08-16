@@ -1369,5 +1369,9 @@
     {
         "key": "ctrl+shift+b",
         "command": "editor.debug.action.toggleBreakpoint"
+    },
+    {
+        "key": "ctrl+f2",
+        "command": "workbench.action.debug.stop"
     }
 ]
