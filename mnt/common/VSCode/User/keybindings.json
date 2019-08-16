@@ -1277,14 +1277,6 @@
         "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
     },
     {
-        "key": "ctrl+tab",
-        "command": "workbench.action.openNextRecentlyUsedEditor"
-    },
-    {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.openPreviousRecentlyUsedEditor"
-    },
-    {
         "key": "ctrl+alt+z",
         "command": "git.revertSelectedRanges"
     },
