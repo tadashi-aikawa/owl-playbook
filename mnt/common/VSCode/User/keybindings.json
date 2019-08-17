@@ -312,11 +312,11 @@
   // ----------------
   {
     "key": "ctrl+j shift+s",
-    "command": "workbench.action.openGlobalSettings"
+    "command": "workbench.action.openSettingsJson"
   },
   {
     "key": "ctrl+j shift+k",
-    "command": "workbench.action.openGlobalKeybindings"
+    "command": "workbench.action.openGlobalKeybindingsFile"
   },
   {
     "key": "ctrl+j shift+c",
