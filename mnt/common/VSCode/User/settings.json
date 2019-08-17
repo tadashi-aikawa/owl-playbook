@@ -155,19 +155,12 @@
   "rest-client.previewResponsePanelTakeFocus": false,
   "rest-client.previewOption": "exchange",
   "rest-client.environmentVariables": {
-    "$shared": {
-      "version": "v1"
-    },
+    "$shared": {},
     "local": {
-      "version": "v2",
-      "host": "localhost",
-      "token": "test token",
-      "secretKey": "USERNAME"
+      "secretKey": "REST_JC_DEVELOPMENT_BASE_URL"
     },
     "production": {
-      "host": "example.com",
-      "token": "product token",
-      "secretKey": "prodSecret"
+      "restjcBaseUrl": "REST_JC_PRODUCTION_BASE_URL",
     }
   },
   // -------------------------------------
