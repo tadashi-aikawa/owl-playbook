@@ -344,7 +344,7 @@
   },
   {
     "key": "ctrl+j shift+h",
-    "command": "git.viewHistory"
+    "command": "git-graph.view"
   },
   // ----------------
   // Ctrl + , (ファイルの性質変更)
