@@ -1,15 +1,63 @@
 {
+  // -------------------------------------
+  // 見た目
+  // -------------------------------------
   "editor.fontSize": 16,
-  // "editor.fontFamily": "Ricty Diminished",
   "editor.fontFamily": "Source Code Pro for Powerline",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai",
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#3fd6fc79",
+    "editor.selectionHighlightBackground": "#3fd6fc79"
+  },
+  "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
+  "window.zoomLevel": 0,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.enabled": true,
+  "breadcrumbs.enabled": true,
+  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": true,
+  // -------------------------------------
+  // 挙動
+  // -------------------------------------
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnSave": true,
+  // -------------------------------------
+  // デフォルトファイル設定
+  // -------------------------------------
   "files.eol": "\n",
-  "explorer.confirmDragAndDrop": false,
+  // -------------------------------------
+  // ファイルごとの特殊設定
+  // -------------------------------------
+  "[plaintext]": {
+    "files.autoGuessEncoding": true
+  },
+  "files.associations": {
+    "Vagrantfile": "ruby"
+  },
+  "[bat]": {
+    "files.encoding": "shiftjis"
+  },
+  // -------------------------------------
+  // ターミナル
+  // -------------------------------------
+  "editWithShell.shell.windows": "bash",
+  "editWithShell.shellArgs.windows": [
+    "-c"
+  ],
+  "editWithShell.processEntireTextIfNoneSelected": true,
+  // -------------------------------------
+  // Vim
+  // -------------------------------------
+  "vim.foldfix": true,
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
   "vim.leader": "<space>",
-  // "vim.sneak": true,
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "rgba(0, 0, 0, 0.7)",
   "vim.easymotionMarkerForegroundColorOneChar": "pink",
@@ -21,11 +69,18 @@
   "vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<C-k>"],
-      "after": ["g", "b"]
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
     },
     {
-      "before": ["<C-o>"],
+      "before": [
+        "<C-o>"
+      ],
       "commands": [
         {
           "command": "workbench.action.navigateBack"
@@ -33,7 +88,9 @@
       ]
     },
     {
-      "before": ["<C-i>"],
+      "before": [
+        "<C-i>"
+      ],
       "commands": [
         {
           "command": "workbench.action.navigateForward"
@@ -41,73 +98,84 @@
       ]
     },
     {
-      "before": ["s"],
-      "after": ["<leader>", "<leader>", "2", "s", "<char>", "<char>"]
+      "before": [
+        "s"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "2",
+        "s",
+        "<char>",
+        "<char>"
+      ]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": ["<C-k>"],
-      "after": ["g", "b"]
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
     }
   ],
-  "editor.minimap.showSlider": "always",
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.enabled": true,
-  "editor.tabCompletion": "on",
-  "editor.snippetSuggestions": "top",
-  "editWithShell.shell.windows": "bash",
-  "editWithShell.shellArgs.windows": ["-c"],
-  "editWithShell.processEntireTextIfNoneSelected": true,
   "vim.disableExtension": false,
-  "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#3fd6fc79",
-    "editor.selectionHighlightBackground": "#3fd6fc79"
-  },
-  "breadcrumbs.enabled": true,
-  "window.zoomLevel": 0,
-  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-  "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
-  "terminal.integrated.rendererType": "dom",
-  "explorer.confirmDelete": false,
-  "editor.formatOnPaste": true,
-  "vsnotes.defaultNotePath": "~\\backup\\notes",
-  "files.associations": {
-    "Vagrantfile": "ruby"
-  },
-  "editor.multiCursorModifier": "ctrlCmd",
-  "[plaintext]": {
-    "files.autoGuessEncoding": true
-  },
-  "[bat]": {
-    "files.encoding": "shiftjis"
-  },
-  "workbench.editor.showTabs": true,
-  "vim.foldfix": true,
-  "git.autofetch": true,
-  "go.useLanguageServer": true,
-  "python.formatting.provider": "black",
-  "editor.formatOnSave": true,
-  "cmake.configureOnOpen": true,
-  "git.ignoreLegacyWarning": true,
-  "workbench.editor.enablePreview": false,
-  "C_Cpp.intelliSenseEngine": "Tag Parser",
-  "pythonTestExplorer.testFramework": "pytest",
-  "vsicons.dontShowNewVersionMessage": true,
+  // -------------------------------------
+  // revealjs
+  // -------------------------------------
   "revealjs.highlightTheme": "",
   "revealjs.browserPath": "",
   "revealjs.transition": "convex",
   "revealjs.exportHTMLPath": "",
-  "python.formatting.blackPath": "C:\\Python37\\Scripts\\black",
-  "livereload.exts": "html,htm,css,js,png,gif,jpg,php,php5,py,rb,erb,coffee,twig,jade",
+  // -------------------------------------
+  // VS Notes
+  // -------------------------------------
+  "vsnotes.defaultNotePath": "~\\backup\\notes",
+  // -------------------------------------
+  // JS/TS
+  // -------------------------------------
   "prettier.disableLanguages": [
     "markdown"
   ],
+  // -------------------------------------
+  // REST Client
+  // -------------------------------------
   "rest-client.decodeEscapedUnicodeCharacters": true,
   "rest-client.enableTelemetry": false,
   "rest-client.previewResponsePanelTakeFocus": false,
   "rest-client.previewOption": "exchange",
   "rest-client.previewResponseInUntitledDocument": true,
-  "rest-client.fontSize": null
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "version": "v1"
+    },
+    "local": {
+      "version": "v2",
+      "host": "localhost",
+      "token": "test token",
+      "secretKey": "USERNAME",
+    },
+    "production": {
+      "host": "example.com",
+      "token": "product token",
+      "secretKey": "prodSecret"
+    }
+  },
+  // -------------------------------------
+  // その他
+  // -------------------------------------
+  "terminal.integrated.rendererType": "dom",
+  "explorer.confirmDelete": false,
+  "editor.formatOnPaste": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "git.autofetch": true,
+  "git.ignoreLegacyWarning": true,
+  "go.useLanguageServer": true,
+  "python.formatting.provider": "black",
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "python.formatting.blackPath": "C:\\Python37\\Scripts\\black",
+  "explorer.confirmDragAndDrop": false,
 }
