@@ -154,7 +154,6 @@
   "rest-client.enableTelemetry": false,
   "rest-client.previewResponsePanelTakeFocus": false,
   "rest-client.previewOption": "exchange",
-  "rest-client.previewResponseInUntitledDocument": true,
   "rest-client.environmentVariables": {
     "$shared": {
       "version": "v1"
