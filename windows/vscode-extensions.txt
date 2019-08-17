@@ -2,7 +2,6 @@
 alefragnani.bookmarks
 bierner.emojisense
 bungcip.better-toml
-donjayamanne.githistory
 editorconfig.editorconfig
 formulahendry.code-runner
 mechatroner.rainbow-csv
@@ -25,3 +24,4 @@ humao.rest-client
 pkief.material-icon-theme
 christian-kohler.path-intellisense
 davidanson.vscode-markdownlint
+mhutchie.git-graph
