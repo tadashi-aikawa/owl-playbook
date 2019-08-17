@@ -237,8 +237,23 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "alt+k",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "alt+down",
     "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+i",
+    "command": "editor.action.insertCursorAtEndOfEachLineSelected",
     "when": "editorTextFocus"
   },
   {
@@ -290,6 +305,11 @@
     "key": "ctrl+j t",
     "command": "workbench.action.terminal.toggleTerminal"
   },
+  {
+    "key": "ctrl+j k",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
   // ----------------
   // Ctrl + j  -> ctrl +
   // ----------------
@@ -336,5 +356,18 @@
   {
     "key": "ctrl+, e",
     "command": "workbench.action.editor.changeEncoding"
+  },
+  // ----------------
+  // 競合による無効化
+  // ----------------
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "-editor.action.selectHighlights",
+    "when": "editorFocus"
   }
 ]
