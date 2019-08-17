@@ -141,6 +141,13 @@
     "markdown"
   ],
   // -------------------------------------
+  // Markdown
+  // -------------------------------------
+  "markdownlint.config": {
+    "MD003": false,
+    "MD034": false
+  },
+  // -------------------------------------
   // REST Client
   // -------------------------------------
   "rest-client.decodeEscapedUnicodeCharacters": true,
@@ -156,7 +163,7 @@
       "version": "v2",
       "host": "localhost",
       "token": "test token",
-      "secretKey": "USERNAME",
+      "secretKey": "USERNAME"
     },
     "production": {
       "host": "example.com",
@@ -174,8 +181,6 @@
   "git.autofetch": true,
   "git.ignoreLegacyWarning": true,
   "go.useLanguageServer": true,
-  "python.formatting.provider": "black",
   "C_Cpp.intelliSenseEngine": "Tag Parser",
-  "python.formatting.blackPath": "C:\\Python37\\Scripts\\black",
-  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDragAndDrop": false
 }
