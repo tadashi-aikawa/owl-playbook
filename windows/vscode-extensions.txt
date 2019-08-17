@@ -24,3 +24,6 @@ vscodevim.vim
 ms-vscode-remote.vscode-remote-extensionpack
 esbenp.prettier-vscode
 humao.rest-client
+pkief.material-icon-theme
+christian-kohler.path-intellisense
+davidanson.vscode-markdownlint
