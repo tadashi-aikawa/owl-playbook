@@ -67,9 +67,11 @@
   <action id="EditorChooseLookupItemCompleteStatement" />
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="alt up" />
+    <keyboard-shortcut first-keystroke="alt k" />
   </action>
   <action id="EditorCloneCaretBelow">
     <keyboard-shortcut first-keystroke="alt down" />
+    <keyboard-shortcut first-keystroke="alt j" />
   </action>
   <action id="EditorJoinLines" />
   <action id="EditorMatchBrace">
@@ -174,7 +176,7 @@
   <action id="MoveStatementDown" />
   <action id="MoveStatementUp" />
   <action id="NextDiff">
-    <keyboard-shortcut first-keystroke="alt j" />
+    <keyboard-shortcut first-keystroke="shift alt j" />
   </action>
   <action id="NextOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt j" />
@@ -186,7 +188,7 @@
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="PreviousDiff">
-    <keyboard-shortcut first-keystroke="alt k" />
+    <keyboard-shortcut first-keystroke="shift alt k" />
   </action>
   <action id="PreviousOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt k" />
