@@ -118,6 +118,16 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "shift+alt+j",
+    "command": "workbench.action.compareEditor.nextChange",
+    "when": "textCompareEditorVisible"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "workbench.action.compareEditor.previousChange",
+    "when": "textCompareEditorVisible"
+  },
+  {
     "key": "ctrl+h",
     "command": "workbench.action.previousEditor",
     "when": "editorFocus && vim.mode == 'Normal'"
@@ -134,14 +144,6 @@
   {
     "key": "ctrl+alt+k",
     "command": "search.action.focusPreviousSearchResult"
-  },
-  {
-    "key": "alt+j",
-    "command": "workbench.action.compareEditor.nextChange"
-  },
-  {
-    "key": "alt+k",
-    "command": "workbench.action.compareEditor.previousChange"
   },
   {
     "key": "ctrl+i",
