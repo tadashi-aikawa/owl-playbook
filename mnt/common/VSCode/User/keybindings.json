@@ -312,6 +312,16 @@
     "command": "editor.action.selectHighlights",
     "when": "editorFocus"
   },
+  {
+    "key": "alt+r",
+    "command": "rest-client.request",
+    "when": "editorLangId == http"
+  },
+  {
+    "key": "alt+e",
+    "command": "rest-client.switch-environment",
+    "when": "editorLangId == http"
+  },
   // ----------------
   // Ctrl + j  -> ctrl +
   // ----------------
