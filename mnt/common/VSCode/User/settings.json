@@ -158,10 +158,11 @@
   "rest-client.environmentVariables": {
     "$shared": {},
     "local": {
-      "secretKey": "REST_JC_DEVELOPMENT_BASE_URL"
+      "restjcBaseUrl": "REST_JC_DEVELOPMENT_BASE_URL",
     },
     "production": {
       "restjcBaseUrl": "REST_JC_PRODUCTION_BASE_URL",
+      "github": "https://api.github.com",
     }
   },
   // -------------------------------------

@@ -25,3 +25,5 @@ pkief.material-icon-theme
 christian-kohler.path-intellisense
 davidanson.vscode-markdownlint
 mhutchie.git-graph
+ms-python.python
+
