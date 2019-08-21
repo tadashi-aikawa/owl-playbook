@@ -1,4 +1,9 @@
 [
+  // 検索
+  {
+    "key": "ctrl+f",
+    "command": "actions.find",
+  },
   // タブ分割/移動
   {
     "key": "ctrl+w v",
@@ -128,12 +133,12 @@
     "when": "textCompareEditorVisible"
   },
   {
-    "key": "ctrl+h",
+    "key": "alt+h",
     "command": "workbench.action.previousEditor",
     "when": "editorFocus && vim.mode == 'Normal'"
   },
   {
-    "key": "ctrl+l",
+    "key": "alt+l",
     "command": "workbench.action.nextEditor",
     "when": "editorFocus && vim.mode == 'Normal'"
   },
