@@ -74,9 +74,7 @@
     <keyboard-shortcut first-keystroke="alt j" />
   </action>
   <action id="EditorJoinLines" />
-  <action id="EditorMatchBrace">
-    <keyboard-shortcut first-keystroke="shift ctrl b" />
-  </action>
+  <action id="EditorMatchBrace" />
   <action id="EditorScrollToCenter" />
   <action id="EditorSelectWord">
     <keyboard-shortcut first-keystroke="shift ctrl alt s" />
@@ -281,6 +279,7 @@
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="ctrl f8" />
     <keyboard-shortcut first-keystroke="alt b" />
+    <keyboard-shortcut first-keystroke="shift ctrl b" />
   </action>
   <action id="TypeHierarchy" />
   <action id="UML.ApplyCurrentLayout" />
