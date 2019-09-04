@@ -1,0 +1,10 @@
+- name: Install
+  unarchive:
+    src: https://github.com/skanehira/docui/releases/download/{{ docui_version }}/docui_{{ docui_version }}_Linux_x86_64.tar.gz
+    dest: /tmp
+    remote_src: yes
+
+- name: Install
+  shell: mv docui /usr/bin/docui
+  args:
+    chdir: /tmp
