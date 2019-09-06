@@ -177,5 +177,8 @@
   "git.ignoreLegacyWarning": true,
   "go.useLanguageServer": true,
   "C_Cpp.intelliSenseEngine": "Tag Parser",
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
