@@ -180,5 +180,6 @@
   "explorer.confirmDragAndDrop": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "git.enableSmartCommit": true
 }
