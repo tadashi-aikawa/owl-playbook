@@ -9,6 +9,7 @@
 e.=explorer .
 web="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" $*
 te="C:\tablacus\TE64.exe" $*
+excel="C:\Program Files (x86)\Microsoft Office\root\Office16\EXCEL.EXE" $*
 cat="C:\tools\cmder\vendor\git-for-windows\usr\bin\cat.exe" $*
 history=cat "C:\tools\Cmder\config\.history" $*
 
