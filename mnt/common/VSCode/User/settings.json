@@ -172,6 +172,7 @@
   // -------------------------------------
   "terminal.integrated.rendererType": "dom",
   "explorer.confirmDelete": false,
+  "editor.cursorSurroundingLines": 5,
   "editor.formatOnPaste": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "git.autofetch": true,
