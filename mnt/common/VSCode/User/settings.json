@@ -184,5 +184,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "pasteImage.path": "${currentFileDir}/images"
 }
