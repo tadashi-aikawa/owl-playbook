@@ -16,6 +16,7 @@ MS-CEINTL.vscode-language-pack-ja
 ms-python.python
 ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.cpptools
+mushan.vscode-paste-image
 patricklee.vsnotes
 PeterJausovec.vscode-docker
 pkief.material-icon-theme
