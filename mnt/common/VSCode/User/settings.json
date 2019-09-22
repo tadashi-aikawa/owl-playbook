@@ -138,7 +138,8 @@
   // JS/TS
   // -------------------------------------
   "prettier.disableLanguages": [
-    "markdown"
+    "markdown",
+    "yaml"
   ],
   // -------------------------------------
   // Markdown
@@ -185,5 +186,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.enableSmartCommit": true,
-  "pasteImage.path": "${currentFileDir}/images"
+  "pasteImage.path": "${currentFileDir}/images",
+  "python.formatting.provider": "black"
 }
