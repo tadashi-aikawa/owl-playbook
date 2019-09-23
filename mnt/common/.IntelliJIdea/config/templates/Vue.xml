@@ -1,0 +1,7 @@
+<templateSet group="Vue">
+  <template name="vue-component" value="&lt;template&gt;&lt;/template&gt;&#10;&lt;script lang=&quot;ts&quot;&gt;&#10;import * as _ from 'lodash';&#10;import { Dictionary } from 'lodash';&#10;import { Component, State, Getter, Mutation, Prop, Vue, Action } from '~/node_modules/nuxt-property-decorator';&#10;&#10;@Component({})&#10;export default class extends Vue {&#10;  @State st: any;&#10;  @State(s =&gt; s.hoge.huga) huga: any;&#10;  @Action onAction;&#10;  @Prop() prop: any;&#10;  @Mutation setHogehoge: (x: any) =&gt; any;&#10;  @Getter getHogeHoge: (x: any) =&gt; any;&#10;}&#10;&lt;/script&gt;&#10;&lt;style scoped&gt;&lt;/style&gt;" description="tadashi-aikawa Vue component template" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+</templateSet>
