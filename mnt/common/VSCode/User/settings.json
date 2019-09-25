@@ -161,7 +161,9 @@
   "rest-client.previewResponsePanelTakeFocus": false,
   "rest-client.previewOption": "exchange",
   "rest-client.environmentVariables": {
-    "$shared": {},
+    "$shared": {
+      "togglApiToken": "TOGGL_API_TOKEN",
+    },
     "local": {
       "restjcBaseUrl": "REST_JC_DEVELOPMENT_BASE_URL",
     },
