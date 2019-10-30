@@ -193,4 +193,7 @@
   "git.enableSmartCommit": true,
   "pasteImage.path": "${currentFileDir}/images",
   "python.formatting.provider": "black",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
