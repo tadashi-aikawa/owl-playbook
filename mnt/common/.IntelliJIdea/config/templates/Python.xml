@@ -4,7 +4,7 @@
       <option name="Python" value="true" />
     </context>
   </template>
-  <template name="test-tmpl" value="#!/usr/bin/env python&#10;# -*- coding:utf-8 -*-&#10;&#10;import pytest&#10;&#10;&#10;class TestExec:&#10;    @pytest.mark.parametrize(&#10;        'title, param, expected', [&#10;            (&#10;                &quot;Normal&quot;,&#10;                20,&#10;                100&#10;            ),&#10;        ]&#10;    )&#10;    def test_normal(self, title, param, expected):&#10;        actual = param * 5&#10;        assert expected == actual&#10;" description="Test template" toReformat="false" toShortenFQNames="true">
+  <template name="_pytest_parametrize" value="#!/usr/bin/env python&#10;# -*- coding:utf-8 -*-&#10;&#10;import pytest&#10;&#10;&#10;def your_function(x: int) -&gt; int:&#10;    return x * 5&#10;&#10;&#10;class TestYourFunctionName:&#10;    @pytest.mark.parametrize(&quot;title, param, expected&quot;, [(&quot;Normal&quot;, 20, 100)])&#10;    def test_normal(self, title, param, expected):&#10;        actual = your_function(param)&#10;        assert expected == actual" description="Test template" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="Python" value="true" />
     </context>
@@ -13,6 +13,11 @@
     <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="_doctest" value="&quot;&quot;&quot;&#10;    Usage:&#10;        &gt;&gt;&gt; your_function(1)&#10;        5&#10;        &gt;&gt;&gt; your_function(&quot;hoge&quot;)&#10;        'hoge'&#10;        &lt;BLANKLINE&gt;&#10;        'hoge'&#10;        &gt;&gt;&gt; your_function(None)  # doctest: +NORMALIZE_WHITESPACE&#10;        Traceback (most recent call last):&#10;            ...&#10;            return x * 5&#10;        TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'&#10;&quot;&quot;&quot;" description="Test template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
     </context>
   </template>
 </templateSet>
