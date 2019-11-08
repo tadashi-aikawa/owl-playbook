@@ -1,4 +1,4 @@
-pip install black mypy pylint
+pip3 install black mypy pylint
 
 mkdir %1
 cd %1
