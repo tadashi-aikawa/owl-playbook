@@ -141,6 +141,10 @@
     "markdown",
     "yaml"
   ],
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
   // -------------------------------------
   // Markdown
   // -------------------------------------
