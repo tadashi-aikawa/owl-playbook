@@ -200,4 +200,5 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "extensions.autoUpdate": false,
 }
