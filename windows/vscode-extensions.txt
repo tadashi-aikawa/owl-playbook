@@ -1,6 +1,7 @@
 2gua.rainbow-brackets
 alefragnani.bookmarks
 bierner.emojisense
+bierner.markdown-mermaid
 bungcip.better-toml
 christian-kohler.path-intellisense
 davidanson.vscode-markdownlint
