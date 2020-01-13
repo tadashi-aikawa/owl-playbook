@@ -11,42 +11,12 @@ hook_add = 'colorscheme monokai'
 [[plugins]]
 repo = 'myrobo/smart_tabline.vim'
 
-[[plugins]]
-# main.go 作成時にテンプレートを反映させるためlazy loadにはしない
-repo = 'fatih/vim-go'
-on_ft = ['go']
-hook_add = '''
-autocmd FileType go setl nolist
-" ロケーションリストは使わない
-let g:go_list_type = "quickfix"
-" インポート自動化
-let g:go_fmt_command = "goimports"
-" vet lintの自動実行
-let g:go_metalinter_autosave = 1
-" 自動で識別子の型を表示
-" let g:go_auto_type_info = 1
-" ワードハイライトの自動化
-let g:go_auto_sameids = 1
-let g:go_updatetime = 100
-'''
 
 [[plugins]]
-repo = 'thinca/vim-quickrun'
+repo = 'easymotion/vim-easymotion'
 hook_add = '''
-let g:quickrun_config = get(g:, 'quickrun_config', {})
-let g:quickrun_config._ = {
-      \ 'outputter' : 'error',
-      \ 'outputter/error/success' : 'buffer',
-      \ 'outputter/error/error'   : 'quickfix',
-      \ 'outputter/buffer/split'  : ':rightbelow 8sp',
-      \ 'outputter/buffer/close_on_empty' : 1,
-      \ }
-'''
-
-[[plugins]]
-repo = 'justinmk/vim-sneak'
-hook_add = '''
-let g:sneak#label = 1
+" 大文字を含む場合だけ大文字/小文字を区別する
+let g:EasyMotion_smartcase = 1
 '''
 
 [[plugins]]
@@ -205,5 +175,4 @@ augroup NERD
     let g:nerdtree_tabs_open_on_console_startup=2
 augroup END
 '''
-
 

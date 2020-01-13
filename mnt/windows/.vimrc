@@ -62,15 +62,6 @@ set showtabline=2
 " :hi TabLineFill ctermfg=Black ctermbg=Black
 " :hi TabLineSel  ctermfg=White ctermbg=196
 
-" Python
-augroup python
-  autocmd!
-  autocmd FileType python setl autoindent
-  autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-  autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
-augroup END
-
-
 " -------------------------- Status bar ---------------------------
 let g:last_mode = ""
 
@@ -119,18 +110,6 @@ function! Mode()
   endif
 endfunction
 
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-    return l:counts.total == 0 ? 'OK' : printf(
-    \   '☠ %d ⚠ %d ⬥ ok',
-    \   all_non_errors,
-    \   all_errors
-    \)
-endfunction
-
 set statusline=%2*%{Mode()}%3*⮀%1*
 set statusline+=%#StatusLine#
 set statusline+=%{strlen(fugitive#statusline())>0?'\ ⭠\ ':''}
@@ -138,7 +117,6 @@ set statusline+=%{matchstr(fugitive#statusline(),'(\\zs.*\\ze)')}
 set statusline+=%{strlen(fugitive#statusline())>0?'\ \ ⮁\ ':'\ '}
 set statusline+=%f\ %{&ro?'⭤':''}%{&mod?'+':''}%<
 set statusline+=%3*\ 
-set statusline+=%{LinterStatus()}
 "
 set statusline+=\ %4*⮀
 set statusline+=%#warningmsg#
@@ -217,6 +195,8 @@ endif
 " [vim-anzu] 検索強化
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
+" [easy-motion]
+nmap s <Plug>(easymotion-overwin-f2)
 " [operator-replace] オペレータリプレイス
 nmap _ <Plug>(operator-replace)
 " [vim-anzu] 検索強化
@@ -260,11 +240,6 @@ nnoremap <C-j>w :<C-u>:NERDTreeTabsFind<CR>
 
 " ---------------- g -------------------
 
-" [ALE] 次のポイントへ移動
-nmap <silent> gej <Plug>(ale_next_wrap)
-" [ALE] 前のポイントへ移動
-nmap <silent> gek <Plug>(ale_previous_wrap)
-
 " [vim-gitgutter] 次のハンクへ移動
 nmap gij <Plug>GitGutterNextHunk
 " [vim-gitgutter] 前のハンクへ移動
@@ -277,10 +252,6 @@ nmap gip <Plug>GitGutterPreviewHunk
 " 全て閉じる
 nnoremap <silent> go :qa<CR>
 
-" jedi
-let g:jedi#documentation_command = "K"
-let g:jedi#completions_command = "<C-Space>"
-
 " ------------- <Space> ----------------
 
 " ウィンドウ切り替え
@@ -290,22 +261,8 @@ nnoremap <silent> <Space>@ :<C-u>TableFormat<CR>
 " [vim-over]
 nnoremap <silent> <Space>// :OverCommandLine<CR>%s/
 
-" [deopelete] 有効
-nnoremap <Space>a :call deoplete#enable()<CR>
-" [jedi] 定義へ移動
-let g:jedi#goto_command = "<Space>d"
 " ウィンドウ左移動
 nnoremap <silent> <Space>h <C-w>h
-" [vim-go] 呼び出し履歴
-autocmd FileType go nnoremap <silent> <Space>H :GoReferrers<CR>
-" [jedi] Usage
-let g:jedi#usages_command = "<Space>H"
-"次のエラー
-"Golang
-autocmd FileType go nnoremap <Space>j :cnext<CR>
-"前のエラー
-"Golang
-autocmd FileType go nnoremap <Space>k :cprevious<CR>
 "ウィンドウ右移動
 nnoremap <silent> <Space>l <C-w>l
 " バッファ切り替え
@@ -318,8 +275,6 @@ nnoremap <silent> <Space>S :e ++enc=cp932<cr>
 " ---------------------------------------------------
 " 新規作成時のテンプレート
 " ---------------------------------------------------
-" autocmd BufNewFile test_*.py 0r ~/.vim-snippets/newtmpl/pytest.py
-autocmd BufNewFile *.py 0r ~/.vim-snippets/newtmpl/python.py
 autocmd BufNewFile *.sh 0r ~/.vim-snippets/newtmpl/bash.sh
 
 set nomodeline
