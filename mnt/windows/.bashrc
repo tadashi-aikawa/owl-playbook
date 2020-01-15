@@ -7,12 +7,34 @@ alias python='winpty python.exe'
 alias gowl='winpty -Xallow-non-tty gowl'
 alias fzf='winpty -Xallow-non-tty fzf'
 
-# ???
+# alias
 alias acmd='powershell -command "Start-Process -Verb runas cmd"'
-# z + fzf + cd
+
+alias cdr='cd $(fd -H -t d | fzf)'
 alias cdz='cd $(z -l | cut -c 12- | fzf)'
-# gowl + fzf + cd
 alias cdg='cd $(gowl list | fzf)'
+
+alias ga='git add'
+alias gaa='git add --all'
+# alias gc='git checkout $(git branch -l | grep -vE "^\*" | tr -d " " | fzf --preview "git log --oneline --all --graph --decorate $(git rev-parse --abbrev-ref HEAD)..{}")'
+alias gc='git checkout $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
+alias gcb='git checkout -b'
+alias gcm='git commit -m'
+alias gcr='git branch -rl | grep -vE "HEAD|master" | tr -d " " | sed -r "s@origin/@@g" | fzf | xargs -i git checkout -b {} origin/{}'
+alias gcv='git commit -v'
+alias gd='git diff'
+alias gf='git fetch --all'
+alias gl='git log'
+alias gll='git log --oneline --all --graph --decorate'
+alias gls='git log -3'
+alias glll="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b'"
+alias glls="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -10"
+# alias gm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf --preview "git log --oneline --all --graph --decorate $(git rev-parse --abbrev-ref HEAD)..{}")'
+alias gm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
+alias gs='git status --short'
+alias gsv='git status -v'
+
+
 
 function to_win_path() {
   path=${*}
