@@ -221,21 +221,21 @@ let g:multi_cursor_next_key='<C-k>'
 imap <C-l> <C-x><C-l>
 
 "---- Ctrl + j からの... -------
-" [fzf] バッファから開く
-nnoremap <C-j>b :Buffers<CR>
+"  バッファから開く
+nnoremap <C-j>b :CtrlPBuffer<CR>
 "  履歴から開く
-nnoremap <C-j>e  :<C-u>/ oldfiles<Home>browse filter /
-"nnoremap <C-j>e :History<CR>
+nnoremap <C-j>e :CtrlPMRU<CR>
+" nnoremap <C-j>e  :<C-u>/ oldfiles<Home>browse filter /
 " [fzf] 全文検索
-nnoremap <C-j>g :Rg<Space>
+" nnoremap <C-j>g :Rg<Space>
 " [NERDTree] ON/OFF切り替え
 nnoremap <C-j>n :<C-u>:NERDTreeTabsToggle<CR>
 " [fzf] タグへ移動
-nnoremap <C-j>o :Tags<CR>
+" nnoremap <C-j>o :Tags<CR>
 " [fzf] ファイルのfuzzy検索
-nnoremap <C-j>f :call FzfOmniFiles()<CR>
+" nnoremap <C-j>f :call FzfOmniFiles()<CR>
 " [fzf] Gitステータス
-nnoremap <C-j>s :GFiles?<CR>
+" nnoremap <C-j>s :GFiles?<CR>
 " [NERDTree] Treeに移動し、カレントファイルをフォーカス
 nnoremap <C-j>w :<C-u>:NERDTreeTabsFind<CR>
 

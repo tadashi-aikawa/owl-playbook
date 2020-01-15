@@ -11,6 +11,12 @@ hook_add = 'colorscheme monokai'
 [[plugins]]
 repo = 'myrobo/smart_tabline.vim'
 
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+let g:ctrlp_map = '<c-j>f'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+'''
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
