@@ -223,8 +223,9 @@ imap <C-l> <C-x><C-l>
 "---- Ctrl + j からの... -------
 " [fzf] バッファから開く
 nnoremap <C-j>b :Buffers<CR>
-" [fzf] 履歴から開く
-nnoremap <C-j>e :History<CR>
+"  履歴から開く
+nnoremap <C-j>e  :<C-u>/ oldfiles<Home>browse filter /
+"nnoremap <C-j>e :History<CR>
 " [fzf] 全文検索
 nnoremap <C-j>g :Rg<Space>
 " [NERDTree] ON/OFF切り替え
