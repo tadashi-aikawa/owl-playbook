@@ -23,6 +23,8 @@ call vagrant\install.bat
 
 call :******************** Install go tools
 call go get -u github.com/tadashi-aikawa/gowl
+call go get -u github.com/astaxie/bat
+mv %GOPATH%\bin\bat.exe %GOPATH%\bin\http.exe
 
 call :******************** IntelliJ IDEA
 
