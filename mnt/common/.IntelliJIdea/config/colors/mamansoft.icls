@@ -3,11 +3,12 @@
     <property name="created">2018-08-02T22:01:30</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2018.1.5.0.0</property>
-    <property name="modified">2018-08-02T22:03:22</property>
+    <property name="modified">2020-03-23T09:59:47</property>
     <property name="originalScheme">mamansoft</property>
   </metaInfo>
   <colors>
     <option name="FOLDED_TEXT_BORDER_COLOR" value="3c3f41" />
+    <option name="WHITESPACES" value="f7ffc8" />
   </colors>
   <attributes>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
