@@ -53,6 +53,9 @@
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="d" />
   </action>
   <action id="Console.Execute.Multiline" />
+  <action id="Console.Jdbc.Execute.2">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
   <action id="Console.Jpa.GenerateSql" />
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift alt d" />
@@ -81,9 +84,7 @@
     <keyboard-shortcut first-keystroke="ctrl s" />
   </action>
   <action id="EditorSplitLine" />
-  <action id="EditorStartNewLine">
-    <keyboard-shortcut first-keystroke="ctrl enter" />
-  </action>
+  <action id="EditorStartNewLine" />
   <action id="EditorStartNewLineBefore" />
   <action id="ExpandRegion" />
   <action id="ExpandRegionRecursively">
@@ -163,6 +164,7 @@
   <action id="JumpToNextChange">
     <keyboard-shortcut first-keystroke="ctrl i" />
   </action>
+  <action id="JupyterRunCellAction" />
   <action id="KotlinShellExecute" />
   <action id="MaximizeToolWindow">
     <keyboard-shortcut first-keystroke="shift ctrl quote" />
@@ -192,6 +194,7 @@
     <keyboard-shortcut first-keystroke="ctrl alt k" />
   </action>
   <action id="Print" />
+  <action id="PyExecuteCellAction" />
   <action id="PylintCurrentFileAction">
     <keyboard-shortcut first-keystroke="shift ctrl l" />
   </action>
