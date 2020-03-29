@@ -3,7 +3,7 @@
     <property name="created">2018-08-02T22:01:30</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2018.1.5.0.0</property>
-    <property name="modified">2020-03-23T09:59:47</property>
+    <property name="modified">2020-03-28T22:45:42</property>
     <property name="originalScheme">mamansoft</property>
   </metaInfo>
   <colors>
@@ -17,6 +17,13 @@
         <option name="EFFECT_COLOR" value="1cc200" />
         <option name="ERROR_STRIPE_COLOR" value="36b13" />
         <option name="EFFECT_TYPE" value="4" />
+      </value>
+    </option>
+    <option name="WARNING_ATTRIBUTES">
+      <value>
+        <option name="EFFECT_COLOR" value="ff9e01" />
+        <option name="ERROR_STRIPE_COLOR" value="be9117" />
+        <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
   </attributes>
