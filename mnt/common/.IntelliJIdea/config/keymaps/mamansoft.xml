@@ -173,6 +173,12 @@
   <action id="MethodUp" />
   <action id="MoveStatementDown" />
   <action id="MoveStatementUp" />
+  <action id="MoveTabDown">
+    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="h" />
+  </action>
+  <action id="MoveTabRight">
+    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="v" />
+  </action>
   <action id="NextDiff">
     <keyboard-shortcut first-keystroke="shift alt j" />
   </action>
@@ -257,13 +263,6 @@
     <keyboard-shortcut first-keystroke="shift ctrl m" />
   </action>
   <action id="ShowProjectStructureSettings" />
-  <action id="SplitHorizontally">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="minus" />
-    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="h" />
-  </action>
-  <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="shift back_slash" />
-  </action>
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="f11" />
   </action>
