@@ -88,6 +88,9 @@
   <action id="ExpandRegionRecursively">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl l" />
   </action>
+  <action id="ExpressionTypeInfo">
+    <keyboard-shortcut first-keystroke="alt i" />
+  </action>
   <action id="FileChooser.GotoHome" />
   <action id="FileChooser.TogglePathShowing" />
   <action id="FileStructurePopup">
