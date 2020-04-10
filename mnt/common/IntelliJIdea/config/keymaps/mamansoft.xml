@@ -175,7 +175,7 @@
   <action id="MoveStatementDown" />
   <action id="MoveStatementUp" />
   <action id="MoveTabDown">
-    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="h" />
+    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="s" />
   </action>
   <action id="MoveTabRight">
     <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="v" />
@@ -185,6 +185,9 @@
   </action>
   <action id="NextOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt j" />
+  </action>
+  <action id="NextSplitter">
+    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="w" />
   </action>
   <action id="OptimizeImports">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
@@ -288,6 +291,9 @@
   </action>
   <action id="TypeHierarchy" />
   <action id="UML.ApplyCurrentLayout" />
+  <action id="Unsplit">
+    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="j" />
+  </action>
   <action id="Unwrap" />
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Push" />
