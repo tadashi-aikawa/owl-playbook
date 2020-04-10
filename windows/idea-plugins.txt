@@ -1,0 +1,8 @@
+// 自動インストールの仕組みはないので単なるメモです..
+
+// Vim
+https://plugins.jetbrains.com/plugin/164-ideavim
+// Ace Jump Lite
+https://plugins.jetbrains.com/plugin/9803-acejump-lite
+// File Watchers
+https://plugins.jetbrains.com/plugin/7177-file-watchers
