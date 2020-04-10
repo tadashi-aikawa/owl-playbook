@@ -7,7 +7,6 @@ set ROAMING="%USERPROFILE%\AppData\Roaming"
 
 rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
-:tmp
 
 call :******************** Install by Chocolatey
 call chocolatey\install.bat
@@ -28,17 +27,19 @@ mv %GOPATH%\bin\bat.exe %GOPATH%\bin\http.exe
 
 call :******************** IntelliJ IDEA
 
-set IDEA_DIR=.IntelliJIdea2019.3
+:tmp
+set IDEA_DIR=IntelliJIdea2020.1
 
-set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\.IntelliJIdea\config
-set IDEA_CONFIG_DIR=%USERPROFILE%\%IDEA_DIR%\config
+set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\IntelliJIdea\config
+set IDEA_CONFIG_DIR=%ROAMING%\JetBrains\%IDEA_DIR%
 
 call :link_idea_dir colors
 call :link_idea_dir keymaps
 call :link_idea_dir templates
-call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\.IntelliJIdea\.ideavimrc
+call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\IntelliJIdea\.ideavimrc
 
 call :each link_idea_file idea-files.txt
+goto :end
 
 call :******************** VS Code
 
@@ -50,7 +51,6 @@ call :link_vscode_file settings.json
 call :link_vscode_dir snippets
 rem See https://blog.mamansoft.net/2018/09/17/vscode-satisfies-vimmer/
 call :each vscode_extension_install vscode-extensions.txt
-goto :end
 
 call :******************** Homedir
 call :each link_windows_home windows-home-dots.txt
