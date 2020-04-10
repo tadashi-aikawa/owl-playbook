@@ -317,4 +317,7 @@
   <action id="XDebugger.EditWatch" />
   <action id="XDebugger.Inspect" />
   <action id="XDebugger.SetValue" />
+  <action id="org.intellij.plugins.markdown.ui.actions.editorLayout.CyclicSplitLayoutChangeAction">
+    <keyboard-shortcut first-keystroke="alt p" />
+  </action>
 </keymap>
