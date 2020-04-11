@@ -1,10 +1,13 @@
 " source .vimrc
 
-" surround vim
 set surround
+set commentary
+set textobj-entire
+
 " smart motion (want 2word..)
 nnoremap s :<C-u>action emacsIDEAs.AceJumpWord<CR>
 vnoremap s :<C-u>action emacsIDEAs.AceJumpSelect<CR>
+
 " メソッド移動
 nnoremap [m :<C-u>action MethodUp<CR>
 nnoremap ]m :<C-u>action MethodDown<CR>
