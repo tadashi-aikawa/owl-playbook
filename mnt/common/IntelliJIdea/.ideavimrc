@@ -3,6 +3,8 @@
 set surround
 set commentary
 set textobj-entire
+set multiple-cursors
+map <C-k> <A-n>
 set easymotion
 nmap s <Plug>(easymotion-s2)
 
