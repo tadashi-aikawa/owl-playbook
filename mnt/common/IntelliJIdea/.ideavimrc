@@ -3,6 +3,8 @@
 set surround
 set commentary
 set textobj-entire
+set ReplaceWithRegister
+map _ gr
 set multiple-cursors
 map <C-k> <A-n>
 set easymotion
