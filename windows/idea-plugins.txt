@@ -2,7 +2,9 @@
 
 // Vim
 https://plugins.jetbrains.com/plugin/164-ideavim
-// Ace Jump Lite
-https://plugins.jetbrains.com/plugin/9803-acejump-lite
+// IdeaVim-EasyMotion
+https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion
 // File Watchers
 https://plugins.jetbrains.com/plugin/7177-file-watchers
+// Paste Images into Markdown
+https://plugins.jetbrains.com/plugin/8446-paste-images-into-markdown
