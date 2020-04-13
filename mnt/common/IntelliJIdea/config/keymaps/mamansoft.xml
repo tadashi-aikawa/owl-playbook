@@ -189,6 +189,9 @@
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="w" />
   </action>
+  <action id="OpenProjectWindows">
+    <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="w" />
+  </action>
   <action id="OptimizeImports">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
