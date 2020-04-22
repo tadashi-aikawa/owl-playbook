@@ -22,7 +22,6 @@ call scoop install ^
   nodejs-lts ^
   docker ^
   go ^
-  autohotkey ^
   hugo-extended
 
 rem Python
@@ -31,6 +30,8 @@ call scoop install ^
   python37 ^
   python
 call scoop reset python
+
+call sudo scoop install autohotkey-installer
 
 rem C Tools
 rem scoop install ^
