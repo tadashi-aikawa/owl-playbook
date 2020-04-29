@@ -52,6 +52,8 @@
     <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
   <action id="Console.Jpa.GenerateSql" />
+  <action id="CopyPaths" />
+  <action id="DatabaseView.CopyDdlAction" />
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift alt d" />
     <keyboard-shortcut first-keystroke="shift f9" />
@@ -100,6 +102,9 @@
   <action id="FindPrevious" />
   <action id="FindUsages">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="u" />
+  </action>
+  <action id="FixDocComment">
+    <keyboard-shortcut first-keystroke="shift ctrl c" />
   </action>
   <action id="Forward">
     <keyboard-shortcut first-keystroke="alt right" />
