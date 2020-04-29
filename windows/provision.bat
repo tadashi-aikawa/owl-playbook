@@ -36,6 +36,7 @@ set IDEA_CONFIG_DIR=%ROAMING%\JetBrains\%IDEA_DIR%
 call :link_idea_dir colors
 call :link_idea_dir keymaps
 call :link_idea_dir templates
+call :link_idea_dir codestyles
 call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\IntelliJIdea\.ideavimrc
 
 call :each link_idea_file idea-files.txt
