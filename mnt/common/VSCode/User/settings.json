@@ -2,7 +2,6 @@
   // -------------------------------------
   // 見た目
   // -------------------------------------
-  "editor.fontSize": 16,
   "editor.fontFamily": "Source Code Pro for Powerline",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Monokai",
