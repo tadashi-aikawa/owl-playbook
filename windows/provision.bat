@@ -79,6 +79,8 @@ call :******************** git config
 git config --global core.preloadindex true
 git config --global core.fscache true
 git config --global core.autoCRLF false
+git config --global merge.ff false
+git config --global pull.ff only
 
 
 call :******************** To be continued.. (Not administrator
