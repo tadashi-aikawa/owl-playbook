@@ -1,56 +1,60 @@
-" source .vimrc
-
-set surround
-set commentary
-set textobj-entire
-set ReplaceWithRegister
-map _ gr
-set multiple-cursors
-map <C-k> <A-n>
-set easymotion
-nmap s <Plug>(easymotion-s2)
-
-" smart motion (want 2word..)
-"nnoremap s :<C-u>action emacsIDEAs.AceJumpWord<CR>
-"vnoremap s :<C-u>action emacsIDEAs.AceJumpSelect<CR>
-
-
-" メソッド移動
-nnoremap [m :<C-u>action MethodUp<CR>
-nnoremap ]m :<C-u>action MethodDown<CR>
-
+" [ 🖥️ Display ]
+"-------------------
 " 無駄な描画をしない
 set lazyredraw
 " 再描画の速度が速くなるらしいけど最近の端末では無意味との噂も..
 set ttyfast
-
 " 検索語をハイライト
 set hlsearch
-
 " コマンドのタイムラグをなくす
 set ttimeoutlen=1
+" スクロールした時 常に下に表示するバッファ行の数
+set scrolloff=5
 
+
+" [ 🔊 Sound ]
+"---------------
+" ベル音を鳴らさない
+set visualbell
+
+
+" [ 🔍 Search ]
+"----------------
 " 検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" 検索時に最後まで行っても最初に戻らない
-" 設定するとincsearchが無効になってしまうのでコメントアウト...
-" set nowrapscan
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
 " 検索時に大文字を含んでいたら大/小を区別
 set smartcase
+" (設定するとincsearchが無効になるためコメントアウト) 検索時に最後まで行っても最初に戻らない
+" set nowrapscan
 
-" スクロールした時 常に下に表示するバッファ行の数
-set scrolloff=5
-
+" [ 📁 File system ]
+"---------------------
 " swapfileなし
 set noswapfile
-
-" Clipboard magic?
+" クリップボードの共有化
 set clipboard=unnamedplus
 
-" No bell
-set visualbell
-" set noerrorbells
+" [ ⌨️ Key ]
+"-------------
+" メソッド移動
+nnoremap [m :<C-u>action MethodUp<CR>
+nnoremap ]m :<C-u>action MethodDown<CR>
 
+" [ Plugin ]
+"-------------
+set surround
+set commentary
+set textobj-entire
+set argtextobj
+
+set ReplaceWithRegister
+map _ gr
+
+set multiple-cursors
+map <C-k> <A-n>
+
+set easymotion
+nmap s <Plug>(easymotion-s2)
 
