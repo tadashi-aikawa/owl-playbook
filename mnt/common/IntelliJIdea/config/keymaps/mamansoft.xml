@@ -193,6 +193,9 @@
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="w" />
   </action>
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="alt l" />
+  </action>
   <action id="OpenProjectWindows">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="w" />
   </action>
@@ -207,6 +210,9 @@
   </action>
   <action id="PreviousOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt k" />
+  </action>
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="alt h" />
   </action>
   <action id="Print" />
   <action id="PyExecuteCellAction" />
