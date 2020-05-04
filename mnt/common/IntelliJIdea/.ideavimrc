@@ -41,9 +41,11 @@ set clipboard=unnamedplus
 " メソッド移動
 nnoremap [m :<C-u>action MethodUp<CR>
 nnoremap ]m :<C-u>action MethodDown<CR>
+" 保存 (IDEAの自動保存と連動させるため)
+nnoremap
 
-" [ Plugin ]
-"-------------
+" [ 🔌 Plugin ]
+"----------------
 set surround
 set commentary
 set textobj-entire
