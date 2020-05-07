@@ -231,6 +231,9 @@
   <action id="RecentLocations">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="l" />
   </action>
+  <action id="RecentProjectListGroup">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl p" />
+  </action>
   <action id="RefactoringMenuRenameFile">
     <keyboard-shortcut first-keystroke="f2" />
   </action>
