@@ -241,9 +241,7 @@
     <keyboard-shortcut first-keystroke="ctrl q" />
     <keyboard-shortcut first-keystroke="shift ctrl f" />
   </action>
-  <action id="ReformatWithPrettierAction">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="p" />
-  </action>
+  <action id="ReformatWithPrettierAction" />
   <action id="ReopenClosedTab">
     <keyboard-shortcut first-keystroke="shift ctrl t" />
   </action>
