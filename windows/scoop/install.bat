@@ -12,6 +12,7 @@ call scoop install ^
   7zip ^
   fzf ^
   jq ^
+  fx ^
   less ^
   ripgrep ^
   make ^
