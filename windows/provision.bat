@@ -27,7 +27,6 @@ mv %GOPATH%\bin\bat.exe %GOPATH%\bin\http.exe
 
 call :******************** IntelliJ IDEA
 
-:tmp
 set IDEA_DIR=IntelliJIdea2020.1
 
 set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\IntelliJIdea\config
@@ -40,7 +39,6 @@ call :link_idea_dir codestyles
 call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\IntelliJIdea\.ideavimrc
 
 call :each link_idea_file idea-files.txt
-goto :end
 
 call :******************** VS Code
 
@@ -66,6 +64,15 @@ set CMDER_CONFIG_DIR=C:\tools\Cmder\config
 call :each link_cmder_file cmder-files.txt
 call :each link_cmder_tools_file owl-cmder-tools-files.txt
 
+call :******************** PowerShell
+
+:tmp
+set POWER_SHELL_ORIGIN_DIR=%WINDOWS_MNT%\power-shell
+set POWER_SHELL_DIR=%USERPROFILE%\Documents\WindowsPowerShell
+
+call :link_file %POWER_SHELL_DIR%\Microsoft.PowerShell_profile.ps1 %POWER_SHELL_ORIGIN_DIR%\Microsoft.PowerShell_profile.ps1
+
+goto :end
 
 call :******************** Keypirinha
 
