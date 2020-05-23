@@ -4,6 +4,7 @@ set WINDOWS_MNT="%~dp0..\mnt\windows"
 set COMMON_MNT="%~dp0..\mnt\common"
 
 set ROAMING="%USERPROFILE%\AppData\Roaming"
+set LOCAL="%USERPROFILE%\AppData\Local"
 
 rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
@@ -66,11 +67,18 @@ call :each link_cmder_tools_file owl-cmder-tools-files.txt
 
 call :******************** PowerShell
 
-:tmp
 set POWER_SHELL_ORIGIN_DIR=%WINDOWS_MNT%\power-shell
 set POWER_SHELL_DIR=%USERPROFILE%\Documents\WindowsPowerShell
 
 call :link_file %POWER_SHELL_DIR%\Microsoft.PowerShell_profile.ps1 %POWER_SHELL_ORIGIN_DIR%\Microsoft.PowerShell_profile.ps1
+
+
+call :******************** Terminal
+
+:tmp
+
+set TERMINAL_ORIGIN_DIR=%WINDOWS_MNT%\terminal
+call :link_file %LOCAL%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json %TERMINAL_ORIGIN_DIR%\LocalState\settings.json
 
 goto :end
 

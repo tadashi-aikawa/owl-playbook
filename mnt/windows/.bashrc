@@ -1,6 +1,7 @@
 alias su='iconv -f Shift-Jis -t utf-8'
 # for symlink in windows
 export MSYS=winsymlinks:nativestrict
+export LANG=ja_JP.UTF-8
 
 # https://qiita.com/cointoss1973/items/a0da81df10f8cc04c83e
 alias python='winpty python.exe'
