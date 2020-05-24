@@ -44,7 +44,6 @@ function _fzf_compgen_dir() {
 
 # Linux like (WSLの場合は日本語問題に遭遇しにくい。ただしpipeを使わない場合)
 function ll() { wsl ls -l --color=auto $args }
-function vim() { $args[0].Replace("\", "/") | % { wsl vim $_ } }
 
 # cd
 function cdg() { gowl list | fzf | cd }

@@ -17,7 +17,8 @@ call scoop install ^
   ripgrep ^
   make ^
   ffmpeg ^
-  z
+  z ^
+  vim
 
 rem Language / Framework / MiddleWare
 call scoop install ^
