@@ -43,6 +43,8 @@ function _fzf_compgen_dir() {
 #-----------------------------------------------------
 
 # Linux like (WSLの場合は日本語問題に遭遇しにくい。ただしpipeを使わない場合)
+Remove-Item alias:cat
+Remove-Item alias:rm
 function ll() { wsl ls -l --color=auto $args }
 
 # cd
