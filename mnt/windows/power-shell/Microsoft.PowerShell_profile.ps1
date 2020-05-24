@@ -27,13 +27,14 @@ $ThemeSettings.Colors.DriveForegroundColor = "Blue"
 # Git
 $ThemeSettings.GitSymbols.LocalStagedStatusSymbol = ""
 $ThemeSettings.GitSymbols.LocalWorkingStatusSymbol = ""
-$ThemeSettings.GitSymbols.BeforeWorkingSymbol = [char]::ConvertFromUtf32(0x2757)
-$ThemeSettings.GitSymbols.DelimSymbol = [char]::ConvertFromUtf32(0x1F448)
-$ThemeSettings.GitSymbols.BranchAheadStatusSymbol = [char]::ConvertFromUtf32(0x1F4BF)
-$ThemeSettings.GitSymbols.BeforeIndexSymbol = [char]::ConvertFromUtf32(0x1F4F8)
-$ThemeSettings.GitSymbols.BranchIdenticalStatusToSymbol = [char]::ConvertFromUtf32(0x1F44C)
-$ThemeSettings.GitSymbols.BranchBehindStatusSymbol = [char]::ConvertFromUtf32(0x2728)
-$ThemeSettings.GitSymbols.BranchUntrackedSymbol = [char]::ConvertFromUtf32(0x1F4A1)
+$ThemeSettings.GitSymbols.BeforeWorkingSymbol = [char]::ConvertFromUtf32(0xf040)+" "
+$ThemeSettings.GitSymbols.DelimSymbol = [char]::ConvertFromUtf32(0xf040)
+$ThemeSettings.GitSymbols.BranchSymbol = [char]::ConvertFromUtf32(0xf126)
+$ThemeSettings.GitSymbols.BranchAheadStatusSymbol = [char]::ConvertFromUtf32(0xf0ee)+" "
+$ThemeSettings.GitSymbols.BranchBehindStatusSymbol = [char]::ConvertFromUtf32(0xf0ed)+" "
+$ThemeSettings.GitSymbols.BeforeIndexSymbol = [char]::ConvertFromUtf32(0xf6b7)+" "
+$ThemeSettings.GitSymbols.BranchIdenticalStatusToSymbol = ""
+$ThemeSettings.GitSymbols.BranchUntrackedSymbol = [char]::ConvertFromUtf32(0xf663)+" "
 
 #-----------------------------------------------------
 # fzf
@@ -57,7 +58,7 @@ function _fzf_compgen_dir() {
 # Linux like (WSLの場合は日本語問題に遭遇しにくい。ただしpipeを使わない場合)
 Remove-Item alias:cat
 Remove-Item alias:rm
-function ll() { wsl ls -l --color=auto $args }
+function ll() { wsl ls -l $args }
 
 # cd
 function cdg() { gowl list | fzf | cd }

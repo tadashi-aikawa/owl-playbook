@@ -28,8 +28,8 @@
     "defaults": {
       "closeOnExit": "always",
       "startingDirectory": "%USERPROFILE%",
-      "fontFace": "Source Code Pro for Powerline",
-      "fontSize": 11,
+      "fontFace": "SauceCodePro NF",
+      "fontSize": 13,
       "colorScheme": "Tango Dark",
       "backgroundImageStretchMode": "uniform",
       "backgroundImageAlignment": "right"
