@@ -20,8 +20,20 @@ $env:PATH += ";C:\Program Files\Git\usr\bin"
 
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme Paradox
+Set-Theme Sorin
 
+# Prompt
+$ThemeSettings.Colors.DriveForegroundColor = "Blue"
+# Git
+$ThemeSettings.GitSymbols.LocalStagedStatusSymbol = ""
+$ThemeSettings.GitSymbols.LocalWorkingStatusSymbol = ""
+$ThemeSettings.GitSymbols.BeforeWorkingSymbol = [char]::ConvertFromUtf32(0x2757)
+$ThemeSettings.GitSymbols.DelimSymbol = [char]::ConvertFromUtf32(0x1F448)
+$ThemeSettings.GitSymbols.BranchAheadStatusSymbol = [char]::ConvertFromUtf32(0x1F4BF)
+$ThemeSettings.GitSymbols.BeforeIndexSymbol = [char]::ConvertFromUtf32(0x1F4F8)
+$ThemeSettings.GitSymbols.BranchIdenticalStatusToSymbol = [char]::ConvertFromUtf32(0x1F44C)
+$ThemeSettings.GitSymbols.BranchBehindStatusSymbol = [char]::ConvertFromUtf32(0x2728)
+$ThemeSettings.GitSymbols.BranchUntrackedSymbol = [char]::ConvertFromUtf32(0x1F4A1)
 
 #-----------------------------------------------------
 # fzf
