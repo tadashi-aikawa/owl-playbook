@@ -20,7 +20,7 @@ $env:PATH += ";C:\Program Files\Git\usr\bin"
 
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme Sorin
+Set-Theme Powerlevel10k-Lean
 
 # Prompt
 $ThemeSettings.Colors.DriveForegroundColor = "Blue"
