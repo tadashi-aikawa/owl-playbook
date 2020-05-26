@@ -83,7 +83,7 @@ set ignorecase
 " 検索時に大文字を含んでいたら大/小を区別
 set smartcase
 " Clipboard magic?
-" set clipboard=unnamedplus
+set clipboard+=unnamed
 " スクロールした時 常に下に表示するバッファ行の数
 set scrolloff=5
 " swapfileなし
