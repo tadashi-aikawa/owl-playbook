@@ -8,6 +8,9 @@
   "copyOnSelect": false,
   "copyFormatting": false,
 
+  // ダブルクリックで選択する文字の区切り
+  "wordDelimiters": " ",
+
   // 👀 https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/profile-settings
   "profiles": {
     "defaults": {
