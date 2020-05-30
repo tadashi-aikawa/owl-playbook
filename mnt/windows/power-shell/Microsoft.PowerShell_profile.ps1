@@ -57,7 +57,7 @@ function _fzf_compgen_dir() {
 }
 
 #-----------------------------------------------------
-# Alias
+# Linux like commands
 #-----------------------------------------------------
 
 # Git Bash配下のMinGW系コマンドが使えるなら使う
@@ -77,6 +77,10 @@ function ll() {
     Invoke-Expression "$linuxBin\ls -l"
   }
 }
+
+#-----------------------------------------------------
+# Useful commands
+#-----------------------------------------------------
 
 # cd
 function cdg() { gowl list | fzf | cd }
