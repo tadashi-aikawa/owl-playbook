@@ -1,16 +1,13 @@
 // 👀 https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/global-settings
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
-
   "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
   // 格好いいのでテーマはdark
   "theme": "dark",
   "copyOnSelect": false,
   "copyFormatting": false,
-
   // ダブルクリックで選択する文字の区切り
   "wordDelimiters": " ",
-
   // 👀 https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/profile-settings
   "profiles": {
     "defaults": {
@@ -20,10 +17,7 @@
       "fontFace": "SauceCodePro NF",
       "fontSize": 13,
       // 格好良いから
-      "colorScheme": "Tango Dark",
-      // 背景画像は右端に
-      "backgroundImageStretchMode": "uniform",
-      "backgroundImageAlignment": "right"
+      "colorScheme": "Tango Dark"
     },
     // 実行するシェルの一覧
     "list": [
@@ -32,22 +26,26 @@
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "name": "Windows PowerShell",
         "icon": "https://avatars3.githubusercontent.com/u/9500018?s=460&u=409f92af80796e5d70aff0d97cfbcfc9031cb620&v=4",
-        "backgroundImage": "%USERPROFILE%\\Pictures\\terminal\\linux-background.jpg"
+        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\power-shell\\fukurou.jpg"
       },
       // WSLをたまに使う
       {
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "name": "Ubuntu",
         "source": "Windows.Terminal.Wsl",
-        "backgroundImage": "%USERPROFILE%\\Pictures\\terminal\\linux-tux.png"
+        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\power-shell\\fukurou.jpg"
       },
       // git bashもshellの動作確認用に使うことがある
       {
         "guid": "{cbaea444-ca1f-4125-bb6f-5c3f1201b568}",
         "name": "git bash",
         "startingDirectory": "%USERPROFILE%",
-        "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
-        "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico"
+        "commandline": "%USERPROFILE%\\scoop\\apps\\git\\current\\usr\\bin\\bash.exe",
+        "icon": "%USERPROFILE%\\scoop\\apps\\git\\current\\mingw64\\share\\git\\git-for-windows.ico",
+        "backgroundImage": "%USERPROFILE%\\scoop\\apps\\git\\current\\mingw64\\share\\git\\git-for-windows.ico",
+        "backgroundImageAlignment": "bottomRight",
+        "backgroundImageStretchMode": "none",
+        "backgroundImageOpacity": 0.75
       },
       // コマンドプロンプトとCmderは基本使わないので hidden: true で非表示にする
       {
@@ -71,29 +69,60 @@
       }
     ]
   },
-
   // 👀 https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/color-schemes
   "schemes": [],
-
   // 👀 https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/key-bindings
   "keybindings": [
     // 基本操作
-    { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-    { "command": "paste", "keys": "ctrl+v" },
-    { "command": "find", "keys": "ctrl+alt+f" },
-
+    {
+      "command": {
+        "action": "copy",
+        "singleLine": false
+      },
+      "keys": "ctrl+c"
+    },
+    {
+      "command": "paste",
+      "keys": "ctrl+v"
+    },
+    {
+      "command": "find",
+      "keys": "ctrl+alt+f"
+    },
     // 画面スクロール
-    { "command": "scrollUp", "keys": "shift+up" },
-    { "command": "scrollDown", "keys": "shift+down" },
-    { "command": "scrollUpPage", "keys": "shift+pgup" },
-    { "command": "scrollDownPage", "keys": "shift+pgdn" },
-
+    {
+      "command": "scrollUp",
+      "keys": "shift+up"
+    },
+    {
+      "command": "scrollDown",
+      "keys": "shift+down"
+    },
+    {
+      "command": "scrollUpPage",
+      "keys": "shift+pgup"
+    },
+    {
+      "command": "scrollDownPage",
+      "keys": "shift+pgdn"
+    },
     // タブ
-    { "command": "newTab", "keys": "ctrl+t" },
-    { "command": "closeTab", "keys": "ctrl+w" },
-    { "command": "nextTab", "keys": "alt+l" },
-    { "command": "prevTab", "keys": "alt+h" },
-
+    {
+      "command": "newTab",
+      "keys": "ctrl+t"
+    },
+    {
+      "command": "closeTab",
+      "keys": "ctrl+w"
+    },
+    {
+      "command": "nextTab",
+      "keys": "alt+l"
+    },
+    {
+      "command": "prevTab",
+      "keys": "alt+h"
+    },
     // ペインの分割
     {
       "command": {
@@ -105,36 +134,60 @@
     },
     // ペイン移動
     {
-      "command": { "action": "moveFocus", "direction": "down" },
+      "command": {
+        "action": "moveFocus",
+        "direction": "down"
+      },
       "keys": "alt+ctrl+j"
     },
     {
-      "command": { "action": "moveFocus", "direction": "left" },
+      "command": {
+        "action": "moveFocus",
+        "direction": "left"
+      },
       "keys": "alt+ctrl+h"
     },
     {
-      "command": { "action": "moveFocus", "direction": "right" },
+      "command": {
+        "action": "moveFocus",
+        "direction": "right"
+      },
       "keys": "alt+ctrl+l"
     },
     {
-      "command": { "action": "moveFocus", "direction": "up" },
+      "command": {
+        "action": "moveFocus",
+        "direction": "up"
+      },
       "keys": "alt+ctrl+k"
     },
     // ペインサイズ変更
     {
-      "command": { "action": "resizePane", "direction": "down" },
+      "command": {
+        "action": "resizePane",
+        "direction": "down"
+      },
       "keys": "alt+shift+j"
     },
     {
-      "command": { "action": "resizePane", "direction": "left" },
+      "command": {
+        "action": "resizePane",
+        "direction": "left"
+      },
       "keys": "alt+shift+h"
     },
     {
-      "command": { "action": "resizePane", "direction": "right" },
+      "command": {
+        "action": "resizePane",
+        "direction": "right"
+      },
       "keys": "alt+shift+l"
     },
     {
-      "command": { "action": "resizePane", "direction": "up" },
+      "command": {
+        "action": "resizePane",
+        "direction": "up"
+      },
       "keys": "alt+shift+k"
     }
   ]
