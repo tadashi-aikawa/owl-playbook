@@ -8,6 +8,7 @@ set LOCAL="%USERPROFILE%\AppData\Local"
 
 rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
+:tmp
 
 
 call :******************** IntelliJ IDEA
@@ -41,7 +42,6 @@ call :each vscode_extension_install vscode-extensions.txt
 call :******************** Homedir
 call :each link_windows_home windows-home-dots.txt
 
-:tmp
 call :******************** PowerShell
 
 set POWER_SHELL_ORIGIN_DIR=%WINDOWS_MNT%\power-shell
@@ -54,6 +54,7 @@ call :******************** Terminal
 
 set TERMINAL_ORIGIN_DIR=%WINDOWS_MNT%\terminal
 call :link_file "%LOCAL%\Microsoft\Windows Terminal\settings.json" %TERMINAL_ORIGIN_DIR%\LocalState\settings.json
+
 rem call :******************** Keypirinha
 
 rem set KEYPIRINHA_ORIGIN_DIR=%WINDOWS_MNT%\keypirinha
