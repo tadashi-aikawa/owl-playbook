@@ -74,6 +74,9 @@ function cdg() { gowl list | fzf | cd }
 function cdr() { fd -H -t d -E .git -E node_modules | fzf | cd }
 function cdz() { z -l | oss | select -skip 3  | % { $_.Trim().Split(" *")[1] } | fzf | cd }
 
+# Copy current path
+function cpwd() { Convert-Path . | Set-Clipboard }
+
 # git flow
 function gf()  { git fetch --all }
 function gd()  { git diff $args }
