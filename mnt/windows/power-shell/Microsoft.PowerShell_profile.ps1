@@ -89,7 +89,7 @@ function gbm()  { git branch -l | rg -v '^\* ' | % { $_ -replace " ", "" } | fzf
 
 # git log
 function gls()   { git log -3}
-function gll()   { git log --oneline --all --graph --decorate }
+function gll()   { git log -10 --oneline --all --graph --decorate }
 function glll()  { git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset\ %C(yellow)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' }
 function glls()  { git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset\ %C(yellow)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -10}
 
