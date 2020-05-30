@@ -1,5 +1,6 @@
 options\editor.xml
 options\colors.scheme.xml
+options\code.style.schemes.xml
 options\ide.general.xml
 options\keymap.xml
 options\markdown.xml
