@@ -10,10 +10,6 @@ $OutputEncoding = $utf8
 # git logなどのマルチバイト文字を表示させるため (絵文字含む)
 $env:LESSCHARSET = "utf-8"
 
-# Git Bash配下のMinGW系コマンドが使えるなら使う
-$env:PATH += ";C:\Program Files\Git\usr\bin"
-
-
 #-----------------------------------------------------
 # Powerline
 #-----------------------------------------------------
@@ -55,14 +51,21 @@ function _fzf_compgen_dir() {
 # Alias
 #-----------------------------------------------------
 
+# Git Bash配下のMinGW系コマンドが使えるなら使う
+$linuxBin = "$HOME\scoop\apps\git\current\usr\bin"
+$env:PATH += ";$linuxBin"
+
 # Linux like (WSLの場合は日本語問題に遭遇しにくい。ただしpipeを使わない場合)
 Remove-Item alias:cat
 Remove-Item alias:rm
+Remove-Item alias:curl
+Remove-Item alias:wget
+
 function ll() {
   if ($args -ne "") {
-    wsl ls -l $args.Replace("\", "/")
+    Invoke-Expression "$linuxBin\ls -l $args"
   } else {
-    wsl ls -l
+    Invoke-Expression "$linuxBin\ls -l"
   }
 }
 

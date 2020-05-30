@@ -1,8 +1,0 @@
-fukurou.jpg
-powerline_core.lua
-powerline_hg.lua
-powerline_npm.lua
-settings
-user_aliases.cmd
-user_profile.cmd
-user-ConEmu.xml

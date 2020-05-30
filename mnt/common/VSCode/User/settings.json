@@ -45,9 +45,7 @@
   // ターミナル
   // -------------------------------------
   "editWithShell.shell.windows": "bash",
-  "editWithShell.shellArgs.windows": [
-    "-c"
-  ],
+  "editWithShell.shellArgs.windows": ["-c"],
   "editWithShell.processEntireTextIfNoneSelected": true,
   // -------------------------------------
   // Vim
@@ -65,21 +63,14 @@
   "vim.easymotionMarkerFontSize": "24",
   "vim.easymotionMarkerYOffset": 5,
   "vim.enableNeovim": true,
-  "vim.neovimPath": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe",
+  "vim.neovimPath": "C:\\Users\\syoum\\scoop\\shims\\nvim.exe",
   "vim.normalModeKeyBindings": [
     {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "g",
-        "b"
-      ]
+      "before": ["<C-k>"],
+      "after": ["g", "b"]
     },
     {
-      "before": [
-        "<C-o>"
-      ],
+      "before": ["<C-o>"],
       "commands": [
         {
           "command": "workbench.action.navigateBack"
@@ -87,9 +78,7 @@
       ]
     },
     {
-      "before": [
-        "<C-i>"
-      ],
+      "before": ["<C-i>"],
       "commands": [
         {
           "command": "workbench.action.navigateForward"
@@ -97,28 +86,14 @@
       ]
     },
     {
-      "before": [
-        "s"
-      ],
-      "after": [
-        "<leader>",
-        "<leader>",
-        "2",
-        "s",
-        "<char>",
-        "<char>"
-      ]
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "2", "s", "<char>", "<char>"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "g",
-        "b"
-      ]
+      "before": ["<C-k>"],
+      "after": ["g", "b"]
     }
   ],
   "vim.disableExtension": false,
@@ -136,14 +111,8 @@
   // -------------------------------------
   // JS/TS
   // -------------------------------------
-  "prettier.disableLanguages": [
-    "markdown",
-    "yaml"
-  ],
-  "eslint.validate": [
-    "javascript",
-    "typescript"
-  ],
+  "prettier.disableLanguages": ["markdown", "yaml"],
+  "eslint.validate": ["javascript", "typescript"],
   // -------------------------------------
   // Markdown
   // -------------------------------------
@@ -156,7 +125,7 @@
     "MD034": false,
     "MD040": false,
     "MD041": false,
-    "MD045": false,
+    "MD045": false
   },
   // -------------------------------------
   // REST Client
@@ -167,14 +136,14 @@
   "rest-client.previewOption": "exchange",
   "rest-client.environmentVariables": {
     "$shared": {
-      "togglApiToken": "TOGGL_API_TOKEN",
+      "togglApiToken": "TOGGL_API_TOKEN"
     },
     "local": {
-      "restjcBaseUrl": "REST_JC_DEVELOPMENT_BASE_URL",
+      "restjcBaseUrl": "REST_JC_DEVELOPMENT_BASE_URL"
     },
     "production": {
       "restjcBaseUrl": "REST_JC_PRODUCTION_BASE_URL",
-      "github": "https://api.github.com",
+      "github": "https://api.github.com"
     }
   },
   // -------------------------------------
@@ -201,6 +170,6 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }
   // "extensions.autoUpdate": false,
 }
