@@ -8,11 +8,10 @@ set LOCAL="%USERPROFILE%\AppData\Local"
 
 rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
-:tmp
-
 
 call :******************** IntelliJ IDEA
 
+:tmp
 set IDEA_DIR=IntelliJIdea2020.1
 
 set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\IntelliJIdea\config
@@ -22,10 +21,11 @@ call :link_idea_dir colors
 call :link_idea_dir keymaps
 call :link_idea_dir templates
 call :link_idea_dir codestyles
+call :link_idea_dir inspection
 call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\IntelliJIdea\.ideavimrc
 
 call :each link_idea_file idea-files.txt
-
+goto :end
 
 call :******************** VS Code
 
