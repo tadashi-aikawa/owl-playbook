@@ -11,6 +11,13 @@ $OutputEncoding = $utf8
 $env:LESSCHARSET = "utf-8"
 
 #-----------------------------------------------------
+# Key binding
+#-----------------------------------------------------
+
+# Emacsベース
+Set-PSReadLineOption -EditMode Emacs
+
+#-----------------------------------------------------
 # Powerline
 #-----------------------------------------------------
 
@@ -45,7 +52,6 @@ function _fzf_compgen_path() {
 function _fzf_compgen_dir() {
   fd --type d -HL --exclude ".git" . "$1"
 }
-
 
 #-----------------------------------------------------
 # Alias
