@@ -54,6 +54,12 @@
         "commandline": "cmd.exe",
         "hidden": true
       },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": true,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      }
     ]
   },
   // 👀 https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/color-schemes
