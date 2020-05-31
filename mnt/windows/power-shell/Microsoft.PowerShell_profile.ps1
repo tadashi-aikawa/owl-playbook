@@ -82,6 +82,9 @@ function tr() { $input | uutils tr $args}
 function pwd() { $input | uutils pwd $args}
 function cut() { $input | uutils cut $args}
 function uniq() { $input | uutils uniq $args}
+# ⚠ readonlyのaliasなので問題が発生するかも..
+Remove-Item alias:sort -Force
+function sort() { $input | uutils sort $args}
 
 # 代替コマンドを使用
 Set-Alias grep rg
