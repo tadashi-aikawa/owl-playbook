@@ -62,15 +62,20 @@ function _fzf_compgen_dir() {
 #-----------------------------------------------------
 
 # Linuxコマンドを優先
-$linuxBin = "$env:GIT_INSTALL_ROOT\usr\bin"
 Remove-Item alias:rm
-function rm() { Invoke-Expression "$linuxBin\rm $args"}
-function mkdir() { Invoke-Expression "$linuxBin\mkdir $args"}
+function rm() { uutils rm $args}
+Remove-Item alias:ls
+function ll() { uutils ls -l $args}
+function head() { uutils head $args}
+function tail() { uutils tail $args}
+function wc() { uutils wc $args}
+function uniq() { uutils uniq $args}
+function mkdir() { uutils mkdir $args}
 
-# 代替コマンドを使用
+# 代替コマンドを使用 (exaがWindows対応したら正式に..)
 Set-Alias grep rg
-function ll() { lsd -l --blocks permission --blocks size --blocks date --blocks name --blocks inode $args}
-function tree() { lsd --tree $args}
+function ls() { exa --icons $args }
+function tree() { exa --icons -T $args}
 
 #-----------------------------------------------------
 # Useful commands
