@@ -70,6 +70,8 @@ git config --global core.fscache true
 git config --global core.autoCRLF false
 git config --global merge.ff false
 git config --global pull.ff only
+rem “ú–{ŒêƒpƒX‚Ì•¶š‰»‚¯–h~‘Îô
+git config --global core.quotepath false
 
 
 call :******************** To be continued.. (Not administrator
