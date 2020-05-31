@@ -20,7 +20,8 @@ scoop install `
   make `
   ffmpeg `
   z `
-  vim
+  vim `
+  uutils-coreutils
 
 # GUI Tools
 scoop install `

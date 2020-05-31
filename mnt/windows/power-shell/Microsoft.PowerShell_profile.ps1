@@ -61,21 +61,35 @@ function _fzf_compgen_dir() {
 # Linux like commands
 #-----------------------------------------------------
 
-# Linuxコマンドを優先
+# パイプラインを受けつけないLinux標準コマンド
+Remove-Item alias:cp
+function cp() { uutils cp $args}
+Remove-Item alias:mv
+function mv() { uutils mv $args}
 Remove-Item alias:rm
 function rm() { uutils rm $args}
 Remove-Item alias:ls
-function ll() { uutils ls -l $args}
-function head() { uutils head $args}
-function tail() { uutils tail $args}
-function wc() { uutils wc $args}
-function uniq() { uutils uniq $args}
 function mkdir() { uutils mkdir $args}
+function printenv() { uutils printenv $args}
 
-# 代替コマンドを使用 (exaがWindows対応したら正式に..)
+# パイプラインを受けつけるLinux標準コマンド
+Remove-Item alias:cat
+function cat() { $input | uutils cat $args}
+function head() { $input | uutils head $args}
+function tail() { $input | uutils tail $args}
+function wc() { $input | uutils wc $args}
+function tr() { $input | uutils tr $args}
+function pwd() { $input | uutils pwd $args}
+function cut() { $input | uutils cut $args}
+function uniq() { $input | uutils uniq $args}
+
+# 代替コマンドを使用
 Set-Alias grep rg
 function ls() { exa --icons $args }
 function tree() { exa --icons -T $args}
+
+# Linuxコマンドのエイリアス
+function ll() { uutils ls -l $args}
 
 #-----------------------------------------------------
 # Useful commands
