@@ -9,6 +9,7 @@ scoop install `
   wget `
   bat `
   fd `
+  dust `
   7zip `
   fzf `
   jq `
