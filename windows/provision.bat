@@ -42,10 +42,10 @@ call :each vscode_extension_install vscode-extensions.txt
 call :******************** Homedir
 call :each link_windows_home windows-home-dots.txt
 
-call :******************** PowerShell
+call :******************** PowerShell COre
 
 set POWER_SHELL_ORIGIN_DIR=%WINDOWS_MNT%\power-shell
-set POWER_SHELL_DIR=%USERPROFILE%\Documents\WindowsPowerShell
+set POWER_SHELL_DIR=%USERPROFILE%\Documents\PowerShell
 
 call :link_file %POWER_SHELL_DIR%\Microsoft.PowerShell_profile.ps1 %POWER_SHELL_ORIGIN_DIR%\Microsoft.PowerShell_profile.ps1
 

@@ -2,11 +2,6 @@
 # General
 #-----------------------------------------------------
 
-# パイプで渡したときに文字化けで処理が上手く行かない問題を回避するため
-$utf8 = [System.Text.Encoding]::GetEncoding("utf-8")
-$OutputEncoding = $utf8
-[System.Console]::OutputEncoding = $utf8
-
 # git logなどのマルチバイト文字を表示させるため (絵文字含む)
 $env:LESSCHARSET = "utf-8"
 
@@ -26,6 +21,8 @@ Set-PSReadLineOption -EditMode Emacs
 
 Import-Module posh-git
 Import-Module oh-my-posh
+Import-Module z
+
 Set-Theme Powerlevel10k-Lean
 
 # Prompt
@@ -50,10 +47,10 @@ $ThemeSettings.GitSymbols.BranchUntrackedSymbol = [char]::ConvertFromUtf32(0xf66
 $env:FZF_DEFAULT_OPTS="--reverse --border --height 50%"
 $env:FZF_DEFAULT_COMMAND='fd -HL --exclude ".git" .'
 function _fzf_compgen_path() {
-  fd -HL --exclude ".git" . "$1"
+    fd -HL --exclude ".git" . "$1"
 }
 function _fzf_compgen_dir() {
-  fd --type d -HL --exclude ".git" . "$1"
+    fd --type d -HL --exclude ".git" . "$1"
 }
 
 #-----------------------------------------------------
@@ -67,15 +64,13 @@ $env:PATH += ";$linuxBin"
 # Linux like (WSLの場合は日本語問題に遭遇しにくい。ただしpipeを使わない場合)
 Remove-Item alias:cat
 Remove-Item alias:rm
-Remove-Item alias:curl
-Remove-Item alias:wget
 
 function ll() {
-  if ($args -ne "") {
-    Invoke-Expression "$linuxBin\ls -l $args"
-  } else {
-    Invoke-Expression "$linuxBin\ls -l"
-  }
+    if ($args -ne "") {
+        Invoke-Expression "$linuxBin\ls -l $args"
+    } else {
+        Invoke-Expression "$linuxBin\ls -l"
+    }
 }
 
 #-----------------------------------------------------
@@ -85,7 +80,7 @@ function ll() {
 # cd
 function cdg() { gowl list | fzf | cd }
 function cdr() { fd -H -t d -E .git -E node_modules | fzf | cd }
-function cdz() { z -l | oss | select -skip 3  | % { $_.Trim().Split(" *")[1] } | fzf | cd }
+function cdz() { z -l | oss | select -skip 3 | % { $_ -split " +" } | sls -raw '^[a-zA-Z].+' | fzf | cd }
 
 # Copy current path
 function cpwd() { Convert-Path . | Set-Clipboard }
