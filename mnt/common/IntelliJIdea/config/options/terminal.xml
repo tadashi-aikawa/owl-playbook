@@ -1,0 +1,6 @@
+<application>
+  <component name="TerminalOptionsProvider">
+    <option name="myShellPath" value="pwsh" />
+    <option name="mySoundBell" value="false" />
+  </component>
+</application>
