@@ -20,6 +20,12 @@ scoop install `
   z `
   vim
 
+# GUI Tools
+scoop install `
+  windows-terminal
+  # slack
+  # powertoys / dotnet-sdk
+
 # Language / Framework / MiddleWare
 scoop install `
   nodejs-lts `
