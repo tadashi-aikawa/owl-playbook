@@ -57,21 +57,16 @@ function _fzf_compgen_dir() {
 # Linux like commands
 #-----------------------------------------------------
 
-# Git Bash配下のMinGW系コマンドが使えるなら使う
-$linuxBin = "$HOME\scoop\apps\git\current\usr\bin"
-$env:PATH += ";$linuxBin"
-
-# Linux like (WSLの場合は日本語問題に遭遇しにくい。ただしpipeを使わない場合)
-Remove-Item alias:cat
+# Linuxコマンドを優先
+$linuxBin = "$env:GIT_INSTALL_ROOT\usr\bin"
 Remove-Item alias:rm
+function rm() { Invoke-Expression "$linuxBin\rm $args"}
+function mkdir() { Invoke-Expression "$linuxBin\mkdir $args"}
 
-function ll() {
-    if ($args -ne "") {
-        Invoke-Expression "$linuxBin\ls -l $args"
-    } else {
-        Invoke-Expression "$linuxBin\ls -l"
-    }
-}
+# 代替コマンドを使用
+Set-Alias grep rg
+function ll() { lsd -l --blocks permission --blocks size --blocks date --blocks name --blocks inode $args}
+function tree() { lsd --tree $args}
 
 #-----------------------------------------------------
 # Useful commands
