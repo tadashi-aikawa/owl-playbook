@@ -32,8 +32,10 @@ scoop install `
 # Language / Framework / MiddleWare
 scoop install `
   nodejs-lts `
+  gcc `
   docker `
   go `
+  rust-up `
   hugo-extended
 
 # Python
