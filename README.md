@@ -6,54 +6,47 @@ WindowsとLinuxの環境構築用スクリプト群です。
 
 各種同期設定は **mnt配下** に集約されます。
 
-サブモジュールを使用しているため`--recursive`オプションを付けてcloneしてください。
-
 ```
-$ git clone git@github.com:tadashi-aikawa/owl-playbook.git --recursive
+$ git clone git@github.com:tadashi-aikawa/owl-playbook.git
 ```
 
 
 Windows setup
 -------------
 
-### 初回
+### 事前準備
 
-初回だけいくつか準備が必要です。
-2回目以降は必要ありません。
+以下のツールをインストールしてください。
 
-#### 必要なツールのインストール
+1. [Scoop](https://github.com/lukesampson/scoop)
+2. [PowerShell](https://github.com/PowerShell/PowerShell/releases) (v7以降)
 
-1. [Chocolatey](https://chocolatey.org/)
-2. [Scoop](https://github.com/lukesampson/scoop)
+### 依存packageインストール
 
-#### 依存packageインストール
+`windows`ディレクトリ配下の`install.ps1`をPowerShellで実行してください。
 
-1. 管理者モードでコマンドプロンプトを立ち上げて`owl-playbook\windows\chocolatey`ディレクトリに移動
-2. `install.bat`を実行
-3. `owl-playbook\windows\scoop`ディレクトリに移動
-4. `install.bat`を実行
-5. Intellij IDEAを立ち上げてライセンスを通す
-6. VS Codeを起動する
-7. `windows\chocolatey\user-ConEmu.xml`を`mnt\windows\cmder\config`配下にコピー
+| ディレクトリ | 概要                        |
+| ------------ | --------------------------- |
+| scoop        | Scoopでインストールするもの |
+| npm          | npmでインストールするもの   |
+| go           | goでインストールするもの    |
 
-これで以降の構成管理に必要なツールおよび環境変数が設定されます。
-5と6はsymbolic linkが参照するディレクトリ構成作成のために必要です。
+インストールパッケージに変更があったときは再実行しましょう。
 
-#### `2回目以降`を実行
+### 各種設定の反映
 
-少し下のセクションに従って下さい。
+#### 初回のみ
 
+`IntelliJ IDEA`と`VS Code`は事前に1度起動しておいてください。
+設定構成を作成するためです。
 
-#### 後処理
+ライセンス認証も通しておいてください。
 
-gowlを使ってowl-playbookを再取得しましょう。
-今ある場所は初回だけで適切ではないため。
+#### 設定反映
 
+管理者モードで`provision.bat`を実行してください。
 
-### 2回目以降
-
-1. 管理者モードでCmderを立ち上げて`owl-playbook\windows`ディレクトリに移動
-2. `provision.bat`を実行
+- [ ] `ps1`ファイルに置き換えたい
 
 
 Ubuntu simple setup
