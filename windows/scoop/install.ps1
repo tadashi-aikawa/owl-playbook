@@ -35,7 +35,7 @@ scoop install `
   gcc `
   docker `
   go `
-  rust-up `
+  rustup `
   hugo-extended
 
 # Python
