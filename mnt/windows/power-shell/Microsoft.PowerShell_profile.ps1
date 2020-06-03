@@ -79,6 +79,7 @@ function head() { $input | uutils head $args}
 function tail() { $input | uutils tail $args}
 function wc() { $input | uutils wc $args}
 function tr() { $input | uutils tr $args}
+Remove-Item alias:pwd
 function pwd() { $input | uutils pwd $args}
 function cut() { $input | uutils cut $args}
 function uniq() { $input | uutils uniq $args}
