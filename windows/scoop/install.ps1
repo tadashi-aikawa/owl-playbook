@@ -25,9 +25,11 @@ scoop install `
 
 # GUI Tools
 scoop install `
-  windows-terminal
+  windows-terminal `
+  dbeaver `
+  postman `
+  keypirinha
   # slack
-  # powertoys / dotnet-sdk
 
 # Language / Framework / MiddleWare
 scoop install `
