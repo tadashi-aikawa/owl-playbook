@@ -28,7 +28,8 @@ scoop install `
   windows-terminal `
   dbeaver `
   postman `
-  keypirinha
+  keypirinha `
+  ditto
   # slack
 
 # Language / Framework / MiddleWare
