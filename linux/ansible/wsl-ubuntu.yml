@@ -37,7 +37,6 @@
   <<: *base
   roles:
     - role: editor/vim
-    - role: editor/vim/dein
     - role: editor/neovim
     - role: link/vim
 
