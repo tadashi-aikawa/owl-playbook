@@ -15,7 +15,7 @@ set ttyfast
 syntax on
 
 " xterm-Color256用. screen系の場合は外す必要あり
-set termguicolors
+"set termguicolors
 set background=dark
 
 " 行番号の表示
