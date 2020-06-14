@@ -63,6 +63,7 @@ alias tree='exa -lT --icons --git'
 alias pj='pipenv run python jumeaux/executor.py'
 
 alias vimn='vim -u NONE -N'
+alias vimr='vim $(fd -H | fzf)'
 
 # function
 function gfx() {
