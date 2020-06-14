@@ -57,7 +57,8 @@ alias gbm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)
 alias gs='git status --short'
 alias gss='git status -v'
 
-alias ll='exa -l'
+alias ll='exa -l --icons'
+alias tree='exa -T --icons'
 
 alias pj='pipenv run python jumeaux/executor.py'
 

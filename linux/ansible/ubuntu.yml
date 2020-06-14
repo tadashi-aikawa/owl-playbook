@@ -75,7 +75,6 @@
     - role: clitool/ripgrep
     - role: clitool/tig
     - role: link/tig
-    - role: clitool/tree
     - role: clitool/xclip
     - role: clitool/zstd
     - role: clitool/z
