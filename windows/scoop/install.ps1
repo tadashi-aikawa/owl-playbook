@@ -39,7 +39,8 @@ scoop install `
   docker `
   go `
   rustup `
-  hugo-extended
+  hugo-extended `
+  vcxsrv
 
 # Python
 scoop install `

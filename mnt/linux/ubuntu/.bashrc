@@ -3,8 +3,9 @@
 export PATH="$PATH:/usr/local/go/bin:~/go/bin"
 export GOPATH="$HOME/go"
 
-# クリップボード連携
-export DISPLAY=:0
+# クリップボード連携 (For WSL2)
+LOCAL_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+export DISPLAY=$LOCAL_IP:0
 
 # Ctrl+Sの画面ロックを無効
 stty stop undef
@@ -41,7 +42,6 @@ alias cdg='cd $(gowl list | fzf)'
 
 alias ga='git add'
 alias gaa='git add --all'
-# alias gc='git checkout $(git branch -l | grep -vE "^\*" | tr -d " " | fzf --preview "git log --oneline --all --graph --decorate $(git rev-parse --abbrev-ref HEAD)..{}")'
 alias gb='git checkout $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
 alias gbc='git checkout -b'
 alias gco='git commit -m'
@@ -53,7 +53,6 @@ alias gll='git log -10 --oneline --all --graph --decorate'
 alias gls='git log -3'
 alias glll="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b'"
 alias glls="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -10"
-# alias gm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf --preview "git log --oneline --all --graph --decorate $(git rev-parse --abbrev-ref HEAD)..{}")'
 alias gbm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
 alias gs='git status --short'
 alias gss='git status -v'
