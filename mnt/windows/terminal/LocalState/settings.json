@@ -36,6 +36,7 @@
       {
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "//wsl$/Ubuntu/home/tadashi-aikawa",
         "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\wsl\\ubuntu.png",
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageStretchMode": "none",
