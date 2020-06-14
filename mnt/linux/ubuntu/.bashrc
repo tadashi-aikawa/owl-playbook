@@ -64,6 +64,7 @@ alias pj='pipenv run python jumeaux/executor.py'
 
 alias vimn='vim -u NONE -N'
 alias vimr='vim $(fd -H | fzf)'
+alias vimz='vim $(grep "^>" ~/.viminfo | cut -c 3- | sed "s@~@$HOME@" | fzf)'
 
 # function
 function gfx() {
