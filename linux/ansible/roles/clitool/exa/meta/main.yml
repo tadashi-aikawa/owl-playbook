@@ -1,0 +1,3 @@
+dependencies:
+  - role: core/unzip
+    when: unzip is undefined

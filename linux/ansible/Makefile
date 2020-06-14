@@ -26,3 +26,6 @@ lubuntu-jp-tmp: ## Run lubuntu-jp with only tmp tags
 ubuntu-tmp: ## Run ubuntu with only tmp tags
 	@ansible-playbook -K --tags tmp -i local ubuntu.yml
 
+wsl-ubuntu: ## Run ubuntu for WSL
+	@ansible-playbook -K -i local wsl-ubuntu.yml
+

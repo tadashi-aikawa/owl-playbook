@@ -5,10 +5,6 @@ repo = '/home/vagrant/.cache/dein/repos/github.com/Shougo/dein.vim'
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
-repo = 'crusoexia/vim-monokai'
-hook_add = 'colorscheme monokai'
-
-[[plugins]]
 repo = 'myrobo/smart_tabline.vim'
 
 [[plugins]]
@@ -143,12 +139,6 @@ xmap is <Plug>(textobj-sandwich-query-i)
 xmap as <Plug>(textobj-sandwich-query-a)
 omap is <Plug>(textobj-sandwich-query-i)
 omap as <Plug>(textobj-sandwich-query-a)
-
-let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-let g:sandwich#recipes += [{'buns' : ['「','」']}]
-let g:sandwich#recipes += [{'buns' : ['【','】']}]
-let g:sandwich#recipes += [{'buns' : ['（','）']}]
-let g:sandwich#recipes += [{'buns' : ['『','』']}]
 '''
 
 [[plugins]]
