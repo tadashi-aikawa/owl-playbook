@@ -60,8 +60,6 @@ set hidden
 set backspace=indent,eol,start
 " コマンドのタイムラグをなくす
 set ttimeoutlen=1
-" [gitgutter] 0.1秒おきに表示を更新する
-set updatetime=100
 " タブを基本2文字に
 set smarttab " (行頭の余白内: shiftwidth, 行頭以外: tabstop)
 set tabstop=2
@@ -119,120 +117,33 @@ while c <= 'z'
     let c = nr2char(1+char2nr(c))
 endw
 
-" [vim-anzu] 検索強化
-nmap n <Plug>(anzu-n-with-echo)
-nmap N <Plug>(anzu-N-with-echo)
-" [Easy Motion] 2文字で絞り込む
-nmap s <Plug>(easymotion-overwin-f2)
-" [operator-replace] オペレータリプレイス
-nmap _ <Plug>(operator-replace)
-" [vim-anzu] 検索強化
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
-
-" snippet 次へ
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-" snippet 前へ
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-
 "---- Ctrl -------
 
 " <C-Space>でオートコンプリート
 imap <Nul> <C-x><C-o>
-" [multi-cursor] 作成
-let g:multi_cursor_start_key='<C-k>'
-" [multi-cursor] 拡張
-let g:multi_cursor_next_key='<C-k>'
 " 行オートコンプリート
 imap <C-l> <C-x><C-l>
 
-"---- Ctrl + j からの... -------
-" [fzf] バッファから開く
-nnoremap <C-j>b :Buffers<CR>
-" [fzf] 履歴から開く
-nnoremap <C-j>e :History<CR>
-" [fzf] 全文検索
-nnoremap <C-j>g :Rg<Space>
-" [NERDTree] ON/OFF切り替え
-nnoremap <C-j>n :<C-u>:NERDTreeTabsToggle<CR>
-" [fzf] タグへ移動
-nnoremap <C-j>o :Tags<CR>
-" [fzf] ファイルのfuzzy検索
-nnoremap <C-j>f :call FzfOmniFiles()<CR>
-" [fzf] Gitステータス
-nnoremap <C-j>s :GFiles?<CR>
-" [NERDTree] Treeに移動し、カレントファイルをフォーカス
-nnoremap <C-j>w :<C-u>:NERDTreeTabsFind<CR>
-
-"---- Alt -------
-" [quick-run] Golangの実行
-autocmd FileType go nnoremap <M-r> :QuickRun<CR>
-" [quick-run] Pythonの実行
-autocmd FileType python nnoremap <M-r> :QuickRun<CR>
-" [quick-run] Nodeの実行
-autocmd FileType javascript nnoremap <M-r> :QuickRun<CR>
-" [vim-go] 定義異動した後に元の場所へ戻る
-autocmd FileType go nnoremap <A-Left> :GoDefPop <CR>
 " ---------------- g -------------------
-
-" [ALE] 次のポイントへ移動
-nmap <silent> gej <Plug>(ale_next_wrap)
-" [ALE] 前のポイントへ移動
-nmap <silent> gek <Plug>(ale_previous_wrap)
-
-" [vim-gitgutter] 次のハンクへ移動
-nmap gij <Plug>GitGutterNextHunk
-" [vim-gitgutter] 前のハンクへ移動
-nmap gik <Plug>GitGutterPrevHunk
-" [vim-gitgutter] ハンクを元に戻す
-nmap giu <Plug>GitGutterUndoHunk
-" [vim-gitgutter] ハンクをプレビューする
-nmap gip <Plug>GitGutterPreviewHunk
 
 " 全て閉じる
 nnoremap <silent> go :qa<CR>
-
-" jedi
-let g:jedi#documentation_command = "K"
-let g:jedi#completions_command = "<C-Space>"
 
 " ------------- <Space> ----------------
 
 " ウィンドウ切り替え
 nnoremap <silent> <Space><Space> <C-w>w
-" [Markdown] テーブルをフォーマッティングする
-nnoremap <silent> <Space>@ :<C-u>TableFormat<CR>
-" [vim-over]
-nnoremap <silent> <Space>// :OverCommandLine<CR>%s/
-
-" [deopelete] 有効
-nnoremap <Space>a :call deoplete#enable()<CR>
-" [jedi] 定義へ移動
-let g:jedi#goto_command = "<Space>d"
 " ウィンドウ左移動
 nnoremap <silent> <Space>h <C-w>h
-" [vim-go] 呼び出し履歴
-autocmd FileType go nnoremap <silent> <Space>H :GoReferrers<CR>
-" [jedi] Usage
-let g:jedi#usages_command = "<Space>H"
-"次のエラー
-"Golang
-autocmd FileType go nnoremap <Space>j :cnext<CR>
-"前のエラー
-"Golang
-autocmd FileType go nnoremap <Space>k :cprevious<CR>
 "ウィンドウ右移動
 nnoremap <silent> <Space>l <C-w>l
 " バッファ切り替え
 nnoremap <Space>r :b#<CR>
 " [Encoding] => cp932
 nnoremap <silent> <Space>S :e ++enc=cp932<cr>
-
-
+" [jq] Jsonパース
 nnoremap <silent> <space>j VG!jq .<CR>
 
-"
 " Markdown h1 header
 nnoremap <silent> <space>h= v:!python3 -c 'import sys; from unicodedata import east_asian_width; w=sys.stdin.read().strip(); l=sum(map(lambda x: 2 if east_asian_width(x) in "FWA" else 1, w)); print(w+"\n"+"="*l)'<cr>
 " Markdown h2 header
@@ -247,3 +158,4 @@ autocmd BufNewFile *.py 0r ~/.vim-snippets/newtmpl/python.py
 autocmd BufNewFile *.sh 0r ~/.vim-snippets/newtmpl/bash.sh
 
 set nomodeline
+
