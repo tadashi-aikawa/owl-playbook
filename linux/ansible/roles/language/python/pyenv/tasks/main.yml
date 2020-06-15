@@ -1,4 +1,18 @@
-- name: Install
+- name: 'Install venv'
+  become: yes
+  apt:
+    name: python3-venv
+
+- name: 'Install pyenv'
   shell: git clone --depth 1 https://github.com/pyenv/pyenv.git ~/.pyenv
   args:
     creates: ~/.pyenv
+
+- name: Create symlinks
+  become: yes
+  file:
+    src: '/usr/bin/python3'
+    dest: '/usr/bin/python'
+    state: link
+    force: yes
+

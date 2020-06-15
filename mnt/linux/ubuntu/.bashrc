@@ -1,6 +1,6 @@
 # shellcheck disable=SC1090,SC2012
 
-export PATH="$PATH:/usr/local/go/bin:~/go/bin"
+export PATH="$PATH:/usr/local/go/bin:~/go/bin:~/.pyenv/bin"
 export GOPATH="$HOME/go"
 
 # クリップボード連携 (For WSL2)
@@ -66,13 +66,7 @@ alias vimn='vim -u NONE -N'
 alias vimr='vim $(fd -H | fzf)'
 alias vimz='vim $(grep "^>" ~/.viminfo | cut -c 3- | sed "s@~@$HOME@" | fzf)'
 
-# function
-function gfx() {
-  for d in $(ls | fzf --multi); do
-    cd "$d" || return
-    echo [$d]
-    git fetch --all --prune -q
-    git rev-list --count --left-right '@{upstream}...HEAD' | awk '{print " ↓"$1" ↑"$2}'
-    cd ..
-  done
-}
+
+# pyenv
+eval "$(pyenv init -)"
+
