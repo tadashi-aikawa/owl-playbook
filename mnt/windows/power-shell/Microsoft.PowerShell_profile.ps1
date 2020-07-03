@@ -132,3 +132,6 @@ function glls()  { git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty
 # git status
 function gs()  { git status --short }
 function gss() { git status -v }
+
+# explorer
+function e() { explorer $args }
