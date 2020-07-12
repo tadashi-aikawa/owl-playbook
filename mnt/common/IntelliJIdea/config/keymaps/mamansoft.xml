@@ -184,6 +184,9 @@
   <action id="MoveTabRight">
     <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="v" />
   </action>
+  <action id="MypyCurrentFileAction">
+    <keyboard-shortcut first-keystroke="shift ctrl l" />
+  </action>
   <action id="NextDiff">
     <keyboard-shortcut first-keystroke="shift alt j" />
   </action>
