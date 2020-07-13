@@ -89,8 +89,8 @@ function sort() { $input | uutils sort $args}
 
 # 代替コマンドを使用
 Set-Alias grep rg
-function ls() { exa --icons $args }
-function tree() { exa --icons -T $args}
+function ls() { uutils ls $args }
+function tree() { exa --icons auto -T $args}
 
 # Linuxコマンドのエイリアス
 function ll() { uutils ls -l $args}
@@ -103,6 +103,8 @@ function ll() { uutils ls -l $args}
 function cdg() { gowl list | fzf | cd }
 function cdr() { fd -H -t d -E .git -E node_modules | fzf | cd }
 function cdz() { z -l | oss | select -skip 3 | % { $_ -split " +" } | sls -raw '^[a-zA-Z].+' | fzf | cd }
+function buscdd() { ls -1 C:\\Work\\treng\\Bus\\data | rg .*$Arg1.*_xrf | fzf | % { cd C:\\Work\\treng\\Bus\\data\\$_ } }
+function buscdw() { ls -1 C:\\Work\\treng\\Bus\\work | rg .*$Arg1.*_xrf | fzf | % { cd C:\\Work\\treng\\Bus\\work\\$_ } }
 
 # vim
 function vimr() { fd -H -E .git -E node_modules | fzf | % { vim $_ } }
