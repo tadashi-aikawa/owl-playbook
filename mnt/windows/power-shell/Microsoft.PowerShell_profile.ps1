@@ -90,7 +90,7 @@ function sort() { $input | uutils sort $args}
 # 代替コマンドを使用
 Set-Alias grep rg
 function ls() { uutils ls $args }
-function tree() { exa --icons auto -T $args}
+function tree() { exa --icons -T $args}
 
 # Linuxコマンドのエイリアス
 function ll() { uutils ls -l $args}
