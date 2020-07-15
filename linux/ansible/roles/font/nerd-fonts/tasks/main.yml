@@ -1,0 +1,7 @@
+- import_role: { name: check/absent }
+  vars:
+    target: powerline
+    command: 'ls ~/.local/share/fonts/NerdFonts'
+
+- import_tasks: install.yml
+  when: powerline_is_absent

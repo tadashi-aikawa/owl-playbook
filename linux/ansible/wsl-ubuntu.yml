@@ -77,3 +77,8 @@
     - role: clitool/zstd
     - role: clitool/z
 
+- name: "=============== 7. Font ==============="
+  <<: *base
+  roles:
+    - role: font/nerd-fonts
+
