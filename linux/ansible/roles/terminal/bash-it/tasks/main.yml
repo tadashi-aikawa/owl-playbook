@@ -1,0 +1,7 @@
+- import_role: { name: check/absent }
+  vars:
+    target: bash_it
+    command: 'ls ~/.bash_it'
+
+- import_tasks: install.yml
+  when: bash_it_is_absent

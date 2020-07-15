@@ -20,9 +20,10 @@
 - name: "=============== 2. Terminal setup ==============="
   <<: *base
   roles:
+    # !! bash-it provisioning shell replace .bashrc
+    - role: terminal/bash-it
     - role: link/bash
     - role: link/input
-    - role: terminal/pureline-inspired
     - role: terminal/fzf
     - role: terminal/tmux
     - role: terminal/tmux/theme

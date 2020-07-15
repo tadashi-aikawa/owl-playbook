@@ -32,9 +32,6 @@ _fzf_compgen_dir() {
   fd --type d -HL --exclude ".git" . "$1"
 }
 
-
-source ~/pureline-inspired/pureline ~/pureline-inspired/.pureline.conf
-
 # alias
 alias cdr='cd $(fd -H -t d | fzf)'
 alias cdz='cd $(z -l | cut -c 12- | fzf)'
@@ -69,4 +66,5 @@ alias vimz='vim $(grep "^>" ~/.viminfo | cut -c 3- | sed "s@~@$HOME@" | fzf)'
 
 # pyenv
 eval "$(pyenv init -)"
+
 
