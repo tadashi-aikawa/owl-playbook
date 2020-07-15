@@ -1,6 +1,6 @@
 # shellcheck disable=SC1090,SC2012
 
-export PATH="$PATH:/usr/local/go/bin:~/go/bin:~/.pyenv/bin"
+export PATH="$PATH:/usr/local/go/bin:~/go/bin:~/.pyenv/bin:~/.local/share/umake/ide/idea/bin"
 export GOPATH="$HOME/go"
 
 # クリップボード連携 (For WSL2)
