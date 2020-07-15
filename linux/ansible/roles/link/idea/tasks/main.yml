@@ -1,35 +1,36 @@
 - name: Directory link
   file:
-    src: '~/{{ intellij_dir }}'
-    dest: ~/{{ intellij_fix_dir }}
+    src: '{{ intellij_dir }}'
+    dest: '~/{{ intellij_fix_dir }}'
     state: link
     force: yes
 
-- name: Create directories for links
+- name: Create config symlinks
   file:
-    path: ~/{{ intellij_fix_dir }}/{{ item }}
-    state: directory
-    mode: 0775
-  with_items:
-    - config/colors
-    - config/keymaps
-
-- name: Create symlinks
-  file:
-    src: '{{ common_mnt }}/{{ intellij_fix_dir }}/{{ item }}'
-    dest: ~/{{ intellij_fix_dir }}/{{ item }}
+    src: '{{ common_mnt }}/{{ intellij_fix_dir }}/config/{{ item }}'
+    dest: '~/{{ intellij_fix_dir }}/{{ item }}'
     state: link
     force: yes
   with_items:
-    - config/colors/mamansoft.icls
-    - config/keymaps/mamansoft.xml
-    - config/options/editor.xml
-    - config/options/colors.scheme.xml
-    - config/options/ide.general.xml
-    - config/options/keymap.xml
-    - config/options/markdown.xml
-    - config/options/vcs.xml
-    - config/templates
+    - colors
+    - keymaps
+    - templates
+    - codestyles
+    - inspection
+
+- name: Create options symlinks
+  file:
+    src: '{{ common_mnt }}/{{ intellij_fix_dir }}/config/options/{{ item }}'
+    dest: '~/{{ intellij_fix_dir }}/options/{{ item }}'
+    state: link
+    force: yes
+  with_items:
+    - editor.xml
+    - colors.scheme.xml
+    - ide.general.xml
+    - keymap.xml
+    - markdown.xml
+    - vcs.xml
 
 - name: Vim
   file:
