@@ -5,6 +5,8 @@
     state: link
     force: yes
 
-- lineinfile:
+- name: Add to loading .bashrc.org
+  lineinfile:
     path: ~/.bashrc
     line: '. ~/.bashrc.org'
+
