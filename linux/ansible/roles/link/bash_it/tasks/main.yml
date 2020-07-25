@@ -1,0 +1,6 @@
+- name: Create symlinks
+  file:
+    src: '{{ ubuntu_mnt }}/.bash_it/themes/maman/maman.theme.bash'
+    dest: ~/.bash_it/themes/maman/maman.theme.bash
+    state: link
+    force: yes

@@ -22,7 +22,8 @@
   <<: *base
   roles:
     # !! bash-it provisioning shell replace .bashrc
-    - role: terminal/bash-it
+    - role: terminal/bash_it
+    - role: link/bash_it
     - role: link/bash
     - role: link/input
     - role: terminal/fzf
