@@ -2,6 +2,8 @@
 scoop bucket add versions
 # Add extras
 scoop bucket add extras
+# Add JetBrains
+scoop bucket jetbrains
 
 # CLI Tools
 scoop install `
@@ -29,7 +31,9 @@ scoop install `
   dbeaver `
   postman `
   keypirinha `
-  ditto
+  ditto `
+  IntelliJ-IDEA-Ultimate `
+  vscode
   # slack
 
 # Language / Framework / MiddleWare
