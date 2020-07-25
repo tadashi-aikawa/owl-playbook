@@ -20,12 +20,15 @@ lubuntu-jp: ## Run lubuntu-jp
 ubuntu: ## Run ubuntu
 	@ansible-playbook -K -i local ubuntu.yml
 
+wsl-ubuntu: ## Run ubuntu for WSL
+	@ansible-playbook -K -i local wsl-ubuntu.yml
+
 lubuntu-jp-tmp: ## Run lubuntu-jp with only tmp tags
 	@ansible-playbook -K --tags tmp -i local lubuntu-jp.yml
 
 ubuntu-tmp: ## Run ubuntu with only tmp tags
 	@ansible-playbook -K --tags tmp -i local ubuntu.yml
 
-wsl-ubuntu: ## Run ubuntu for WSL
-	@ansible-playbook -K -i local wsl-ubuntu.yml
+wsl-ubuntu-tmp: ## Run ubuntu for WSL with only tmp tags
+	@ansible-playbook -K --tags tmp -i local wsl-ubuntu.yml
 
