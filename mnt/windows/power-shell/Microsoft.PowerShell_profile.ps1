@@ -141,4 +141,5 @@ function e() { explorer $args }
 # ffmpeg
 function remp4() { ffmpeg -i $args[0] -vcodec libx264 -crf 20 $args[1] }
 function togif() { ffmpeg -i $args[0] -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" $args[1] }
+function togif360() { ffmpeg -i $args[0] -filter_complex "[0:v]scale=360:-1 [s]; [s] split [a][b];[a] palettegen [p];[b][p] paletteuse" $args[1] }
 function resize1280() { ffmpeg -i $args[0] -vf scale=1280:-1 $args[1] }
