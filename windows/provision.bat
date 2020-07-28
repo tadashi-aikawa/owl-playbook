@@ -9,10 +9,11 @@ set SCOOP="%USERPROFILE%\scoop"
 
 rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
+:tmp
 
 call :******************** IntelliJ IDEA
 
-set IDEA_DIR=IntelliJIdea2020.1
+set IDEA_DIR=IntelliJIdea2020.2
 
 set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\IntelliJIdea\config
 set IDEA_CONFIG_DIR=%ROAMING%\JetBrains\%IDEA_DIR%
@@ -56,11 +57,9 @@ call :link_file "%LOCAL%\Microsoft\Windows Terminal\settings.json" %TERMINAL_ORI
 
 call :******************** Keypirinha
 
-:tmp
 set KEYPIRINHA_ORIGIN_DIR=%WINDOWS_MNT%\keypirinha
 
 call :link_file %SCOOP%\persist\keypirinha\portable\Profile\User\Keypirinha.ini %KEYPIRINHA_ORIGIN_DIR%\User\Keypirinha.ini
-goto :end
 
 
 call :******************** git config

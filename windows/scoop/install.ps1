@@ -32,7 +32,6 @@ scoop install `
   postman `
   keypirinha `
   ditto `
-  IntelliJ-IDEA-Ultimate `
   vscode
   # slack
 
