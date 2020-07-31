@@ -1,0 +1,154 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="CheckStyle-IDEA">
+        <option name="configuration">
+          <map>
+            <entry key="checkstyle-version" value="8.34" />
+            <entry key="copy-libs" value="true" />
+            <entry key="location-0" value="BUNDLED:(bundled):Sun Checks" />
+            <entry key="location-1" value="BUNDLED:(bundled):Google Checks" />
+            <entry key="scan-before-checkin" value="false" />
+            <entry key="scanscope" value="JavaOnly" />
+            <entry key="suppress-errors" value="false" />
+          </map>
+        </option>
+      </component>
+      <component name="EslintConfiguration">
+        <option name="fix-on-save" value="true" />
+      </component>
+      <component name="InspectionProjectProfileManager">
+        <option name="PROJECT_PROFILE" value="mamansoft" />
+        <option name="USE_PROJECT_PROFILE" value="false" />
+        <version value="1.0" />
+      </component>
+      <component name="PrettierConfiguration">
+        <option name="myRunOnSave" value="true" />
+        <option name="myRunOnReformat" value="true" />
+        <option name="myFilesPattern" value="{**/*,*}.{js,ts,jsx,tsx,vue,json}" />
+      </component>
+      <component name="ProjectInspectionProfilesVisibleTreeState">
+        <entry key="Project Default">
+          <profile-state>
+            <expanded-state>
+              <State />
+              <State>
+                <id>Assignment issuesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Async code and promisesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Bitwise operation issuesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Code quality toolsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Code style issuesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Control flow issuesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>DOM issuesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Data flowJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>ECMAScript 6 migration aidsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Flow type checkerJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Function metricsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>GeneralJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Imports and dependenciesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>JavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Naming conventionsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Node.jsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Potentially confusing code constructsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Potentially undesirable code constructsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Probable bugsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Switch statement issuesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Try statement issuesJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>TypeScriptJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Unit testingJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Unused symbolsJavaScript and TypeScript</id>
+              </State>
+              <State>
+                <id>Validity issuesJavaScript and TypeScript</id>
+              </State>
+            </expanded-state>
+            <selected-state>
+              <State>
+                <id>Android</id>
+              </State>
+            </selected-state>
+          </profile-state>
+        </entry>
+      </component>
+      <component name="ProjectViewState">
+        <option name="showLibraryContents" value="true" />
+      </component>
+      <component name="PropertiesComponent">
+        <property name="node.js.path.for.package.eslint" value="project" />
+        <property name="node.js.path.for.package.standard" value="project" />
+        <property name="node.js.path.for.package.tslint" value="project" />
+        <property name="node.js.selected.package.eslint" value="(autodetect)" />
+        <property name="node.js.selected.package.standard" value="" />
+        <property name="node.js.selected.package.tslint" value="(autodetect)" />
+        <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,vue,json}" />
+        <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\tadashi-aikawa\scoop\persist\nodejs-lts\bin\node_modules\prettier" />
+        <property name="run.prettier.on.save" value="true" />
+        <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+      </component>
+      <component name="YarnPnpManager">
+        <pnp-files />
+      </component>
+      <component name="masterDetails">
+        <states>
+          <state key="ScopeChooserConfigurable.UI">
+            <settings>
+              <splitter-proportions>
+                <option name="proportions">
+                  <list>
+                    <option value="0.2" />
+                  </list>
+                </option>
+              </splitter-proportions>
+            </settings>
+          </state>
+        </states>
+      </component>
+    </defaultProject>
+  </component>
+</application>

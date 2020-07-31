@@ -8,3 +8,4 @@ options\vcs.xml
 options\ui.lnf.xml
 options\watcherDefaultTasks.xml
 options\terminal.xml
+options\project.default.xml
