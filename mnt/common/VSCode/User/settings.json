@@ -4,7 +4,7 @@
   // -------------------------------------
   "editor.fontFamily": "Source Code Pro for Powerline",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "Default High Contrast",
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#3fd6fc79",
     "editor.selectionHighlightBackground": "#3fd6fc79"
@@ -63,7 +63,7 @@
   "vim.easymotionMarkerFontSize": "24",
   "vim.easymotionMarkerYOffset": 5,
   "vim.enableNeovim": true,
-  "vim.neovimPath": "C:\\Users\\syoum\\scoop\\shims\\nvim.exe",
+  // "vim.neovimPath": "C:\\Users\\syoum\\scoop\\shims\\nvim.exe",
   "vim.normalModeKeyBindings": [
     {
       "before": ["<C-k>"],
