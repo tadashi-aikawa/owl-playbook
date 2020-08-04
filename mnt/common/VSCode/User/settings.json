@@ -2,7 +2,7 @@
   // -------------------------------------
   // 見た目
   // -------------------------------------
-  "editor.fontFamily": "Source Code Pro for Powerline",
+  "editor.fontFamily": "SauceCodePro NF",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Default High Contrast",
   "workbench.colorCustomizations": {
@@ -15,8 +15,8 @@
   "editor.minimap.renderCharacters": false,
   "editor.minimap.enabled": true,
   "breadcrumbs.enabled": true,
-  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "terminal.integrated.fontFamily": "SauceCodePro NF",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": true,
   // -------------------------------------
