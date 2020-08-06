@@ -38,6 +38,9 @@
   "[csv]": {
     "files.autoGuessEncoding": true
   },
+  "[tsv]": {
+    "files.autoGuessEncoding": true
+  },
   "[bat]": {
     "files.encoding": "shiftjis"
   },
