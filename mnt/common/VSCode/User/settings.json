@@ -35,11 +35,14 @@
   "[plaintext]": {
     "files.autoGuessEncoding": true
   },
-  "files.associations": {
-    "Vagrantfile": "ruby"
+  "[csv]": {
+    "files.autoGuessEncoding": true
   },
   "[bat]": {
     "files.encoding": "shiftjis"
+  },
+  "files.associations": {
+    "Vagrantfile": "ruby"
   },
   // -------------------------------------
   // ターミナル
