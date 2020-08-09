@@ -129,7 +129,12 @@
         <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,vue,json}" />
         <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\tadashi-aikawa\scoop\persist\nodejs-lts\bin\node_modules\prettier" />
         <property name="run.prettier.on.save" value="true" />
-        <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+        <property name="settings.editor.selected.configurable" value="language.rust.rustfmt" />
+      </component>
+      <component name="RustProjectSettings">
+        <option name="externalLinter" value="Clippy" />
+        <option name="runExternalLinterOnTheFly" value="true" />
+        <option name="runRustfmtOnSave" value="true" />
       </component>
       <component name="YarnPnpManager">
         <pnp-files />
