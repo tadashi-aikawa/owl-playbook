@@ -16,7 +16,7 @@
   "editor.minimap.enabled": true,
   "breadcrumbs.enabled": true,
   "terminal.integrated.fontFamily": "SauceCodePro NF",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": true,
   // -------------------------------------
