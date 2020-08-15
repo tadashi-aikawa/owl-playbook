@@ -31,6 +31,10 @@
     - keymap.xml
     - markdown.xml
     - vcs.xml
+    - code.style.schemes.xml
+    - project.default.xml
+    - ui.lnf.xml
+    - watcherDefaultTasks.xml
 
 - name: Vim
   file:

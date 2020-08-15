@@ -14,6 +14,9 @@
     <option name="IS_INNER_WHITESPACES_SHOWN" value="false" />
     <option name="ADDITIONAL_PAGE_AT_BOTTOM" value="true" />
   </component>
+  <component name="InlayHintsSettings">
+    <option name="lastViewedProviderKeyId" value="parameter.hints.old" />
+  </component>
   <component name="XmlEditorOptions">
     <option name="automaticallyInsertClosingTag" value="false" />
   </component>
