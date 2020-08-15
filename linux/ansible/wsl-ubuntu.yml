@@ -6,7 +6,7 @@
   vars:
     ubuntu_mnt: ~/owl-playbook/mnt/linux/ubuntu
     common_mnt: ~/owl-playbook/mnt/common
-    intellij_dir: ~/.config/JetBrains/IntelliJIdea2020.1
+    intellij_dir: ~/.config/JetBrains/IntelliJIdea2020.2
 
 
 - name: "=============== 1. Core setup ==============="
@@ -39,7 +39,6 @@
 - name: "=============== 4. Editor/IDE ==============="
   <<: *base
   roles:
-    - role: editor/idea
     - role: link/idea
     - role: editor/vim
     - role: editor/neovim
