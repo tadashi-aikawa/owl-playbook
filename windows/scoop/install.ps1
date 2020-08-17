@@ -18,6 +18,7 @@ scoop install `
   fx `
   less `
   ripgrep `
+  delta `
   lsd `
   make `
   ffmpeg `
