@@ -59,7 +59,7 @@
     - role: clitool/bat
     - role: clitool/bats
     - role: clitool/ctags
-    - role: clitool/diff-so-fancy
+    - role: clitool/delta
     - role: clitool/docui
     - role: clitool/docker-compose
     - role: clitool/exa

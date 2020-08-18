@@ -1,0 +1,11 @@
+- name: Install
+  unarchive:
+    src: https://github.com/dandavison/delta/releases/download/{{ delta_version }}/delta-{{ delta_version }}-x86_64-unknown-linux-musl.tar.gz
+    dest: /tmp
+    remote_src: yes
+
+- name: Install
+  shell: mv delta-{{ delta_version }}-x86_64-unknown-linux-musl/delta /usr/bin/delta
+  args:
+    chdir: /tmp
+
