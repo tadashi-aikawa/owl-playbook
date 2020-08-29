@@ -66,6 +66,7 @@
     { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
     { "command": "paste", "keys": "ctrl+v" },
     { "command": "find", "keys": "ctrl+alt+f" },
+    { "command": "commandPalette", "keys": "ctrl+shift+p" },
 
     // 画面スクロール
     { "command": "scrollUp", "keys": "shift+up" },
@@ -80,16 +81,47 @@
     { "command": "prevTab", "keys": "alt+h" },
 
     // ペインの分割
-    { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "keys": "alt+shift+d"
+    },
     // ペイン移動
-    { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+ctrl+j" },
-    { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+ctrl+h" },
-    { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+ctrl+l" },
-    { "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+ctrl+k" },
+    {
+      "command": { "action": "moveFocus", "direction": "down" },
+      "keys": "alt+ctrl+j"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "left" },
+      "keys": "alt+ctrl+h"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "right" },
+      "keys": "alt+ctrl+l"
+    },
+    {
+      "command": { "action": "moveFocus", "direction": "up" },
+      "keys": "alt+ctrl+k"
+    },
     // ペインサイズ変更
-    { "command": { "action": "resizePane", "direction": "down" }, "keys": "alt+shift+j" },
-    { "command": { "action": "resizePane", "direction": "left" }, "keys": "alt+shift+h" },
-    { "command": { "action": "resizePane", "direction": "right" }, "keys": "alt+shift+l" },
-    { "command": { "action": "resizePane", "direction": "up" }, "keys": "alt+shift+k" }
+    {
+      "command": { "action": "resizePane", "direction": "down" },
+      "keys": "alt+shift+j"
+    },
+    {
+      "command": { "action": "resizePane", "direction": "left" },
+      "keys": "alt+shift+h"
+    },
+    {
+      "command": { "action": "resizePane", "direction": "right" },
+      "keys": "alt+shift+l"
+    },
+    {
+      "command": { "action": "resizePane", "direction": "up" },
+      "keys": "alt+shift+k"
+    }
   ]
 }
