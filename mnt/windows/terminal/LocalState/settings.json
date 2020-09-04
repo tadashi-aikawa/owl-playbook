@@ -33,15 +33,6 @@
         "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\power-shell\\fukurou.jpg"
       },
       // WSLは絵文字を入力したいとき
-      {
-        "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-        "source": "Windows.Terminal.Wsl",
-        "startingDirectory": "//wsl$/Ubuntu/home/tadashi-aikawa",
-        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\wsl\\ubuntu.png",
-        "backgroundImageAlignment": "bottomRight",
-        "backgroundImageStretchMode": "none",
-        "backgroundImageOpacity": 0.4
-      },
       // 『Git Bash』はbashスクリプトの動作確認用に使うことがある
       {
         "guid": "{cbaea444-ca1f-4125-bb6f-5c3f1201b568}",
@@ -53,6 +44,17 @@
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageStretchMode": "none",
         "backgroundImageOpacity": 0.75
+      },
+      {
+        "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+        "hidden": false,
+        "name": "Ubuntu-20.04",
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "//wsl$/Ubuntu/home/tadashi-aikawa",
+        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\wsl\\ubuntu.png",
+        "backgroundImageAlignment": "bottomRight",
+        "backgroundImageStretchMode": "none",
+        "backgroundImageOpacity": 0.4
       }
     ]
   },
