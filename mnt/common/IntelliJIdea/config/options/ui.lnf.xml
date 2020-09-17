@@ -1,5 +1,6 @@
 <application>
   <component name="UISettings">
     <option name="MARK_MODIFIED_TABS_WITH_ASTERISK" value="true" />
+    <option name="MAX_LOOKUP_WIDTH2" value="891" />
   </component>
 </application>
