@@ -1,6 +1,7 @@
 <keymap version="1" name="mamansoft" parent="Eclipse">
   <action id="AceAction" />
   <action id="AceTargetAction" />
+  <action id="ActivateFavoritesToolWindow" />
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl j" />
   </action>
