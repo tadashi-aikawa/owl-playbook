@@ -50,7 +50,7 @@
         "hidden": false,
         "name": "Ubuntu-20.04",
         "source": "Windows.Terminal.Wsl",
-        "startingDirectory": "//wsl$/Ubuntu/home/tadashi-aikawa",
+        "startingDirectory": "//wsl$/Ubuntu-20.04/home/tadashi-aikawa",
         "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\wsl\\ubuntu.png",
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageStretchMode": "none",
