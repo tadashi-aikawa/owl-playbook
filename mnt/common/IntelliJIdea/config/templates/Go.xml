@@ -1,0 +1,8 @@
+<templateSet group="Go">
+  <template name="ifer" value="if err != nil {&#10;  return $RET$, nil&#10;}" description="If error" toReformat="true" toShortenFQNames="true">
+    <variable name="RET" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
