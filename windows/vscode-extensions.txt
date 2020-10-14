@@ -28,5 +28,4 @@ sgryjp.japanese-word-handler
 shardulm94.trailing-spaces
 shuworks.vscode-table-formatter
 slevesque.vscode-autohotkey
-taichi.vscode-textlint
 vscodevim.vim
