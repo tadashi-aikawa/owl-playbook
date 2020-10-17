@@ -149,3 +149,9 @@ function resize1280() { ffmpeg -i $args[0] -vf scale=1280:-1 $args[1] }
 #-----------------------------------------------------
 
 $env:GO111MODULE = "on"
+
+#-----------------------------------------------------
+# Execution PATHs
+#-----------------------------------------------------
+
+$env:PATH += ";C:\Users\syoum\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\203.4818.26\bin"
