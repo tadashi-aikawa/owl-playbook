@@ -60,6 +60,7 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
+  "vim.highlightedyank.enable": true,
   "vim.leader": "<space>",
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "rgba(0, 0, 0, 0.7)",
