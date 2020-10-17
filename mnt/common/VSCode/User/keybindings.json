@@ -301,10 +301,6 @@
     "command": "workbench.view.search"
   },
   {
-    "key": "ctrl+j s",
-    "command": "workbench.view.scm"
-  },
-  {
     "key": "ctrl+j w",
     "command": "workbench.view.explorer"
   },
@@ -364,15 +360,19 @@
     "command": "git-graph.view"
   },
   // ----------------
-  // Ctrl + , (ファイルの性質変更)
+  // Ctrl + , (ファイルの性質変更, git)
   // ----------------
   {
-    "key": "ctrl+, l",
-    "command": "workbench.action.editor.changeLanguageMode"
+    "key": "ctrl+, c",
+    "command": "workbench.view.scm"
   },
   {
     "key": "ctrl+, e",
     "command": "workbench.action.editor.changeEncoding"
+  },
+  {
+    "key": "ctrl+, l",
+    "command": "workbench.action.editor.changeLanguageMode"
   },
   // ----------------
   // 競合による無効化
