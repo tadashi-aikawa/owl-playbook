@@ -66,11 +66,16 @@
   "vim.easymotionMarkerBackgroundColor": "rgba(0, 0, 0, 0.5)",
   "vim.easymotionMarkerForegroundColorOneChar": "lime",
   "vim.enableNeovim": true,
+  "vim.replaceWithRegister": true,
   // "vim.neovimPath": "C:\\Users\\syoum\\scoop\\shims\\nvim.exe",
   "vim.normalModeKeyBindings": [
     {
       "before": ["<C-k>"],
       "after": ["g", "b"]
+    },
+    {
+      "before": ["_"],
+      "after": ["g", "r"]
     },
     {
       "before": ["<C-o>"],
@@ -97,6 +102,10 @@
     {
       "before": ["<C-k>"],
       "after": ["g", "b"]
+    },
+    {
+      "before": ["_"],
+      "after": ["g", "r"]
     }
   ],
   "vim.disableExtension": false,
