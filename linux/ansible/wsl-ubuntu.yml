@@ -44,6 +44,7 @@
     - role: editor/vim
     - role: editor/neovim
     - role: link/vim
+    - role: editor/vim/vundle
 
 - name: "=============== 5. Language ==============="
   <<: *base
