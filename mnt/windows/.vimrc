@@ -36,10 +36,14 @@ set noshowmode
 " 折りたたみを無効
 set nofoldenable
 " Insertモードのときカーソルの形状を変更
-let &t_ti.="\e[2 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[2 q"
-let &t_te.="\e[0 q"
+let &t_SI="\<CSI>5\ q"
+let &t_SR="\<CSI>7\ q"
+let &t_EI="\<CSI>2\ q"
+" https://github.com/vim/vim/issues/6576 が解決したら上記の代わりにコメントアウトを解除する
+"let &t_ti.="\e[2 q"
+"let &t_SI.="\e[5 q"
+"let &t_EI.="\e[2 q"
+"let &t_te.="\e[0 q"
 
 " ---------------------------------------------------
 "  操作
