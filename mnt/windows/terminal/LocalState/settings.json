@@ -89,7 +89,7 @@
 
     // タブ
     { "command": "newTab", "keys": "ctrl+t" },
-    { "command": "closeTab", "keys": "ctrl+w" },
+    { "command": "closeTab", "keys": "alt+w" },
     { "command": "nextTab", "keys": "alt+l" },
     { "command": "prevTab", "keys": "alt+h" },
 
