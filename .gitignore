@@ -6,3 +6,6 @@
 vim_settings.xml
 .netrwhist
 
+# secret
+.secret
+

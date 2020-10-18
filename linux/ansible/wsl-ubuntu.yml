@@ -9,6 +9,7 @@
     intellij_dir: ~/.config/JetBrains/IntelliJIdea2020.2
 
 
+
 - name: "=============== 1. Core setup ==============="
   <<: *base
   roles:
