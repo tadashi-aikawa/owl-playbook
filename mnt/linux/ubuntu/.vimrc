@@ -54,6 +54,13 @@ let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ }
 
+" fuzzy検索
+Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_map = '<C-j>f'      " ファイル検索
+nnoremap <C-j>e :CtrlPMRU<CR>   " 最近のファイル検索
+set wildignore+=*/node_modules/*,*.so,*.swp,*.zip 
+
+
 call vundle#end()
 "<<<<<<<<<<<<<<<<<<
 runtime macros/sandwich/keymap/surround.vim
