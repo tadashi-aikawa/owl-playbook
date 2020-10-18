@@ -1,3 +1,64 @@
+" vimとの互換性を外す
+set nocompatible
+
+" ---------------------------------------------------
+"  Vundle
+" ---------------------------------------------------
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+">>>>>>>>>>>>>>>>>>
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" Theme
+Plugin 'morhetz/gruvbox'
+
+" yank範囲のハイライト
+Plugin 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = 300
+
+" 囲まれているものの操作
+Plugin 'machakann/vim-sandwich'
+
+" 画面内瞬間移動
+Plugin 'easymotion/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+nmap s <Plug>(easymotion-overwin-f2)
+
+" ブラックホールレジスト+putの省略
+Plugin 'vim-scripts/ReplaceWithRegister'
+nmap _ <Plug>ReplaceWithRegisterOperator
+
+" 全体が範囲のtext-object
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-entire'
+
+" コメント化
+Plugin 'tpope/vim-commentary'
+
+" マルチカーソル
+Plugin 'mg979/vim-visual-multi'
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-k>'
+let g:VM_maps['Find Subword Under'] = '<C-k>'
+
+" Git
+Plugin 'airblade/vim-gitgutter'
+set updatetime=100
+
+" Line
+Plugin 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
+
+call vundle#end()
+"<<<<<<<<<<<<<<<<<<
+runtime macros/sandwich/keymap/surround.vim
+filetype plugin indent on
+
 " ---------------------------------------------------
 "  パフォーマンス
 " ---------------------------------------------------
@@ -13,6 +74,7 @@ set ttyfast
 
 " Color scheme
 syntax on
+colorscheme gruvbox
 
 " xterm-Color256用. screen系の場合は外す必要あり
 "set termguicolors
@@ -36,8 +98,6 @@ let &t_te.="\e[0 q"
 " " TABなどを可視化
 set list
 set listchars=tab:»˙,trail:˙,eol:↲,extends:»,precedes:«,nbsp:%
-" タブを常に表示する
-set showtabline=2
 
 " Python
 augroup python
@@ -52,8 +112,6 @@ augroup END
 "  操作
 " ---------------------------------------------------
 
-" vimとの互換性を外す
-set nocompatible
 " バッファを未保存でも閉じる
 set hidden
 " バックスペースの有効化
