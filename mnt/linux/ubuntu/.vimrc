@@ -47,6 +47,10 @@ let g:VM_maps['Find Subword Under'] = '<C-k>'
 " Git
 Plugin 'airblade/vim-gitgutter'
 set updatetime=100
+let g:gitgutter_preview_win_floating = 1
+nmap ghp <Plug>(GitGutterPreviewHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
 
 " Line
 Plugin 'itchyny/lightline.vim'
