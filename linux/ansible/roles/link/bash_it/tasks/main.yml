@@ -1,3 +1,9 @@
+- name: Exists dest directory
+  file:
+    dest: ~/.bash_it/themes/maman
+    state: directory
+    force: yes
+
 - name: Create symlinks
   file:
     src: '{{ ubuntu_mnt }}/.bash_it/themes/maman/maman.theme.bash'
