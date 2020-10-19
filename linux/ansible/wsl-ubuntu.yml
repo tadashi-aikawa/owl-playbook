@@ -40,7 +40,7 @@
 - name: "=============== 4. Editor/IDE ==============="
   <<: *base
   roles:
-    - role: link/idea
+    # - role: link/idea
     - role: editor/vim
     - role: editor/neovim
     - role: link/vim
