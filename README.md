@@ -10,9 +10,15 @@ WindowsとLinuxの環境構築用スクリプト群です。
 $ git clone git@github.com:tadashi-aikawa/owl-playbook.git
 ```
 
+### 注意
 
-Windows setup
--------------
+* 現在サポートしているLinux環境はUbuntu on WSL2だけです
+* ubuntuやlubuntuはサポートから外しました
+    * 過去のコミットに情報は残っていますので必要あれば参考にしてください
+
+
+💻 Windows setup
+----------------
 
 ### 事前準備
 
@@ -49,58 +55,22 @@ Windows setup
 - [ ] `ps1`ファイルに置き換えたい
 
 
-Ubuntu simple setup
--------------------
+🐧 Linux setup (WSL2)
+---------------------
 
-### 前提
+WindowsのUbuntu on WSL2にのみ対応しています。
 
-以下がインストールされていること
+### 事前準備
 
-* [Vagrant](https://www.vagrantup.com/)
-  * I use `2.1.2`
-* [Virtualbox](https://www.virtualbox.org/)
-  * I use `5.2.18 r124319`
+以下の記事などを参考にAnsibleを実行するための環境構築をしてください。
 
-本プロジェクトでWindowsのセットアップをしていればインストールされています。
-
-
-### Boxの追加
-
-`linux/lubuntu-base`をベースにして作成した`lubuntu-jp.box`を追加します。
-
-```
-$ vagrant box add "tadashi-aikawa/lubuntu-jp" lubuntu-jp.box
-```
-
-ベースイメージの作り方は以下を参考にしてください。
-
-https://blog.mamansoft.net/2019/01/25/clean-ubuntu-infra/
-
-
-### イメージの作成
-
-`linux\lubuntu-jp`の中で以下コマンドを実行します。
-
-```
-$ vagrant up --provision
-```
-
+* [WSL2でつくる快適なUbuntu環境](https://blog.mamansoft.net/2020/07/02/efficient-wsl2-with-ubuntu/)
+* [WSL2でつくる快適なUbuntu環境Ⅱ](https://blog.mamansoft.net/2020/07/26/efficient-wsl2-with-ubuntu2/)
 
 ### 環境構築
 
-まずはイメージにsshログインします。
+`linux/ansible`ディレクトリで以下コマンドを実行します。
 
 ```
-$ vagrant ssh
-# vagrant ssh-configの情報を~/.ssh/configに記載してもOK
+$ make wsl
 ```
-
-Ansibleを実行して環境を構築します。
-
-```
-$ cd /mnt-ansible
-$ make lubuntu-jp
-```
-
-TODO: 1度目の実行が必ずbash-language-serverで落ちるのを修正 (インストール後、.bashrcに書かれた環境変数が再設定されないため)
-
