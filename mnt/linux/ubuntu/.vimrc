@@ -66,6 +66,7 @@ set wildignore+=*/node_modules/*,*.so,*.swp,*.zip
 
 " NerdTree
 Plugin 'preservim/nerdtree'
+let NERDTreeShowHidden=1 
 nnoremap <C-j>w :NERDTreeFind<cr>
 
 
