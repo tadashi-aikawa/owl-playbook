@@ -4,11 +4,7 @@
   // -------------------------------------
   "editor.fontFamily": "SauceCodePro NF",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Default High Contrast",
-  "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#3fd6fc79",
-    "editor.selectionHighlightBackground": "#3fd6fc79"
-  },
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
   "window.zoomLevel": 0,
   "editor.minimap.showSlider": "always",
@@ -60,6 +56,7 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
+  "vim.searchHighlightColor": "#070",
   "vim.highlightedyank.enable": true,
   "vim.leader": "<space>",
   "vim.easymotion": true,
