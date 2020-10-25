@@ -7,6 +7,11 @@
   <inspection_tool class="CommaExpressionJS" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="ConstantConditionalExpressionJS" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="ContinueOrBreakFromFinallyBlockJS" enabled="false" level="WARNING" enabled_by_default="false" />
+  <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+    <Languages>
+      <language minSize="46" name="Python" />
+    </Languages>
+  </inspection_tool>
   <inspection_tool class="ES6AwaitOutsideAsyncFunction" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="ES6BindWithArrowFunction" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="ES6CheckImport" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
