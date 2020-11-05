@@ -57,6 +57,7 @@
   "vim.hlsearch": true,
   "vim.visualstar": true,
   "vim.searchHighlightColor": "#070",
+  "vim.camelCaseMotion.enable": true,
   "vim.highlightedyank.enable": true,
   "vim.leader": "<space>",
   "vim.easymotion": true,
@@ -66,6 +67,10 @@
   "vim.replaceWithRegister": true,
   // "vim.neovimPath": "C:\\Users\\syoum\\scoop\\shims\\nvim.exe",
   "vim.normalModeKeyBindings": [
+    {
+      "before": ["]"],
+      "after": ["<leader>"]
+    },
     {
       "before": ["<C-k>"],
       "after": ["g", "b"]
@@ -96,6 +101,10 @@
     }
   ],
   "vim.visualModeKeyBindings": [
+    {
+      "before": ["]"],
+      "after": ["<leader>"]
+    },
     {
       "before": ["<C-k>"],
       "after": ["g", "b"]
