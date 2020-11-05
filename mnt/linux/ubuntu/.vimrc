@@ -69,6 +69,9 @@ Plugin 'preservim/nerdtree'
 let NERDTreeShowHidden=1 
 nnoremap <C-j>w :NERDTreeFind<cr>
 
+" CamelCaseMotion
+Plugin 'bkad/CamelCaseMotion'
+let g:camelcasemotion_key = ']'
 
 call vundle#end()
 "<<<<<<<<<<<<<<<<<<
