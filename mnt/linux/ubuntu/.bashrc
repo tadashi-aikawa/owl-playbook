@@ -39,6 +39,10 @@ _fzf_compgen_dir() {
 }
 
 # alias
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 alias cdr='cd $(fd -H -t d | fzf)'
 alias cdz='cd $(z -l | cut -c 12- | fzf)'
 alias cdg='cd $(gowl list | fzf)'
