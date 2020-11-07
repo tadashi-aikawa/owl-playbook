@@ -75,6 +75,11 @@
 
   // 👀 https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/key-bindings
   "keybindings": [
+    // unbind
+    { "command": "unbound", "keys": "ctrl+," },
+
+    // 設定
+    { "command": "openSettings", "keys": "ctrl+shift+s" },
     // 基本操作
     { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
     { "command": "paste", "keys": "ctrl+v" },
