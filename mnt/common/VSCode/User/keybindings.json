@@ -27,7 +27,7 @@
     "command": "workbench.action.closeActiveEditor"
   },
   {
-    "key": "ctrl+alt+z",
+    "key": "ctrl+j ctrl+u",
     "command": "git.revertSelectedRanges"
   },
   {
@@ -131,6 +131,11 @@
     "key": "ctrl+j ctrl+k",
     "command": "workbench.action.compareEditor.previousChange",
     "when": "textCompareEditorVisible"
+  },
+  {
+    "key": "ctrl+j ctrl+d",
+    "command": "editor.action.dirtydiff.next",
+    "when": "editorTextFocus"
   },
   {
     "key": "alt+h",
