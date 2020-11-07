@@ -74,14 +74,25 @@ let g:ctrlp_map = '<C-j>f'      " ファイル検索
 nnoremap <C-j>e :CtrlPMRU<CR>   " 最近のファイル検索
 set wildignore+=*/node_modules/*,*.so,*.swp,*.zip 
 
-" NerdTree
-Plugin 'preservim/nerdtree'
-let NERDTreeShowHidden=1 
-nnoremap <C-j>w :NERDTreeFind<cr>
-
 " CamelCaseMotion
 Plugin 'bkad/CamelCaseMotion'
 let g:camelcasemotion_key = ']'
+
+" Fern
+Plugin 'lambdalisue/fern.vim'
+nnoremap <C-j>w :Fern %:h -drawer -width=50<cr>
+Plugin 'lambdalisue/nerdfont.vim'
+Plugin 'lambdalisue/glyph-palette.vim'
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+Plugin 'lambdalisue/fern-renderer-nerdfont.vim'
+let g:fern#renderer = "nerdfont"
+Plugin 'lambdalisue/fern-git-status.vim'
+
+
 
 call vundle#end()
 "<<<<<<<<<<<<<<<<<<
