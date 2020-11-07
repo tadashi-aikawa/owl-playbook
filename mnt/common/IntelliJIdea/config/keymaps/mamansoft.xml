@@ -2,9 +2,7 @@
   <action id="AceAction" />
   <action id="AceTargetAction" />
   <action id="ActivateFavoritesToolWindow" />
-  <action id="ActivateProjectToolWindow">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl j" />
-  </action>
+  <action id="ActivateProjectToolWindow" />
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="t" />
   </action>
@@ -63,6 +61,9 @@
   </action>
   <action id="Debugger.EditArrayFilter" />
   <action id="Debugger.EditCustomField" />
+  <action id="Diff.ShowDiff">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl d" />
+  </action>
   <action id="DirDiffMenu.SynchronizeDiff.All" />
   <action id="DuplicatesForm.SendToLeft" />
   <action id="EditorChooseLookupItemCompleteStatement" />
@@ -189,7 +190,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl l" />
   </action>
   <action id="NextDiff">
-    <keyboard-shortcut first-keystroke="shift alt j" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl j" />
   </action>
   <action id="NextOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt j" />
@@ -210,7 +211,7 @@
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="PreviousDiff">
-    <keyboard-shortcut first-keystroke="shift alt k" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl k" />
   </action>
   <action id="PreviousOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt k" />
@@ -316,8 +317,7 @@
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Push" />
   <action id="Vcs.RollbackChangedLines">
-    <keyboard-shortcut first-keystroke="ctrl alt z" />
-    <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="z" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl u" />
   </action>
   <action id="Vcs.Show.Log">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="shift h" />
@@ -326,10 +326,10 @@
     <keyboard-shortcut first-keystroke="ctrl e" />
   </action>
   <action id="VcsShowNextChangeMarker">
-    <keyboard-shortcut first-keystroke="shift alt j" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl j" />
   </action>
   <action id="VcsShowPrevChangeMarker">
-    <keyboard-shortcut first-keystroke="shift alt k" />
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl k" />
   </action>
   <action id="ViewSource" />
   <action id="VimRedo">
