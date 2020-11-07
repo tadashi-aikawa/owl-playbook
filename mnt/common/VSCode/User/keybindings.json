@@ -113,22 +113,22 @@
     "when": "editorFocus && !editorReadonly"
   },
   {
-    "key": "shift+alt+j",
+    "key": "ctrl+j ctrl+j",
     "command": "workbench.action.editor.nextChange",
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+alt+k",
+    "key": "ctrl+j ctrl+k",
     "command": "workbench.action.editor.previousChange",
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+alt+j",
+    "key": "ctrl+j ctrl+j",
     "command": "workbench.action.compareEditor.nextChange",
     "when": "textCompareEditorVisible"
   },
   {
-    "key": "shift+alt+k",
+    "key": "ctrl+j ctrl+k",
     "command": "workbench.action.compareEditor.previousChange",
     "when": "textCompareEditorVisible"
   },
@@ -335,10 +335,6 @@
     "key": "ctrl+j ctrl+l",
     "command": "editor.unfoldRecursively",
     "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+j ctrl+j",
-    "command": "workbench.action.toggleSidebarVisibility"
   },
   // ----------------
   // Ctrl + j  -> shift + (ウィンドウ開く系)
