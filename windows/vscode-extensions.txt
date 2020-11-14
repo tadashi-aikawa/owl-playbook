@@ -30,4 +30,3 @@ shardulm94.trailing-spaces
 shuworks.vscode-table-formatter
 slevesque.vscode-autohotkey
 vscodevim.vim
-Atlassian.atlascode
