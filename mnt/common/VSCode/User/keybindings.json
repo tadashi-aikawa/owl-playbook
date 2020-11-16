@@ -356,10 +356,6 @@
     "key": "ctrl+j shift+c",
     "command": "workbench.files.action.compareWithClipboard"
   },
-  {
-    "key": "ctrl+j shift+h",
-    "command": "git-graph.view"
-  },
   // ----------------
   // Ctrl + , (ファイルの性質変更, git)
   // ----------------
@@ -374,6 +370,10 @@
   {
     "key": "ctrl+, l",
     "command": "workbench.action.editor.changeLanguageMode"
+  },
+  {
+    "key": "ctrl+, h",
+    "command": "git-graph.view"
   },
   // ----------------
   // 競合による無効化

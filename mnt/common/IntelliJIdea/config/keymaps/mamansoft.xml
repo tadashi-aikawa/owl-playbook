@@ -320,7 +320,7 @@
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl u" />
   </action>
   <action id="Vcs.Show.Log">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="shift h" />
+    <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="h" />
   </action>
   <action id="Vcs.ShowMessageHistory">
     <keyboard-shortcut first-keystroke="ctrl e" />
