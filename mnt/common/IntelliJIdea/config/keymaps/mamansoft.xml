@@ -1,8 +1,11 @@
 <keymap version="1" name="mamansoft" parent="Eclipse">
   <action id="AceAction" />
   <action id="AceTargetAction" />
+  <action id="ActivateDebugToolWindow" />
   <action id="ActivateFavoritesToolWindow" />
+  <action id="ActivateFindToolWindow" />
   <action id="ActivateProjectToolWindow" />
+  <action id="ActivateRunToolWindow" />
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="t" />
   </action>
