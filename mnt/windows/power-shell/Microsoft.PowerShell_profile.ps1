@@ -158,4 +158,4 @@ $env:GO111MODULE = "on"
 # Execution PATHs
 #-----------------------------------------------------
 
-$env:PATH += ";C:\Users\syoum\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\203.4818.26\bin"
+$env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\203.5981.155\bin"
