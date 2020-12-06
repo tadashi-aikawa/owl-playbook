@@ -25,6 +25,10 @@
   <action id="ChangeFileEncodingAction">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="e" />
   </action>
+  <action id="ChangesView.AddUnversioned">
+    <keyboard-shortcut first-keystroke="ctrl alt a" />
+    <keyboard-shortcut first-keystroke="shift alt semicolon" />
+  </action>
   <action id="ChangesView.Refresh">
     <keyboard-shortcut first-keystroke="shift ctrl r" />
   </action>
@@ -88,6 +92,10 @@
   <action id="EditorSplitLine" />
   <action id="EditorStartNewLine" />
   <action id="EditorStartNewLineBefore" />
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="ctrl multiply" />
+    <keyboard-shortcut first-keystroke="ctrl right" />
+  </action>
   <action id="ExpandRegion" />
   <action id="ExpandRegionRecursively">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl l" />
@@ -122,6 +130,13 @@
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="f" />
   </action>
   <action id="Git.Reword.Commit" />
+  <action id="Git.Stage.Add">
+    <keyboard-shortcut first-keystroke="shift semicolon" />
+  </action>
+  <action id="Git.Stage.Reset">
+    <keyboard-shortcut first-keystroke="ctrl alt z" />
+    <keyboard-shortcut first-keystroke="minus" />
+  </action>
   <action id="GotoBookmark0" />
   <action id="GotoBookmark1" />
   <action id="GotoChangedFile" />
@@ -154,6 +169,9 @@
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="s" />
   </action>
   <action id="Graph.ApplyCurrentLayout" />
+  <action id="Graph.ZoomOut">
+    <keyboard-shortcut first-keystroke="subtract" />
+  </action>
   <action id="Groovy.Shell.Execute" />
   <action id="Hg.Commit.And.Push.Executor" />
   <action id="HideActiveWindow">
@@ -193,7 +211,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl l" />
   </action>
   <action id="NextDiff">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl j" />
+    <keyboard-shortcut first-keystroke="shift alt j" />
   </action>
   <action id="NextOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt j" />
@@ -214,7 +232,7 @@
     <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="PreviousDiff">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl k" />
+    <keyboard-shortcut first-keystroke="shift alt k" />
   </action>
   <action id="PreviousOccurence">
     <keyboard-shortcut first-keystroke="ctrl alt k" />
@@ -329,10 +347,10 @@
     <keyboard-shortcut first-keystroke="ctrl e" />
   </action>
   <action id="VcsShowNextChangeMarker">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl j" />
+    <keyboard-shortcut first-keystroke="shift alt j" />
   </action>
   <action id="VcsShowPrevChangeMarker">
-    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl k" />
+    <keyboard-shortcut first-keystroke="shift alt k" />
   </action>
   <action id="ViewSource" />
   <action id="VimRedo">
