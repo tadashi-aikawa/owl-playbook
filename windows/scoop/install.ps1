@@ -10,6 +10,7 @@ scoop install `
   sudo `
   wget `
   bat `
+  bind `
   fd `
   dust `
   7zip `
