@@ -21,8 +21,6 @@ call vundle#begin('$HOME/.vim/bundle/')
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Theme
-Plugin 'morhetz/gruvbox'
 
 " yank範囲のハイライト
 Plugin 'machakann/vim-highlightedyank'
@@ -30,12 +28,6 @@ let g:highlightedyank_highlight_duration = 300
 
 " 囲まれているものの操作
 Plugin 'machakann/vim-sandwich'
-
-" 画面内瞬間移動
-Plugin 'easymotion/vim-easymotion'
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-nmap s <Plug>(easymotion-overwin-f2)
 
 " ブラックホールレジスト+putの省略
 Plugin 'vim-scripts/ReplaceWithRegister'
@@ -48,52 +40,70 @@ Plugin 'kana/vim-textobj-entire'
 " コメント化
 Plugin 'tpope/vim-commentary'
 
-" マルチカーソル
-Plugin 'mg979/vim-visual-multi'
-let g:VM_maps = {}
-let g:VM_maps['Find Under'] = '<C-k>'
-let g:VM_maps['Find Subword Under'] = '<C-k>'
-
-" Git
-Plugin 'airblade/vim-gitgutter'
-set updatetime=100
-let g:gitgutter_preview_win_floating = 1
-nmap <C-j><C-d> <Plug>(GitGutterPreviewHunk)
-nmap <C-j><C-u> <Plug>(GitGutterUndoHunk)
-nmap <C-j><C-s> <Plug>(GitGutterStageHunk)
-nmap <C-j><C-j> <Plug>(GitGutterNextHunk)
-nmap <C-j><C-k> <Plug>(GitGutterPrevHunk)
-
-" Line
-Plugin 'itchyny/lightline.vim'
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ }
-
-" fuzzy検索
-Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = '<C-j>f'      " ファイル検索
-nnoremap <C-j>e :CtrlPMRU<CR>   " 最近のファイル検索
-set wildignore+=*/node_modules/*,*.so,*.swp,*.zip 
-
 " CamelCaseMotion
 Plugin 'bkad/CamelCaseMotion'
 let g:camelcasemotion_key = ']'
 
-" Fern
-Plugin 'lambdalisue/fern.vim'
-nnoremap <C-j>w :Fern %:h -drawer -width=50<cr>
-Plugin 'lambdalisue/nerdfont.vim'
-Plugin 'lambdalisue/glyph-palette.vim'
-augroup my-glyph-palette
-  autocmd! *
-  autocmd FileType fern call glyph_palette#apply()
-  autocmd FileType nerdtree,startify call glyph_palette#apply()
-augroup END
-Plugin 'lambdalisue/fern-renderer-nerdfont.vim'
-let g:fern#renderer = "nerdfont"
-Plugin 'lambdalisue/fern-git-status.vim'
 
+if exists('g:vscode')
+  " 画面内瞬間移動
+  Plugin 'asvetliakov/vim-easymotion'
+  nmap s <Plug>(easymotion-s2)
+  let g:EasyMotion_do_mapping = 0
+  let g:EasyMotion_smartcase = 1
+else
+  " 画面内瞬間移動
+  Plugin 'easymotion/vim-easymotion'
+  nmap s <Plug>(easymotion-overwin-f2)
+  let g:EasyMotion_do_mapping = 0
+  let g:EasyMotion_smartcase = 1
+
+  " Theme
+  Plugin 'morhetz/gruvbox'
+
+  " マルチカーソル
+  Plugin 'mg979/vim-visual-multi'
+  let g:VM_maps = {}
+  let g:VM_maps['Find Under'] = '<C-k>'
+  let g:VM_maps['Find Subword Under'] = '<C-k>'
+
+  " Git
+  Plugin 'airblade/vim-gitgutter'
+  set updatetime=100
+  let g:gitgutter_preview_win_floating = 1
+  nmap <C-j><C-d> <Plug>(GitGutterPreviewHunk)
+  nmap <C-j><C-u> <Plug>(GitGutterUndoHunk)
+  nmap <C-j><C-s> <Plug>(GitGutterStageHunk)
+  nmap <C-j><C-j> <Plug>(GitGutterNextHunk)
+  nmap <C-j><C-k> <Plug>(GitGutterPrevHunk)
+
+  " Line
+  Plugin 'itchyny/lightline.vim'
+  let g:lightline = {
+        \ 'colorscheme': 'jellybeans',
+        \ }
+
+  " fuzzy検索
+  Plugin 'ctrlpvim/ctrlp.vim'
+  let g:ctrlp_map = '<C-j>f'      " ファイル検索
+  nnoremap <C-j>e :CtrlPMRU<CR>   " 最近のファイル検索
+  set wildignore+=*/node_modules/*,*.so,*.swp,*.zip 
+
+
+  " Fern
+  Plugin 'lambdalisue/fern.vim'
+  nnoremap <C-j>w :Fern %:h -drawer -width=50<cr>
+  Plugin 'lambdalisue/nerdfont.vim'
+  Plugin 'lambdalisue/glyph-palette.vim'
+  augroup my-glyph-palette
+    autocmd! *
+    autocmd FileType fern call glyph_palette#apply()
+    autocmd FileType nerdtree,startify call glyph_palette#apply()
+  augroup END
+  Plugin 'lambdalisue/fern-renderer-nerdfont.vim'
+  let g:fern#renderer = "nerdfont"
+  Plugin 'lambdalisue/fern-git-status.vim'
+endif
 
 
 call vundle#end()

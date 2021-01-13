@@ -65,7 +65,6 @@
   "vim.easymotionMarkerForegroundColorOneChar": "lime",
   "vim.enableNeovim": true,
   "vim.replaceWithRegister": true,
-  // "vim.neovimPath": "C:\\Users\\syoum\\scoop\\shims\\nvim.exe",
   "vim.normalModeKeyBindings": [
     {
       "before": ["]"],
@@ -115,6 +114,11 @@
     }
   ],
   "vim.disableExtension": false,
+  // -------------------------------------
+  // Neovim
+  // -------------------------------------
+  "vscode-neovim.neovimExecutablePaths.win32": "nvim",
+  "vscode-neovim.neovimInitVimPaths.win32": "$HOME\\AppData\\Local\\nvim\\init.vim",
   // -------------------------------------
   // revealjs
   // -------------------------------------
@@ -171,7 +175,7 @@
   "explorer.confirmDelete": false,
   "editor.cursorSurroundingLines": 5,
   "editor.formatOnPaste": true,
-  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.multiCursorModifier": "alt",
   "git.autofetch": true,
   "git.ignoreLegacyWarning": true,
   "go.useLanguageServer": true,
