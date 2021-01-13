@@ -2,8 +2,6 @@
 scoop bucket add versions
 # Add extras
 scoop bucket add extras
-# Add JetBrains
-scoop bucket jetbrains
 
 # CLI Tools
 scoop install `
