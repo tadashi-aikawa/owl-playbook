@@ -33,7 +33,7 @@ scoop install `
   keypirinha `
   ditto `
   vscode
-  # slack
+  draw.io
 
 # Language / Framework / MiddleWare
 scoop install `
