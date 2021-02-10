@@ -387,5 +387,15 @@
     "key": "ctrl+shift+l",
     "command": "-editor.action.selectHighlights",
     "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+oem_6",
+    "command": "editor.action.openLink",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-editor.action.openLink",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
   }
 ]
