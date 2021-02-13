@@ -24,7 +24,8 @@ scoop install `
   z `
   vim `
   uutils-coreutils `
-  broot
+  broot `
+  zoxide
 
 # GUI Tools
 scoop install `
