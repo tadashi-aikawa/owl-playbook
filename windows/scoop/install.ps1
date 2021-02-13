@@ -23,7 +23,8 @@ scoop install `
   ffmpeg `
   z `
   vim `
-  uutils-coreutils
+  uutils-coreutils `
+  broot
 
 # GUI Tools
 scoop install `

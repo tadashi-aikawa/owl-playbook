@@ -1,0 +1,10 @@
+[[verbs]]
+invocation = "vim"
+external = "vim {file}"
+leave_broot = false
+
+[[verbs]]
+invocation = "cd"
+key = "ctrl-enter"
+external = "cd {directory}"
+from_shell = true

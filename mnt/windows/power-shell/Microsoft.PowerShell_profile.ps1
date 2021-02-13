@@ -152,6 +152,24 @@ function ffgif360() { ffmpeg -i $args[0] -filter_complex "[0:v]scale=360:-1 [s];
 function ffresize() { $width = $args[1]; ffmpeg -i $args[0] -vf scale=$width":-1" $args[2] }
 function fffavicon() { $width = $args[1]; ffmpeg -i $args[0] -vf scale=$width":-1" favicon.ico }
 
+# broot
+function bo() { broot --conf $env:USERPROFILE\broot.toml $args }
+function br() {
+    $outcmd = new-temporaryfile
+    bo --outcmd $outcmd $args
+    if (!$?) {
+        remove-item -force $outcmd
+        return $lastexitcode
+    }
+
+    $command = get-content $outcmd
+    if ($command) {
+        # workaround - paths have some garbage at the start
+        $command = $command.replace("\\?\", "", 1)
+        invoke-expression $command
+    }
+    remove-item -force $outcmd
+} 
 
 #-----------------------------------------------------
 # Golang
