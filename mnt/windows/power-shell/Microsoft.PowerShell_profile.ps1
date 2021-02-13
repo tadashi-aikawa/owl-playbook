@@ -25,7 +25,10 @@ Set-PSReadLineOption -EditMode Emacs
 
 Import-Module posh-git
 Import-Module oh-my-posh
-Import-Module z
+Invoke-Expression (& {
+    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    (zoxide init --hook $hook powershell) -join "`n"
+})
 
 Set-Theme Powerlevel10k-Lean
 
@@ -105,7 +108,7 @@ function ...() { cd ../../ }
 function ....() { cd ../../../ }
 function cdg() { gowl list | fzf | cd }
 function cdr() { fd -H -t d -E .git -E node_modules | fzf | cd }
-function cdz() { z -l | oss | select -skip 3 | % { $_ -split " +" } | sls -raw '^[a-zA-Z].+' | fzf | cd }
+Set-Alias cdz zi
 function buscdd() { ls -1 C:\\Work\\treng\\Bus\\data | rg .*$Arg1.*_xrf | fzf | % { cd C:\\Work\\treng\\Bus\\data\\$_ } }
 function buscdw() { ls -1 C:\\Work\\treng\\Bus\\work | rg .*$Arg1.*_xrf | fzf | % { cd C:\\Work\\treng\\Bus\\work\\$_ } }
 
