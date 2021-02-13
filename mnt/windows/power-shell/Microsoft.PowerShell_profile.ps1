@@ -153,7 +153,7 @@ function ffresize() { $width = $args[1]; ffmpeg -i $args[0] -vf scale=$width":-1
 function fffavicon() { $width = $args[1]; ffmpeg -i $args[0] -vf scale=$width":-1" favicon.ico }
 
 # broot
-function bo() { broot --conf $env:USERPROFILE\broot.toml $args }
+function bo() { broot -g --conf $env:USERPROFILE\broot.toml $args }
 function br() {
     $outcmd = new-temporaryfile
     bo --outcmd $outcmd $args
