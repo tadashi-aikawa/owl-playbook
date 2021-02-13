@@ -1,12 +1,12 @@
-# ™p“™«‚Í‚È‚¢‚Ì‚Å’ˆÓ
-# ÀsŒã‚É•ÒW‚ª•K—v‚Èƒtƒ@ƒCƒ‹‚à‚ ‚é
+# å†ªç­‰æ€§ã¯ãªã„ã®ã§æ³¨æ„
+# å®Ÿè¡Œå¾Œã«ç·¨é›†ãŒå¿…è¦ãªãƒ•ã‚¡ã‚¤ãƒ«ã‚‚ã‚ã‚‹
 cp $home\.gitconfig \\wsl$\Ubuntu\tmp\
 wsl -- mv /tmp/.gitconfig ~/
-# root/browser‚È‚Çpath‚Ì•ÏX‚ª•K—v
+# root/browserãªã©pathã®å¤‰æ›´ãŒå¿…è¦
 cp $home\.gowlconfig \\wsl$\Ubuntu\tmp
 wsl -- mv /tmp/.gowlconfig ~/
 
-# path‚Ì•ÏX‚ª•K—v‚©‚à..
+# pathã®å¤‰æ›´ãŒå¿…è¦ã‹ã‚‚..
 cp -r $home\.ssh \\wsl$\Ubuntu\tmp\
 wsl -- rm -rf ~/.ssh
 wsl -- mv /tmp/.ssh ~/
