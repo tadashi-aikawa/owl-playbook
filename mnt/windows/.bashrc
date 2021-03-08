@@ -55,3 +55,4 @@ function te() {
 
 
 alias gift="/c/Work/git/gift/.venv/Scripts/python.exe /c/Work/git/gift/gift/main.py"
+alias hibou="~/works/hibou.exe"
