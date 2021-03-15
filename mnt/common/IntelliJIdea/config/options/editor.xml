@@ -15,6 +15,7 @@
     <option name="IS_WHITESPACES_SHOWN" value="true" />
     <option name="IS_INNER_WHITESPACES_SHOWN" value="false" />
     <option name="ADDITIONAL_PAGE_AT_BOTTOM" value="true" />
+    <option name="BIDI_TEXT_DIRECTION" value="LTR" />
   </component>
   <component name="InlayHintsSettings">
     <option name="lastViewedProviderKeyId" value="parameter.hints.old" />
