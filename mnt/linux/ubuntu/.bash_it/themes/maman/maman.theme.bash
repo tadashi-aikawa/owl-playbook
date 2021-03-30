@@ -66,7 +66,7 @@ function git_remote_logo() {
   fi
 
   local remote_domain
-  remote_domain=$(git remote get-url origin | awk -F'[@:.]' '{print $2}')
+  remote_domain=$(git remote get-url origin | awk -F'[@.]' '{print $2}')
   case ${remote_domain//\//} in
     github) echo "$SCM_GIT_CHAR_GITHUB" ;;
     bitbucket) echo "$SCM_GIT_CHAR_BITBUCKET" ;;
