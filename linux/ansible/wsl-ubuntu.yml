@@ -60,6 +60,8 @@
     - role: clitool/awscli
     - role: clitool/bat
     - role: clitool/bats
+    - role: clitool/broot
+    - role: link/broot
     - role: clitool/ctags
     - role: clitool/delta
     - role: clitool/docui

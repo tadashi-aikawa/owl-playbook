@@ -1,0 +1,8 @@
+- import_role: { name: check/absent }
+  vars:
+    target: broot
+    command: "broot -V | grep -E 'broot'"
+
+- import_tasks: install.yml
+  when: broot_is_absent
+  become: yes
