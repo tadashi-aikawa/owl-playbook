@@ -4,3 +4,6 @@
     dest: /usr/bin/broot
     mode: u+x,g+x,o+x
     force: yes
+
+- name: Install br
+  shell: 'broot --install'
