@@ -2,6 +2,11 @@
   <Shell_Script>
     <option name="SWITCH_CASES_INDENTED" value="true" />
   </Shell_Script>
+  <SqlCodeStyleSettings version="5">
+    <option name="KEYWORD_CASE" value="2" />
+    <option name="QUERY_EL_LINE" value="101" />
+    <option name="FROM_PLACE_ON" value="10" />
+  </SqlCodeStyleSettings>
   <TypeScriptCodeStyleSettings version="0">
     <option name="USE_DOUBLE_QUOTES" value="false" />
     <option name="SPACES_WITHIN_IMPORTS" value="true" />
@@ -9,6 +14,12 @@
   <codeStyleSettings language="JSP">
     <indentOptions>
       <option name="SMART_TABS" value="true" />
+    </indentOptions>
+  </codeStyleSettings>
+  <codeStyleSettings language="SQL">
+    <indentOptions>
+      <option name="INDENT_SIZE" value="2" />
+      <option name="TAB_SIZE" value="2" />
     </indentOptions>
   </codeStyleSettings>
 </code_scheme>
