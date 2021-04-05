@@ -39,7 +39,6 @@ scoop install `
 
 # Language / Framework / MiddleWare
 scoop install `
-  nodejs-lts `
   gcc `
   docker `
   go `
@@ -55,3 +54,5 @@ scoop install `
 scoop reset python
 
 sudo scoop install autohotkey-installer
+# In the future..: scoop install volta
+#
