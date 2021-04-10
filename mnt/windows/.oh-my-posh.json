@@ -17,7 +17,7 @@
         },
         {
           "background": "#2f2f2f",
-          "foreground": "#ffeb3b",
+          "foreground": "#96E072",
           "properties": {
             "ahead_color": "#2EC4B6",
             "behind_color": "#8A4FFF",
@@ -27,9 +27,10 @@
             "display_upstream_icon": true,
             "local_changes_color": "#ffeb3b",
             "prefix": "<#7a7a7a> </>",
-            "staging_color": "#2FDA4E",
+            "staging_color": "#ffeb3b",
             "status_colors_enabled": true,
-            "working_color": "#E84855"
+            "working_color": "#E84855",
+            "local_staged_icon": " \uF6B9"
           },
           "style": "diamond",
           "type": "git"
