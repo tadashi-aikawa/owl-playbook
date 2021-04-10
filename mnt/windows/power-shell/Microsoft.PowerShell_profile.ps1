@@ -23,28 +23,12 @@ Set-PSReadLineOption -EditMode Emacs
 # Powerline
 #-----------------------------------------------------
 
-Import-Module posh-git
-Import-Module oh-my-posh
 Invoke-Expression (& {
     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
     (zoxide init --hook $hook powershell) -join "`n"
 })
 
-Set-Theme Powerlevel10k-Lean
-
-# Prompt
-$ThemeSettings.Colors.DriveForegroundColor = "Blue"
-# Git
-$ThemeSettings.GitSymbols.LocalStagedStatusSymbol = ""
-$ThemeSettings.GitSymbols.LocalWorkingStatusSymbol = ""
-$ThemeSettings.GitSymbols.BeforeWorkingSymbol = [char]::ConvertFromUtf32(0xf040)+" "
-$ThemeSettings.GitSymbols.DelimSymbol = [char]::ConvertFromUtf32(0xf040)
-$ThemeSettings.GitSymbols.BranchSymbol = [char]::ConvertFromUtf32(0xf126)
-$ThemeSettings.GitSymbols.BranchAheadStatusSymbol = [char]::ConvertFromUtf32(0xf0ee)+" "
-$ThemeSettings.GitSymbols.BranchBehindStatusSymbol = [char]::ConvertFromUtf32(0xf0ed)+" "
-$ThemeSettings.GitSymbols.BeforeIndexSymbol = [char]::ConvertFromUtf32(0xf6b7)+" "
-$ThemeSettings.GitSymbols.BranchIdenticalStatusToSymbol = ""
-$ThemeSettings.GitSymbols.BranchUntrackedSymbol = [char]::ConvertFromUtf32(0xf663)+" "
+Set-PoshPrompt -Theme  ~/.oh-my-posh.json
 
 #-----------------------------------------------------
 # fzf
