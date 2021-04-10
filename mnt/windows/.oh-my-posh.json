@@ -19,7 +19,7 @@
           "background": "#2f2f2f",
           "foreground": "#96E072",
           "properties": {
-            "ahead_color": "#2EC4B6",
+            "ahead_color": "#c42ebd",
             "behind_color": "#8A4FFF",
             "color_background": false,
             "display_stash_count": true,
