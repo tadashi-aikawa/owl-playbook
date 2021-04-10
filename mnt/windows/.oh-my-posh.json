@@ -67,6 +67,16 @@
         },
         {
           "background": "#2f2f2f",
+          "foreground": "#7FD5EA",
+          "properties": {
+            "postfix": "<#7a7a7a> </>",
+            "prefix": " ﳑ"
+          },
+          "style": "diamond",
+          "type": "go"
+        },
+        {
+          "background": "#2f2f2f",
           "foreground": "#9FD356",
           "properties": {
             "always_numeric": true,
