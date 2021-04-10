@@ -20,6 +20,7 @@
           "properties": {
             "ahead_color": "#c42ebd",
             "behind_color": "#8A4FFF",
+            "branch_icon": " \uE0A0",
             "color_background": false,
             "display_stash_count": true,
             "display_status": true,
