@@ -13,7 +13,7 @@ goto :tmp
 
 call :******************** IntelliJ IDEA
 
-set IDEA_DIR=IntelliJIdea2020.3
+set IDEA_DIR=IntelliJIdea2021.1
 
 set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\IntelliJIdea\config
 set IDEA_CONFIG_DIR=%ROAMING%\JetBrains\%IDEA_DIR%
