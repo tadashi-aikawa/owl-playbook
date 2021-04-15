@@ -106,6 +106,6 @@
   ],
   "console_title": true,
   "console_title_style": "template",
-  "console_title_template": "{{if .Root}}root :: {{end}}{{.Shell}} :: {{.Folder}}",
+  "console_title_template": "{{.Folder}}",
   "final_space": true
 }
