@@ -134,6 +134,7 @@
         <option name="externalLinter" value="Clippy" />
         <option name="runExternalLinterOnTheFly" value="true" />
         <option name="runRustfmtOnSave" value="true" />
+        <option name="version" value="2" />
       </component>
       <component name="YarnPnpManager">
         <pnp-files />
