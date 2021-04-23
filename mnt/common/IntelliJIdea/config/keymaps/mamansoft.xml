@@ -274,6 +274,10 @@
   <action id="Run">
     <keyboard-shortcut first-keystroke="alt r" />
   </action>
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="shift ctrl f10" />
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
   <action id="RunDashboard.ShowConfigurations" />
   <action id="Rust.CargoFmtFile">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="shift f" />
