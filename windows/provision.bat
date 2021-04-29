@@ -11,6 +11,21 @@ rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
 :tmp
 
+call :******************** Obsidian
+
+set OBSIDIAN_ORIGIN_DIR="%USERPROFILE%\Box\obsidian\minerva"
+set OBSIDIAN_DIR="%USERPROFILE%\work\minerva\.obsidian"
+
+rem sync.jsonとworkspace以外はすべて
+call :link_obsidian_file config
+call :link_obsidian_file daily-notes.json
+call :link_obsidian_file global-search.json
+call :link_obsidian_file graph.json
+call :link_obsidian_file publish.json
+call :link_obsidian_dir themes
+call :link_obsidian_dir snippets
+call :link_obsidian_dir plugins
+
 call :******************** IntelliJ IDEA
 
 set IDEA_DIR=IntelliJIdea2021.1
@@ -90,6 +105,14 @@ rem ---------------------------------------------------------
 
 :link_windows_home
 call :link_file %USERPROFILE%\%1 %WINDOWS_MNT%\%1
+exit /b
+
+:link_obsidian_file
+call :link_file %OBSIDIAN_DIR%\%1 %OBSIDIAN_ORIGIN_DIR%\%1
+exit /b
+
+:link_obsidian_dir
+call :link_dir %OBSIDIAN_DIR%\%1 %OBSIDIAN_ORIGIN_DIR%\%1
 exit /b
 
 :link_idea_file
