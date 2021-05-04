@@ -80,7 +80,7 @@ function ls() { uutils ls $args }
 function tree() { exa --icons -T $args}
 
 # Linuxコマンドのエイリアス
-function ll() { uutils ls -l $args}
+function ll() { exa --icons -l --git $args}
 
 #-----------------------------------------------------
 # Useful commands
