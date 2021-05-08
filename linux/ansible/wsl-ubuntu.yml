@@ -53,6 +53,7 @@
     - role: language/bash/shellcheck
     - role: language/python/pyenv
     - role: language/python/poetry
+    - role: language/go
 
 - name: "=============== 6. CLI tool ==============="
   <<: *base
