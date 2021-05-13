@@ -39,7 +39,6 @@ scoop install `
 
 # Language / Framework / MiddleWare
 scoop install `
-  gcc `
   docker `
   go `
   rustup `
