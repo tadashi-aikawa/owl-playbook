@@ -69,8 +69,37 @@ WindowsのUbuntu on WSL2にのみ対応しています。
 
 ### 環境構築
 
+`linux/ansible/.secret/local.yaml`を作成してください
+
+```yaml
+ansible_become_pass: your_password
+```
+
 `linux/ansible`ディレクトリで以下コマンドを実行します。
 
 ```
 $ make wsl
 ```
+
+以下の理由で一度失敗します
+
+- npmにPATHが通っていない
+- brootの初期設定ができていない
+
+以下の方法で原因を解消します
+
+- shellにログインしなおす
+- `broot`コマンドを実行して`~/.config/broot`を作成する
+
+もう一度実行すればOK
+
+```
+$ make wsl
+```
+
+bash-itのテーマを変更する場合は`.bashrc`の変更が必要です
+
+```bash
+export BASH_IT_THEME='maman'
+```
+
