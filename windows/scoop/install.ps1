@@ -50,6 +50,7 @@ scoop install `
 scoop install `
   python27 `
   python37 `
+  python38 `
   python
 scoop reset python
 
