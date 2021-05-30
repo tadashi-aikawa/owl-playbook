@@ -14,17 +14,22 @@ goto :tmp
 call :******************** Obsidian
 
 set OBSIDIAN_ORIGIN_DIR="%USERPROFILE%\Box\obsidian\minerva"
-set OBSIDIAN_DIR="%USERPROFILE%\work\minerva\.obsidian"
+set OBSIDIAN_DIR="%USERPROFILE%\work\minerva"
+set OBSIDIAN_CONFIG_DIR="%OBSIDIAN_DIR%\.obsidian"
 
 rem sync.json‚ÆworkspaceˆÈŠO‚Í‚·‚×‚Ä
-call :link_obsidian_file config
-call :link_obsidian_file daily-notes.json
-call :link_obsidian_file global-search.json
-call :link_obsidian_file graph.json
-call :link_obsidian_file publish.json
-call :link_obsidian_dir themes
-call :link_obsidian_dir snippets
-call :link_obsidian_dir plugins
+call :link_obsidian_file obsidian.css
+call :link_obsidian_file publish.css
+call :link_obsidian_file publish.js
+call :link_obsidian_file favicon.ico
+call :link_obsidian_config_file config
+call :link_obsidian_config_file daily-notes.json
+call :link_obsidian_config_file global-search.json
+call :link_obsidian_config_file graph.json
+call :link_obsidian_config_file publish.json
+call :link_obsidian_config_dir themes
+call :link_obsidian_config_dir snippets
+call :link_obsidian_config_dir plugins
 
 call :******************** IntelliJ IDEA
 
@@ -111,8 +116,12 @@ exit /b
 call :link_file %OBSIDIAN_DIR%\%1 %OBSIDIAN_ORIGIN_DIR%\%1
 exit /b
 
-:link_obsidian_dir
-call :link_dir %OBSIDIAN_DIR%\%1 %OBSIDIAN_ORIGIN_DIR%\%1
+:link_obsidian_config_file
+call :link_file %OBSIDIAN_CONFIG_DIR%\%1 %OBSIDIAN_ORIGIN_DIR%\%1
+exit /b
+
+:link_obsidian_config_dir
+call :link_dir %OBSIDIAN_CONFIG_DIR%\%1 %OBSIDIAN_ORIGIN_DIR%\%1
 exit /b
 
 :link_idea_file
