@@ -46,6 +46,10 @@
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="shift ctrl q" />
   </action>
+  <action id="CollapseExpandableComponent">
+    <keyboard-shortcut first-keystroke="ctrl subtract" />
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
   <action id="CollapseRegion" />
   <action id="CollapseRegionRecursively">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="ctrl h" />
@@ -54,12 +58,13 @@
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="d" />
   </action>
   <action id="Console.Execute.Multiline" />
-  <action id="Console.Jdbc.Execute.2">
-    <keyboard-shortcut first-keystroke="ctrl enter" />
-  </action>
   <action id="Console.Jpa.GenerateSql" />
+  <action id="Console.TableResult.EditValueMaximized">
+    <keyboard-shortcut first-keystroke="shift alt enter" />
+  </action>
   <action id="CopyPaths" />
   <action id="DatabaseView.CopyDdlAction" />
+  <action id="DatabaseView.PropertiesAction" />
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift alt d" />
     <keyboard-shortcut first-keystroke="shift f9" />
@@ -73,6 +78,9 @@
   </action>
   <action id="DirDiffMenu.SynchronizeDiff.All" />
   <action id="DuplicatesForm.SendToLeft" />
+  <action id="EditSourceInNewWindow">
+    <keyboard-shortcut first-keystroke="shift enter" />
+  </action>
   <action id="EditorChooseLookupItemCompleteStatement" />
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="alt up" />
@@ -95,6 +103,10 @@
   <action id="ExpandAllRegions">
     <keyboard-shortcut first-keystroke="ctrl multiply" />
     <keyboard-shortcut first-keystroke="ctrl right" />
+  </action>
+  <action id="ExpandExpandableComponent">
+    <keyboard-shortcut first-keystroke="ctrl add" />
+    <keyboard-shortcut first-keystroke="ctrl equals" />
   </action>
   <action id="ExpandRegion" />
   <action id="ExpandRegionRecursively">
@@ -222,6 +234,11 @@
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="alt l" />
   </action>
+  <action id="NotebookRunCellAction" />
+  <action id="NotebookRunCellSelectBelowAction" />
+  <action id="OpenInRightSplit">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
   <action id="OpenProjectWindows">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="w" />
   </action>
@@ -274,9 +291,8 @@
   <action id="Run">
     <keyboard-shortcut first-keystroke="alt r" />
   </action>
-  <action id="RunClass">
+  <action id="RunDashboard.Run">
     <keyboard-shortcut first-keystroke="shift ctrl f10" />
-    <keyboard-shortcut first-keystroke="ctrl enter" />
   </action>
   <action id="RunDashboard.ShowConfigurations" />
   <action id="Rust.CargoFmtFile">
@@ -311,6 +327,7 @@
     <keyboard-shortcut first-keystroke="shift ctrl m" />
   </action>
   <action id="ShowProjectStructureSettings" />
+  <action id="SplitChooser.Duplicate" />
   <action id="StepInto">
     <keyboard-shortcut first-keystroke="f11" />
   </action>
@@ -321,6 +338,7 @@
     <keyboard-shortcut first-keystroke="f10" />
   </action>
   <action id="SurroundWithLiveTemplate" />
+  <action id="Terminal.SmartCommandExecution.Run" />
   <action id="TodoViewGroupByShowModules" />
   <action id="ToggleBookmark">
     <keyboard-shortcut first-keystroke="ctrl m" second-keystroke="ctrl m" />
@@ -368,5 +386,8 @@
   <action id="XDebugger.SetValue" />
   <action id="org.intellij.plugins.markdown.ui.actions.editorLayout.CyclicSplitLayoutChangeAction">
     <keyboard-shortcut first-keystroke="alt p" />
+  </action>
+  <action id="runShellFileAction">
+    <keyboard-shortcut first-keystroke="shift ctrl f10" />
   </action>
 </keymap>
