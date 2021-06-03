@@ -57,7 +57,6 @@
   <action id="Compare.LastVersion">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="d" />
   </action>
-  <action id="Console.Execute.Multiline" />
   <action id="Console.Jpa.GenerateSql" />
   <action id="Console.TableResult.EditValueMaximized">
     <keyboard-shortcut first-keystroke="shift alt enter" />
