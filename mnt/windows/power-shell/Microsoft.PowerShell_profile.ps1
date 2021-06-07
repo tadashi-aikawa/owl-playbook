@@ -164,5 +164,5 @@ $env:GO111MODULE = "on"
 # Execution PATHs
 #-----------------------------------------------------
 
-$env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\211.6693.111\bin"
-$env:PATH += ";" + $env:USERPROFILE + "\git\github.com\tadashi-aikawa\diamant\target\release"
+$env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\211.7142.45\bin"
+$env:PATH += ";" + $env:USERPROFILE + "\git\bitbucket.org\ntj-developer\diamant\target\release"
