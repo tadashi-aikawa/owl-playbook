@@ -25,6 +25,7 @@ scoop install `
   vim `
   uutils-coreutils `
   broot `
+  xh `
   zoxide `
   git
 
