@@ -22,6 +22,8 @@ call :link_obsidian_file obsidian.css
 call :link_obsidian_file publish.css
 call :link_obsidian_file publish.js
 call :link_obsidian_file favicon.ico
+rem Boxではドットファイルを同期できないため
+call :link_file %OBSIDIAN_DIR%\.obsidian.vimrc %OBSIDIAN_ORIGIN_DIR%\obsidian.vimrc
 call :link_obsidian_config_file config
 call :link_obsidian_config_file daily-notes.json
 call :link_obsidian_config_file global-search.json
