@@ -3,6 +3,7 @@
   // 見た目
   // -------------------------------------
   "editor.fontFamily": "SauceCodePro NF",
+  "editor.fontSize": 18,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
@@ -63,7 +64,6 @@
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "rgba(0, 0, 0, 0.5)",
   "vim.easymotionMarkerForegroundColorOneChar": "lime",
-  "vim.enableNeovim": true,
   "vim.replaceWithRegister": true,
   "vim.normalModeKeyBindings": [
     {
@@ -114,11 +114,6 @@
     }
   ],
   "vim.disableExtension": false,
-  // -------------------------------------
-  // Neovim
-  // -------------------------------------
-  "vscode-neovim.neovimExecutablePaths.win32": "nvim",
-  "vscode-neovim.neovimInitVimPaths.win32": "$HOME\\AppData\\Local\\nvim\\init.vim",
   // -------------------------------------
   // revealjs
   // -------------------------------------
