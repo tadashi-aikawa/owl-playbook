@@ -111,6 +111,9 @@
     <option name="m_ignoreExpressionsContainingConstants" value="false" />
   </inspection_tool>
   <inspection_tool class="ReplaceAssignmentWithOperatorAssignmentJS" enabled="true" level="WARNING" enabled_by_default="true" />
+  <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="true">
+    <option name="myAdditionalRequiredHtmlAttributes" value="center" />
+  </inspection_tool>
   <inspection_tool class="ReuseOfLocalVariableJS" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="StandardJS" enabled="true" level="ERROR" enabled_by_default="true" />
   <inspection_tool class="StatementsPerFunctionJS" enabled="true" level="WARNING" enabled_by_default="true">

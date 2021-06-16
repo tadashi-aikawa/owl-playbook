@@ -1,14 +1,11 @@
 <scheme name="mamansoft" version="142" parent_scheme="Darcula">
-  <option name="FONT_SCALE" value="1.0" />
   <metaInfo>
     <property name="created">2018-08-02T22:01:30</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2018.1.5.0.0</property>
-    <property name="modified">2020-05-31T08:52:13</property>
+    <property name="modified">2021-06-11T11:05:51</property>
     <property name="originalScheme">mamansoft</property>
   </metaInfo>
-  <option name="CONSOLE_FONT_NAME" value="SauceCodePro NF" />
-  <option name="CONSOLE_LINE_SPACING" value="1.2" />
   <colors>
     <option name="FOLDED_TEXT_BORDER_COLOR" value="3c3f41" />
     <option name="WHITESPACES" value="f7ffc8" />
