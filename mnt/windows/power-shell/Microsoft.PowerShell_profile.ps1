@@ -48,28 +48,25 @@ function _fzf_compgen_dir() {
 # Linux like commands
 #-----------------------------------------------------
 
-# パイプラインを受けつけないLinux標準コマンド
-Remove-Item alias:cp
-function cp() { uutils cp $args}
-Remove-Item alias:mv
-function mv() { uutils mv $args}
-Remove-Item alias:rm
-function rm() { uutils rm $args}
-Remove-Item alias:ls
-function mkdir() { uutils mkdir $args}
-function printenv() { uutils printenv $args}
+# https://secon.dev/entry/2020/08/17/070735/
+@"
+  arch, base32, base64, basename, cat, cksum, comm, cp, cut, date, df, dircolors, dirname,
+  echo, env, expand, expr, factor, false, fmt, fold, hashsum, head, hostname, join, link, ln,
+  ls, md5sum, mkdir, mktemp, more, mv, nl, nproc, od, paste, printenv, printf, ptx, pwd,
+  readlink, realpath, relpath, rm, rmdir, seq, sha1sum, sha224sum, sha256sum, sha3-224sum,
+  sha3-256sum, sha3-384sum, sha3-512sum, sha384sum, sha3sum, sha512sum, shake128sum,
+  shake256sum, shred, shuf, sleep, sort, split, sum, sync, tac, tail, tee, test, touch, tr,
+  true, truncate, tsort, unexpand, uniq, wc, whoami, yes
+"@ -split ',' |
+ForEach-Object { $_.trim() } |
+Where-Object { ! @('tee', 'sort', 'sleep').Contains($_) } |
+ForEach-Object {
+    $cmd = $_
+    if (Test-Path Alias:$cmd) { Remove-Item -Path Alias:$cmd }
+    $fn = '$input | uutils ' + $cmd + ' $args'
+    Invoke-Expression "function global:$cmd { $fn }" 
+}
 
-# パイプラインを受けつけるLinux標準コマンド
-Remove-Item alias:cat
-function cat() { $input | uutils cat $args}
-function head() { $input | uutils head $args}
-function tail() { $input | uutils tail $args}
-function wc() { $input | uutils wc $args}
-function tr() { $input | uutils tr $args}
-Remove-Item alias:pwd
-function pwd() { $input | uutils pwd $args}
-function cut() { $input | uutils cut $args}
-function uniq() { $input | uutils uniq $args}
 # ⚠ readonlyのaliasなので問題が発生するかも..
 Remove-Item alias:sort -Force
 function sort() { $input | uutils sort $args}
