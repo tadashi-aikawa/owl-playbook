@@ -5,8 +5,10 @@ scoop bucket add extras
 
 # CLI Tools
 scoop install `
+  busybox `
+  # busyboxのインストールではダメ. batなどで必要
+  less `
   sudo `
-  wget `
   bat `
   bind `
   fd `
@@ -15,7 +17,6 @@ scoop install `
   fzf `
   jq `
   jid `
-  less `
   ripgrep `
   delta `
   lsd `
