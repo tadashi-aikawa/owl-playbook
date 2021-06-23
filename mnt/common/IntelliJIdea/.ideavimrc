@@ -51,6 +51,7 @@ set commentary
 set textobj-entire
 set argtextobj
 set highlightedyank
+set textobj-indent
 
 set ReplaceWithRegister
 map _ gr
