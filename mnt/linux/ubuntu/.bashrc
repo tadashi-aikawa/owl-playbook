@@ -1,6 +1,6 @@
 # shellcheck disable=SC1090,SC2012
 
-export PATH="$PATH:/usr/local/go/bin:~/go/bin:~/.pyenv/bin:~/.local/share/umake/ide/idea/bin"
+export PATH="$PATH:/usr/local/go/bin:~/go/bin:~/.pyenv/bin:~/.local/share/umake/ide/idea/bin:~/bin"
 export GOPATH="$HOME/go"
 
 # 日本語入力
