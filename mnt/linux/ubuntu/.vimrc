@@ -90,6 +90,10 @@ Plugin 'lambdalisue/fern-git-status.vim'
 " Linter
 Plugin 'dense-analysis/ale'
 
+" Formatter
+Plugin 'z0mbix/vim-shfmt'
+let g:shfmt_fmt_on_save = 1
+
 call vundle#end()
 "<<<<<<<<<<<<<<<<<<
 runtime macros/sandwich/keymap/surround.vim

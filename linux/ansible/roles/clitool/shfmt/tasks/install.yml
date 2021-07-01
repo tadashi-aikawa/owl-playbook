@@ -1,0 +1,11 @@
+- name: Install
+  get_url:
+    url: https://github.com/mvdan/sh/releases/download/v{{ shfmt_version }}/shfmt_v{{ shfmt_version }}_linux_386
+    dest: /tmp
+    mode: u+x,g+x,o+x
+
+- name: Install
+  shell: mv shfmt_v{{ shfmt_version }}_linux_386 /usr/bin/shfmt
+  args:
+    chdir: /tmp
+

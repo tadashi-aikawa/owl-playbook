@@ -76,6 +76,7 @@
     - role: clitool/ncdu
     - role: clitool/nkf
     - role: clitool/ripgrep
+    - role: clitool/shfmt
     - role: clitool/tig
     - role: link/tig
     - role: clitool/xclip
