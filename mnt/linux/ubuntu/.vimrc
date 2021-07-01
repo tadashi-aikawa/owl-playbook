@@ -87,6 +87,8 @@ Plugin 'lambdalisue/fern-renderer-nerdfont.vim'
 let g:fern#renderer = "nerdfont"
 Plugin 'lambdalisue/fern-git-status.vim'
 
+" Linter
+Plugin 'dense-analysis/ale'
 
 call vundle#end()
 "<<<<<<<<<<<<<<<<<<
