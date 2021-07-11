@@ -13,7 +13,8 @@
   "editor.minimap.enabled": true,
   "breadcrumbs.enabled": true,
   "terminal.integrated.fontFamily": "SauceCodePro NF",
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": true,
   // -------------------------------------
@@ -204,6 +205,7 @@
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
-  "workbench.editor.untitled.hint": "hidden"
+  "workbench.editor.untitled.hint": "hidden",
+  "security.workspace.trust.untrustedFiles": "open"
   // "extensions.autoUpdate": false,
 }
