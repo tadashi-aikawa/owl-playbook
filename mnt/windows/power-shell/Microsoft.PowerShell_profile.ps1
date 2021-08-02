@@ -162,4 +162,5 @@ $env:GO111MODULE = "on"
 #-----------------------------------------------------
 
 $env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\211.7628.21\bin"
+$env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\212.4746.92\bin"
 $env:PATH += ";" + $env:USERPROFILE + "\git\bitbucket.org\ntj-developer\diamant\target\release"
