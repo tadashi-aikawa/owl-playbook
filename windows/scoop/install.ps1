@@ -28,6 +28,7 @@ scoop install `
   broot `
   xh `
   zoxide `
+  task `
   git
 
 # GUI Tools
