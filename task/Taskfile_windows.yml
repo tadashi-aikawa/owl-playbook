@@ -15,13 +15,31 @@ tasks:
     cmds:
       - task: _pull:all
 
-  ts:node:code:
+  backup:work:
+    desc: 仕事用のバックアップ
+    cmds:
+      - cp ~/.ssh/* ~/backup/secrets/.ssh/
+      - |
+        cd ~ &&
+        7z a -p backup.zip backup &&
+        mv backup.zip G:\マイドライブ\
+
+  backup:private:
+    desc: プライベートのバックアップ
+    cmds:
+      - cmd: |
+          cd ~/work &&
+          7z a minerva.7z minerva &&
+          explorer .
+        ignore_error: true # なぜか必ずエラーになる..
+
+  typescript:node:
     desc: |
-      VSCode用のNode.js TypeScriptプロジェクトを作成する
+      Node.js用のTypeScriptプロジェクトを作成する
           ∟ DST: プロジェクトを作成するパス (ex: DST=sample)
     cmds:
       - echo $(pwd)
-      - npx degit tadashi-aikawa/typescript-vscode-base {{.DST}}
+      - npx degit tadashi-aikawa/typescript-base {{.DST}}
       - cd {{.DST}} && pwsh -File init.ps1 && code .
     preconditions:
       - sh: "[ {{.DST}} != '' ]"
