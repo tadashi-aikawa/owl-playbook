@@ -1,0 +1,46 @@
+# Required powershell
+version: "3"
+
+tasks:
+  default:
+    - task: help
+
+  help:
+    silent: true
+    cmds:
+      - task -l
+
+  hello:
+    desc: 1日の開始に行う定型タスク
+    cmds:
+      - task: _pull:all
+
+  ts:node:code:
+    desc: |
+      VSCode用のNode.js TypeScriptプロジェクトを作成する
+          ∟ DST: プロジェクトを作成するパス (ex: DST=sample)
+    cmds:
+      - echo $(pwd)
+      - npx degit tadashi-aikawa/typescript-vscode-base {{.DST}}
+      - cd {{.DST}} && pwsh -File init.ps1 && code .
+    preconditions:
+      - sh: "[ {{.DST}} != '' ]"
+        msg: "DST is required."
+
+  ##### --private-- #####
+
+  _pull:all:
+    cmds:
+      - task: _pull
+        vars:
+          REPO: spinal-reflex-bindings-template
+      - task: _pull
+        vars:
+          REPO: owl-playbook
+
+  _pull:
+    dir: ~/git/github.com/tadashi-aikawa/{{.REPO}}
+    cmds:
+      - git status -s
+      - "git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset\ %C(yellow)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -3"
+      - git pull

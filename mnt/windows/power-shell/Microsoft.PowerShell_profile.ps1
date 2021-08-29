@@ -151,6 +151,13 @@ function br() {
     remove-item -force $outcmd
 } 
 
+# owl
+function owl() {
+  cp $env:USERPROFILE/git/github.com/tadashi-aikawa/owl-playbook/task/Taskfile_windows.yml Taskfile.yml
+  task $args
+  rm Taskfile.yml
+}
+
 #-----------------------------------------------------
 # Golang
 #-----------------------------------------------------
