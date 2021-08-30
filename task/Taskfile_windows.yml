@@ -8,7 +8,7 @@ tasks:
   help:
     silent: true
     cmds:
-      - task -l
+      - task -l -t Taskfile_tmp.yml
 
   gif:
     desc: 直近に作成したmp4をgifにコンバートする

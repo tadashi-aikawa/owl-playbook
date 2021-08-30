@@ -153,9 +153,9 @@ function br() {
 
 # owl
 function owl() {
-  cp $env:USERPROFILE/git/github.com/tadashi-aikawa/owl-playbook/task/Taskfile_windows.yml Taskfile.yml
-  task $args
-  rm Taskfile.yml
+  cp $env:USERPROFILE/git/github.com/tadashi-aikawa/owl-playbook/task/Taskfile_windows.yml Taskfile_tmp.yml
+  task -t Taskfile_tmp.yml $args
+  rm Taskfile_tmp.yml
 }
 
 #-----------------------------------------------------
