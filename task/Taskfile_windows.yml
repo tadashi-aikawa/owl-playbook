@@ -74,6 +74,17 @@ tasks:
       - sh: "[ {{.DST}} != '' ]"
         msg: "DST is required."
 
+  javascript:repl:
+    desc: |
+      JavaScriptで特定のライブラリを試すreplを開始する
+          ∟ PKG: パッケージ名 (ex: PKG=lodash)
+    cmds:
+      - mkdir -p ~/tmp/javascript/repl/{{.PKG}}
+      - cd ~/tmp/javascript/repl/{{.PKG}} && npm i {{.PKG}} && node
+    preconditions:
+      - sh: "[ {{.PKG}} != '' ]"
+        msg: "PKG is required."
+
   ##### --private-- #####
 
   _pull:all:
