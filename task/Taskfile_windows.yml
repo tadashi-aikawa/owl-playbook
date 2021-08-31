@@ -63,6 +63,21 @@ tasks:
           explorer .
         ignore_error: true # なぜか必ずエラーになる..
 
+  rust:
+    desc: |
+      Rustプロジェクトを作成する
+          ∟ DST: プロジェクトを作成するパス (ex: DST=sample)
+    cmds:
+      - npx degit tadashi-aikawa/rust-base ~/tmp/{{.DST}}
+      - |
+        cd ~/tmp/{{.DST}} &&
+        pwsh -File init.ps1 &&
+        sed -i -r 's/rust-sandbox/{{.DST}}/g' ./.vscode/launch.json &&
+        code .
+    preconditions:
+      - sh: "[ {{.DST}} != '' ]"
+        msg: "DST is required."
+
   typescript:node:
     desc: |
       Node.js用のTypeScriptプロジェクトを作成する
