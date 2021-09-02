@@ -45,6 +45,11 @@ tasks:
     cmds:
       - task: _pull:all
 
+  bye:
+    desc: 1日の最後に行う定型タスク
+    cmds:
+      - task: _pull:all
+
   backup:work:
     desc: 仕事用のバックアップ
     cmds:
