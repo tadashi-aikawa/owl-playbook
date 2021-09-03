@@ -10,6 +10,11 @@ tasks:
     cmds:
       - task -l -t Taskfile_tmp.yml
 
+  task:init:
+    desc: Taskfile.ymlを作成する
+    cmds:
+      - cp ~/git/github.com/tadashi-aikawa/owl-playbook/task/Taskfile_template.yml Taskfile.yml
+
   gif:
     desc: 直近に作成したmp4をgifにコンバートする
     cmds:

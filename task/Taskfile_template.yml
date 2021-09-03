@@ -1,0 +1,21 @@
+# Required powershell
+version: "3"
+
+tasks:
+  default:
+    - task: help
+
+  help:
+    silent: true
+    cmds:
+      - task -l
+
+  hello:
+    desc: |
+      挨拶する
+          ∟ MSG: メッセージ (ex: MSG=MAMAN)
+    cmds:
+      - echo {{.MSG}}
+    preconditions:
+      - sh: "[ {{.MSG}} != '' ]"
+        msg: "MSG is required."
