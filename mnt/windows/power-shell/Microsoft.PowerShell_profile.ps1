@@ -12,6 +12,9 @@ $env:LESSCHARSET = "utf-8"
 # 音を消す
 Set-PSReadlineOption -BellStyle None
 
+# 予測インテリセンス
+Set-PSReadLineOption -PredictionSource History
+
 #-----------------------------------------------------
 # Key binding
 #-----------------------------------------------------
@@ -170,3 +173,4 @@ $env:GO111MODULE = "on"
 
 $env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\212.5080.55\bin"
 $env:PATH += ";" + $env:USERPROFILE + "\git\bitbucket.org\ntj-developer\diamant\target\release"
+
