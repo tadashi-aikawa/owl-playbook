@@ -22,7 +22,6 @@ scoop install `
   lsd `
   make `
   ffmpeg `
-  z `
   vim `
   uutils-coreutils `
   broot `
