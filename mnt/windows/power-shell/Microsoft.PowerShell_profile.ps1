@@ -67,7 +67,7 @@ ForEach-Object {
     $cmd = $_
     if (Test-Path Alias:$cmd) { Remove-Item -Path Alias:$cmd }
     $fn = '$input | uutils ' + $cmd + ' $args'
-    Invoke-Expression "function global:$cmd { $fn }" 
+    Invoke-Expression "function global:$cmd { $fn }"
 }
 
 # ⚠ readonlyのaliasなので問題が発生するかも..
@@ -152,7 +152,7 @@ function br() {
         invoke-expression $command
     }
     remove-item -force $outcmd
-} 
+}
 
 # owl
 function owl() {
@@ -160,6 +160,12 @@ function owl() {
   task -t Taskfile_tmp.yml $args
   rm Taskfile_tmp.yml
 }
+
+#-----------------------------------------------------
+# Java (IDEA用)
+#-----------------------------------------------------
+
+$env:JAVA_HOME = $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\212.5080.55\jbr"
 
 #-----------------------------------------------------
 # Golang
@@ -173,4 +179,16 @@ $env:GO111MODULE = "on"
 
 $env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\212.5080.55\bin"
 $env:PATH += ";" + $env:USERPROFILE + "\git\bitbucket.org\ntj-developer\diamant\target\release"
+
+
+$scriptBlock = {
+	param($commandName, $wordToComplete, $cursorPosition)
+	$curReg = "task{.exe}? (.*?)$"
+	$startsWith = $wordToComplete | Select-String $curReg -AllMatches | ForEach-Object { $_.Matches.Groups[1].Value }
+	$reg = "\* ($startsWith.+?):"
+	$listOutput = $(task -l)
+	$listOutput | Select-String $reg -AllMatches | ForEach-Object { $_.Matches.Groups[1].Value + " " }
+}
+
+Register-ArgumentCompleter -Native -CommandName task -ScriptBlock $scriptBlock
 
