@@ -54,6 +54,9 @@
   // -------------------------------------
   // Vim
   // -------------------------------------
+  "vim.enableNeovim": true,
+  "vim.statusBarColorControl": false,
+
   "vim.foldfix": true,
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
