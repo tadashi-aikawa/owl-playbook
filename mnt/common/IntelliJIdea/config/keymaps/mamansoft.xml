@@ -338,6 +338,7 @@
   </action>
   <action id="SurroundWithLiveTemplate" />
   <action id="Terminal.SmartCommandExecution.Run" />
+  <action id="Terminal.SwitchFocusToEditor" />
   <action id="TodoViewGroupByShowModules" />
   <action id="ToggleBookmark">
     <keyboard-shortcut first-keystroke="ctrl m" second-keystroke="ctrl m" />
