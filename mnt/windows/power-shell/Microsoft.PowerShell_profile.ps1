@@ -134,6 +134,7 @@ function ffmp4red() { ffmpeg -i $args[0] -vcodec libx264 -crf 20 $args[1] }
 function ff256() { ffmpeg -i $args[0] -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" $args[1] }
 function ffresize() { $width = $args[1]; ffmpeg -i $args[0] -vf scale=$width":-1" $args[2] }
 function fffavicon() { $width = $args[1]; ffmpeg -i $args[0] -vf scale=$width":-1" favicon.ico }
+function ffjpeg() { ffmpeg -i $args[0] -vf scale=1280":-1" $args[0] }
 
 # broot
 function bo() { broot -g --conf $env:USERPROFILE\broot.toml $args }
