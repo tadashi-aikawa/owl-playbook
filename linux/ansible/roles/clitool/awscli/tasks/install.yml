@@ -1,0 +1,12 @@
+- name: Install
+  unarchive:
+    src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    mode: u+x,g+x,o+x
+    dest: /tmp
+    remote_src: yes
+
+- name: Install
+  shell: ./aws/install
+  become: yes
+  args:
+    chdir: /tmp

@@ -1,7 +1,8 @@
-- name: Install
-  become: yes
-  pip:
-    name: awscli
-    executable: pip3
-    editable: false
+- import_role: { name: check/absent }
+  vars:
+    target: awscli
+    command: "aws --version | grep -E 'aws-cli'"
 
+- import_tasks: install.yml
+  when: awscli_is_absent
+  become: yes
