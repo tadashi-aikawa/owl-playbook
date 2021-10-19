@@ -32,10 +32,10 @@ export FZF_ALT_C_OPTS="--height 90%"
 
 # [fzf] オートコンプリートのデフォルトコマンド
 _fzf_compgen_path() {
-  fd -HL --exclude ".git" . "$1"
+	fd -HL --exclude ".git" . "$1"
 }
 _fzf_compgen_dir() {
-  fd --type d -HL --exclude ".git" . "$1"
+	fd --type d -HL --exclude ".git" . "$1"
 }
 
 # alias
@@ -66,7 +66,7 @@ alias gs='git status --short'
 alias gss='git status -v'
 
 alias ll='exa -l --icons --git'
-alias tree='exa -lT --icons --git'
+alias tree='exa -T --icons --git'
 
 alias pj='pipenv run python jumeaux/executor.py'
 
@@ -74,8 +74,5 @@ alias vimn='vim -u NONE -N'
 alias vimr='vim $(fd -H | fzf)'
 alias vimz='vim $(grep "^>" ~/.viminfo | cut -c 3- | sed "s@~@$HOME@" | fzf)'
 
-
 # pyenv
 eval "$(pyenv init -)"
-
-
