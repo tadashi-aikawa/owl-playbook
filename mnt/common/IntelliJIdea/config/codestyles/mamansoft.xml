@@ -1,4 +1,7 @@
 <code_scheme name="mamansoft" version="173">
+  <GoCodeStyleSettings>
+    <option name="LOCAL_PACKAGE_PREFIXES" />
+  </GoCodeStyleSettings>
   <JetCodeStyleSettings>
     <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
   </JetCodeStyleSettings>
