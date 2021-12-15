@@ -1,6 +1,3 @@
 <application>
-  <component name="MarkdownApplicationSettings" DisableInjections="true">
-    <MarkdownCssSettings />
-    <MarkdownPreviewSettings DefaultSplitLayout="Show editor only" />
-  </component>
+  <component name="MarkdownApplicationSettings" DisableInjections="true" />
 </application>
