@@ -168,7 +168,7 @@ function owl() {
 # Java (IDEA用)
 #-----------------------------------------------------
 
-$env:JAVA_HOME = $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\213.5744.223\jbr"
+$env:JAVA_HOME = $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\213.6461.79\jbr"
 
 #-----------------------------------------------------
 # Golang
@@ -180,7 +180,7 @@ $env:GO111MODULE = "on"
 # Execution PATHs
 #-----------------------------------------------------
 
-$env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\213.5744.223\bin"
+$env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\213.6461.79\bin"
 $env:PATH += ";" + $env:USERPROFILE + "\git\bitbucket.org\ntj-developer\diamant\target\release"
 
 
