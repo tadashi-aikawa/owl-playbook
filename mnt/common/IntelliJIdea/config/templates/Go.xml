@@ -5,4 +5,10 @@
       <option name="GO_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="ife" value="if err != nil {&#10;&#9;return nil, fmt.Errorf(&quot;$ERROR_MESSAGE$\n %w&quot;, err)&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="ERROR_MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
 </templateSet>
