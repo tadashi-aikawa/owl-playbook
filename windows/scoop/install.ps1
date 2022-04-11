@@ -46,6 +46,7 @@ scoop install `
   go `
   rustup `
   hugo-extended `
+  volta `
   vcxsrv
 
 # Python
