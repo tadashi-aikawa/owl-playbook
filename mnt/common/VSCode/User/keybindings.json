@@ -2,7 +2,7 @@
   // 検索
   {
     "key": "ctrl+f",
-    "command": "actions.find",
+    "command": "actions.find"
   },
   // タブ分割/移動
   {
@@ -113,24 +113,24 @@
     "when": "editorFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+j ctrl+j",
+    "key": "shift+alt+j",
     "command": "workbench.action.editor.nextChange",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+j ctrl+k",
+    "key": "shift+alt+k",
     "command": "workbench.action.editor.previousChange",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+j ctrl+j",
+    "key": "shift+alt+j",
     "command": "workbench.action.compareEditor.nextChange",
-    "when": "textCompareEditorVisible"
+    "when": "textCompareEditorVisible || isInDiffEditor"
   },
   {
-    "key": "ctrl+j ctrl+k",
+    "key": "shift+alt+k",
     "command": "workbench.action.compareEditor.previousChange",
-    "when": "textCompareEditorVisible"
+    "when": "textCompareEditorVisible || isInDiffEditor"
   },
   {
     "key": "ctrl+j ctrl+d",
@@ -397,5 +397,25 @@
     "key": "ctrl+enter",
     "command": "-editor.action.openLink",
     "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "-bookmarks.expandSelectionToPrevious",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f7",
+    "command": "-editor.action.diffReview.next",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "shift+alt+k",
+    "command": "-bookmarks.shrinkSelection",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+f7",
+    "command": "-editor.action.diffReview.prev",
+    "when": "isInDiffEditor"
   }
 ]

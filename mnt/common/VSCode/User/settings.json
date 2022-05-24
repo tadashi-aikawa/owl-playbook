@@ -5,7 +5,7 @@
   "editor.fontFamily": "SauceCodePro NF",
   "editor.fontSize": 18,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Default High Contrast",
   "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
   "window.zoomLevel": 0,
   "editor.minimap.showSlider": "always",
@@ -17,11 +17,11 @@
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": true,
+  "diffEditor.renderSideBySide": true,
   // -------------------------------------
   // 挙動
   // -------------------------------------
   "editor.tabCompletion": "on",
-  "editor.snippetSuggestions": "top",
   "editor.formatOnSave": true,
   // -------------------------------------
   // デフォルトファイル設定
@@ -209,6 +209,11 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
-  }
+  },
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.defaultDateStyle": "absolute"
   // "extensions.autoUpdate": false,
 }
