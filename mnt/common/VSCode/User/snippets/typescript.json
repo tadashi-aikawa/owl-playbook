@@ -1,0 +1,51 @@
+{
+  "vue_props": {
+    "prefix": "vue_props",
+    "body": [
+      "interface Props {",
+      "  $1: $2",
+      "}",
+      "const props = defineProps<Props>() ",
+      ""
+    ],
+    "description": ""
+  },
+  "vue_props_with_default": {
+    "prefix": "vue_props_with_default",
+    "body": [
+      "interface Props {",
+      "  $1: $2",
+      "}",
+      "const props = withDefaults(defineProps<Props>(), {",
+      "  $1: $3",
+      "})",
+      ""
+    ],
+    "description": ""
+  },
+  "vue_state": {
+    "prefix": "vue_state",
+    "body": [
+      "interface State {",
+      "  $1: $2",
+      "}",
+      "const state = reactive<State>({",
+      "  $1: $3,",
+      "})",
+      ""
+    ],
+    "description": ""
+  },
+  "vue_emit": {
+    "prefix": "vue_emit",
+    "body": [
+      "const emit = defineEmits<{",
+      "  (e: '$click', param: number): void",
+      "}>()",
+      "const handle = (id) => {",
+      "  emit('$click', param)",
+      "}"
+    ],
+    "description": ""
+  }
+}

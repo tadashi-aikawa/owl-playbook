@@ -5,7 +5,7 @@
   "editor.fontFamily": "SauceCodePro NF",
   "editor.fontSize": 18,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Default High Contrast",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
   "window.zoomLevel": 0,
   "editor.minimap.showSlider": "always",
