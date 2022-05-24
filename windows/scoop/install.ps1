@@ -37,8 +37,8 @@ scoop install `
   postman `
   keypirinha `
   ditto `
-  vscode `
   draw.io
+# vscodeは直接インストール
 
 # Language / Framework / MiddleWare
 scoop install `

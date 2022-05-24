@@ -30,4 +30,4 @@ shuworks.vscode-table-formatter
 slevesque.vscode-autohotkey
 vscodevim.vim
 hediet.vscode-drawio
-
+Vue.volar
