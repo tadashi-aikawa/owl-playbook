@@ -9,4 +9,11 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="vs-state" value="interface State {&#10;  $1$: $2$&#10;}&#10;&#10;const state = reactive&lt;State&gt;({&#10;  $1$: $2$,&#10;})&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VUE_SCRIPT" value="true" />
+    </context>
+  </template>
 </templateSet>
