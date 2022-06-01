@@ -64,16 +64,12 @@
   "vim.searchHighlightColor": "#070",
   "vim.camelCaseMotion.enable": true,
   "vim.highlightedyank.enable": true,
-  "vim.leader": "<space>",
+  "vim.leader": "]",
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "rgba(0, 0, 0, 0.5)",
   "vim.easymotionMarkerForegroundColorOneChar": "lime",
   "vim.replaceWithRegister": true,
   "vim.normalModeKeyBindings": [
-    {
-      "before": ["]"],
-      "after": ["<leader>"]
-    },
     {
       "before": ["<C-k>"],
       "after": ["g", "b"]
