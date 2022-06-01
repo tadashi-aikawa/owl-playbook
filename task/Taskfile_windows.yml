@@ -62,7 +62,7 @@ tasks:
       - |
         cd ~ &&
         7z a -p backup.zip backup &&
-        mv backup.zip G:\マイドライブ\
+        e backup.zip
 
   backup:private:
     desc: プライベートのバックアップ
