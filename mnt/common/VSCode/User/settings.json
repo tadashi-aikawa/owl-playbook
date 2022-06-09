@@ -192,6 +192,7 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "workbench.editor.splitInGroupLayout": "vertical"
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "rust-analyzer.checkOnSave.command": "clippy"
   // "extensions.autoUpdate": false,
 }
