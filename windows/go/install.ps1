@@ -1,2 +1,2 @@
-#go get -u github.com/tadashi-aikawa/gowl
-go get -u github.com/tcnksm/ghr
+go install github.com/tadashi-aikawa/gowl@latest
+go install github.com/tcnksm/ghr@latest
