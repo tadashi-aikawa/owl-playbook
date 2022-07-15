@@ -1,1 +1,1 @@
-npm install -g npm-upgrade
+npm install -g npm-check
