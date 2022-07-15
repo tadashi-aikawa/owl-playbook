@@ -127,6 +127,7 @@
     <option name="m_limit" value="30" />
   </inspection_tool>
   <inspection_tool class="StringLiteralBreaksHTMLJS" enabled="true" level="WARNING" enabled_by_default="true" />
+  <inspection_tool class="Stylelint" enabled="true" level="ERROR" enabled_by_default="true" />
   <inspection_tool class="TailRecursionJS" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="TextLabelInSwitchStatementJS" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="TsLint" enabled="true" level="WARNING" enabled_by_default="true" />

@@ -4,9 +4,9 @@ scoop bucket add versions
 scoop bucket add extras
 
 # CLI Tools
+# lessはbatなどで必要
 scoop install `
   busybox `
-  # busyboxのインストールではダメ. batなどで必要
   less `
   sudo `
   bat `
