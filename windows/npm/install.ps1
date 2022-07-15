@@ -1,1 +1,1 @@
-npm install -g npm-check
+npm install -g npm-check qnm
