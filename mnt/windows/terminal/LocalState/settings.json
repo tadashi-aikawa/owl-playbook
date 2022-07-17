@@ -6,9 +6,24 @@
         {
             "command": 
             {
+                "action": "scrollDown"
+            },
+            "keys": "shift+down"
+        },
+        {
+            "command": 
+            {
                 "action": "commandPalette"
             },
             "keys": "ctrl+shift+p"
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "shift+pgup"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+alt+f"
         },
         {
             "command": "unbound",
@@ -21,21 +36,17 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "prevTab"
             },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "scrollUpPage",
-            "keys": "shift+pgup"
+            "keys": "alt+h"
         },
         {
             "command": 
             {
-                "action": "openSettings"
+                "action": "copy",
+                "singleLine": false
             },
-            "keys": "ctrl+shift+s"
+            "keys": "ctrl+c"
         },
         {
             "command": 
@@ -45,15 +56,19 @@
             "keys": "shift+up"
         },
         {
-            "command": "find",
-            "keys": "ctrl+alt+f"
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "up"
+            },
+            "keys": "alt+shift+k"
         },
         {
             "command": 
             {
-                "action": "scrollDown"
+                "action": "openSettings"
             },
-            "keys": "shift+down"
+            "keys": "ctrl+shift+s"
         },
         {
             "command": "scrollDownPage",
@@ -83,18 +98,19 @@
         {
             "command": 
             {
-                "action": "prevTab"
-            },
-            "keys": "alt+h"
-        },
-        {
-            "command": 
-            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "left"
+            },
+            "keys": "alt+shift+h"
         },
         {
             "command": 
@@ -132,14 +148,6 @@
             "command": 
             {
                 "action": "resizePane",
-                "direction": "left"
-            },
-            "keys": "alt+shift+h"
-        },
-        {
-            "command": 
-            {
-                "action": "resizePane",
                 "direction": "down"
             },
             "keys": "alt+shift+j"
@@ -151,14 +159,6 @@
                 "direction": "right"
             },
             "keys": "alt+shift+l"
-        },
-        {
-            "command": 
-            {
-                "action": "resizePane",
-                "direction": "up"
-            },
-            "keys": "alt+shift+k"
         }
     ],
     "copyFormatting": "none",
@@ -202,17 +202,6 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\wsl\\ubuntu.png",
-                "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.40000000000000002,
-                "backgroundImageStretchMode": "none",
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-                "hidden": false,
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu-20.04/home/tadashi-aikawa"
-            },
-            {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -223,15 +212,15 @@
                 "name": "Command Prompt"
             },
             {
-                "guid": "{eaeb8da0-8c22-599a-a675-98167821a423}",
+                "guid": "{ee470b40-f354-5b7c-ba96-0f95633b4206}",
                 "hidden": false,
-                "name": "Developer Command Prompt for VS 2019",
+                "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{9678ac46-8de3-5fe6-95f2-44e5c7556494}",
+                "guid": "{767de345-540e-514b-b81b-90f65b0e2e79}",
                 "hidden": false,
-                "name": "Developer PowerShell for VS 2019",
+                "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             }
         ]
