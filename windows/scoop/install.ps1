@@ -28,7 +28,8 @@ scoop install `
   xh `
   zoxide `
   task `
-  git
+  git `
+  watchexec
 
 # GUI Tools
 scoop install `
