@@ -31,7 +31,7 @@ Invoke-Expression (& {
     (zoxide init --hook $hook powershell) -join "`n"
 })
 
-Set-PoshPrompt -Theme  ~/.oh-my-posh.json
+oh-my-posh init pwsh --config ~/.oh-my-posh.json | Invoke-Expression
 
 #-----------------------------------------------------
 # fzf
