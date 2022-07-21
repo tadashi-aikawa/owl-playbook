@@ -29,7 +29,8 @@ scoop install `
   zoxide `
   task `
   git `
-  watchexec
+  watchexec `
+  oh-my-posh
 
 # GUI Tools
 scoop install `
