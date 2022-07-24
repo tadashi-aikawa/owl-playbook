@@ -23,6 +23,7 @@ scoop install `
   make `
   ffmpeg `
   vim `
+  neovim `
   uutils-coreutils `
   broot `
   xh `
