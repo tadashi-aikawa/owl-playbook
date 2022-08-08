@@ -22,6 +22,7 @@ ms-vscode.cpptools
 mushan.vscode-paste-image
 pkief.material-icon-theme
 quicktype.quicktype
+rust-lang.rust-analyzer
 ryu1kn.edit-with-shell
 ryu1kn.partial-diff
 sgryjp.japanese-word-handler
