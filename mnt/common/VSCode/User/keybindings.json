@@ -298,12 +298,16 @@
     "command": "workbench.action.gotoSymbol"
   },
   {
+    "key": "ctrl+j s",
+    "command": "workbench.action.showAllSymbols"
+  },
+  {
     "key": "ctrl+j p",
     "command": "workbench.action.problems.focus"
   },
   {
     "key": "ctrl+j g",
-    "command": "workbench.view.search"
+    "command": "workbench.action.findInFiles"
   },
   {
     "key": "ctrl+j w",
