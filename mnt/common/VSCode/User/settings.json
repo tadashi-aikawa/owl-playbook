@@ -43,7 +43,8 @@
     "files.encoding": "shiftjis"
   },
   "files.associations": {
-    "Vagrantfile": "ruby"
+    "Vagrantfile": "ruby",
+    "*.txt": "csv"
   },
   // -------------------------------------
   // ターミナル
