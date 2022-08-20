@@ -117,6 +117,7 @@
     <keyboard-shortcut first-keystroke="alt i" />
   </action>
   <action id="FileChooser.GotoHome" />
+  <action id="FileChooser.TogglePathBar" />
   <action id="FileChooser.TogglePathShowing" />
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="o" />
