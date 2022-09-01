@@ -60,9 +60,9 @@ tasks:
     cmds:
       - cp ~/.ssh/* ~/backup/secrets/.ssh/
       - |
-        cd ~ &&
+        cd ~/tmp &&
         7z a -p backup.zip backup &&
-        e backup.zip
+        e .
 
   backup:private:
     desc: プライベートのバックアップ
