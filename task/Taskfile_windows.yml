@@ -18,7 +18,7 @@ tasks:
   gif:
     desc: 直近に作成したmp4をgifにコンバートする
     cmds:
-      - ffmpeg -y -i {{.INPUT}} -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" ~/tmp/{{now | date "2006-01-02"}}.gif
+      - ffmpeg -y -i {{.INPUT}} -filter_complex "[0:v] split [a][b];[a] palettegen [p];[b][p] paletteuse" ~/tmp/{{now | date "2006-01-02-15-04-05"}}.gif
       - cmd: cd ~/tmp && explorer .
         ignore_error: true # なぜか必ずエラーになる..
     vars:
@@ -28,7 +28,7 @@ tasks:
   mp4:
     desc: 直近に作成したmp4をサイズ削減する
     cmds:
-      - ffmpeg -i {{.INPUT}} -vcodec libx264 -crf 20 ~/tmp/{{now | date "2006-01-02"}}.mp4
+      - ffmpeg -i {{.INPUT}} -vcodec libx264 -crf 20 ~/tmp/{{now | date "2006-01-02-15-04-05"}}.mp4
       - cmd: cd ~/tmp && explorer .
         ignore_error: true # なぜか必ずエラーになる..
     vars:
@@ -38,7 +38,7 @@ tasks:
   jpg:
     desc: 直近にダウンロードしたjpgファイルを 横幅1280 + パレット最適化 する
     cmds:
-      - ffmpeg -y -i {{.INPUT}} -vf scale=1280:-1 ~/tmp/{{now | date "2006-01-02"}}.jpg
+      - ffmpeg -y -i {{.INPUT}} -vf scale=1280:-1 ~/tmp/{{now | date "2006-01-02-15-04-05"}}.jpg
       - cmd: cd ~/tmp && explorer .
         ignore_error: true # なぜか必ずエラーになる..
     vars:
