@@ -28,7 +28,7 @@ Set-PSReadLineOption -EditMode Emacs
 
 Invoke-Expression (& {
     $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-    (zoxide init --hook $hook powershell) -join "`n"
+    (zoxide init --hook $hook powershell | Out-String)
 })
 
 oh-my-posh init pwsh --config ~/.oh-my-posh.json | Invoke-Expression
