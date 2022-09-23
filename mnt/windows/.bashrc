@@ -3,11 +3,6 @@ alias su='iconv -f Shift-Jis -t utf-8'
 export MSYS=winsymlinks:nativestrict
 export LANG=ja_JP.UTF-8
 
-# https://qiita.com/cointoss1973/items/a0da81df10f8cc04c83e
-alias python='winpty python.exe'
-alias gowl='winpty -Xallow-non-tty gowl'
-alias fzf='winpty -Xallow-non-tty fzf'
-
 # alias
 alias acmd='powershell -command "Start-Process -Verb runas cmd"'
 
