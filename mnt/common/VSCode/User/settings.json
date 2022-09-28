@@ -194,6 +194,9 @@
     "*.ipynb": "jupyter-notebook"
   },
   "workbench.editor.splitInGroupLayout": "vertical",
-  "rust-analyzer.checkOnSave.command": "clippy"
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
   // "extensions.autoUpdate": false,
 }
