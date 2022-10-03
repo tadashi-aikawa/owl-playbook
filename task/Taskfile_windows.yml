@@ -61,7 +61,7 @@ tasks:
       - cp ~/.ssh/* ~/backup/secrets/.ssh/
       - |
         cd ~/tmp &&
-        7z a -p backup.zip backup &&
+        7z a -p backup.zip ~/backup &&
         e .
 
   backup:private:
