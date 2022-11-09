@@ -183,8 +183,11 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "[go]": {
     "editor.defaultFormatter": null,
@@ -206,6 +209,7 @@
   "rust-analyzer.checkOnSave.command": "clippy",
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "svelte.plugin.svelte.note-new-transformation": false
   // "extensions.autoUpdate": false,
 }
