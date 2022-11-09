@@ -4,6 +4,10 @@
     "actions": 
     [
         {
+            "command": "scrollUpPage",
+            "keys": "shift+pgup"
+        },
+        {
             "command": 
             {
                 "action": "scrollDown"
@@ -16,22 +20,6 @@
                 "action": "commandPalette"
             },
             "keys": "ctrl+shift+p"
-        },
-        {
-            "command": "scrollUpPage",
-            "keys": "shift+pgup"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+alt+f"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+comma"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+v"
         },
         {
             "command": 
@@ -49,11 +37,40 @@
             "keys": "ctrl+c"
         },
         {
+            "command": "find",
+            "keys": "ctrl+alt+f"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "right"
+            },
+            "keys": "alt+shift+l"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+comma"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
             "command": 
             {
                 "action": "scrollUp"
             },
             "keys": "shift+up"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
         },
         {
             "command": 
@@ -94,15 +111,6 @@
                 "action": "nextTab"
             },
             "keys": "alt+l"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
         },
         {
             "command": 
@@ -151,14 +159,6 @@
                 "direction": "down"
             },
             "keys": "alt+shift+j"
-        },
-        {
-            "command": 
-            {
-                "action": "resizePane",
-                "direction": "right"
-            },
-            "keys": "alt+shift+l"
         }
     ],
     "copyFormatting": "none",
@@ -222,6 +222,18 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{1cd79813-5972-56cb-badb-ba5ee12693c5}",
+                "hidden": false,
+                "name": "rancher-desktop",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{1bdae7ec-8ca6-5caa-8453-8b6fe78b2748}",
+                "hidden": false,
+                "name": "rancher-desktop-data",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
