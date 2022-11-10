@@ -12,4 +12,9 @@
       <option name="RUST_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="sf" value="String::from(&quot;$END$&quot;);" description="String::from(&quot;&quot;);" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="RUST_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
