@@ -139,10 +139,9 @@ function fffavicon() { $width = $args[1]; ffmpeg -i $args[0] -vf scale=$width":-
 function ffjpeg() { ffmpeg -i $args[0] -vf scale=1280":-1" $args[0] }
 
 # broot
-function bo() { broot -g --conf $env:USERPROFILE\broot.toml $args }
 function br() {
     $outcmd = new-temporaryfile
-    bo --outcmd $outcmd $args
+    broot -g --conf $env:USERPROFILE\broot.toml --outcmd $outcmd $args
     if (!$?) {
         remove-item -force $outcmd
         return $lastexitcode
