@@ -12,8 +12,14 @@
       <option name="RUST_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="sf" value="String::from(&quot;$END$&quot;);" description="String::from(&quot;&quot;);" toReformat="true" toShortenFQNames="true">
+  <template name="sf" value="String::from(&quot;$END$&quot;)" description="String::from(&quot;&quot;)" toReformat="true" toShortenFQNames="true">
     <context>
+      <option name="RUST_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="debug" value="#[derive(Debug)]" description="#[derive(Debug)]" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="RUST_MOD" value="true" />
       <option name="RUST_STATEMENT" value="true" />
     </context>
   </template>
