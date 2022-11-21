@@ -23,4 +23,9 @@
       <option name="RUST_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="unittest" value="#[cfg(test)]&#10;mod tests {&#10;    use super::*;&#10;&#10;    #[test]&#10;    fn this_test_will_pass() {&#10;        assert!(true);&#10;    }&#10;}&#10;" description="unittest" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="RUST_MOD" value="true" />
+    </context>
+  </template>
 </templateSet>
