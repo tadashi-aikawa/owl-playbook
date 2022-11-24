@@ -210,6 +210,7 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "svelte.plugin.svelte.note-new-transformation": false
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "playwright.reuseBrowser": false
   // "extensions.autoUpdate": false,
 }
