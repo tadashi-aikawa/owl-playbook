@@ -3,11 +3,10 @@
   // 見た目
   // -------------------------------------
   "editor.fontFamily": "SauceCodePro NF",
-  "editor.fontSize": 18,
+  "editor.fontSize": 16,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
-  "window.zoomLevel": 0,
   "editor.minimap.showSlider": "always",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.enabled": true,
@@ -153,6 +152,10 @@
     }
   },
   // -------------------------------------
+  // AutoHotkey Plus
+  // -------------------------------------
+  "vscode-ahk-plus.executePath": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
+  // -------------------------------------
   // その他
   // -------------------------------------
   "terminal.integrated.rendererType": "dom",
@@ -172,7 +175,7 @@
     "editor.defaultFormatter": null
   },
   "[html]": {
-    "editor.defaultFormatter": null
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
