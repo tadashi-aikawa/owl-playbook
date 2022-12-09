@@ -214,6 +214,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "svelte.plugin.svelte.note-new-transformation": false,
-  "playwright.reuseBrowser": false
+  "playwright.reuseBrowser": false,
+  "svelte.enable-ts-plugin": true
   // "extensions.autoUpdate": false,
 }
