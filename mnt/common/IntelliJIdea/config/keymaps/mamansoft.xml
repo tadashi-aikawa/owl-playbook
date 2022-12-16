@@ -60,6 +60,9 @@
   <action id="Compare.LastVersion">
     <keyboard-shortcut first-keystroke="ctrl comma" second-keystroke="d" />
   </action>
+  <action id="CompileDirty">
+    <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="b" />
+  </action>
   <action id="Console.Jpa.GenerateSql" />
   <action id="Console.TableResult.EditValueMaximized">
     <keyboard-shortcut first-keystroke="shift alt enter" />
