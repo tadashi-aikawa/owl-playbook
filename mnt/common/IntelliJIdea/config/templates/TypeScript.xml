@@ -1,0 +1,16 @@
+<templateSet group="TypeScript">
+  <template name="zobject" value="const Z$1$ = z.object({&#10;  $end$&#10;});&#10;export type $1$ = z.infer&lt;typeof Z$1$&gt;;&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TS_TOP_LEVEL_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="zenum" value="const Z$1$ = z.enum([&#10;  &quot;$end$&quot;,&#10;]);&#10;export type $1$ = z.infer&lt;typeof Z$1$&gt;;&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TS_TOP_LEVEL_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
