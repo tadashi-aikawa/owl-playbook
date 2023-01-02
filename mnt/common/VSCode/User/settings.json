@@ -154,7 +154,7 @@
   // -------------------------------------
   // AutoHotkey Plus
   // -------------------------------------
-  "vscode-ahk-plus.executePath": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
+  "ahk++.file.executePath": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
   // -------------------------------------
   // その他
   // -------------------------------------
