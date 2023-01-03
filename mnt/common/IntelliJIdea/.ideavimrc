@@ -46,20 +46,20 @@ nnoremap
 
 " [ 🔌 Plugin ]
 "----------------
-set surround
-set commentary
-set textobj-entire
-set argtextobj
-set highlightedyank
-set textobj-indent
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-entire'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'michaeljsmith/vim-indent-object'
 
-set ReplaceWithRegister
+Plug 'vim-scripts/ReplaceWithRegister'
 map _ gr
 
-set multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
 map <C-k> <A-n>
 
-set easymotion
+Plug 'easymotion/vim-easymotion'
 nmap s <Plug>(easymotion-s2)
 
 " [ IDEA/Vim どちらを使うか]
