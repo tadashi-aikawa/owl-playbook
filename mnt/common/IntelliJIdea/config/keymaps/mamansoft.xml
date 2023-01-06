@@ -63,6 +63,10 @@
   <action id="CompileDirty">
     <keyboard-shortcut first-keystroke="ctrl j" second-keystroke="b" />
   </action>
+  <action id="Console.DbmsOutput">
+    <keyboard-shortcut first-keystroke="ctrl f8" />
+    <keyboard-shortcut first-keystroke="alt b" />
+  </action>
   <action id="Console.Jpa.GenerateSql" />
   <action id="Console.TableResult.EditValueMaximized">
     <keyboard-shortcut first-keystroke="shift alt enter" />
@@ -350,7 +354,6 @@
   <action id="ToggleLineBreakpoint">
     <keyboard-shortcut first-keystroke="ctrl f8" />
     <keyboard-shortcut first-keystroke="alt b" />
-    <keyboard-shortcut first-keystroke="shift ctrl b" />
   </action>
   <action id="TypeHierarchy" />
   <action id="UML.ApplyCurrentLayout" />
@@ -385,6 +388,9 @@
   <action id="XDebugger.EditWatch" />
   <action id="XDebugger.Inspect" />
   <action id="XDebugger.SetValue" />
+  <action id="git-commit-message-template.SetCommitMessageAction">
+    <keyboard-shortcut first-keystroke="shift ctrl b" />
+  </action>
   <action id="org.intellij.plugins.markdown.ui.actions.editorLayout.CyclicSplitLayoutChangeAction">
     <keyboard-shortcut first-keystroke="alt p" />
   </action>
