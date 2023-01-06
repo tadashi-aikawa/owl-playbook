@@ -57,11 +57,6 @@ call :******************** Terminal
 set TERMINAL_ORIGIN_DIR=%WINDOWS_MNT%\terminal
 call :link_file "%LOCAL%\Microsoft\Windows Terminal\settings.json" %TERMINAL_ORIGIN_DIR%\LocalState\settings.json
 
-call :******************** Keypirinha
-
-set KEYPIRINHA_ORIGIN_DIR=%WINDOWS_MNT%\keypirinha
-call :link_file %SCOOP%\persist\keypirinha\portable\Profile\User\Keypirinha.ini %KEYPIRINHA_ORIGIN_DIR%\User\Keypirinha.ini
-
 call :******************** Broot
 
 call :link_file "%USERPROFILE%\broot.toml" %WINDOWS_MNT%\broot.toml
