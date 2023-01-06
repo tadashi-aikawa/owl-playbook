@@ -28,7 +28,7 @@ ryu1kn.partial-diff
 sgryjp.japanese-word-handler
 shardulm94.trailing-spaces
 shuworks.vscode-table-formatter
-slevesque.vscode-autohotkey
+mark-wiemer.vscode-autohotkey-plus-plus
 vscodevim.vim
 hediet.vscode-drawio
 Vue.volar
