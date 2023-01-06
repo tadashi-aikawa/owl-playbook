@@ -1,3 +1,11 @@
+# ----------------------------------------------------------
+# あえて直接インストールモノ (パス関係などでトラブルを起こしやすいので)
+# ----------------------------------------------------------
+#  - IntelliJ IDEA
+#  - VSCode
+#  - Flow Launcher
+#  - AutoHotkey
+
 # Add versions bucket
 scoop bucket add versions
 # Add extras
@@ -6,42 +14,41 @@ scoop bucket add extras
 # CLI Tools
 # lessはbatなどで必要
 scoop install `
-  busybox `
-  less `
-  sudo `
+  7zip `
   bat `
   bind `
-  fd `
-  dust `
-  7zip `
-  fzf `
-  jq `
-  jid `
-  ripgrep `
-  delta `
-  lsd `
-  make `
-  ffmpeg `
-  vim `
-  neovim `
-  uutils-coreutils `
   broot `
-  xh `
-  zoxide `
-  task `
+  busybox `
+  delta `
+  dust `
+  fd `
+  ffmpeg `
+  fzf `
   git `
+  jid `
+  jq `
+  less `
+  make `
+  neovim `
+  oh-my-posh `
+  ripgrep `
+  sudo `
+  task `
+  uutils-coreutils `
+  vim `
   watchexec `
-  oh-my-posh
+  xh `
+  zoxide
 
 # GUI Tools
 scoop install `
-  windows-terminal `
   dbeaver `
-  postman `
-  keypirinha `
   ditto `
-  draw.io
-# vscodeは直接インストール
+  draw.io `
+  gimp `
+  postman `
+  windows-terminal `
+  winmerge
 
 # Language / Framework / MiddleWare
 scoop install `
@@ -61,7 +68,3 @@ scoop install `
   python310 `
   python
 scoop reset python
-
-sudo scoop install autohotkey-installer
-# In the future..: scoop install volta
-#
