@@ -152,7 +152,7 @@
     }
   },
   // -------------------------------------
-  // AutoHotkey Plus
+  // AutoHotkey Plus Plus
   // -------------------------------------
   "ahk++.file.executePath": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
   // -------------------------------------
