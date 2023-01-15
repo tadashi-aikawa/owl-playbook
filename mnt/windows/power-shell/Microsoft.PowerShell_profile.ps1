@@ -47,6 +47,20 @@ function _fzf_compgen_dir() {
     fd --type d -HL --exclude ".git" . "$1"
 }
 
+# PSFzf
+# https://gist.github.com/nv-h/081684cee2505cd336e26c2660fc7541
+Set-PSReadLineKeyHandler -Chord Ctrl+r -ScriptBlock {
+    $command = Get-Content (Get-PSReadlineOption).HistorySavePath | tac | awk '!a[$0]++' | Invoke-Fzf -NoSort -Exact
+    [Microsoft.PowerShell.PSConsoleReadLine]::InvokePrompt()
+
+    if (!$command) {
+      return
+    }
+
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert($command)
+}
+
+
 #-----------------------------------------------------
 # Linux like commands
 #-----------------------------------------------------
