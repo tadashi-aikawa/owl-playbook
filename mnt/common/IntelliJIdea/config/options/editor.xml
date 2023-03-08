@@ -34,7 +34,15 @@
         <option value="JAVA.java.implicit.types" />
       </set>
     </option>
-    <option name="lastViewedProviderKeyId" value=".inheritors" />
+    <option name="lastViewedProviderKeyId" value="TypeScript.ts.type.hints.variables.and.fields" />
+    <settingsMapElement>
+      <TypeScript.ts.type.hints>
+        <Settings>
+          <option name="showForFunctions" value="true" />
+          <option name="showForShorthandFunctions" value="true" />
+        </Settings>
+      </TypeScript.ts.type.hints>
+    </settingsMapElement>
   </component>
   <component name="XmlEditorOptions">
     <option name="automaticallyInsertClosingTag" value="false" />
