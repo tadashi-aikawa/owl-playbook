@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "scrollDown"
             },
@@ -15,7 +15,7 @@
             "keys": "shift+pgup"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "commandPalette"
             },
@@ -26,14 +26,14 @@
             "keys": "ctrl+alt+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "prevTab"
             },
             "keys": "alt+h"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -41,7 +41,7 @@
             "keys": "ctrl+c"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "right"
@@ -57,14 +57,18 @@
             "keys": "ctrl+v"
         },
         {
-            "command": 
+            "command": "unbound",
+            "keys": "alt+enter"
+        },
+        {
+            "command":
             {
                 "action": "scrollUp"
             },
             "keys": "shift+up"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "up"
@@ -72,7 +76,7 @@
             "keys": "alt+shift+k"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -81,7 +85,7 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "openSettings"
             },
@@ -92,28 +96,28 @@
             "keys": "shift+pgdn"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab"
             },
             "keys": "ctrl+t"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "closeTab"
             },
             "keys": "alt+w"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "nextTab"
             },
             "keys": "alt+l"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "left"
@@ -121,7 +125,7 @@
             "keys": "alt+shift+h"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "down"
@@ -129,7 +133,7 @@
             "keys": "ctrl+alt+j"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "right"
@@ -137,7 +141,7 @@
             "keys": "ctrl+alt+l"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "left"
@@ -145,7 +149,7 @@
             "keys": "ctrl+alt+h"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "up"
@@ -153,7 +157,7 @@
             "keys": "ctrl+alt+k"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "down"
@@ -164,24 +168,24 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "disabledProfileSources": 
+    "disabledProfileSources":
     [
         "Windows.Terminal.Azure"
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "closeOnExit": "always",
             "colorScheme": "Tango Dark",
-            "font": 
+            "font":
             {
                 "face": "SauceCodePro NF",
                 "size": 13
             },
             "startingDirectory": "%USERPROFILE%"
         },
-        "list": 
+        "list":
         [
             {
                 "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\power-shell\\fukurou.jpg",
@@ -249,7 +253,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
