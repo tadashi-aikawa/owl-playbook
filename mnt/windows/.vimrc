@@ -16,6 +16,10 @@ set nocompatible
 " ---------------------------------------------------
 call plug#begin()
 
+" Use release branch (recommended)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+nmap <silent> <C-]> <Plug>(coc-definition)
+
 " yank範囲のハイライト
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 300
