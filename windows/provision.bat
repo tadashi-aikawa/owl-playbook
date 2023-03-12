@@ -38,6 +38,9 @@ call :link_vscode_dir snippets
 rem See https://blog.mamansoft.net/2018/09/17/vscode-satisfies-vimmer/
 call :each vscode_extension_install vscode-extensions.txt
 
+call :******************** Neovim
+
+call :link_dir "%LOCAL%\nvim" %WINDOWS_MNT%\nvim
 
 call :******************** Homedir
 call :each link_windows_home windows-home-dots.txt
