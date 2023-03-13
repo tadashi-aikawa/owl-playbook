@@ -102,6 +102,9 @@ function awslocal { aws '--endpoint-url=http://localhost:4566' $args }
 # Useful commands
 #-----------------------------------------------------
 
+# Neovim
+Set-Alias vim nvim
+
 # cd
 function ..() { cd ../ }
 function ...() { cd ../../ }
