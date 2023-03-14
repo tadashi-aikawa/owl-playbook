@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSave": true,
+  "python.formatting.provider": "black",
   "suggest.completionItemKindLabels": {
     "function": "\uf794",
     "method": "\uf6a6",
