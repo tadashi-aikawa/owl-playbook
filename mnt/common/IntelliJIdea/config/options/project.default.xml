@@ -1,6 +1,7 @@
 <application>
   <component name="ProjectManager">
     <defaultProject>
+      <component name="BlackConnectSettings" triggerOnEachSave="true" triggerOnReformat="true" />
       <component name="CheckStyle-IDEA">
         <option name="configuration">
           <map>
@@ -119,17 +120,12 @@
       <component name="ProjectViewState">
         <option name="showLibraryContents" value="true" />
       </component>
-      <component name="PropertiesComponent">
-        <property name="node.js.path.for.package.eslint" value="project" />
-        <property name="node.js.path.for.package.standard" value="project" />
-        <property name="node.js.path.for.package.tslint" value="project" />
-        <property name="node.js.selected.package.eslint" value="(autodetect)" />
-        <property name="node.js.selected.package.standard" value="" />
-        <property name="node.js.selected.package.tslint" value="(autodetect)" />
-        <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,vue,json}" />
-        <property name="run.prettier.on.save" value="true" />
-        <property name="settings.editor.selected.configurable" value="language.rust.rustfmt" />
-      </component>
+      <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "go.import.settings.migrated": "true",
+    "settings.editor.selected.configurable": "me.lensvol.blackconnect.settings"
+  }
+}]]></component>
       <component name="RustProjectSettings">
         <option name="externalLinter" value="Clippy" />
         <option name="runExternalLinterOnTheFly" value="true" />
@@ -137,6 +133,12 @@
       </component>
       <component name="RustfmtProjectSettings">
         <option name="runRustfmtOnSave" value="true" />
+      </component>
+      <component name="WindowStateProjectService">
+        <state x="461" y="156" key="SettingsEditor" timestamp="1678792847011">
+          <screen x="0" y="0" width="1920" height="1032" />
+        </state>
+        <state x="461" y="156" key="SettingsEditor/-1916.1081.1920.1032/0.0.1920.1032/1934.0.1920.1032/-1600.-119.1600.1152/1924.1080.1366.720/4.1081.1920.1032" timestamp="1678792847011" />
       </component>
       <component name="YarnPnpManager">
         <pnp-files />
