@@ -83,18 +83,20 @@ Plug 'itchyny/lightline.vim'
 vim.g.lightline = { colorscheme = 'jellybeans' }
 
 -- " Fern
--- Plug 'lambdalisue/fern.vim'
--- nnoremap <C-j>w :Fern %:h -drawer -width=50<cr>
--- Plug 'lambdalisue/nerdfont.vim'
--- Plug 'lambdalisue/glyph-palette.vim'
--- augroup my-glyph-palette
--- autocmd! *
--- autocmd FileType fern call glyph_palette#apply()
--- autocmd FileType nerdtree,startify call glyph_palette#apply()
--- augroup END
--- Plug 'lambdalisue/fern-renderer-nerdfont.vim'
--- let g:fern#renderer = "nerdfont"
--- Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern.vim'
+key('n', '<C-j>w', ':Fern %:h -drawer -width=50<cr>', { noremap = true })
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
+vim.cmd([[
+augroup my-glyph-palette
+autocmd! *
+autocmd FileType fern call glyph_palette#apply()
+autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+]])
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+vim.g['fern#renderer'] = "nerdfont"
+Plug 'lambdalisue/fern-git-status.vim'
 
 -- mark
 Plug 'kshenoy/vim-signature'
