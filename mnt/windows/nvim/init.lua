@@ -104,6 +104,8 @@ Plug 'kshenoy/vim-signature'
 -- telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.1' })
+Plug 'kkharji/sqlite.lua'
+Plug 'nvim-telescope/telescope-frecency.nvim'
 
 vim.call('plug#end')
 
@@ -121,9 +123,13 @@ require("telescope").setup {
     }
 }
 
+require('telescope').load_extension('frecency')
+local home = os.getenv("USERPROFILE")
+vim.g.sqlite_clib_path = home .. "/dll/sqlite3.dll"
+key('n', '<C-j>e', ':Telescope frecency<CR>', {silent = true, noremap = true})
+
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-j>f', builtin.find_files, {})
-vim.keymap.set('n', '<C-j>e', builtin.oldfiles, {})
+key('n', '<C-j>f', builtin.find_files, {})
 
 -----------------------------------------------------
 -- パフォーマンス
