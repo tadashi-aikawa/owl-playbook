@@ -125,7 +125,7 @@ require("telescope").setup {
 
 require('telescope').load_extension('frecency')
 local home = os.getenv("USERPROFILE")
-vim.g.sqlite_clib_path = home .. "/dll/sqlite3.dll"
+vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
 key('n', '<C-j>e', ':Telescope frecency<CR>', {silent = true, noremap = true})
 
 local builtin = require('telescope.builtin')
