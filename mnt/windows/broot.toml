@@ -6,7 +6,7 @@ internal = ":open_stay"
 [[verbs]]
 invocation = "vim"
 key = "enter"
-external = "vim {file}"
+external = "nvim {file}"
 leave_broot = false
 apply_to = "file"
 
