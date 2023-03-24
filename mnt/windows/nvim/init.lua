@@ -107,6 +107,11 @@ Plug('nvim-telescope/telescope.nvim', { tag = '0.1.1' })
 Plug 'kkharji/sqlite.lua'
 Plug 'nvim-telescope/telescope-frecency.nvim'
 
+-- barbar
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
+
+
 vim.call('plug#end')
 
 vim.cmd("runtime macros/sandwich/keymap/surround.vim")
@@ -203,8 +208,10 @@ vim.cmd([[
 key('i', '<C-l>', '<C-x><C-l>')
 -- Escapeでハイライト消去
 key('n', '<ESC><ESC>', ':nohl<CR>')
--- " バッファ切り替え
-key('n', '<M-Left>', ':bprev<CR>')
-key('n', '<M-Right>', ':bnext<CR>')
+-- バッファ切り替え
+-- key('n', '<M-Left>', ':bprev<CR>')
+-- key('n', '<M-Right>', ':bnext<CR>')
 key('n', '<Space>r', ':b#<CR>')
-
+key('n', '<Space>e', ':BufferPick<CR>')
+-- バッファクローズ
+key('n', '<M-w>', ":bd<CR>")
