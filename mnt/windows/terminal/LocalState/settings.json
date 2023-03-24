@@ -107,7 +107,7 @@
             {
                 "action": "closeTab"
             },
-            "keys": "alt+w"
+            "keys": "ctrl+shift+q"
         },
         {
             "command":
