@@ -9,3 +9,4 @@ vim_settings.xml
 # secret
 .secret
 
+packer_compiled.lua

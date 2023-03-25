@@ -11,14 +11,137 @@ set.fileformats="unix,dos,mac"
 -- swapfileを作成しない
 vim.opt.swapfile = false
 
---------------------------------------------------------
---  vim-plug
---------------------------------------------------------
-local Plug = vim.fn['plug#']
-vim.call('plug#begin')
+-----------------------------------------------------
+--  プラグイン
+-----------------------------------------------------
+vim.cmd [[packadd packer.nvim]]
 
--- VSCode like
-Plug('neoclide/coc.nvim', {branch = 'release'})
+require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim' 
+  use 'morhetz/gruvbox' -- テーマ
+  use 'vim-scripts/ReplaceWithRegister' -- ブラックホールレジスト+putの省略
+  use 'tpope/vim-commentary' -- コメントアウト
+  use 'kana/vim-textobj-user' -- text-objectのユーザーカスタマイズ
+  use 'kana/vim-textobj-entire' -- 全体が範囲のtext-object
+  use 'kshenoy/vim-signature' -- マークの可視化
+  use 'nvim-tree/nvim-web-devicons' -- アイコンの表示
+  use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'} -- バッファ・タブバーをかっこよく
+  -- 囲まれているものの操作
+  use {
+    'machakann/vim-sandwich',
+    config = 'vim.cmd("runtime macros/sandwich/keymap/surround.vim")'
+  }
+  -- キャメルケースモーション
+  use {
+    'bkad/CamelCaseMotion',
+    config = 'vim.g.camelcasemotion_key = "]"'
+  }
+  -- 画面内瞬間移動
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    config = function()
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
+  use {
+    'machakann/vim-highlightedyank',
+    config = 'vim.g.highlightedyank_highlight_duration = 300'
+  }
+  -- マルチカーソル
+  use {
+    'mg979/vim-visual-multi',
+    config = function()
+      vim.api.nvim_command('let g:VM_maps = {}')
+      vim.api.nvim_command("let g:VM_maps['Find Under'] = '<C-k>'")
+      vim.api.nvim_command("let g:VM_maps['Find Subword Under'] = '<C-k>'")
+    end
+  }
+  -- ステータスライン
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    options = { theme = 'gruvbox' },
+    config = 'require("lualine").setup()'
+  }
+  -- Fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      local actions = require("telescope.actions")
+      require("telescope").setup {
+          defaults = {
+              mappings = {
+                  i = { ["<esc>"] = actions.close },
+                  n = { ["q"] = actions.close },
+              },
+              layout_strategy = 'vertical'
+          }
+      }
+    end
+  }
+  use {
+    'nvim-telescope/telescope-frecency.nvim',
+    config = function()
+      require"telescope".load_extension("frecency")
+      local home = os.getenv("USERPROFILE")
+      vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
+    end,
+    requires = {"kkharji/sqlite.lua"}
+  }
+  -- サイドバー表示 (ファイルの変更、診断、エクスプローラー、symbolなど)
+  use {
+    'sidebar-nvim/sidebar.nvim',
+    config = function()
+      require("sidebar-nvim").setup {
+        open = true,
+        sections = { "git", "diagnostics", "files", "symbols" },
+        files = {
+          show_hidden = true,
+          ignore_paths = {"%.git$"}
+        }
+      }
+      -- hop.nvimでsを使いたいので無効化してaに割り当て
+      local git_section = require("sidebar-nvim.builtin.git")
+      git_section.bindings["a"] = git_section.bindings["s"]
+      git_section.bindings["s"] = nil
+    end
+  }
+  -- Gitの行表示
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+  -- VSCode like
+  use {
+    'neoclide/coc.nvim',
+    branch = "release",
+    config = function()
+      vim.g.coc_global_extensions = {
+        "coc-json",
+        "coc-tsserver",
+        "coc-css",
+        "coc-yaml",
+        "coc-rust-analyzer",
+        "coc-sh",
+        "coc-prettier",
+        "coc-pyright"
+      }
+    end
+  }
+end)
+
+-----------------------------------------------------
+--  プラグインキーバインド
+-----------------------------------------------------
+
+--------------
+-- coc.nvim --
+--------------
 local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
 -- 定義に移動
 key('n', '<C-]>', '<Plug>(coc-definition)', {silent = true})
@@ -43,100 +166,23 @@ key('n', '<C-j>s', ':<C-u>CocList -I symbols<cr>', {silent = true, nowait = true
 -- Rename
 key('n', '<S-M-r>', '<Plug>(coc-rename)')
 
--- yank範囲のハイライト
-Plug 'machakann/vim-highlightedyank'
-vim.g.highlightedyank_highlight_duration = 300 -- ★global
-
--- 囲まれているものの操作
-Plug 'machakann/vim-sandwich'
-
--- ブラックホールレジスト+putの省略
-Plug 'vim-scripts/ReplaceWithRegister'
-key('n', '_', '<Plug>ReplaceWithRegisterOperator')
-
--- 全体が範囲のtext-object
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-
--- コメント化
-Plug 'tpope/vim-commentary'
-
--- CamelCaseMotion
-Plug 'bkad/CamelCaseMotion'
-vim.g.camelcasemotion_key = ']'
-
--- 画面内瞬間移動
-Plug 'easymotion/vim-easymotion'
-key('n', 's', '<Plug>(easymotion-overwin-f2)')
-vim.g.EasyMotion_do_mapping = 0
-vim.g.EasyMotion_smartcase = 1
-
--- Theme
-Plug 'morhetz/gruvbox'
-
--- マルチカーソル
-Plug 'mg979/vim-visual-multi'
-vim.api.nvim_command('let g:VM_maps = {}')
-vim.api.nvim_command("let g:VM_maps['Find Under'] = '<C-k>'")
-vim.api.nvim_command("let g:VM_maps['Find Subword Under'] = '<C-k>'")
-
--- ステータスLine
-Plug 'itchyny/lightline.vim'
-vim.g.lightline = { colorscheme = 'jellybeans' }
-
--- " Fern
-Plug 'lambdalisue/fern.vim'
-key('n', '<C-j>w', ':Fern %:h -drawer -width=50<cr>', { noremap = true })
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-vim.cmd([[
-augroup my-glyph-palette
-autocmd! *
-autocmd FileType fern call glyph_palette#apply()
-autocmd FileType nerdtree,startify call glyph_palette#apply()
-augroup END
-]])
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-vim.g['fern#renderer'] = "nerdfont"
-Plug 'lambdalisue/fern-git-status.vim'
-
--- mark
-Plug 'kshenoy/vim-signature'
+--------------
+-- others --
+--------------
 
 -- telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', { tag = '0.1.1' })
-Plug 'kkharji/sqlite.lua'
-Plug 'nvim-telescope/telescope-frecency.nvim'
-
--- barbar
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'romgrk/barbar.nvim'
-
-
-vim.call('plug#end')
-
-vim.cmd("runtime macros/sandwich/keymap/surround.vim")
-vim.cmd("filetype plugin indent on")
-
-local actions = require("telescope.actions")
-require("telescope").setup {
-    defaults = {
-        mappings = {
-            i = { ["<esc>"] = actions.close },
-            n = { ["q"] = actions.close },
-        },
-        layout_strategy = 'vertical'
-    }
-}
-
-require('telescope').load_extension('frecency')
-local home = os.getenv("USERPROFILE")
-vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
+-- local builtin = require('telescope.builtin')
+key('n', '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', {silent = true, noremap = true})
 key('n', '<C-j>e', ':Telescope frecency<CR>', {silent = true, noremap = true})
-
-local builtin = require('telescope.builtin')
-key('n', '<C-j>f', builtin.find_files, {})
+-- gitsigns
+key('n', '<C-j>d', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
+key('n', '<C-j>D', ':Gitsigns diffthis<CR>', {silent = true, noremap = true})
+key('n', '<Space>j', ':Gitsigns next_hunk<CR>', {silent = true, noremap = true})
+key('n', '<Space>k', ':Gitsigns prev_hunk<CR>', {silent = true, noremap = true})
+-- ReplaceWithRegister
+key('n', '_', '<Plug>ReplaceWithRegisterOperator')
+-- hop
+key('n', 's', ':HopChar2MW<CR>', {silent = true, noremap = true})
 
 -----------------------------------------------------
 -- パフォーマンス
