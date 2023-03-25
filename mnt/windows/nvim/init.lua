@@ -8,6 +8,8 @@ local key = vim.keymap.set
 set.encoding = "utf-8"
 -- 改行コード自動判別
 set.fileformats="unix,dos,mac"
+-- swapfileを作成しない
+vim.opt.swapfile = false
 
 --------------------------------------------------------
 --  vim-plug
