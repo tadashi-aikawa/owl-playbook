@@ -1,4 +1,5 @@
 {
   "coc.preferences.formatOnSave": true,
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "rust-analyzer.check.command": "clippy"
 }
