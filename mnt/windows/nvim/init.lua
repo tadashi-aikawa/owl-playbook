@@ -183,6 +183,8 @@ key('n', '<Space>k', ':Gitsigns prev_hunk<CR>', {silent = true, noremap = true})
 key('n', '_', '<Plug>ReplaceWithRegisterOperator')
 -- hop
 key('n', 's', ':HopChar2MW<CR>', {silent = true, noremap = true})
+-- Sidebar
+key('n', '<M-w>', ':SidebarNvimToggle<CR>', {silent = true, noremap = true})
 
 -----------------------------------------------------
 -- パフォーマンス
@@ -257,9 +259,8 @@ key('i', '<C-l>', '<C-x><C-l>')
 -- Escapeでハイライト消去
 key('n', '<ESC><ESC>', ':nohl<CR>')
 -- バッファ切り替え
--- key('n', '<M-Left>', ':bprev<CR>')
--- key('n', '<M-Right>', ':bnext<CR>')
 key('n', '<Space>r', ':b#<CR>')
 key('n', '<Space>e', ':BufferPick<CR>')
--- バッファクローズ
-key('n', '<M-w>', ":bd<CR>")
+key('n', '<Space>l', ':BufferNext<CR>')
+key('n', '<Space>h', ':BufferPrevious<CR>')
+key('n', '<Space>q', ":bd<CR>")
