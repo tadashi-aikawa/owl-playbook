@@ -193,6 +193,13 @@ key('n', 's', ':HopChar2MW<CR>', {silent = true, noremap = true})
 key('n', '<M-p>', ':MarkdownPreviewToggle<CR>', {silent = true, noremap = true})
 -- Sidebar
 key('n', '<M-w>', ':SidebarNvimToggle<CR>', {silent = true, noremap = true})
+local function cd_current_file_dir()
+  local p = vim.fn.expand("%:h")
+  vim.cmd("SidebarNvimFocus")
+  vim.cmd("cd" .. " " .. p)
+  vim.cmd("SidebarNvimUpdate")
+end
+key('n', '<C-j>w', cd_current_file_dir)
 
 -----------------------------------------------------
 -- パフォーマンス
