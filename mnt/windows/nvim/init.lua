@@ -182,6 +182,7 @@ key('n', '<C-j>e', ':Telescope frecency<CR>', {silent = true, noremap = true})
 -- gitsigns
 key('n', '<C-j>d', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
 key('n', '<C-j>D', ':Gitsigns diffthis<CR>', {silent = true, noremap = true})
+key('n', '<C-j><C-u>', ':Gitsigns reset_hunk<CR>', {silent = true, noremap = true})
 key('n', '<Space>j', ':Gitsigns next_hunk<CR>', {silent = true, noremap = true})
 key('n', '<Space>k', ':Gitsigns prev_hunk<CR>', {silent = true, noremap = true})
 -- ReplaceWithRegister
