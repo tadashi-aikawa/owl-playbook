@@ -133,6 +133,11 @@ require('packer').startup(function(use)
       }
     end
   }
+  -- Markdown preview
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)
 
 -----------------------------------------------------
@@ -183,6 +188,8 @@ key('n', '<Space>k', ':Gitsigns prev_hunk<CR>', {silent = true, noremap = true})
 key('n', '_', '<Plug>ReplaceWithRegisterOperator')
 -- hop
 key('n', 's', ':HopChar2MW<CR>', {silent = true, noremap = true})
+-- Markdown preview
+key('n', '<M-p>', ':MarkdownPreviewToggle<CR>', {silent = true, noremap = true})
 -- Sidebar
 key('n', '<M-w>', ':SidebarNvimToggle<CR>', {silent = true, noremap = true})
 
