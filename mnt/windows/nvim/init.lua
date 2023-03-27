@@ -88,15 +88,6 @@ require('packer').startup(function(use)
       }
     end
   }
-  use {
-    'nvim-telescope/telescope-frecency.nvim',
-    config = function()
-      require"telescope".load_extension("frecency")
-      local home = os.getenv("USERPROFILE")
-      vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
-    end,
-    requires = {"kkharji/sqlite.lua"}
-  }
   -- サイドバー表示 (ファイルの変更、診断、エクスプローラー、symbolなど)
   use {
     'nvim-tree/nvim-tree.lua',
@@ -179,7 +170,7 @@ key("i", "<F5>", "coc#refresh()", {silent = true, expr = true})
 -- telescope
 -- local builtin = require('telescope.builtin')
 key('n', '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', {silent = true, noremap = true})
-key('n', '<C-j>e', ':Telescope frecency<CR>', {silent = true, noremap = true})
+key('n', '<C-j>e', ':Telescope oldfiles<CR>', {silent = true, noremap = true})
 key('n', '<C-j>g', ':Telescope live_grep<CR>', {silent = true, noremap = true})
 key('n', '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>', {silent = true, noremap = true})
 -- gitsigns
