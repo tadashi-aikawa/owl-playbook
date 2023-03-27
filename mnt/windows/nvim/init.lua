@@ -77,7 +77,10 @@ require('packer').startup(function(use)
       require("telescope").setup {
           defaults = {
               mappings = {
-                  i = { ["<esc>"] = actions.close },
+                  i = {
+                    ["<esc>"] = actions.close,
+                    ["<F12>"] = actions.select_vertical,
+                  },
                   n = { ["q"] = actions.close },
               },
               layout_strategy = 'vertical'
@@ -166,6 +169,8 @@ key('n', '<C-j>o', ':<C-u>CocList outline<cr>', {silent = true, nowait = true})
 key('n', '<C-j>s', ':<C-u>CocList -I symbols<cr>', {silent = true, nowait = true})
 -- Rename
 key('n', '<S-M-r>', '<Plug>(coc-rename)')
+-- Auto complete
+key("i", "<F5>", "coc#refresh()", {silent = true, expr = true})
 
 --------------
 -- others --
