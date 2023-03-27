@@ -1,5 +1,8 @@
 local set = vim.opt
 local key = vim.keymap.set
+-- For nvim-tree.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -----------------------------------------------------
 --  全体
@@ -93,20 +96,12 @@ require('packer').startup(function(use)
   }
   -- サイドバー表示 (ファイルの変更、診断、エクスプローラー、symbolなど)
   use {
-    'sidebar-nvim/sidebar.nvim',
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons'
+    },
     config = function()
-      require("sidebar-nvim").setup {
-        open = true,
-        sections = { "git", "diagnostics", "files", "symbols" },
-        files = {
-          show_hidden = true,
-          ignore_paths = {"%.git$"}
-        }
-      }
-      -- hop.nvimでsを使いたいので無効化してaに割り当て
-      local git_section = require("sidebar-nvim.builtin.git")
-      git_section.bindings["a"] = git_section.bindings["s"]
-      git_section.bindings["s"] = nil
+      require("nvim-tree").setup()
     end
   }
   -- Gitの行表示
@@ -191,15 +186,9 @@ key('n', '_', '<Plug>ReplaceWithRegisterOperator')
 key('n', 's', ':HopChar2MW<CR>', {silent = true, noremap = true})
 -- Markdown preview
 key('n', '<M-p>', ':MarkdownPreviewToggle<CR>', {silent = true, noremap = true})
--- Sidebar
-key('n', '<M-w>', ':SidebarNvimToggle<CR>', {silent = true, noremap = true})
-local function cd_current_file_dir()
-  local p = vim.fn.expand("%:h")
-  vim.cmd("SidebarNvimFocus")
-  vim.cmd("cd" .. " " .. p)
-  vim.cmd("SidebarNvimUpdate")
-end
-key('n', '<C-j>w', cd_current_file_dir)
+-- nvim-tree
+key('n', '<M-w>', ':NvimTreeToggle<CR>', {silent = true, noremap = true})
+key('n', '<C-j>w', ':NvimTreeFindFile<CR>', {silent = true, noremap = true})
 
 -----------------------------------------------------
 -- パフォーマンス
