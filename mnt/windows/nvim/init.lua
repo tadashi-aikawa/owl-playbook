@@ -124,7 +124,8 @@ require('packer').startup(function(use)
         "coc-rust-analyzer",
         "coc-sh",
         "coc-prettier",
-        "coc-pyright"
+        "coc-pyright",
+        "@yaegassy/coc-volar"
       }
     end
   }
@@ -180,7 +181,7 @@ key('n', '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>', {silent = true, n
 key('n', '<C-j>d', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
 key('n', '<C-j>D', ':Gitsigns diffthis<CR>', {silent = true, noremap = true})
 key('n', '<C-j><C-u>', ':Gitsigns reset_hunk<CR>', {silent = true, noremap = true})
-key('n', '<C-j>s', ':Gitsigns stage_hunk<CR>', {silent = true, noremap = true})
+key('n', '<Space>s', ':Gitsigns stage_hunk<CR>', {silent = true, noremap = true})
 key('n', '<Space>j', ':Gitsigns next_hunk<CR>', {silent = true, noremap = true})
 key('n', '<Space>k', ':Gitsigns prev_hunk<CR>', {silent = true, noremap = true})
 -- ReplaceWithRegister
