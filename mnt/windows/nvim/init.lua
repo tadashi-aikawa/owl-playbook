@@ -22,7 +22,7 @@ set.autochdir = true
 vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim' 
+  use 'dstein64/vim-startuptime'
   use 'morhetz/gruvbox' -- テーマ
   use 'vim-scripts/ReplaceWithRegister' -- ブラックホールレジスト+putの省略
   use 'tpope/vim-commentary' -- コメントアウト
@@ -31,6 +31,8 @@ require('packer').startup(function(use)
   use 'kshenoy/vim-signature' -- マークの可視化
   use 'nvim-tree/nvim-web-devicons' -- アイコンの表示
   use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'} -- バッファ・タブバーをかっこよく
+  -- packer
+  use 'wbthomason/packer.nvim'
   -- 囲まれているものの操作
   use {
     'machakann/vim-sandwich',
