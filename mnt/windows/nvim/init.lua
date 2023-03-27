@@ -13,6 +13,8 @@ set.encoding = "utf-8"
 set.fileformats="unix,dos,mac"
 -- swapfileを作成しない
 vim.opt.swapfile = false
+-- ファイルの場所をカレントディレクトリに
+set.autochdir = true
 
 -----------------------------------------------------
 --  プラグイン
