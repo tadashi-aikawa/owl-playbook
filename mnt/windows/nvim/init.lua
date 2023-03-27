@@ -174,6 +174,8 @@ key('n', '<S-M-r>', '<Plug>(coc-rename)')
 -- local builtin = require('telescope.builtin')
 key('n', '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', {silent = true, noremap = true})
 key('n', '<C-j>e', ':Telescope frecency<CR>', {silent = true, noremap = true})
+key('n', '<C-j>g', ':Telescope live_grep<CR>', {silent = true, noremap = true})
+key('n', '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>', {silent = true, noremap = true})
 -- gitsigns
 key('n', '<C-j>d', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
 key('n', '<C-j>D', ':Gitsigns diffthis<CR>', {silent = true, noremap = true})
