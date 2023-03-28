@@ -1,5 +1,9 @@
 {
   "coc.preferences.formatOnSave": true,
   "python.formatting.provider": "black",
-  "rust-analyzer.check.command": "clippy"
+  "rust-analyzer.check.command": "clippy",
+  "diagnostic.infoSign": "ℹ️",
+  "diagnostic.hintSign": "💡",
+  "diagnostic.warningSign": "⚠️",
+  "diagnostic.errorSign": "❌"
 }
