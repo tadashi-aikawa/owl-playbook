@@ -23,7 +23,7 @@ vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function(use)
   use 'dstein64/vim-startuptime'
-  use 'morhetz/gruvbox' -- テーマ
+  use 'ellisonleao/gruvbox.nvim' 
   use 'vim-scripts/ReplaceWithRegister' -- ブラックホールレジスト+putの省略
   use 'tpope/vim-commentary' -- コメントアウト
   use 'kana/vim-textobj-user' -- text-objectのユーザーカスタマイズ
