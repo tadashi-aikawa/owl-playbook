@@ -5,5 +5,15 @@
   "diagnostic.infoSign": "ℹ️",
   "diagnostic.hintSign": "💡",
   "diagnostic.warningSign": "⚠️",
-  "diagnostic.errorSign": "❌"
+  "diagnostic.errorSign": "❌",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "rust",
+    "javascript",
+    "typescript",
+    "css",
+    "json",
+    "jsonc",
+    "vue"
+  ]
 }
