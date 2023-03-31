@@ -95,10 +95,10 @@ require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", "kkharji/sqlite.lua" },
     keys = {
       { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
-      { '<C-j>e', ':Telescope oldfiles<CR>' },
+      { '<C-j>e', ':Telescope frecency<CR>' },
       { '<C-j>g', ':Telescope live_grep<CR>' },
       { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' }
     },
@@ -114,11 +114,21 @@ require("lazy").setup({
                   n = { ["q"] = actions.close },
               },
               layout_strategy = 'vertical'
+          },
+          extensions = {
+            frecency = {
+              show_scores = true
+            }
           }
       }
+      require("telescope").load_extension("frecency")
+
+
+      local home = os.getenv("USERPROFILE")
+      vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
     end
   },
-  -- サイドバー表示 (ファイルの変更、診断、エクスプローラー、symbolなど)
+  -- エクスプローラー
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = {
