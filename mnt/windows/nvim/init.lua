@@ -17,63 +17,91 @@ vim.opt.swapfile = false
 -----------------------------------------------------
 --  プラグイン
 -----------------------------------------------------
-vim.cmd [[packadd packer.nvim]]
 
-require('packer').startup(function(use)
-  use 'dstein64/vim-startuptime'
-  use 'ellisonleao/gruvbox.nvim' 
-  use 'vim-scripts/ReplaceWithRegister' -- ブラックホールレジスト+putの省略
-  use 'tpope/vim-commentary' -- コメントアウト
-  use 'kana/vim-textobj-user' -- text-objectのユーザーカスタマイズ
-  use 'kana/vim-textobj-entire' -- 全体が範囲のtext-object
-  use 'kshenoy/vim-signature' -- マークの可視化
-  use 'nvim-tree/nvim-web-devicons' -- アイコンの表示
-  use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'} -- バッファ・タブバーをかっこよく
-  -- packer
-  use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  'ellisonleao/gruvbox.nvim',
+  'vim-scripts/ReplaceWithRegister', -- ブラックホールレジスト+putの省略
+  'tpope/vim-commentary', -- コメントアウト
+  'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
+  -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
+  'kshenoy/vim-signature', -- マークの可視化
+  'nvim-tree/nvim-web-devicons', -- アイコンの表示
+  -- バッファ・タブバーをかっこよく
+  {
+    'romgrk/barbar.nvim',
+    dependencies = {'nvim-web-devicons'},
+    event = {'BufNewFile', 'BufRead'},
+  }, 
   -- 囲まれているものの操作
-  use {
+  {
     'machakann/vim-sandwich',
-    config = 'vim.cmd("runtime macros/sandwich/keymap/surround.vim")'
-  }
+    config = function()
+      vim.cmd("runtime macros/sandwich/keymap/surround.vim")
+    end
+  },
   -- キャメルケースモーション
-  use {
+  {
     'bkad/CamelCaseMotion',
-    config = 'vim.g.camelcasemotion_key = "]"'
-  }
+    config = function()
+      vim.g.camelcasemotion_key = "]"
+    end
+  },
   -- 画面内瞬間移動
-  use {
+  {
     'phaazon/hop.nvim',
     branch = 'v2',
     config = function()
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
-  }
-  use {
+  },
+  -- yankハイライト
+  {
     'machakann/vim-highlightedyank',
-    config = 'vim.g.highlightedyank_highlight_duration = 300'
-  }
+    config = function()
+      vim.g.highlightedyank_highlight_duration = 300
+    end
+  },
   -- マルチカーソル
-  use {
+  {
     'mg979/vim-visual-multi',
     config = function()
       vim.api.nvim_command('let g:VM_maps = {}')
       vim.api.nvim_command("let g:VM_maps['Find Under'] = '<C-k>'")
       vim.api.nvim_command("let g:VM_maps['Find Subword Under'] = '<C-k>'")
     end
-  }
+  },
   -- ステータスライン
-  use {
+  {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    dependencies = { 'nvim-web-devicons', opt = true },
+    event = {'BufNewFile', 'BufRead'},
     options = { theme = 'gruvbox' },
     config = 'require("lualine").setup()'
-  }
+  },
   -- Fuzzy finder
-  use {
+  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
-    requires = { {'nvim-lua/plenary.nvim'} },
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    keys = {
+      { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
+      { '<C-j>e', ':Telescope oldfiles<CR>' },
+      { '<C-j>g', ':Telescope live_grep<CR>' },
+      { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' }
+    },
     config = function()
       local actions = require("telescope.actions")
       require("telescope").setup {
@@ -89,28 +117,34 @@ require('packer').startup(function(use)
           }
       }
     end
-  }
+  },
   -- サイドバー表示 (ファイルの変更、診断、エクスプローラー、symbolなど)
-  use {
+  {
     'nvim-tree/nvim-tree.lua',
-    requires = {
+    dependencies = {
       'nvim-tree/nvim-web-devicons'
+    },
+    keys = {
+      { '<M-w>', ':NvimTreeToggle<CR>' },
+      { '<C-j>w', ':NvimTreeFindFile<CR>' }
     },
     config = function()
       require("nvim-tree").setup()
     end
-  }
+  },
   -- Gitの行表示
-  use {
+  {
     'lewis6991/gitsigns.nvim',
+    event = {'BufNewFile', 'BufRead'},
     config = function()
       require('gitsigns').setup()
     end
-  }
+  },
   -- VSCode like
-  use {
+  {
     'neoclide/coc.nvim',
     branch = "release",
+    event = "InsertEnter",
     config = function()
       vim.g.coc_global_extensions = {
         "coc-json",
@@ -124,13 +158,16 @@ require('packer').startup(function(use)
         "@yaegassy/coc-volar"
       }
     end
-  }
+  },
   -- Markdown preview
-  use({
+  {
       "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
-  })
-end)
+      keys = {
+        { '<M-p>', ':MarkdownPreviewToggle<CR>' }
+      },
+      build = function() vim.fn["mkdp#util#install"]() end,
+  }
+})
 
 -----------------------------------------------------
 --  プラグインキーバインド
@@ -171,10 +208,6 @@ key("i", "<F5>", "coc#refresh()", {silent = true, expr = true})
 
 -- telescope
 -- local builtin = require('telescope.builtin')
-key('n', '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', {silent = true, noremap = true})
-key('n', '<C-j>e', ':Telescope oldfiles<CR>', {silent = true, noremap = true})
-key('n', '<C-j>g', ':Telescope live_grep<CR>', {silent = true, noremap = true})
-key('n', '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>', {silent = true, noremap = true})
 -- gitsigns
 key('n', '<C-j>d', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
 key('n', '<C-j>D', ':Gitsigns diffthis<CR>', {silent = true, noremap = true})
@@ -186,11 +219,6 @@ key('n', '<Space>k', ':Gitsigns prev_hunk<CR>', {silent = true, noremap = true})
 key('n', '_', '<Plug>ReplaceWithRegisterOperator')
 -- hop
 key('n', 's', ':HopChar2MW<CR>', {silent = true, noremap = true})
--- Markdown preview
-key('n', '<M-p>', ':MarkdownPreviewToggle<CR>', {silent = true, noremap = true})
--- nvim-tree
-key('n', '<M-w>', ':NvimTreeToggle<CR>', {silent = true, noremap = true})
-key('n', '<C-j>w', ':NvimTreeFindFile<CR>', {silent = true, noremap = true})
 
 -----------------------------------------------------
 -- パフォーマンス

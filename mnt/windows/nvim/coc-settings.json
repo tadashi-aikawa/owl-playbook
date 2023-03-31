@@ -14,6 +14,7 @@
     "css",
     "json",
     "jsonc",
-    "vue"
+    "vue",
+    "lua"
   ]
 }
