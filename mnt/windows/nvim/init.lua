@@ -33,6 +33,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   'ellisonleao/gruvbox.nvim',
+  'sainnhe/gruvbox-material',
   'tpope/vim-commentary', -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
   -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
@@ -131,7 +132,7 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-web-devicons', opt = true },
     event = {'BufNewFile', 'BufRead'},
-    options = { theme = 'gruvbox' },
+    options = { theme = 'gruvbox-material' },
     config = 'require("lualine").setup()'
   },
   -- Fuzzy finder
@@ -262,7 +263,7 @@ require("lazy").setup({
 -- Color scheme
 set.termguicolors = true
 set.syntax = 'on'
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme gruvbox-material')
 set.background = 'dark'
 
 -- 行番号の表示
