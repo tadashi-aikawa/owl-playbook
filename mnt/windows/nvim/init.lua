@@ -38,6 +38,40 @@ require("lazy").setup({
   -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
   'kshenoy/vim-signature', -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
+  {
+    'nvim-treesitter/nvim-treesitter',
+    event = {'BufNewFile', 'BufRead'},
+    build = ":TSUpdate",
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = {
+          "typescript",
+          "javascript",
+          "rust",
+          "python",
+          "go",
+          "lua",
+          "bash",
+          "html",
+          "css",
+          "vue",
+          "vim",
+          "yaml",
+          "toml",
+          "ini",
+          "json",
+          "dockerfile",
+          "markdown",
+          "diff",
+          "gitconfig",
+          "gitignore"
+        },
+        highlight = {
+          enable = true,
+        },
+      }
+    end
+  },
   -- ブラックホールレジスト+putの省略
   {
     'vim-scripts/ReplaceWithRegister',
@@ -228,7 +262,7 @@ require("lazy").setup({
 -- Color scheme
 set.termguicolors = true
 set.syntax = 'on'
-vim.cmd('colorscheme gruvbox') -- ★特殊な書き方
+vim.cmd('colorscheme gruvbox')
 set.background = 'dark'
 
 -- 行番号の表示
@@ -280,6 +314,13 @@ vim.cmd([[
 
 
 -----------------------------------------------------
+-- ターミナル
+-----------------------------------------------------
+vim.opt.shell = "pwsh"
+key('n', '<C-j>t', ':split | wincmd j | resize 15 | terminal<CR>i', { noremap = true })
+key('t', '<ESC>', '<C-\\><C-n>', { noremap = true }) -- ESCでノーマルモード
+
+-----------------------------------------------------
 -- キーバインド
 -----------------------------------------------------
 -- 行オートコンプリート
@@ -292,3 +333,4 @@ key('n', '<Space>e', ':BufferPick<CR>')
 key('n', '<Space>l', ':BufferNext<CR>')
 key('n', '<Space>h', ':BufferPrevious<CR>')
 key('n', '<Space>q', ":bd<CR>")
+
