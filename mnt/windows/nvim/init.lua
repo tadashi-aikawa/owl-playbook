@@ -127,6 +127,7 @@ require("lazy").setup({
     init = function()
       t = {}
       t["Find Under"] = "<C-k>"
+      t["Find Subword Under"] = "<C-k>"
       vim.g.VM_maps = t
     end
   },
