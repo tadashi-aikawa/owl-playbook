@@ -234,7 +234,7 @@ require("lazy").setup({
       -- Rename
       { '<S-M-r>', '<Plug>(coc-rename)' },
       -- Auto complete
-      { "<F5>", "coc#refresh()" },
+      { "<F5>", [[coc#refresh()]], mode = "i", expr = true },
     },
     config = function()
       vim.g.coc_global_extensions = {
