@@ -88,9 +88,13 @@ require("lazy").setup({
   }, 
   -- 囲まれているものの操作
   {
-    'machakann/vim-sandwich',
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
     config = function()
-      vim.cmd("runtime macros/sandwich/keymap/surround.vim")
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
     end
   },
   -- キャメルケースモーション
