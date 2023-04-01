@@ -59,7 +59,6 @@ require("lazy").setup({
           "vim",
           "yaml",
           "toml",
-          "ini",
           "json",
           "dockerfile",
           "markdown",
@@ -68,6 +67,7 @@ require("lazy").setup({
         },
         highlight = {
           enable = true,
+          disable = { "ini" },
         },
       }
     end
