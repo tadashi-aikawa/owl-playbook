@@ -170,7 +170,7 @@ require("lazy").setup({
           }
       }
       require("telescope").load_extension("frecency")
-
+      require("telescope").load_extension("file_browser")
 
       local home = os.getenv("USERPROFILE")
       vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
@@ -189,6 +189,13 @@ require("lazy").setup({
     config = function()
       require("nvim-tree").setup()
     end
+  },
+  {
+      "nvim-telescope/telescope-file-browser.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      keys = {
+        {'<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
+      }
   },
   -- Gitの行表示
   {
