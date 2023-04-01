@@ -33,12 +33,18 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   'ellisonleao/gruvbox.nvim',
-  'vim-scripts/ReplaceWithRegister', -- ブラックホールレジスト+putの省略
   'tpope/vim-commentary', -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
   -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
   'kshenoy/vim-signature', -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
+  -- ブラックホールレジスト+putの省略
+  {
+    'vim-scripts/ReplaceWithRegister',
+    keys = {
+      {'_', '<Plug>ReplaceWithRegisterOperator'}
+    }
+  },
   -- バッファ・タブバーをかっこよく
   {
     'romgrk/barbar.nvim',
@@ -63,6 +69,9 @@ require("lazy").setup({
   {
     'phaazon/hop.nvim',
     branch = 'v2',
+    keys = {
+      { 's', ':HopChar2MW<CR>' }
+    },
     config = function()
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
@@ -146,6 +155,14 @@ require("lazy").setup({
   {
     'lewis6991/gitsigns.nvim',
     event = {'BufNewFile', 'BufRead'},
+    keys = {
+      { '<C-j>d', ':Gitsigns preview_hunk<CR>' },
+      { '<C-j>D', ':Gitsigns diffthis<CR>' },
+      { '<C-j><C-u>', ':Gitsigns reset_hunk<CR>' },
+      { '<Space>s', ':Gitsigns stage_hunk<CR>' },
+      { '<Space>j', ':Gitsigns next_hunk<CR>' },
+      { '<Space>k', ':Gitsigns prev_hunk<CR>' },
+    },
     config = function()
       require('gitsigns').setup()
     end
@@ -155,6 +172,32 @@ require("lazy").setup({
     'neoclide/coc.nvim',
     branch = "release",
     event = "InsertEnter",
+    keys = {
+      -- 定義に移動
+      { '<C-]>', '<Plug>(coc-definition)' },
+      -- 呼び出し元に移動
+      { '<C-j>h', '<Plug>(coc-references)' },
+      -- 実装に移動
+      { '<C-j>i', '<Plug>(coc-implementation)' },
+      -- 配下の定義を表示
+      { '<M-s>', ':call CocActionAsync(\'doHover\')<CR>' },
+      { '<C-P>', '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>', mode = "i" },
+      -- 前後のエラーや警告に移動
+      { '<M-k>', '<Plug>(coc-diagnostic-prev)' },
+      { '<M-j>', '<Plug>(coc-diagnostic-next)' },
+      -- Enterキーで決定
+      { "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], mode = "i", expr = true, replace_keycodes = false },
+      -- code action
+      { '<M-CR>', '<Plug>(coc-codeaction-cursor)' },
+      -- Find symbol of current document
+      { '<C-j>o', ':<C-u>CocList outline<cr>' },
+      -- Search workspace symbols
+      { '<C-j>s', ':<C-u>CocList -I symbols<cr>' },
+      -- Rename
+      { '<S-M-r>', '<Plug>(coc-rename)' },
+      -- Auto complete
+      { "<F5>", "coc#refresh()" },
+    },
     config = function()
       vim.g.coc_global_extensions = {
         "coc-json",
@@ -178,57 +221,6 @@ require("lazy").setup({
       build = function() vim.fn["mkdp#util#install"]() end,
   }
 })
-
------------------------------------------------------
---  プラグインキーバインド
------------------------------------------------------
-
---------------
--- coc.nvim --
---------------
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
--- 定義に移動
-key('n', '<C-]>', '<Plug>(coc-definition)', {silent = true})
--- 呼び出し元に移動
-key('n', '<C-j>h', '<Plug>(coc-references)', {silent = true})
--- 実装に移動
-key('n', '<C-j>i', '<Plug>(coc-implementation)', {silent = true})
--- 配下の定義を表示
-key('n', '<M-s>', ':call CocActionAsync(\'doHover\')<CR>', {silent = true, noremap = true})
-key('i', '<C-P>', '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>', {silent = true})
--- 前後のエラーや警告に移動
-key('n', '<M-k>', '<Plug>(coc-diagnostic-prev)', {silent = true})
-key('n', '<M-j>', '<Plug>(coc-diagnostic-next)', {silent = true})
--- Enterキーで決定
-key("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
--- code action
-key('n', '<M-CR>', '<Plug>(coc-codeaction-cursor)', {silent = true})
--- Find symbol of current document
-key('n', '<C-j>o', ':<C-u>CocList outline<cr>', {silent = true, nowait = true})
--- Search workspace symbols
-key('n', '<C-j>s', ':<C-u>CocList -I symbols<cr>', {silent = true, nowait = true})
--- Rename
-key('n', '<S-M-r>', '<Plug>(coc-rename)')
--- Auto complete
-key("i", "<F5>", "coc#refresh()", {silent = true, expr = true})
-
---------------
--- others --
---------------
-
--- telescope
--- local builtin = require('telescope.builtin')
--- gitsigns
-key('n', '<C-j>d', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
-key('n', '<C-j>D', ':Gitsigns diffthis<CR>', {silent = true, noremap = true})
-key('n', '<C-j><C-u>', ':Gitsigns reset_hunk<CR>', {silent = true, noremap = true})
-key('n', '<Space>s', ':Gitsigns stage_hunk<CR>', {silent = true, noremap = true})
-key('n', '<Space>j', ':Gitsigns next_hunk<CR>', {silent = true, noremap = true})
-key('n', '<Space>k', ':Gitsigns prev_hunk<CR>', {silent = true, noremap = true})
--- ReplaceWithRegister
-key('n', '_', '<Plug>ReplaceWithRegisterOperator')
--- hop
-key('n', 's', ':HopChar2MW<CR>', {silent = true, noremap = true})
 
 -----------------------------------------------------
 -- 見た目
