@@ -67,7 +67,7 @@ require("lazy").setup({
         },
         highlight = {
           enable = true,
-          disable = { "ini" },
+          disable = { "ini" }
         },
       }
     end
