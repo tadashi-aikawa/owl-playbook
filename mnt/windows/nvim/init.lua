@@ -64,7 +64,6 @@ require("lazy").setup({
           "dockerfile",
           "markdown",
           "diff",
-          "gitconfig",
           "gitignore"
         },
         highlight = {
