@@ -225,6 +225,9 @@ require("lazy").setup({
       { '<M-j>', '<Plug>(coc-diagnostic-next)' },
       -- Enterキーで決定
       { "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], mode = "i", expr = true, replace_keycodes = false },
+      -- 上下で候補選択
+      { "<down>", [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]], mode = "i", expr = true, replace_keycodes = false },
+      { "<up>", [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]], mode = "i", expr = true, replace_keycodes = false },
       -- code action
       { '<M-CR>', '<Plug>(coc-codeaction-cursor)' },
       -- Find symbol of current document
