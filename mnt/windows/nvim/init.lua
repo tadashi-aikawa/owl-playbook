@@ -194,7 +194,7 @@ require("lazy").setup({
       "nvim-telescope/telescope-file-browser.nvim",
       dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
       keys = {
-        {'<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
+        { '<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
       }
   },
   -- Gitの行表示
@@ -272,7 +272,8 @@ require("lazy").setup({
   -- 差分確認
   {
     'sindrets/diffview.nvim',
-    requires = 'nvim-lua/plenary.nvim'
+    event = {'BufNewFile', 'BufRead'},
+    dependencies = {  'nvim-lua/plenary.nvim' }
   }
 })
 
