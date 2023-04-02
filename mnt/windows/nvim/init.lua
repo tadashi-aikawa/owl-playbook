@@ -150,7 +150,8 @@ require("lazy").setup({
       { '<C-j>g', ':Telescope live_grep<CR>' },
       { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' },
       { '<C-j>p', ':Telescope commands<CR>' },
-      { '<C-j>:', ':Telescope command_history<CR>' }
+      { '<C-j>:', ':Telescope command_history<CR>' },
+      { '<C-j>m', ':Telescope marks<CR>' }
     },
     config = function()
       local actions = require("telescope.actions")
