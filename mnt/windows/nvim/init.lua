@@ -148,7 +148,9 @@ require("lazy").setup({
       { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
       { '<C-j>e', ':Telescope frecency<CR>' },
       { '<C-j>g', ':Telescope live_grep<CR>' },
-      { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' }
+      { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' },
+      { '<C-j>p', ':Telescope commands<CR>' },
+      { '<C-j>:', ':Telescope command_history<CR>' }
     },
     config = function()
       local actions = require("telescope.actions")
