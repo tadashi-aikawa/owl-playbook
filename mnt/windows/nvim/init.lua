@@ -275,7 +275,6 @@ require("lazy").setup({
   -- 差分確認
   {
     'sindrets/diffview.nvim',
-    event = {'BufNewFile', 'BufRead'},
     dependencies = {  'nvim-lua/plenary.nvim' }
   }
 })
