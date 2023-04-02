@@ -268,7 +268,9 @@ require("lazy").setup({
         { '<M-p>', ':MarkdownPreviewToggle<CR>' }
       },
       build = function() vim.fn["mkdp#util#install"]() end,
-  }
+  },
+  -- 差分確認
+  { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 })
 
 -----------------------------------------------------
