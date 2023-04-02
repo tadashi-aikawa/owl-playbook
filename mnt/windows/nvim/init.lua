@@ -99,7 +99,7 @@ require("lazy").setup({
   -- キャメルケースモーション
   {
     'bkad/CamelCaseMotion',
-    config = function()
+    init = function()
       vim.g.camelcasemotion_key = "]"
     end
   },
