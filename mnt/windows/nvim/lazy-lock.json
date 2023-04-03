@@ -1,7 +1,7 @@
 {
   "CamelCaseMotion": { "branch": "master", "commit": "de439d7c06cffd0839a29045a103fe4b44b15cdc" },
   "ReplaceWithRegister": { "branch": "master", "commit": "832efc23111d19591d495dc72286de2fb0b09345" },
-  "barbar.nvim": { "branch": "master", "commit": "ff3584848a32d0c6b1735190fbf01b6adb4cdffd" },
+  "barbar.nvim": { "branch": "master", "commit": "2e7c346e6ac171a684f57e2939837db85e76450e" },
   "coc.nvim": { "branch": "release", "commit": "bbaa1d5d1ff3cbd9d26bb37cfda1a990494c4043" },
   "diffview.nvim": { "branch": "main", "commit": "932d10de327bccdedee439d9d55f4d857caa334e" },
   "gitsigns.nvim": { "branch": "main", "commit": "f412f51d0eaf0905a2759c8087090071689bb8fb" },
@@ -9,7 +9,7 @@
   "gruvbox.nvim": { "branch": "main", "commit": "1a8ba635e511148801b55a1128aef933c296a301" },
   "hop.nvim": { "branch": "v2", "commit": "90db1b2c61b820e230599a04fedcd2679e64bd07" },
   "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
-  "lualine.nvim": { "branch": "master", "commit": "9170434aa100f3967b43d5d34bb9adc56fae1986" },
+  "lualine.nvim": { "branch": "master", "commit": "0ddacf01ed74c8fca4af4ea926bab5b100e71616" },
   "markdown-preview.nvim": { "branch": "master", "commit": "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96" },
   "nvim-surround": { "branch": "main", "commit": "50f667861fac75592fc9e482472c12672e1cd723" },
   "nvim-tree.lua": { "branch": "master", "commit": "45400cd7e02027937cd5e49845545e606ecf5a1f" },
