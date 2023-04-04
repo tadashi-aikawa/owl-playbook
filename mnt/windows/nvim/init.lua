@@ -146,7 +146,8 @@ require("lazy").setup({
     dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", "kkharji/sqlite.lua" },
     keys = {
       { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
-      { '<C-j>e', ':Telescope frecency<CR>' },
+      { '<C-j>z', ':Telescope frecency<CR>' },
+      { '<C-j>e', ':Telescope oldfiles<CR>' },
       { '<C-j>g', ':Telescope live_grep<CR>' },
       { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' },
       { '<C-j>p', ':Telescope commands<CR>' },
