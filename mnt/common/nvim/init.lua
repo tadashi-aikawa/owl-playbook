@@ -1,3 +1,6 @@
+local path_sep = package.config:sub(1,1)
+local is_windows = path_sep == '\\'
+
 local set = vim.opt
 local key = vim.keymap.set
 -- For nvim-tree.lua
@@ -84,7 +87,7 @@ require("lazy").setup({
     'romgrk/barbar.nvim',
     dependencies = {'nvim-web-devicons'},
     event = {'BufNewFile', 'BufRead'},
-  }, 
+  },
   -- 囲まれているものの操作
   {
     "kylechui/nvim-surround",
@@ -176,8 +179,12 @@ require("lazy").setup({
       require("telescope").load_extension("frecency")
       require("telescope").load_extension("file_browser")
 
-      local home = os.getenv("USERPROFILE")
-      vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
+      if is_windows then
+        local home = os.getenv("USERPROFILE")
+        vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
+      else
+        vim.g.sqlite_clib_path = "/usr/lib/x86_64-linux-gnu/libsqlite3.so"
+      end
     end
   },
   -- エクスプローラー
@@ -325,7 +332,11 @@ set.ignorecase = true
 -- 検索時に大文字を含んでいたら大/小を区別
 set.smartcase = true
 -- Clipboard magic?
-set.clipboard = 'unnamed'
+if is_windows then
+  set.clipboard = 'unnamed'
+else
+  set.clipboard = 'unnamedplus'
+end
 -- スクロールした時 常に下に表示するバッファ行の数
 set.scrolloff = 5
 
@@ -340,7 +351,10 @@ vim.cmd([[
 -----------------------------------------------------
 -- ターミナル
 -----------------------------------------------------
-vim.opt.shell = "pwsh"
+if is_windows then
+  vim.opt.shell = "pwsh"
+end
+
 key('n', '<C-j>t', ':split | wincmd j | resize 15 | terminal<CR>i', { noremap = true })
 key('t', '<ESC>', '<C-\\><C-n>', { noremap = true }) -- ESCでノーマルモード
 
