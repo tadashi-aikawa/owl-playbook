@@ -214,7 +214,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "svelte.plugin.svelte.note-new-transformation": false,
-  "playwright.reuseBrowser": false,
+  "playwright.reuseBrowser": true,
   "svelte.enable-ts-plugin": true,
   "[python]": {
     "editor.formatOnType": true

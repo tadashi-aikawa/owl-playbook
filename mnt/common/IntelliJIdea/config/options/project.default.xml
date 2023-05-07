@@ -117,15 +117,19 @@
           </profile-state>
         </entry>
       </component>
+      <component name="ProjectView">
+        <navigator proportions="" version="1" />
+        <panes />
+      </component>
       <component name="ProjectViewState">
         <option name="showLibraryContents" value="true" />
       </component>
-      <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "go.import.settings.migrated": "true",
-    "settings.editor.selected.configurable": "me.lensvol.blackconnect.settings"
+      <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;me.lensvol.blackconnect.settings&quot;
   }
-}]]></component>
+}</component>
       <component name="RustProjectSettings">
         <option name="externalLinter" value="Clippy" />
         <option name="runExternalLinterOnTheFly" value="true" />
