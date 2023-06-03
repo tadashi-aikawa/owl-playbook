@@ -266,6 +266,7 @@ require("lazy").setup({
         "coc-yaml",
         "coc-rust-analyzer",
         "coc-sh",
+        "coc-go",
         "coc-prettier",
         "coc-pyright",
         "@yaegassy/coc-volar"
