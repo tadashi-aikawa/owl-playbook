@@ -2,6 +2,16 @@
   "coc.preferences.formatOnSave": true,
   "python.formatting.provider": "black",
   "rust-analyzer.check.command": "clippy",
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  },
   "diagnostic.infoSign": "ℹ️",
   "diagnostic.hintSign": "💡",
   "diagnostic.warningSign": "⚠️",
@@ -14,6 +24,7 @@
     "css",
     "json",
     "jsonc",
+    "go",
     "vue",
     "lua"
   ]
