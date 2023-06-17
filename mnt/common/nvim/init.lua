@@ -228,7 +228,7 @@ require("lazy").setup({
   {
     'neoclide/coc.nvim',
     branch = "release",
-    event = "InsertEnter",
+    event = {'BufNewFile', 'BufRead'},
     keys = {
       -- 定義に移動
       { '<C-]>', '<Plug>(coc-definition)' },
