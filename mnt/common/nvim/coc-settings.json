@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSave": true,
+  "tsserver.useLocalTsdk": true,
   "python.formatting.provider": "black",
   "rust-analyzer.check.command": "clippy",
   "languageserver": {
