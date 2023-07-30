@@ -17,6 +17,7 @@
   "diagnostic.hintSign": "💡",
   "diagnostic.warningSign": "⚠️",
   "diagnostic.errorSign": "❌",
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.bat",
   "coc.preferences.formatOnSaveFiletypes": [
     "python",
     "rust",
@@ -27,6 +28,7 @@
     "jsonc",
     "go",
     "vue",
-    "lua"
+    "lua",
+    "elixir"
   ]
 }

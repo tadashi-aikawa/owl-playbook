@@ -54,6 +54,7 @@ require("lazy").setup({
           "rust",
           "python",
           "go",
+          "elixir",
           "lua",
           "bash",
           "html",
@@ -269,6 +270,7 @@ require("lazy").setup({
         "coc-go",
         "coc-prettier",
         "coc-pyright",
+        "coc-elixir",
         "@yaegassy/coc-volar"
       }
     end
