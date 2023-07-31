@@ -88,6 +88,9 @@ ForEach-Object {
 Remove-Item alias:sort -Force
 function sort() { $input | uutils sort $args}
 
+# Elixirのiexと重複するので
+Remove-Item alias:iex -Force
+
 # 代替コマンドを使用
 Set-Alias grep rg
 function ls() { uutils ls $args }
