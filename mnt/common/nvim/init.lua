@@ -177,8 +177,6 @@ require("lazy").setup({
             }
           }
       }
-      require("telescope").load_extension("frecency")
-      require("telescope").load_extension("file_browser")
 
       if is_windows then
         local home = os.getenv("USERPROFILE")
@@ -186,6 +184,9 @@ require("lazy").setup({
       else
         vim.g.sqlite_clib_path = "/usr/lib/x86_64-linux-gnu/libsqlite3.so"
       end
+
+      require("telescope").load_extension("frecency")
+      require("telescope").load_extension("file_browser")
     end
   },
   -- エクスプローラー
