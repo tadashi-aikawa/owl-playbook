@@ -357,6 +357,9 @@ vim.cmd([[
 -----------------------------------------------------
 if is_windows then
   vim.opt.shell = "pwsh"
+  -- https://github.com/neovim/neovim/issues/13893
+  vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
+  vim.opt.shellxquote = ''
 end
 
 key('n', '<C-j>t', ':split | wincmd j | resize 15 | terminal<CR>i', { noremap = true })
