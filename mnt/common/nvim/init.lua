@@ -264,6 +264,7 @@ require("lazy").setup({
       vim.g.coc_global_extensions = {
         "coc-json",
         "coc-tsserver",
+        "coc-deno",
         "coc-css",
         "coc-yaml",
         "coc-rust-analyzer",
