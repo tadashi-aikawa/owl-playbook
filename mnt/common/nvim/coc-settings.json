@@ -31,5 +31,6 @@
     "vue",
     "lua",
     "elixir"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false
 }
