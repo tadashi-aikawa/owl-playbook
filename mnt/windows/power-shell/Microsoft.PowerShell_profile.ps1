@@ -94,10 +94,10 @@ Remove-Item alias:iex -Force
 # 代替コマンドを使用
 Set-Alias grep rg
 function ls() { uutils ls $args }
-function tree() { exa --icons -T $args}
+function tree() { eza --icons -T $args}
 
 # Linuxコマンドのエイリアス
-function ll() { exa --icons -l --git $args}
+function ll() { eza --icons -l --git $args}
 
 function awslocal { aws '--endpoint-url=http://localhost:4566' $args }
 
