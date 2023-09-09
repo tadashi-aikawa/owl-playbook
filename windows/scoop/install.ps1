@@ -27,6 +27,7 @@ scoop install `
   ffmpeg `
   fzf `
   git `
+  gitui `
   jid `
   jq `
   less `
