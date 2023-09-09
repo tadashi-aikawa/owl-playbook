@@ -212,7 +212,17 @@ require("lazy").setup({
   },
   -- Git操作
   {
-    "is0n/fm-nvim"
+    "is0n/fm-nvim",
+    config = function()
+      require('fm-nvim').setup{
+        ui = {
+          float = {
+            height = 0.97,
+            width = 0.97,
+          }
+        }
+      }
+    end
   },
   -- Gitの行表示
   {
