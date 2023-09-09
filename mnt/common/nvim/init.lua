@@ -210,6 +210,10 @@ require("lazy").setup({
         { '<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
       }
   },
+  -- Git操作
+  {
+    "is0n/fm-nvim"
+  },
   -- Gitの行表示
   {
     'lewis6991/gitsigns.nvim',
