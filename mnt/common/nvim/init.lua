@@ -112,7 +112,11 @@ require("lazy").setup({
     'phaazon/hop.nvim',
     branch = 'v2',
     keys = {
-      { 's', ':HopChar2<CR>' }
+      { 's', ':HopChar2<CR>' },
+      { '<C-l>', function()
+        vim.cmd("HopChar1")
+        vim.cmd("call CocAction('jumpDefinition')")
+      end}
     },
     config = function()
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
