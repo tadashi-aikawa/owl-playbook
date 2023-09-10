@@ -200,7 +200,19 @@ require("lazy").setup({
       { '<C-j>w', ':NvimTreeFindFile<CR>' }
     },
     config = function()
-      require("nvim-tree").setup()
+      require("nvim-tree").setup {
+        on_attach = function(bufnr)
+          local api = require "nvim-tree.api"
+          local function opts(desc)
+            return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+          end
+          api.config.mappings.default_on_attach(bufnr)
+          -- ここからカスタマイズhotkeys
+          key('n', '?', api.tree.toggle_help, opts('Help'))
+          key('n', '<Space>-', api.node.open.horizontal, opts('Open horizontal'))
+          key('n', '<Space>i', api.node.open.vertical, opts('Open vertical'))
+        end
+      }
     end
   },
   {
