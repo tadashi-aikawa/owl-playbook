@@ -1,7 +1,5 @@
 # owl-playbook
 
-hoge
-
 Windows と Linux の環境構築用スクリプト群です。
 自分向けに完全カスタマイズしています。
 
