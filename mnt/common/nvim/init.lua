@@ -226,7 +226,7 @@ require("lazy").setup({
   {
     "is0n/fm-nvim",
     keys = {
-      { '<Space>c', ':Gitui<CR>' },
+      { '<Space>g', ':Gitui<CR>' },
     },
     config = function()
       require('fm-nvim').setup{
