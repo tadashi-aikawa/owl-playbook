@@ -213,6 +213,9 @@ require("lazy").setup({
   -- Git操作
   {
     "is0n/fm-nvim",
+    keys = {
+      { '<Space>c', ':Gitui<CR>' },
+    },
     config = function()
       require('fm-nvim').setup{
         ui = {
