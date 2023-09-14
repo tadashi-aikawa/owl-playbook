@@ -139,8 +139,8 @@ function gbc() { git switch -c $args[0] }
 function gbm()  { git branch -l | rg -v '^\* ' | % { $_ -replace " ", "" } | fzf | % { git merge --no-ff $_ } }
 
 # git log
-function gls()   { git-graph -n 30}
-function gll()   { git-graph -n 60 --format "%h %as %d %s (%an)"}
+function gls()   { git-graph -n 30 -s round }
+function gll()   { git-graph -n 60 -s round --format "%h %d %s%n 💿%ad 👤<%ae>%n　"}
 function glll()  { git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset\ %C(yellow)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' }
 function glls()  { git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset\ %C(yellow)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -10}
 
