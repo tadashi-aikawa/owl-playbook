@@ -306,6 +306,7 @@ require("lazy").setup({
         "coc-prettier",
         "coc-pyright",
         "coc-elixir",
+        "coc-java",
         "@yaegassy/coc-volar"
       }
     end
