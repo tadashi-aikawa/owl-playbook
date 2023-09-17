@@ -413,4 +413,6 @@ key('n', '<Space>e', ':BufferPick<CR>')
 key('n', '<Space>l', ':BufferNext<CR>')
 key('n', '<Space>h', ':BufferPrevious<CR>')
 key('n', '<Space>q', ":bd<CR>")
+key('n', '<Space>c', ":BufferCloseAllButVisible<CR>")
+
 
