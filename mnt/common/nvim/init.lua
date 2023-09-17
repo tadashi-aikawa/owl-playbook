@@ -83,6 +83,8 @@ require("lazy").setup({
       {'_', '<Plug>ReplaceWithRegisterOperator'}
     }
   },
+  -- バッファ削除のときにレイアウトを変更しない
+  'famiu/bufdelete.nvim',
   -- バッファ・タブバーをかっこよく
   {
     'romgrk/barbar.nvim',
@@ -423,7 +425,7 @@ key('n', '<Space>r', ':b#<CR>')
 key('n', '<Space>e', ':BufferPick<CR>')
 key('n', '<Space>l', ':BufferNext<CR>')
 key('n', '<Space>h', ':BufferPrevious<CR>')
-key('n', '<Space>q', ":bd<CR>")
+key('n', '<Space>q', ":Bdelete<CR>")
 key('n', '<Space>c', ":BufferCloseAllButVisible<CR>")
 
 

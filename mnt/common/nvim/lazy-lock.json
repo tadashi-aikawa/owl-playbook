@@ -2,6 +2,7 @@
   "CamelCaseMotion": { "branch": "master", "commit": "de439d7c06cffd0839a29045a103fe4b44b15cdc" },
   "ReplaceWithRegister": { "branch": "master", "commit": "832efc23111d19591d495dc72286de2fb0b09345" },
   "barbar.nvim": { "branch": "master", "commit": "f8d1b44bf56f754c9d9b4dd70fc041d94d676474" },
+  "bufdelete.nvim": { "branch": "master", "commit": "07d1f8ba79dec59d42b975a4df1c732b2e4e37b4" },
   "coc.nvim": { "branch": "release", "commit": "a18ac7e9c34d6b0d7bc4d81dedc0db1d9e229371" },
   "diffview.nvim": { "branch": "main", "commit": "7e5a85c186027cab1e825d018f07c350177077fc" },
   "fm-nvim": { "branch": "master", "commit": "8e6a77049330e7c797eb9e63affd75eb796fe75e" },
