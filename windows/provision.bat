@@ -64,6 +64,9 @@ call :******************** Broot
 
 call :link_file "%USERPROFILE%\broot.toml" %WINDOWS_MNT%\broot.toml
 
+call :******************** GitUI
+
+call :link_dir "%ROAMING%\gitui" %COMMON_MNT%\gitui
 
 call :******************** git config
 
