@@ -1,6 +1,0 @@
-- name: Install
-  get_url:
-    url: https://raw.githubusercontent.com/rupa/z/master/z.sh
-    dest: /usr/bin/z
-    mode: u+x,g+x,o+x
-    force: yes

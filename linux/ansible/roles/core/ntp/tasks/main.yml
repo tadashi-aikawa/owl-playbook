@@ -1,5 +1,0 @@
-- name: 'Install'
-  become: yes
-  apt:
-    name: ntp
-

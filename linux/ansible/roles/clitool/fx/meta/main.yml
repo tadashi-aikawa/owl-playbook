@@ -1,4 +1,0 @@
-dependencies:
-  - role: package_manager/npm
-    when: npm is undefined
-

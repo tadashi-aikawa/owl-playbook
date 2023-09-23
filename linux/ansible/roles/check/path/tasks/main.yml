@@ -1,3 +1,0 @@
-- name: "Check `{{ target }}` in $PATH"
-  shell: 'echo $PATH | grep {{ target }}'
-  changed_when: no

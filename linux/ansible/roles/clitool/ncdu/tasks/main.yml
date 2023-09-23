@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: ncdu
-    command: "ncdu -v | grep -E ' {{ ncdu_version }}$'"
-
-- import_tasks: install.yml
-  when: ncdu_is_absent
-  become: yes

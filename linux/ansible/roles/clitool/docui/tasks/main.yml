@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: docui
-    command: 'docui -V 2>&1 | grep "Usage of docui"'
-
-- import_tasks: install.yml
-  when: docui_is_absent
-  become: yes

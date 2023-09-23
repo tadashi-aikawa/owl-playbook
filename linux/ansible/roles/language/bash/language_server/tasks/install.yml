@@ -1,5 +1,0 @@
-- name: Install
-  npm:
-    name: bash-language-server
-    global: yes
-

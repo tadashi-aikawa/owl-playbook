@@ -1,3 +1,0 @@
-dependencies:
-  - role: core/make
-    when: make is undefined

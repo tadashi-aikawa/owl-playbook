@@ -1,6 +1,0 @@
-dependencies:
-  - role: core/make
-    when: make is undefined
-  - role: core/git
-    when: git is undefined
-  - role: dependency/ctags

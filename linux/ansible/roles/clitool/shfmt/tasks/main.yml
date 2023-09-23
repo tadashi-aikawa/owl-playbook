@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: shfmt
-    command: "shfmt --version | grep -E '{{ shfmt_version }}$'"
-
-- import_tasks: install.yml
-  when: shfmt_is_absent
-  become: yes

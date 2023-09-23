@@ -1,6 +1,0 @@
-- name: Create symlinks
-  file:
-    src: '{{ ubuntu_mnt }}/broot.toml'
-    dest: ~/.config/broot/conf.toml
-    state: link
-    force: yes

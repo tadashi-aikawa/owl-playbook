@@ -1,9 +1,0 @@
-- name: Install
-  get_url:
-    url: https://dystroy.org/broot/download/x86_64-unknown-linux-musl/broot
-    dest: /usr/bin/broot
-    mode: u+x,g+x,o+x
-    force: yes
-
-- name: Install br
-  shell: 'broot --install'

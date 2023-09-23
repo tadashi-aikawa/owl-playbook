@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: idea
-    command: 'ls ~/.local/share/umake/ide/idea/bin/idea.sh'
-
-- import_tasks: install.yml
-  when: idea_is_absent
-

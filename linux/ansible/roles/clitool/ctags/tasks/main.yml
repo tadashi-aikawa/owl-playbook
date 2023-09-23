@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: ctags
-    command: "ctags --version | grep -E '^Universal Ctags.*'"
-
-- import_tasks: install.yml
-  when: ctags_is_absent
-  become: yes

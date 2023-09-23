@@ -1,7 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: tmux
-    command: 'tmux -V'
-
-- import_tasks: install.yml
-  when: tmux_is_absent

@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: fd
-    command: "fd -V | grep -E ' {{ fd_version }}$'"
-
-- import_tasks: install.yml
-  when: fd_is_absent
-  become: yes

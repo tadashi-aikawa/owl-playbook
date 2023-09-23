@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: zstd
-    command: "zstd -V | grep -E 'v{{ zstd_version }},' && pzstd -V 2>&1 | grep '{{ zstd_version }}.'"
-
-- import_tasks: install.yml
-  when: zstd_is_absent
-  become: yes

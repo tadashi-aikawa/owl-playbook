@@ -1,9 +1,0 @@
-- name: "Clone"
-  git:
-    repo: https://github.com/Bash-it/bash-it.git
-    dest: ~/.bash_it
-    depth: 1
-
-- name: Install
-  shell: ~/.bash_it/install.sh
-

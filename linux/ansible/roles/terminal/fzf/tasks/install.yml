@@ -1,8 +1,0 @@
-- name: "Clone"
-  git:
-    repo: https://github.com/junegunn/fzf.git
-    dest: ~/.fzf
-    depth: 1
-
-- name: "Install"
-  shell: ~/.fzf/install

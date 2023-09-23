@@ -1,5 +1,0 @@
-- name: "Clone"
-  git:
-    repo: https://github.com/tadashi-aikawa/pureline-inspired.git
-    dest: ~/pureline-inspired
-    depth: 1

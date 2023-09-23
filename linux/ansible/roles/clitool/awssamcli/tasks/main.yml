@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: awssamcli
-    command: "sam --version | grep -E 'SAM CLI'"
-
-- import_tasks: install.yml
-  when: awssamcli_is_absent
-  become: yes

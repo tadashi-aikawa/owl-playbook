@@ -1,8 +1,0 @@
-- import_role: { name: check/absent }
-  vars:
-    target: z
-    command: "z -h"
-
-- import_tasks: install.yml
-  when: z_is_absent
-  become: yes

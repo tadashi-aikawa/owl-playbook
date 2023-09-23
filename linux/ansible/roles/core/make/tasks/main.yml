@@ -1,8 +1,0 @@
-- name: 'Install'
-  become: yes
-  apt:
-    name: make
-
-- set_fact:
-    make: true
-
