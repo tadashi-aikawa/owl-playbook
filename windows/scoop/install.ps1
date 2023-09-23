@@ -58,7 +58,6 @@ scoop install `
   docker `
   go `
   rustup-msvc `
-  hugo-extended `
   volta `
   vcxsrv
 
