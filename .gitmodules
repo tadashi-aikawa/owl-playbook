@@ -1,3 +1,0 @@
-[submodule "mnt/windows/cmder/owl-cmder-tools"]
-	path = mnt/windows/cmder/owl-cmder-tools
-	url = git@github.com:tadashi-aikawa/owl-cmder-tools.git
