@@ -51,20 +51,20 @@ starship preset bracketed-segments > ~/.config/starship.toml
 # Brootインストール
 asdf_install broot latest https://github.com/cmur2/asdf-broot.git
 mkdir -p ~/.config/broot
-wget ${MNT}/linux/ubuntu/broot.toml -O ~/.config/broot/conf.toml
+cp $MNT/linux/ubuntu/broot.toml ~/.config/broot/conf.toml
 
 # Neovim
 asdf_install neovim 0.8.3
 echo 'alias vim=nvim' >> ~/.bashrc
 mkdir -p ~/.config/nvim
-wget ${MNT}/common/nvim/init.lua -O ~/.config/nvim/init.lua
-wget ${MNT}/common/nvim/coc-settings.json -O ~/.config/nvim/coc-settings.json
-wget ${MNT}/common/nvim/lazy-lock.json -O ~/.config/nvim/lazy-lock.json
+cp ${MNT}/common/nvim/init.lua ~/.config/nvim/init.lua
+cp ${MNT}/common/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+cp ${MNT}/common/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
 # GitUI
 asdf_install gitui latest
 mkdir -p ~/.config/gitui
-wget ${MNT}/common/gitui/key_bindings.ron -O ~/.config/gitui/key_bindings.ron
+cp ${MNT}/common/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
 
 # Node.js
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -78,12 +78,13 @@ asdf_install ripgrep latest
 
 # zoxide
 asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
-echo 'eval "$(zoxide init bash)"' >> ~/.bashrc
+cp $MNT/linux/ubuntu/bashrc/zoxide.sh ~/.zoxide.sh
+echo "sorce ~/.zoxide.sh" >> ~/.bashrc
 
 # eza
 asdf_install eza latest
-echo 'alias tree="eza --icons -T"' >> ~/.bashrc
-echo 'alias ll="eza --icons -l --git"' >> ~/.bashrc
+cp $MNT/linux/ubuntu/bashrc/eza.sh ~/.eza.sh
+echo "sorce ~/.eza.sh" >> ~/.bashrc
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
