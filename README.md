@@ -48,3 +48,13 @@ git clone git@github.com:tadashi-aikawa/owl-playbook.git
 
 TODO: adsfをベースにしたレシピに作り変える
 
+### 事前準備
+
+VMを使う場合は[Multipass]などを使ってログインした状態から始めてください。
+
+```console
+multipass launch --name ubuntu-sandbox --cpus 2 --memory 4G --disk 10GB
+multipass exec ubuntu-sandbox -- bash
+```
+
+[Multipass]: https://multipass.run/
