@@ -90,7 +90,6 @@ echo "source ~/.eza.sh" >> ~/.bashrc
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cp $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh
 echo "source ~/.fzf.sh" >> ~/.bashrc
-. ~/.fzf/install
 
 # delta
 asdf_install delta latest https://github.com/andweeb/asdf-delta.git
@@ -103,5 +102,6 @@ sudo tar xvf /tmp/git-graph.tar.gz -C /usr/local/bin/
 asdf_install task latest
 
 # After
-echo "Run Broot"
-echo "Run Neovim"
+echo "Run broot"
+echo "Run nvim"
+echo "Run . ~/.fzf/install"
