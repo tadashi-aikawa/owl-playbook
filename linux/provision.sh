@@ -3,6 +3,25 @@ set -eu
 COMMON_MNT="mnt/common"
 UBUNTU_MNT="mnt/linux/ubuntu"
 
+# $1: package name, $2: version $3?: url
+function asdf_install() {
+  asdf plugin add $1 ${3:-""}
+  asdf install $1 $2
+  asdf global $1 $2
+}
+
+ensure_bashrc() {
+  local content="$1"
+
+  if ! grep -qxF -- "$content" ~/.bashrc; then
+      echo "$content" >> ~/.bashrc
+      echo "'${content}' was added to .bashrc."
+  else
+      echo "'${content}' is already present in .bashrc."
+  fi
+}
+
+
 # 依存関係インストール
 sudo apt-get update -y
 # nvim-treesitterで使用
@@ -26,25 +45,18 @@ cp $UBUNTU_MNT/gitconfig ~/.gitconfig
 
 # .bashrc
 cp $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
-echo "source ~/.bash.sh" >> ~/.bashrc
+ensure_bashrc "source ~/.bash.sh"
 
 # asdfインストール
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 cp $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh
-echo "source ~/.asdf.sh" >> ~/.bashrc
+ensure_bashrc "source ~/.asdf.sh"
 source ~/.asdf.sh
-
-# $1: package name, $2: version $3?: url
-function asdf_install() {
-  asdf plugin add $1 ${3:-""}
-  asdf install $1 $2
-  asdf global $1 $2
-}
 
 # Starshipインストール
 asdf_install starship latest
 cp $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh
-echo "source ~/.starship.sh" >> ~/.bashrc
+ensure_bashrc "source ~/.starship.sh"
 mkdir -p ~/.config
 starship preset bracketed-segments > ~/.config/starship.toml
 
@@ -55,7 +67,7 @@ cp $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml
 
 # Neovim
 asdf_install neovim 0.8.3
-echo 'alias vim=nvim' >> ~/.bashrc
+ensure_bashrc 'alias vim=nvim'
 mkdir -p ~/.config/nvim
 cp ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua
 cp ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
@@ -79,17 +91,17 @@ asdf_install ripgrep latest
 # zoxide
 asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
 cp $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh
-echo "source ~/.zoxide.sh" >> ~/.bashrc
+ensure_bashrc "source ~/.zoxide.sh"
 
 # eza
 asdf_install eza latest
 cp $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh
-echo "source ~/.eza.sh" >> ~/.bashrc
+ensure_bashrc "source ~/.eza.sh"
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cp $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh
-echo "source ~/.fzf.sh" >> ~/.bashrc
+ensure_bashrc "source ~/.fzf.sh"
 
 # delta
 asdf_install delta latest https://github.com/andweeb/asdf-delta.git
