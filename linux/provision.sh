@@ -1,7 +1,8 @@
 set -eu
 
 # 変数設定
-local MNT="https://raw.githubusercontent.com/tadashi-aikawa/owl-playbook/master/mnt"
+local MNT
+MNT="https://raw.githubusercontent.com/tadashi-aikawa/owl-playbook/master/mnt"
 
 # configディレクトリ
 mkdir .config
