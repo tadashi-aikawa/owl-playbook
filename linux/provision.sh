@@ -1,5 +1,6 @@
 set -eu
 
+COMMON_MNT="mnt/common"
 UBUNTU_MNT="mnt/linux/ubuntu"
 
 # 依存関係インストール
@@ -56,14 +57,14 @@ cp $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml
 asdf_install neovim 0.8.3
 echo 'alias vim=nvim' >> ~/.bashrc
 mkdir -p ~/.config/nvim
-cp ${MNT}/common/nvim/init.lua ~/.config/nvim/init.lua
-cp ${MNT}/common/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-cp ${MNT}/common/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
+cp ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua
+cp ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+cp ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
 # GitUI
 asdf_install gitui latest
 mkdir -p ~/.config/gitui
-cp ${MNT}/common/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
+cp ${COMMON_MNT}/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
 
 # Node.js
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
