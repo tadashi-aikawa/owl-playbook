@@ -46,8 +46,6 @@ git clone https://github.com/tadashi-aikawa/owl-playbook.git
 
 ## 🐧 Linux setup
 
-TODO: adsfをベースにしたレシピに作り変える
-
 ### 事前準備
 
 VMを使う場合は[Multipass]などを使ってログインした状態から始めてください。
@@ -58,7 +56,7 @@ multipass exec ubuntu-sandbox -- bash
 ```
 
 ```console
-bash ./linux/provision.sh
+. ./linux/provision.sh
 ```
 
 [Multipass]: https://multipass.run/
