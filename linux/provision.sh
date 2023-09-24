@@ -1,8 +1,7 @@
 set -eu
 
 # 変数設定
-local MNT
-MNT="https://raw.githubusercontent.com/tadashi-aikawa/owl-playbook/master/mnt"
+local MNT="https://raw.githubusercontent.com/tadashi-aikawa/owl-playbook/master/mnt"
 
 # configディレクトリ
 mkdir .config
@@ -10,11 +9,14 @@ mkdir .config/broot
 
 # 依存関係インストール
 sudo apt-get update -y
+# nvim-treesitterで使用
+sudo apt-get install -y build-essential
+# Pythonとtelescope-frecencyで使用
+sudo apt-get install -y libsqlite3-dev
+# Brootで使用
+sudo apt-get install -y unzip
+# Pythonで使用
 sudo apt-get install -y \
-  build-essential \ # nvim-treesitterで使用
-  libsqlite3-dev \ # Pythonとtelescope-frecencyで使用
-  unzip \ # Brootで使用
-  # 以下はPythonで使用
   libbz2-dev \
   libncurses-dev \
   libreadline-dev \

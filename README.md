@@ -5,7 +5,7 @@ Windows と Linux の個人的な環境構築用スクリプト群です。
 各種同期設定は **mnt 配下** に集約されます。
 
 ```console
-git clone git@github.com:tadashi-aikawa/owl-playbook.git
+git clone https://github.com/tadashi-aikawa/owl-playbook.git
 ```
 
 ## 💻 Windows setup
@@ -55,6 +55,10 @@ VMを使う場合は[Multipass]などを使ってログインした状態から�
 ```console
 multipass launch --name ubuntu-sandbox --cpus 2 --memory 4G --disk 10GB
 multipass exec ubuntu-sandbox -- bash
+```
+
+```console
+bash ./linux/provision.sh
 ```
 
 [Multipass]: https://multipass.run/
