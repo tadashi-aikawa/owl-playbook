@@ -1,7 +1,6 @@
 set -eu
 
-# 変数設定
-MNT="https://raw.githubusercontent.com/tadashi-aikawa/owl-playbook/master/mnt"
+UBUNTU_MNT="mnt/linux/ubuntu"
 
 # 依存関係インストール
 sudo apt-get update -y
@@ -22,15 +21,15 @@ sudo apt-get install -y \
   zlib1g-dev
 
 # gitconfig
-cp $MNT/linux/ubuntu/gitconfig ~/.gitconfig
+cp $UBUNTU_MNT/gitconfig ~/.gitconfig
 
 # .bashrc
-cp $MNT/linux/ubuntu/bashrc/base.sh ~/.bash.sh
+cp $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
 echo "sorce ~/.bash.sh" >> ~/.bashrc
 
 # asdfインストール
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
-cp $MNT/linux/ubuntu/bashrc/asdf.sh ~/.asdf.sh
+cp $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh
 echo "sorce ~/.asdf.sh" >> ~/.bashrc
 source ~/.asdf.sh
 
@@ -43,7 +42,7 @@ function asdf_install() {
 
 # Starshipインストール
 asdf_install starship latest
-cp $MNT/linux/ubuntu/bashrc/starship.sh ~/.starship.sh
+cp $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh
 echo "sorce ~/.starship.sh" >> ~/.bashrc
 source ~/.starship.sh
 starship preset bracketed-segments > ~/.config/starship.toml
@@ -51,7 +50,7 @@ starship preset bracketed-segments > ~/.config/starship.toml
 # Brootインストール
 asdf_install broot latest https://github.com/cmur2/asdf-broot.git
 mkdir -p ~/.config/broot
-cp $MNT/linux/ubuntu/broot.toml ~/.config/broot/conf.toml
+cp $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml
 
 # Neovim
 asdf_install neovim 0.8.3
@@ -78,12 +77,12 @@ asdf_install ripgrep latest
 
 # zoxide
 asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
-cp $MNT/linux/ubuntu/bashrc/zoxide.sh ~/.zoxide.sh
+cp $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh
 echo "sorce ~/.zoxide.sh" >> ~/.bashrc
 
 # eza
 asdf_install eza latest
-cp $MNT/linux/ubuntu/bashrc/eza.sh ~/.eza.sh
+cp $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh
 echo "sorce ~/.eza.sh" >> ~/.bashrc
 
 # fzf
