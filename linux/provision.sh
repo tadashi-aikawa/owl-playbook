@@ -1,7 +1,8 @@
 set -eu
 
 COMMON_MNT="mnt/common"
-UBUNTU_MNT="mnt/linux/ubuntu"
+LINUX_MNT="mnt/linux"
+UBUNTU_MNT="${LINUX_MNT}/ubuntu"
 
 # $1: package name, $2: version $3?: url
 function asdf_install() {
@@ -21,6 +22,8 @@ ensure_bashrc() {
   fi
 }
 
+# WSL
+cp $UBUNTU_MNT/wsl.conf /etc/wsl.conf
 
 # 依存関係インストール
 sudo apt-get update -y
