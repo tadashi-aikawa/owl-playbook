@@ -3,10 +3,6 @@ set -eu
 # 変数設定
 MNT="https://raw.githubusercontent.com/tadashi-aikawa/owl-playbook/master/mnt"
 
-# configディレクトリ
-mkdir ~/.config
-mkdir ~/.config/broot
-
 # 依存関係インストール
 sudo apt-get update -y
 # nvim-treesitterで使用
@@ -26,63 +22,17 @@ sudo apt-get install -y \
   zlib1g-dev
 
 # gitconfig
-cat >> ~/.gitconfig << 'EOF'
-[user]
-    email = syou.maman@gmail.com
-    name = tadashi-aikawa
-
-[core]
-    autoCRLF = false
-    pager = delta
-
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    side-by-side = true
-
-[merge]
-    conflictstyle = diff3
-
-[diff]
-    colorMoved = default
-
-EOF
+cp $MNT/linux/ubuntu/gitconfig ~/.gitconfig
 
 # .bashrc
-cat >> ~/.bashrc << 'EOF'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
-alias gf="git fetch --all"
-alias ga='git add'
-alias gaa='git add --all'
-alias gb='git checkout $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
-alias gbc='git checkout -b'
-alias gco='git commit -m'
-alias gbr='git branch -rl | grep -vE "HEAD|master" | tr -d " " | sed -r "s@origin/@@g" | fzf | xargs -i git checkout -b {} origin/{}'
-alias gd='git diff'
-alias gds='git diff --staged'
-alias gf='git fetch --all'
-alias gl='git log'
-alias gll='git-graph -n 30 -s round'
-alias gls='git-graph -n 15 -s round --format "%h %d %s%n 💿%ad 👤<%ae>%n'
-alias glll="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b'"
-alias glls="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -10"
-alias gbm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
-alias gs='git status --short'
-alias gss='git status -v'
-
-EOF
+cp $MNT/linux/ubuntu/bashrc/base.sh ~/.bash.sh
+echo "sorce ~/.bash.sh" >> ~/.bashrc
 
 # asdfインストール
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
-echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc
-echo '. "$HOME/.asdf/completions/asdf.bash"' >> ~/.bashrc
-source ~/.bashrc
+cp $MNT/linux/ubuntu/bashrc/asdf.sh ~/.asdf.sh
+echo "sorce ~/.asdf.sh" >> ~/.bashrc
+source ~/.asdf.sh
 
 # $1: package name, $2: version $3?: url
 function asdf_install() {
@@ -93,12 +43,14 @@ function asdf_install() {
 
 # Starshipインストール
 asdf_install starship latest
-echo 'eval "$(starship init bash)"' >> ~/.bashrc
-source ~/.bashrc
+cp $MNT/linux/ubuntu/bashrc/starship.sh ~/.starship.sh
+echo "sorce ~/.starship.sh" >> ~/.bashrc
+source ~/.starship.sh
 starship preset bracketed-segments > ~/.config/starship.toml
 
 # Brootインストール
 asdf_install broot latest https://github.com/cmur2/asdf-broot.git
+mkdir -p ~/.config/broot
 wget ${MNT}/linux/ubuntu/broot.toml -O ~/.config/broot/conf.toml
 
 # Neovim
@@ -111,6 +63,7 @@ wget ${MNT}/common/nvim/lazy-lock.json -O ~/.config/nvim/lazy-lock.json
 
 # GitUI
 asdf_install gitui latest
+mkdir -p ~/.config/gitui
 wget ${MNT}/common/gitui/key_bindings.ron -O ~/.config/gitui/key_bindings.ron
 
 # Node.js
