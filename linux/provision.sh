@@ -82,6 +82,7 @@ EOF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc
 echo '. "$HOME/.asdf/completions/asdf.bash"' >> ~/.bashrc
+source ~/.bashrc
 
 # $1: package name, $2: version $3?: url
 function asdf_install() {
@@ -93,6 +94,7 @@ function asdf_install() {
 # Starshipインストール
 asdf_install starship latest
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
+source ~/.bashrc
 starship preset bracketed-segments > ~/.config/starship.toml
 
 # Brootインストール
