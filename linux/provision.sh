@@ -44,7 +44,7 @@ function asdf_install() {
 asdf_install starship latest
 cp $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh
 echo "source ~/.starship.sh" >> ~/.bashrc
-source ~/.starship.sh
+mkdir -p ~/.config
 starship preset bracketed-segments > ~/.config/starship.toml
 
 # Brootインストール
