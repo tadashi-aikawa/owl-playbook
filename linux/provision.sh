@@ -23,7 +23,7 @@ ensure_bashrc() {
 }
 
 # WSL
-cp $UBUNTU_MNT/wsl.conf /etc/wsl.conf
+cp $LINUX_MNT/wsl.conf /etc/wsl.conf
 
 # 依存関係インストール
 sudo apt-get update -y
