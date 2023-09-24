@@ -26,7 +26,7 @@ sudo apt-get install -y \
   zlib1g-dev
 
 # gitconfig
-cat > ~/.bashrc << 'EOF'
+cat >> ~/.gitconfig << 'EOF'
 [user]
     email = syou.maman@gmail.com
     name = tadashi-aikawa
@@ -52,7 +52,7 @@ cat > ~/.bashrc << 'EOF'
 EOF
 
 # .bashrc
-cat > ~/.bashrc << 'EOF'
+cat >> ~/.bashrc << 'EOF'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
