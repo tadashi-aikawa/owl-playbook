@@ -70,6 +70,9 @@ asdf_install neovim 0.8.3
 ensure_bashrc 'alias vim=nvim'
 mkdir -p ~/.config/nvim
 cp ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua
+mkdir -p ~/.config/nvim/lua
+cp ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
+echo "require('clipboard')" >> ~/.config/nvim/init.lua
 cp ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 cp ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
