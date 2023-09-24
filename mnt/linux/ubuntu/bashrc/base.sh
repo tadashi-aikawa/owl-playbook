@@ -20,5 +20,3 @@ alias glls="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format
 alias gbm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
 alias gs='git status --short'
 alias gss='git status -v'
-
-alias vim='nvim'
