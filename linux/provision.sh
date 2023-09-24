@@ -25,12 +25,12 @@ cp $UBUNTU_MNT/gitconfig ~/.gitconfig
 
 # .bashrc
 cp $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
-echo "sorce ~/.bash.sh" >> ~/.bashrc
+echo "source ~/.bash.sh" >> ~/.bashrc
 
 # asdfインストール
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 cp $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh
-echo "sorce ~/.asdf.sh" >> ~/.bashrc
+echo "source ~/.asdf.sh" >> ~/.bashrc
 source ~/.asdf.sh
 
 # $1: package name, $2: version $3?: url
@@ -43,7 +43,7 @@ function asdf_install() {
 # Starshipインストール
 asdf_install starship latest
 cp $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh
-echo "sorce ~/.starship.sh" >> ~/.bashrc
+echo "source ~/.starship.sh" >> ~/.bashrc
 source ~/.starship.sh
 starship preset bracketed-segments > ~/.config/starship.toml
 
@@ -78,12 +78,12 @@ asdf_install ripgrep latest
 # zoxide
 asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
 cp $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh
-echo "sorce ~/.zoxide.sh" >> ~/.bashrc
+echo "source ~/.zoxide.sh" >> ~/.bashrc
 
 # eza
 asdf_install eza latest
 cp $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh
-echo "sorce ~/.eza.sh" >> ~/.bashrc
+echo "source ~/.eza.sh" >> ~/.bashrc
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
