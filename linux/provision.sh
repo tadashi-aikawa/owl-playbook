@@ -25,7 +25,7 @@ ensure_bashrc() {
 # 依存関係インストール
 sudo apt-get update -y
 # nvim-treesitterで使用
-sudo apt-get install -y build-essential
+sudo apt-get install -y build-essential xsel
 # Pythonとtelescope-frecencyで使用
 sudo apt-get install -y libsqlite3-dev
 # Brootで使用
@@ -64,6 +64,11 @@ starship preset bracketed-segments > ~/.config/starship.toml
 asdf_install broot latest https://github.com/cmur2/asdf-broot.git
 mkdir -p ~/.config/broot
 cp $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml
+
+# win32yank
+wget https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip -O /tmp/win32yank.zip
+sudo unzip /tmp/win32yank.zip *.exe -d /usr/local/bin
+sudo chmod +x /usr/local/bin/win32yank.exe
 
 # Neovim
 asdf_install neovim 0.8.3
