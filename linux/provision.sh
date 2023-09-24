@@ -85,7 +85,7 @@ echo '. "$HOME/.asdf/completions/asdf.bash"' >> ~/.bashrc
 
 # $1: package name, $2: version $3?: url
 function asdf_install() {
-  asdf plugin add $1 $3
+  asdf plugin add $1 ${3:-""}
   asdf install $1 $2
   asdf global $1 $2
 }
