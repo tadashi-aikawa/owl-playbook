@@ -88,8 +88,9 @@ echo "source ~/.eza.sh" >> ~/.bashrc
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-echo 'alias cdz="zi"' >> ~/.bashrc
-echo 'export FZF_DEFAULT_OPTS="--reverse --border --height 50%"' >> ~/.bashrc
+cp $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh
+echo "source ~/.fzf.sh" >> ~/.bashrc
+. ~/.fzf/install
 
 # delta
 asdf_install delta latest https://github.com/andweeb/asdf-delta.git
@@ -104,4 +105,3 @@ asdf_install task latest
 # After
 echo "Run Broot"
 echo "Run Neovim"
-echo "Run ~/.fzf/install"
