@@ -4,8 +4,8 @@ set -eu
 MNT="https://raw.githubusercontent.com/tadashi-aikawa/owl-playbook/master/mnt"
 
 # configディレクトリ
-mkdir .config
-mkdir .config/broot
+mkdir ~/.config
+mkdir ~/.config/broot
 
 # 依存関係インストール
 sudo apt-get update -y
