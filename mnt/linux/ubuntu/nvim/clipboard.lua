@@ -6,7 +6,7 @@ vim.g.clipboard = {
     },
     paste = {
         ['+'] = 'xsel -bo',
-        ['*'] = 'win32yank.exe -o --lf',
+        ['*'] = function() return vim.fn.systemlist('xsel -bo | tr -d "\r"') end,
     },
     cache_enabled = 1,
 }
