@@ -23,7 +23,7 @@ ensure_bashrc() {
 }
 
 # WSL
-sudo cp $LINUX_MNT/wsl.conf /etc/wsl.conf
+sudo ln -snf $LINUX_MNT/wsl.conf /etc/wsl.conf
 
 # 依存関係インストール
 sudo apt-get update -y
@@ -44,21 +44,21 @@ sudo apt-get install -y \
   zlib1g-dev
 
 # gitconfig
-cp $UBUNTU_MNT/gitconfig ~/.gitconfig
+ln -snf $UBUNTU_MNT/gitconfig ~/.gitconfig
 
 # .bashrc
-cp $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
+ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
 ensure_bashrc "source ~/.bash.sh"
 
 # asdfインストール
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
-cp $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh
+ln -snf $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh
 ensure_bashrc "source ~/.asdf.sh"
 source ~/.asdf.sh
 
 # Starshipインストール
 asdf_install starship latest
-cp $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh
+ln -snf $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh
 ensure_bashrc "source ~/.starship.sh"
 mkdir -p ~/.config
 starship preset bracketed-segments > ~/.config/starship.toml
@@ -66,7 +66,7 @@ starship preset bracketed-segments > ~/.config/starship.toml
 # Brootインストール
 asdf_install broot latest https://github.com/cmur2/asdf-broot.git
 mkdir -p ~/.config/broot
-cp $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml
+ln -snf $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml
 
 # win32yank
 wget https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip -O /tmp/win32yank.zip
@@ -77,17 +77,17 @@ sudo chmod +x /usr/local/bin/win32yank.exe
 asdf_install neovim 0.8.3
 ensure_bashrc 'alias vim=nvim'
 mkdir -p ~/.config/nvim
-cp ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua
+ln -snf ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua
 mkdir -p ~/.config/nvim/lua
-cp ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
+ln -snf ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
 echo "require('clipboard')" >> ~/.config/nvim/init.lua
-cp ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-cp ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
+ln -snf ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -snf ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
 # GitUI
 asdf_install gitui latest
 mkdir -p ~/.config/gitui
-cp ${COMMON_MNT}/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
+ln -snf ${COMMON_MNT}/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron
 
 # Node.js
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -101,17 +101,17 @@ asdf_install ripgrep latest
 
 # zoxide
 asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
-cp $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh
+ln -snf $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh
 ensure_bashrc "source ~/.zoxide.sh"
 
 # eza
 asdf_install eza latest
-cp $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh
+ln -snf $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh
 ensure_bashrc "source ~/.eza.sh"
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-cp $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh
+ln -snf $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh
 ensure_bashrc "source ~/.fzf.sh"
 
 # delta
