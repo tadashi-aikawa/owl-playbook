@@ -79,7 +79,6 @@ mkdir -p ~/.config/nvim
 ln -snf ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua
 mkdir -p ~/.config/nvim/lua
 ln -snf ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
-echo "require('clipboard')" >> ~/.config/nvim/init.lua
 ln -snf ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -snf ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 

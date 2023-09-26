@@ -475,3 +475,9 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+if is_windows then
+  -- do nothing
+else
+  require('clipboard')
+end
