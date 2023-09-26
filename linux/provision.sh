@@ -72,11 +72,6 @@ asdf_install broot latest https://github.com/cmur2/asdf-broot.git
 mkdir -p ~/.config/broot
 ln -snf $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml
 
-# win32yank
-wget https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip -O /tmp/win32yank.zip
-sudo unzip /tmp/win32yank.zip *.exe -d /usr/local/bin
-sudo chmod +x /usr/local/bin/win32yank.exe
-
 # Neovim
 asdf_install neovim 0.8.3
 ensure_bashrc 'alias vim=nvim'
