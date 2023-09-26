@@ -1,7 +1,6 @@
 set -eu
 
-CURRENT_FILE_PATH=$(readlink -f "$(pwd)")
-CURRENT_DIR_PATH=$(dirname $CURRENT_FILE_PATH)
+CURRENT_DIR_PATH=$(readlink -f "$(pwd)")
 
 MNT="${CURRENT_DIR_PATH}/mnt"
 COMMON_MNT="${MNT}/common"
