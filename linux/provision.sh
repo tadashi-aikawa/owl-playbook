@@ -51,6 +51,7 @@ ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
 ensure_bashrc "source ~/.bash.sh"
 
 # asdfインストール
+rm -rf ~/.asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 ln -snf $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh
 ensure_bashrc "source ~/.asdf.sh"
@@ -110,6 +111,7 @@ ln -snf $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh
 ensure_bashrc "source ~/.eza.sh"
 
 # fzf
+rm -rf ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ln -snf $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh
 ensure_bashrc "source ~/.fzf.sh"
