@@ -1,6 +1,6 @@
 set -eu
 
-CURRENT_FILE_PATH=$(readlink -f "${BASH_SOURCE:-$0}")
+CURRENT_FILE_PATH=$(readlink -f "$(pwd)")
 CURRENT_DIR_PATH=$(dirname $CURRENT_FILE_PATH)
 
 MNT="${CURRENT_DIR_PATH}/mnt"
