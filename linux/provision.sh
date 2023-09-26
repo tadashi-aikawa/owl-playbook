@@ -1,7 +1,11 @@
 set -eu
 
-COMMON_MNT="mnt/common"
-LINUX_MNT="mnt/linux"
+CURRENT_FILE_PATH=$(readlink -f "${BASH_SOURCE:-$0}")
+CURRENT_DIR_PATH=$(dirname $path)
+
+MNT="${CURRENT_DIR_PATH}/mnt"
+COMMON_MNT="${MNT}/common"
+LINUX_MNT="${MNT}/linux"
 UBUNTU_MNT="${LINUX_MNT}/ubuntu"
 
 # $1: package name, $2: version $3?: url
