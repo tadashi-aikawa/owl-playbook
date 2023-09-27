@@ -49,6 +49,9 @@ sudo apt-get install -y \
 # gitconfig
 ln -snf $UBUNTU_MNT/gitconfig ~/.gitconfig
 
+# .inputrc
+ln -snf $UBUNTU_MNT/inputrc ~/.inputrc
+
 # .bashrc
 ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
 ensure_bashrc "source ~/.bash.sh"

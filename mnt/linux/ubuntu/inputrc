@@ -1,0 +1,16 @@
+$if Bash
+  # 候補表示のときprefixに色を付ける
+  set colored-completion-prefix on
+  # ハイフンとアンダースコアの同一視
+  set completion-map-case on
+  # 候補の属性に色を付ける
+  set colored-stats on
+  # 補間時大文字小文字無視
+  set completion-ignore-case on
+  # 入力候補リストのディレクトリや実行可能ファイルに印をつける
+  set visible-stats on
+  # 音をならさない
+  set bell-style none
+  # 履歴の特殊文字を展開する
+  space: magic-space
+$endif
