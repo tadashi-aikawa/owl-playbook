@@ -14,7 +14,7 @@ alias gds='git diff --staged'
 alias gf='git fetch --all'
 alias gl='git log'
 alias gls='git-graph -n 30 -s round'
-alias gll='git-graph -n 15 -s round --format "%h %d %s%n 💿%ad 👤<%ae>%n"'
+alias gll='git-graph -n 15 -s round --format "%h %d %s%n 💿%ad 👤<%ae>%n%n"'
 alias glll="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b'"
 alias glls="git log --graph --all --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(auto)%d%Creset %C(yellow reverse)%h%Creset %C(magenta)%ae%Creset %C(cyan)%ad%Creset%n%C(white bold)%w(80)%s%Creset%n%b' -10"
 alias gbm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)'
