@@ -65,45 +65,39 @@ ensure_bashrc "source ~/.bash.sh"
 # asdfインストール
 no asdf && {
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1;
-  ln -snf $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh;
-  ensure_bashrc "source ~/.asdf.sh";
-  source ~/.asdf.sh;
+  source $UBUNTU_MNT/bashrc/asdf.sh;
 }
+ln -snf $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh;
+ensure_bashrc "source ~/.asdf.sh";
 
 # Starshipインストール
-no starship && {
-  asdf_install starship latest;
-  ln -snf $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh;
-  ensure_bashrc "source ~/.starship.sh";
-  mkdir -p ~/.config;
-  starship preset bracketed-segments > ~/.config/starship.toml;
-}
+no starship && asdf_install starship latest
+ln -snf $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh;
+ensure_bashrc "source ~/.starship.sh";
+mkdir -p ~/.config;
+starship preset bracketed-segments > ~/.config/starship.toml;
 
 # Brootインストール
-no broot && {
-  asdf_install broot latest https://github.com/cmur2/asdf-broot.git;
-  mkdir -p ~/.config/broot;
-  ln -snf $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml;
-}
+no broot && asdf_install broot latest https://github.com/cmur2/asdf-broot.git
+mkdir -p ~/.config/broot;
+ln -snf $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml;
 
 # Neovim
-no nvim && {
-  asdf_install neovim 0.8.3;
-  ensure_bashrc 'alias vim=nvim';
-  mkdir -p ~/.config/nvim;
-  ln -snf ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua;
-  mkdir -p ~/.config/nvim/lua;
-  ln -snf ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua;
-  ln -snf ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json;
-  ln -snf ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json;
-}
+no nvim && asdf_install neovim 0.8.3
+ensure_bashrc 'alias vim=nvim';
+mkdir -p ~/.config/nvim;
+ln -snf ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua;
+mkdir -p ~/.config/nvim/lua;
+ln -snf ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua;
+ln -snf ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json;
+ln -snf ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json;
 
 # GitUI
-no gitui && {
-  asdf_install gitui latest;
-  mkdir -p ~/.config/gitui;
-  ln -snf ${COMMON_MNT}/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron;
-}
+no gitui && asdf_install gitui latest
+mkdir -p ~/.config/gitui;
+ln -snf ${COMMON_MNT}/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron;
+ln -snf $UBUNTU_MNT/bashrc/gitui.sh ~/.gitui.sh;
+ensure_bashrc "source ~/.gitui.sh"
 
 # Node.js
 no node && {
@@ -115,40 +109,28 @@ no node && {
 }
 
 # Bun
-no bun && {
-  asdf_install bun latest;
-}
+no bun && asdf_install bun latest
 
 # ripgrep
-no rg && {
-  asdf_install ripgrep latest;
-}
+no rg && asdf_install ripgrep latest
 
 # zoxide
-no zoxide && {
-  asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git;
-  ln -snf $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh;
-  ensure_bashrc "source ~/.zoxide.sh";
-}
+no zoxide && asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
+ln -snf $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh;
+ensure_bashrc "source ~/.zoxide.sh";
 
 # eza
-no eza && {
-  asdf_install eza latest;
-  ln -snf $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh;
-  ensure_bashrc "source ~/.eza.sh";
-}
+no eza && asdf_install eza latest
+ln -snf $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh;
+ensure_bashrc "source ~/.eza.sh";
 
 # fzf
-no fzf && {
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
-  ln -snf $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh;
-  ensure_bashrc "source ~/.fzf.sh";
-}
+no fzf && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+ln -snf $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh;
+ensure_bashrc "source ~/.fzf.sh";
 
 # delta
-no delta && {
-  asdf_install delta latest https://github.com/andweeb/asdf-delta.git;
-}
+no delta && asdf_install delta latest https://github.com/andweeb/asdf-delta.git
 
 # git-graph
 no git-graph && {
@@ -157,9 +139,7 @@ no git-graph && {
 }
 
 # Task
-no task && {
-  asdf_install task latest;
-}
+no task && asdf_install task latest
 
 # After
 echo "Run broot"
