@@ -48,15 +48,20 @@ git clone https://github.com/tadashi-aikawa/owl-playbook.git
 
 ### 事前準備
 
-VMを使う場合は[Multipass]などを使ってログインした状態から始めてください。
+VMを使う場合はWSL2や[Multipass]などを使ってログインした状態から始めてください。
 
+`Multipassの場合`
 ```console
 multipass launch --name ubuntu-sandbox --cpus 2 --memory 4G --disk 10GB
 multipass exec ubuntu-sandbox -- bash
 ```
 
+### 環境構築
+
+プロビジョンスクリプトを実行します。既にインストール済のコマンドは再インストールせずスキップするようになっています。
+
 ```console
-. ./linux/provision.sh
+bash ./linux/provision.sh
 ```
 
 [Multipass]: https://multipass.run/
