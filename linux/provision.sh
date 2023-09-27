@@ -16,7 +16,7 @@ function asdf_install() {
 
 # no cat && { catのインストール処理 }
 function no() {
-  echo "$1 コマンドの存在確認"
+  echo "🔍 $1 コマンドの存在確認"
   ! command -v $1 > /dev/null
 }
 
@@ -25,9 +25,9 @@ function ensure_bashrc() {
 
   if ! grep -qxF -- "$content" ~/.bashrc; then
       echo "$content" >> ~/.bashrc
-      echo "'${content}' was added to .bashrc."
+      echo "👍 '${content}' was added to .bashrc."
   else
-      echo "'${content}' is already present in .bashrc."
+      echo "👌 '${content}' is already present in .bashrc."
   fi
 }
 
