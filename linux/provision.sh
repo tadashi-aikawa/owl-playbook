@@ -40,6 +40,8 @@ sudo apt-get update -y
 sudo apt-get install -y build-essential xsel
 # Pythonとtelescope-frecencyで使用
 sudo apt-get install -y libsqlite3-dev
+# Rustで使用
+sudo apt-get install -y pkg-config
 # Brootで使用
 sudo apt-get install -y unzip
 # Pythonで使用
