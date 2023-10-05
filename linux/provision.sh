@@ -113,6 +113,9 @@ no node && {
 # Bun
 no bun && asdf_install bun latest
 
+# Deno
+no deno && asdf_install deno latest https://github.com/asdf-community/asdf-deno.git
+
 # ripgrep
 no rg && asdf_install ripgrep latest
 
