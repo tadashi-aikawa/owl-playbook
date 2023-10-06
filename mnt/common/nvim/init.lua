@@ -327,6 +327,7 @@ require("lazy").setup({
   -- Markdown preview
   {
       "iamcco/markdown-preview.nvim",
+      lazy = false,
       keys = {
         { '<M-p>', ':MarkdownPreviewToggle<CR>' }
       },
