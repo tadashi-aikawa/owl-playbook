@@ -11,4 +11,4 @@ vim_settings.xml
 
 packer_compiled.lua
 
-lazy.lock
+lazy-lock.json
