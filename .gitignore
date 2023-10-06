@@ -10,3 +10,5 @@ vim_settings.xml
 .secret
 
 packer_compiled.lua
+
+lazy.lock
