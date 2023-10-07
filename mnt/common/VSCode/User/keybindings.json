@@ -4,20 +4,6 @@
     "key": "ctrl+f",
     "command": "actions.find"
   },
-  // タブ分割/移動
-  {
-    "key": "ctrl+w v",
-    "command": "workbench.action.splitEditor"
-  },
-  {
-    "key": "ctrl+w s",
-    "command": "workbench.action.splitEditorOrthogonal"
-  },
-  {
-    "key": "ctrl+w w",
-    "command": "workbench.action.focusNextGroup"
-  },
-  // ファイル操作
   {
     "key": "ctrl+shift+s",
     "command": "workbench.action.files.saveAll"
@@ -27,7 +13,7 @@
     "command": "workbench.action.closeActiveEditor"
   },
   {
-    "key": "ctrl+j ctrl+u",
+    "key": "ctrl+j u",
     "command": "git.revertSelectedRanges"
   },
   {
@@ -140,12 +126,12 @@
   {
     "key": "alt+h",
     "command": "workbench.action.previousEditor",
-    "when": "editorFocus && vim.mode == 'Normal'"
+    "when": "editorFocus"
   },
   {
     "key": "alt+l",
     "command": "workbench.action.nextEditor",
-    "when": "editorFocus && vim.mode == 'Normal'"
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+alt+j",
@@ -164,11 +150,6 @@
   {
     "key": "alt+f",
     "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
-    "key": "ctrl+w t",
-    "command": "workbench.action.terminal.split",
-    "when": "terminalFocus"
   },
   {
     "key": "alt+w",
