@@ -59,10 +59,14 @@ local common_plugins = {
     branch = 'v2',
     keys = {
       { 's', ':HopChar2<CR>' },
-      { '<C-l>', function()
-        vim.cmd("HopChar1")
-        vim.cmd("call CocAction('jumpDefinition')")
-      end}
+      {
+        '<C-l>', function()
+          vim.cmd("HopChar1")
+          if not is_vscode then
+            vim.cmd("call CocAction('jumpDefinition')")
+          end
+        end
+      }
     },
     config = function()
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
