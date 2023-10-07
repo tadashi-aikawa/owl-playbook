@@ -1,5 +1,17 @@
+function merge_tables(t1, t2)
+    local merged = {}
+    for _, v in ipairs(t1) do
+        table.insert(merged, v)
+    end
+    for _, v in ipairs(t2) do
+        table.insert(merged, v)
+    end
+    return merged
+end
+
 local path_sep = package.config:sub(1,1)
 local is_windows = path_sep == '\\'
+local is_vscode = vim.g.vscode == 1
 
 local set = vim.opt
 local key = vim.keymap.set
@@ -34,14 +46,77 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  'ellisonleao/gruvbox.nvim',
-  'sainnhe/gruvbox-material',
+-- VSCode/Neovimのどちらでも使うプラグイン
+local common_plugins = {
+  -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
+
   'tpope/vim-commentary', -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
-  -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
+
+  -- 画面内瞬間移動
+  {
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    keys = {
+      { 's', ':HopChar2<CR>' },
+      { '<C-l>', function()
+        vim.cmd("HopChar1")
+        vim.cmd("call CocAction('jumpDefinition')")
+      end}
+    },
+    config = function()
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  },
+
+  -- ブラックホールレジスト+putの省略
+  {
+    'vim-scripts/ReplaceWithRegister',
+    keys = {
+      {'_', '<Plug>ReplaceWithRegisterOperator'}
+    }
+  },
+
+  -- 囲まれているものの操作
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup()
+    end
+  },
+
+  -- キャメルケースモーション
+  {
+    'bkad/CamelCaseMotion',
+    init = function()
+      vim.g.camelcasemotion_key = "]"
+    end
+  },
+
+  -- yankハイライト
+  {
+    'machakann/vim-highlightedyank',
+    config = function()
+      vim.g.highlightedyank_highlight_duration = 300
+    end
+  },
+}
+
+-- VSCodeだけで使うプラグイン
+local vscode_plugins = {
+}
+
+-- Neovimだけで使うプラグイン
+local neovim_plugins = {
+  'ellisonleao/gruvbox.nvim', -- テーマ
+  'sainnhe/gruvbox-material', -- テーマ
   'kshenoy/vim-signature', -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
+  'famiu/bufdelete.nvim', -- バッファ削除のときにレイアウトを変更しない
+
+  -- シンタックスハイライト
   {
     'nvim-treesitter/nvim-treesitter',
     event = {'BufNewFile', 'BufRead'},
@@ -76,15 +151,7 @@ require("lazy").setup({
       }
     end
   },
-  -- ブラックホールレジスト+putの省略
-  {
-    'vim-scripts/ReplaceWithRegister',
-    keys = {
-      {'_', '<Plug>ReplaceWithRegisterOperator'}
-    }
-  },
-  -- バッファ削除のときにレイアウトを変更しない
-  'famiu/bufdelete.nvim',
+
   -- バッファ・タブバーをかっこよく
   {
     'romgrk/barbar.nvim',
@@ -97,46 +164,16 @@ require("lazy").setup({
       }
     }
   },
-  -- 囲まれているものの操作
+
+  -- ステータスライン
   {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-web-devicons', opt = true },
+    event = {'BufNewFile', 'BufRead'},
+    options = { theme = 'gruvbox-material' },
+    config = 'require("lualine").setup()'
   },
-  -- キャメルケースモーション
-  {
-    'bkad/CamelCaseMotion',
-    init = function()
-      vim.g.camelcasemotion_key = "]"
-    end
-  },
-  -- 画面内瞬間移動
-  {
-    'phaazon/hop.nvim',
-    branch = 'v2',
-    keys = {
-      { 's', ':HopChar2<CR>' },
-      { '<C-l>', function()
-        vim.cmd("HopChar1")
-        vim.cmd("call CocAction('jumpDefinition')")
-      end}
-    },
-    config = function()
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  },
-  -- yankハイライト
-  {
-    'machakann/vim-highlightedyank',
-    config = function()
-      vim.g.highlightedyank_highlight_duration = 300
-    end
-  },
+
   -- マルチカーソル
   {
     'mg979/vim-visual-multi',
@@ -147,19 +184,13 @@ require("lazy").setup({
       vim.g.VM_maps = t
     end
   },
-  -- ステータスライン
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-web-devicons', opt = true },
-    event = {'BufNewFile', 'BufRead'},
-    options = { theme = 'gruvbox-material' },
-    config = 'require("lualine").setup()'
-  },
+
   -- セッション保存
   {
     'jedrzejboczar/possession.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+
   -- Fuzzy finder
   {
     'nvim-telescope/telescope.nvim',
@@ -206,6 +237,7 @@ require("lazy").setup({
       require("telescope").load_extension("file_browser")
     end
   },
+
   -- エクスプローラー
   {
     'nvim-tree/nvim-tree.lua',
@@ -232,6 +264,8 @@ require("lazy").setup({
       }
     end
   },
+
+  -- Fuzzyエクスプローラー
   {
       "nvim-telescope/telescope-file-browser.nvim",
       dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -239,6 +273,7 @@ require("lazy").setup({
         { '<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
       }
   },
+
   -- Git操作
   {
     "is0n/fm-nvim",
@@ -256,6 +291,7 @@ require("lazy").setup({
       }
     end
   },
+
   -- Gitの行表示
   {
     'lewis6991/gitsigns.nvim',
@@ -272,6 +308,7 @@ require("lazy").setup({
       require('gitsigns').setup()
     end
   },
+
   -- VSCode like
   {
     'neoclide/coc.nvim',
@@ -324,6 +361,7 @@ require("lazy").setup({
       }
     end
   },
+
   -- Markdown preview
   {
       "iamcco/markdown-preview.nvim",
@@ -333,7 +371,12 @@ require("lazy").setup({
       },
       build = function() vim.fn["mkdp#util#install"]() end,
   }
-})
+}
+
+require('lazy').setup(
+  merge_tables(common_plugins, is_vscode and vscode_plugins or neovim_plugins)
+)
+
 
 -----------------------------------------------------
 -- 見た目
@@ -341,7 +384,9 @@ require("lazy").setup({
 -- Color scheme
 set.termguicolors = true
 set.syntax = 'on'
-vim.cmd('colorscheme gruvbox-material')
+if not is_vscode then
+  vim.cmd('colorscheme gruvbox-material')
+end
 set.background = 'dark'
 
 -- 行番号の表示
