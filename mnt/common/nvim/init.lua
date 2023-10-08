@@ -471,6 +471,11 @@ if is_vscode then
   key('n', '<Space>j', ":call VSCodeNotify('workbench.action.editor.nextChange')<CR>")
   key('n', '<Space>k', ":call VSCodeNotify('workbench.action.editor.previousChange')<CR>")
   key('n', '<Space>d', ":call VSCodeNotify('editor.action.dirtydiff.next')<CR>")
+  key('n', '<Space>q', ":call VSCodeNotify('workbench.action.closeActiveEditor')<CR>")
+  key('n', '<Space>t', ":call VSCodeNotify('workbench.action.reopenClosedEditor')<CR>")
+  key('n', '<Space>h', ":call VSCodeNotify('workbench.action.previousEditor')<CR>")
+  key('n', '<Space>l', ":call VSCodeNotify('workbench.action.nextEditor')<CR>")
+  key('n', '<Space>r', ":call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')<CR>")
 else
   key('n', '<Space>r', ':b#<CR>')
   key('n', '<Space>e', ':BufferPick<CR>')
