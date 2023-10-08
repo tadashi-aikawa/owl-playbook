@@ -466,14 +466,19 @@ key('i', '<C-l>', '<C-x><C-l>')
 -- Escapeでハイライト消去
 key('n', '<ESC><ESC>', ':nohl<CR>')
 -- バッファ切り替え
-key('n', '<Space>r', ':b#<CR>')
-key('n', '<Space>e', ':BufferPick<CR>')
-key('n', '<Space>l', ':BufferNext<CR>')
-key('n', '<Space>h', ':BufferPrevious<CR>')
-key('n', '<Space>q', ":Bdelete<CR>")
-key('n', '<Space>t', ":BufferRestore<CR>")
-key('n', '<Space>c', ":BufferCloseAllButVisible<CR>")
-
+if is_vscode then
+  key('n', '<Space>c', ":call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
+  key('n', '<Space>j', ":call VSCodeNotify('workbench.action.editor.nextChange')<CR>")
+  key('n', '<Space>k', ":call VSCodeNotify('workbench.action.editor.previousChange')<CR>")
+else
+  key('n', '<Space>r', ':b#<CR>')
+  key('n', '<Space>e', ':BufferPick<CR>')
+  key('n', '<Space>l', ':BufferNext<CR>')
+  key('n', '<Space>h', ':BufferPrevious<CR>')
+  key('n', '<Space>q', ":Bdelete<CR>")
+  key('n', '<Space>t', ":BufferRestore<CR>")
+  key('n', '<Space>c', ":BufferCloseAllButVisible<CR>")
+end
 
 -----------------------------------------------------
 -- 状態を保存して終了するRestartコマンド
