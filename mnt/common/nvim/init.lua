@@ -301,7 +301,7 @@ local neovim_plugins = {
     'lewis6991/gitsigns.nvim',
     event = {'BufNewFile', 'BufRead'},
     keys = {
-      { '<C-j>d', ':Gitsigns preview_hunk<CR>' },
+      { '<Space>d', ':Gitsigns preview_hunk<CR>' },
       { '<C-j>D', ':Gitsigns diffthis<CR>' },
       { '<C-j>u', ':Gitsigns reset_hunk<CR>' },
       { '<Space>s', ':Gitsigns stage_hunk<CR>' },
@@ -470,6 +470,7 @@ if is_vscode then
   key('n', '<Space>c', ":call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
   key('n', '<Space>j', ":call VSCodeNotify('workbench.action.editor.nextChange')<CR>")
   key('n', '<Space>k', ":call VSCodeNotify('workbench.action.editor.previousChange')<CR>")
+  key('n', '<Space>d', ":call VSCodeNotify('editor.action.dirtydiff.next')<CR>")
 else
   key('n', '<Space>r', ':b#<CR>')
   key('n', '<Space>e', ':BufferPick<CR>')
