@@ -21,12 +21,12 @@
     "command": "editor.action.formatSelection.multiple"
   },
   {
-    "key": "shift+ctrl+f",
+    "key": "ctrl+shift+f",
     "command": "editor.action.formatSelection",
     "when": "editorHasDocumentSelectionFormattingProvider && editorHasSelection && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+ctrl+f",
+    "key": "ctrl+shift+f",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
   },
@@ -36,10 +36,6 @@
     "when": "editorTextFocus"
   },
   // 開発
-  {
-    "key": "ctrl+b",
-    "command": "workbench.action.tasks.build"
-  },
   {
     "key": "ctrl+j d",
     "command": "editor.action.revealDefinition"
@@ -74,6 +70,11 @@
     "command": "editor.action.peekDefinition"
   },
   {
+    "key": "alt+s",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+p",
     "command": "editor.action.triggerParameterHints",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
@@ -81,11 +82,6 @@
   {
     "key": "alt+p",
     "command": "markdown.showPreview"
-  },
-  {
-    "key": "ctrl+1",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
   },
   // 移動
   {
@@ -99,14 +95,14 @@
     "when": "editorFocus && !editorReadonly"
   },
   {
-    "key": "shift+alt+j",
+    "key": "space j",
     "command": "workbench.action.editor.nextChange",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
-    "key": "shift+alt+k",
+    "key": "space k",
     "command": "workbench.action.editor.previousChange",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "shift+alt+j",
@@ -167,46 +163,7 @@
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "!editorFocus && !terminalFocus"
   },
-  // Bookmark
-  {
-    "key": "ctrl+m ctrl+m",
-    "command": "bookmarks.toggle"
-  },
-  {
-    "key": "ctrl+m m",
-    "command": "bookmarks.toggleLabeled"
-  },
-  {
-    "key": "ctrl+m o",
-    "command": "bookmarks.listFromAllFiles"
-  },
-  {
-    "key": "ctrl+m ctrl+j",
-    "command": "bookmarks.jumpToNext"
-  },
-  {
-    "key": "ctrl+m ctrl+k",
-    "command": "bookmarks.jumpToPrevious"
-  },
   // デバッグ
-  {
-    "key": "alt+d",
-    "command": "workbench.action.debug.start"
-  },
-  {
-    "key": "alt+r",
-    "command": "workbench.action.debug.run",
-    "when": "!inDebugMode"
-  },
-  {
-    "key": "alt+r",
-    "command": "workbench.action.debug.continue",
-    "when": "inDebugMode"
-  },
-  {
-    "key": "ctrl+f2",
-    "command": "workbench.action.debug.stop"
-  },
   {
     "key": "ctrl+shift+b",
     "command": "editor.debug.action.toggleBreakpoint"
@@ -336,10 +293,6 @@
   {
     "key": "ctrl+j shift+k",
     "command": "workbench.action.openGlobalKeybindingsFile"
-  },
-  {
-    "key": "ctrl+j shift+c",
-    "command": "workbench.files.action.compareWithClipboard"
   },
   // ----------------
   // Ctrl + , (ファイルの性質変更, git)
