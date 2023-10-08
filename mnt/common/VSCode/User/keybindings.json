@@ -182,6 +182,11 @@
     "command": "workbench.action.closeOtherEditors"
   },
   {
+    "key": "space c",
+    "command": "workbench.action.closeOtherEditors",
+    "when": "editorTextFocus && neovim.mode != insert"
+  },
+  {
     "key": "alt+up",
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus"
