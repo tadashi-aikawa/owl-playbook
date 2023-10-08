@@ -1,7 +1,5 @@
 {
-  // -------------------------------------
   // 見た目
-  // -------------------------------------
   "editor.fontFamily": "SauceCodePro NF",
   "editor.fontSize": 16,
   "workbench.iconTheme": "material-icon-theme",
@@ -12,23 +10,22 @@
   "editor.minimap.enabled": true,
   "breadcrumbs.enabled": true,
   "terminal.integrated.fontFamily": "SauceCodePro NF",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": true,
   "diffEditor.renderSideBySide": true,
-  // -------------------------------------
+
   // 挙動
-  // -------------------------------------
   "editor.tabCompletion": "on",
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
   "editor.formatOnSave": true,
-  // -------------------------------------
+
   // デフォルトファイル設定
-  // -------------------------------------
   "files.eol": "\n",
-  // -------------------------------------
+
   // ファイルごとの特殊設定
-  // -------------------------------------
   "[plaintext]": {
     "files.autoGuessEncoding": true
   },
@@ -45,82 +42,16 @@
     "Vagrantfile": "ruby",
     "*.txt": "csv"
   },
-  // -------------------------------------
+
   // ターミナル
-  // -------------------------------------
   "editWithShell.shell.windows": "bash",
   "editWithShell.shellArgs.windows": ["-c"],
   "editWithShell.processEntireTextIfNoneSelected": true,
-  // -------------------------------------
-  // Vim
-  // -------------------------------------
-  "vim.enableNeovim": true,
-  "vim.statusBarColorControl": false,
 
-  "vim.foldfix": true,
-  "vim.useSystemClipboard": true,
-  "vim.hlsearch": true,
-  "vim.visualstar": true,
-  "vim.searchHighlightColor": "#070",
-  "vim.camelCaseMotion.enable": true,
-  "vim.highlightedyank.enable": true,
-  "vim.leader": "]",
-  "vim.easymotion": true,
-  "vim.easymotionMarkerBackgroundColor": "rgba(0, 0, 0, 0.5)",
-  "vim.easymotionMarkerForegroundColorOneChar": "lime",
-  "vim.replaceWithRegister": true,
-  "vim.normalModeKeyBindings": [
-    {
-      "before": ["<C-k>"],
-      "after": ["g", "b"]
-    },
-    {
-      "before": ["_"],
-      "after": ["g", "r"]
-    },
-    {
-      "before": ["<C-o>"],
-      "commands": [
-        {
-          "command": "workbench.action.navigateBack"
-        }
-      ]
-    },
-    {
-      "before": ["<C-i>"],
-      "commands": [
-        {
-          "command": "workbench.action.navigateForward"
-        }
-      ]
-    },
-    {
-      "before": ["s"],
-      "after": ["<leader>", "<leader>", "2", "s", "<char>", "<char>"]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": ["]"],
-      "after": ["<leader>"]
-    },
-    {
-      "before": ["<C-k>"],
-      "after": ["g", "b"]
-    },
-    {
-      "before": ["_"],
-      "after": ["g", "r"]
-    }
-  ],
-  "vim.disableExtension": false,
-  // -------------------------------------
   // JS/TS
-  // -------------------------------------
   "eslint.validate": ["javascript", "typescript"],
-  // -------------------------------------
+
   // Markdown
-  // -------------------------------------
   "markdownlint.config": {
     "MD003": false,
     "MD012": false,
@@ -132,32 +63,11 @@
     "MD041": false,
     "MD045": false
   },
-  // -------------------------------------
-  // REST Client
-  // -------------------------------------
-  "rest-client.decodeEscapedUnicodeCharacters": true,
-  "rest-client.enableTelemetry": false,
-  "rest-client.previewResponsePanelTakeFocus": false,
-  "rest-client.previewOption": "exchange",
-  "rest-client.environmentVariables": {
-    "$shared": {
-      "togglApiToken": "TOGGL_API_TOKEN"
-    },
-    "local": {
-      "restjcBaseUrl": "REST_JC_DEVELOPMENT_BASE_URL"
-    },
-    "production": {
-      "restjcBaseUrl": "REST_JC_PRODUCTION_BASE_URL",
-      "github": "https://api.github.com"
-    }
-  },
-  // -------------------------------------
+
   // AutoHotkey Plus Plus
-  // -------------------------------------
   "ahk++.file.executePath": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
-  // -------------------------------------
+
   // その他
-  // -------------------------------------
   "terminal.integrated.rendererType": "dom",
   "explorer.confirmDelete": false,
   "editor.cursorSurroundingLines": 5,
@@ -184,6 +94,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
@@ -196,9 +110,8 @@
   },
   "[go]": {
     "editor.defaultFormatter": null,
-    "editor.insertSpaces": false,
+    "editor.insertSpaces": false
   },
-  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODI3LFwiaGVpZ2h0XCI6MTE2OX0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
   "editor.tabSize": 4,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": true,
@@ -220,6 +133,7 @@
   "svelte.enable-ts-plugin": true,
   "[python]": {
     "editor.formatOnType": true
-  }
+  },
+  "workbench.editor.empty.hint": "hidden"
   // "extensions.autoUpdate": false,
 }

@@ -95,16 +95,6 @@
     "when": "editorFocus && !editorReadonly"
   },
   {
-    "key": "space j",
-    "command": "workbench.action.editor.nextChange",
-    "when": "editorTextFocus && neovim.mode != insert"
-  },
-  {
-    "key": "space k",
-    "command": "workbench.action.editor.previousChange",
-    "when": "editorTextFocus && neovim.mode != insert"
-  },
-  {
     "key": "shift+alt+j",
     "command": "workbench.action.compareEditor.nextChange",
     "when": "textCompareEditorVisible || isInDiffEditor"
@@ -180,11 +170,6 @@
   {
     "key": "ctrl+shift+w",
     "command": "workbench.action.closeOtherEditors"
-  },
-  {
-    "key": "space c",
-    "command": "workbench.action.closeOtherEditors",
-    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "alt+up",
