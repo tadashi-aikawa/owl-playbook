@@ -1,10 +1,11 @@
 {
   // 見た目
+  "editor.guides.indentation": false,
   "editor.fontFamily": "SauceCodePro NF",
   "editor.fontSize": 16,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark Hard",
-  "window.title": "${dirty}${activeEditorMedium} [${rootName}]",
+  "window.menuBarVisibility": "hidden",
   "editor.minimap.showSlider": "always",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.enabled": true,
@@ -15,16 +16,13 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": true,
   "diffEditor.renderSideBySide": true,
-
   // 挙動
   "editor.tabCompletion": "on",
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
   "editor.formatOnSave": true,
-
   // デフォルトファイル設定
   "files.eol": "\n",
-
   // ファイルごとの特殊設定
   "[plaintext]": {
     "files.autoGuessEncoding": true
@@ -42,15 +40,17 @@
     "Vagrantfile": "ruby",
     "*.txt": "csv"
   },
-
   // ターミナル
   "editWithShell.shell.windows": "bash",
-  "editWithShell.shellArgs.windows": ["-c"],
+  "editWithShell.shellArgs.windows": [
+    "-c"
+  ],
   "editWithShell.processEntireTextIfNoneSelected": true,
-
   // JS/TS
-  "eslint.validate": ["javascript", "typescript"],
-
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
   // Markdown
   "markdownlint.config": {
     "MD003": false,
@@ -63,14 +63,13 @@
     "MD041": false,
     "MD045": false
   },
-
   // AutoHotkey Plus Plus
   "ahk++.file.executePath": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
-
   // その他
   "terminal.integrated.rendererType": "dom",
   "explorer.confirmDelete": false,
   "editor.cursorSurroundingLines": 5,
+  "editor.cursorBlinking": "solid",
   "editor.formatOnPaste": true,
   "editor.multiCursorModifier": "alt",
   "git.autofetch": true,
