@@ -1,5 +1,7 @@
 MS-CEINTL.vscode-language-pack-ja
+Orta.vscode-jest
 Vue.volar
+asvetliakov.vscode-neovim
 christian-kohler.path-intellisense
 davidanson.vscode-markdownlint
 dbaeumer.vscode-eslint
