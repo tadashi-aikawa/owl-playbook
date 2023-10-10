@@ -111,13 +111,11 @@
   },
   {
     "key": "alt+h",
-    "command": "workbench.action.previousEditor",
-    "when": "editorFocus"
+    "command": "workbench.action.previousEditor"
   },
   {
     "key": "alt+l",
-    "command": "workbench.action.nextEditor",
-    "when": "editorFocus"
+    "command": "workbench.action.nextEditor"
   },
   {
     "key": "ctrl+alt+j",
