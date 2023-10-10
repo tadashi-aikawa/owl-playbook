@@ -299,7 +299,8 @@ local neovim_plugins = {
   -- Gitの行表示
   {
     'lewis6991/gitsigns.nvim',
-    event = {'BufNewFile', 'BufRead'},
+    -- https://github.com/lewis6991/gitsigns.nvim/issues/796
+    -- event = {'BufNewFile', 'BufRead'},
     keys = {
       { '<Space>d', ':Gitsigns preview_hunk<CR>' },
       { '<C-j>D', ':Gitsigns diffthis<CR>' },
