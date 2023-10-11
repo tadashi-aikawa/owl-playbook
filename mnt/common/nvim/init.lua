@@ -184,14 +184,15 @@ local neovim_plugins = {
         },
         sections = {
           lualine_a = {'filename'},
-          lualine_b = {'branch'},
-          lualine_c = {
-            "'%='",
+          lualine_b = {
+            'branch',
             {
               'diff',
               symbols = {added = ' ', modified = ' ', removed = ' '},
-              separator = "  |  ",
             },
+          },
+          lualine_c = {
+            "'%='",
             {
               'diagnostics',
               symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
