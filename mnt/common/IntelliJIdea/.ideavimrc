@@ -41,6 +41,13 @@ set clipboard=unnamedplus
 " メソッド移動
 nnoremap [m :<C-u>action MethodUp<CR>
 nnoremap ]m :<C-u>action MethodDown<CR>
+nnoremap <Space>h <C-w>h
+nnoremap <Space>l <C-w>l
+nnoremap <Space>j :<C-u>action VcsShowNextChangeMarker<CR>
+nnoremap <Space>k :<C-u>action VcsShowPrevChangeMarker<CR>
+nnoremap <Space>t :<C-u>action ReopenClosedTab<CR>
+nnoremap <Space>u :<C-u>action Vcs.RollbackChangedLines<CR>
+
 " 保存 (IDEAの自動保存と連動させるため)
 nnoremap
 
