@@ -195,7 +195,8 @@
   </action>
   <action id="Groovy.Shell.Execute" />
   <action id="Hg.Commit.And.Push.Executor" />
-  <action id="HideActiveWindow">
+  <action id="HideActiveWindow" />
+  <action id="HideSideWindows">
     <keyboard-shortcut first-keystroke="alt w" />
   </action>
   <action id="HippieCompletion">
