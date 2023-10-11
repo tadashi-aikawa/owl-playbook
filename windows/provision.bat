@@ -81,11 +81,8 @@ git config --global core.quotepath false
 
 call :******************** To be continued.. (Not administrator
 
-echo Install Tablacus Explorer manually!
 echo Clone...
 echo   * spinal-reflex-bindings-template
-echo Create a shortcut of Xlaunch in `Star Menu / Program` with a to-link as following.
-echo   * ex: C:\Users\syoum\scoop\apps\vcxsrv\current\xlaunch.exe -run C:\Users\syoum\git\github.com\tadashi-aikawa\owl-playbook\windows\ubuntu\config.xlaunch
 
 goto :end
 rem ---------------------------------------------------------
