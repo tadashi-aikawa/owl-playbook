@@ -47,6 +47,8 @@ nnoremap <Space>j :<C-u>action VcsShowNextChangeMarker<CR>
 nnoremap <Space>k :<C-u>action VcsShowPrevChangeMarker<CR>
 nnoremap <Space>t :<C-u>action ReopenClosedTab<CR>
 nnoremap <Space>u :<C-u>action Vcs.RollbackChangedLines<CR>
+nnoremap <Space>c :<C-u>action CloseAllEditorsButActive<CR>
+nnoremap <Space>q :<C-u>action CloseContent<CR>
 
 " 保存 (IDEAの自動保存と連動させるため)
 nnoremap
