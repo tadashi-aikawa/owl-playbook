@@ -15,22 +15,38 @@
     </option>
     <option name="disabledCodeVisionProviderIds">
       <set>
+        <option value="inheritors" />
+        <option value="problems" />
+        <option value="references" />
         <option value="vcs.code.vision" />
       </set>
     </option>
+    <option name="enabled" value="false" />
   </component>
   <component name="DaemonCodeAnalyzerSettings" profile="mamansoft" />
   <component name="DeclarativeInlayHintsSettings">
+    <option name="disabledOptions">
+      <set>
+        <option value="js.type.hints#function.returns" />
+        <option value="js.type.hints#non.paren.single.param" />
+        <option value="js.type.hints#parameters.in.parens" />
+        <option value="js.type.hints#variables.and.fields" />
+        <option value="ts.type.hints#function.returns" />
+        <option value="ts.type.hints#non.paren.single.param" />
+        <option value="ts.type.hints#parameters.in.parens" />
+        <option value="ts.type.hints#variables.and.fields" />
+      </set>
+    </option>
     <option name="providerIdToEnabled">
       <map>
         <entry key="java.implicit.types" value="false" />
         <entry key="java.method.chains" value="true" />
         <entry key="js.chain.hints" value="true" />
-        <entry key="js.type.hints" value="true" />
+        <entry key="js.type.hints" value="false" />
         <entry key="qodana.yaml.inspection.descriptions" value="true" />
         <entry key="ts.chain.hints" value="true" />
         <entry key="ts.enum.hints" value="true" />
-        <entry key="ts.type.hints" value="true" />
+        <entry key="ts.type.hints" value="false" />
       </map>
     </option>
   </component>
@@ -51,7 +67,7 @@
         <option value="JAVA.java.implicit.types" />
       </set>
     </option>
-    <option name="lastViewedProviderKeyId" value="TypeScript.ts.type.hints.variables.and.fields" />
+    <option name="lastViewedProviderKeyId" value=".inheritors" />
     <settingsMapElement>
       <TypeScript.ts.type.hints>
         <Settings>
