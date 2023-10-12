@@ -188,7 +188,7 @@ local neovim_plugins = {
             'branch',
             {
               'diff',
-              symbols = {added = ' ', modified = ' ', removed = ' '},
+              symbols = {added = ' ', modified = ' ', removed = ' '},
             },
           },
           lualine_c = {
@@ -346,7 +346,16 @@ local neovim_plugins = {
       { '<Space>k', ':Gitsigns prev_hunk<CR>' },
     },
     config = function()
-      require('gitsigns').setup()
+      require('gitsigns').setup {
+        signs = {
+          add          = { text = '' },
+          change       = { text = '' },
+          delete       = { text = '' },
+          topdelete    = { text = '‾' },
+          changedelete = { text = '~' },
+          untracked    = { text = '┆' },
+        },
+      }
     end
   },
 
