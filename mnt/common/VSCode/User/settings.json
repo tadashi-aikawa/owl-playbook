@@ -42,15 +42,10 @@
   },
   // ターミナル
   "editWithShell.shell.windows": "bash",
-  "editWithShell.shellArgs.windows": [
-    "-c"
-  ],
+  "editWithShell.shellArgs.windows": ["-c"],
   "editWithShell.processEntireTextIfNoneSelected": true,
   // JS/TS
-  "eslint.validate": [
-    "javascript",
-    "typescript"
-  ],
+  "eslint.validate": ["javascript", "typescript"],
   // Markdown
   "markdownlint.config": {
     "MD003": false,
@@ -133,6 +128,9 @@
   "[python]": {
     "editor.formatOnType": true
   },
-  "workbench.editor.empty.hint": "hidden"
+  "workbench.editor.empty.hint": "hidden",
   // "extensions.autoUpdate": false,
+  "jest.autoRun": {
+    "watch": false
+  }
 }
