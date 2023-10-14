@@ -1,7 +1,7 @@
 {
   // 見た目
   "editor.guides.indentation": false,
-  "editor.fontFamily": "SauceCodePro NF",
+  "editor.fontFamily": "CaskaydiaCove Nerd Font",
   "editor.fontSize": 16,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark Hard",
