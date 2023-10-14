@@ -13,10 +13,10 @@
       }
     }
   },
-  "diagnostic.infoSign": "ℹ️",
-  "diagnostic.hintSign": "💡",
-  "diagnostic.warningSign": "⚠️",
-  "diagnostic.errorSign": "❌",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.errorSign": "",
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.bat",
   "coc.preferences.formatOnSaveFiletypes": [
     "python",
