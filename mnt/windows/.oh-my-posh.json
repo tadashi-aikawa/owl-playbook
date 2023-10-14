@@ -20,37 +20,31 @@
             "{{ if gt .Behind 0 }}#c42ebd{{ end }}"
           ],
           "properties": {
-            "branch_icon": " \uf126 ",
+            "branch_icon": "  ",
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
           "style": "plain",
-          "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 <#E84855>{{ .Working.String }}</>{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf6b9 <#ffeb3b>{{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}</>{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}</>{{ end }} ",
+          "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }}   <#E84855>{{ .Working.String }}</>{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} 󰆼 <#ffeb3b>{{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0}} 󰽄  {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}}  {{ .WorktreeCount }}{{ end }} ",
           "type": "git"
         },
         {
           "foreground": "#6CA35E",
           "style": "plain",
-          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "template": " 󰎙 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
           "type": "node"
         },
         {
           "foreground": "#96E072",
           "style": "plain",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
           "type": "python"
-        },
-        {
-          "foreground": "#3891A6",
-          "style": "plain",
-          "template": " \ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}",
-          "type": "dotnet"
         },
         {
           "foreground": "#7FD5EA",
           "style": "plain",
-          "template": " \ufcd1{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "type": "go"
         }
       ],
@@ -68,10 +62,10 @@
         },
         {
           "foreground_templates": [
-            "{{ if gt .Code 0 }}#e91e63{{ else }}#7fd5ea{{ end }}"
+            "{{ if gt .Code 0 }}#e91e63{{ else }}#777777{{ end }}"
           ],
           "style": "plain",
-          "template": "{{ if gt .Code 0 }}❯❯❯{{ else }}❯{{ end }}",
+          "template": " 󰏒 {{ if gt .Code 0 }}❯❯❯{{ else }}❯{{ end }}",
           "type": "text"
         }
       ],
