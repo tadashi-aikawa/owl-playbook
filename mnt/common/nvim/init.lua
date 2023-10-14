@@ -195,7 +195,7 @@ local neovim_plugins = {
             "'%='",
             {
               'diagnostics',
-              symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+              symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
             },
           },
           lualine_x = {'encoding', 'fileformat'},
