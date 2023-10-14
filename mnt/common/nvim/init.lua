@@ -336,7 +336,6 @@ local neovim_plugins = {
   -- Gitの行表示
   {
     'lewis6991/gitsigns.nvim',
-    event = {'VeryLazy' },
     keys = {
       { '<Space>d', ':Gitsigns preview_hunk<CR>' },
       { '<C-j>D', ':Gitsigns diffthis<CR>' },
