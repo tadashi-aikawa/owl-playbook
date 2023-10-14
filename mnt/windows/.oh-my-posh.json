@@ -4,31 +4,21 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#7fd5ea",
+          "foreground": "#777777",
           "properties": {
             "style": "full"
           },
           "style": "plain",
-          "template": " {{ .Path }} ",
+          "template": "\n {{ .Path }} ",
           "type": "path"
-        },
-        {
-          "foreground": "#96E072",
-          "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb3b{{ end }}",
-            "{{ if gt .Ahead 0 }}#8A4FFF{{ end }}",
-            "{{ if gt .Behind 0 }}#c42ebd{{ end }}"
-          ],
-          "properties": {
-            "branch_icon": "  ",
-            "fetch_stash_count": true,
-            "fetch_status": true,
-            "fetch_upstream_icon": true
-          },
-          "style": "plain",
-          "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }}   <#E84855>{{ .Working.String }}</>{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} 󰆼 <#ffeb3b>{{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0}} 󰽄  {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}}  {{ .WorktreeCount }}{{ end }} ",
-          "type": "git"
-        },
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
         {
           "foreground": "#6CA35E",
           "style": "plain",
@@ -46,19 +36,29 @@
           "style": "plain",
           "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "type": "go"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
+        },
         {
           "foreground": "#E06C75",
           "style": "plain",
           "template": "!",
           "type": "root"
+        },
+        {
+          "foreground": "#96E072",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb3b{{ end }}",
+            "{{ if gt .Ahead 0 }}#8A4FFF{{ end }}",
+            "{{ if gt .Behind 0 }}#c42ebd{{ end }}"
+          ],
+          "properties": {
+            "branch_icon": "  ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }}   <#E84855>{{ .Working.String }}</>{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} 󰆼 <#ffeb3b>{{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0}} 󰽄  {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}}  {{ .WorktreeCount }}{{ end }} ",
+          "type": "git"
         },
         {
           "foreground_templates": [
