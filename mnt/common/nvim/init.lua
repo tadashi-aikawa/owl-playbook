@@ -139,6 +139,7 @@ local neovim_plugins = {
           "html",
           "css",
           "vue",
+          "svelte",
           "vim",
           "yaml",
           "toml",
