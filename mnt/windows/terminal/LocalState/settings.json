@@ -161,8 +161,8 @@
       "closeOnExit": "always",
       "colorScheme": "Tango Dark",
       "font": {
-        "face": "SauceCodePro NF",
-        "size": 13.0
+        "face": "CaskaydiaCove Nerd Font",
+        "size": 14.0
       },
       "startingDirectory": "%USERPROFILE%"
     },
