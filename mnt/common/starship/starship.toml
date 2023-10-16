@@ -84,7 +84,8 @@ style = 'bold #777777'
 
 [shell]
 disabled = false
-bash_indicator = ' '
+bash_indicator = ''
+powershell_indicator = '󰨊'
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
