@@ -77,7 +77,7 @@ no starship && asdf_install starship latest
 ln -snf $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh;
 ensure_bashrc "source ~/.starship.sh";
 mkdir -p ~/.config;
-starship preset bracketed-segments > ~/.config/starship.toml;
+ln -snf $COMMON_MNT/starship/starship.toml ~/.config/starship.toml
 
 # Brootインストール
 no broot && asdf_install broot latest https://github.com/cmur2/asdf-broot.git
