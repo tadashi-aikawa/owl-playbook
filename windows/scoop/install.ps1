@@ -21,6 +21,7 @@ scoop install `
   bind `
   broot `
   busybox `
+  clink `
   delta `
   dust `
   fd `
@@ -35,6 +36,7 @@ scoop install `
   neovim `
   ripgrep `
   sudo `
+  starship `
   task `
   uutils-coreutils `
   vim `
