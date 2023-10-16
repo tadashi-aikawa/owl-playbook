@@ -23,17 +23,6 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Emacs
 
 #-----------------------------------------------------
-# Powerline
-#-----------------------------------------------------
-
-Invoke-Expression (& {
-    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-    (zoxide init --hook $hook powershell | Out-String)
-})
-
-oh-my-posh init pwsh --config ~/.oh-my-posh.json | Invoke-Expression
-
-#-----------------------------------------------------
 # fzf
 #-----------------------------------------------------
 
@@ -214,3 +203,17 @@ $scriptBlock = {
 
 Register-ArgumentCompleter -Native -CommandName task -ScriptBlock $scriptBlock
 
+#-----------------------------------------------------
+# Zoxide
+#-----------------------------------------------------
+
+Invoke-Expression (& {
+    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    (zoxide init --hook $hook powershell | Out-String)
+})
+
+#-----------------------------------------------------
+# Starship
+#-----------------------------------------------------
+
+Invoke-Expression (&starship init powershell)
