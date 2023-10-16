@@ -33,7 +33,6 @@ scoop install `
   less `
   make `
   neovim `
-  oh-my-posh `
   ripgrep `
   sudo `
   task `
