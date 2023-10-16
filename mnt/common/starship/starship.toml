@@ -1,7 +1,6 @@
 format = """
 $shell\
 $directory\
-$line_break\
 $c\
 $elixir\
 $golang\
@@ -13,6 +12,7 @@ $nodejs\
 $python\
 $rust\
 $scala\
+$line_break\
 $sudo\
 $git_branch\
 $git_commit\
@@ -33,7 +33,6 @@ cmd_indicator = ''
 truncation_length = 0
 truncate_to_repo = false
 style = 'bold #777777'
-
 
 [sudo]
 format = '[as $symbol]($style)'
