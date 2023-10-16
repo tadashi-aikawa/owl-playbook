@@ -38,6 +38,12 @@
           "type": "go"
         },
         {
+          "foreground": "#CE422B",
+          "style": "plain",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "rust"
+        },
+        {
           "foreground": "#E06C75",
           "style": "plain",
           "template": "!",
