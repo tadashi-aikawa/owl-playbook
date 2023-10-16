@@ -65,22 +65,26 @@ $time\
 $status\
 $os\
 $container\
-$shell\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
+$shell\
 $character"""
 
 [character]
-success_symbol = ' [󰏒 ❯](bold #777777)'
-error_symbol = ' [󰏒 ❯❯❯](bold red)'
+success_symbol = '[❯](bold #777777)'
+error_symbol = '[❯❯❯](bold red)'
 
 [directory]
 truncation_length = 0
 truncate_to_repo = false
 style = 'bold #777777'
+
+[shell]
+disabled = false
+bash_indicator = ' '
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
