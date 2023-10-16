@@ -1,3 +1,3 @@
-alias tree="eza --icons -T"
-alias ll="eza --icons -l --git"
+alias tree="eza --icons -T --no-user"
+alias ll="eza --icons -l --git --no-user"
 
