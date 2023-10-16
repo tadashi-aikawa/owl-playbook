@@ -25,9 +25,9 @@ $character\
 
 [shell]
 disabled = false
-bash_indicator = ''
-powershell_indicator = ''
-cmd_indicator = ''
+bash_indicator = ' '
+powershell_indicator = ' '
+cmd_indicator = ' '
 
 [directory]
 truncation_length = 0
