@@ -17,7 +17,6 @@ $sudo\
 $git_branch\
 $git_commit\
 $git_state\
-$git_metrics\
 $git_status\
 $character\
 """
@@ -44,9 +43,18 @@ format = '[$symbol$branch]($style) '
 symbol = ' '
 
 [git_status]
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count} '
-behind = '⇣${count}'
+format = '[$all_status$ahead_behind]($style)'
+ahead = '󰇘  ${count} '
+behind = '󰇘  ${count} '
+diverged = '󰇘  ${ahead_count}  ${behind_count}'
+typechanged = '[󰑕 ${count}](bold #FF7777) '
+conflicted = ' ${count} '
+stashed = '󰽄 ${count} '
+deleted = '[ ${count}](bold red) '
+renamed = '[󰮆 ${count}](bold #FF7777) '
+modified = '[ ${count}](bold blue) '
+staged = '[󰆼 ${count}](bold yellow) '
+untracked = '[ ${count}](bold green) '
 
 [character]
 success_symbol = '[❯](bold #777777)'
