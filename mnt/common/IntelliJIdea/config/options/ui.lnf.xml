@@ -1,5 +1,6 @@
 <application>
   <component name="UISettings">
+    <option name="DIFFERENTIATE_PROJECTS" value="false" />
     <option name="MARK_MODIFIED_TABS_WITH_ASTERISK" value="true" />
     <option name="MAX_LOOKUP_WIDTH2" value="891" />
     <option name="REMEMBER_SIZE_FOR_EACH_TOOL_WINDOW_NEW_UI" value="true" />
