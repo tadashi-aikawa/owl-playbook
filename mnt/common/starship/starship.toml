@@ -1,6 +1,5 @@
 format = """
 $shell\
-$directory\
 $c\
 $elixir\
 $golang\
@@ -12,8 +11,8 @@ $nodejs\
 $python\
 $rust\
 $scala\
-$line_break\
 $sudo\
+$directory\
 $git_branch\
 $git_commit\
 $git_state\
@@ -33,6 +32,12 @@ cmd_indicator = ' '
 truncation_length = 0
 truncate_to_repo = false
 style = 'bold #777777'
+before_repo_root_style='bold #777777'
+repo_root_style='bold blue'
+format='''[$path]($style)[$read_only]($read_only_style)
+'''
+repo_root_format="""[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)
+[$path]($style)[$read_only]($read_only_style) """
 
 [sudo]
 format = '[as $symbol]($style)'
