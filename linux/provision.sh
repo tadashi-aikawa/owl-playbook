@@ -119,6 +119,9 @@ no deno && asdf_install deno latest https://github.com/asdf-community/asdf-deno.
 # ripgrep
 no rg && asdf_install ripgrep latest
 
+# bat
+no bat && asdf_install bat latest
+
 # zoxide
 no zoxide && asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
 ln -snf $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh;
