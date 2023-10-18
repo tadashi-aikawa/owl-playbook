@@ -88,6 +88,9 @@ function tree() { eza --icons -T $args}
 # Linuxコマンドのエイリアス
 function ll() { eza --icons -l --git $args}
 
+# 自作showコマンド
+function show() { bat --pager never $args}
+
 function awslocal { aws '--endpoint-url=http://localhost:4566' $args }
 
 #-----------------------------------------------------
