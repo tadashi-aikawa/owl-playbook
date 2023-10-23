@@ -31,6 +31,17 @@ function ensure_bashrc() {
   fi
 }
 
+function ensure_zshrc() {
+  local content="$1"
+
+  if ! grep -qxF -- "$content" ~/.zshrc; then
+      echo "$content" >> ~/.zshrc
+      echo "👍 '${content}' was added to .bashrc."
+  else
+      echo "👌 '${content}' is already present in .bashrc."
+  fi
+}
+
 # WSL
 sudo ln -snf $LINUX_MNT/wsl.conf /etc/wsl.conf
 
@@ -53,6 +64,8 @@ sudo apt-get install -y \
   libffi-dev \
   liblzma-dev \
   zlib1g-dev
+# Zshで使用
+sudo apt-get install -y zsh
 
 # gitconfig
 ln -snf $UBUNTU_MNT/gitconfig ~/.gitconfig
@@ -63,6 +76,9 @@ ln -snf $UBUNTU_MNT/inputrc ~/.inputrc
 # .bashrc
 ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
 ensure_bashrc "source ~/.bash.sh"
+# .zshrc 今は同じ設定で問題ない
+ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.zsh.sh
+ensure_zshrc "source ~/.zsh.sh"
 
 # asdfインストール
 no asdf && {
@@ -71,11 +87,15 @@ no asdf && {
 }
 ln -snf $UBUNTU_MNT/bashrc/asdf.sh ~/.asdf.sh;
 ensure_bashrc "source ~/.asdf.sh";
+ln -snf $UBUNTU_MNT/zshrc/asdf.sh ~/.asdfz.sh;
+ensure_zshrc "source ~/.asdfz.sh";
 
 # Starshipインストール
 no starship && asdf_install starship latest
 ln -snf $UBUNTU_MNT/bashrc/starship.sh ~/.starship.sh;
 ensure_bashrc "source ~/.starship.sh";
+ln -snf $UBUNTU_MNT/zshrc/starship.sh ~/.starshipz.sh;
+ensure_zshrc "source ~/.starshipz.sh";
 mkdir -p ~/.config;
 ln -snf $COMMON_MNT/starship/starship.toml ~/.config/starship.toml
 
@@ -87,6 +107,7 @@ ln -snf $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml;
 # Neovim
 no nvim && asdf_install neovim 0.9.4
 ensure_bashrc 'alias vim=nvim';
+ensure_zshrc 'alias vim=nvim';
 mkdir -p ~/.config/nvim;
 ln -snf ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua;
 mkdir -p ~/.config/nvim/lua;
@@ -100,6 +121,7 @@ mkdir -p ~/.config/gitui;
 ln -snf ${COMMON_MNT}/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron;
 ln -snf $UBUNTU_MNT/bashrc/gitui.sh ~/.gitui.sh;
 ensure_bashrc "source ~/.gitui.sh"
+ensure_zshrc "source ~/.gitui.sh"
 
 # Node.js
 no node && {
@@ -126,16 +148,19 @@ no bat && asdf_install bat latest
 no zoxide && asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
 ln -snf $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh;
 ensure_bashrc "source ~/.zoxide.sh";
+ensure_zshrc "source ~/.zoxide.sh";
 
 # eza
 no eza && asdf_install eza latest
 ln -snf $UBUNTU_MNT/bashrc/eza.sh ~/.eza.sh;
 ensure_bashrc "source ~/.eza.sh";
+ensure_zshrc "source ~/.eza.sh";
 
 # fzf
 no fzf && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ln -snf $UBUNTU_MNT/bashrc/fzf.sh ~/.fzf.sh;
 ensure_bashrc "source ~/.fzf.sh";
+ensure_zshrc "source ~/.fzf.sh";
 
 # delta
 no delta && asdf_install delta latest https://github.com/andweeb/asdf-delta.git
