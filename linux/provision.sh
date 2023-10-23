@@ -36,9 +36,9 @@ function ensure_zshrc() {
 
   if ! grep -qxF -- "$content" ~/.zshrc; then
       echo "$content" >> ~/.zshrc
-      echo "👍 '${content}' was added to .bashrc."
+      echo "👍 '${content}' was added to .zshrc."
   else
-      echo "👌 '${content}' is already present in .bashrc."
+      echo "👌 '${content}' is already present in .zshrc."
   fi
 }
 
