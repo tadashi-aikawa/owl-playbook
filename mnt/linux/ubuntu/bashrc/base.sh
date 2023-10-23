@@ -1,3 +1,5 @@
+export PATH=${PATH}:~/bin
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
