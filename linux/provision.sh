@@ -64,8 +64,10 @@ sudo apt-get install -y \
   libffi-dev \
   liblzma-dev \
   zlib1g-dev
-# Zshで使用
-sudo apt-get install -y zsh
+
+# Zsh
+sudo apt-get install -y zsh zsh-autosuggestions
+ensure_zshrc "source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # gitconfig
 ln -snf $UBUNTU_MNT/gitconfig ~/.gitconfig
