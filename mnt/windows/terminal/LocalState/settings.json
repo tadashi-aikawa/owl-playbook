@@ -168,7 +168,7 @@
     },
     "list": [
       {
-        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\power-shell\\fukurou2.png",
+        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\owl-hacker.png",
         "backgroundImageAlignment": "bottomRight",
         "backgroundImageOpacity": 0.75,
         "backgroundImageStretchMode": "none",
@@ -176,17 +176,6 @@
         "hidden": false,
         "name": "PowerShell",
         "source": "Windows.Terminal.PowershellCore"
-      },
-      {
-        "backgroundImage": "%GIT_INSTALL_ROOT%\\mingw64\\share\\git\\git-for-windows.ico",
-        "backgroundImageAlignment": "bottomRight",
-        "backgroundImageOpacity": 0.75,
-        "backgroundImageStretchMode": "none",
-        "commandline": "%GIT_INSTALL_ROOT%\\usr\\bin\\bash.exe",
-        "guid": "{cbaea444-ca1f-4125-bb6f-5c3f1201b568}",
-        "icon": "%GIT_INSTALL_ROOT%\\mingw64\\share\\git\\git-for-windows.ico",
-        "name": "git bash",
-        "startingDirectory": "%USERPROFILE%"
       },
       {
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -205,6 +194,10 @@
         "source": "Windows.Terminal.Wsl"
       },
       {
+        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\owl-hacker-cute.png",
+        "backgroundImageAlignment": "bottomRight",
+        "backgroundImageOpacity": 0.75,
+        "backgroundImageStretchMode": "none",
         "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
         "hidden": false,
         "name": "Ubuntu",
