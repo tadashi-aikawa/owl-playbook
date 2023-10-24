@@ -38,7 +38,7 @@ repo_root_style='bold blue'
 format='''[$path]($style)[$read_only]($read_only_style)
 '''
 repo_root_format="""[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)
-[$path](bold cyan)[$read_only]($read_only_style) """
+[ 󰊢 $path](bold #F1502F)[$read_only]($read_only_style) """
 
 [sudo]
 format = '[as $symbol]($style)'
