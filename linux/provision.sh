@@ -78,8 +78,9 @@ ln -snf $UBUNTU_MNT/inputrc ~/.inputrc
 # .bashrc
 ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
 ensure_bashrc "source ~/.bash.sh"
-# .zshrc 今は同じ設定で問題ない
-ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.zsh.sh
+# .zshrc
+ln -snf $UBUNTU_MNT/zshrc/base.sh ~/.zsh.sh
+ensure_zshrc "source ~/.bash.sh"
 ensure_zshrc "source ~/.zsh.sh"
 
 # asdfインストール
