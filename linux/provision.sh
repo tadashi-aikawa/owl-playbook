@@ -76,12 +76,12 @@ ln -snf $UBUNTU_MNT/gitconfig ~/.gitconfig
 ln -snf $UBUNTU_MNT/inputrc ~/.inputrc
 
 # .bashrc
-ln -snf $UBUNTU_MNT/bashrc/base.sh ~/.bash.sh
-ensure_bashrc "source ~/.bash.sh"
+ln -snf $UBUNTU_MNT/base.sh ~/.base.sh
+ensure_bashrc "source ~/.base.sh"
 # .zshrc
-ln -snf $UBUNTU_MNT/zshrc/base.sh ~/.zsh.sh
-ensure_zshrc "source ~/.bash.sh"
-ensure_zshrc "source ~/.zsh.sh"
+ln -snf $UBUNTU_MNT/zshrc/base.sh ~/.basez.sh
+ensure_zshrc "source ~/.base.sh"
+ensure_zshrc "source ~/.basez.sh"
 
 # asdfインストール
 no asdf && {
