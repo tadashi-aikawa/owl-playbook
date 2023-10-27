@@ -144,6 +144,13 @@
         "direction": "down"
       },
       "keys": "alt+shift+j"
+    },
+    {
+      "command": {
+        "action": "newTab",
+        "profile": "Ubuntu WSL"
+      },
+      "keys": "ctrl+shift+u"
     }
   ],
   "copyFormatting": "none",
@@ -200,7 +207,7 @@
         "backgroundImageStretchMode": "none",
         "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
         "hidden": false,
-        "name": "Ubuntu",
+        "name": "Ubuntu WSL",
         "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
       }
     ]
