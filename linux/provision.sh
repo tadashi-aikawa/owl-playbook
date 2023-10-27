@@ -151,7 +151,8 @@ no bat && asdf_install bat latest
 no zoxide && asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
 ln -snf $UBUNTU_MNT/bashrc/zoxide.sh ~/.zoxide.sh;
 ensure_bashrc "source ~/.zoxide.sh";
-ensure_zshrc "source ~/.zoxide.sh";
+ln -snf $UBUNTU_MNT/zshrc/zoxide.sh ~/.zoxidez.sh;
+ensure_zshrc "source ~/.zoxidez.sh";
 
 # eza
 no eza && asdf_install eza latest
