@@ -359,6 +359,11 @@ local neovim_plugins = {
     end
   },
 
+  -- Git blame
+  {
+    "FabijanZulj/blame.nvim"
+  },
+
   -- VSCode like
   {
     'neoclide/coc.nvim',
