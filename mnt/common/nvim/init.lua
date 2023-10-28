@@ -347,16 +347,18 @@ local neovim_plugins = {
       { '<Space>k', ':Gitsigns prev_hunk<CR>' },
     },
     config = function()
-      require('gitsigns').setup {
-        signs = {
-          add          = { text = '' },
-          change       = { text = '' },
-          delete       = { text = '' },
-          topdelete    = { text = '‾' },
-          changedelete = { text = '' },
-          untracked    = { text = '┆' },
-        },
-      }
+      vim.defer_fn(function()
+        require('gitsigns').setup {
+          signs = {
+            add          = { text = '' },
+            change       = { text = '' },
+            delete       = { text = '' },
+            topdelete    = { text = '‾' },
+            changedelete = { text = '' },
+            untracked    = { text = '┆' },
+          },
+        }
+      end, is_windows and 200 or 0)
     end
   },
 
