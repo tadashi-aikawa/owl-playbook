@@ -192,7 +192,6 @@ $env:GO111MODULE = "on"
 #-----------------------------------------------------
 
 $env:PATH += ";" + $env:LOCALAPPDATA + "\JetBrains\Toolbox\apps\IDEA-U\ch-0\232.8660.185\bin"
-$env:PATH += ";" + $env:USERPROFILE + "\git\bitbucket.org\ntj-developer\diamant\target\release"
 
 
 $scriptBlock = {
