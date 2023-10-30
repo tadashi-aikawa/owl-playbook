@@ -38,7 +38,8 @@
   },
   "files.associations": {
     "Vagrantfile": "ruby",
-    "*.txt": "csv"
+    "*.txt": "csv",
+    "*.ahk": "ahk"
   },
   // ターミナル
   "editWithShell.shell.windows": "bash",
