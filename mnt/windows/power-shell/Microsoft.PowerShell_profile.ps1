@@ -89,7 +89,12 @@ function tree() { eza --icons -T $args}
 function ll() { eza --icons -l --git $args}
 
 # 自作showコマンド
-function show() { bat --pager never $args}
+function show() {
+  if (-not $args) {
+    $args = "README.md"
+  }
+  bat --pager never $args
+}
 
 function awslocal { aws '--endpoint-url=http://localhost:4566' $args }
 
