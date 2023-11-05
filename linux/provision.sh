@@ -178,6 +178,12 @@ no git-graph && {
   sudo tar xvf /tmp/git-graph.tar.gz -C /usr/local/bin/;
 }
 
+# gowl
+no gowl && {
+  wget https://github.com/tadashi-aikawa/gowl/releases/download/v0.9.1/gowl-v0.9.1-x86_64-linux.tar.gz -O /tmp/gowl.tar.gz;
+  sudo tar xvf /tmp/gowl.tar.gz -C /usr/local/bin/ --strip-components 2
+}
+
 # Task
 no task && asdf_install task latest
 
