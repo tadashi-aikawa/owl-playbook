@@ -60,7 +60,7 @@
     "MD045": false
   },
   // AutoHotkey Plus Plus
-  "ahk++.file.executePath": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
+  "ahk++.file.interpreterPathV1": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
   // その他
   "terminal.integrated.rendererType": "dom",
   "explorer.confirmDelete": false,
