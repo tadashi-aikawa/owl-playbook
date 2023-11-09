@@ -27,8 +27,8 @@ $character\
 disabled = false
 format = "$symbol"
 [os.symbols]
-Windows = '[  ](#00A4EF)'
-Linux = '[  ](white)'
+Windows = '[  ](#00BCF2)'
+Linux = '[  ](yellow)'
 Ubuntu = '[  ](#F25022)'
 
 [shell]
