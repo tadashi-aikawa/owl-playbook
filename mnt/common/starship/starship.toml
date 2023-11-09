@@ -1,4 +1,5 @@
 format = """
+$os\
 $shell\
 $c\
 $elixir\
@@ -21,6 +22,9 @@ $character\
 """
 
 # ---- General ----
+
+[os]
+disabled = false
 
 [shell]
 disabled = false
