@@ -25,6 +25,11 @@ $character\
 
 [os]
 disabled = false
+format = "$symbol"
+[os.symbols]
+Windows = '[  ](#00A4EF)'
+Linux = '[  ](white)'
+Ubuntu = '[  ](#F25022)'
 
 [shell]
 disabled = false
