@@ -8,7 +8,7 @@ Windows と Linux の個人的な環境構築用スクリプト群です。
 git clone https://github.com/tadashi-aikawa/owl-playbook.git
 ```
 
-## 💻 Windows setup
+## 🪟 Windows setup
 
 ### 事前準備
 
