@@ -187,6 +187,9 @@ no gowl && {
   sudo tar xvf /tmp/gowl.tar.gz -C /usr/local/bin/ --strip-components 2
 }
 
+# awscli
+no awscli && asdf_install awscli latest
+
 # Task
 no task && asdf_install task latest
 
