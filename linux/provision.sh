@@ -141,6 +141,9 @@ no bun && asdf_install bun latest
 # Deno
 no deno && asdf_install deno latest https://github.com/asdf-community/asdf-deno.git
 
+# Golang
+no go && asdf_install golang latest https://github.com/asdf-community/asdf-golang.git
+
 # ripgrep
 no rg && asdf_install ripgrep latest
 
