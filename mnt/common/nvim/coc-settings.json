@@ -33,6 +33,24 @@
     "lua",
     "elixir"
   ],
+  "suggest.completionItemKindLabels": {
+    "function": "󰊕 ",
+    "variable": " ",
+    "module": "󰕳 ",
+    "snippet": " ",
+    "struct": " ",
+    "keyword": " ",
+    "property": " ",
+    "method": " ",
+    "field": " ",
+    "interface": " ",
+    "folder": " ",
+    "file": " ",
+    "class": " ",
+    "constant": " "
+  },
   "snippets.ultisnips.pythonPrompt": false,
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false
 }

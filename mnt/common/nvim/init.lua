@@ -417,6 +417,11 @@ local neovim_plugins = {
         "coc-java",
         "@yaegassy/coc-volar"
       }
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = {"*.go"},
+        command = "call CocAction('runCommand', 'editor.action.organizeImport')"
+      })
     end
   },
 
