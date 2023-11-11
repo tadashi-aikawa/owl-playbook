@@ -145,8 +145,8 @@ no deno && asdf_install deno latest https://github.com/asdf-community/asdf-deno.
 no go && asdf_install golang latest https://github.com/asdf-community/asdf-golang.git
 
 # Python
+no python3.11 && asdf_install python 3.11.6
 no python3.12 && asdf_install python 3.12.0
-no python3.11 && asdf_install python 3.11.6 # awscliが非対応なので今は3.11
 
 # ripgrep
 no rg && asdf_install ripgrep latest
@@ -192,7 +192,7 @@ no gowl && {
 }
 
 # awscli
-no awscli && asdf_install awscli latest
+no awscli && asdf_install awscli 2.13.33 # 2.13.34が動かないので
 
 # Task
 no task && asdf_install task latest
