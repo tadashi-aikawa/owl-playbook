@@ -4,16 +4,6 @@
   "python.formatting.provider": "ruff",
   "python.linting.ruffEnabled": true,
   "rust-analyzer.check.command": "clippy",
-  "languageserver": {
-    "go": {
-      "command": "gopls",
-      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
-    }
-  },
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "",
   "diagnostic.warningSign": "",

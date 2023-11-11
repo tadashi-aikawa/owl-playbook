@@ -237,7 +237,7 @@ local neovim_plugins = {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", "kkharji/sqlite.lua" },
+    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", "kkharji/sqlite.lua", 'fannheyward/telescope-coc.nvim'},
     keys = {
       { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
       { '<C-j>z', ':Telescope frecency<CR>' },
@@ -246,7 +246,9 @@ local neovim_plugins = {
       { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' },
       { '<C-j>p', ':Telescope commands<CR>' },
       { '<C-j>:', ':Telescope command_history<CR>' },
-      { '<C-j>m', ':Telescope marks<CR>' }
+      { '<C-j>m', ':Telescope marks<CR>' },
+      { '<C-j>i', ':Telescope coc implementations<CR>' },
+      { '<C-j>h', ':Telescope coc references<CR>' }
     },
     config = function()
       local actions = require("telescope.actions")
@@ -264,6 +266,11 @@ local neovim_plugins = {
           extensions = {
             frecency = {
               show_scores = true
+            },
+            coc = {
+                theme = 'ivy',
+                -- trueだと常にpreviewを経由する
+                prefer_locations = false,
             }
           }
       }
@@ -277,6 +284,7 @@ local neovim_plugins = {
 
       require("telescope").load_extension("frecency")
       require("telescope").load_extension("file_browser")
+      require('telescope').load_extension('coc')
     end
   },
 
@@ -375,10 +383,10 @@ local neovim_plugins = {
     keys = {
       -- 定義に移動
       { '<C-]>', '<Plug>(coc-definition)' },
-      -- 呼び出し元に移動
-      { '<C-j>h', '<Plug>(coc-references)' },
-      -- 実装に移動
-      { '<C-j>i', '<Plug>(coc-implementation)' },
+      -- 呼び出し元に移動 (telescope側で設定しているので不要)
+      -- { '<C-j>h', '<Plug>(coc-references)' },
+      -- 実装に移動 (telescope側で設定しているので不要)
+      -- { '<C-j>i', '<Plug>(coc-implementation)' },
       -- 配下の定義を表示
       { '<M-s>', ':call CocActionAsync(\'doHover\')<CR>' },
       { '<C-P>', '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>', mode = "i" },
