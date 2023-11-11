@@ -143,6 +143,11 @@ no deno && asdf_install deno latest https://github.com/asdf-community/asdf-deno.
 
 # Golang
 no go && asdf_install golang latest https://github.com/asdf-community/asdf-golang.git
+ensure_bashrc 'export GOPATH=$HOME/go'
+ensure_bashrc 'export PATH=$PATH:$GOPATH/bin'
+ensure_zshrc 'export GOPATH=$HOME/go'
+ensure_zshrc 'export PATH=$PATH:$GOPATH/bin'
+
 
 # Python
 no python3.11 && asdf_install python 3.11.6
