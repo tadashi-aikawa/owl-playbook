@@ -43,10 +43,15 @@
   },
   // ターミナル
   "editWithShell.shell.windows": "bash",
-  "editWithShell.shellArgs.windows": ["-c"],
+  "editWithShell.shellArgs.windows": [
+    "-c"
+  ],
   "editWithShell.processEntireTextIfNoneSelected": true,
   // JS/TS
-  "eslint.validate": ["javascript", "typescript"],
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
   // Markdown
   "markdownlint.config": {
     "MD003": false,
@@ -67,7 +72,6 @@
   "editor.cursorSurroundingLines": 5,
   "editor.cursorBlinking": "solid",
   "editor.formatOnPaste": true,
-  "editor.multiCursorModifier": "alt",
   "git.autofetch": true,
   "git.ignoreLegacyWarning": true,
   "C_Cpp.intelliSenseEngine": "Tag Parser",
@@ -104,8 +108,10 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "[go]": {
-    "editor.defaultFormatter": null,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+  },
+  "gopls": {
+    "ui.semanticTokens": true
   },
   "editor.tabSize": 4,
   "editor.cursorStyle": "line",
@@ -132,5 +138,6 @@
   // "extensions.autoUpdate": false,
   "jest.autoRun": {
     "watch": false
-  }
+  },
+  "editor.multiCursorModifier": "ctrlCmd"
 }
