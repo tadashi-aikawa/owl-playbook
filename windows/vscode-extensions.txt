@@ -24,5 +24,6 @@ pkief.material-icon-theme
 quicktype.quicktype
 rust-lang.rust-analyzer
 shuworks.vscode-table-formatter
+usernamehw.errorlens
 Vue.volar
 yoavbls.pretty-ts-errors
