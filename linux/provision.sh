@@ -64,6 +64,8 @@ sudo apt-get install -y \
   libffi-dev \
   liblzma-dev \
   zlib1g-dev
+# PlantUMLで使用
+sudo apt-get install -y graphviz
 
 # Zsh
 sudo apt-get install -y zsh zsh-autosuggestions
@@ -148,10 +150,12 @@ ensure_bashrc 'export PATH=$PATH:$GOPATH/bin'
 ensure_zshrc 'export GOPATH=$HOME/go'
 ensure_zshrc 'export PATH=$PATH:$GOPATH/bin'
 
-
 # Python
 no python3.11 && asdf_install python 3.11.6
 no python3.12 && asdf_install python 3.12.0
+
+# Java
+no java && asdf_install java latest:corretto-21 https://github.com/halcyon/asdf-java.git
 
 # ripgrep
 no rg && asdf_install ripgrep latest
