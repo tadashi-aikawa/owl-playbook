@@ -10,6 +10,7 @@ esbenp.prettier-vscode
 golang.Go
 janisdd.vscode-edit-csv
 jdinhlife.gruvbox
+jebbs.plantuml
 mark-wiemer.vscode-autohotkey-plus-plus
 mechatroner.rainbow-csv
 mhutchie.git-graph
