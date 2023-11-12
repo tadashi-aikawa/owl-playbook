@@ -1,3 +1,4 @@
+42Crunch.vscode-openapi
 asvetliakov.vscode-neovim
 christian-kohler.path-intellisense
 davidanson.vscode-markdownlint
