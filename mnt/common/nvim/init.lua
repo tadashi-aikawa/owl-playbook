@@ -248,7 +248,9 @@ local neovim_plugins = {
       { '<C-j>:', ':Telescope command_history<CR>' },
       { '<C-j>m', ':Telescope marks<CR>' },
       { '<C-j>i', ':Telescope coc implementations<CR>' },
-      { '<C-j>h', ':Telescope coc references<CR>' }
+      { '<C-j>h', ':Telescope coc references<CR>' },
+      { '<C-j>o', ':Telescope coc document_symbols<CR>' },
+      { '<C-j>s', ':Telescope coc workspace_symbols<CR>' }
     },
     config = function()
       local actions = require("telescope.actions")
@@ -400,10 +402,10 @@ local neovim_plugins = {
       { "<up>", [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]], mode = "i", expr = true, replace_keycodes = false },
       -- code action
       { '<M-CR>', '<Plug>(coc-codeaction-cursor)' },
-      -- Find symbol of current document
-      { '<C-j>o', ':<C-u>CocList outline<cr>' },
-      -- Search workspace symbols
-      { '<C-j>s', ':<C-u>CocList -I symbols<cr>' },
+      -- Find symbol of current document  (telescope側で設定しているので不要)
+      -- { '<C-j>o', ':<C-u>CocList outline<cr>' },
+      -- Search workspace symbols (telescope側で設定しているので不要)
+      -- { '<C-j>s', ':<C-u>CocList -I symbols<cr>' },
       -- Rename
       { '<S-M-r>', '<Plug>(coc-rename)' },
       -- Auto complete
