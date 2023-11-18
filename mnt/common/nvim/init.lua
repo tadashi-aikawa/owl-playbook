@@ -416,7 +416,7 @@ local neovim_plugins = {
       { "<F5>", [[coc#refresh()]], mode = "i", expr = true },
     },
     config = function()
-      vim.g.coc_global_extensions = {
+      extensions = {
         "coc-json",
         "coc-tsserver",
         "coc-deno",
@@ -431,6 +431,11 @@ local neovim_plugins = {
         "coc-java",
         "@yaegassy/coc-volar"
       }
+      if not is_windows then
+        -- Windowsは未対応らしいので...
+        table.insert(extensions, {"coc-lua"})
+      end
+      vim.g.coc_global_extensions = extensions
 
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = {"*.go"},
