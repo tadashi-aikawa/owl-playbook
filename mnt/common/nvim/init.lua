@@ -302,6 +302,10 @@ local neovim_plugins = {
     },
     config = function()
       require("nvim-tree").setup {
+        view = {
+          preserve_window_proportions = true,
+        },
+
         on_attach = function(bufnr)
           local api = require "nvim-tree.api"
           local function opts(desc)
