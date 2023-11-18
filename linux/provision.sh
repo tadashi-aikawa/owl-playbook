@@ -111,14 +111,17 @@ ln -snf $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml;
 
 # Neovim
 no nvim && asdf_install neovim 0.9.4
-ensure_bashrc 'alias vim=nvim';
-ensure_zshrc 'alias vim=nvim';
-mkdir -p ~/.config/nvim;
-ln -snf ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua;
-mkdir -p ~/.config/nvim/lua;
-ln -snf ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua;
-ln -snf ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json;
-ln -snf ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json;
+ensure_bashrc 'alias vim=nvim'
+ensure_zshrc 'alias vim=nvim'
+mkdir -p ~/.config/nvim
+ln -snf ${COMMON_MNT}/nvim/init.lua ~/.config/nvim/init.lua
+mkdir -p ~/.config/nvim/lua
+ln -snf ${UBUNTU_MNT}/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
+ln -snf ${COMMON_MNT}/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -snf ${COMMON_MNT}/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
+mkdir -p ~/.config/coc
+ln -snf ${COMMON_MNT}/nvim/ultisnips ~/.config/coc/ultisnips
+
 
 # GitUI
 no gitui && asdf_install gitui latest
