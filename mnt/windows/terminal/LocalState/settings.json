@@ -1,6 +1,23 @@
 {
   "$help": "https://aka.ms/terminal-documentation",
   "$schema": "https://aka.ms/terminal-profiles-schema",
+  "theme": "mamansoft",
+  "themes": [
+    {
+      "name": "mamansoft",
+      "window": {
+        "applicationTheme": "dark"
+      },
+      "tab": {
+        "background": "terminalBackground",
+        "unfocusedBackground": "#00000033"
+      },
+      "tabRow": {
+        "background": "#000000a0",
+        "unfocusedBackground": "#00000077"
+      }
+    }
+  ],
   "actions": [
     {
       "command": "find",
