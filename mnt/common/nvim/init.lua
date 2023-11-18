@@ -1,15 +1,15 @@
 function merge_tables(t1, t2)
-    local merged = {}
-    for _, v in ipairs(t1) do
-        table.insert(merged, v)
-    end
-    for _, v in ipairs(t2) do
-        table.insert(merged, v)
-    end
-    return merged
+  local merged = {}
+  for _, v in ipairs(t1) do
+    table.insert(merged, v)
+  end
+  for _, v in ipairs(t2) do
+    table.insert(merged, v)
+  end
+  return merged
 end
 
-local path_sep = package.config:sub(1,1)
+local path_sep = package.config:sub(1, 1)
 local is_windows = path_sep == '\\'
 local is_vscode = vim.g.vscode == 1
 
@@ -25,7 +25,7 @@ vim.g.loaded_netrwPlugin = 1
 -- 文字コード自動判別
 set.encoding = "utf-8"
 -- 改行コード自動判別
-set.fileformats="unix,dos,mac"
+set.fileformats = "unix,dos,mac"
 -- swapfileを作成しない
 vim.opt.swapfile = false
 
@@ -50,7 +50,7 @@ vim.opt.rtp:prepend(lazypath)
 local common_plugins = {
   -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
 
-  'tpope/vim-commentary', -- コメントアウト
+  'tpope/vim-commentary',  -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
 
   -- 画面内瞬間移動
@@ -61,15 +61,15 @@ local common_plugins = {
       { 's', ':HopChar2<CR>' },
       {
         '<C-l>', function()
-          vim.cmd("HopChar1")
-          if not is_vscode then
-            vim.cmd("call CocAction('jumpDefinition')")
-          end
+        vim.cmd("HopChar1")
+        if not is_vscode then
+          vim.cmd("call CocAction('jumpDefinition')")
         end
+      end
       }
     },
     config = function()
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   },
 
@@ -77,7 +77,7 @@ local common_plugins = {
   {
     'vim-scripts/ReplaceWithRegister',
     keys = {
-      {'_', '<Plug>ReplaceWithRegisterOperator'}
+      { '_', '<Plug>ReplaceWithRegisterOperator' }
     }
   },
 
@@ -87,7 +87,7 @@ local common_plugins = {
     version = "*",
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup()
+      require("nvim-surround").setup()
     end
   },
 
@@ -114,16 +114,16 @@ local vscode_plugins = {
 
 -- Neovimだけで使うプラグイン
 local neovim_plugins = {
-  'ellisonleao/gruvbox.nvim', -- テーマ
-  'sainnhe/gruvbox-material', -- テーマ
-  'kshenoy/vim-signature', -- マークの可視化
+  'ellisonleao/gruvbox.nvim',    -- テーマ
+  'sainnhe/gruvbox-material',    -- テーマ
+  'kshenoy/vim-signature',       -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
-  'famiu/bufdelete.nvim', -- バッファ削除のときにレイアウトを変更しない
+  'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
 
   -- シンタックスハイライト
   {
     'nvim-treesitter/nvim-treesitter',
-    event = {'BufNewFile', 'BufRead'},
+    event = { 'BufNewFile', 'BufRead' },
     build = ":TSUpdate",
     config = function()
       require('nvim-treesitter.configs').setup {
@@ -160,8 +160,8 @@ local neovim_plugins = {
   -- バッファ・タブバーをかっこよく
   {
     'romgrk/barbar.nvim',
-    dependencies = {'nvim-web-devicons'},
-    event = {'BufNewFile', 'BufRead'},
+    dependencies = { 'nvim-web-devicons' },
+    event = { 'BufNewFile', 'BufRead' },
     opts = {
       animation = false,
       sidebar_filetypes = {
@@ -174,7 +174,7 @@ local neovim_plugins = {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-web-devicons', opt = true },
-    event = {'BufNewFile', 'BufRead'},
+    event = { 'BufNewFile', 'BufRead' },
     options = { theme = 'gruvbox-material' },
     config = function()
       local lualine = require('lualine')
@@ -184,23 +184,23 @@ local neovim_plugins = {
           section_separators = {},
         },
         sections = {
-          lualine_a = {'filename'},
+          lualine_a = { 'filename' },
           lualine_b = {
             'branch',
             {
               'diff',
-              symbols = {added = ' ', modified = ' ', removed = ' '},
+              symbols = { added = ' ', modified = ' ', removed = ' ' },
             },
           },
           lualine_c = {
             "'%='",
             {
               'diagnostics',
-              symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+              symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
             },
           },
-          lualine_x = {'encoding', 'fileformat'},
-          lualine_y = {'filetype','searchcount'},
+          lualine_x = { 'encoding', 'fileformat' },
+          lualine_y = { 'filetype', 'searchcount' },
           lualine_z = {},
         },
         inactive_sections = {
@@ -237,7 +237,7 @@ local neovim_plugins = {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", "kkharji/sqlite.lua", 'fannheyward/telescope-coc.nvim'},
+    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", "kkharji/sqlite.lua", 'fannheyward/telescope-coc.nvim' },
     keys = {
       { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
       { '<C-j>z', ':Telescope frecency<CR>' },
@@ -255,26 +255,26 @@ local neovim_plugins = {
     config = function()
       local actions = require("telescope.actions")
       require("telescope").setup {
-          defaults = {
-              mappings = {
-                  i = {
-                    ["<esc>"] = actions.close,
-                    ["<F12>"] = actions.select_vertical,
-                  },
-                  n = { ["q"] = actions.close },
-              },
-              layout_strategy = 'vertical'
-          },
-          extensions = {
-            frecency = {
-              show_scores = true
+        defaults = {
+          mappings = {
+            i = {
+              ["<esc>"] = actions.close,
+              ["<F12>"] = actions.select_vertical,
             },
-            coc = {
-                theme = 'ivy',
-                -- trueだと常にpreviewを経由する
-                prefer_locations = false,
-            }
+            n = { ["q"] = actions.close },
+          },
+          layout_strategy = 'vertical'
+        },
+        extensions = {
+          frecency = {
+            show_scores = true
+          },
+          coc = {
+            theme = 'ivy',
+            -- trueだと常にpreviewを経由する
+            prefer_locations = false,
           }
+        }
       }
 
       if is_windows then
@@ -297,7 +297,7 @@ local neovim_plugins = {
       'nvim-tree/nvim-web-devicons'
     },
     keys = {
-      { '<M-w>', ':NvimTreeToggle<CR>' },
+      { '<M-w>',  ':NvimTreeToggle<CR>' },
       { '<C-j>w', ':NvimTreeFindFile<CR>' }
     },
     config = function()
@@ -323,11 +323,11 @@ local neovim_plugins = {
 
   -- Fuzzyエクスプローラー
   {
-      "nvim-telescope/telescope-file-browser.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-      keys = {
-        { '<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
-      }
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    keys = {
+      { '<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
+    }
   },
 
   -- Git操作
@@ -337,7 +337,7 @@ local neovim_plugins = {
       { '<Space>g', ':Gitui<CR>' },
     },
     config = function()
-      require('fm-nvim').setup{
+      require('fm-nvim').setup {
         ui = {
           float = {
             height = 0.97,
@@ -351,10 +351,10 @@ local neovim_plugins = {
   -- Gitの行表示
   {
     'lewis6991/gitsigns.nvim',
-    event = {'BufNewFile', 'BufRead'},
+    event = { 'BufNewFile', 'BufRead' },
     keys = {
       { '<Space>d', ':Gitsigns preview_hunk<CR>' },
-      { '<C-j>D', ':Gitsigns diffthis<CR>' },
+      { '<C-j>D',   ':Gitsigns diffthis<CR>' },
       { '<Space>u', ':Gitsigns reset_hunk<CR>' },
       { '<Space>s', ':Gitsigns stage_hunk<CR>' },
       { '<Space>j', ':Gitsigns next_hunk<CR>' },
@@ -385,27 +385,27 @@ local neovim_plugins = {
   {
     'neoclide/coc.nvim',
     branch = "release",
-    event = {'BufNewFile', 'BufRead'},
+    event = { 'BufNewFile', 'BufRead' },
     keys = {
       -- 定義に移動
-      { '<C-]>', '<Plug>(coc-definition)' },
+      { '<C-]>',   '<Plug>(coc-definition)' },
       -- 呼び出し元に移動 (telescope側で設定しているので不要)
       -- { '<C-j>h', '<Plug>(coc-references)' },
       -- 実装に移動 (telescope側で設定しているので不要)
       -- { '<C-j>i', '<Plug>(coc-implementation)' },
       -- 配下の定義を表示
-      { '<M-s>', ':call CocActionAsync(\'doHover\')<CR>' },
-      { '<C-P>', '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>', mode = "i" },
+      { '<M-s>',   ':call CocActionAsync(\'doHover\')<CR>' },
+      { '<C-P>',   '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>',                         mode = "i" },
       -- 前後のエラーや警告に移動
-      { '<M-k>', '<Plug>(coc-diagnostic-prev)' },
-      { '<M-j>', '<Plug>(coc-diagnostic-next)' },
+      { '<M-k>',   '<Plug>(coc-diagnostic-prev)' },
+      { '<M-j>',   '<Plug>(coc-diagnostic-next)' },
       -- Enterキーで決定
-      { "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], mode = "i", expr = true, replace_keycodes = false },
+      { "<cr>",    [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], mode = "i", expr = true, replace_keycodes = false },
       -- 上下で候補選択
-      { "<down>", [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]], mode = "i", expr = true, replace_keycodes = false },
-      { "<up>", [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]], mode = "i", expr = true, replace_keycodes = false },
+      { "<down>",  [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]],                                   mode = "i", expr = true, replace_keycodes = false },
+      { "<up>",    [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]],                                      mode = "i", expr = true, replace_keycodes = false },
       -- code action
-      { '<M-CR>', '<Plug>(coc-codeaction-cursor)' },
+      { '<M-CR>',  '<Plug>(coc-codeaction-cursor)' },
       -- Find symbol of current document  (telescope側で設定しているので不要)
       -- { '<C-j>o', ':<C-u>CocList outline<cr>' },
       -- Search workspace symbols (telescope側で設定しているので不要)
@@ -413,7 +413,7 @@ local neovim_plugins = {
       -- Rename
       { '<S-M-r>', '<Plug>(coc-rename)' },
       -- Auto complete
-      { "<F5>", [[coc#refresh()]], mode = "i", expr = true },
+      { "<F5>",    [[coc#refresh()]],                                                                    mode = "i", expr = true },
     },
     config = function()
       extensions = {
@@ -433,12 +433,12 @@ local neovim_plugins = {
       }
       if not is_windows then
         -- Windowsは未対応らしいので...
-        table.insert(extensions, {"coc-lua"})
+        table.insert(extensions, { "coc-lua" })
       end
       vim.g.coc_global_extensions = extensions
 
       vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = {"*.go"},
+        pattern = { "*.go" },
         command = "call CocAction('runCommand', 'editor.action.organizeImport')"
       })
     end
@@ -447,7 +447,7 @@ local neovim_plugins = {
   -- Go debugger
   {
     "sebdah/vim-delve",
-    ft = {'go'},
+    ft = { 'go' },
     keys = {
       { '<Space>b', ':DlvToggleBreakpoint<CR>' }
     },
@@ -458,12 +458,12 @@ local neovim_plugins = {
 
   -- Markdown preview
   {
-      "iamcco/markdown-preview.nvim",
-      lazy = false,
-      keys = {
-        { '<M-p>', ':MarkdownPreviewToggle<CR>' }
-      },
-      build = function() vim.fn["mkdp#util#install"]() end,
+    "iamcco/markdown-preview.nvim",
+    lazy = false,
+    keys = {
+      { '<M-p>', ':MarkdownPreviewToggle<CR>' }
+    },
+    build = function() vim.fn["mkdp#util#install"]() end,
   }
 }
 

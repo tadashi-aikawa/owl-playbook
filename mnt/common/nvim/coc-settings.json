@@ -45,5 +45,6 @@
   "snippets.ultisnips.pythonPrompt": false,
   "svelte.enable-ts-plugin": true,
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "Lua.diagnostics.globals": ["vim"]
 }
