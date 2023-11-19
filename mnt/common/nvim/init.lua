@@ -531,6 +531,9 @@ local neovim_plugins = {
       })
 
       require('mini.indentscope').setup()
+
+      require('mini.cursorword').setup()
+      vim.cmd [[highlight MiniCursorword guibg=darkcyan guifg=lightgray]]
     end
   },
 
