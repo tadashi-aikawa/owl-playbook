@@ -9,12 +9,12 @@
         "applicationTheme": "dark"
       },
       "tab": {
-        "background": "terminalBackground",
-        "unfocusedBackground": "#00000033"
+        "background": "#00BCF2cc",
+        "unfocusedBackground": "#00000077"
       },
       "tabRow": {
-        "background": "#000000a0",
-        "unfocusedBackground": "#00000077"
+        "background": "#000000cc",
+        "unfocusedBackground": "#000000bb"
       }
     }
   ],
