@@ -192,9 +192,9 @@
     },
     "list": [
       {
-        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\owl-hacker.png",
+        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\windows11-rmbg.png",
         "backgroundImageAlignment": "bottomRight",
-        "backgroundImageOpacity": 0.75,
+        "backgroundImageOpacity": 0.7,
         "backgroundImageStretchMode": "none",
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "hidden": false,
@@ -218,9 +218,9 @@
         "source": "Windows.Terminal.Wsl"
       },
       {
-        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\owl-hacker-cute.png",
+        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\ubuntu-rmbg.png",
         "backgroundImageAlignment": "bottomRight",
-        "backgroundImageOpacity": 0.75,
+        "backgroundImageOpacity": 0.7,
         "backgroundImageStretchMode": "none",
         "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
         "hidden": false,
