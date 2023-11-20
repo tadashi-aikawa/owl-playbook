@@ -110,6 +110,15 @@ local common_plugins = {
 
 -- VSCodeだけで使うプラグイン
 local vscode_plugins = {
+  {
+    'echasnovski/mini.nvim',
+    version = false,
+    event = { 'BufNewFile', 'BufRead' },
+    config = function()
+      require('mini.cursorword').setup()
+      vim.cmd [[highlight MiniCursorword guibg=darkcyan guifg=lightgray]]
+    end
+  },
 }
 
 -- Neovimだけで使うプラグイン
