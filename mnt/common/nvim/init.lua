@@ -184,7 +184,7 @@ local neovim_plugins = {
           section_separators = {},
         },
         sections = {
-          lualine_a = { 'filename' },
+          lualine_a = { { 'filename', path = 1 } },
           lualine_b = {
             'branch',
             {
@@ -536,7 +536,6 @@ local neovim_plugins = {
       vim.cmd [[highlight MiniCursorword guibg=darkcyan guifg=lightgray]]
     end
   },
-
 }
 
 require('lazy').setup(
