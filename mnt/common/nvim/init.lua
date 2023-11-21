@@ -53,6 +53,17 @@ local common_plugins = {
   'tpope/vim-commentary',  -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
 
+  -- 検索結果の詳細表示
+  {
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+      -- require('hlslens').setup()
+      require("scrollbar.handlers.search").setup({
+        -- hlslens config overrides
+      })
+    end
+  },
+
   -- スムーズなスクロール (VSCodeだと使えない?)
   {
     "karb94/neoscroll.nvim",
