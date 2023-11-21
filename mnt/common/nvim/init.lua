@@ -428,6 +428,8 @@ local neovim_plugins = {
       -- 上下で候補選択
       { "<down>",  [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]],                                   mode = "i", expr = true, replace_keycodes = false },
       { "<up>",    [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]],                                      mode = "i", expr = true, replace_keycodes = false },
+      -- TABでsnippets展開とplaceholder移動
+      {"<tab>", '<Plug>(coc-snippets-expand-jump)', mode="i"},
       -- code action
       { '<M-CR>',  '<Plug>(coc-codeaction-cursor)' },
       -- Find symbol of current document  (telescope側で設定しているので不要)
@@ -453,7 +455,8 @@ local neovim_plugins = {
         "coc-pyright",
         "coc-elixir",
         "coc-java",
-        "@yaegassy/coc-volar"
+        "@yaegassy/coc-volar",
+        "coc-snippets",
       }
       if not is_windows then
         -- Windowsは未対応らしいので...
