@@ -318,7 +318,7 @@ local neovim_plugins = {
           layout_config = {
             prompt_position = "top",
             width = 0.95,
-            height = 0.95,
+            height = 0.85,
           },
         },
         extensions = {
