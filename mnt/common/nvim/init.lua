@@ -147,6 +147,25 @@ local neovim_plugins = {
   'kshenoy/vim-signature',       -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
   'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
+  -- スクロールバー表示
+  {
+    'petertriho/nvim-scrollbar',
+    config = function()
+      require("scrollbar").setup({
+        handle = {
+          color = "gray"
+        },
+        marks = {
+          Search = { color = "lime" },
+          Error = { color = "red" },
+          Warn = { color = "orange" },
+          Info = { color = "cyan" },
+          Hint = { color = "gray" },
+          Misc = { color = "purple" },
+        }
+      })
+    end
+  },
 
   -- シンタックスハイライト
   {
@@ -440,7 +459,7 @@ local neovim_plugins = {
       { "<down>",  [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]],                                   mode = "i", expr = true, replace_keycodes = false },
       { "<up>",    [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]],                                      mode = "i", expr = true, replace_keycodes = false },
       -- TABでsnippets展開とplaceholder移動
-      {"<tab>", '<Plug>(coc-snippets-expand-jump)', mode="i"},
+      { "<tab>",   '<Plug>(coc-snippets-expand-jump)',                                                   mode = "i" },
       -- code action
       { '<M-CR>',  '<Plug>(coc-codeaction-cursor)' },
       -- Find symbol of current document  (telescope側で設定しているので不要)
