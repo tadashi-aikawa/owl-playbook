@@ -280,7 +280,12 @@ local neovim_plugins = {
             },
             n = { ["q"] = actions.close },
           },
-          layout_strategy = 'vertical'
+          sorting_strategy = "ascending",
+          layout_config = {
+            prompt_position = "top",
+            width = 0.95,
+            height = 0.95,
+          },
         },
         extensions = {
           frecency = {
