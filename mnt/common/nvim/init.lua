@@ -276,6 +276,7 @@ local neovim_plugins = {
           mappings = {
             i = {
               ["<esc>"] = actions.close,
+              -- Ctrl+Enterがマッピングされている
               ["<F12>"] = actions.select_vertical,
             },
             n = { ["q"] = actions.close },
