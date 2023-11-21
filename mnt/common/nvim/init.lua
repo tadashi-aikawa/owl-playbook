@@ -53,6 +53,14 @@ local common_plugins = {
   'tpope/vim-commentary',  -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
 
+  -- スムーズなスクロール (VSCodeだと使えない?)
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup {}
+    end
+  },
+
   -- 画面内瞬間移動
   {
     'phaazon/hop.nvim',
