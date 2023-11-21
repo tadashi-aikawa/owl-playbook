@@ -53,25 +53,6 @@ local common_plugins = {
   'tpope/vim-commentary',  -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
 
-  -- 検索結果の詳細表示
-  {
-    "kevinhwang91/nvim-hlslens",
-    config = function()
-      -- require('hlslens').setup()
-      require("scrollbar.handlers.search").setup({
-        -- hlslens config overrides
-      })
-    end
-  },
-
-  -- スムーズなスクロール (VSCodeだと使えない?)
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require('neoscroll').setup {}
-    end
-  },
-
   -- 画面内瞬間移動
   {
     'phaazon/hop.nvim',
@@ -138,6 +119,14 @@ local vscode_plugins = {
       vim.cmd [[highlight MiniCursorword guibg=darkcyan guifg=lightgray]]
     end
   },
+  -- 検索結果の詳細表示
+  {
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+      -- scrollbar.handlers.search はエラーになるので
+      require('hlslens').setup()
+    end
+  },
 }
 
 -- Neovimだけで使うプラグイン
@@ -147,6 +136,20 @@ local neovim_plugins = {
   'kshenoy/vim-signature',       -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
   'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
+  -- 検索結果の詳細表示
+  {
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+      require("scrollbar.handlers.search").setup()
+    end
+  },
+  -- スムーズなスクロール
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require('neoscroll').setup {}
+    end
+  },
   -- スクロールバー表示
   {
     'petertriho/nvim-scrollbar',
