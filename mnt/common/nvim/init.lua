@@ -139,8 +139,30 @@ local neovim_plugins = {
   -- 検索結果の詳細表示
   {
     "kevinhwang91/nvim-hlslens",
+    event = { 'BufNewFile', 'BufRead' },
     config = function()
-      require("scrollbar.handlers.search").setup()
+      require("scrollbar.handlers.search").setup({
+        -- nearest_only = true,
+      })
+      local kopts = { noremap = true, silent = true }
+
+      vim.api.nvim_set_keymap('n', 'n',
+        [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+        kopts)
+      vim.api.nvim_set_keymap('n', 'N',
+        [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+        kopts)
+      vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+      vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+      vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+      vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+
+      vim.api.nvim_set_keymap('n', '<Leader>l', '<Cmd>noh<CR>', kopts)
+
+      vim.cmd [[
+        highlight HlSearchLensNear guifg=white guibg=olive
+        highlight HlSearchLens guifg=#777777 guibg=#FFFFFFFF
+      ]]
     end
   },
   -- スムーズなスクロール
