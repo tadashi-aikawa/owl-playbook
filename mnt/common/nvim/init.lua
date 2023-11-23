@@ -142,7 +142,18 @@ local neovim_plugins = {
     event = { 'BufNewFile', 'BufRead' },
     config = function()
       require("scrollbar.handlers.search").setup({
-        -- nearest_only = true,
+        override_lens = function(render, posList, nearest, idx, relIdx)
+          local text, chunks
+          local lnum, col = unpack(posList[idx])
+          local cnt = #posList
+          text = ('[%d/%d]'):format(idx, cnt)
+          if nearest then
+            chunks = { { ' ', 'Ignore' }, { text, 'HlSearchLensNear' } }
+          else
+            chunks = { { ' ', 'Ignore' }, { text, 'HlSearchLens' } }
+          end
+          render.setVirt(0, lnum - 1, col - 1, chunks, nearest)
+        end
       })
       local kopts = { noremap = true, silent = true }
 
