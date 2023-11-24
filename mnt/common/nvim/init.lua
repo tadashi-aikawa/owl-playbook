@@ -142,7 +142,7 @@ local neovim_plugins = {
     event = { 'BufNewFile', 'BufRead' },
     config = function()
       require("scrollbar.handlers.search").setup({
-        override_lens = function(render, posList, nearest, idx, relIdx)
+        override_lens = function(render, posList, nearest, idx)
           local text, chunks
           local lnum, col = unpack(posList[idx])
           local cnt = #posList
@@ -386,9 +386,8 @@ local neovim_plugins = {
       'nvim-tree/nvim-web-devicons'
     },
     keys = {
-      -- Use mini.files instead
-      -- { '<M-w>',  ':NvimTreeToggle<CR>' },
-      -- { '<C-j>w', ':NvimTreeFindFile<CR>' }
+      { '<M-w>',  ':NvimTreeToggle<CR>' },
+      { '<C-j>w', ':NvimTreeFindFile<CR>' }
     },
     config = function()
       require("nvim-tree").setup {
@@ -564,9 +563,6 @@ local neovim_plugins = {
     'echasnovski/mini.nvim',
     version = false,
     event = { 'BufNewFile', 'BufRead' },
-    keys = {
-      { '<C-j>w', ':lua MiniFiles.open()<CR>' }
-    },
     config = function()
       local miniclue = require('mini.clue')
       require('mini.clue').setup({
@@ -613,12 +609,6 @@ local neovim_plugins = {
           miniclue.gen_clues.registers(),
           miniclue.gen_clues.windows(),
           miniclue.gen_clues.z(),
-        },
-      })
-
-      require('mini.files').setup({
-        mappings = {
-          go_in_plus = '<CR>',
         },
       })
 
