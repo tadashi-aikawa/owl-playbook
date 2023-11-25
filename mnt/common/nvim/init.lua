@@ -131,6 +131,24 @@ local vscode_plugins = {
 
 -- Neovimだけで使うプラグイン
 local neovim_plugins = {
+  {
+    "cbochs/portal.nvim",
+    dependencies = {
+      "cbochs/grapple.nvim",
+      "ThePrimeagen/harpoon"
+    },
+    keys = {
+      { '<Space>o', '<cmd>Portal jumplist backward<cr>' },
+      { '<Space>i', '<cmd>Portal jumplist forward<cr>' },
+    },
+    config = function()
+      require("portal").setup({
+        window_options = {
+          height = 5,
+        },
+      })
+    end
+  },
   'ellisonleao/gruvbox.nvim',    -- テーマ
   'sainnhe/gruvbox-material',    -- テーマ
   'kshenoy/vim-signature',       -- マークの可視化
