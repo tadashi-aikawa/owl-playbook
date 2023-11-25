@@ -764,8 +764,6 @@ key('t', '<ESC>', '<C-\\><C-n>', { noremap = true }) -- ESCでノーマルモー
 -----------------------------------------------------
 -- 行オートコンプリート
 key('i', '<C-l>', '<C-x><C-l>')
--- Escapeでハイライト消去
-key('n', '<ESC><ESC>', ':nohl<CR>')
 -- バッファ切り替え
 if is_vscode then
   key('n', '<Space>c', ":call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
