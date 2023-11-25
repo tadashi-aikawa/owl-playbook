@@ -133,45 +133,6 @@ local vscode_plugins = {
 
 -- Neovimだけで使うプラグイン
 local neovim_plugins = {
-  {
-    "cbochs/portal.nvim",
-    dependencies = {
-      "cbochs/grapple.nvim",
-      "ThePrimeagen/harpoon"
-    },
-    keys = {
-      { '<Space>o', '<cmd>Portal jumplist backward<cr>' },
-      { '<Space>i', '<cmd>Portal jumplist forward<cr>' },
-    },
-    config = function()
-      require("portal").setup({
-        window_options = {
-          height = 5,
-        },
-      })
-    end
-  },
-
-  {
-    'gen740/SmoothCursor.nvim',
-    config = function()
-      require('smoothcursor').setup({
-        fancy = {
-          enable = true,
-          head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
-          body = {
-            { cursor = "●", texthl = "SmoothCursorYellow" },
-            { cursor = "●", texthl = "SmoothCursorGreen" },
-            { cursor = "•", texthl = "SmoothCursorAqua" },
-            { cursor = ".", texthl = "SmoothCursorBlue" },
-            { cursor = ".", texthl = "SmoothCursorPurple" },
-          },
-          tail = { cursor = nil, texthl = "SmoothCursor" },
-        },
-      })
-    end
-  },
-
   'ellisonleao/gruvbox.nvim',    -- テーマ
   'sainnhe/gruvbox-material',    -- テーマ
   'kshenoy/vim-signature',       -- マークの可視化
@@ -672,6 +633,47 @@ local neovim_plugins = {
 
       require('mini.cursorword').setup()
       vim.cmd [[highlight MiniCursorword guibg=darkcyan guifg=lightgray]]
+    end
+  },
+
+  -- locationlistへのより高機能なアクセス
+  {
+    "cbochs/portal.nvim",
+    dependencies = {
+      "cbochs/grapple.nvim",
+      "ThePrimeagen/harpoon"
+    },
+    keys = {
+      { '<Space>o', '<cmd>Portal jumplist backward<cr>' },
+      { '<Space>i', '<cmd>Portal jumplist forward<cr>' },
+    },
+    config = function()
+      require("portal").setup({
+        window_options = {
+          height = 5,
+        },
+      })
+    end
+  },
+
+  -- 現在行にカーソルを表示し、一定以上移動したらアニメーションで追従する
+  {
+    'gen740/SmoothCursor.nvim',
+    config = function()
+      require('smoothcursor').setup({
+        fancy = {
+          enable = true,
+          head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
+          body = {
+            { cursor = "●", texthl = "SmoothCursorYellow" },
+            { cursor = "●", texthl = "SmoothCursorGreen" },
+            { cursor = "•", texthl = "SmoothCursorAqua" },
+            { cursor = ".", texthl = "SmoothCursorBlue" },
+            { cursor = ".", texthl = "SmoothCursorPurple" },
+          },
+          tail = { cursor = nil, texthl = "SmoothCursor" },
+        },
+      })
     end
   },
 }
