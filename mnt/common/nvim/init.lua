@@ -333,7 +333,7 @@ local neovim_plugins = {
       { '<C-j>:', ':Telescope command_history<CR>' },
       { '<C-j>m', ':Telescope marks<CR>' },
       { '<C-j>i', ':Telescope coc implementations<CR>' },
-      { '<C-j>h', ':Telescope coc references<CR>' },
+      { '<C-j>h', ':Telescope coc references_used<CR>' },
       { '<C-j>o', ':Telescope coc document_symbols<CR>' },
       { '<C-j>s', ':Telescope coc workspace_symbols<CR>' }
     },
