@@ -394,6 +394,21 @@ local neovim_plugins = {
         view = {
           preserve_window_proportions = true,
         },
+        renderer = {
+          icons = {
+            glyphs = {
+              git = {
+                unstaged = "",
+                staged = "󰆼",
+                unmerged = "",
+                renamed = "󰮆",
+                untracked = "",
+                deleted = "",
+                ignored = "",
+              }
+            }
+          }
+        },
 
         on_attach = function(bufnr)
           local api = require "nvim-tree.api"
