@@ -542,6 +542,7 @@ local neovim_plugins = {
         "coc-tsserver",
         "coc-deno",
         "coc-css",
+        "coc-html",
         "coc-yaml",
         "coc-rust-analyzer",
         "coc-sh",
