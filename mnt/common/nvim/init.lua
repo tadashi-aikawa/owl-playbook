@@ -205,6 +205,8 @@ local neovim_plugins = {
     end
   },
 
+  'windwp/nvim-ts-autotag',
+
   -- シンタックスハイライト
   {
     'nvim-treesitter/nvim-treesitter',
@@ -237,6 +239,9 @@ local neovim_plugins = {
         highlight = {
           enable = true,
           disable = { "ini" }
+        },
+        autotag = {
+          enable = true,
         },
       }
     end
