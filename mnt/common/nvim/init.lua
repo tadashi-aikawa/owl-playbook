@@ -487,6 +487,14 @@ local neovim_plugins = {
     "FabijanZulj/blame.nvim"
   },
 
+  -- Gitの行履歴詳細表示
+  {
+    'rhysd/git-messenger.vim',
+    config = function()
+      vim.g.git_messenger_include_diff = "current"
+    end
+  },
+
   -- VSCode like
   {
     'neoclide/coc.nvim',
