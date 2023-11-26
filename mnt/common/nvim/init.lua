@@ -58,7 +58,7 @@ local common_plugins = {
     'phaazon/hop.nvim',
     branch = 'v2',
     keys = {
-      { 's', ':HopChar2<CR>' },
+      -- { 's', ':HopChar2<CR>' },
       {
         '<C-l>', function()
         vim.cmd("HopChar1")
@@ -70,6 +70,15 @@ local common_plugins = {
     },
     config = function()
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  },
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      key('n', 's', function()
+        local current_window = vim.fn.win_getid()
+        require('leap').leap { target_windows = { current_window } }
+      end)
     end
   },
 
