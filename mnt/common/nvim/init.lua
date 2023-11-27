@@ -82,6 +82,19 @@ local common_plugins = {
     end
   },
 
+  -- fコマンドの強化
+  {
+    'ggandor/flit.nvim',
+    config = function()
+      require('flit').setup {
+        keys = { f = 'f', F = 'F', t = 't', T = 'T' },
+        labeled_modes = "v",
+        multiline = true,
+        opts = {}
+      }
+    end
+  },
+
   -- ブラックホールレジスト+putの省略
   {
     'vim-scripts/ReplaceWithRegister',
