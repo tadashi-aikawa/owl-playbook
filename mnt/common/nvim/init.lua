@@ -377,10 +377,10 @@ local neovim_plugins = {
             n = { ["q"] = actions.close },
           },
           sorting_strategy = "ascending",
+          layout_strategy = "vertical",
           layout_config = {
+            vertical = { width = 0.9 },
             prompt_position = "top",
-            width = 0.95,
-            height = 0.85,
           },
         },
         extensions = {
@@ -388,7 +388,6 @@ local neovim_plugins = {
             show_scores = true
           },
           coc = {
-            theme = 'ivy',
             -- trueだと常にpreviewを経由する
             prefer_locations = false,
           }
