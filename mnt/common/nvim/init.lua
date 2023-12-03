@@ -573,6 +573,7 @@ local neovim_plugins = {
         "coc-elixir",
         "coc-java",
         "@yaegassy/coc-volar",
+        "@yaegassy/coc-marksman",
         "coc-snippets",
       }
       if not is_windows then
