@@ -381,6 +381,7 @@ local neovim_plugins = {
           layout_config = {
             vertical = { width = 0.9 },
             prompt_position = "top",
+            preview_cutoff = 1,
           },
         },
         extensions = {
