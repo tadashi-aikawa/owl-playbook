@@ -209,6 +209,9 @@ no awscli && asdf_install awscli 2.13.33 # 2.13.34が動かないので
 # Task
 no task && asdf_install task latest
 
+# watchexec
+no watchexec && asdf_install watchexec latest
+
 # After
 echo "Run broot"
 echo "Run nvim"
