@@ -435,8 +435,21 @@ local neovim_plugins = {
                 deleted = "",
                 ignored = "",
               }
-            }
+            },
+            diagnostics_placement = "after"
           }
+        },
+
+        diagnostics = {
+          enable = true,
+          show_on_dirs = true,
+          show_on_open_dirs = true,
+          icons = {
+            hint = " ",
+            info = " ",
+            warning = " ",
+            error = " ",
+          },
         },
 
         on_attach = function(bufnr)
