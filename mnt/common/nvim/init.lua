@@ -436,7 +436,6 @@ local neovim_plugins = {
                 ignored = "",
               }
             },
-            diagnostics_placement = "after"
           }
         },
 
