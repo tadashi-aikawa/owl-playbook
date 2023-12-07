@@ -349,7 +349,7 @@ local neovim_plugins = {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", "kkharji/sqlite.lua", 'fannheyward/telescope-coc.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", 'fannheyward/telescope-coc.nvim' },
     keys = {
       { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
       { '<C-j>z', ':Telescope frecency<CR>' },
