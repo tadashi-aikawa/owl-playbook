@@ -131,6 +131,9 @@ ln -snf $UBUNTU_MNT/bashrc/gitui.sh ~/.gitui.sh;
 ensure_bashrc "source ~/.gitui.sh"
 ensure_zshrc "source ~/.gitui.sh"
 
+# LazyGit
+no lazygit && asdf_install lazygit latest
+
 # Node.js
 no node && {
   asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git;

@@ -534,6 +534,14 @@ local neovim_plugins = {
     end
   },
 
+  -- LazyGit
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
   -- VSCode like
   {
     'neoclide/coc.nvim',
