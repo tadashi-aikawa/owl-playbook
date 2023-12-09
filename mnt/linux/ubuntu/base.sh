@@ -27,3 +27,5 @@ alias gss='git status -v'
 alias show='bat --pager never'
 
 alias cdg='cd $(gowl list | fzf)'
+
+alias lg='lazygit'
