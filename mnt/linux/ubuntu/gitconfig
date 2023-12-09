@@ -4,7 +4,7 @@
 
 [core]
     autoCRLF = false
-    pager = delta
+    pager = delta --side-by-side
     editor = nvim
 
 [interactive]
@@ -13,7 +13,6 @@
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    side-by-side = true
 
 [merge]
     conflictstyle = diff3
