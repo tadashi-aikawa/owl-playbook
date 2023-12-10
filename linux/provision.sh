@@ -112,6 +112,7 @@ ln -snf $COMMON_MNT/starship/starship.toml ~/.config/starship.toml
 no broot && asdf_install broot latest https://github.com/cmur2/asdf-broot.git
 mkdir -p ~/.config/broot;
 ln -snf $UBUNTU_MNT/broot.toml ~/.config/broot/conf.toml;
+ln -snf $UBUNTU_MNT/broot.nvim.toml ~/.config/broot/conf.nvim.toml;
 
 # Neovim
 no nvim && asdf_install neovim 0.9.4
