@@ -47,6 +47,10 @@ sudo ln -snf $LINUX_MNT/wsl.conf /etc/wsl.conf
 
 # 依存関係インストール
 sudo apt-get update -y
+# ntp
+sudo apt-get install ntp
+sudo systemctl enable ntp
+sudo systemctl start ntp
 # nvim-treesitterで使用
 sudo apt-get install -y build-essential xsel
 # Pythonとtelescope-frecencyで使用
