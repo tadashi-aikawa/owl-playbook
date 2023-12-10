@@ -15,6 +15,8 @@ local is_vscode = vim.g.vscode == 1
 
 local set = vim.opt
 local key = vim.keymap.set
+local bkey = vim.api.nvim_buf_set_keymap
+
 -- For nvim-tree.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -479,7 +481,7 @@ local neovim_plugins = {
   {
     "is0n/fm-nvim",
     keys = {
-      { '<Space>g', ':Gitui<CR>' },
+      { '<Space>g', ':Lazygit<CR>' },
     },
     config = function()
       require('fm-nvim').setup {
@@ -891,6 +893,20 @@ vim.api.nvim_create_autocmd("VimEnter", {
       vim.opt.cmdheight = 1
     end
   end,
+})
+
+-- Lazygit起動時にESCを無効化する
+vim.api.nvim_create_augroup('LazygitKeyMapping', {})
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = 'LazygitKeyMapping',
+  pattern = "*",
+  callback = function()
+    local filetype = vim.bo.filetype
+    if filetype == 'lazygit' then
+      bkey(0, 't', '<ESC>', '<ESC>', { silent = true })
+      bkey(0, 't', '<C-v><ESC>', [[<C-\><C-n>]], { silent = true })
+    end
+  end
 })
 
 if is_windows then
