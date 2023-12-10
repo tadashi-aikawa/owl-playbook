@@ -1,4 +1,5 @@
 gui:
+  sidePanelWidth: 0.2
   nerdFontsVersion: "3"
   theme:
     inactiveBorderColor:
