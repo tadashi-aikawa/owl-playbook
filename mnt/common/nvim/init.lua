@@ -611,18 +611,6 @@ local neovim_plugins = {
     end
   },
 
-  -- Go debugger
-  {
-    "sebdah/vim-delve",
-    ft = { 'go' },
-    keys = {
-      { '<Space>b', ':DlvToggleBreakpoint<CR>' }
-    },
-    config = function()
-      vim.g.delve_new_command = "new"
-    end
-  },
-
   -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
