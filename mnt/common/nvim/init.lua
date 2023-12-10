@@ -466,11 +466,12 @@ local neovim_plugins = {
     end
   },
 
-  -- Git操作
+  -- TUIツール
   {
     "is0n/fm-nvim",
     keys = {
       { '<Space>g', ':Lazygit<CR>' },
+      { '<C-j>r',   ':Broot<CR>' },
     },
     config = function()
       require('fm-nvim').setup {
@@ -479,7 +480,9 @@ local neovim_plugins = {
             height = 0.97,
             width = 0.97,
           }
-        }
+        },
+
+        broot_conf = "~/.config/broot/conf.nvim.toml"
       }
     end
   },
