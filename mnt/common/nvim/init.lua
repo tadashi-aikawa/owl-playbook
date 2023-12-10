@@ -125,7 +125,6 @@ local common_plugins = {
   -- yankハイライト
   {
     'machakann/vim-highlightedyank',
-    event = { 'BufNewFile', 'BufRead' },
     config = function()
       vim.g.highlightedyank_highlight_duration = 300
       vim.cmd [[highlight HighlightedyankRegion cterm=reverse gui=reverse]]
