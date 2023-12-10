@@ -138,6 +138,7 @@ ensure_zshrc "source ~/.gitui.sh"
 
 # LazyGit
 no lazygit && asdf_install lazygit latest
+ln -snf ${COMMON_MNT}/lazygit/config.yml ~/.config/lazygit/config.yml
 
 # Node.js
 no node && {
