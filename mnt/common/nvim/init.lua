@@ -404,7 +404,6 @@ local neovim_plugins = {
       end
 
       require("telescope").load_extension("frecency")
-      require("telescope").load_extension("file_browser")
       require('telescope').load_extension('coc')
     end
   },
@@ -465,15 +464,6 @@ local neovim_plugins = {
         end
       }
     end
-  },
-
-  -- Fuzzyエクスプローラー
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    keys = {
-      { '<C-j>r', ":Telescope file_browser path=%:p:h<CR>" }
-    }
   },
 
   -- Git操作
