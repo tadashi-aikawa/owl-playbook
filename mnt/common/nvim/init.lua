@@ -476,8 +476,8 @@ local neovim_plugins = {
       require('fm-nvim').setup {
         ui = {
           float = {
-            height = 0.97,
-            width = 0.97,
+            height = 0.99,
+            width = 0.99,
           }
         },
 
