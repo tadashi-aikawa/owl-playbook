@@ -140,6 +140,9 @@ ensure_zshrc "source ~/.gitui.sh"
 no lazygit && asdf_install lazygit latest
 ln -snf ${COMMON_MNT}/lazygit/config.yml ~/.config/lazygit/config.yml
 
+# LazyDocker
+no lazydocker && asdf_install lazydocker latest https://github.com/comdotlinux/asdf-lazydocker.git
+
 # Node.js
 no node && {
   asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git;
