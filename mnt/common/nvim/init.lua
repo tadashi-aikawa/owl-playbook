@@ -160,6 +160,15 @@ local neovim_plugins = {
   'kshenoy/vim-signature',       -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
   'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
+
+  -- ブックマーク
+  {
+    'MattesGroeger/vim-bookmarks',
+    config = function()
+      vim.g.bookmark_sign            = '󰃀 '
+      vim.g.bookmark_annotation_sign = '󱖯 '
+    end
+  },
   -- 検索結果の詳細表示
   {
     "kevinhwang91/nvim-hlslens",
@@ -349,7 +358,12 @@ local neovim_plugins = {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim', "nvim-telescope/telescope-frecency.nvim", 'fannheyward/telescope-coc.nvim' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      "nvim-telescope/telescope-frecency.nvim",
+      'fannheyward/telescope-coc.nvim',
+      'tom-anders/telescope-vim-bookmarks.nvim'
+    },
     keys = {
       { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
       { '<C-j>z', ':Telescope frecency<CR>' },
@@ -358,7 +372,7 @@ local neovim_plugins = {
       { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' },
       { '<C-j>p', ':Telescope commands<CR>' },
       { '<C-j>:', ':Telescope command_history<CR>' },
-      { '<C-j>m', ':Telescope marks<CR>' },
+      { '<C-j>m', ':Telescope vim_bookmarks all<CR>' },
       { '<C-j>i', ':Telescope coc implementations<CR>' },
       { '<C-j>h', ':Telescope coc references_used<CR>' },
       { '<C-j>o', ':Telescope coc document_symbols<CR>' },
@@ -404,6 +418,7 @@ local neovim_plugins = {
 
       require("telescope").load_extension("frecency")
       require('telescope').load_extension('coc')
+      require('telescope').load_extension('vim_bookmarks')
     end
   },
 
