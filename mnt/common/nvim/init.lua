@@ -881,6 +881,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "NeogitStatusRefreshed",
+  command = ":NvimTreeRefresh<CR>"
+})
+
 if is_windows then
   -- do nothing
 else
