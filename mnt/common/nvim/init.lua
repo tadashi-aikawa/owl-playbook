@@ -121,15 +121,6 @@ local common_plugins = {
       vim.g.camelcasemotion_key = "]"
     end
   },
-
-  -- yankハイライト
-  {
-    'machakann/vim-highlightedyank',
-    config = function()
-      vim.g.highlightedyank_highlight_duration = 300
-      vim.cmd [[highlight HighlightedyankRegion cterm=reverse gui=reverse]]
-    end
-  },
 }
 
 -- VSCodeだけで使うプラグイン
@@ -884,6 +875,14 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.api.nvim_create_autocmd("User", {
   pattern = "NeogitStatusRefreshed",
   command = ":NvimTreeRefresh<CR>"
+})
+
+vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#553311" })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank({ higroup = 'YankHighlight', timeout = 200 })
+  end,
 })
 
 if is_windows then
