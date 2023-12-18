@@ -578,7 +578,6 @@ local neovim_plugins = {
         "coc-html",
         "coc-yaml",
         "coc-rust-analyzer",
-        "coc-sh",
         "coc-go",
         "coc-prettier",
         "coc-pyright",

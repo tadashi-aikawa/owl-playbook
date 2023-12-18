@@ -21,7 +21,8 @@
     "go",
     "vue",
     "lua",
-    "elixir"
+    "elixir",
+    "sh"
   ],
   "go.goplsOptions": {
     "staticcheck": true
@@ -46,5 +47,13 @@
   "svelte.enable-ts-plugin": true,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "Lua.diagnostics.globals": ["vim"]
+  "Lua.diagnostics.globals": ["vim"],
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
 }

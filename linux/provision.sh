@@ -224,7 +224,11 @@ no task && asdf_install task latest
 # watchexec
 no watchexec && asdf_install watchexec latest
 
+# shellcheck
+no shellcheck && asdf_install shellcheck latest
+
 # After
 echo "Run broot"
 echo "Run nvim"
 echo "Run . ~/.fzf/install"
+echo "Run npm i -g bash-language-server"
