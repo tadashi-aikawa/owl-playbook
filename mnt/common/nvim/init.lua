@@ -152,6 +152,14 @@ local neovim_plugins = {
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
   'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
 
+  -- テーブルソート
+  {
+    'dhruvasagar/vim-table-mode',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<A-;>', "<Cmd>:TableModeRealign<CR>", {})
+    end
+  },
+
   -- ブックマーク
   {
     'MattesGroeger/vim-bookmarks',
