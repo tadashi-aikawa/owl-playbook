@@ -740,7 +740,8 @@ local neovim_plugins = {
       ))
 
       wilder.setup({
-        modes = { ':', '/', '?' }
+        modes = { ':', '/', '?' },
+        enable_cmdline_enter = 0,
       })
     end
   }
