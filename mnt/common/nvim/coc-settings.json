@@ -27,6 +27,11 @@
   "go.goplsOptions": {
     "staticcheck": true
   },
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "borderhighlight": "Grey"
+  },
   "suggest.completionItemKindLabels": {
     "function": "󰊕 ",
     "variable": " ",
