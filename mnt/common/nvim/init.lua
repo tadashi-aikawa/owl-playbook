@@ -554,7 +554,7 @@ local neovim_plugins = {
       -- 実装に移動 (telescope側で設定しているので不要)
       -- { '<C-j>i', '<Plug>(coc-implementation)' },
       -- import最適化
-      { '<C-O>',   ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>' },
+      { '<M-o>',   ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>' },
       -- 配下の定義を表示
       { '<M-s>',   ':call CocActionAsync(\'doHover\')<CR>' },
       { '<C-P>',   '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>',                         mode = "i" },
