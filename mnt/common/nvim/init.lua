@@ -746,6 +746,18 @@ local neovim_plugins = {
         enable_cmdline_enter = 0,
       })
     end
+  },
+
+  -- TODO系のコマンドを目立たせる --
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { '<C-j>x', ':TodoTelescope<cr>' },
+    },
+    opts = {
+      sign_priority = 1
+    },
   }
 }
 
