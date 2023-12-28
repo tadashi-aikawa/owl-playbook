@@ -168,6 +168,10 @@ ensure_zshrc 'export PATH=$PATH:$GOPATH/bin'
 # Python
 no python3.11 && asdf_install python 3.11.6
 no python3.12 && asdf_install python 3.12.0
+# Poetry
+no poetry && curl -sSL https://install.python-poetry.org | python3 -
+ensure_bashrc 'export PATH=$PATH:${HOME}/.local/bin'
+ensure_zshrc 'export PATH=$PATH:${HOME}/.local/bin'
 
 # Java
 no java && asdf_install java latest:corretto-21 https://github.com/halcyon/asdf-java.git
