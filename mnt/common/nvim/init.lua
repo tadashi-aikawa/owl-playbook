@@ -25,6 +25,7 @@ vim.g.loaded_netrwPlugin = 1
 -----------------------------------------------------
 -- 文字コード自動判別
 set.encoding = "utf-8"
+set.fileencodings = "utf-8,sjis"
 -- 改行コード自動判別
 set.fileformats = "unix,dos,mac"
 -- swapfileを作成しない
