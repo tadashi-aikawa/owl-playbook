@@ -24,14 +24,20 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet ~props "props定義" b
+snippet _script "<script setup>" b
+<script setup lang="ts">
+${1}
+</script>
+endsnippet
+
+snippet _props "props定義" b
 interface Props {
   ${1}
 }
 const props = defineProps<Props>();
 endsnippet
 
-snippet ~props_default "props定義 defaultつき" b
+snippet _props_default "props定義 defaultつき" b
 interface Props {
   ${1}
 }
@@ -40,7 +46,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 endsnippet
 
-snippet ~state "state定義" b
+snippet _state "state定義" b
 interface State {
   ${1}
 }
@@ -49,8 +55,12 @@ const state = reactive<State>({
 });
 endsnippet
 
-snippet ~emit "emit定義" b
+snippet _emit "emit定義" b
 const emit = defineEmits<{
   (e: "${1:click}", ${2:value}: ${3:any}): void;
 }>();
+endsnippet
+
+snippet _computed "computed" b
+const ${1} = computed(() => ${2})
 endsnippet
