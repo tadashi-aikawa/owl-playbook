@@ -234,7 +234,7 @@ no task && asdf_install task latest
 # watchexec
 no watchexec && asdf_install watchexec latest
 
-# shellcheck
+# _shellcheck
 no shellcheck && asdf_install shellcheck latest
 
 # After
