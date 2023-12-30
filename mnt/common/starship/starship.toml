@@ -9,6 +9,7 @@ $kotlin\
 $lua\
 $nim\
 $nodejs\
+$bun\
 $python\
 $rust\
 $scala\
@@ -76,6 +77,10 @@ error_symbol = '[❯❯❯](bold red)'
 
 # ---- Languages ----
 
+[bun]
+format = '[$symbol($version)]($style) '
+symbol = ' '
+
 [c]
 format = '[$symbol($version(-$name))]($style) '
 symbol = ' '
@@ -107,6 +112,7 @@ symbol = ' '
 [nodejs]
 format = '[$symbol($version)]($style) '
 symbol = '󰎙 '
+detect_files = ["!bun.lockb", "!bunfig.toml", "package.json", ".node-version"]
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
