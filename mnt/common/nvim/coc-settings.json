@@ -24,6 +24,7 @@
     "elixir",
     "sh"
   ],
+  "list.source.symbols.excludes": ["**/node_modules/**"],
   "go.goplsOptions": {
     "staticcheck": true
   },
