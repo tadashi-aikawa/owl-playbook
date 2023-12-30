@@ -33,6 +33,11 @@
     "rounded": true,
     "borderhighlight": "Grey"
   },
+  "floatFactory.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "borderhighlight": "Grey"
+  },
   "suggest.completionItemKindLabels": {
     "function": "󰊕 ",
     "variable": " ",
