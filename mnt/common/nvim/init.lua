@@ -516,14 +516,9 @@ local neovim_plugins = {
     config = function()
       vim.defer_fn(function()
         require('gitsigns').setup {
-          signs = {
-            add          = { text = '' },
-            change       = { text = '' },
-            delete       = { text = '' },
-            topdelete    = { text = '‾' },
-            changedelete = { text = '' },
-            untracked    = { text = '┆' },
-          },
+          signcolumn = false,
+          numhl = false,
+          linehl = true
         }
       end, is_windows and 200 or 0)
     end
