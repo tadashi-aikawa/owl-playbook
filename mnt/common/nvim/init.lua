@@ -375,7 +375,6 @@ local neovim_plugins = {
       { '<C-j>m', ':Telescope vim_bookmarks all<CR>' },
       { '<C-j>i', ':Telescope coc implementations<CR>' },
       { '<C-j>h', ':Telescope coc references_used<CR>' },
-      { '<C-j>o', ':Telescope coc document_symbols<CR>' },
       { '<C-j>s', ':Telescope coc workspace_symbols<CR>' }
     },
     config = function()
@@ -753,6 +752,19 @@ local neovim_plugins = {
     },
     opts = {
       sign_priority = 1
+    },
+  },
+
+  -- 見出しの表示
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+    keys = {
+      { '<C-j>o', ':Telescope aerial<cr>' },
     },
   }
 }
