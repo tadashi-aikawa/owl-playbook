@@ -517,8 +517,7 @@ local neovim_plugins = {
       vim.defer_fn(function()
         require('gitsigns').setup {
           signcolumn = false,
-          numhl = false,
-          linehl = true
+          numhl = true,
         }
       end, is_windows and 200 or 0)
     end
