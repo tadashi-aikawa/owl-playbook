@@ -305,14 +305,14 @@ local neovim_plugins = {
           section_separators = {},
         },
         sections = {
-          lualine_a = { { 'filename', path = 1 } },
-          lualine_b = {
+          lualine_a = {
             'branch',
             {
               'diff',
               symbols = { added = ' ', modified = ' ', removed = ' ' },
             },
           },
+          lualine_b = { { 'filename', path = 1 }, 'aerial' },
           lualine_c = {
             "'%='",
             {
@@ -755,7 +755,7 @@ local neovim_plugins = {
     },
   },
 
-  -- 見出しの表示
+  -- アウトラインの表示
   {
     'stevearc/aerial.nvim',
     opts = {},
