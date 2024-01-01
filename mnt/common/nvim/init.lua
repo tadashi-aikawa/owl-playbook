@@ -770,6 +770,7 @@ local neovim_plugins = {
       require("aerial").setup({
         layout = {
           default_direction = "float",
+          min_width = 50
         },
         keymaps = {
           ["<ESC>"] = "actions.close",
