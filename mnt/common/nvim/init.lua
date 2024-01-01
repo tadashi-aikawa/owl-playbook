@@ -152,6 +152,7 @@ local neovim_plugins = {
   'kshenoy/vim-signature',       -- マークの可視化
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
   'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
+  'tpope/vim-repeat',            -- repeat
 
   -- テーブルソート
   {
