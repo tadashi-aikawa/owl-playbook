@@ -764,8 +764,18 @@ local neovim_plugins = {
       "nvim-tree/nvim-web-devicons"
     },
     keys = {
-      { '<C-j>o', ':Telescope aerial<cr>' },
+      { '<C-j>o', ':AerialOpen<CR>' },
     },
+    config = function()
+      require("aerial").setup({
+        layout = {
+          default_direction = "float",
+        },
+        keymaps = {
+          ["<ESC>"] = "actions.close",
+        },
+      })
+    end
   }
 }
 
