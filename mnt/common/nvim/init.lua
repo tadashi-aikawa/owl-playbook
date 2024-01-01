@@ -672,7 +672,17 @@ local neovim_plugins = {
       require('mini.indentscope').setup()
 
       require('mini.cursorword').setup()
-      vim.cmd [[highlight MiniCursorword guibg=darkcyan guifg=lightgray]]
+      vim.api.nvim_create_autocmd('BufEnter', {
+        pattern = '*',
+        callback = function()
+          local filetype = vim.bo.filetype
+          if filetype == 'aerial' then
+            vim.api.nvim_set_hl(0, 'MiniCursorword', { fg = 'NONE', bg = 'NONE' })
+          else
+            vim.api.nvim_set_hl(0, 'MiniCursorword', { fg = 'lightgray', bg = 'darkcyan' })
+          end
+        end
+      })
     end
   },
 
