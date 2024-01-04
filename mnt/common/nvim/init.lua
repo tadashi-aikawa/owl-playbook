@@ -962,7 +962,7 @@ vim.api.nvim_create_autocmd("User", {
   command = ":NvimTreeRefresh<CR>"
 })
 
-vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#553311" })
+vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function()
