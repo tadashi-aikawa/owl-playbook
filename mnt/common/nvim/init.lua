@@ -142,7 +142,7 @@ local common_plugins = {
   {
     'bkad/CamelCaseMotion',
     init = function()
-      vim.g.camelcasemotion_key = "]"
+      vim.g.camelcasemotion_key = "["
     end
   },
 }
