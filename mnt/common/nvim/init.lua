@@ -30,21 +30,8 @@ set.fileencodings = "utf-8,sjis"
 set.fileformats = "unix,dos,mac"
 -- swapfileを作成しない
 vim.opt.swapfile = false
-
------------------------------------------------------
--- 見た目
------------------------------------------------------
--- Color scheme
+-- colorizerプラグインで必要
 set.termguicolors = true
-set.syntax = 'on'
-set.background = 'dark'
-
--- 行番号の表示
-set.number = true
--- 検索語をハイライト
-set.hlsearch = true
--- ステータスラインを常に表示
-set.laststatus = 2
 
 -----------------------------------------------------
 --  プラグイン
@@ -945,6 +932,28 @@ vim.api.nvim_create_user_command("Restart", function()
   vim.cmd [[qa!]]
 end, {})
 
+-----------------------------------------------------
+-- 見た目
+-----------------------------------------------------
+-- Color scheme
+set.syntax = 'on'
+set.background = 'dark'
+
+-- 行番号の表示
+set.number = true
+-- 検索語をハイライト
+set.hlsearch = true
+-- ステータスラインを常に表示
+set.laststatus = 2
+
+-- Highlight
+vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
+vim.api.nvim_set_hl(0, 'Visual', { bg = "#661111" })
+
+-----------------------------------------------------
+-- autocmd
+-----------------------------------------------------
+
 vim.api.nvim_create_autocmd("VimEnter", {
   nested = true,
   callback = function()
@@ -962,13 +971,16 @@ vim.api.nvim_create_autocmd("User", {
   command = ":NvimTreeRefresh<CR>"
 })
 
-vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function()
     vim.highlight.on_yank({ higroup = 'YankHighlight', timeout = 200 })
   end,
 })
+
+-----------------------------------------------------
+-- Clipboard
+-----------------------------------------------------
 
 if is_windows then
   -- do nothing
