@@ -32,6 +32,21 @@ set.fileformats = "unix,dos,mac"
 vim.opt.swapfile = false
 
 -----------------------------------------------------
+-- 見た目
+-----------------------------------------------------
+-- Color scheme
+set.termguicolors = true
+set.syntax = 'on'
+set.background = 'dark'
+
+-- 行番号の表示
+set.number = true
+-- 検索語をハイライト
+set.hlsearch = true
+-- ステータスラインを常に表示
+set.laststatus = 2
+
+-----------------------------------------------------
 --  プラグイン
 -----------------------------------------------------
 
@@ -54,6 +69,14 @@ local common_plugins = {
 
   'tpope/vim-commentary',  -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
+
+  -- カラーコードの表示
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require 'colorizer'.setup()
+    end
+  },
 
   -- 画面内瞬間移動
   {
@@ -795,24 +818,9 @@ require('lazy').setup(
   merge_tables(common_plugins, is_vscode and vscode_plugins or neovim_plugins)
 )
 
-
------------------------------------------------------
--- 見た目
------------------------------------------------------
--- Color scheme
-set.termguicolors = true
-set.syntax = 'on'
 if not is_vscode then
   vim.cmd('colorscheme gruvbox-material')
 end
-set.background = 'dark'
-
--- 行番号の表示
-set.number = true
--- 検索語をハイライト
-set.hlsearch = true
--- ステータスラインを常に表示
-set.laststatus = 2
 
 -----------------------------------------------------
 -- 操作
