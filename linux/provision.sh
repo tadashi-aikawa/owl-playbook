@@ -7,12 +7,9 @@ COMMON_MNT="${MNT}/common"
 LINUX_MNT="${MNT}/linux"
 UBUNTU_MNT="${LINUX_MNT}/ubuntu"
 
-# $1: package name, $2: version $3?: url
-function asdf_install() {
-  asdf plugin add "$1" "${3:-""}"
-  asdf install "$1" "$2"
-  asdf global "$1" "$2"
-}
+# shellcheck disable=SC2034
+# museの-yフラグ省略
+MISE_YES=1
 
 # no cat && { catのインストール処理 }
 function no() {
@@ -20,6 +17,8 @@ function no() {
   ! command -v "$1" > /dev/null
 }
 
+# ~/.bashrcに引数と一致する文があることを保証します
+# 既に存在すれば何もせず、存在しなければ最後に追記します
 function ensure_bashrc() {
   local content="$1"
 
@@ -31,6 +30,8 @@ function ensure_bashrc() {
   fi
 }
 
+# ~/.zshrcに引数と一致する文があることを保証します
+# 既に存在すれば何もせず、存在しなければ最後に追記します
 function ensure_zshrc() {
   local content="$1"
 
@@ -42,10 +43,14 @@ function ensure_zshrc() {
   fi
 }
 
+#----------------------------------------------------------------------
 # WSL
+#----------------------------------------------------------------------
 sudo ln -snf "$LINUX_MNT"/wsl.conf /etc/wsl.conf
 
+#----------------------------------------------------------------------
 # 依存関係インストール
+#----------------------------------------------------------------------
 sudo apt-get update -y
 # ntp
 sudo apt-get install ntp
@@ -71,9 +76,17 @@ sudo apt-get install -y \
 # PlantUMLで使用
 sudo apt-get install -y graphviz
 
-# Zsh
+#----------------------------------------------------------------------
+# Shell
+#----------------------------------------------------------------------
+
+# zsh
 sudo apt-get install -y zsh zsh-autosuggestions
 ensure_zshrc "source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+#----------------------------------------------------------------------
+# config / rc files / dot files
+#----------------------------------------------------------------------
 
 # gitconfig
 ln -snf "$UBUNTU_MNT"/gitconfig ~/.gitconfig
@@ -84,24 +97,33 @@ ln -snf "$UBUNTU_MNT"/inputrc ~/.inputrc
 # .bashrc
 ln -snf "$UBUNTU_MNT"/base.sh ~/.base.sh
 ensure_bashrc "source ~/.base.sh"
+
 # .zshrc
 ln -snf "$UBUNTU_MNT"/zshrc/base.sh ~/.basez.sh
 ensure_zshrc "source ~/.base.sh"
 ensure_zshrc "source ~/.basez.sh"
 
-# asdfインストール
-no asdf && {
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1;
-  # shellcheck disable=SC1091
-  source "$UBUNTU_MNT"/bashrc/asdf.sh;
-}
-ln -snf "$UBUNTU_MNT"/bashrc/asdf.sh ~/.asdf.sh;
-ensure_bashrc "source ~/.asdf.sh";
-ln -snf "$UBUNTU_MNT"/zshrc/asdf.sh ~/.asdfz.sh;
-ensure_zshrc "source ~/.asdfz.sh";
+#----------------------------------------------------------------------
+# Runtime manager
+#----------------------------------------------------------------------
 
-# Starshipインストール
-no starship && asdf_install starship latest
+# mise
+no mise && {
+  curl https://mise.jdx.dev/install.sh | sh
+  # shellcheck disable=SC1091
+  source "$UBUNTU_MNT"/bashrc/mise.sh;
+}
+ln -snf "$UBUNTU_MNT"/bashrc/mise.sh ~/.mise.sh;
+ensure_bashrc "source ~/.mise.sh";
+ln -snf "$UBUNTU_MNT"/zshrc/mise.sh ~/.misez.sh;
+ensure_zshrc "source ~/.misez.sh";
+
+#----------------------------------------------------------------------
+# Prompt
+#----------------------------------------------------------------------
+
+# Starship
+mise use -g starship
 ln -snf "$UBUNTU_MNT"/bashrc/starship.sh ~/.starship.sh;
 ensure_bashrc "source ~/.starship.sh";
 ln -snf "$UBUNTU_MNT"/zshrc/starship.sh ~/.starshipz.sh;
@@ -109,58 +131,54 @@ ensure_zshrc "source ~/.starshipz.sh";
 mkdir -p ~/.config;
 ln -snf "$COMMON_MNT"/starship/starship.toml ~/.config/starship.toml
 
-# Brootインストール
-no broot && asdf_install broot latest https://github.com/cmur2/asdf-broot.git
+#----------------------------------------------------------------------
+# Editor
+#----------------------------------------------------------------------
+
+# Neovim
+mise use -g neovim
+ensure_bashrc 'alias vim=nvim'
+ensure_zshrc 'alias vim=nvim'
+mkdir -p ~/.config/nvim
+ln -snf "${COMMON_MNT}"/nvim/init.lua          ~/.config/nvim/init.lua
+ln -snf "${COMMON_MNT}"/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+mkdir -p ~/.config/nvim/lua
+ln -snf "${UBUNTU_MNT}"/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
+mkdir -p ~/.config/coc
+ln -snf "${COMMON_MNT}"/nvim/ultisnips ~/.config/coc/ultisnips
+
+#----------------------------------------------------------------------
+# TUI Tools
+#----------------------------------------------------------------------
+
+# Broot
+mise plugin install https://github.com/cmur2/asdf-broot.git
+mise use -g broot
 mkdir -p ~/.config/broot;
 ln -snf "$UBUNTU_MNT"/broot.toml ~/.config/broot/conf.toml;
 ln -snf "$UBUNTU_MNT"/broot.nvim.toml ~/.config/broot/conf.nvim.toml;
 
-# Neovim
-no nvim && asdf_install neovim 0.9.4
-ensure_bashrc 'alias vim=nvim'
-ensure_zshrc 'alias vim=nvim'
-mkdir -p ~/.config/nvim
-ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
-mkdir -p ~/.config/nvim/lua
-ln -snf "${UBUNTU_MNT}"/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
-ln -snf "${COMMON_MNT}"/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-ln -snf "${COMMON_MNT}"/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
-mkdir -p ~/.config/coc
-ln -snf "${COMMON_MNT}"/nvim/ultisnips ~/.config/coc/ultisnips
-
-
-# GitUI
-no gitui && asdf_install gitui latest
-mkdir -p ~/.config/gitui;
-ln -snf "${COMMON_MNT}"/gitui/key_bindings.ron ~/.config/gitui/key_bindings.ron;
-ln -snf "$UBUNTU_MNT"/bashrc/gitui.sh ~/.gitui.sh;
-ensure_bashrc "source ~/.gitui.sh"
-ensure_zshrc "source ~/.gitui.sh"
-
 # LazyGit
-no lazygit && asdf_install lazygit latest
+mise use -g lazygit
 ln -snf "${COMMON_MNT}"/lazygit/config.yml ~/.config/lazygit/config.yml
 
 # LazyDocker
-no lazydocker && asdf_install lazydocker latest https://github.com/comdotlinux/asdf-lazydocker.git
+mise plugin install https://github.com/comdotlinux/asdf-lazydocker.git
+mise use -g lazydocker
+
+#----------------------------------------------------------------------
+# Languages / Runtimes
+#----------------------------------------------------------------------
 
 # Node.js
-no node && {
-  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git;
-  asdf nodejs update-nodebuild;
-  lts=$(asdf nodejs resolve lts --latest-available);
-  asdf install nodejs "${lts}";
-  asdf global nodejs "${lts}";
-}
+mise use -g node@18
 
 # Bun
-no bun && asdf_install bun latest
-
-# Deno
-no deno && asdf_install deno latest https://github.com/asdf-community/asdf-deno.git
+mise use -g bun
 
 # Golang
-no go && asdf_install golang latest https://github.com/asdf-community/asdf-golang.git
+mise install go@1.20
+mise use -g go@1.21
 # shellcheck disable=SC2016
 ensure_bashrc 'export GOPATH=$HOME/go'
 # shellcheck disable=SC2016
@@ -171,51 +189,50 @@ ensure_zshrc 'export GOPATH=$HOME/go'
 ensure_zshrc 'export PATH=$PATH:$GOPATH/bin'
 
 # Python
-no python3.11 && asdf_install python 3.11.6
-no python3.12 && asdf_install python 3.12.0
-# Poetry
-no poetry && {
-  curl -sSL https://install.python-poetry.org | python3 -;
-  "${HOME}"/.local/bin/poetry config virtualenvs.in-project true
-}
-# shellcheck disable=SC2016
-ensure_bashrc 'export PATH=$PATH:${HOME}/.local/bin'
-# shellcheck disable=SC2016
-ensure_zshrc 'export PATH=$PATH:${HOME}/.local/bin'
+mise use -g python@3.12
 
-# Java
-no java && asdf_install java latest:corretto-21 https://github.com/halcyon/asdf-java.git
+# Poetry
+mise use -g poetry
+mise x -- poetry config virtualenvs.in-project true
+
+# Bash
+no bash-language-server && mise x -- npm i -g bash-language-server
+mise use -g shellcheck
+
+#----------------------------------------------------------------------
+# CLI Tools
+#----------------------------------------------------------------------
 
 # ripgrep
-no rg && asdf_install ripgrep latest
+mise use -g ripgrep
 
 # bat
-no bat && asdf_install bat latest
+mise use -g bat
 
 # jq
-no jq && asdf_install jq latest
+mise use -g jq
 
 # zoxide
-no zoxide && asdf_install zoxide latest https://github.com/nyrst/asdf-zoxide.git
+mise use -g zoxide
 ln -snf "$UBUNTU_MNT"/bashrc/zoxide.sh ~/.zoxide.sh;
 ensure_bashrc "source ~/.zoxide.sh";
 ln -snf "$UBUNTU_MNT"/zshrc/zoxide.sh ~/.zoxidez.sh;
 ensure_zshrc "source ~/.zoxidez.sh";
 
 # eza
-no eza && asdf_install eza latest
+mise use -g eza
 ln -snf "$UBUNTU_MNT"/bashrc/eza.sh ~/.eza.sh;
 ensure_bashrc "source ~/.eza.sh";
 ensure_zshrc "source ~/.eza.sh";
 
 # fzf
-no fzf && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+mise use -g fzf
 ln -snf "$UBUNTU_MNT"/bashrc/fzf.sh ~/.fzf.sh;
 ensure_bashrc "source ~/.fzf.sh";
 ensure_zshrc "source ~/.fzf.sh";
 
 # delta
-no delta && asdf_install delta latest https://github.com/andweeb/asdf-delta.git
+mise use -g delta
 
 # git-graph
 no git-graph && {
@@ -230,19 +247,23 @@ no gowl && {
 }
 
 # awscli
-no awscli && asdf_install awscli 2.13.33 # 2.13.34が動かないので
+mise use -g awscli
 
 # Task
-no task && asdf_install task latest
+mise use -g task
 
 # watchexec
+mise use -g watchexec
 no watchexec && asdf_install watchexec latest
 
-# _shellcheck
-no shellcheck && asdf_install shellcheck latest
+#----------------------------------------------------------------------
+# Before terminate
+#----------------------------------------------------------------------
 
-# After
+# Broot
 echo "Run broot"
+# fzf
+echo "Run ~/.local/share/mise/installs/fzf/latest/install"
+# Neovim
 echo "Run nvim"
-echo "Run . ~/.fzf/install"
-echo "Run npm i -g bash-language-server"
+

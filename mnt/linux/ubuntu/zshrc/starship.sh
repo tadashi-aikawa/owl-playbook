@@ -1,2 +1,2 @@
-eval "$(starship init zsh)"
+eval "$(mise x -- starship init zsh)"
 
