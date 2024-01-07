@@ -8,7 +8,7 @@ LINUX_MNT="${MNT}/linux"
 UBUNTU_MNT="${LINUX_MNT}/ubuntu"
 
 # shellcheck disable=SC2034
-# museの-yフラグ省略
+# miseの-yフラグ省略
 MISE_YES=1
 
 # no cat && { catのインストール処理 }
