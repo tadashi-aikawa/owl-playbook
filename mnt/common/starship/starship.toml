@@ -35,10 +35,10 @@ Ubuntu = '[  ](#F25022)'
 [shell]
 disabled = false
 # osはWSLで20msほどかかるため、shellでまとめて表示する(自分の使い方ではこのパターンしかないので)
-bash_indicator = '[ ](#F25022) '
-zsh_indicator = '[ ](#F25022)󰰶 '
-powershell_indicator = '[ ](#00BCF2) '
-cmd_indicator = '[ ](#00BCF2) '
+bash_indicator = '[ ](#F25022)  '
+zsh_indicator = '[ ](#F25022) 󰰶 '
+powershell_indicator = '[ ](#00BCF2)  '
+cmd_indicator = '[ ](#00BCF2)  '
 
 [directory]
 truncation_length = 0
