@@ -686,7 +686,7 @@ local neovim_plugins = {
         pattern = '*',
         callback = function()
           local filetype = vim.bo.filetype
-          if filetype == 'aerial' then
+          if filetype == 'aerial' or filetype == 'NvimTree' then
             vim.api.nvim_set_hl(0, 'MiniCursorword', { fg = 'NONE', bg = 'NONE' })
           else
             vim.api.nvim_set_hl(0, 'MiniCursorword', { fg = 'lightgray', bg = 'darkcyan' })
