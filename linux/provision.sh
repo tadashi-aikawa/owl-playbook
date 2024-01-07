@@ -153,9 +153,6 @@ no node && {
   asdf global nodejs "${lts}";
 }
 
-# Volta
-no volta && curl https://get.volta.sh | bash
-
 # Bun
 no bun && asdf_install bun latest
 
