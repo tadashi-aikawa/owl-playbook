@@ -69,7 +69,7 @@ tasks:
     cmds:
       - cmd: |
           cd ~/work &&
-          7z a minerva.7z minerva &&
+          7z a minerva.7z minerva minerva-daily-note-backup &&
           explorer .
         ignore_error: true # なぜか必ずエラーになる..
 
