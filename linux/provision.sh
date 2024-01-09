@@ -254,7 +254,6 @@ mise use -g task
 
 # watchexec
 mise use -g watchexec
-no watchexec && asdf_install watchexec latest
 
 #----------------------------------------------------------------------
 # Before terminate
