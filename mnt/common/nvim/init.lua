@@ -386,7 +386,8 @@ local neovim_plugins = {
       { '<C-j>m', ':Telescope vim_bookmarks all<CR>' },
       { '<C-j>i', ':Telescope coc implementations<CR>' },
       { '<C-j>h', ':Telescope coc references_used<CR>' },
-      { '<C-j>s', ':Telescope coc workspace_symbols<CR>' }
+      { '<C-j>s', ':Telescope coc workspace_symbols<CR>' },
+      { '<C-j>c', ":lua require'telescope.builtin'.git_status{}<CR>" },
     },
     config = function()
       local actions = require("telescope.actions")
