@@ -164,6 +164,7 @@ local neovim_plugins = {
   'nvim-tree/nvim-web-devicons', -- アイコンの表示
   'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
   'tpope/vim-repeat',            -- repeat
+  'kevinhwang91/nvim-bqf',       -- quickfix強化(previewなど)
 
   -- テーブルソート
   {
@@ -409,6 +410,7 @@ local neovim_plugins = {
           mappings = {
             i = {
               ["<esc>"] = actions.close,
+              ["<C-o>"] = actions.send_to_qflist + actions.open_qflist,
               -- Ctrl+Enterがマッピングされている
               ["<F12>"] = actions.select_vertical,
             },
