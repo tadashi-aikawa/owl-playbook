@@ -641,6 +641,17 @@ local neovim_plugins = {
     build = function() vim.fn["mkdp#util#install"]() end,
   },
 
+  -- Swagger UI preview
+  {
+    "vinnymeller/swagger-preview.nvim",
+    config = function()
+      require("swagger-preview").setup({
+        port = 8000,
+        host = "localhost",
+      })
+    end
+  },
+
   -- mini.nvim
   {
     'echasnovski/mini.nvim',
