@@ -602,21 +602,21 @@ local neovim_plugins = {
     },
     config = function()
       extensions = {
-        "coc-json",
-        "coc-tsserver",
-        "coc-deno",
+        "@yaegassy/coc-marksman",
+        "@yaegassy/coc-volar",
         "coc-css",
-        "coc-html",
-        "coc-yaml",
-        "coc-rust-analyzer",
+        "coc-deno",
+        "coc-elixir",
         "coc-go",
+        "coc-html",
+        "coc-java",
+        "coc-json",
         "coc-prettier",
         "coc-pyright",
-        "coc-elixir",
-        "coc-java",
-        "@yaegassy/coc-volar",
-        "@yaegassy/coc-marksman",
+        "coc-rust-analyzer",
         "coc-snippets",
+        "coc-tsserver",
+        "coc-yaml",
       }
       if not is_windows then
         -- Windowsは未対応らしいので...
