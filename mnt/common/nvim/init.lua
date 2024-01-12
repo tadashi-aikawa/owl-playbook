@@ -267,6 +267,7 @@ local neovim_plugins = {
           "gitignore",
           "go",
           "html",
+          "http",
           "javascript",
           "json",
           "lua",
