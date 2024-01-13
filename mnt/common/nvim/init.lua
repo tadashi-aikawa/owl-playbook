@@ -499,7 +499,6 @@ local neovim_plugins = {
           end
           api.config.mappings.default_on_attach(bufnr)
           -- ここからカスタマイズhotkeys
-          key('n', '?', api.tree.toggle_help, opts('Help'))
           key('n', '<Space>-', api.node.open.horizontal, opts('Open horizontal'))
           key('n', '<Space>i', api.node.open.vertical, opts('Open vertical'))
         end
