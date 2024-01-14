@@ -255,6 +255,9 @@ mise use -g task
 # watchexec
 mise use -g watchexec
 
+# toki
+ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki;
+
 #----------------------------------------------------------------------
 # Before terminate
 #----------------------------------------------------------------------
