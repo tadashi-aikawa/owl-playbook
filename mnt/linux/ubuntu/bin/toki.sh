@@ -14,7 +14,7 @@ Usages:
 command="${1:-}"
 
 if [[ $command =~ ^(-h|--help|help|)$ ]]; then
-  echo "『何ぃ！？間合いに！』"
+  echo "『いったはずだ あなたのすべてをめざしたと!!』"
   show_usage
   exit 0
 fi
