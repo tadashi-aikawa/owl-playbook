@@ -1,5 +1,6 @@
 {
-  "coc.preferences.formatOnSave": true,
+  "outline.sortBy": "position",
+  "outline.expandLevel": 5,
   "tsserver.useLocalTsdk": true,
   "python.formatting.provider": "ruff",
   "python.linting.ruffEnabled": true,
@@ -10,6 +11,7 @@
   "diagnostic.warningSign": "",
   "diagnostic.errorSign": "",
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.bat",
+  "coc.preferences.formatOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "python",
     "rust",
