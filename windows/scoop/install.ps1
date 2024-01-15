@@ -46,6 +46,7 @@ scoop install `
 
 # GUI Tools
 scoop install `
+  bruno `
   dbeaver `
   ditto `
   draw.io `
