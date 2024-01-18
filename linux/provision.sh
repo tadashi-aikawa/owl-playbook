@@ -176,6 +176,9 @@ mise use -g node@18
 # Bun
 mise use -g bun
 
+# Deno
+mise use -g deno
+
 # Golang
 mise install go@1.20
 mise use -g go@1.21
