@@ -54,9 +54,8 @@ vim.opt.rtp:prepend(lazypath)
 local common_plugins = {
   -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
 
-  'tpope/vim-commentary',                        -- コメントアウト
-  'kana/vim-textobj-user',                       -- text-objectのユーザーカスタマイズ
-  'nvim-treesitter/nvim-treesitter-textobjects', -- 構文に対するtext-object
+  'tpope/vim-commentary',  -- コメントアウト
+  'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
 
   -- カラーコードの表示
   {
@@ -306,18 +305,7 @@ local neovim_plugins = {
         autotag = {
           enable = true,
         },
-        textobjects = {
-          select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["ac"] = "@class.outer",
-              ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-            }
-          }
-        }
+        -- texobjectsはパフォーマンスの問題から利用しない
       }
     end
   },
