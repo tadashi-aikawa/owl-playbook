@@ -428,13 +428,6 @@ local neovim_plugins = {
         }
       }
 
-      if is_windows then
-        local home = os.getenv("USERPROFILE")
-        vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
-      else
-        vim.g.sqlite_clib_path = "/usr/lib/x86_64-linux-gnu/libsqlite3.so"
-      end
-
       require("telescope").load_extension("frecency")
       require('telescope').load_extension('coc')
       require('telescope').load_extension('vim_bookmarks')
