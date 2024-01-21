@@ -921,20 +921,6 @@ end
 -----------------------------------------------------
 local restart_cmd = nil
 
-if vim.g.neovide then
-  if vim.fn.has "wsl" == 1 then
-    restart_cmd = "silent! !nohup neovide.exe --wsl &"
-  else
-    restart_cmd = "silent! !neovide.exe"
-  end
-elseif vim.g.fvim_loaded then
-  if vim.fn.has "wsl" == 1 then
-    restart_cmd = "silent! !nohup fvim.exe &"
-  else
-    restart_cmd = [=[silent! !powershell -Command "Start-Process -FilePath fvim.exe"]=]
-  end
-end
-
 vim.api.nvim_create_user_command("Restart", function()
   if vim.fn.has "gui_running" then
     if restart_cmd == nil then
@@ -958,15 +944,10 @@ end, {})
 -- 見た目
 -----------------------------------------------------
 -- Color scheme
-set.syntax = 'on'
 set.background = 'dark'
 
 -- 行番号の表示
 set.number = true
--- 検索語をハイライト
-set.hlsearch = true
--- ステータスラインを常に表示
-set.laststatus = 2
 
 -- Highlight
 vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
@@ -976,6 +957,7 @@ vim.api.nvim_set_hl(0, 'Visual', { bg = "#661111" })
 -- autocmd
 -----------------------------------------------------
 
+-- Restartコマンドで現状を維持したまま再起動するのに必要 (他にも設定箇所あり)
 vim.api.nvim_create_autocmd("VimEnter", {
   nested = true,
   callback = function()
@@ -988,11 +970,13 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
+-- Git statusに変更があったときにNvimtreeの表示を変更させるために必要
 vim.api.nvim_create_autocmd("User", {
   pattern = "NeogitStatusRefreshed",
   command = ":NvimTreeRefresh<CR>"
 })
 
+-- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function()
@@ -1004,8 +988,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Clipboard
 -----------------------------------------------------
 
-if is_windows then
-  -- do nothing
-else
+if not is_windows then
   require('clipboard')
 end
