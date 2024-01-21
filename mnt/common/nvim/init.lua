@@ -732,26 +732,6 @@ local neovim_plugins = {
     end
   },
 
-  -- locationlistへのより高機能なアクセス
-  {
-    "cbochs/portal.nvim",
-    dependencies = {
-      "cbochs/grapple.nvim",
-      "ThePrimeagen/harpoon"
-    },
-    keys = {
-      { '<Space>o', '<cmd>Portal jumplist backward<cr>' },
-      { '<Space>i', '<cmd>Portal jumplist forward<cr>' },
-    },
-    config = function()
-      require("portal").setup({
-        window_options = {
-          height = 5,
-        },
-      })
-    end
-  },
-
   -- 現在行にカーソルを表示し、一定以上移動したらアニメーションで追従する
   {
     'gen740/SmoothCursor.nvim',
