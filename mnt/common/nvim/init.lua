@@ -403,7 +403,7 @@ local neovim_plugins = {
           mappings = {
             i = {
               ["<esc>"] = actions.close,
-              ["<C-o>"] = actions.send_to_qflist + actions.open_qflist,
+              ["<C-o>"] = actions.smart_add_to_qflist + actions.open_qflist,
               -- Ctrl+Enterがマッピングされている
               ["<F12>"] = actions.select_vertical,
             },
