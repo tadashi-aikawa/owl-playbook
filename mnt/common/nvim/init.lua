@@ -554,39 +554,62 @@ local neovim_plugins = {
     event = { 'BufNewFile', 'BufRead' },
     keys = {
       -- 定義に移動
-      { '<C-]>',   '<Plug>(coc-definition)' },
-      -- 呼び出し元に移動 (telescope側で設定しているので不要)
-      -- { '<C-j>h', '<Plug>(coc-references)' },
-      -- 実装に移動 (telescope側で設定しているので不要)
-      -- { '<C-j>i', '<Plug>(coc-implementation)' },
+      { '<C-]>', '<Plug>(coc-definition)' },
       -- import最適化
-      { '<M-o>',   ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>' },
+      { '<M-o>', ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>' },
       -- 配下の定義を表示
-      { '<M-s>',   ':call CocActionAsync(\'doHover\')<CR>' },
-      { '<C-P>',   '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>',                         mode = "i" },
+      { '<M-s>', ':call CocActionAsync(\'doHover\')<CR>' },
+      {
+        '<C-P>',
+        '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>',
+        mode = "i"
+      },
       -- 前後のエラーや警告に移動
-      { '<M-k>',   '<Plug>(coc-diagnostic-prev)' },
-      { '<M-j>',   '<Plug>(coc-diagnostic-next)' },
+      { '<M-k>', '<Plug>(coc-diagnostic-prev)' },
+      { '<M-j>', '<Plug>(coc-diagnostic-next)' },
       -- Enterキーで決定
-      { "<cr>",    [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], mode = "i", expr = true, replace_keycodes = false },
+      {
+        "<cr>",
+        [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
+        mode = "i",
+        expr = true,
+        replace_keycodes = false
+      },
       -- 上下で候補選択
-      { "<down>",  [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]],                                   mode = "i", expr = true, replace_keycodes = false },
-      { "<up>",    [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]],                                      mode = "i", expr = true, replace_keycodes = false },
+      {
+        "<down>",
+        [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]],
+        mode = "i",
+        expr = true,
+        replace_keycodes = false
+      },
+      {
+        "<up>",
+        [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]],
+        mode = "i",
+        expr = true,
+        replace_keycodes = false
+      },
       -- TABでsnippets展開とplaceholder移動
-      { "<tab>",   '<Plug>(coc-snippets-expand-jump)',                                                   mode = "i" },
+      {
+        "<tab>",
+        '<Plug>(coc-snippets-expand-jump)',
+        mode = "i"
+      },
       -- code action
       { '<M-CR>',  '<Plug>(coc-codeaction-cursor)' },
-      -- Find symbol of current document  (telescope側で設定しているので不要)
-      -- { '<C-j>o', ':<C-u>CocList outline<cr>' },
-      -- Search workspace symbols (telescope側で設定しているので不要)
-      -- { '<C-j>s', ':<C-u>CocList -I symbols<cr>' },
       -- Rename
       { '<S-M-r>', '<Plug>(coc-rename)' },
       -- Auto complete
-      { "<F5>",    [[coc#refresh()]],                                                                    mode = "i", expr = true },
+      {
+        "<F5>",
+        [[coc#refresh()]],
+        mode = "i",
+        expr = true
+      },
     },
     config = function()
-      extensions = {
+      local extensions = {
         "@yaegassy/coc-marksman",
         "@yaegassy/coc-volar",
         "coc-biome",
