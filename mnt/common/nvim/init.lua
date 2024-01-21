@@ -953,6 +953,9 @@ set.number = true
 vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
 vim.api.nvim_set_hl(0, 'Visual', { bg = "#661111" })
 
+-- ステータスバーは分割しない
+set.laststatus = 3
+
 -----------------------------------------------------
 -- autocmd
 -----------------------------------------------------
