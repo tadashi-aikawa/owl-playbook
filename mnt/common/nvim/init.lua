@@ -54,6 +54,8 @@ vim.opt.rtp:prepend(lazypath)
 local common_plugins = {
   'tpope/vim-commentary',  -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
+  -- HTMLの閉じタグ補完
+  'windwp/nvim-ts-autotag',
 
   -- 全体が範囲のtext-object
   {
@@ -251,8 +253,6 @@ local neovim_plugins = {
       })
     end
   },
-
-  'windwp/nvim-ts-autotag',
 
   -- シンタックスハイライト
   {
