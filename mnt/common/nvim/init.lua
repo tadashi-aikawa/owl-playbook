@@ -71,24 +71,6 @@ local common_plugins = {
 
   -- 画面内瞬間移動
   {
-    'phaazon/hop.nvim',
-    branch = 'v2',
-    keys = {
-      -- { 's', ':HopChar2<CR>' },
-      {
-        '<C-l>', function()
-        vim.cmd("HopChar1")
-        if not is_vscode then
-          vim.cmd("call CocAction('jumpDefinition')")
-        end
-      end
-      }
-    },
-    config = function()
-      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  },
-  {
     'ggandor/leap.nvim',
     config = function()
       key('n', 's', function()
