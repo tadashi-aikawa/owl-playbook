@@ -52,10 +52,14 @@ vim.opt.rtp:prepend(lazypath)
 
 -- VSCode/Neovimのどちらでも使うプラグイン
 local common_plugins = {
-  -- 'kana/vim-textobj-entire', -- 全体が範囲のtext-object / エラーになる
-
   'tpope/vim-commentary',  -- コメントアウト
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
+
+  -- 全体が範囲のtext-object
+  {
+    'kana/vim-textobj-entire',
+    event = { 'BufNewFile', 'BufRead' },
+  },
 
   -- カラーコードの表示
   {
