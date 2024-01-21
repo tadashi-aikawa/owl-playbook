@@ -40,24 +40,7 @@ if [[ $command == "bun" ]]; then
   }
 EOF
 
-  # biome initの結果に変化があったら変更する
-  cat > biome.json << 'EOF'
-  {
-    "$schema": "https://biomejs.dev/schemas/1.5.1/schema.json",
-    "organizeImports": {
-      "enabled": true
-    },
-    "linter": {
-      "enabled": true,
-      "rules": {
-        "recommended": true
-      }
-    },
-    "formatter": {
-      "enabled": true,
-      "indentStyle": "space"
-    }
-  }
+  bun biome init
 EOF
 
 
