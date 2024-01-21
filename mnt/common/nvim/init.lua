@@ -783,6 +783,19 @@ local neovim_plugins = {
     end
   },
 
+  -- 通知とコマンドラインを強化
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+
   -- TODO系のコマンドを目立たせる --
   {
     "folke/todo-comments.nvim",
