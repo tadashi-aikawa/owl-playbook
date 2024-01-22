@@ -757,31 +757,6 @@ local neovim_plugins = {
     end
   },
 
-  -- 補完をかっこよく
-  {
-    'gelguy/wilder.nvim',
-    config = function()
-      local status_ok, wilder = pcall(require, "wilder")
-      if not status_ok then
-        print("wilder plugin not found")
-        return
-      end
-
-      wilder.set_option('renderer', wilder.popupmenu_renderer(
-        wilder.popupmenu_border_theme({
-          highlights = { border = 'Grey' },
-          border = 'single',
-          left = { ' ', wilder.popupmenu_devicons() },
-          right = { ' ', wilder.popupmenu_scrollbar() },
-        })
-      ))
-
-      wilder.setup({
-        modes = { ':', '/', '?' },
-        enable_cmdline_enter = 0,
-      })
-    end
-  },
 
   -- 通知とコマンドラインを強化
   {
