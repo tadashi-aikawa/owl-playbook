@@ -768,7 +768,22 @@ local neovim_plugins = {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-    }
+    },
+    config = function()
+      require('noice').setup({
+        presets = {
+          command_palette = true,
+        },
+        messages = {
+          enabled = true,
+          view = "mini",
+          view_error = "notify",
+          view_warn = "notify",
+          view_history = "messages",
+          view_search = false,
+        },
+      })
+    end
   },
 
   -- TODO系のコマンドを目立たせる --
