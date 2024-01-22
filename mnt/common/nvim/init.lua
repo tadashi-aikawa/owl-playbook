@@ -788,7 +788,6 @@ local neovim_plugins = {
               any = {
                 { event = "msg_show", kind = "emsg", find = "E486:" },
                 { event = "msg_show", kind = "emsg", find = "E492:" },
-                { event = "msg_show", kind = "wmsg" },
               }
             },
             view = "mini"
