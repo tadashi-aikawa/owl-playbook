@@ -558,7 +558,7 @@ local neovim_plugins = {
     event = { 'BufNewFile', 'BufRead' },
     keys = {
       -- 定義に移動
-      { '<C-]>', '<Plug>(coc-definition)',                                                slient = true },
+      { '<C-]>', '<Plug>(coc-definition)',                                                silent = true },
       -- import最適化
       { '<M-o>', ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>', silent = true },
       -- 配下の定義を表示
@@ -570,8 +570,8 @@ local neovim_plugins = {
         silent = true
       },
       -- 前後のエラーや警告に移動
-      { '<M-k>', '<Plug>(coc-diagnostic-prev)', slient = true },
-      { '<M-j>', '<Plug>(coc-diagnostic-next)', slient = true },
+      { '<M-k>', '<Plug>(coc-diagnostic-prev)', silent = true },
+      { '<M-j>', '<Plug>(coc-diagnostic-next)', silent = true },
       -- Enterキーで決定
       {
         "<cr>",
