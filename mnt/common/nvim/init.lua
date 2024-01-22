@@ -901,6 +901,9 @@ else
 end
 -- 行オートコンプリート
 key('i', '<C-l>', '<C-x><C-l>')
+-- cnext / cprevious
+key('n', '<Space>n', ':cnext<CR>')
+key('n', '<Space>p', ':cprevious<CR>')
 -- バッファ切り替え
 if is_vscode then
   key('n', '<Space>c', ":call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
