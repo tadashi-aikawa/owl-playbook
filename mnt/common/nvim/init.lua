@@ -386,18 +386,18 @@ local neovim_plugins = {
       'tom-anders/telescope-vim-bookmarks.nvim'
     },
     keys = {
-      { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>' },
-      { '<C-j>z', ':Telescope frecency<CR>' },
-      { '<C-j>e', ':Telescope oldfiles<CR>' },
-      { '<C-j>g', ':Telescope live_grep<CR>' },
-      { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>' },
-      { '<C-j>p', ':Telescope commands<CR>' },
-      { '<C-j>:', ':Telescope command_history<CR>' },
-      { '<C-j>m', ':Telescope vim_bookmarks all<CR>' },
-      { '<C-j>i', ':Telescope coc implementations<CR>' },
-      { '<C-j>h', ':Telescope coc references_used<CR>' },
-      { '<C-j>s', ':Telescope coc workspace_symbols<CR>' },
-      { '<C-j>c', ":lua require'telescope.builtin'.git_status{}<CR>" },
+      { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', silent = true },
+      { '<C-j>z', ':Telescope frecency<CR>',                                                   silent = true },
+      { '<C-j>e', ':Telescope oldfiles<CR>',                                                   silent = true },
+      { '<C-j>g', ':Telescope live_grep<CR>',                                                  silent = true },
+      { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>',                                  silent = true },
+      { '<C-j>p', ':Telescope commands<CR>',                                                   silent = true },
+      { '<C-j>:', ':Telescope command_history<CR>',                                            silent = true },
+      { '<C-j>m', ':Telescope vim_bookmarks all<CR>',                                          silent = true },
+      { '<C-j>i', ':Telescope coc implementations<CR>',                                        silent = true },
+      { '<C-j>h', ':Telescope coc references_used<CR>',                                        silent = true },
+      { '<C-j>s', ':Telescope coc workspace_symbols<CR>',                                      silent = true },
+      { '<C-j>c', ":lua require'telescope.builtin'.git_status{}<CR>",                          silent = true },
     },
     config = function()
       local actions = require("telescope.actions")
@@ -445,8 +445,8 @@ local neovim_plugins = {
       'nvim-tree/nvim-web-devicons'
     },
     keys = {
-      { '<M-w>',  ':NvimTreeToggle<CR>' },
-      { '<C-j>w', ':NvimTreeFindFile<CR>' }
+      { '<M-w>',  ':NvimTreeToggle<CR>',   silent = true },
+      { '<C-j>w', ':NvimTreeFindFile<CR>', silent = true }
     },
     config = function()
       require("nvim-tree").setup {
@@ -499,8 +499,8 @@ local neovim_plugins = {
   {
     "is0n/fm-nvim",
     keys = {
-      { '<Space>g', ':Lazygit<CR>' },
-      { '<C-j>r',   ':Broot<CR>' },
+      { '<Space>g', ':Lazygit<CR>', silent = true },
+      { '<C-j>r',   ':Broot<CR>',   silent = true },
     },
     config = function()
       require('fm-nvim').setup {
@@ -521,12 +521,12 @@ local neovim_plugins = {
     'lewis6991/gitsigns.nvim',
     event = { 'BufNewFile', 'BufRead' },
     keys = {
-      { '<Space>d', ':Gitsigns preview_hunk<CR>' },
-      { '<C-j>D',   ':Gitsigns diffthis<CR>' },
-      { '<Space>u', ':Gitsigns reset_hunk<CR>' },
-      { '<Space>s', ':Gitsigns stage_hunk<CR>' },
-      { '<Space>j', ':Gitsigns next_hunk<CR>' },
-      { '<Space>k', ':Gitsigns prev_hunk<CR>' },
+      { '<Space>d', ':Gitsigns preview_hunk<CR>', silent = true },
+      { '<C-j>D',   ':Gitsigns diffthis<CR>',     silent = true },
+      { '<Space>u', ':Gitsigns reset_hunk<CR>',   silent = true },
+      { '<Space>s', ':Gitsigns stage_hunk<CR>',   silent = true },
+      { '<Space>j', ':Gitsigns next_hunk<CR>',    silent = true },
+      { '<Space>k', ':Gitsigns prev_hunk<CR>',    silent = true },
     },
     config = function()
       vim.defer_fn(function()
@@ -558,25 +558,27 @@ local neovim_plugins = {
     event = { 'BufNewFile', 'BufRead' },
     keys = {
       -- 定義に移動
-      { '<C-]>', '<Plug>(coc-definition)' },
+      { '<C-]>', '<Plug>(coc-definition)',                                                slient = true },
       -- import最適化
-      { '<M-o>', ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>' },
+      { '<M-o>', ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>', silent = true },
       -- 配下の定義を表示
-      { '<M-s>', ':call CocActionAsync(\'doHover\')<CR>' },
+      { '<M-s>', ':call CocActionAsync(\'doHover\')<CR>',                                 silent = true },
       {
         '<C-P>',
         '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>',
-        mode = "i"
+        mode = "i",
+        silent = true
       },
       -- 前後のエラーや警告に移動
-      { '<M-k>', '<Plug>(coc-diagnostic-prev)' },
-      { '<M-j>', '<Plug>(coc-diagnostic-next)' },
+      { '<M-k>', '<Plug>(coc-diagnostic-prev)', slient = true },
+      { '<M-j>', '<Plug>(coc-diagnostic-next)', slient = true },
       -- Enterキーで決定
       {
         "<cr>",
         [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
         mode = "i",
         expr = true,
+        silent = true,
         replace_keycodes = false
       },
       -- 上下で候補選択
@@ -585,6 +587,7 @@ local neovim_plugins = {
         [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]],
         mode = "i",
         expr = true,
+        silent = true,
         replace_keycodes = false
       },
       {
@@ -592,23 +595,26 @@ local neovim_plugins = {
         [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]],
         mode = "i",
         expr = true,
+        silent = true,
         replace_keycodes = false
       },
       -- TABでsnippets展開とplaceholder移動
       {
         "<tab>",
         '<Plug>(coc-snippets-expand-jump)',
-        mode = "i"
+        mode = "i",
+        silent = true,
       },
       -- code action
-      { '<M-CR>',  '<Plug>(coc-codeaction-cursor)' },
+      { '<M-CR>',  '<Plug>(coc-codeaction-cursor)', silent = true },
       -- Rename
-      { '<S-M-r>', '<Plug>(coc-rename)' },
+      { '<S-M-r>', '<Plug>(coc-rename)',            silent = true },
       -- Auto complete
       {
         "<F5>",
         [[coc#refresh()]],
         mode = "i",
+        silent = true,
         expr = true
       },
     },
@@ -649,7 +655,7 @@ local neovim_plugins = {
     "iamcco/markdown-preview.nvim",
     lazy = false,
     keys = {
-      { '<M-p>', ':MarkdownPreviewToggle<CR>' }
+      { '<M-p>', ':MarkdownPreviewToggle<CR>', silent = true }
     },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
@@ -803,7 +809,7 @@ local neovim_plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
     event = { 'BufNewFile', 'BufRead' },
     keys = {
-      { '<C-j>x', ':TodoTelescope<cr>' },
+      { '<C-j>x', ':TodoTelescope<cr>', silent = true },
     },
     opts = {
       sign_priority = 1
@@ -819,7 +825,7 @@ local neovim_plugins = {
       "nvim-tree/nvim-web-devicons"
     },
     keys = {
-      { '<C-j>o', ':AerialOpen<CR>' },
+      { '<C-j>o', ':AerialOpen<CR>', silent = true },
     },
     config = function()
       require("aerial").setup({
@@ -898,8 +904,8 @@ if is_windows then
   vim.opt.shellxquote = ''
 end
 
-key('n', '<C-j>t', ':split | wincmd j | resize 15 | terminal<CR>i', { noremap = true })
-key('t', '<ESC>', '<C-\\><C-n>', { noremap = true }) -- ESCでノーマルモード
+key('n', '<C-j>t', ':split | wincmd j | resize 15 | terminal<CR>i', { noremap = true, silent = true })
+key('t', '<ESC>', '<C-\\><C-n>', { noremap = true, silent = true }) -- ESCでノーマルモード
 
 -----------------------------------------------------
 -- キーバインド
@@ -913,27 +919,28 @@ end
 -- 行オートコンプリート
 key('i', '<C-l>', '<C-x><C-l>')
 -- cnext / cprevious
-key('n', '<Space>n', ':cnext<CR>')
-key('n', '<Space>p', ':cprevious<CR>')
+key('n', '<Space>n', ':cnext<CR>', { silent = true })
+key('n', '<Space>p', ':cprevious<CR>', { silent = true })
 -- バッファ切り替え
 if is_vscode then
-  key('n', '<Space>c', ":call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
-  key('n', '<Space>j', ":call VSCodeNotify('workbench.action.editor.nextChange')<CR>")
-  key('n', '<Space>k', ":call VSCodeNotify('workbench.action.editor.previousChange')<CR>")
-  key('n', '<Space>d', ":call VSCodeNotify('editor.action.dirtydiff.next')<CR>")
-  key('n', '<Space>q', ":call VSCodeNotify('workbench.action.closeActiveEditor')<CR>")
-  key('n', '<Space>t', ":call VSCodeNotify('workbench.action.reopenClosedEditor')<CR>")
-  key('n', '<Space>h', ":call VSCodeNotify('workbench.action.previousEditor')<CR>")
-  key('n', '<Space>l', ":call VSCodeNotify('workbench.action.nextEditor')<CR>")
-  key('n', '<Space>r', ":call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')<CR>")
+  key('n', '<Space>c', ":call VSCodeNotify('workbench.action.closeOtherEditors')<CR>", { silent = true })
+  key('n', '<Space>j', ":call VSCodeNotify('workbench.action.editor.nextChange')<CR>", { silent = true })
+  key('n', '<Space>k', ":call VSCodeNotify('workbench.action.editor.previousChange')<CR>", { silent = true })
+  key('n', '<Space>d', ":call VSCodeNotify('editor.action.dirtydiff.next')<CR>", { silent = true })
+  key('n', '<Space>q', ":call VSCodeNotify('workbench.action.closeActiveEditor')<CR>", { silent = true })
+  key('n', '<Space>t', ":call VSCodeNotify('workbench.action.reopenClosedEditor')<CR>", { silent = true })
+  key('n', '<Space>h', ":call VSCodeNotify('workbench.action.previousEditor')<CR>", { silent = true })
+  key('n', '<Space>l', ":call VSCodeNotify('workbench.action.nextEditor')<CR>", { silent = true })
+  key('n', '<Space>r', ":call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')<CR>",
+    { silent = true })
 else
-  key('n', '<Space>r', ':b#<CR>')
-  key('n', '<Space>e', ':BufferPick<CR>')
-  key('n', '<Space>l', ':BufferNext<CR>')
-  key('n', '<Space>h', ':BufferPrevious<CR>')
-  key('n', '<Space>q', ":Bdelete<CR>")
-  key('n', '<Space>t', ":BufferRestore<CR>")
-  key('n', '<Space>c', ":BufferCloseAllButVisible<CR>")
+  key('n', '<Space>r', ':b#<CR>', { silent = true })
+  key('n', '<Space>e', ':BufferPick<CR>', { silent = true })
+  key('n', '<Space>l', ':BufferNext<CR>', { silent = true })
+  key('n', '<Space>h', ':BufferPrevious<CR>', { silent = true })
+  key('n', '<Space>q', ":Bdelete<CR>", { silent = true })
+  key('n', '<Space>t', ":BufferRestore<CR>", { silent = true })
+  key('n', '<Space>c', ":BufferCloseAllButVisible<CR>", { silent = true })
 end
 
 -----------------------------------------------------
