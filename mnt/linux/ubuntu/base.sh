@@ -29,3 +29,4 @@ alias show='bat --pager never'
 alias cdg='cd $(gowl list | fzf)'
 
 alias lg='lazygit'
+alias ld='lazydocker'
