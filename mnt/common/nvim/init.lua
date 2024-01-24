@@ -1028,6 +1028,7 @@ set.number = true
 -- Highlight
 vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
 vim.api.nvim_set_hl(0, 'Visual', { bg = "#661111" })
+vim.api.nvim_set_hl(0, "MatchParen", { fg = "#121212", bg = "#EE9999" })
 
 -- ステータスバーは分割しない
 set.laststatus = 3
