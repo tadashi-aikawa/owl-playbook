@@ -212,6 +212,9 @@ mise use -g ripgrep
 # bat
 mise use -g bat
 
+# dust
+mise use -g dust
+
 # jq
 mise use -g jq
 
