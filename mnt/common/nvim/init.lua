@@ -822,8 +822,26 @@ local neovim_plugins = {
           {
             filter = {
               any = {
-                { event = "msg_show", kind = "emsg", find = "E486:" },
-                { event = "msg_show", kind = "emsg", find = "E492:" },
+                { event = "msg_show", error = true, find = "E486:" },
+                { event = "msg_show", error = true, find = "lines yanked" },
+                { event = "msg_show", error = true, find = "more lines" },
+                { event = "msg_show", error = true, find = "fewer lines" },
+                { event = "msg_show", error = true, find = "lines >ed 1 time" },
+              }
+            },
+            opts = { skip = true }
+          },
+          {
+            filter = {
+              any = {
+                { event = "msg_show", error = true,   find = "E20:" },
+                { event = "msg_show", error = true,   find = "E492:" },
+                { event = "msg_show", warning = true, find = "search hit BOTTOM, continuing at TOP" },
+                { event = "msg_show", warning = true, find = "search hit TOP, continuing at BOTTOM" },
+                { event = "notify",   kind = "info",  find = "was properly created" },
+                { event = "notify",   kind = "info",  find = "was properly removed" },
+                { event = "notify",   kind = "info",  find = "added to clipboard" },
+                { event = "notify",   kind = "info",  find = " -> " },
               }
             },
             view = "mini"
