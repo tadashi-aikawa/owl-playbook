@@ -658,6 +658,7 @@ local neovim_plugins = {
         "coc-elixir",
         "coc-go",
         "coc-html",
+        "coc-highlight",
         "coc-java",
         "coc-json",
         "coc-prettier",
@@ -676,6 +677,16 @@ local neovim_plugins = {
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = { "*.go" },
         command = "call CocAction('runCommand', 'editor.action.organizeImport')"
+      })
+
+      -- coc-highlight
+      vim.api.nvim_set_hl(0, "CocHighlightText", { fg = 'lightgray', bg = 'darkcyan' })
+      vim.api.nvim_set_hl(0, "CocHighlightRead", { fg = 'lightgray', bg = 'darkgreen' })
+      vim.api.nvim_set_hl(0, "CocHighlightWrite", { fg = 'lightgray', bg = 'darkred' })
+
+      vim.api.nvim_create_autocmd("CursorHold", {
+        pattern = "*",
+        command = "call CocActionAsync('highlight')"
       })
     end
   },
@@ -756,19 +767,6 @@ local neovim_plugins = {
       })
 
       require('mini.indentscope').setup()
-
-      require('mini.cursorword').setup()
-      vim.api.nvim_create_autocmd('BufEnter', {
-        pattern = '*',
-        callback = function()
-          local filetype = vim.bo.filetype
-          if filetype == 'aerial' or filetype == 'NvimTree' then
-            vim.api.nvim_set_hl(0, 'MiniCursorword', { fg = 'NONE', bg = 'NONE' })
-          else
-            vim.api.nvim_set_hl(0, 'MiniCursorword', { fg = 'lightgray', bg = 'darkcyan' })
-          end
-        end
-      })
     end
   },
 
@@ -1037,6 +1035,9 @@ vim.api.nvim_set_hl(0, "MatchParen", { fg = "#121212", bg = "#EE9999" })
 
 -- ステータスバーは分割しない
 set.laststatus = 3
+
+-- coc-highlightの表示を早めるために4000msから短くする
+set.updatetime = 200
 
 -----------------------------------------------------
 -- autocmd
