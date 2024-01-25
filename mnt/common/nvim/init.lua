@@ -835,6 +835,7 @@ local neovim_plugins = {
             filter = {
               any = {
                 { event = "msg_show", error = true,   find = "E20:" },
+                { event = "msg_show", error = true,   find = "E42:" },
                 { event = "msg_show", error = true,   find = "E492:" },
                 { event = "msg_show", warning = true, find = "search hit BOTTOM, continuing at TOP" },
                 { event = "msg_show", warning = true, find = "search hit TOP, continuing at BOTTOM" },
