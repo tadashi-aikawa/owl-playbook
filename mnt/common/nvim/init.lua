@@ -827,6 +827,10 @@ local neovim_plugins = {
                 { event = "msg_show", error = true, find = "more lines" },
                 { event = "msg_show", error = true, find = "fewer lines" },
                 { event = "msg_show", error = true, find = "lines >ed 1 time" },
+                { event = "msg_show", error = true, find = "change; before" },
+                { event = "msg_show", error = true, find = "change; after" },
+                { event = "msg_show", error = true, find = "changes; before" },
+                { event = "msg_show", error = true, find = "changes; after" },
               }
             },
             opts = { skip = true }
