@@ -65,6 +65,16 @@ tasks:
       INPUT:
         sh: ls -t ~/Pictures/Screenshots/*.png | head -1 | tr -d "'"
 
+  webpm:
+    desc: 直近に撮影したMP4ファイルをwebpに変換する
+    cmds:
+      - ffmpeg -i {{shellQuote .INPUT}} -loop 0 ~/tmp/{{now | date "2006-01-02-15-04-05"}}.webp
+      - cmd: cd ~/tmp && explorer .
+        ignore_error: true # なぜか必ずエラーになる..
+    vars:
+      INPUT:
+        sh: ls -t ~/Pictures/Screenpresso/*.mp4 | head -1 | tr -d "'"
+
   hello:
     desc: 1日の開始に行う定型タスク
     cmds:
