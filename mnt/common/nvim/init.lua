@@ -666,6 +666,7 @@ local neovim_plugins = {
       local extensions = {
         "@yaegassy/coc-marksman",
         "@yaegassy/coc-volar",
+        "@yaegassy/coc-tailwindcss3",
         "coc-biome",
         "coc-css",
         "coc-deno",
