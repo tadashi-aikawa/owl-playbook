@@ -52,8 +52,22 @@ vim.opt.rtp:prepend(lazypath)
 
 -- VSCode/Neovimのどちらでも使うプラグイン
 local common_plugins = {
-  'tpope/vim-commentary',  -- コメントアウト
+  -- コメントアウト
+  'JoosepAlviste/nvim-ts-context-commentstring',
+  {
+    'terrortylor/nvim-comment',
+    config = function()
+      require('nvim_comment').setup()
+    end,
+    hook = function()
+      if vim.api.nvim_buf_get_option(0, "filetype") == "vue" then
+        require("ts_context_commentstring.internal").update_commentstring()
+      end
+    end,
+  },
+
   'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
+
   -- HTMLの閉じタグ補完
   'windwp/nvim-ts-autotag',
 
