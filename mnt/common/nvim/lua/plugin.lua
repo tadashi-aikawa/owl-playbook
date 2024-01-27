@@ -1,5 +1,3 @@
-local u = require("utils")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,892 +11,104 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- FIXME: nvim-treeの定義に移動
--- For nvim-tree.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- FIXME: colorizerプラグインに移動
--- colorizerプラグインで必要
-u.set.termguicolors = true
-
 local neovim_plugins = {
-  -- コメントアウト
-  'JoosepAlviste/nvim-ts-context-commentstring',
-  {
-    'terrortylor/nvim-comment',
-    config = function()
-      require('nvim_comment').setup()
-    end,
-    hook = function()
-      if vim.api.nvim_buf_get_option(0, "filetype") == "vue" then
-        require("ts_context_commentstring.internal").update_commentstring()
-      end
-    end,
-  },
+  ---------------------
+  -- 全体
+  ---------------------
 
-  'kana/vim-textobj-user', -- text-objectのユーザーカスタマイズ
-
-  -- HTMLの閉じタグ補完
-  'windwp/nvim-ts-autotag',
-
-  -- 全体が範囲のtext-object
-  {
-    'kana/vim-textobj-entire',
-    event = { 'BufNewFile', 'BufRead' },
-  },
-
-  -- カラーコードの表示
-  {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require 'colorizer'.setup()
-    end
-  },
-
-  -- 画面内瞬間移動
-  {
-    'ggandor/leap.nvim',
-    config = function()
-      u.key('n', 's', function()
-        local focusable_windows = vim.tbl_filter(
-          function(win) return vim.api.nvim_win_get_config(win).focusable end,
-          vim.api.nvim_tabpage_list_wins(0)
-        )
-        require('leap').leap { target_windows = focusable_windows }
-      end)
-    end
-  },
-
-  -- fコマンドの強化
-  {
-    'ggandor/flit.nvim',
-    config = function()
-      require('flit').setup {
-        keys = { f = 'f', F = 'F', t = 't', T = 'T' },
-        labeled_modes = "v",
-        multiline = true,
-        opts = {}
-      }
-    end
-  },
-
-  -- ブラックホールレジスト+putの省略
-  {
-    'vim-scripts/ReplaceWithRegister',
-    keys = {
-      { '_', '<Plug>ReplaceWithRegisterOperator' }
-    }
-  },
-
-  -- 囲まれているものの操作
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup()
-    end
-  },
-
-  -- キャメルケースモーション
-  {
-    'bkad/CamelCaseMotion',
-    init = function()
-      vim.g.camelcasemotion_key = "["
-    end
-  },
-
-  'ellisonleao/gruvbox.nvim',    -- テーマ
-  'sainnhe/gruvbox-material',    -- テーマ
-  'kshenoy/vim-signature',       -- マークの可視化
-  'nvim-tree/nvim-web-devicons', -- アイコンの表示
-  'famiu/bufdelete.nvim',        -- バッファ削除のときにレイアウトを変更しない
-  'tpope/vim-repeat',            -- repeat
-  'kevinhwang91/nvim-bqf',       -- quickfix強化(previewなど)
-
-  -- CSVシンタックス強化
-  {
-    'mechatroner/rainbow_csv',
-    config = function()
-      vim.g.rcsv_colorpairs = {
-        { 'red',        'red' },
-        { 'yellow',     'yellow' },
-        { 'lightgray',  'lightgray' },
-        { 'lightgreen', 'lightgreen' },
-        { 'lightblue',  'lightblue' },
-        { 'cyan',       'cyan' },
-        { 'lightred',   'lightred' },
-        { 'darkyellow', 'darkyellow' },
-        { 'white',      'white' },
-      }
-    end
-  },
-
-  -- テーブルソート
-  {
-    'dhruvasagar/vim-table-mode',
-    config = function()
-      vim.api.nvim_set_keymap('n', '<A-;>', "<Cmd>:TableModeRealign<CR>", {})
-    end
-  },
-
-  -- ブックマーク
-  {
-    'MattesGroeger/vim-bookmarks',
-    config = function()
-      vim.g.bookmark_sign            = '󰃀 '
-      vim.g.bookmark_annotation_sign = '󱖯 '
-    end
-  },
-  -- 検索結果の詳細表示
-  {
-    "kevinhwang91/nvim-hlslens",
-    event = { 'BufNewFile', 'BufRead' },
-    config = function()
-      require("scrollbar.handlers.search").setup({
-        override_lens = function(render, posList, nearest, idx)
-          local text, chunks
-          ---@diagnostic disable-next-line: deprecated
-          local lnum, col = unpack(posList[idx])
-          local cnt = #posList
-          text = ('[%d/%d]'):format(idx, cnt)
-          if nearest then
-            chunks = { { ' ', 'Ignore' }, { text, 'HlSearchLensNear' } }
-          else
-            chunks = { { ' ', 'Ignore' }, { text, 'HlSearchLens' } }
-          end
-          render.setVirt(0, lnum - 1, col - 1, chunks, nearest)
-        end
-      })
-      local kopts = { noremap = true, silent = true }
-
-      vim.api.nvim_set_keymap('n', 'n',
-        [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-        kopts)
-      vim.api.nvim_set_keymap('n', 'N',
-        [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-        kopts)
-      vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-      vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-      vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-      vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-
-      vim.api.nvim_set_keymap('n', '<Leader>l', '<Cmd>noh<CR>', kopts)
-
-      vim.cmd [[
-        highlight HlSearchLensNear guifg=white guibg=olive
-        highlight HlSearchLens guifg=#777777 guibg=#FFFFFFFF
-      ]]
-    end
-  },
-  -- スムーズなスクロール
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require('neoscroll').setup {}
-    end
-  },
-  -- スクロールバー表示
-  {
-    'petertriho/nvim-scrollbar',
-    config = function()
-      require("scrollbar").setup({
-        handle = {
-          color = "gray"
-        },
-        marks = {
-          Search = { color = "lime" },
-          Error = { color = "red" },
-          Warn = { color = "orange" },
-          Info = { color = "cyan" },
-          Hint = { color = "gray" },
-          Misc = { color = "purple" },
-        }
-      })
-    end
-  },
-
-  -- シンタックスハイライト
-  {
-    'nvim-treesitter/nvim-treesitter',
-    event = { 'BufNewFile', 'BufRead' },
-    build = ":TSUpdate",
-    config = function()
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = {
-          "bash",
-          "css",
-          "diff",
-          "dockerfile",
-          "elixir",
-          "gitignore",
-          "go",
-          "html",
-          "http",
-          "javascript",
-          "json",
-          "lua",
-          "markdown",
-          "python",
-          "rust",
-          "svelte",
-          "toml",
-          "typescript",
-          "vim",
-          "vue",
-          "yaml",
-        },
-        highlight = {
-          enable = true,
-          disable = { "ini" }
-        },
-        autotag = {
-          enable = true,
-        },
-        -- texobjectsはパフォーマンスの問題から利用しない
-      }
-    end
-  },
-
-  -- バッファ・タブバーをかっこよく
-  {
-    'romgrk/barbar.nvim',
-    dependencies = { 'nvim-web-devicons' },
-    event = { 'BufNewFile', 'BufRead' },
-    opts = {
-      animation = false,
-      sidebar_filetypes = {
-        NvimTree = true
-      }
-    }
-  },
-
-  -- ステータスライン
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-web-devicons', opt = true },
-    event = { 'BufNewFile', 'BufRead' },
-    options = { theme = 'gruvbox-material' },
-    config = function()
-      local lualine = require('lualine')
-      local config = {
-        options = {
-          component_separators = {},
-          section_separators = {},
-        },
-        sections = {
-          lualine_a = {
-            'branch',
-            {
-              'diff',
-              symbols = { added = ' ', modified = ' ', removed = ' ' },
-            },
-          },
-          lualine_b = { { 'filename', path = 1 }, 'aerial' },
-          lualine_c = {
-            "'%='",
-            {
-              'diagnostics',
-              symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
-            },
-          },
-          lualine_x = { 'encoding', 'fileformat' },
-          lualine_y = { 'filetype', 'searchcount' },
-          lualine_z = {},
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {},
-        },
-      }
-      lualine.setup(config)
-    end
-  },
-
-  -- マルチカーソル
-  {
-    'mg979/vim-visual-multi',
-    init = function()
-      local t = {}
-      t["Find Under"] = "<C-k>"
-      t["Find Subword Under"] = "<C-k>"
-      vim.g.VM_maps = t
-    end
-  },
-
+  -- テーマ(2)
+  'ellisonleao/gruvbox.nvim',
+  'sainnhe/gruvbox-material',
+  -- バッファ削除のときにレイアウトを変更しない
+  'famiu/bufdelete.nvim',
   -- セッション保存
-  {
-    'jedrzejboczar/possession.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      -----------------------------------------------------
-      -- 状態を保存して終了するRestartコマンド
-      -- https://zenn.dev/nazo6/articles/neovim-restart-command
-      -----------------------------------------------------
-      local restart_cmd = nil
-
-      vim.api.nvim_create_user_command("Restart", function()
-        if vim.fn.has "gui_running" then
-          if restart_cmd == nil then
-            vim.notify("Restart command not found", vim.log.levels.WARN)
-          end
-        end
-
-        require("possession.session").save("restart", { no_confirm = true })
-        vim.cmd [[silent! bufdo bwipeout]]
-
-        vim.g.NVIM_RESTARTING = true
-
-        if restart_cmd then
-          vim.cmd(restart_cmd)
-        end
-
-        vim.cmd [[qa!]]
-      end, {})
-
-      -- Restartコマンドで現状を維持したまま再起動するのに必要 (他にも設定箇所あり)
-      vim.api.nvim_create_autocmd("VimEnter", {
-        nested = true,
-        callback = function()
-          if vim.g.NVIM_RESTARTING then
-            vim.g.NVIM_RESTARTING = false
-            require("possession.session").load "restart"
-            require("possession.session").delete("restart", { no_confirm = true })
-            vim.opt.cmdheight = 1
-          end
-        end,
-      })
-    end
-  },
-
-  -- Fuzzy finder
-  {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      "nvim-telescope/telescope-frecency.nvim",
-      'fannheyward/telescope-coc.nvim',
-      'tom-anders/telescope-vim-bookmarks.nvim'
-    },
-    keys = {
-      { '<C-j>f', ':Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>', silent = true },
-      { '<C-j>z', ':Telescope frecency<CR>',                                                   silent = true },
-      { '<C-j>e', ':Telescope oldfiles<CR>',                                                   silent = true },
-      { '<C-j>g', ':Telescope live_grep<CR>',                                                  silent = true },
-      { '<C-j>l', ':Telescope current_buffer_fuzzy_find<CR>',                                  silent = true },
-      { '<C-j>p', ':Telescope commands<CR>',                                                   silent = true },
-      { '<C-j>:', ':Telescope command_history<CR>',                                            silent = true },
-      { '<C-j>m', ':Telescope vim_bookmarks all<CR>',                                          silent = true },
-      { '<C-j>i', ':Telescope coc implementations<CR>',                                        silent = true },
-      { '<C-j>h', ':Telescope coc references_used<CR>',                                        silent = true },
-      { '<C-j>s', ':Telescope coc workspace_symbols<CR>',                                      silent = true },
-      { '<C-j>c', ":lua require'telescope.builtin'.git_status{}<CR>",                          silent = true },
-    },
-    config = function()
-      local actions = require("telescope.actions")
-      require("telescope").setup {
-        defaults = {
-          mappings = {
-            i = {
-              ["<esc>"] = actions.close,
-              ["<C-a>"] = actions.smart_add_to_qflist + actions.open_qflist,
-              ["<C-o>"] = actions.smart_send_to_qflist + actions.open_qflist,
-              -- Ctrl+Enterがマッピングされている
-              ["<F12>"] = actions.select_vertical,
-            },
-            n = { ["q"] = actions.close },
-          },
-          sorting_strategy = "ascending",
-          layout_strategy = "vertical",
-          layout_config = {
-            vertical = { width = 0.9 },
-            prompt_position = "top",
-            preview_cutoff = 1,
-          },
-        },
-        extensions = {
-          frecency = {
-            show_scores = true
-          },
-          coc = {
-            -- trueだと常にpreviewを経由する
-            prefer_locations = false,
-          }
-        }
-      }
-
-      require("telescope").load_extension("frecency")
-      require('telescope').load_extension('coc')
-      require('telescope').load_extension('vim_bookmarks')
-    end
-  },
-
-  -- エクスプローラー
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons'
-    },
-    keys = {
-      { '<M-w>',  ':NvimTreeToggle<CR>',   silent = true },
-      { '<C-j>w', ':NvimTreeFindFile<CR>', silent = true }
-    },
-    config = function()
-      require("nvim-tree").setup {
-        view = {
-          preserve_window_proportions = true,
-        },
-        renderer = {
-          icons = {
-            glyphs = {
-              git = {
-                unstaged = "",
-                staged = "󰆼",
-                unmerged = "",
-                renamed = "󰮆",
-                untracked = "",
-                deleted = "",
-                ignored = "",
-              }
-            },
-          }
-        },
-
-        diagnostics = {
-          enable = true,
-          show_on_dirs = true,
-          show_on_open_dirs = true,
-          icons = {
-            hint = " ",
-            info = " ",
-            warning = " ",
-            error = " ",
-          },
-        },
-
-        on_attach = function(bufnr)
-          local api = require "nvim-tree.api"
-          local function opts(desc)
-            return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-          end
-          -- api.config.mappings.default_on_attach(bufnr)
-
-          vim.keymap.set('n', '>', api.tree.change_root_to_node, opts('CD'))
-          vim.keymap.set('n', '<', api.tree.change_root_to_parent, opts('Up'))
-          vim.keymap.set('n', '<M-s>', api.node.show_info_popup, opts('Info'))
-          vim.keymap.set('n', '<C-r>', api.fs.rename_sub, opts('Rename: Omit Filename'))
-          vim.keymap.set('n', 'gi', api.node.open.vertical, opts('Open: Vertical Split'))
-          vim.keymap.set('n', 'g-', api.node.open.horizontal, opts('Open: Horizontal Split'))
-          vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
-          vim.keymap.set('n', '<Tab>', api.node.open.preview, opts('Open Preview'))
-          vim.keymap.set('n', 'a', api.fs.create, opts('Create File Or Directory'))
-          vim.keymap.set('n', 'bd', api.marks.bulk.delete, opts('Delete Bookmarked'))
-          vim.keymap.set('n', 'bt', api.marks.bulk.trash, opts('Trash Bookmarked'))
-          vim.keymap.set('n', 'bmv', api.marks.bulk.move, opts('Move Bookmarked'))
-          vim.keymap.set('n', '<Space>k', api.node.navigate.git.prev, opts('Prev Git'))
-          vim.keymap.set('n', '<Space>j', api.node.navigate.git.next, opts('Next Git'))
-          vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
-          vim.keymap.set('n', 'F', api.live_filter.clear, opts('Live Filter: Clear'))
-          vim.keymap.set('n', 'f', api.live_filter.start, opts('Live Filter: Start'))
-          vim.keymap.set('n', 'g?', api.tree.toggle_help, opts('Help'))
-          vim.keymap.set('n', 'gy', api.fs.copy.absolute_path, opts('Copy Absolute Path'))
-          vim.keymap.set('n', 'H', api.tree.toggle_hidden_filter, opts('Toggle Filter: Dotfiles'))
-          vim.keymap.set('n', 'I', api.tree.toggle_gitignore_filter, opts('Toggle Filter: Git Ignore'))
-          vim.keymap.set('n', 'm', api.marks.toggle, opts('Toggle Bookmark'))
-          vim.keymap.set('n', 'M', api.tree.toggle_no_bookmark_filter, opts('Toggle Filter: No Bookmark'))
-          vim.keymap.set('n', 'y', api.fs.copy.node, opts('Copy'))
-          vim.keymap.set('n', 'p', api.fs.paste, opts('Paste'))
-          vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
-          vim.keymap.set('n', 'R', api.fs.rename_full, opts('Rename: Full Path'))
-          vim.keymap.set('n', 'U', api.tree.toggle_custom_filter, opts('Toggle Filter: Hidden'))
-          vim.keymap.set('n', '<C-j><C-l>', api.tree.expand_all, opts('Expand All'))
-          vim.keymap.set('n', '<C-j><C-h>', api.tree.collapse_all, opts('Collapse'))
-          vim.keymap.set('n', 'x', api.fs.cut, opts('Cut'))
-          vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
-        end
-      }
-
-      -- Git statusに変更があったときにNvimtreeの表示を変更させるために必要
-      -- XXX: ここではないかも...
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "NeogitStatusRefreshed",
-        command = ":NvimTreeRefresh<CR>"
-      })
-    end
-  },
-
+  require("plugins.possession"),
   -- TUIツール
-  {
-    "is0n/fm-nvim",
-    keys = {
-      { '<Space>g', ':Lazygit<CR>', silent = true },
-      { '<C-j>r',   ':Broot<CR>',   silent = true },
-    },
-    config = function()
-      require('fm-nvim').setup {
-        ui = {
-          float = {
-            height = 0.99,
-            width = 0.99,
-          }
-        },
+  require("plugins.fm-nvim"),
 
-        broot_conf = "~/.config/broot/conf.nvim.toml"
-      }
-    end
-  },
+  ---------------------
+  -- Vim like
+  ---------------------
 
-  -- Gitの行表示
-  {
-    'lewis6991/gitsigns.nvim',
-    event = { 'BufNewFile', 'BufRead' },
-    keys = {
-      { '<Space>d', ':Gitsigns preview_hunk<CR>', silent = true },
-      { '<C-j>D',   ':Gitsigns diffthis<CR>',     silent = true },
-      { '<Space>u', ':Gitsigns reset_hunk<CR>',   silent = true },
-      { '<Space>s', ':Gitsigns stage_hunk<CR>',   silent = true },
-      { '<Space>j', ':Gitsigns next_hunk<CR>',    silent = true },
-      { '<Space>k', ':Gitsigns prev_hunk<CR>',    silent = true },
-    },
-    config = function()
-      vim.defer_fn(function()
-        require('gitsigns').setup {
-          signcolumn = false,
-          numhl = true,
-        }
-      end, u.is_windows and 200 or 0)
-    end
-  },
+  -- text-object(2)
+  'kana/vim-textobj-user',               -- ユーザーカスタマイズベース
+  require("plugins.vim-textobj-entire"), -- ファイル全体
+  -- 画面内瞬間移動
+  require("plugins.leap"),
+  -- fコマンドの強化
+  require("plugins.flit"),
+  -- ブラックホールレジスト+putの省略
+  require("plugins.ReplaceWithRegister"),
+  -- 囲まれているものの操作
+  require("plugins.nvim-surround"),
+  -- キャメルケースモーション
+  require("plugins.CamelCaseMotion"),
+  -- 様々なrepeat処理に対応
+  'tpope/vim-repeat',
+  -- quickfix強化(previewなど)
+  'kevinhwang91/nvim-bqf',
+  -- スムーズなスクロール
+  require("plugins.neoscroll"),
+  -- mini.nvim
+  require("plugins.mini"),
+  -- 現在行にカーソルを表示し、一定以上移動したらアニメーションで追従する
+  require("plugins.SmoothCursor"),
+  -- TODO系のコマンドを目立たせる --
+  require("plugins.todo-comments"),
 
-  -- Git blame
-  {
-    "FabijanZulj/blame.nvim"
-  },
-
-  -- Gitの行履歴詳細表示
-  {
-    'rhysd/git-messenger.vim',
-    config = function()
-      vim.g.git_messenger_include_diff = "current"
-    end
-  },
+  ---------------------
+  -- to be IDE
+  ---------------------
 
   -- VSCode like
-  {
-    'neoclide/coc.nvim',
-    branch = "release",
-    event = { 'BufNewFile', 'BufRead' },
-    keys = {
-      -- 定義に移動
-      { '<C-]>', '<Plug>(coc-definition)',                                                silent = true },
-      -- import最適化
-      { '<M-o>', ':call CocAction(\'runCommand\', \'editor.action.organizeImport\')<CR>', silent = true },
-      -- 配下の定義を表示
-      { '<M-s>', ':call CocActionAsync(\'doHover\')<CR>',                                 silent = true },
-      {
-        '<C-P>',
-        '<C-\\><C-O>:call CocActionAsync(\'showSignatureHelp\')<CR>',
-        mode = "i",
-        silent = true
-      },
-      -- 前後のエラーや警告に移動
-      { '<M-k>', '<Plug>(coc-diagnostic-prev)', silent = true },
-      { '<M-j>', '<Plug>(coc-diagnostic-next)', silent = true },
-      -- Enterキーで決定
-      {
-        "<cr>",
-        [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
-        mode = "i",
-        expr = true,
-        silent = true,
-        replace_keycodes = false
-      },
-      -- 上下で候補選択
-      {
-        "<down>",
-        [[coc#pum#visible() ? coc#pum#next(1) : "<down>"]],
-        mode = "i",
-        expr = true,
-        silent = true,
-        replace_keycodes = false
-      },
-      {
-        "<up>",
-        [[coc#pum#visible() ? coc#pum#prev(1): "<up>"]],
-        mode = "i",
-        expr = true,
-        silent = true,
-        replace_keycodes = false
-      },
-      -- TABでsnippets展開とplaceholder移動
-      {
-        "<tab>",
-        '<Plug>(coc-snippets-expand-jump)',
-        mode = "i",
-        silent = true,
-      },
-      -- code action
-      { '<M-CR>',  '<Plug>(coc-codeaction-cursor)', silent = true },
-      -- Rename
-      { '<S-M-r>', '<Plug>(coc-rename)',            silent = true },
-      -- Auto complete
-      {
-        "<F5>",
-        [[coc#refresh()]],
-        mode = "i",
-        silent = true,
-        expr = true
-      },
-    },
-    config = function()
-      local extensions = {
-        "@yaegassy/coc-marksman",
-        "@yaegassy/coc-volar",
-        "@yaegassy/coc-tailwindcss3",
-        "coc-biome",
-        "coc-css",
-        "coc-deno",
-        "coc-elixir",
-        "coc-go",
-        "coc-html",
-        "coc-highlight",
-        "coc-java",
-        "coc-json",
-        "coc-prettier",
-        "coc-pyright",
-        "coc-rust-analyzer",
-        "coc-snippets",
-        "coc-tsserver",
-        "coc-yaml",
-      }
-      if not u.is_windows then
-        -- Windowsは未対応らしいので...
-        table.insert(extensions, { "coc-lua" })
-      end
-      vim.g.coc_global_extensions = extensions
-
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.go" },
-        command = "call CocAction('runCommand', 'editor.action.organizeImport')"
-      })
-
-      -- coc-highlight
-      vim.api.nvim_set_hl(0, "CocHighlightText", { fg = 'lightgray', bg = 'darkcyan' })
-      vim.api.nvim_set_hl(0, "CocHighlightRead", { fg = 'lightgray', bg = 'darkgreen' })
-      vim.api.nvim_set_hl(0, "CocHighlightWrite", { fg = 'lightgray', bg = 'darkred' })
-
-      vim.api.nvim_create_autocmd("CursorHold", {
-        pattern = "*",
-        command = "call CocActionAsync('highlight')"
-      })
-    end
-  },
-
-  -- Markdown preview
-  {
-    "iamcco/markdown-preview.nvim",
-    lazy = false,
-    keys = {
-      { '<M-p>', ':MarkdownPreviewToggle<CR>', silent = true }
-    },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
-
-  -- Swagger UI preview
-  {
-    "vinnymeller/swagger-preview.nvim",
-    config = function()
-      require("swagger-preview").setup({
-        port = 8000,
-        host = "localhost",
-      })
-    end
-  },
-
-  -- mini.nvim
-  {
-    'echasnovski/mini.nvim',
-    version = false,
-    event = { 'BufNewFile', 'BufRead' },
-    config = function()
-      local miniclue = require('mini.clue')
-      require('mini.clue').setup({
-        window = {
-          delay = 500
-        },
-        triggers = {
-          -- Leader triggers
-          { mode = 'n', keys = '<Leader>' },
-          { mode = 'x', keys = '<Leader>' },
-
-          -- Built-in completion
-          { mode = 'i', keys = '<C-x>' },
-
-          -- `g` key
-          { mode = 'n', keys = 'g' },
-          { mode = 'x', keys = 'g' },
-
-          -- Marks
-          { mode = 'n', keys = "'" },
-          { mode = 'n', keys = '`' },
-          { mode = 'x', keys = "'" },
-          { mode = 'x', keys = '`' },
-
-          -- Registers
-          { mode = 'n', keys = '"' },
-          { mode = 'x', keys = '"' },
-          { mode = 'i', keys = '<C-r>' },
-          { mode = 'c', keys = '<C-r>' },
-
-          -- Window commands
-          { mode = 'n', keys = '<C-w>' },
-
-          -- `z` key
-          { mode = 'n', keys = 'z' },
-          { mode = 'x', keys = 'z' },
-        },
-
-        clues = {
-          -- Enhance this by adding descriptions for <Leader> mapping groups
-          miniclue.gen_clues.builtin_completion(),
-          miniclue.gen_clues.g(),
-          miniclue.gen_clues.marks(),
-          miniclue.gen_clues.registers(),
-          miniclue.gen_clues.windows(),
-          miniclue.gen_clues.z(),
-        },
-      })
-
-      require('mini.indentscope').setup()
-    end
-  },
-
-  -- 現在行にカーソルを表示し、一定以上移動したらアニメーションで追従する
-  {
-    'gen740/SmoothCursor.nvim',
-    config = function()
-      require('smoothcursor').setup({
-        fancy = {
-          enable = true,
-          head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil },
-          body = {
-            { cursor = "●", texthl = "SmoothCursorYellow" },
-            { cursor = "●", texthl = "SmoothCursorGreen" },
-            { cursor = "•", texthl = "SmoothCursorAqua" },
-            { cursor = ".", texthl = "SmoothCursorBlue" },
-            { cursor = ".", texthl = "SmoothCursorPurple" },
-          },
-          tail = { cursor = nil, texthl = "SmoothCursor" },
-        },
-      })
-    end
-  },
-
-
-  -- 通知とコマンドラインを強化
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-    config = function()
-      require('noice').setup({
-        presets = {
-          command_palette = true,
-        },
-        messages = {
-          enabled = true,
-          view = "mini",
-          view_error = "notify",
-          view_warn = "notify",
-          view_history = "messages",
-          view_search = false,
-        },
-        routes = {
-          {
-            filter = {
-              any = {
-                { event = "msg_show", error = true, find = "E486:" },
-                { event = "msg_show", error = true, find = "lines yanked" },
-                { event = "msg_show", error = true, find = "more lines" },
-                { event = "msg_show", error = true, find = "fewer lines" },
-                { event = "msg_show", error = true, find = "lines >ed 1 time" },
-                { event = "msg_show", error = true, find = "change; before" },
-                { event = "msg_show", error = true, find = "change; after" },
-                { event = "msg_show", error = true, find = "changes; before" },
-                { event = "msg_show", error = true, find = "changes; after" },
-              }
-            },
-            opts = { skip = true }
-          },
-          {
-            filter = {
-              any = {
-                { event = "msg_show", error = true,   find = "E20:" },
-                { event = "msg_show", error = true,   find = "E42:" },
-                { event = "msg_show", error = true,   find = "E492:" },
-                { event = "msg_show", warning = true, find = "search hit BOTTOM, continuing at TOP" },
-                { event = "msg_show", warning = true, find = "search hit TOP, continuing at BOTTOM" },
-                { event = "notify",   kind = "info",  find = "was properly created" },
-                { event = "notify",   kind = "info",  find = "was properly removed" },
-                { event = "notify",   kind = "info",  find = "added to clipboard" },
-                { event = "notify",   kind = "info",  find = " -> " },
-              }
-            },
-            view = "mini"
-          },
-        }
-      })
-    end
-  },
-
-  -- TODO系のコマンドを目立たせる --
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    event = { 'BufNewFile', 'BufRead' },
-    keys = {
-      { '<C-j>x', ':TodoTelescope<cr>', silent = true },
-    },
-    opts = {
-      sign_priority = 1
-    },
-  },
-
+  require("plugins.coc"),
+  -- シンタックスハイライト
+  require("plugins.nvim-treesitter"),
+  -- Fuzzy finder
+  require("plugins.telescope"),
+  -- エクスプローラー
+  require("plugins.nvim-tree"),
+  -- バッファ・タブバーをかっこよく
+  require("plugins.barbar"),
+  -- ステータスライン
+  require("plugins.lualine"),
   -- アウトラインの表示
-  {
-    'stevearc/aerial.nvim',
-    opts = {},
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons"
-    },
-    keys = {
-      { '<C-j>o', ':AerialOpen<CR>', silent = true },
-    },
-    config = function()
-      require("aerial").setup({
-        layout = {
-          default_direction = "float",
-          min_width = 50
-        },
-        keymaps = {
-          ["<ESC>"] = "actions.close",
-        },
-      })
-    end
-  }
+  require("plugins.aerial"),
+  -- マルチカーソル
+  require("plugins.vim-visual-multi"),
+  -- スクロールバー表示
+  require("plugins.nvim-scrollbar"),
+  -- Gitの行表示
+  require("plugins.gitsigns"),
+  -- Git blame
+  "FabijanZulj/blame.nvim",
+  -- Gitの行履歴詳細表示
+  require("plugins.git-messenger"),
+  -- マークの可視化
+  'kshenoy/vim-signature',
+  -- アイコンの表示
+  'nvim-tree/nvim-web-devicons',
+  -- 通知とコマンドラインを強化
+  require("plugins.noice"),
+  -- コメントアウト(2)
+  'JoosepAlviste/nvim-ts-context-commentstring', -- vue.jsなどの特殊なケース用
+  require("plugins.nvim-comment"),
+  -- HTMLの閉じタグ補完
+  'windwp/nvim-ts-autotag',
+  -- カラーコードの表示
+  require("plugins.nvim-colorizer"),
+  -- CSVシンタックス強化
+  require("plugins.rainbow_csv"),
+  -- テーブルソート
+  require("plugins.vim-table-mode"),
+  -- ブックマーク
+  require("plugins.vim-bookmarks"),
+  -- 検索結果の詳細表示
+  require("plugins.nvim-hlslens"),
+  -- Markdown preview
+  require("plugins.markdown-preview"),
+  -- Swagger UI preview
+  require("plugins.swagger-preview"),
 }
 
 require('lazy').setup(
