@@ -150,6 +150,7 @@ local neovim_plugins = {
       require("scrollbar.handlers.search").setup({
         override_lens = function(render, posList, nearest, idx)
           local text, chunks
+          ---@diagnostic disable-next-line: deprecated
           local lnum, col = unpack(posList[idx])
           local cnt = #posList
           text = ('[%d/%d]'):format(idx, cnt)
