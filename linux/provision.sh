@@ -140,10 +140,9 @@ mise use -g neovim
 ensure_bashrc 'alias vim=nvim'
 ensure_zshrc 'alias vim=nvim'
 mkdir -p ~/.config/nvim
+ln -snf "${COMMON_MNT}"/nvim/lua               ~/.config/nvim/lua
 ln -snf "${COMMON_MNT}"/nvim/init.lua          ~/.config/nvim/init.lua
 ln -snf "${COMMON_MNT}"/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-mkdir -p ~/.config/nvim/lua
-ln -snf "${UBUNTU_MNT}"/nvim/clipboard.lua ~/.config/nvim/lua/clipboard.lua
 mkdir -p ~/.config/coc
 ln -snf "${COMMON_MNT}"/nvim/ultisnips ~/.config/coc/ultisnips
 
