@@ -17,7 +17,7 @@ local neovim_plugins = {
   ---------------------
 
   -- text-object(2)
-  'kana/vim-textobj-user',               -- ユーザーカスタマイズベース
+  "kana/vim-textobj-user",               -- ユーザーカスタマイズベース
   require("plugins.vim-textobj-entire"), -- ファイル全体
   -- 画面内瞬間移動
   require("plugins.leap"),
@@ -30,9 +30,9 @@ local neovim_plugins = {
   -- キャメルケースモーション
   require("plugins.CamelCaseMotion"),
   -- 様々なrepeat処理に対応
-  'tpope/vim-repeat',
+  "tpope/vim-repeat",
   -- quickfix強化(previewなど)
-  'kevinhwang91/nvim-bqf',
+  "kevinhwang91/nvim-bqf",
   -- スムーズなスクロール
   require("plugins.neoscroll"),
   -- mini.nvim
@@ -68,7 +68,7 @@ local neovim_plugins = {
   -- アウトラインの表示
   require("plugins.aerial"),
   -- カレントシンボルの強調
-  'RRethy/vim-illuminate',
+  "RRethy/vim-illuminate",
   -- マルチカーソル
   require("plugins.vim-visual-multi"),
   -- スクロールバー表示
@@ -80,16 +80,16 @@ local neovim_plugins = {
   -- Gitの行履歴詳細表示
   require("plugins.git-messenger"),
   -- マークの可視化
-  'kshenoy/vim-signature',
+  "kshenoy/vim-signature",
   -- アイコンの表示
-  'nvim-tree/nvim-web-devicons',
+  "nvim-tree/nvim-web-devicons",
   -- 通知とコマンドラインを強化
   require("plugins.noice"),
   -- コメントアウト(2)
-  'JoosepAlviste/nvim-ts-context-commentstring', -- vue.jsなどの特殊なケース用
+  "JoosepAlviste/nvim-ts-context-commentstring", -- vue.jsなどの特殊なケース用
   require("plugins.nvim-comment"),
   -- HTMLの閉じタグ補完
-  'windwp/nvim-ts-autotag',
+  "windwp/nvim-ts-autotag",
   -- カラーコードの表示
   require("plugins.nvim-colorizer"),
   -- CSVシンタックス強化
@@ -122,8 +122,6 @@ local neovim_plugins = {
   "folke/tokyonight.nvim",
 }
 
-require('lazy').setup(
-  neovim_plugins
-)
+require("lazy").setup(neovim_plugins)
 
 vim.cmd("colorscheme tokyonight")
