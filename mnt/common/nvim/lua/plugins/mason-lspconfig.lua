@@ -7,6 +7,8 @@ return {
     { "neovim/nvim-lspconfig" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/nvim-cmp" },
+    { "L3MON4D3/LuaSnip" },
+    { "saadparwaiz1/cmp_luasnip" },
   },
   config = function()
     -- mason.nvim setup
@@ -31,9 +33,56 @@ return {
 
     require("mason-lspconfig").setup()
 
+    -- nvim-cmp
+    local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    require("luasnip.loaders.from_snipmate").lazy_load()
+    cmp.setup {
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
+      },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+      mapping = cmp.mapping.preset.insert({
+        ['<F5>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm {
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        },
+        ['<C-p>'] = cmp.mapping.abort(),
+        ['<Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          else
+            fallback()
+          end
+        end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { 'i', 's' }),
+      }),
+      sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+      }, { name = 'buffer' }),
+    }
+
     -- Loading nvim-cmp
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lspconfig = require('lspconfig')
+    require('lspconfig.ui.windows').default_options.border = 'single'
 
     local servers = {
       "tsserver",
@@ -47,22 +96,6 @@ return {
         capabilities = capabilities,
       }
     end
-
-    -- nvim-cmp key bindings
-    local cmp = require("cmp")
-    cmp.setup {
-      mapping = cmp.mapping.preset.insert({
-        ['<F5>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        },
-        ['<C-p>'] = cmp.mapping.abort(),
-      }),
-      sources = {
-        { name = 'nvim_lsp' },
-      },
-    }
 
     -- LSP key bindings
     vim.api.nvim_create_autocmd('LspAttach', {
