@@ -61,7 +61,14 @@ local neovim_plugins = {
   ---------------------
 
   -- VSCode like
-  require("plugins.coc"),
+  -- require("plugins.coc"),
+  -- LSP
+  "neovim/nvim-lspconfig",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/nvim-cmp",
+  "williamboman/mason.nvim",
+  require("plugins.mason-lspconfig"),
+  require("plugins.none-ls"),
   -- シンタックスハイライト
   require("plugins.nvim-treesitter"),
   -- Fuzzy finder
@@ -74,6 +81,8 @@ local neovim_plugins = {
   require("plugins.lualine"),
   -- アウトラインの表示
   require("plugins.aerial"),
+  -- カレントシンボルの強調
+  'RRethy/vim-illuminate',
   -- マルチカーソル
   require("plugins.vim-visual-multi"),
   -- スクロールバー表示
