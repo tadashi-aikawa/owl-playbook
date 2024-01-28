@@ -13,20 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local neovim_plugins = {
   ---------------------
-  -- 全体
-  ---------------------
-
-  -- テーマ(2)
-  'ellisonleao/gruvbox.nvim',
-  'sainnhe/gruvbox-material',
-  -- バッファ削除のときにレイアウトを変更しない
-  'famiu/bufdelete.nvim',
-  -- セッション保存
-  require("plugins.possession"),
-  -- TUIツール
-  require("plugins.fm-nvim"),
-
-  ---------------------
   -- Vim like
   ---------------------
 
@@ -118,10 +104,26 @@ local neovim_plugins = {
   require("plugins.markdown-preview"),
   -- Swagger UI preview
   require("plugins.swagger-preview"),
+
+  ---------------------
+  -- 全体
+  ---------------------
+
+  -- バッファ削除のときにレイアウトを変更しない
+  "famiu/bufdelete.nvim",
+  -- セッション保存
+  require("plugins.possession"),
+  -- TUIツール
+  require("plugins.fm-nvim"),
+  -- テーマ(2)
+  -- 'ellisonleao/gruvbox.nvim',
+  -- 'sainnhe/gruvbox-material',
+  -- 'EdenEast/nightfox.nvim',
+  "folke/tokyonight.nvim",
 }
 
 require('lazy').setup(
   neovim_plugins
 )
 
-vim.cmd('colorscheme gruvbox-material')
+vim.cmd("colorscheme tokyonight")

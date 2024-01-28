@@ -15,11 +15,11 @@ u.set.updatetime = 200
 -- Highlight
 vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
 vim.api.nvim_set_hl(0, 'Visual', { bg = "#661111" })
-vim.api.nvim_set_hl(0, "MatchParen", { fg = "#121212", bg = "#EE9999" })
+-- vim.api.nvim_set_hl(0, "MatchParen", { fg = "#121212", bg = "#EE9999" })
 -- -- For illuminate.nvim
-vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = 'lightgray', bg = 'darkcyan' })
-vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = 'lightgray', bg = 'darkgreen' })
-vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = 'lightgray', bg = 'darkred' })
+-- vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = 'lightgray', bg = 'darkcyan' })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = 'black', bg = "#abab23" })
+-- vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = 'lightgray', bg = 'darkred' })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
