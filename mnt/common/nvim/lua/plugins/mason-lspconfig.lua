@@ -14,6 +14,7 @@ return {
 
     local packages = {
       "typescript-language-server",
+      "lua-language-server",
       "gopls",
     }
 
@@ -36,6 +37,7 @@ return {
 
     local servers = {
       "tsserver",
+      "lua_ls",
       "gopls",
     }
 
