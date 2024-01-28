@@ -14,6 +14,7 @@ return {
         },
         tail = { cursor = nil, texthl = "SmoothCursor" },
       },
+      disable_float_win = true,
     })
   end
 }
