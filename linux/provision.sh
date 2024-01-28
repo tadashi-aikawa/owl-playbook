@@ -189,6 +189,7 @@ ensure_bashrc 'export PATH=$PATH:$GOPATH/bin'
 ensure_zshrc 'export GOPATH=$HOME/go'
 # shellcheck disable=SC2016
 ensure_zshrc 'export PATH=$PATH:$GOPATH/bin'
+mise use --global gofumpt
 
 # Python
 mise use -g python@3.12
