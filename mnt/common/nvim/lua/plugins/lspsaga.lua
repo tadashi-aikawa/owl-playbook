@@ -4,6 +4,9 @@ return {
     require("lspsaga").setup({
       code_action = {
         extend_gitsigns = true,
+        keys = {
+          quit = "<ESC>",
+        },
       },
       lightbulb = {
         enable = false,
@@ -15,6 +18,11 @@ return {
         keys = {
           shuttle = "<Space>w",
           toggle_or_open = "<CR>",
+        },
+      },
+      diagnostic = {
+        keys = {
+          quit = "<ESC>",
         },
       },
     })
