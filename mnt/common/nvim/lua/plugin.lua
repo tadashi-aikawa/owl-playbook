@@ -55,6 +55,7 @@ local neovim_plugins = {
   "williamboman/mason.nvim",
   require("plugins.mason-lspconfig"),
   require("plugins.none-ls"),
+  require("plugins.lspsaga"),
   -- シンタックスハイライト
   require("plugins.nvim-treesitter"),
   -- Fuzzy finder

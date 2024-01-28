@@ -75,21 +75,29 @@ return {
         -- 定義に移動
         vim.keymap.set('n', '<C-]>', vim.lsp.buf.definition, opts)
         -- 定義をホバー
-        vim.keymap.set('n', '<M-s>', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', '<M-s>', "<cmd>Lspsaga hover_doc<CR>", opts)
         -- 実装へ移動
         vim.keymap.set('n', '<C-j>i', vim.lsp.buf.implementation, opts)
+        -- 実装をホバー
+        vim.keymap.set('n', '<M-d>', "<cmd>Lspsaga peek_definition<CR>", opts)
+        -- 呼び出し元一覧 (qflist)
+        vim.keymap.set('n', '<C-j>h', vim.lsp.buf.references, opts)
+        -- 実装と呼び出し元の同時表示
+        vim.keymap.set('n', '<C-j>u', "<cmd>Lspsaga finder<CR>", opts)
         -- 関数の引数表示
         vim.keymap.set({ 'n', 'i' }, '<C-p>', vim.lsp.buf.signature_help, opts)
         -- リネーム
-        vim.keymap.set({ 'n', 'i' }, '<S-M-r>', vim.lsp.buf.rename, opts)
-        -- Code action (TODO: 楽にしたい)
-        vim.keymap.set({ 'n', 'i' }, '<M-CR>', vim.lsp.buf.code_action, opts)
-        -- 呼び出し元一覧 (qflist)
-        vim.keymap.set('n', '<C-j>h', vim.lsp.buf.references, opts)
+        vim.keymap.set({ 'n', 'i' }, '<S-M-r>', "<cmd>Lspsaga rename<CR>", opts)
+        -- Code action
+        vim.keymap.set({ 'n', 'i' }, '<M-CR>', "<cmd>Lspsaga code_action<CR>", opts)
         -- 次の診断へ移動
-        vim.keymap.set('n', '<M-j>', vim.diagnostic.goto_next, opts)
+        vim.keymap.set('n', '<M-j>', "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
         -- 前の診断へ移動
-        vim.keymap.set('n', '<M-k>', vim.diagnostic.goto_prev, opts)
+        vim.keymap.set('n', '<M-k>', "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+
+        -- ターミナル (Lspsagaなのでここ)
+        vim.keymap.set('n', '<Space>i', "<cmd>Lspsaga term_toggle<CR>", opts)
+
         -- TODO: 一旦このまま
         vim.keymap.set('n', '<space>f', function()
           vim.lsp.buf.format { async = true }

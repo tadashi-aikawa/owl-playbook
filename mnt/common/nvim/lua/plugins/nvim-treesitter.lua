@@ -18,6 +18,7 @@ return {
         "json",
         "lua",
         "markdown",
+        "markdown_inline",
         "python",
         "rust",
         "svelte",
