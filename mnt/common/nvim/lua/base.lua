@@ -17,7 +17,7 @@ vim.opt.swapfile = false
 -- バッファを未保存でも閉じる
 u.set.hidden = true
 -- バックスペースの有効化
-u.set.backspace = 'indent,eol,start'
+u.set.backspace = "indent,eol,start"
 -- コマンドのタイムラグをなくす
 u.set.ttimeoutlen = 1
 -- タブを基本2文字に
@@ -31,7 +31,7 @@ u.set.autoindent = true
 -- スマートなインデント (Cとかでなければ必要ない??)
 u.set.smartindent = true
 -- 行末の1文字先までカーソルを移動できるように
-u.set.virtualedit = 'onemore'
+u.set.virtualedit = "onemore"
 -- 検索文字列入力時に順次対象文字列にヒットさせる
 u.set.incsearch = true
 -- 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -55,20 +55,20 @@ vim.cmd([[
 
 -- Hippie completion
 if u.is_windows then
-  u.key('i', '<S-F6>', '<C-x><C-p>')
+  u.key("i", "<S-F6>", "<C-x><C-p>")
 else
-  u.key('i', '<F18>', '<C-x><C-p>') -- Ubuntu(WSL)ではS-F6がF18となるため
+  u.key("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 end
 -- 行オートコンプリート
-u.key('i', '<C-l>', '<C-x><C-l>')
+u.key("i", "<C-l>", "<C-x><C-l>")
 -- cnext / cprevious
-u.key('n', '<Space>n', ':cnext<CR>', { silent = true })
-u.key('n', '<Space>p', ':cprevious<CR>', { silent = true })
+u.key("n", "<Space>n", ":cnext<CR>", { silent = true })
+u.key("n", "<Space>p", ":cprevious<CR>", { silent = true })
 -- バッファ切り替え
-u.key('n', '<Space>r', ':b#<CR>', { silent = true })
-u.key('n', '<Space>e', ':BufferPick<CR>', { silent = true })
-u.key('n', '<Space>l', ':BufferNext<CR>', { silent = true })
-u.key('n', '<Space>h', ':BufferPrevious<CR>', { silent = true })
-u.key('n', '<Space>q', ":Bdelete<CR>", { silent = true })
-u.key('n', '<Space>t', ":BufferRestore<CR>", { silent = true })
-u.key('n', '<Space>c', ":BufferCloseAllButVisible<CR>", { silent = true })
+u.key("n", "<Space>r", ":b#<CR>", { silent = true })
+u.key("n", "<Space>e", ":BufferPick<CR>", { silent = true })
+u.key("n", "<Space>l", ":BufferNext<CR>", { silent = true })
+u.key("n", "<Space>h", ":BufferPrevious<CR>", { silent = true })
+u.key("n", "<Space>q", ":Bdelete<CR>", { silent = true })
+u.key("n", "<Space>t", ":BufferRestore<CR>", { silent = true })
+u.key("n", "<Space>c", ":BufferCloseAllButVisible<CR>", { silent = true })
