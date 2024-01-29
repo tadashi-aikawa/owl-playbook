@@ -34,15 +34,13 @@ if [[ $command == "bun" ]]; then
   bun add -d @biomejs/biome
 
   mkdir -p .vim
-  cat > .vim/coc-settings.json << 'EOF'
+  cat >.vim/coc-settings.json <<'EOF'
   {
     "prettier.enable": false
   }
 EOF
 
   bun biome init
-EOF
-
 
   echo "
 🚀 Try
@@ -65,13 +63,13 @@ if [[ $command == "node" ]]; then
   npm i -D typescript prettier @tsconfig/recommended
   npm pkg set scripts.dev="tsc && node ."
 
-cat > tsconfig.json << 'EOF'
+  cat >tsconfig.json <<'EOF'
 {
   "extends": "@tsconfig/recommended/tsconfig.json"
 }
 EOF
 
-cat > index.ts << 'EOF'
+  cat >index.ts <<'EOF'
 function sum(x: number, y: number): number {
   return x + y;
 }
@@ -93,7 +91,6 @@ $ npm run dev
 "
   exit 0
 fi
-
 
 echo "『き..きかぬ  きかぬのだ!!』"
 show_usage
