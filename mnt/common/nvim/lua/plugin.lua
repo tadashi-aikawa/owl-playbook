@@ -72,7 +72,7 @@ local neovim_plugins = {
   -- アウトラインの表示
   require("plugins.aerial"),
   -- カレントシンボルの強調
-  "RRethy/vim-illuminate",
+  require("plugins.vim-illuminate"),
   -- マルチカーソル
   require("plugins.vim-visual-multi"),
   -- スクロールバー表示

@@ -9,9 +9,6 @@ u.set.number = true
 -- ステータスバーは分割しない
 u.set.laststatus = 3
 
--- coc-highlightの表示を早めるために4000msから短くする
-u.set.updatetime = 200
-
 -- Line
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888" })
 -- Comment
