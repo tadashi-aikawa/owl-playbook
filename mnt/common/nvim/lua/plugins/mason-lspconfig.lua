@@ -92,6 +92,10 @@ return {
     lspconfig.tsserver.setup {
       capabilities = capabilities
     }
+    lspconfig.biome.setup {
+      capabilities = capabilities,
+      cmd = { "npx", "biome", "lsp-proxy" }
+    }
     lspconfig.volar.setup {
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
       capabilities = capabilities
