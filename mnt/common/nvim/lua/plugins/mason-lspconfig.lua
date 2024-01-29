@@ -105,6 +105,9 @@ return {
     lspconfig.marksman.setup {
       capabilities = capabilities
     }
+    lspconfig.bashls.setup {
+      capabilities = capabilities
+    }
 
     -- For Neovim
     lspconfig.lua_ls.setup {
