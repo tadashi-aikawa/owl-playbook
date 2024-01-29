@@ -19,7 +19,8 @@ return {
       "typescript-language-server",
       "lua-language-server",
       "gopls",
-      "css-lsp"
+      "css-lsp",
+      "vue-language-server",
     }
     -- https://github.com/williamboman/mason.nvim/issues/1309#issuecomment-1555018732
     local registry = require "mason-registry"
@@ -87,19 +88,45 @@ return {
     local lspconfig = require('lspconfig')
     require('lspconfig.ui.windows').default_options.border = 'single'
 
-    local servers = {
-      "tsserver",
-      "lua_ls",
-      "gopls",
-      "cssls",
+    lspconfig.tsserver.setup {
+      capabilities = capabilities
+    }
+    lspconfig.volar.setup {
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+      capabilities = capabilities
+    }
+    lspconfig.gopls.setup {
+      capabilities = capabilities
+    }
+    lspconfig.cssls.setup {
+      capabilities = capabilities
     }
 
-    for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup {
-        -- on_attach = my_custom_on_attach,
-        capabilities = capabilities,
-      }
-    end
+    -- For Neovim
+    lspconfig.lua_ls.setup {
+      capabilities = capabilities,
+      on_init = function(client)
+        local path = client.workspace_folders[1].name
+        if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+          client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+            Lua = {
+              runtime = {
+                version = 'LuaJIT'
+              },
+              workspace = {
+                checkThirdParty = false,
+                library = {
+                  vim.env.VIMRUNTIME
+                }
+              }
+            }
+          })
+
+          client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+        end
+        return true
+      end
+    }
 
     -- LSP key bindings
     vim.api.nvim_create_autocmd('LspAttach', {
