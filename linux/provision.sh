@@ -203,6 +203,7 @@ mise x -- poetry config virtualenvs.in-project true
 # Bash
 no bash-language-server && mise x -- npm i -g bash-language-server
 mise use -g shellcheck
+mise use -g shfmt
 
 # Lua
 mise use --global stylua
