@@ -33,14 +33,6 @@ if [[ $command == "bun" ]]; then
   cd "$path"
   bun init . -y
   bun add -d @biomejs/biome
-
-  mkdir -p .vim
-  cat >.vim/coc-settings.json <<'EOF'
-  {
-    "prettier.enable": false
-  }
-EOF
-
   bun biome init
 
   echo "
