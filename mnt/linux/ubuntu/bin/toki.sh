@@ -5,8 +5,9 @@ set -eu
 function show_usage() {
   echo "
 Usages:
-  toki bun <path>:     BunとBiomeのプロジェクトSandboxを作成します
-  toki node <path>:    Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+  toki bun <path>:   BunとBiomeのプロジェクトSandboxを作成します
+  toki node <path>:  Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+  toki go <path>:    GoプロジェクトのSandboxを作成します
 
   toki -h|--help|help: ヘルプを表示します
   "
@@ -88,6 +89,42 @@ EOF
 
 $ cd ${path}
 $ npm run dev
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# GoプロジェクトのSandboxを作成します
+# -------------------------------------------
+if [[ $command == "go" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  go mod init sandbox/"${path}"
+
+  cat > main.go <<'EOF'
+package main
+
+import (
+	"log"
+)
+
+func sum(x int, y int) int {
+	return x + y
+}
+
+func main() {
+	total := sum(1, 10)
+	log.Printf("x + y = %d", total)
+}
+EOF
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ go run .
 "
   exit 0
 fi
