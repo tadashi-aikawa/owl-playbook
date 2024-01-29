@@ -21,6 +21,7 @@ return {
       "gopls",
       "css-lsp",
       "vue-language-server",
+      "marksman"
     }
     -- https://github.com/williamboman/mason.nvim/issues/1309#issuecomment-1555018732
     local registry = require "mason-registry"
@@ -99,6 +100,9 @@ return {
       capabilities = capabilities
     }
     lspconfig.cssls.setup {
+      capabilities = capabilities
+    }
+    lspconfig.marksman.setup {
       capabilities = capabilities
     }
 
