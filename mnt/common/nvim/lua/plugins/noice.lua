@@ -9,7 +9,7 @@ return {
     "rcarriga/nvim-notify",
   },
   config = function()
-    require('noice').setup({
+    require("noice").setup({
       presets = {
         command_palette = true,
       },
@@ -34,9 +34,9 @@ return {
               { event = "msg_show", error = true, find = "change; after" },
               { event = "msg_show", error = true, find = "changes; before" },
               { event = "msg_show", error = true, find = "changes; after" },
-            }
+            },
           },
-          opts = { skip = true }
+          opts = { skip = true },
         },
         {
           filter = {
@@ -46,15 +46,16 @@ return {
               { event = "msg_show", error = true,   find = "E492:" },
               { event = "msg_show", warning = true, find = "search hit BOTTOM, continuing at TOP" },
               { event = "msg_show", warning = true, find = "search hit TOP, continuing at BOTTOM" },
+              { event = "notify",   warning = true, find = "command prettier is not executable" },
               { event = "notify",   kind = "info",  find = "was properly created" },
               { event = "notify",   kind = "info",  find = "was properly removed" },
               { event = "notify",   kind = "info",  find = "added to clipboard" },
               { event = "notify",   kind = "info",  find = " -> " },
-            }
+            },
           },
-          view = "mini"
+          view = "mini",
         },
-      }
+      },
     })
-  end
+  end,
 }
