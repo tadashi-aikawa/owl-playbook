@@ -17,7 +17,7 @@ local neovim_plugins = {
   ---------------------
 
   -- text-object(2)
-  "kana/vim-textobj-user",               -- ユーザーカスタマイズベース
+  "kana/vim-textobj-user", -- ユーザーカスタマイズベース
   require("plugins.vim-textobj-entire"), -- ファイル全体
   -- 画面内瞬間移動
   require("plugins.leap"),
@@ -58,6 +58,7 @@ local neovim_plugins = {
   require("plugins.mason-lspconfig"),
   require("plugins.none-ls"),
   require("plugins.lspsaga"),
+  "j-hui/fidget.nvim",
   -- シンタックスハイライト
   require("plugins.nvim-treesitter"),
   -- Fuzzy finder
