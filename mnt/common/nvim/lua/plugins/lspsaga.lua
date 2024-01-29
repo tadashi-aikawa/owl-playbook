@@ -29,6 +29,9 @@ return {
         width = 0.9,
         height = 0.8,
       },
+      symbol_in_winbar = {
+        enable = false,
+      },
     })
   end,
   dependencies = {
