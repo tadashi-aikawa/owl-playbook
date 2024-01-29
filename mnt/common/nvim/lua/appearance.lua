@@ -12,6 +12,14 @@ u.set.laststatus = 3
 -- coc-highlightの表示を早めるために4000msから短くする
 u.set.updatetime = 200
 
+-- Line
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888" })
+-- Comment
+vim.api.nvim_set_hl(0, "Comment", { fg = "#888888" })
+-- GitGutter
+vim.api.nvim_set_hl(0, "GitGutterAddLineNr", { bg = "#338833" })
+vim.api.nvim_set_hl(0, "GitGutterChangeLineNr", { bg = "#9945AB" })
+vim.api.nvim_set_hl(0, "GitGutterDeleteLineNr", { bg = "#EE3333" })
 -- Highlight
 vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#885522" })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#661111" })
