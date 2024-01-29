@@ -14,12 +14,13 @@ return {
     -- mason.nvim setup
     require("mason").setup()
 
+    -- Auto install
     local packages = {
       "typescript-language-server",
       "lua-language-server",
       "gopls",
+      "css-lsp"
     }
-
     -- https://github.com/williamboman/mason.nvim/issues/1309#issuecomment-1555018732
     local registry = require "mason-registry"
     registry.refresh(function()
@@ -81,6 +82,8 @@ return {
 
     -- Loading nvim-cmp
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
     local lspconfig = require('lspconfig')
     require('lspconfig.ui.windows').default_options.border = 'single'
 
@@ -88,6 +91,7 @@ return {
       "tsserver",
       "lua_ls",
       "gopls",
+      "cssls",
     }
 
     for _, lsp in ipairs(servers) do
