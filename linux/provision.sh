@@ -208,6 +208,9 @@ mise use -g shfmt
 # Lua
 mise use --global stylua
 
+# HTML/CSS/JSON LSP
+no vscode-css-language-server && mise x -- npm i -g vscode-langservers-extracted
+
 #----------------------------------------------------------------------
 # CLI Tools
 #----------------------------------------------------------------------

@@ -18,7 +18,6 @@ return {
     local packages = {
       "typescript-language-server",
       "lua-language-server",
-      "css-lsp",
       "vue-language-server",
       "marksman"
     }
