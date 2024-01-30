@@ -32,6 +32,10 @@ return {
       symbol_in_winbar = {
         enable = false,
       },
+      floaterm = {
+        height = 0.8,
+        width = 0.95,
+      },
     })
   end,
   dependencies = {
