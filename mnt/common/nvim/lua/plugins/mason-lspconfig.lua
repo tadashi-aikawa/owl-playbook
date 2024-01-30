@@ -104,10 +104,6 @@ return {
       capabilities = capabilities,
       cmd = { "npx", "biome", "lsp-proxy" }
     }
-    lspconfig.volar.setup {
-      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-      capabilities = capabilities
-    }
     lspconfig.gopls.setup {
       capabilities = capabilities
     }
@@ -119,6 +115,33 @@ return {
     }
     lspconfig.bashls.setup {
       capabilities = capabilities
+    }
+
+    -- [Volar] localのnode_modulesを優先する
+    local util = require('lspconfig.util')
+    local function get_typescript_server_path(root_dir)
+      local home = os.getenv("HOME")
+      local global_ts = home .. '/.local/share/mise/installs/node/18/lib/node_modules/typescript/lib'
+      local found_ts = ''
+      local function check_dir(path)
+        found_ts = util.path.join(path, 'node_modules', 'typescript', 'lib')
+        if util.path.exists(found_ts) then
+          return path
+        end
+      end
+      if util.search_ancestors(root_dir, check_dir) then
+        return found_ts
+      else
+        return global_ts
+      end
+    end
+
+    lspconfig.volar.setup {
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+      capabilities = capabilities,
+      on_new_config = function(new_config, new_root_dir)
+        new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+      end,
     }
 
     -- For Neovim
