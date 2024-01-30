@@ -211,6 +211,10 @@ mise use --global stylua
 # HTML/CSS/JSON LSP
 no vscode-css-language-server && mise x -- npm i -g vscode-langservers-extracted
 
+# TypeScript
+no tsc && mise x -- npm i -g typescript
+no typescript-language-server && mise x -- npm i -g typescript-language-server
+
 # Vue
 no vue-language-server && mise x -- npm i -g @vue/language-server
 
