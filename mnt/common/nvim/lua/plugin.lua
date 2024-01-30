@@ -17,7 +17,7 @@ local neovim_plugins = {
   ---------------------
 
   -- text-object(2)
-  "kana/vim-textobj-user", -- ユーザーカスタマイズベース
+  "kana/vim-textobj-user",               -- ユーザーカスタマイズベース
   require("plugins.vim-textobj-entire"), -- ファイル全体
   -- 画面内瞬間移動
   require("plugins.leap"),
@@ -52,6 +52,9 @@ local neovim_plugins = {
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "onsails/lspkind.nvim",
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
   "williamboman/mason.nvim",

@@ -7,6 +7,9 @@ return {
     { "neovim/nvim-lspconfig" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "onsails/lspkind.nvim" },
     { "L3MON4D3/LuaSnip" },
     { "saadparwaiz1/cmp_luasnip" },
   },
@@ -35,7 +38,9 @@ return {
     -- nvim-cmp
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+    local lspkind = require('lspkind')
     require("luasnip.loaders.from_snipmate").lazy_load()
+
     cmp.setup {
       snippet = {
         expand = function(args)
@@ -75,7 +80,17 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-      }, { name = 'buffer' }),
+        { name = 'buffer' },
+        { name = 'path' },
+      }),
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = 'symbol',
+          maxwidth = 50,
+          ellipsis_char = '...',
+          show_labelDetails = true,
+        })
+      }
     }
 
     -- Loading nvim-cmp
