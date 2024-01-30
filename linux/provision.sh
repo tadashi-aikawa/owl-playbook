@@ -14,7 +14,7 @@ MISE_YES=1
 # no cat && { catのインストール処理 }
 function no() {
   echo "🔍 $1 コマンドの存在確認"
-  ! command -v "$1" > /dev/null
+  ! command -v "$1" >/dev/null
 }
 
 # ~/.bashrcに引数と一致する文があることを保証します
@@ -23,10 +23,10 @@ function ensure_bashrc() {
   local content="$1"
 
   if ! grep -qxF -- "$content" ~/.bashrc; then
-      echo "$content" >> ~/.bashrc
-      echo "👍 '${content}' was added to .bashrc."
+    echo "$content" >>~/.bashrc
+    echo "👍 '${content}' was added to .bashrc."
   else
-      echo "👌 '${content}' is already present in .bashrc."
+    echo "👌 '${content}' is already present in .bashrc."
   fi
 }
 
@@ -36,10 +36,10 @@ function ensure_zshrc() {
   local content="$1"
 
   if ! grep -qxF -- "$content" ~/.zshrc; then
-      echo "$content" >> ~/.zshrc
-      echo "👍 '${content}' was added to .zshrc."
+    echo "$content" >>~/.zshrc
+    echo "👍 '${content}' was added to .zshrc."
   else
-      echo "👌 '${content}' is already present in .zshrc."
+    echo "👌 '${content}' is already present in .zshrc."
   fi
 }
 
@@ -111,12 +111,12 @@ ensure_zshrc "source ~/.basez.sh"
 no mise && {
   curl https://mise.jdx.dev/install.sh | sh
   # shellcheck disable=SC1091
-  source "$UBUNTU_MNT"/bashrc/mise.sh;
+  source "$UBUNTU_MNT"/bashrc/mise.sh
 }
-ln -snf "$UBUNTU_MNT"/bashrc/mise.sh ~/.mise.sh;
-ensure_bashrc "source ~/.mise.sh";
-ln -snf "$UBUNTU_MNT"/zshrc/mise.sh ~/.misez.sh;
-ensure_zshrc "source ~/.misez.sh";
+ln -snf "$UBUNTU_MNT"/bashrc/mise.sh ~/.mise.sh
+ensure_bashrc "source ~/.mise.sh"
+ln -snf "$UBUNTU_MNT"/zshrc/mise.sh ~/.misez.sh
+ensure_zshrc "source ~/.misez.sh"
 
 #----------------------------------------------------------------------
 # Prompt
@@ -124,11 +124,11 @@ ensure_zshrc "source ~/.misez.sh";
 
 # Starship
 mise use -g starship
-ln -snf "$UBUNTU_MNT"/bashrc/starship.sh ~/.starship.sh;
-ensure_bashrc "source ~/.starship.sh";
-ln -snf "$UBUNTU_MNT"/zshrc/starship.sh ~/.starshipz.sh;
-ensure_zshrc "source ~/.starshipz.sh";
-mkdir -p ~/.config;
+ln -snf "$UBUNTU_MNT"/bashrc/starship.sh ~/.starship.sh
+ensure_bashrc "source ~/.starship.sh"
+ln -snf "$UBUNTU_MNT"/zshrc/starship.sh ~/.starshipz.sh
+ensure_zshrc "source ~/.starshipz.sh"
+mkdir -p ~/.config
 ln -snf "$COMMON_MNT"/starship/starship.toml ~/.config/starship.toml
 
 #----------------------------------------------------------------------
@@ -140,9 +140,9 @@ mise use -g neovim
 ensure_bashrc 'alias vim=nvim'
 ensure_zshrc 'alias vim=nvim'
 mkdir -p ~/.config/nvim
-ln -snf "${COMMON_MNT}"/nvim/lua               ~/.config/nvim/lua
-ln -snf "${COMMON_MNT}"/nvim/init.lua          ~/.config/nvim/init.lua
-ln -snf "${COMMON_MNT}"/nvim/snippets          ~/.config/nvim/snippets
+ln -snf "${COMMON_MNT}"/nvim/lua ~/.config/nvim/lua
+ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
+ln -snf "${COMMON_MNT}"/nvim/snippets ~/.config/nvim/snippets
 
 ln -snf "${COMMON_MNT}"/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 mkdir -p ~/.config/coc
@@ -155,9 +155,9 @@ ln -snf "${COMMON_MNT}"/nvim/ultisnips ~/.config/coc/ultisnips
 # Broot
 mise plugin install https://github.com/cmur2/asdf-broot.git
 mise use -g broot
-mkdir -p ~/.config/broot;
-ln -snf "$UBUNTU_MNT"/broot.toml ~/.config/broot/conf.toml;
-ln -snf "$UBUNTU_MNT"/broot.nvim.toml ~/.config/broot/conf.nvim.toml;
+mkdir -p ~/.config/broot
+ln -snf "$UBUNTU_MNT"/broot.toml ~/.config/broot/conf.toml
+ln -snf "$UBUNTU_MNT"/broot.nvim.toml ~/.config/broot/conf.nvim.toml
 
 # LazyGit
 mise use -g lazygit
@@ -236,35 +236,35 @@ mise use -g jq
 
 # zoxide
 mise use -g zoxide
-ln -snf "$UBUNTU_MNT"/bashrc/zoxide.sh ~/.zoxide.sh;
-ensure_bashrc "source ~/.zoxide.sh";
-ln -snf "$UBUNTU_MNT"/zshrc/zoxide.sh ~/.zoxidez.sh;
-ensure_zshrc "source ~/.zoxidez.sh";
+ln -snf "$UBUNTU_MNT"/bashrc/zoxide.sh ~/.zoxide.sh
+ensure_bashrc "source ~/.zoxide.sh"
+ln -snf "$UBUNTU_MNT"/zshrc/zoxide.sh ~/.zoxidez.sh
+ensure_zshrc "source ~/.zoxidez.sh"
 
 # eza
 mise use -g eza
-ln -snf "$UBUNTU_MNT"/bashrc/eza.sh ~/.eza.sh;
-ensure_bashrc "source ~/.eza.sh";
-ensure_zshrc "source ~/.eza.sh";
+ln -snf "$UBUNTU_MNT"/bashrc/eza.sh ~/.eza.sh
+ensure_bashrc "source ~/.eza.sh"
+ensure_zshrc "source ~/.eza.sh"
 
 # fzf
 mise use -g fzf
-ln -snf "$UBUNTU_MNT"/bashrc/fzf.sh ~/.fzf.sh;
-ensure_bashrc "source ~/.fzf.sh";
-ensure_zshrc "source ~/.fzf.sh";
+ln -snf "$UBUNTU_MNT"/bashrc/fzf.sh ~/.fzf.sh
+ensure_bashrc "source ~/.fzf.sh"
+ensure_zshrc "source ~/.fzf.sh"
 
 # delta
 mise use -g delta
 
 # git-graph
 no git-graph && {
-  wget https://github.com/mlange-42/git-graph/releases/download/0.5.3/git-graph-0.5.3-linux-amd64.tar.gz -O /tmp/git-graph.tar.gz;
-  sudo tar xvf /tmp/git-graph.tar.gz -C /usr/local/bin/;
+  wget https://github.com/mlange-42/git-graph/releases/download/0.5.3/git-graph-0.5.3-linux-amd64.tar.gz -O /tmp/git-graph.tar.gz
+  sudo tar xvf /tmp/git-graph.tar.gz -C /usr/local/bin/
 }
 
 # gowl
 no gowl && {
-  wget https://github.com/tadashi-aikawa/gowl/releases/download/v0.9.1/gowl-v0.9.1-x86_64-linux.tar.gz -O /tmp/gowl.tar.gz;
+  wget https://github.com/tadashi-aikawa/gowl/releases/download/v0.9.1/gowl-v0.9.1-x86_64-linux.tar.gz -O /tmp/gowl.tar.gz
   sudo tar xvf /tmp/gowl.tar.gz -C /usr/local/bin/ --strip-components 2
 }
 
@@ -278,7 +278,7 @@ mise use -g task
 mise use -g watchexec
 
 # toki
-ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki;
+ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki
 
 #----------------------------------------------------------------------
 # Before terminate
@@ -290,4 +290,3 @@ echo "Run broot"
 echo "Run ~/.local/share/mise/installs/fzf/latest/install"
 # Neovim
 echo "Run nvim"
-
