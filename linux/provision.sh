@@ -168,7 +168,7 @@ mise plugin install https://github.com/comdotlinux/asdf-lazydocker.git
 mise use -g lazydocker
 
 #----------------------------------------------------------------------
-# Languages / Runtimes
+# Languages / Runtimes / LSP
 #----------------------------------------------------------------------
 
 # Node.js
@@ -210,6 +210,9 @@ mise use --global stylua
 
 # HTML/CSS/JSON LSP
 no vscode-css-language-server && mise x -- npm i -g vscode-langservers-extracted
+
+# Vue
+no vue-language-server && mise x -- npm i -g @vue/language-server
 
 #----------------------------------------------------------------------
 # CLI Tools

@@ -16,9 +16,7 @@ return {
 
     -- Auto install
     local packages = {
-      "typescript-language-server",
       "lua-language-server",
-      "vue-language-server",
       "marksman"
     }
     -- https://github.com/williamboman/mason.nvim/issues/1309#issuecomment-1555018732
@@ -87,9 +85,6 @@ return {
     local lspconfig = require('lspconfig')
     require('lspconfig.ui.windows').default_options.border = 'single'
 
-    lspconfig.tsserver.setup {
-      capabilities = capabilities
-    }
     lspconfig.biome.setup {
       capabilities = capabilities,
       cmd = { "npx", "biome", "lsp-proxy" }
