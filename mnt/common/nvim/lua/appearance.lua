@@ -23,7 +23,7 @@ vim.api.nvim_set_hl(0, "Visual", { bg = "#565612" })
 -- For illuminate.nvim
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = "black", bg = "#abab23" })
 vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = "black", bg = "#23ab23" })
-vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = "lightgray", fg = "#121212", bg = "#EE9999" })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = "#121212", bg = "#EE9999" })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
