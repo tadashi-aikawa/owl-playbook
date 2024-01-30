@@ -53,12 +53,18 @@ if [[ $command == "node" ]]; then
   mkdir -p "$path"
   cd "$path"
   npm init -y
-  npm i -D typescript prettier @tsconfig/recommended
+  npm i -D typescript prettier prettier-plugin-organize-imports @tsconfig/recommended
   npm pkg set scripts.dev="tsc && node ."
 
   cat >tsconfig.json <<'EOF'
 {
   "extends": "@tsconfig/recommended/tsconfig.json"
+}
+EOF
+
+  cat >.prettierrc.json <<'EOF'
+{
+  "plugins": ["prettier-plugin-organize-imports"]
 }
 EOF
 
@@ -95,7 +101,7 @@ if [[ $command == "go" ]]; then
   cd "$path"
   go mod init sandbox/"${path}"
 
-  cat > main.go <<'EOF'
+  cat >main.go <<'EOF'
 package main
 
 import (
