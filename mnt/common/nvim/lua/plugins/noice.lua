@@ -47,6 +47,7 @@ return {
               { event = "msg_show", warning = true, find = "search hit BOTTOM, continuing at TOP" },
               { event = "msg_show", warning = true, find = "search hit TOP, continuing at BOTTOM" },
               { event = "notify",   warning = true, find = "command prettier is not executable" },
+              { event = "notify",   warning = true, find = "command biome is not executable" },
               { event = "notify",   kind = "info",  find = "was properly created" },
               { event = "notify",   kind = "info",  find = "was properly removed" },
               { event = "notify",   kind = "info",  find = "added to clipboard" },
