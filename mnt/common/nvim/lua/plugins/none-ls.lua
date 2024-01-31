@@ -9,7 +9,11 @@ return {
         null_ls.builtins.formatting.biome.with({
           only_local = "node_modules/.bin",
         }),
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier.with({
+          condition = function(utils)
+            return not utils.root_has_file({ "biome.json" })
+          end,
+        }),
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.goimports,
