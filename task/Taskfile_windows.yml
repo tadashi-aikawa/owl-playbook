@@ -46,6 +46,16 @@ tasks:
         sh: ls -t ~/Downloads/*.jpg | head -1 | tr -d "'"
 
   webp:
+    desc: 直近にダウンロードしたファイル(画像の想定)をwebpファイルにする
+    cmds:
+      - ffmpeg --i {{shellQuote .INPUT}} ~/tmp/{{now | date "2006-01-02-15-04-05"}}.webp
+      - cmd: cd ~/tmp && explorer .
+        ignore_error: true # なぜか必ずエラーになる..
+    vars:
+      INPUT:
+        sh: ls -t ~/Downloads/* | head -1 | tr -d "'"
+
+  webp1280:
     desc: 直近にダウンロードしたファイル(画像の想定)を横幅1280のwebpファイルにする
     cmds:
       - ffmpeg -y -i {{shellQuote .INPUT}} -vf scale=1280:-1 ~/tmp/{{now | date "2006-01-02-15-04-05"}}.webp
