@@ -119,6 +119,9 @@ return {
       capabilities = capabilities,
       cmd = { "npx", "biome", "lsp-proxy" }
     }
+    lspconfig.pyright.setup {
+      capabilities = capabilities
+    }
     lspconfig.gopls.setup {
       capabilities = capabilities
     }
