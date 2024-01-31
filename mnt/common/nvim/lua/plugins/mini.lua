@@ -52,5 +52,21 @@ return {
     })
 
     require("mini.indentscope").setup()
+
+    vim.api.nvim_create_autocmd({ "BufEnter" }, {
+      callback = function()
+        local ignore_filetypes = {
+          "",
+          "aerial",
+          "help",
+          "lazy",
+          "NvimTree",
+          "notify",
+        }
+        if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
+          vim.b.miniindentscope_disable = true
+        end
+      end,
+    })
   end,
 }
