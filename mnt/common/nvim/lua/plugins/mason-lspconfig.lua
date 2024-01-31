@@ -21,7 +21,6 @@ return {
     -- Auto install
     local packages = {
       "lua-language-server",
-      "marksman"
     }
     -- https://github.com/williamboman/mason.nvim/issues/1309#issuecomment-1555018732
     local registry = require "mason-registry"
