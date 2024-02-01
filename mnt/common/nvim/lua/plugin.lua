@@ -49,7 +49,6 @@ local neovim_plugins = {
   -- VSCode like
   -- require("plugins.coc"),
   -- LSP
-  "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
@@ -59,8 +58,7 @@ local neovim_plugins = {
   "b0o/schemastore.nvim",
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
-  "williamboman/mason.nvim",
-  require("plugins.mason-lspconfig"),
+  require("plugins.nvim-lspconfig"),
   require("plugins.none-ls"),
   require("plugins.lspsaga"),
   "j-hui/fidget.nvim",

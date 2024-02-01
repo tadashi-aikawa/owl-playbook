@@ -207,6 +207,7 @@ mise use -g shellcheck
 mise use -g shfmt
 
 # Lua
+mise use --global lua-language-server
 mise use --global stylua
 
 # HTML/CSS/JSON LSP
