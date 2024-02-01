@@ -53,7 +53,7 @@ sudo ln -snf "$LINUX_MNT"/wsl.conf /etc/wsl.conf
 #----------------------------------------------------------------------
 sudo apt-get update -y
 # ntp
-sudo apt-get install ntp
+sudo apt-get install -y ntp
 sudo systemctl enable ntp
 sudo systemctl start ntp
 # nvim-treesitterで使用
