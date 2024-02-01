@@ -36,7 +36,13 @@ return {
             group = augroup,
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.format({ async = false })
+              vim.lsp.buf.format({
+                async = false,
+                filter = function(c)
+                  local disabled_format_clients = { "lua_ls", "volar" }
+                  return not vim.tbl_contains(disabled_format_clients, c.name)
+                end,
+              })
             end,
           })
         end
