@@ -127,6 +127,9 @@ return {
     lspconfig.cssls.setup {
       capabilities = capabilities
     }
+    lspconfig.jsonls.setup {
+      capabilities = capabilities
+    }
     lspconfig.marksman.setup {
       capabilities = capabilities
     }
