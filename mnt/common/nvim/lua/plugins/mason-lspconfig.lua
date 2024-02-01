@@ -10,6 +10,7 @@ return {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
+    { "b0o/schemastore.nvim" },
     { "onsails/lspkind.nvim" },
     { "L3MON4D3/LuaSnip" },
     { "saadparwaiz1/cmp_luasnip" },
@@ -128,7 +129,13 @@ return {
       capabilities = capabilities
     }
     lspconfig.jsonls.setup {
-      capabilities = capabilities
+      capabilities = capabilities,
+      settings = {
+        json = {
+          schemas = require('schemastore').json.schemas(),
+          validate = { enable = true }
+        }
+      }
     }
     lspconfig.marksman.setup {
       capabilities = capabilities

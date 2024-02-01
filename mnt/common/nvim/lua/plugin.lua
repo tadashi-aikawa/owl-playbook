@@ -56,6 +56,7 @@ local neovim_plugins = {
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "onsails/lspkind.nvim",
+  "b0o/schemastore.nvim",
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
   "williamboman/mason.nvim",
