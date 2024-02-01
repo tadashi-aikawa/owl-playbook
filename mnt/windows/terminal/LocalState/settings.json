@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -13,7 +13,7 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollDown"
             },
@@ -24,7 +24,7 @@
             "keys": "shift+pgup"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "left"
@@ -36,21 +36,22 @@
             "keys": "ctrl+alt+f"
         },
         {
-            "command": 
+            "command":
             {
-                "action": "newTab"
+                "action": "newTab",
+                "profile": "Ubuntu WSL"
             },
             "keys": "ctrl+t"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "commandPalette"
             },
             "keys": "ctrl+shift+p"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -58,7 +59,7 @@
             "keys": "ctrl+c"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "right"
@@ -66,7 +67,7 @@
             "keys": "alt+shift+l"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "prevTab"
             },
@@ -85,14 +86,14 @@
             "keys": "alt+enter"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollUp"
             },
             "keys": "shift+up"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "up"
@@ -100,7 +101,7 @@
             "keys": "alt+shift+k"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "openSettings"
             },
@@ -111,14 +112,14 @@
             "keys": "shift+pgdn"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "closeTab"
             },
             "keys": "ctrl+shift+q"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "right"
@@ -126,14 +127,14 @@
             "keys": "ctrl+alt+l"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "nextTab"
             },
             "keys": "alt+l"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "down"
@@ -141,7 +142,7 @@
             "keys": "ctrl+alt+j"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "left"
@@ -149,7 +150,7 @@
             "keys": "ctrl+alt+h"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "up"
@@ -161,7 +162,7 @@
             "keys": "f2"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "down"
@@ -169,10 +170,10 @@
             "keys": "alt+shift+j"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
-                "profile": "Ubuntu WSL"
+                "profile": "PowerShell"
             },
             "keys": "ctrl+shift+u"
         }
@@ -181,31 +182,41 @@
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "disableAnimations": true,
-    "disabledProfileSources": 
+    "disabledProfileSources":
     [
         "Windows.Terminal.Azure"
     ],
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "closeOnExit": "always",
             "colorScheme": "Tango Dark",
-            "font": 
+            "font":
             {
                 "face": "CaskaydiaCove Nerd Font",
                 "size": 13.0
             },
             "startingDirectory": "%USERPROFILE%"
         },
-        "list": 
+        "list":
         [
+            {
+                "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\ubuntu-rmbg.png",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageOpacity": 0.7,
+                "backgroundImageStretchMode": "none",
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu WSL",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            },
             {
                 "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\windows11-rmbg.png",
                 "backgroundImageAlignment": "bottomRight",
@@ -231,20 +242,10 @@
                 "hidden": true,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\ubuntu-rmbg.png",
-                "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.7,
-                "backgroundImageStretchMode": "none",
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-                "hidden": false,
-                "name": "Ubuntu WSL",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
@@ -478,22 +479,22 @@
         }
     ],
     "theme": "mamansoft",
-    "themes": 
+    "themes":
     [
         {
             "name": "mamansoft",
-            "tab": 
+            "tab":
             {
                 "background": "#00BCF2CC",
                 "showCloseButton": "always",
                 "unfocusedBackground": "#00000077"
             },
-            "tabRow": 
+            "tabRow":
             {
                 "background": "#000000CC",
                 "unfocusedBackground": "#000000BB"
             },
-            "window": 
+            "window":
             {
                 "applicationTheme": "dark",
                 "useMica": false
