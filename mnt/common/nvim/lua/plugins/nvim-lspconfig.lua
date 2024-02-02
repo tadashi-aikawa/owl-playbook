@@ -99,6 +99,7 @@ return {
     lspconfig.gopls.setup({ capabilities = capabilities })
     lspconfig.cssls.setup({ capabilities = capabilities })
     lspconfig.html.setup({ capabilities = capabilities })
+    lspconfig.emmet_language_server.setup({ capabilities = capabilities })
     lspconfig.marksman.setup({ capabilities = capabilities })
     lspconfig.bashls.setup({ capabilities = capabilities })
 
