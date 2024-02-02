@@ -210,6 +210,9 @@ mise use -g shfmt
 mise use --global lua-language-server
 mise use --global stylua
 
+# Prettier
+no prettier && mise x -- npm i -g prettier
+
 # HTML/CSS/JSON LSP
 no vscode-css-language-server && mise x -- npm i -g vscode-langservers-extracted
 no vscode-json-language-server && mise x -- npm i -g vscode-langservers-extracted
