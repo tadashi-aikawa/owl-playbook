@@ -1,8 +1,20 @@
-snippet _test テストです
-	if ($1)
-	    $0
+snippet _main package main
+  package main
 
-snippet _test2 テストです
-	if ($1 == $2)
-	    $0
+  import "fmt"
+
+  func main() {
+    fmt.Println("Hello Golang!")
+  }
+
+snippet _ifep "if err != nil -> panic"
+  if err != nil {
+    panic(err)
+  }
+
+snippet _fpv "fmt.Printf"
+  fmt.Printf("${0} = %#v\n", ${0})
+
+snippet _fps "fmt.Printf"
+  fmt.Printf("${0} = %s\n", ${0})
 
