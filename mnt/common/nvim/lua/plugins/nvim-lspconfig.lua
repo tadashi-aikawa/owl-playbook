@@ -105,13 +105,35 @@ return {
       capabilities = capabilities,
       cmd = { "npx", "biome", "lsp-proxy" },
     })
-    -- TODO: Add bitbucket-pipelines
+
     lspconfig.jsonls.setup({
       capabilities = capabilities,
       settings = {
         json = {
           schemas = require("schemastore").json.schemas(),
           validate = { enable = true },
+        },
+      },
+    })
+
+    lspconfig.yamlls.setup({
+      capabilities = capabilities,
+      settings = {
+        yaml = {
+          schemaStore = {
+            enable = false,
+            url = "",
+          },
+          schemas = require("schemastore").yaml.schemas({
+            extra = {
+              {
+                description = "Bitbucke Pipelines",
+                fileMatch = "bitbucket-pipelines.yml",
+                name = "bitbucket-pipelines.yml",
+                url = "https://bitbucket.org/atlassianlabs/intellij-bitbucket-references-plugin/raw/f9f41a5d1e7b3d25236b15296eb26eba426c6895/src/main/resources/schemas/bitbucket-pipelines.schema.json",
+              },
+            },
+          }),
         },
       },
     })
