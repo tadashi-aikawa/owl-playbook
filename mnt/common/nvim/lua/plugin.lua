@@ -17,7 +17,7 @@ local neovim_plugins = {
   ---------------------
 
   -- text-object(2)
-  "kana/vim-textobj-user",               -- ユーザーカスタマイズベース
+  "kana/vim-textobj-user", -- ユーザーカスタマイズベース
   require("plugins.vim-textobj-entire"), -- ファイル全体
   -- 画面内瞬間移動
   require("plugins.leap"),
@@ -76,6 +76,8 @@ local neovim_plugins = {
   require("plugins.aerial"),
   -- カレントシンボルの強調
   require("plugins.vim-illuminate"),
+  -- インデント
+  require("plugins.nvim-autopairs"),
   -- マルチカーソル
   require("plugins.vim-visual-multi"),
   -- スクロールバー表示
@@ -95,8 +97,6 @@ local neovim_plugins = {
   -- コメントアウト(2)
   "JoosepAlviste/nvim-ts-context-commentstring", -- vue.jsなどの特殊なケース用
   require("plugins.nvim-comment"),
-  -- HTMLの閉じタグ補完
-  "windwp/nvim-ts-autotag",
   -- カラーコードの表示
   require("plugins.nvim-colorizer"),
   -- CSVシンタックス強化

@@ -21,15 +21,11 @@ u.set.backspace = "indent,eol,start"
 -- コマンドのタイムラグをなくす
 u.set.ttimeoutlen = 1
 -- タブを基本2文字に
-u.set.smarttab = true
 u.set.tabstop = 2
-u.set.shiftwidth = 2
+u.set.shiftwidth = 0
+u.set.softtabstop = 1
 -- タブの代わりにスペースを挿入する
 u.set.expandtab = true
--- 1行前のインデントを考慮してインデントする
-u.set.autoindent = true
--- スマートなインデント (Cとかでなければ必要ない??)
-u.set.smartindent = true
 -- 行末の1文字先までカーソルを移動できるように
 u.set.virtualedit = "onemore"
 -- 検索文字列入力時に順次対象文字列にヒットさせる
