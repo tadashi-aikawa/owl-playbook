@@ -1,15 +1,18 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  opts = {
-    -- add any options here
-  },
+  opts = {},
   dependencies = {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
   },
   config = function()
     require("noice").setup({
+      lsp = {
+        signature = {
+          enabled = false,
+        },
+      },
       presets = {
         command_palette = true,
       },

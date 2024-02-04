@@ -212,8 +212,6 @@ return {
         vim.keymap.set("n", "<C-j>h", vim.lsp.buf.references, opts)
         -- 実装と呼び出し元の同時表示
         vim.keymap.set("n", "<C-j>u", "<cmd>Lspsaga finder<CR>", opts)
-        -- 関数の引数表示
-        vim.keymap.set({ "n", "i" }, "<C-p>", vim.lsp.buf.signature_help, opts)
         -- リネーム
         vim.keymap.set({ "n", "i" }, "<S-M-r>", "<cmd>Lspsaga rename<CR>", opts)
         -- Code action
