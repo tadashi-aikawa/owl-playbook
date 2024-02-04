@@ -1,0 +1,33 @@
+snippet _cl console.log()
+  console.log(${0})
+
+snippet _clt console.log(👺)
+  console.log("👺 ${0}")
+
+snippet _doc "関数のdoc 簡易版"
+  /**
+   * ${1:description}
+   */
+
+snippet _docd "関数のdoc 詳細版"
+  /**
+   * ${1:description}
+   *
+   * \`\`\`ts
+   * ${2:example}
+   * \`\`\`
+   */
+
+snippet _buntestimport "Description" b
+  import { describe, test, expect } from "bun:test";
+
+snippet _test "testコード" b
+  test("${1:test name}", () => {
+    expect(${2:actual}).toBe(${3:expected});
+  });
+
+snippet _forof "for each"
+  for (const ${2} of ${1}) {
+    ${3}
+  }
+
