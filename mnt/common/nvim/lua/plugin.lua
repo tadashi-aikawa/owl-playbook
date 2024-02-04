@@ -37,8 +37,6 @@ local neovim_plugins = {
   require("plugins.neoscroll"),
   -- mini.nvim
   require("plugins.mini"),
-  -- 現在行にカーソルを表示し、一定以上移動したらアニメーションで追従する
-  require("plugins.SmoothCursor"),
   -- TODO系のコマンドを目立たせる --
   require("plugins.todo-comments"),
 
