@@ -18,7 +18,7 @@ vim.api.nvim_set_hl(0, "GitGutterAddLineNr", { fg = "#46cd46" })
 vim.api.nvim_set_hl(0, "GitGutterChangeLineNr", { fg = "#FFFFFF" })
 vim.api.nvim_set_hl(0, "GitGutterDeleteLineNr", { fg = "#FF4545" })
 -- Highlight
-vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#888822" })
+vim.api.nvim_set_hl(0, "YankHighlight", { reverse = true })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#565612" })
 -- For illuminate.nvim
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = "black", bg = "#abab23" })
