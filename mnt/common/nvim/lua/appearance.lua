@@ -21,8 +21,8 @@ vim.api.nvim_set_hl(0, "YankHighlight", { reverse = true })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#565612" })
 -- For illuminate.nvim
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = "black", bg = "#abab23" })
-vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = "black", bg = "#23ab23" })
-vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = "#121212", bg = "#EE9999" })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = "white", bg = "#23ab23" })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = "white", bg = "#ef7878" })
 -- Current line
 vim.api.nvim_set_hl(0, "CursorLine", { bg = nil })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#888888", fg = "#efef33" })
