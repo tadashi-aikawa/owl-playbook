@@ -34,3 +34,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ higroup = "YankHighlight", timeout = 200 })
   end,
 })
+
+-- LSP
+vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#888888", fg = "#efef33" })
