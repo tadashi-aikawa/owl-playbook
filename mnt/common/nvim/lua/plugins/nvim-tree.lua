@@ -7,7 +7,7 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    { "<M-w>",  ":NvimTreeToggle<CR>",   silent = true },
+    { "<M-w>", ":NvimTreeToggle<CR>", silent = true },
     { "<C-j>w", ":NvimTreeFindFile<CR>", silent = true },
   },
   config = function()
@@ -36,9 +36,9 @@ return {
         show_on_dirs = true,
         show_on_open_dirs = true,
         icons = {
-          hint = " ",
+          hint = "󱩎 ",
           info = " ",
-          warning = " ",
+          warning = " ",
           error = " ",
         },
       },
