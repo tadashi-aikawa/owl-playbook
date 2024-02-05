@@ -11,6 +11,7 @@ return {
         }),
         null_ls.builtins.formatting.prettier.with({
           prefer_local = "node_modules/.bin",
+          disabled_filetypes = { "markdown" },
           condition = function(utils)
             local biome_support_filetypes =
               { "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "jsonc" }
