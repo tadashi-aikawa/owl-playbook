@@ -9,7 +9,7 @@ return {
         null_ls.builtins.formatting.biome.with({
           only_local = "node_modules/.bin",
         }),
-        null_ls.builtins.formatting.prettier.with({
+        null_ls.builtins.formatting.prettierd.with({
           prefer_local = "node_modules/.bin",
           disabled_filetypes = { "markdown" },
           condition = function(utils)

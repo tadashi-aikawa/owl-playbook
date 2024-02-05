@@ -211,7 +211,7 @@ mise use --global lua-language-server
 mise use --global stylua
 
 # Prettier
-no prettier && mise x -- npm i -g prettier
+no prettierd && mise x -- npm i -g @fsouza/prettierd
 
 # HTML/CSS/JSON LSP
 no vscode-css-language-server && mise x -- npm i -g vscode-langservers-extracted
