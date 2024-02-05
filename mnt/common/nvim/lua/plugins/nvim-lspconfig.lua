@@ -11,6 +11,16 @@ return {
     { "L3MON4D3/LuaSnip" },
     { "saadparwaiz1/cmp_luasnip" },
   },
+  -- TODO: https://www.reddit.com/r/neovim/comments/179vv49/nvim_golang_lsp_not_detecting_newly_installed/
+  opts = {
+    capabilities = {
+      workspace = {
+        didChangeWatchedFiles = {
+          dynamicRegistration = true,
+        },
+      },
+    },
+  },
   config = function()
     ----------------------------------
     -- nvim-cmp
