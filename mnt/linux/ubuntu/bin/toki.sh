@@ -9,6 +9,8 @@ Usages:
   toki node <path>:  Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
   toki go <path>:    GoプロジェクトのSandboxを作成します
 
+  toki pull:         関連するGitリポジトリをすべてpullします
+
   toki -h|--help|help: ヘルプを表示します
   "
 }
@@ -124,6 +126,18 @@ EOF
 $ cd ${path}
 $ go run .
 "
+  exit 0
+fi
+
+# -------------------------------------------
+# 関連するGitリポジトリをすべてpullします
+# -------------------------------------------
+if [[ $command == "pull" ]]; then
+  GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
+  echo "--- 🦉owl-playbook ---"
+  cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git pull
+  echo "--- 🍁carnelian ---"
+  cd "$GITHUB_AUTHOR_DIR/carnelian" && git pull
   exit 0
 fi
 
