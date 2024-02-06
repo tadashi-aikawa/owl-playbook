@@ -1,3 +1,4 @@
+promptToReturnFromSubprocess: false
 gui:
   nerdFontsVersion: "3"
   timeFormat: 06/01/02 15:04
