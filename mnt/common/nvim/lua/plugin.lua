@@ -117,8 +117,6 @@ local neovim_plugins = {
 
   -- バッファ削除のときにレイアウトを変更しない
   "famiu/bufdelete.nvim",
-  -- セッション保存
-  require("plugins.possession"),
   -- Git
   require("plugins.lazygit"),
   -- テーマ(2)
