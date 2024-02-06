@@ -119,8 +119,8 @@ local neovim_plugins = {
   "famiu/bufdelete.nvim",
   -- セッション保存
   require("plugins.possession"),
-  -- TUIツール
-  require("plugins.fm-nvim"),
+  -- Git
+  require("plugins.lazygit"),
   -- テーマ(2)
   -- 'ellisonleao/gruvbox.nvim',
   -- 'sainnhe/gruvbox-material',
