@@ -108,8 +108,6 @@ local neovim_plugins = {
   require("plugins.nvim-hlslens"),
   -- Markdown preview
   require("plugins.markdown-preview"),
-  -- Swagger UI preview
-  require("plugins.swagger-preview"),
 
   ---------------------
   -- 全体
