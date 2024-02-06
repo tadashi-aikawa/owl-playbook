@@ -1,0 +1,61 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet _script "<script setup>" b
+  <script setup lang="ts">
+  ${1}
+  </script>
+
+snippet _props "props定義" b
+  interface Props {
+    ${1}
+  }
+  const props = defineProps<Props>();
+
+snippet _props_default "props定義 defaultつき" b
+  interface Props {
+    ${1}
+  }
+  const props = withDefaults(defineProps<Props>(), {
+    ${2}
+  });
+
+snippet _state "state定義" b
+  interface State {
+    ${1}
+  }
+  const state = reactive<State>({
+    ${2}
+  });
+
+snippet _emit "emit定義" b
+  const emit = defineEmits<{
+    (e: "${1:click}", ${2:value}: ${3:any}): void;
+  }>();
+
+snippet _computed "computed" b
+  const ${1} = computed(() => ${2})
+
