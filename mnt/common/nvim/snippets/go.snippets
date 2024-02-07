@@ -23,3 +23,11 @@ snippet _logt "log.Println 👺"
 
 snippet _logv "log.Printf(%#v)"
   log.Printf("👺%#v\n", ${1})
+
+snippet _struct "type struct"
+  type ${1} struct {
+    ${2}
+  }
+
+snippet _json "`json:\"prop\"`"
+  \`json:"${1}"\`
