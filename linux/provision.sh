@@ -181,8 +181,8 @@ mise use -g bun
 mise use -g deno
 
 # Golang
-mise install go@1.20
-mise use -g go@1.21
+mise install go@1.20 go@1.21
+mise use -g go@1.22
 # shellcheck disable=SC2016
 ensure_bashrc 'export GOPATH=$HOME/go'
 # shellcheck disable=SC2016
