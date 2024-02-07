@@ -7,7 +7,7 @@ function show_usage() {
 Usages:
   toki bun <path>:   BunとBiomeのプロジェクトSandboxを作成します
   toki node <path>:  Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
-  toki go <path>:    GoプロジェクトとairのSandboxを作成します
+  toki go <path>:    GoプロジェクトのSandboxを作成します
 
   toki pull:         関連するGitリポジトリをすべてpullします
 
@@ -41,7 +41,7 @@ if [[ $command == "bun" ]]; then
 🚀 Try
 
 $ cd ${path}
-$ bun .
+$ bun --hot .
 "
   exit 0
 fi
@@ -55,8 +55,9 @@ if [[ $command == "node" ]]; then
   mkdir -p "$path"
   cd "$path"
   npm init -y
-  npm i -D typescript prettier prettier-plugin-organize-imports @tsconfig/recommended
-  npm pkg set scripts.dev="tsc && node ."
+  npm i -D typescript @fsouza/prettierd prettier-plugin-organize-imports @tsconfig/recommended
+  npm pkg set scripts.dev="tsc -w"
+  npm pkg set scripts.start="node --watch *.js"
 
   cat >tsconfig.json <<'EOF'
 {
@@ -88,7 +89,10 @@ EOF
 🚀 Try
 
 $ cd ${path}
+
 $ npm run dev
+and
+$ npm run start
 "
   exit 0
 fi
