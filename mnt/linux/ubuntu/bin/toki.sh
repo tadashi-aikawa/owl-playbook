@@ -7,7 +7,7 @@ function show_usage() {
 Usages:
   toki bun <path>:   BunとBiomeのプロジェクトSandboxを作成します
   toki node <path>:  Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
-  toki go <path>:    GoプロジェクトのSandboxを作成します
+  toki go <path>:    GoプロジェクトとairのSandboxを作成します
 
   toki pull:         関連するGitリポジトリをすべてpullします
 
@@ -102,6 +102,7 @@ if [[ $command == "go" ]]; then
   mkdir -p "$path"
   cd "$path"
   go mod init sandbox/"${path}"
+  go install github.com/cosmtrek/air@latest
 
   cat >main.go <<'EOF'
 package main
@@ -124,7 +125,7 @@ EOF
 🚀 Try
 
 $ cd ${path}
-$ go run .
+$ air
 "
   exit 0
 fi
