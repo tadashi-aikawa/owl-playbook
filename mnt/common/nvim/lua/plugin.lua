@@ -31,8 +31,6 @@ local neovim_plugins = {
   "tpope/vim-repeat",
   -- quickfix強化(previewなど)
   "kevinhwang91/nvim-bqf",
-  -- スムーズなスクロール
-  require("plugins.neoscroll"),
   -- mini.nvim
   require("plugins.mini"),
   -- TODO系のコマンドを目立たせる --
