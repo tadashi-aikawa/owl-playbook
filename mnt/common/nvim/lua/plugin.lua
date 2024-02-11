@@ -20,9 +20,7 @@ local neovim_plugins = {
   "kana/vim-textobj-user", -- ユーザーカスタマイズベース
   require("plugins.vim-textobj-entire"), -- ファイル全体
   -- 画面内瞬間移動
-  require("plugins.leap"),
-  -- fコマンドの強化
-  require("plugins.flit"),
+  require("plugins.flash"),
   -- ブラックホールレジスト+putの省略
   require("plugins.ReplaceWithRegister"),
   -- 囲まれているものの操作
