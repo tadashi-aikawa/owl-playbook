@@ -55,8 +55,6 @@ if u.is_windows then
 else
   u.key("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 end
--- 行オートコンプリート
-u.key("i", "<C-l>", "<C-x><C-l>")
 -- cnext / cprevious
 u.key("n", "<Space>n", ":cnext<CR>", { silent = true })
 u.key("n", "<Space>p", ":cprevious<CR>", { silent = true })
