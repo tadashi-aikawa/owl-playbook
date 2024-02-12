@@ -6,9 +6,6 @@ return {
       distance = false,
     },
     modes = {
-      char = {
-        multi_line = false,
-      },
       search = {
         enabled = false,
       },
