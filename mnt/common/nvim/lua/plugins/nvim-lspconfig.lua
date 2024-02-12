@@ -165,13 +165,20 @@ return {
       end
     end
 
-    lspconfig.volar.setup({
-      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-      capabilities = capabilities,
-      on_new_config = function(new_config, new_root_dir)
-        new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-      end,
-    })
+    -- TODO: VueやNuxtのプロジェクトでのみ有効にする
+    -- lspconfig.volar.setup({
+    --   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+    --   capabilities = capabilities,
+    --   -- root_dir = function (fname)
+    --   --   util.root_pattern()
+    --   -- end
+    --   on_new_config = function(new_config, new_root_dir)
+    --     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+    --   end,
+    -- })
+
+    -- TODO: VueやNuxtのプロジェクトでは無効にする
+    lspconfig.tsserver.setup({})
 
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
