@@ -215,7 +215,7 @@ return {
         -- 実装をホバー
         vim.keymap.set("n", "<M-d>", "<cmd>Lspsaga peek_definition<CR>", opts)
         -- 呼び出し元一覧 (qflist)
-        vim.keymap.set("n", "<C-j>h", vim.lsp.buf.references, opts)
+        -- vim.keymap.set("n", "<C-j>h", vim.lsp.buf.references, opts)
         -- 実装と呼び出し元の同時表示
         vim.keymap.set("n", "<C-j>u", "<cmd>Lspsaga finder<CR>", opts)
         -- リネーム

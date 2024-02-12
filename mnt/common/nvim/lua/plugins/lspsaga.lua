@@ -16,7 +16,6 @@ return {
         left_width = 0.3,
         right_width = 0.6,
         keys = {
-          shuttle = "<Space>w",
           toggle_or_open = "<CR>",
         },
       },

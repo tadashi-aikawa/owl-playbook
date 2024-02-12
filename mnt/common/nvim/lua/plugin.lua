@@ -57,6 +57,8 @@ local neovim_plugins = {
   require("plugins.lspsaga"),
   "j-hui/fidget.nvim",
   require("plugins.lsp_signature"),
+  -- IDEのような見やすいリスト表示
+  require("plugins.trouble"),
   -- シンタックスハイライト
   require("plugins.nvim-treesitter"),
   -- Fuzzy finder
