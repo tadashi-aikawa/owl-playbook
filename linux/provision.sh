@@ -217,6 +217,7 @@ no prettierd && mise x -- npm i -g @fsouza/prettierd
 # HTML/CSS/JSON LSP
 no vscode-css-language-server && mise x -- npm i -g vscode-langservers-extracted
 no vscode-json-language-server && mise x -- npm i -g vscode-langservers-extracted
+no emmet-language-server && mise x -- npm i -g @olrtg/emmet-language-server
 
 # YAML
 no yaml-language-server && mise x -- npm i -g yaml-language-server
