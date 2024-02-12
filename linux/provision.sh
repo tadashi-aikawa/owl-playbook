@@ -173,6 +173,7 @@ mise use -g lazydocker
 
 # Node.js
 mise use -g node@18
+mise use -g node@20
 
 # Bun
 mise use -g bun
