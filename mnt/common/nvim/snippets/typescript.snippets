@@ -40,3 +40,18 @@ snippet _exfunction "export function"
   export function ${1}(${2})${3} {
     ${4}
   }
+
+snippet _switch "switch"
+  switch ($1) {
+    case $2:
+      break;
+    default:
+      throw new ExhaustiveError($1);
+  }
+
+snippet "_exhaustiveError" "ExhaustiveError"
+  export class ExhaustiveError extends Error {
+    constructor(value: never, message = `Unsupported type: ${value}`) {
+      super(message);
+    }
+  }
