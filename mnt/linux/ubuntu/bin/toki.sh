@@ -9,6 +9,7 @@ Usages:
   toki node <path>:  Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
   toki go <path>:    GoプロジェクトのSandboxを作成します
 
+  toki status:       関連するGitリポジトリの状態を取得します
   toki pull:         関連するGitリポジトリをすべてpullします
 
   toki -h|--help|help: ヘルプを表示します
@@ -135,6 +136,20 @@ $ air
 fi
 
 # -------------------------------------------
+# 関連するGitリポジトリの状態を取得します
+# -------------------------------------------
+if [[ $command == "status" ]]; then
+  GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
+  echo "--- 🦉owl-playbook ---"
+  cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git status -s
+  echo "--- 🍁carnelian ---"
+  cd "$GITHUB_AUTHOR_DIR/carnelian" && git status -s
+  echo "--- 📈naslack ---"
+  cd "$GITHUB_AUTHOR_DIR/naslack" && git status -s
+  exit 0
+fi
+
+# -------------------------------------------
 # 関連するGitリポジトリをすべてpullします
 # -------------------------------------------
 if [[ $command == "pull" ]]; then
@@ -143,6 +158,8 @@ if [[ $command == "pull" ]]; then
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git pull
   echo "--- 🍁carnelian ---"
   cd "$GITHUB_AUTHOR_DIR/carnelian" && git pull
+  echo "--- 📈naslack ---"
+  cd "$GITHUB_AUTHOR_DIR/naslack" && git pull
   exit 0
 fi
 
