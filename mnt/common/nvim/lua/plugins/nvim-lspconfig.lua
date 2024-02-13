@@ -106,6 +106,7 @@ return {
     lspconfig.cssls.setup({ capabilities = capabilities })
     lspconfig.html.setup({ capabilities = capabilities })
     lspconfig.emmet_language_server.setup({ capabilities = capabilities })
+    lspconfig.tailwindcss.setup({ capabilities = capabilities })
     lspconfig.marksman.setup({ capabilities = capabilities })
     lspconfig.bashls.setup({ capabilities = capabilities })
 
@@ -176,6 +177,7 @@ return {
     })
     -- VueやNuxtのプロジェクトでなければtsserverを使う
     lspconfig.tsserver.setup({
+      capabilities = capabilities,
       single_file_support = false,
       root_dir = function(fname)
         -- VueやNuxtのプロジェクトではVolarに任せるので無効にする
