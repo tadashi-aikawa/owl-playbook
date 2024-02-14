@@ -56,6 +56,10 @@ sudo apt-get update -y
 sudo apt-get install -y ntp
 sudo systemctl enable ntp
 sudo systemctl start ntp
+sudo systemctl stop systemd-timesyncd
+sudo systemctl stop ntp-systemd-netif
+sudo systemctl disable systemd-timesyncd
+sudo systemctl disable ntp-systemd-netif
 # nvim-treesitterで使用
 sudo apt-get install -y build-essential xsel
 # Pythonとtelescope-frecencyで使用
