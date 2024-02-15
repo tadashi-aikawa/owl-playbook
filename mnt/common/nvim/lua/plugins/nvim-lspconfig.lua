@@ -106,7 +106,6 @@ return {
     lspconfig.cssls.setup({ capabilities = capabilities })
     lspconfig.html.setup({ capabilities = capabilities })
     lspconfig.emmet_language_server.setup({ capabilities = capabilities })
-    lspconfig.tailwindcss.setup({ capabilities = capabilities })
     lspconfig.marksman.setup({ capabilities = capabilities })
     lspconfig.bashls.setup({ capabilities = capabilities })
 
@@ -149,6 +148,7 @@ return {
 
     -- [Volar] localのnode_modulesを優先する
     local util = require("lspconfig.util")
+
     local function get_typescript_server_path(root_dir)
       local home = os.getenv("HOME")
       local global_ts = home .. "/.local/share/mise/installs/node/18/lib/node_modules/typescript/lib"
@@ -186,6 +186,16 @@ return {
         end
         return util.root_pattern("tsconfig.json")(fname)
       end,
+    })
+
+    lspconfig.tailwindcss.setup({
+      capabilities = capabilities,
+      root_dir = util.root_pattern(
+        "tailwind.config.js",
+        "tailwind.config.cjs",
+        "tailwind.config.mjs",
+        "tailwind.config.ts"
+      ),
     })
 
     lspconfig.lua_ls.setup({
