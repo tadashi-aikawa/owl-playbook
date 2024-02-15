@@ -23,6 +23,7 @@ return {
         "rust",
         "svelte",
         "toml",
+        "tsx",
         "typescript",
         "vim",
         "vimdoc",
