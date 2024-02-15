@@ -11,5 +11,6 @@ return {
     p.remove_rule('"')
     p.remove_rule("'")
     p.remove_rule("`")
+    p.remove_rule("```")
   end,
 }
