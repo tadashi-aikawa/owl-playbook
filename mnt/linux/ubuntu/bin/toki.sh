@@ -11,6 +11,7 @@ Usages:
 
   toki status:       関連するGitリポジトリの状態を取得します
   toki pull:         関連するGitリポジトリをすべてpullします
+  toki update:       関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
 
   toki -h|--help|help: ヘルプを表示します
   "
@@ -149,10 +150,7 @@ if [[ $command == "status" ]]; then
   exit 0
 fi
 
-# -------------------------------------------
-# 関連するGitリポジトリをすべてpullします
-# -------------------------------------------
-if [[ $command == "pull" ]]; then
+function pull() {
   GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
   echo "--- 🦉owl-playbook ---"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git pull
@@ -160,6 +158,23 @@ if [[ $command == "pull" ]]; then
   cd "$GITHUB_AUTHOR_DIR/carnelian" && git pull
   echo "--- 📈naslack ---"
   cd "$GITHUB_AUTHOR_DIR/naslack" && git pull
+}
+
+# -------------------------------------------
+# 関連するGitリポジトリをすべてpullします
+# -------------------------------------------
+if [[ $command == "pull" ]]; then
+  pull
+  exit 0
+fi
+
+# -------------------------------------------
+# 関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
+# -------------------------------------------
+if [[ $command == "update" ]]; then
+  pull
+  cd "$GITHUB_AUTHOR_DIR/owl-playbook"
+  bash ./linux/provision.sh
   exit 0
 fi
 
