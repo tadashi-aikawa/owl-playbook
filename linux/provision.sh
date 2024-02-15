@@ -48,7 +48,7 @@ function ensure_zshrc() {
 #----------------------------------------------------------------------
 sudo ln -snf "$LINUX_MNT"/wsl.conf /etc/wsl.conf
 # sleepで時刻stop対策
-sudo mkdir /etc/systemd/system/systemd-timesyncd.service.d
+sudo mkdir -p /etc/systemd/system/systemd-timesyncd.service.d
 sudo ln -snf "$LINUX_MNT"/systemd-timesyncd.service.d/override.conf /etc/systemd/system/systemd-timesyncd.service.d/override.conf
 
 #----------------------------------------------------------------------
