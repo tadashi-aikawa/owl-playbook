@@ -109,6 +109,17 @@ return {
     lspconfig.marksman.setup({ capabilities = capabilities })
     lspconfig.bashls.setup({ capabilities = capabilities })
 
+    lspconfig.rust_analyzer.setup({
+      capabilities = capabilities,
+      settings = {
+        ["rust-analyzer"] = {
+          check = {
+            command = "clippy",
+          },
+        },
+      },
+    })
+
     lspconfig.biome.setup({
       capabilities = capabilities,
       cmd = { "npx", "biome", "lsp-proxy" },
