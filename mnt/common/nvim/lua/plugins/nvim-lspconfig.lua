@@ -244,6 +244,10 @@ return {
         local opts = { buffer = ev.buf }
         -- 定義に移動
         vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "<C-w>]", function()
+          vim.cmd([[ vsplit ]])
+          vim.lsp.buf.definition()
+        end, opts)
         -- 定義をホバー
         vim.keymap.set("n", "<M-s>", "<cmd>Lspsaga hover_doc<CR>", opts)
         -- 実装へ移動
