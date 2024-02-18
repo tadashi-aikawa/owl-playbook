@@ -36,6 +36,9 @@ u.set.ignorecase = true
 u.set.smartcase = true
 -- スクロールした時 常に下に表示するバッファ行の数
 u.set.scrolloff = 5
+-- 分割方向
+u.set.splitright = true
+u.set.splitbelow = true
 
 -- 最後に開いていた行を開く
 vim.cmd([[
