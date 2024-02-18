@@ -41,7 +41,7 @@ return {
               vim.lsp.buf.format({
                 async = false,
                 filter = function(c)
-                  local disabled_format_clients = { "lua_ls", "volar" }
+                  local disabled_format_clients = { "lua_ls", "volar", "tsserver" }
                   return not vim.tbl_contains(disabled_format_clients, c.name)
                 end,
               })
