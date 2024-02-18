@@ -31,5 +31,11 @@ return {
     vim.keymap.set("n", "<Space>w", function()
       trouble.toggle("workspace_diagnostics")
     end)
+    vim.keymap.set("n", "<Space>n", function()
+      trouble.next({ skip_groups = true, jump = true })
+    end)
+    vim.keymap.set("n", "<Space>p", function()
+      trouble.previous({ skip_groups = true, jump = true })
+    end)
   end,
 }
