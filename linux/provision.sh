@@ -229,6 +229,9 @@ no typescript-language-server && mise x -- npm i -g typescript-language-server
 # Vue
 no vue-language-server && mise x -- npm i -g @vue/language-server
 
+# Svelte
+no svelte-language-server && mise x -- npm i -g svelte-language-server
+
 # Markdown
 no marksman && {
   sudo wget https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 -O /usr/local/bin/marksman

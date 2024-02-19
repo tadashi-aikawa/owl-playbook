@@ -108,6 +108,7 @@ return {
     lspconfig.emmet_language_server.setup({ capabilities = capabilities })
     lspconfig.marksman.setup({ capabilities = capabilities })
     lspconfig.bashls.setup({ capabilities = capabilities })
+    lspconfig.svelte.setup({ capabilities = capabilities })
 
     lspconfig.rust_analyzer.setup({
       capabilities = capabilities,
