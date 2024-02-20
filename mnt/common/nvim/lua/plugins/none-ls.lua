@@ -8,19 +8,15 @@ return {
       sources = {
         null_ls.builtins.formatting.biome.with({
           only_local = "node_modules/.bin",
+          condition = function(utils)
+            return utils.root_has_file({ "biome.json" })
+          end,
         }),
         null_ls.builtins.formatting.prettierd.with({
           prefer_local = "node_modules/.bin",
           extra_filetypes = { "svelte" },
           disabled_filetypes = { "markdown" },
           condition = function(utils)
-            local biome_support_filetypes =
-              { "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "jsonc" }
-            -- biome.json が対応していなければprettier
-            if not vim.tbl_contains(biome_support_filetypes, vim.bo.filetype) then
-              return true
-            end
-            -- biome.json が対応しててもbiome.jsonがなければprettier
             return not utils.root_has_file({ "biome.json" })
           end,
         }),
