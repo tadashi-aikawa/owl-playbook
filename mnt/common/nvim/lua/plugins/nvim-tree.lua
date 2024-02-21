@@ -77,7 +77,7 @@ return {
         vim.keymap.set("n", "y", api.fs.copy.node, opts("Copy"))
         vim.keymap.set("n", "p", api.fs.paste, opts("Paste"))
         vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
-        vim.keymap.set("n", "R", api.fs.rename_full, opts("Rename: Full Path"))
+        vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
         vim.keymap.set("n", "U", api.tree.toggle_custom_filter, opts("Toggle Filter: Hidden"))
         vim.keymap.set("n", "<C-j><C-l>", api.tree.expand_all, opts("Expand All"))
         vim.keymap.set("n", "<C-j><C-h>", api.tree.collapse_all, opts("Collapse"))
