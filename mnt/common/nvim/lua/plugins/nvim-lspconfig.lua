@@ -245,7 +245,7 @@ return {
         local opts = { buffer = ev.buf }
         -- 定義に移動
         vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "<C-w>]", function()
+        vim.keymap.set("n", "<M-]>", function()
           vim.cmd([[ vsplit ]])
           vim.lsp.buf.definition()
         end, opts)
