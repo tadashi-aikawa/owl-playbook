@@ -230,7 +230,7 @@ no typescript-language-server && mise x -- npm i -g typescript-language-server
 no vue-language-server && mise x -- npm i -g @vue/language-server
 
 # Svelte
-no svelte-language-server && mise x -- npm i -g svelte-language-server
+no svelteserver && mise x -- npm i -g svelte-language-server
 
 # Markdown
 no marksman && {
