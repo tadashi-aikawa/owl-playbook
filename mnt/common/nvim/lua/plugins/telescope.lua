@@ -27,6 +27,7 @@ return {
             ["<esc>"] = actions.close,
             ["<C-a>"] = actions.smart_add_to_qflist + actions.open_qflist,
             ["<C-o>"] = actions.smart_send_to_qflist + actions.open_qflist,
+            ["<C-s>"] = actions.select_horizontal,
             -- Ctrl+Enterがマッピングされている
             ["<F12>"] = actions.select_vertical,
           },

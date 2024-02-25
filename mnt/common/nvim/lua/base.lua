@@ -75,3 +75,5 @@ u.key("n", "<Space>h", ":BufferPrevious<CR>", { silent = true })
 u.key("n", "<Space>q", ":Bdelete<CR>", { silent = true })
 u.key("n", "<Space>t", ":BufferRestore<CR>", { silent = true })
 u.key("n", "<Space>c", ":BufferCloseAllButVisible<CR>", { silent = true })
+-- windows split
+u.key("n", "<C-w><F12>", ":vsplit<CR>", { silent = true })

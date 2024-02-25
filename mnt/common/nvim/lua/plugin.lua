@@ -30,7 +30,7 @@ local neovim_plugins = {
   -- 様々なrepeat処理に対応
   "tpope/vim-repeat",
   -- quickfix強化(previewなど)
-  "kevinhwang91/nvim-bqf",
+  require("plugins.nvim-bqf"),
   -- mini.nvim
   require("plugins.mini"),
   -- TODO系のコマンドを目立たせる --

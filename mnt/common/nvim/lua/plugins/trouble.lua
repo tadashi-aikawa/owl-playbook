@@ -8,6 +8,8 @@ return {
         jump = { "<tab>" },
         toggle_fold = { "l", "h" },
         cancel = {}, -- ESCには割り当てない
+        open_split = { "<C-s>" },
+        open_vsplit = { "<F12>" },
       },
       -- 呼び出し履歴(lsp_references)では宣言を表示しない
       include_declaration = { "lsp_implementations", "lsp_definitions" },
