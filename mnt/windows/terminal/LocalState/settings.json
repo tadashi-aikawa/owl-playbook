@@ -84,6 +84,10 @@
       "keys": "alt+enter"
     },
     {
+      "command": "unbound",
+      "keys": "ctrl+-"
+    },
+    {
       "command": {
         "action": "scrollUp"
       },
