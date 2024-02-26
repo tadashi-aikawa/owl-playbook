@@ -8,6 +8,7 @@ Usages:
   toki bun <path>:   BunとBiomeのプロジェクトSandboxを作成します
   toki node <path>:  Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
   toki go <path>:    GoプロジェクトのSandboxを作成します
+  toki rust <path>:  RustプロジェクトのSandboxを作成します
 
   toki status:       関連するGitリポジトリの状態を取得します
   toki pull:         関連するGitリポジトリをすべてpullします
@@ -132,6 +133,23 @@ EOF
 
 $ cd ${path}
 $ air
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# RustプロジェクトのSandboxを作成します
+# -------------------------------------------
+if [[ $command == "rust" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  cargo new "$path"
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ cargo run
 "
   exit 0
 fi
