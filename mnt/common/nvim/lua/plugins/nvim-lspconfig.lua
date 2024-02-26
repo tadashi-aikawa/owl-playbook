@@ -101,7 +101,10 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    lspconfig.pyright.setup({ capabilities = capabilities })
+    -- TODO: 整理
+    lspconfig.ruff_lsp.setup({ capabilities = capabilities })
+    -- lspconfig.pyright.setup({ capabilities = capabilities })
+
     lspconfig.gopls.setup({ capabilities = capabilities })
     lspconfig.cssls.setup({ capabilities = capabilities })
     lspconfig.html.setup({ capabilities = capabilities })
@@ -270,6 +273,17 @@ return {
 
         -- ターミナル (Lspsagaなのでここ)
         vim.keymap.set("n", "<Space>i", "<cmd>Lspsaga term_toggle<CR>", opts)
+
+        -- 保存時に自動フォーマット
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          pattern = { "*.rs", "*.py" },
+          callback = function()
+            vim.lsp.buf.format({
+              buffer = ev.buf,
+              async = false,
+            })
+          end,
+        })
       end,
     })
 
