@@ -196,6 +196,7 @@ mise use --global gofumpt
 # Python
 mise use -g python@3.12
 no pyright && mise x -- npm i -g pyright
+no ruff-lsp && mise x -- pip install ruff-lsp
 
 # Poetry
 mise use -g poetry
