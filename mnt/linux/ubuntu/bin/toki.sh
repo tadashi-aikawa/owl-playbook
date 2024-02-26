@@ -5,10 +5,11 @@ set -eu
 function show_usage() {
   echo "
 Usages:
-  toki bun <path>:   BunとBiomeのプロジェクトSandboxを作成します
-  toki node <path>:  Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
-  toki go <path>:    GoプロジェクトのSandboxを作成します
-  toki rust <path>:  RustプロジェクトのSandboxを作成します
+  toki bun <path>:    BunとBiomeのプロジェクトSandboxを作成します
+  toki node <path>:   Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+  toki go <path>:     GoプロジェクトのSandboxを作成します
+  toki rust <path>:   RustプロジェクトのSandboxを作成します
+  toki python <path>: PythonプロジェクトのSandboxを作成します
 
   toki status:       関連するGitリポジトリの状態を取得します
   toki pull:         関連するGitリポジトリをすべてpullします
@@ -150,6 +151,34 @@ if [[ $command == "rust" ]]; then
 
 $ cd ${path}
 $ cargo run
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# PythonプロジェクトのSandboxを作成します
+# -------------------------------------------
+if [[ $command == "python" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  python -m venv .venv
+  cat >main.py <<'EOF'
+def main():
+    print("Hello python!!")
+
+
+if __name__ == "__main__":
+    main()
+EOF
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ source .venv/bin/activate
+$ python main.py
 "
   exit 0
 fi
