@@ -181,11 +181,15 @@ return {
       end
     end
 
+    local function is_vue_or_nuxt()
+      return util.root_pattern("vite.config.ts", "nuxt.config.ts", "nuxt.config.js")
+    end
+
     -- VueやNuxtのプロジェクトでのみ有効にする
     lspconfig.volar.setup({
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
       capabilities = capabilities,
-      root_dir = util.root_pattern("vite.config.ts", "nuxt.config.ts", "nuxt.config.js"),
+      root_dir = is_vue_or_nuxt(),
       on_new_config = function(new_config, new_root_dir)
         new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
       end,
@@ -196,7 +200,7 @@ return {
       single_file_support = false,
       root_dir = function(fname)
         -- VueやNuxtのプロジェクトではVolarに任せるので無効にする
-        if util.root_pattern("vite.config.ts", "nuxt.config.ts")(fname) then
+        if is_vue_or_nuxt()(fname) then
           return nil
         end
         return util.root_pattern("tsconfig.json")(fname)
