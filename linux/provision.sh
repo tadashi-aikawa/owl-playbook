@@ -17,6 +17,20 @@ function no() {
   ! command -v "$1" >/dev/null
 }
 
+# miseでインストールされている全Node.jsバージョンでインストール
+# $1: インストール対象, $2: コマンド名($1と異なる場合のみ)
+function npm_install() {
+  target="$1"
+  command=${2:-${target}}
+
+  mise use -g node@18
+  no "${command}" && mise x -- npm i -g "${target}"
+  mise use -g node@20
+  no "${command}" && mise x -- npm i -g "${target}"
+
+  return 0
+}
+
 # ~/.bashrcに引数と一致する文があることを保証します
 # 既に存在すれば何もせず、存在しなければ最後に追記します
 function ensure_bashrc() {
@@ -195,7 +209,7 @@ mise use --global gofumpt
 
 # Python
 mise use -g python@3.12
-no pyright && mise x -- npm i -g pyright
+npm_install pyright
 no ruff-lsp && mise x -- pip install ruff-lsp
 
 # Poetry
@@ -203,7 +217,7 @@ mise use -g poetry
 mise x -- poetry config virtualenvs.in-project true
 
 # Bash
-no bash-language-server && mise x -- npm i -g bash-language-server
+npm_install bash-language-server
 mise use -g shellcheck
 mise use -g shfmt
 
@@ -212,26 +226,26 @@ mise use --global lua-language-server
 mise use --global stylua
 
 # Prettier
-no prettierd && mise x -- npm i -g @fsouza/prettierd
+npm_install prettierd
 
 # HTML/CSS/JSON LSP
-no vscode-css-language-server && mise x -- npm i -g vscode-langservers-extracted
-no vscode-json-language-server && mise x -- npm i -g vscode-langservers-extracted
-no emmet-language-server && mise x -- npm i -g @olrtg/emmet-language-server
-no tailwindcss-language-server && mise x -- npm i -g @tailwindcss/language-server
+npm_install vscode-langservers-extracted vscode-css-language-server
+npm_install vscode-langservers-extracted vscode-json-language-server
+npm_install @olrtg/emmet-language-server emmet-language-server
+npm_install @tailwindcss/language-server tailwindcss-language-server
 
 # YAML
-no yaml-language-server && mise x -- npm i -g yaml-language-server
+npm_install yaml-language-server
 
 # TypeScript
-no tsc && mise x -- npm i -g typescript
-no typescript-language-server && mise x -- npm i -g typescript-language-server
+npm_install typescript tsc
+npm_install typescript-language-server
 
 # Vue
-no vue-language-server && mise x -- npm i -g @vue/language-server
+npm_install @vue/language-server vue-language-server
 
 # Svelte
-no svelteserver && mise x -- npm i -g svelte-language-server
+npm_install svelte-language-server svelteserver
 
 # Markdown
 no marksman && {
