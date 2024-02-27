@@ -17,6 +17,11 @@ function no() {
   ! command -v "$1" >/dev/null
 }
 
+function mise_no() {
+  echo "🔍 $1 コマンドの存在確認"
+  ! which "$1" >/dev/null
+}
+
 # miseでインストールされている全Node.jsバージョンでインストール
 # $1: インストール対象, $2: コマンド名($1と異なる場合のみ)
 function npm_install() {
@@ -24,9 +29,11 @@ function npm_install() {
   command=${2:-${target}}
 
   mise use -g node@18
-  no "${command}" && mise x -- npm i -g "${target}"
+  mise_no "${command}" && mise x -- npm i -g "${target}"
+  mise use -g node@18.15.0
+  mise_no "${command}" && mise x -- npm i -g "${target}"
   mise use -g node@20
-  no "${command}" && mise x -- npm i -g "${target}"
+  mise_no "${command}" && mise x -- npm i -g "${target}"
 
   return 0
 }
@@ -226,7 +233,7 @@ mise use --global lua-language-server
 mise use --global stylua
 
 # Prettier
-npm_install prettierd
+npm_install @fsouza/prettierd prettierd
 
 # HTML/CSS/JSON LSP
 npm_install vscode-langservers-extracted vscode-css-language-server
