@@ -79,6 +79,8 @@ local neovim_plugins = {
   require("plugins.vim-visual-multi"),
   -- スクロールバー表示
   require("plugins.nvim-scrollbar"),
+  -- 折り畳み
+  require("plugins.nvim-ufo"),
   -- Gitの行表示
   require("plugins.gitsigns"),
   -- Git blame

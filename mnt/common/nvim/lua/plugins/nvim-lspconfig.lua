@@ -100,6 +100,11 @@ return {
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
+    -- ufo
+    capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
 
     -- TODO: 整理
     lspconfig.ruff_lsp.setup({ capabilities = capabilities })
