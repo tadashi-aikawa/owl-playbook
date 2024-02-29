@@ -7,6 +7,7 @@ function show_usage() {
 Usages:
   toki bun <path>:    BunとBiomeのプロジェクトSandboxを作成します
   toki node <path>:   Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+  toki vue <path>:    Vue.js/Node.jsのプロジェクトSandboxを作成します
   toki go <path>:     GoプロジェクトのSandboxを作成します
   toki rust <path>:   RustプロジェクトのSandboxを作成します
   toki python <path>: PythonプロジェクトのSandboxを作成します
@@ -99,6 +100,25 @@ and
 $ npm run start
 "
   exit 0
+fi
+
+# -------------------------------------------
+# Vue.js/Node.jsのプロジェクトSandboxを作成します
+# -------------------------------------------
+if [[ $command == "vue" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  npm create vue@latest "${path}"
+  cd "$path"
+  npm i
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ npm run dev
+"
+  exit 0
+
 fi
 
 # -------------------------------------------
