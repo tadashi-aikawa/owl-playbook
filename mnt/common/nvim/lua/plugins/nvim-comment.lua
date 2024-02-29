@@ -1,11 +1,10 @@
 return {
-  'terrortylor/nvim-comment',
+  "terrortylor/nvim-comment",
   config = function()
-    require('nvim_comment').setup()
-  end,
-  hook = function()
-    if vim.api.nvim_buf_get_option(0, "filetype") == "vue" then
-      require("ts_context_commentstring.internal").update_commentstring()
-    end
+    require("nvim_comment").setup({
+      hook = function()
+        require("ts_context_commentstring").update_commentstring()
+      end,
+    })
   end,
 }

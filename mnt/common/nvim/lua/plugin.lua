@@ -94,7 +94,7 @@ local neovim_plugins = {
   -- 通知とコマンドラインを強化
   require("plugins.noice"),
   -- コメントアウト(2)
-  "JoosepAlviste/nvim-ts-context-commentstring", -- vue.jsなどの特殊なケース用
+  require("plugins.nvim-ts-context-commentstring"),
   require("plugins.nvim-comment"),
   -- カラーコードの表示
   require("plugins.nvim-colorizer"),
