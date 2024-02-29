@@ -13,6 +13,8 @@ u.set.fileencodings = "utf-8,sjis"
 u.set.fileformats = "unix,dos,mac"
 -- swapfileを作成しない
 vim.opt.swapfile = false
+-- XXX: vue.jsでコメントアウトするためになぜか必要
+vim.opt.updatetime = 100
 
 -- バッファを未保存でも閉じる
 u.set.hidden = true
