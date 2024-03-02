@@ -157,8 +157,8 @@ ln -snf "$COMMON_MNT"/starship/starship.toml ~/.config/starship.toml
 
 # Neovim
 mise use -g neovim
-ensure_bashrc 'alias vim=nvim'
-ensure_zshrc 'alias vim=nvim'
+ensure_bashrc 'alias vim="TERM=tmux nvim"' # under curl有効化の回避策
+ensure_zshrc 'alias vim="TERM=tmux nvim"'  # under curl有効化の回避策
 mkdir -p ~/.config/nvim
 ln -snf "${COMMON_MNT}"/nvim/lua ~/.config/nvim/lua
 ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
