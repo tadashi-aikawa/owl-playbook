@@ -84,8 +84,10 @@ ensure_zshrc 'export TERM="owlterm-256color"'
 # 依存関係インストール
 #----------------------------------------------------------------------
 sudo apt-get update -y
+# Neovimで使用
+sudo apt-get install -y wl-clipboard
 # nvim-treesitterで使用
-sudo apt-get install -y build-essential xsel
+sudo apt-get install -y build-essential
 # Pythonとtelescope-frecencyで使用
 sudo apt-get install -y libsqlite3-dev
 # Rustで使用
