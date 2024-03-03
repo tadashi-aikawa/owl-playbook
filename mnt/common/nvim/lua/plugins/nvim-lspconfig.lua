@@ -293,6 +293,9 @@ return {
             })
           end,
         })
+
+        -- 深刻度が高い方を優先して表示
+        vim.diagnostic.config({ severity_sort = true })
       end,
     })
 
