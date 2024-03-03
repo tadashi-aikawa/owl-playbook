@@ -1,18 +1,19 @@
 local u = require("utils")
 
 if u.is_windows then
-  u.set.clipboard = 'unnamed'
+  vim.opt.clipboard = "unnamed"
 else
-  u.set.clipboard = 'unnamedplus'
+  vim.opt.clipboard = "unnamedplus"
   vim.g.clipboard = {
-    name = 'WslClipboard',
+    name = "WslClipboard",
     copy = {
-      ['+'] = 'xsel -bi',
-      ['*'] = 'xsel -bi',
+      ["+"] = "wl-copy",
     },
     paste = {
-      ['+'] = 'xsel -bo',
-      ['*'] = function() return vim.fn.systemlist('xsel -bo | tr -d "\r"') end,
+      ["+"] = function()
+        return vim.fn.systemlist('wl-paste | tr -d "\r"')
+      end,
+      ["*"] = "wl-paste",
     },
     cache_enabled = 1,
   }
