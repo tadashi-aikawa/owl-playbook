@@ -73,6 +73,14 @@ sudo mkdir -p /etc/systemd/system/systemd-timesyncd.service.d
 sudo ln -snf "$LINUX_MNT"/systemd-timesyncd.service.d/override.conf /etc/systemd/system/systemd-timesyncd.service.d/override.conf
 
 #----------------------------------------------------------------------
+# 環境変数
+#----------------------------------------------------------------------
+
+# xterm-256colorをベースに波線などのエスケープに対応した独自のterminfo
+ensure_bashrc 'export TERM="owlterm-256color"'
+ensure_zshrc 'export TERM="owlterm-256color"'
+
+#----------------------------------------------------------------------
 # 依存関係インストール
 #----------------------------------------------------------------------
 sudo apt-get update -y
@@ -157,8 +165,8 @@ ln -snf "$COMMON_MNT"/starship/starship.toml ~/.config/starship.toml
 
 # Neovim
 mise use -g neovim
-ensure_bashrc 'alias vim="TERM=tmux nvim"' # under curl有効化の回避策
-ensure_zshrc 'alias vim="TERM=tmux nvim"'  # under curl有効化の回避策
+ensure_bashrc 'alias vim=nvim'
+ensure_zshrc 'alias vim=nvim'
 mkdir -p ~/.config/nvim
 ln -snf "${COMMON_MNT}"/nvim/lua ~/.config/nvim/lua
 ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
