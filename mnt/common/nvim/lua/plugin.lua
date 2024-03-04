@@ -122,6 +122,7 @@ local neovim_plugins = {
   -- 'sainnhe/gruvbox-material',
   -- 'EdenEast/nightfox.nvim',
   "folke/tokyonight.nvim",
+  require("plugins.no-neck-pain"),
 }
 
 require("lazy").setup(neovim_plugins)
