@@ -65,8 +65,8 @@ else
   u.key("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 end
 -- cnext / cprevious
-u.key("n", "<Space>n", ":cnext<CR>", { silent = true })
-u.key("n", "<Space>p", ":cprevious<CR>", { silent = true })
+u.key("n", "<Space>J", ":cnext<CR>", { silent = true })
+u.key("n", "<Space>K", ":cprevious<CR>", { silent = true })
 -- バッファ切り替え
 u.key("n", "<Space>r", ":b#<CR>", { silent = true })
 u.key("n", "<Space>e", ":BufferPick<CR>", { silent = true })

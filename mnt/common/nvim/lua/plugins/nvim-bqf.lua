@@ -4,7 +4,7 @@ return {
     require("bqf").setup({
       func_map = {
         openc = "<CR>",
-        open = "<Tab>",
+        open = "o",
         split = "<C-s>",
         vsplit = "<F12>",
       },
