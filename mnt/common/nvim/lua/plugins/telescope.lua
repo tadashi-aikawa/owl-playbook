@@ -36,7 +36,9 @@ return {
         sorting_strategy = "ascending",
         layout_strategy = "vertical",
         layout_config = {
-          vertical = { width = 0.9 },
+          vertical = {
+            width = 120,
+          },
           prompt_position = "top",
           preview_cutoff = 1,
         },
