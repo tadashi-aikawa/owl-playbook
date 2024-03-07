@@ -31,3 +31,8 @@ snippet _struct "type struct"
 
 snippet _json "`json:\"prop\"`"
   \`json:"${1}"\`
+
+snippet _forr "for range"
+  for _, ${1} := range ${2} {
+    ${3}
+  }
