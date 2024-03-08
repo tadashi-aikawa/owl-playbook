@@ -64,7 +64,8 @@ local neovim_plugins = {
   -- Fuzzy finder
   require("plugins.telescope"),
   -- エクスプローラー
-  require("plugins.nvim-tree"),
+  -- TODO: nvim-treeのuiaファイル削除
+  require("plugins.oil"),
   -- バッファ・タブバーをかっこよく
   require("plugins.barbar"),
   -- ステータスライン
