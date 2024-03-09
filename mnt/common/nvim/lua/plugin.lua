@@ -124,6 +124,9 @@ local neovim_plugins = {
   -- 'EdenEast/nightfox.nvim',
   "folke/tokyonight.nvim",
   require("plugins.no-neck-pain"),
+
+  -- TODO:
+  "rapan931/lasterisk.nvim",
 }
 
 require("lazy").setup(neovim_plugins)
