@@ -31,10 +31,14 @@ local neovim_plugins = {
   "tpope/vim-repeat",
   -- quickfix強化(previewなど)
   require("plugins.nvim-bqf"),
+  -- quickfixでそのまま一括編集
+  "gabrielpoca/replacer.nvim",
   -- mini.nvim
   require("plugins.mini"),
   -- TODO系のコマンドを目立たせる --
   require("plugins.todo-comments"),
+  -- アフタリスクコマンド改善
+  "rapan931/lasterisk.nvim",
 
   ---------------------
   -- to be IDE
@@ -124,10 +128,6 @@ local neovim_plugins = {
   -- 'EdenEast/nightfox.nvim',
   "folke/tokyonight.nvim",
   require("plugins.no-neck-pain"),
-
-  -- TODO:
-  "rapan931/lasterisk.nvim",
-  "gabrielpoca/replacer.nvim",
 }
 
 require("lazy").setup(neovim_plugins)
