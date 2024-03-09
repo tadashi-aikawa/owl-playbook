@@ -127,6 +127,7 @@ local neovim_plugins = {
 
   -- TODO:
   "rapan931/lasterisk.nvim",
+  "gabrielpoca/replacer.nvim",
 }
 
 require("lazy").setup(neovim_plugins)
