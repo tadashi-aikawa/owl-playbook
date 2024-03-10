@@ -194,11 +194,12 @@
     },
     "list": [
       {
-        "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\ubuntu-rmbg.png",
+        "backgroundImage": "%USERPROFILE%\\work\\minerva\\_Privates\\attachments\\zashikiwarashi.png",
         "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
         "hidden": false,
         "name": "Ubuntu WSL",
-        "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+        "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc",
+        "backgroundImageOpacity": 0.8
       },
       {
         "backgroundImage": "%USERPROFILE%\\git\\github.com\\tadashi-aikawa\\owl-playbook\\mnt\\windows\\terminal\\windows11-rmbg.png",
