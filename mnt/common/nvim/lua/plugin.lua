@@ -33,8 +33,6 @@ local neovim_plugins = {
   require("plugins.nvim-bqf"),
   -- quickfixでそのまま一括編集
   "gabrielpoca/replacer.nvim",
-  -- mini.nvim
-  require("plugins.mini"),
   -- TODO系のコマンドを目立たせる --
   require("plugins.todo-comments"),
   -- アフタリスクコマンド改善
