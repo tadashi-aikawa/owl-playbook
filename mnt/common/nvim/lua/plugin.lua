@@ -80,8 +80,6 @@ local neovim_plugins = {
   require("plugins.vim-illuminate"),
   -- インデント
   require("plugins.nvim-autopairs"),
-  -- マルチカーソル
-  require("plugins.vim-visual-multi"),
   -- スクロールバー表示
   require("plugins.nvim-scrollbar"),
   -- 折り畳み
