@@ -46,6 +46,7 @@ return {
       extensions = {
         frecency = {
           show_scores = true,
+          db_safe_mode = false,
         },
         coc = {
           -- trueだと常にpreviewを経由する
