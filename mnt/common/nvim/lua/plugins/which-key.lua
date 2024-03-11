@@ -6,6 +6,10 @@ return {
     vim.o.timeoutlen = 1000
   end,
   config = function()
-    require("which-key").setup()
+    require("which-key").setup({
+      plugins = {
+        presets = { operators = false },
+      },
+    })
   end,
 }
