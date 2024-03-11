@@ -111,6 +111,8 @@ local neovim_plugins = {
   require("plugins.nvim-hlslens"),
   -- Markdown preview
   require("plugins.markdown-preview"),
+  -- ターミナル
+  require("plugins.toggleterm"),
 
   ---------------------
   -- 全体

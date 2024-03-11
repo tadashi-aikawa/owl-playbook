@@ -280,9 +280,6 @@ return {
         -- 前の診断へ移動
         vim.keymap.set("n", "<M-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 
-        -- ターミナル (Lspsagaなのでここ)
-        vim.keymap.set("n", "<Space>i", "<cmd>Lspsaga term_toggle<CR>", opts)
-
         -- 保存時に自動フォーマット
         vim.api.nvim_create_autocmd("BufWritePre", {
           pattern = { "*.rs", "*.py" },
