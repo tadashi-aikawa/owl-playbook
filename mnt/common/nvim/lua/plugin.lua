@@ -117,11 +117,9 @@ local neovim_plugins = {
   "famiu/bufdelete.nvim",
   -- Git
   require("plugins.lazygit"),
-  -- テーマ(2)
-  -- 'ellisonleao/gruvbox.nvim',
-  -- 'sainnhe/gruvbox-material',
-  -- 'EdenEast/nightfox.nvim',
+  -- テーマ
   "folke/tokyonight.nvim",
+  -- 横幅最適化
   require("plugins.no-neck-pain"),
 }
 
