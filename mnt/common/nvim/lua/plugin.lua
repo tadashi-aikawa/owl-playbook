@@ -68,7 +68,6 @@ local neovim_plugins = {
   -- Fuzzy finder
   require("plugins.telescope"),
   -- エクスプローラー
-  -- TODO: nvim-treeのuiaファイル削除
   require("plugins.oil"),
   -- バッファ・タブバーをかっこよく
   require("plugins.barbar"),
@@ -92,8 +91,6 @@ local neovim_plugins = {
   require("plugins.git-messenger"),
   -- マークの可視化
   "kshenoy/vim-signature",
-  -- アイコンの表示
-  "nvim-tree/nvim-web-devicons",
   -- 通知とコマンドラインを強化
   require("plugins.noice"),
   -- コメントアウト(2)
