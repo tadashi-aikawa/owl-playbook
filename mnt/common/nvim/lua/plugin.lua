@@ -44,8 +44,6 @@ local neovim_plugins = {
   -- to be IDE
   ---------------------
 
-  -- VSCode like
-  -- require("plugins.coc"),
   -- LSP
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
