@@ -32,7 +32,7 @@ local neovim_plugins = {
   -- quickfix強化(previewなど)
   require("plugins.nvim-bqf"),
   -- quickfixでそのまま一括編集
-  "gabrielpoca/replacer.nvim",
+  require("plugins.replacer"),
   -- キーバインド表示
   require("plugins.which-key"),
   -- TODO系のコマンドを目立たせる --
