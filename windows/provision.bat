@@ -11,15 +11,6 @@ rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
 :tmp
 
-call :link_idea_dir colors
-call :link_idea_dir keymaps
-call :link_idea_dir templates
-call :link_idea_dir codestyles
-call :link_idea_dir inspection
-call :link_file %USERPROFILE%\.ideavimrc %COMMON_MNT%\IntelliJIdea\.ideavimrc
-
-call :each link_idea_file idea-files.txt
-
 call :******************** VS Code
 
 set VSCODE_ORIGIN_USER_DIR=%COMMON_MNT%\VSCode\User
