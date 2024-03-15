@@ -5,11 +5,12 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-frecency.nvim",
     "tom-anders/telescope-vim-bookmarks.nvim",
+    "danielfalk/smart-open.nvim",
   },
   keys = {
     { "<C-j>f", ":Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>", silent = true },
     { "<C-j>z", ":Telescope frecency<CR>", silent = true },
-    { "<C-j>e", ":Telescope oldfiles<CR>", silent = true },
+    { "<C-j>e", ":Telescope smart_open<CR>", silent = true },
     { "<C-j>g", ":Telescope live_grep<CR>", silent = true },
     { "<C-j>l", ":Telescope current_buffer_fuzzy_find<CR>", silent = true },
     { "<C-j>p", ":Telescope commands<CR>", silent = true },
@@ -57,5 +58,6 @@ return {
 
     require("telescope").load_extension("frecency")
     require("telescope").load_extension("vim_bookmarks")
+    require("telescope").load_extension("smart_open")
   end,
 }

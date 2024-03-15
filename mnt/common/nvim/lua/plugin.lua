@@ -65,6 +65,7 @@ local neovim_plugins = {
   require("plugins.nvim-treesitter"),
   -- Fuzzy finder
   require("plugins.telescope"),
+  require("plugins.smart-open"),
   -- エクスプローラー
   require("plugins.oil"),
   -- バッファ・タブバーをかっこよく
