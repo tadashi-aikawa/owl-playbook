@@ -174,10 +174,6 @@ ln -snf "${COMMON_MNT}"/nvim/lua ~/.config/nvim/lua
 ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
 ln -snf "${COMMON_MNT}"/nvim/snippets ~/.config/nvim/snippets
 
-ln -snf "${COMMON_MNT}"/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-mkdir -p ~/.config/coc
-ln -snf "${COMMON_MNT}"/nvim/ultisnips ~/.config/coc/ultisnips
-
 #----------------------------------------------------------------------
 # TUI Tools
 #----------------------------------------------------------------------

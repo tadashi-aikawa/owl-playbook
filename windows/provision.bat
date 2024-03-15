@@ -41,8 +41,6 @@ call :each vscode_extension_install vscode-extensions.txt
 call :******************** Neovim
 
 call :link_dir "%LOCAL%\nvim" %COMMON_MNT%\nvim
-mkdir -p "%USERPROFILE%\.config\coc"
-call :link_dir "%USERPROFILE%\.config\coc\ultisnips" %COMMON_MNT%\nvim\ultisnips
 
 call :******************** Homedir
 call :each link_windows_home windows-home-dots.txt
