@@ -1,16 +1,14 @@
-local u = require("utils")
-
 -- Color scheme
-u.set.background = "dark"
+vim.opt.background = "dark"
 
 -- 行番号の表示
-u.set.number = true
+vim.opt.number = true
 
 -- カーソル行強化
-u.set.cursorline = true
+vim.opt.cursorline = true
 
 -- ステータスバーは分割しない
-u.set.laststatus = 3
+vim.opt.laststatus = 3
 
 -- Line
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888" })
