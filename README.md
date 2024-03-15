@@ -33,10 +33,7 @@ git clone https://github.com/tadashi-aikawa/owl-playbook.git
 
 #### 初回のみ
 
-`IntelliJ IDEA`と`VS Code`は事前に 1 度起動しておいてください。
-設定構成を作成するためです。
-
-ライセンス認証も通しておいてください。
+`VS Code`は事前に 1 度起動しておいてください。設定構成を作成するためです。
 
 #### 設定反映
 

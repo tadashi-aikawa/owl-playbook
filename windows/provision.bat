@@ -11,13 +11,6 @@ rem :tmpを動かすことで実行開始箇所を制御. デバッグや動作確認用
 goto :tmp
 :tmp
 
-call :******************** IntelliJ IDEA
-
-set IDEA_DIR=IntelliJIdea2023.2
-
-set IDEA_ORIGIN_CONFIG_DIR=%COMMON_MNT%\IntelliJIdea\config
-set IDEA_CONFIG_DIR=%ROAMING%\JetBrains\%IDEA_DIR%
-
 call :link_idea_dir colors
 call :link_idea_dir keymaps
 call :link_idea_dir templates
@@ -63,10 +56,6 @@ call :******************** Broot
 
 call :link_file "%USERPROFILE%\broot.toml" %WINDOWS_MNT%\broot.toml
 
-call :******************** GitUI
-
-call :link_dir "%ROAMING%\gitui" %COMMON_MNT%\gitui
-
 call :******************** git config
 
 git config --global core.preloadindex true
@@ -88,14 +77,6 @@ rem ---------------------------------------------------------
 
 :link_windows_home
 call :link_file %USERPROFILE%\%1 %WINDOWS_MNT%\%1
-exit /b
-
-:link_idea_file
-call :link_file %IDEA_CONFIG_DIR%\%1 %IDEA_ORIGIN_CONFIG_DIR%\%1
-exit /b
-
-:link_idea_dir
-call :link_dir %IDEA_CONFIG_DIR%\%1 %IDEA_ORIGIN_CONFIG_DIR%\%1
 exit /b
 
 :link_vscode_file
