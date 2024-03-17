@@ -6,7 +6,8 @@ return {
   opts = {
     skip_confirm_for_simple_edits = true,
     keymaps = {
-      ["<F12>"] = "actions.select_split",
+      ["<C-s>"] = "actions.select_split",
+      ["<F12>"] = "actions.select_vsplit",
     },
     view_options = {
       show_hidden = true,
