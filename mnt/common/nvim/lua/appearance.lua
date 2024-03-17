@@ -27,7 +27,6 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#888888", fg = "#efef33" })
 -- Flash.nvim
 vim.api.nvim_set_hl(0, "FlashLabel", { fg = "#efef33", bold = true })
 vim.api.nvim_set_hl(0, "FlashMatch", { fg = "#3d59a1", bold = true })
-vim.api.nvim_set_hl(0, "FlashCurrent", { link = "FlashMatch" })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
