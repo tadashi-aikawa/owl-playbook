@@ -186,6 +186,15 @@ return {
       end
     end
 
+    local function organize_imports()
+      local params = {
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+        title = "",
+      }
+      vim.lsp.buf.execute_command(params)
+    end
+
     local function is_vue_or_nuxt()
       return util.root_pattern("vite.config.ts", "nuxt.config.ts", "nuxt.config.js")
     end
@@ -210,6 +219,11 @@ return {
         end
         return util.root_pattern("tsconfig.json")(fname)
       end,
+      commands = {
+        OrganizeImports = {
+          organize_imports,
+        },
+      },
     })
 
     lspconfig.tailwindcss.setup({
