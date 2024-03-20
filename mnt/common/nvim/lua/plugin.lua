@@ -63,6 +63,8 @@ local neovim_plugins = {
   require("plugins.trouble"),
   -- シンタックスハイライト
   require("plugins.nvim-treesitter"),
+  -- クラスや関数名の固定表示
+  "nvim-treesitter/nvim-treesitter-context",
   -- Fuzzy finder
   require("plugins.telescope"),
   require("plugins.smart-open"),
