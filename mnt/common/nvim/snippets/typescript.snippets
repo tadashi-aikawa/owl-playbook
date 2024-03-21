@@ -49,7 +49,7 @@ snippet _switch "switch"
       throw new ExhaustiveError($1);
   }
 
-snippet "_exhaustiveError" "ExhaustiveError"
+snippet _exhaustiveError "ExhaustiveError"
   export class ExhaustiveError extends Error {
     constructor(value: never, message = `Unsupported type: ${value}`) {
       super(message);
