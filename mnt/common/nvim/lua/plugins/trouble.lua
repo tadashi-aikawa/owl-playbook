@@ -4,7 +4,7 @@ return {
     require("trouble").setup({
       action_keys = {
         jump_close = { "<cr>" },
-        jump = { "<tab>" },
+        jump = { "o" },
         toggle_fold = { "l", "h" },
         cancel = {}, -- ESCには割り当てない
         open_split = { "<C-s>" },
