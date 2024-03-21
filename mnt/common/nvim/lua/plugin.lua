@@ -33,8 +33,6 @@ local neovim_plugins = {
   require("plugins.nvim-bqf"),
   -- quickfixでそのまま一括編集
   require("plugins.replacer"),
-  -- キーバインド表示
-  require("plugins.which-key"),
   -- TODO系のコマンドを目立たせる --
   require("plugins.todo-comments"),
   -- アフタリスクコマンド改善
