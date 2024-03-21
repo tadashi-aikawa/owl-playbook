@@ -27,6 +27,11 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#888888", fg = "#efef33" })
 -- Flash.nvim
 vim.api.nvim_set_hl(0, "FlashLabel", { fg = "#efef33", bold = true })
 vim.api.nvim_set_hl(0, "FlashMatch", { fg = "#3d59a1", bold = true })
+-- nvim-treesitter-context
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "black" })
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "black" })
+vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true })
+vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", { underline = true })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
