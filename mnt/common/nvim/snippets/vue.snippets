@@ -31,7 +31,17 @@ snippet _script "<script setup>" b
   ${1}
   </script>
 
+snippet _template "<template>" b
+  <template>
+  ${1}
+  </template>
+
 snippet _props "props定義" b
+  defineProps<{
+    ${1}: ${2}
+  }>();
+
+snippet _iprops "interfaceつきprops定義" b
   interface Props {
     ${1}
   }
@@ -55,7 +65,7 @@ snippet _state "state定義" b
 
 snippet _emit "emit定義" b
   const emit = defineEmits<{
-    (e: "${1:click}", ${2:value}: ${3:any}): void;
+    "${1:click}": [${2:key}: ${3:any}]
   }>();
 
 snippet _computed "computed" b
