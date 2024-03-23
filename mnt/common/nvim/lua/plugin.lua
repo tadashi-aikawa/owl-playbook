@@ -11,6 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- vim-bookmarksのデフォルトキーマップ無効化
+vim.g.bookmark_no_default_key_mappings = 1
+
 local neovim_plugins = {
   ---------------------
   -- Vim like
