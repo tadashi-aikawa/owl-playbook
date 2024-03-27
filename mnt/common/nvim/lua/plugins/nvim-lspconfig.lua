@@ -196,7 +196,8 @@ return {
     end
 
     local function is_vue_or_nuxt()
-      return util.root_pattern("vite.config.ts", "nuxt.config.ts", "nuxt.config.js")
+      -- wxt.config.tsはvue以外もあるけど...
+      return util.root_pattern("vite.config.ts", "nuxt.config.ts", "nuxt.config.js", "wxt.config.ts")
     end
 
     -- VueやNuxtのプロジェクトでのみ有効にする
