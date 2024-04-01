@@ -208,23 +208,23 @@ fi
 # -------------------------------------------
 if [[ $command == "status" ]]; then
   GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
-  echo "--- 🦉owl-playbook ---"
+  echo "--- 🦉 owl-playbook ---"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git status -s
-  echo "--- 🍁carnelian ---"
+  echo "--- 🍁 carnelian ---"
   cd "$GITHUB_AUTHOR_DIR/carnelian" && git status -s
-  echo "--- 📈naslack ---"
-  cd "$GITHUB_AUTHOR_DIR/naslack" && git status -s
+  echo "--- 🐦 Fenice ---"
+  cd "$GITHUB_AUTHOR_DIR/fenice" && git status -s
   exit 0
 fi
 
 function pull() {
   GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
-  echo "--- 🦉owl-playbook ---"
+  echo "--- 🦉 owl-playbook ---"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git pull
-  echo "--- 🍁carnelian ---"
+  echo "--- 🍁 carnelian ---"
   cd "$GITHUB_AUTHOR_DIR/carnelian" && git pull
-  echo "--- 📈naslack ---"
-  cd "$GITHUB_AUTHOR_DIR/naslack" && git pull
+  echo "--- 🐦 Fenice ---"
+  cd "$GITHUB_AUTHOR_DIR/fenice" && git pull
 }
 
 # -------------------------------------------
