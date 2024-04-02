@@ -59,7 +59,9 @@ scoop install `
   go `
   rustup-msvc `
   volta `
-  vcxsrv
+  vcxsrv `
+  lua-language-server `
+  stylua
 
 # Python
 scoop install `
