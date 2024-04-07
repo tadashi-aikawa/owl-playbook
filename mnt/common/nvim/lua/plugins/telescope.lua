@@ -43,6 +43,9 @@ return {
           prompt_position = "top",
           preview_cutoff = 1,
         },
+        file_ignore_patterns = {
+          "node_modules",
+        },
       },
       extensions = {
         frecency = {
