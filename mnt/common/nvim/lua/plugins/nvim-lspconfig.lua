@@ -282,8 +282,8 @@ return {
         vim.keymap.set("n", "<C-j>i", vim.lsp.buf.implementation, opts)
         -- 実装をホバー
         vim.keymap.set("n", "<M-d>", "<cmd>Lspsaga peek_definition<CR>", opts)
-        -- 実装と呼び出し元の同時表示
-        vim.keymap.set("n", "<C-j>u", "<cmd>Lspsaga finder<CR>", opts)
+        -- 呼び出し元の表示
+        vim.keymap.set("n", "<C-j>u", "<cmd>Lspsaga finder ref<CR>", opts)
         -- リネーム
         vim.keymap.set({ "n", "i" }, "<S-M-r>", "<cmd>Lspsaga rename<CR>", opts)
         -- Code action
