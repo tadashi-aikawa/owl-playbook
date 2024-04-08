@@ -17,6 +17,9 @@ return {
         right_width = 0.6,
         keys = {
           toggle_or_open = "<CR>",
+          shuttle = "]w",
+          vsplit = "<F12>", -- Ctrl+Enter
+          split = "s",
         },
       },
       diagnostic = {
