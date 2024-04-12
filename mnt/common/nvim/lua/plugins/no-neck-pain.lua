@@ -10,5 +10,7 @@ return {
         colors = { background = "tokyonight-moon" },
       },
     })
+
+    vim.keymap.set("n", "<M-n>", ":NoNeckPain<CR>", { silent = true })
   end,
 }
