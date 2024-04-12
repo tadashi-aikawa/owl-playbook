@@ -295,6 +295,9 @@ return {
         -- 前の診断へ移動
         vim.keymap.set("n", "<M-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 
+        -- LSP再起動
+        vim.keymap.set("n", "<C-j>r", "<cmd>LspRestart<CR>", opts)
+
         -- 保存時に自動フォーマット
         vim.api.nvim_create_autocmd("BufWritePre", {
           pattern = { "*.rs", "*.py" },
