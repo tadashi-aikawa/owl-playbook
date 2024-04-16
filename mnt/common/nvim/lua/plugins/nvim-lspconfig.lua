@@ -105,9 +105,8 @@ return {
       lineFoldingOnly = true,
     }
 
-    -- TODO: 整理
     lspconfig.ruff_lsp.setup({ capabilities = capabilities })
-    -- lspconfig.pyright.setup({ capabilities = capabilities })
+    lspconfig.pyright.setup({ capabilities = capabilities })
 
     lspconfig.gopls.setup({ capabilities = capabilities })
     lspconfig.cssls.setup({ capabilities = capabilities })
