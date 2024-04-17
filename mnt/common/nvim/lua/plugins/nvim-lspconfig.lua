@@ -165,72 +165,18 @@ return {
       },
     })
 
-    -- [Volar] localのnode_modulesを優先する
-    local util = require("lspconfig.util")
-
-    local function get_typescript_server_path(root_dir)
-      local home = os.getenv("HOME")
-      local global_ts = home .. "/.local/share/mise/installs/node/20/lib/node_modules/typescript/lib"
-      local found_ts = ""
-      local function check_dir(path)
-        found_ts = util.path.join(path, "node_modules", "typescript", "lib")
-        if util.path.exists(found_ts) then
-          return path
-        end
-      end
-      if util.search_ancestors(root_dir, check_dir) then
-        return found_ts
-      else
-        return global_ts
-      end
-    end
-
-    local function organize_imports()
-      local params = {
-        command = "_typescript.organizeImports",
-        arguments = { vim.api.nvim_buf_get_name(0) },
-        title = "",
-      }
-      vim.lsp.buf.execute_command(params)
-    end
-
-    local function is_vue_or_nuxt()
-      -- wxt.config.tsはvue以外もあるけど...
-      return util.root_pattern("vite.config.ts", "nuxt.config.ts", "nuxt.config.js", "wxt.config.ts")
-    end
-
-    -- VueやNuxtのプロジェクトでのみ有効にする
+    -- VueだけでなくTypeScriptやReactもVolarを使う
     lspconfig.volar.setup({
-      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
       capabilities = capabilities,
-      root_dir = is_vue_or_nuxt(),
-      on_new_config = function(new_config, new_root_dir)
-        new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-      end,
+      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
       init_options = {
         vue = {
           hybridMode = false,
         },
       },
     })
-    -- VueやNuxtのプロジェクトでなければtsserverを使う
-    lspconfig.tsserver.setup({
-      capabilities = capabilities,
-      single_file_support = false,
-      root_dir = function(fname)
-        -- VueやNuxtのプロジェクトではVolarに任せるので無効にする
-        if is_vue_or_nuxt()(fname) then
-          return nil
-        end
-        return util.root_pattern("tsconfig.json")(fname)
-      end,
-      commands = {
-        OrganizeImports = {
-          organize_imports,
-        },
-      },
-    })
 
+    local util = require("lspconfig.util")
     lspconfig.tailwindcss.setup({
       capabilities = capabilities,
       root_dir = util.root_pattern(
