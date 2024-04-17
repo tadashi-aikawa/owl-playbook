@@ -225,10 +225,6 @@ mise use -g python@3.12
 npm_install pyright
 no ruff-lsp && mise x -- pip install ruff-lsp
 
-# Poetry
-mise use -g poetry
-mise x -- poetry config virtualenvs.in-project true
-
 # Bash
 npm_install bash-language-server
 mise use -g shellcheck
@@ -338,3 +334,6 @@ echo "Run broot"
 echo "Run ~/.local/share/mise/installs/fzf/latest/install"
 # Neovim
 echo "Run nvim"
+# Poetry
+echo mise use -g poetry
+echo mise x -- poetry config virtualenvs.in-project true
