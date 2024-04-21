@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
+  branch = "master",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-frecency.nvim",
@@ -45,6 +45,11 @@ return {
         },
         file_ignore_patterns = {
           "node_modules",
+        },
+        path_display = {
+          filename_first = {
+            reverse_directories = false,
+          },
         },
       },
       extensions = {
