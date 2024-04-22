@@ -116,6 +116,7 @@ return {
     lspconfig.bashls.setup({ capabilities = capabilities })
     lspconfig.svelte.setup({ capabilities = capabilities })
     lspconfig.jdtls.setup({ capabilities = capabilities })
+    lspconfig.denols.setup({ capabilities = capabilities })
 
     lspconfig.rust_analyzer.setup({
       capabilities = capabilities,
