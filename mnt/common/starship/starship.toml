@@ -9,6 +9,7 @@ $lua\
 $nim\
 $nodejs\
 $bun\
+$deno\
 $python\
 $rust\
 $scala\
@@ -86,6 +87,10 @@ symbol = ' '
 format = '[$symbol($version(-$name))]($style) '
 symbol = ' '
 
+[deno]
+format = '[$symbol($version)]($style) '
+symbol = '󰴻 '
+
 [elixir]
 format = '[$symbol($version \(OTP $otp_version\))]($style) '
 symbol = ' '
@@ -113,7 +118,7 @@ symbol = ' '
 [nodejs]
 format = '[$symbol($version)]($style) '
 symbol = '󰎙 '
-detect_files = ["!bun.lockb", "!bunfig.toml", "package.json", ".node-version"]
+detect_files = ["!bun.lockb", "!bunfig.toml", "package.json", ".node-version", "!deno.json", "!deno.jsonc", "!deno.lock"]
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
