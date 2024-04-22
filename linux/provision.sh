@@ -251,7 +251,7 @@ npm_install typescript tsc
 npm_install typescript-language-server
 
 # Vue
-npm_install @vue/language-server
+npm_install @vue/language-server vue-language-server
 
 # Svelte
 npm_install svelte-language-server svelteserver
