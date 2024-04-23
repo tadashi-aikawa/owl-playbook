@@ -17,7 +17,7 @@ return {
           extra_filetypes = { "svelte" },
           disabled_filetypes = { "markdown" },
           condition = function(utils)
-            return not utils.root_has_file({ "biome.json" })
+            return not utils.root_has_file({ "biome.json", "deno.json", "deno.jsonc" })
           end,
         }),
         null_ls.builtins.formatting.stylua,
