@@ -94,6 +94,7 @@ return {
     ----------------------------------
     -- lspconfig
     ----------------------------------
+    local util = require("lspconfig.util")
     local lspconfig = require("lspconfig")
     require("lspconfig.ui.windows").default_options.border = "single"
 
@@ -116,7 +117,10 @@ return {
     lspconfig.bashls.setup({ capabilities = capabilities })
     lspconfig.svelte.setup({ capabilities = capabilities })
     lspconfig.jdtls.setup({ capabilities = capabilities })
-    lspconfig.denols.setup({ capabilities = capabilities })
+    lspconfig.denols.setup({
+      capabilities = capabilities,
+      root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+    })
 
     lspconfig.rust_analyzer.setup({
       capabilities = capabilities,
@@ -177,7 +181,6 @@ return {
       },
     })
 
-    local util = require("lspconfig.util")
     lspconfig.tailwindcss.setup({
       capabilities = capabilities,
       root_dir = util.root_pattern(
@@ -251,7 +254,7 @@ return {
 
         -- 保存時に自動フォーマット
         vim.api.nvim_create_autocmd("BufWritePre", {
-          pattern = { "*.rs", "*.py", "*.ts", "*.js" },
+          pattern = { "*.rs", "*.py", "*.ts", "*.js", "*.html", "*.css" },
           callback = function()
             vim.lsp.buf.format({
               buffer = ev.buf,
