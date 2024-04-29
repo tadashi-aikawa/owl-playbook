@@ -88,7 +88,7 @@ local neovim_plugins = {
   -- Gitの行表示
   require("plugins.gitsigns"),
   -- Git blame
-  "FabijanZulj/blame.nvim",
+  require("plugins.blame"),
   -- Gitの行履歴詳細表示
   require("plugins.git-messenger"),
   -- マークの可視化
