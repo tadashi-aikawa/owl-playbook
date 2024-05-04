@@ -7,6 +7,7 @@ function show_usage() {
 Usages:
   toki bun <path>:    BunとBiomeのプロジェクトSandboxを作成します
   toki node <path>:   Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+  toki deno <path>:   DenoのプロジェクトSandboxを作成します
   toki vue <path>:    Vue.js/Node.jsのプロジェクトSandboxを作成します
   toki go <path>:     GoプロジェクトのSandboxを作成します
   toki rust <path>:   RustプロジェクトのSandboxを作成します
@@ -98,6 +99,24 @@ $ cd ${path}
 $ npm run dev
 and
 $ npm run start
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# DenoのプロジェクトSandboxを作成します
+# -------------------------------------------
+if [[ $command == "deno" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  deno init
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ deno test
 "
   exit 0
 fi
