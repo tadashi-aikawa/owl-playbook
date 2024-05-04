@@ -253,18 +253,30 @@ return {
         vim.keymap.set("n", "<C-j>r", "<cmd>LspRestart<CR>", opts)
 
         -- 保存時に自動フォーマット
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          pattern = { "*.rs", "*.py", "*.ts", "*.js", "*.html", "*.css" },
-          callback = function()
-            vim.lsp.buf.format({
-              buffer = ev.buf,
-              filter = function(f_client)
-                return f_client.name ~= "null-ls"
-              end,
-              async = false,
-            })
-          end,
-        })
+        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+        if client.supports_method("textDocument/formatting") then
+          local set_auto_format = function(lsp_name, pattern)
+            if client.name == lsp_name then
+              print(string.format("[%s] Enable auto-format on save", lsp_name))
+              vim.api.nvim_clear_autocmds({ group = augroup, buffer = ev.buf })
+              vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = ev.buf,
+                pattern = pattern,
+                callback = function()
+                  print("[LSP] " .. client.name .. " format")
+                  vim.lsp.buf.format({ buffer = ev.buf, async = false })
+                end,
+              })
+            end
+          end
+
+          set_auto_format("rust_analyzer", { "*.rs" })
+          set_auto_format("ruff_lsp", { "*.py" })
+          set_auto_format("denols", { "*.ts", "*.js" })
+        end
 
         -- 深刻度が高い方を優先して表示
         vim.diagnostic.config({ severity_sort = true })
