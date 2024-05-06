@@ -40,6 +40,8 @@ local neovim_plugins = {
   require("plugins.todo-comments"),
   -- アフタリスクコマンド改善
   "rapan931/lasterisk.nvim",
+  -- ステータスバーをフローティング表示
+  require("plugins.incline"),
 
   ---------------------
   -- to be IDE
