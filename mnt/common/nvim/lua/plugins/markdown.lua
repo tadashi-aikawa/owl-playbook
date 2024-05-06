@@ -26,6 +26,7 @@ return {
         (pipe_table_delimiter_row) @table_delim
         (pipe_table_row) @table_row
     ]],
+      fat_tables = false,
     })
   end,
 }
