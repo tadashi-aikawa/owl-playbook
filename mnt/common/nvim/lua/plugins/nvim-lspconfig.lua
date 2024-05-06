@@ -224,7 +224,7 @@ return {
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
         local opts = { buffer = ev.buf }
-        -- 定義に移動
+        -- 定義に移動 (Lspsaga goto_definition は期待しない定義に飛んでしまうことがある)
         vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "<M-]>", function()
           vim.cmd([[ vsplit ]])
