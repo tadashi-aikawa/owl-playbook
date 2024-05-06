@@ -42,6 +42,8 @@ local neovim_plugins = {
   "rapan931/lasterisk.nvim",
   -- ステータスバーをフローティング表示
   require("plugins.incline"),
+  -- 1行ラインを分割
+  require("plugins.treesj"),
 
   ---------------------
   -- to be IDE
