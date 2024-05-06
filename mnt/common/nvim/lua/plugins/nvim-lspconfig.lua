@@ -260,10 +260,9 @@ return {
           local set_auto_format = function(lsp_name, pattern)
             if client.name == lsp_name then
               print(string.format("[%s] Enable auto-format on save", lsp_name))
-              vim.api.nvim_clear_autocmds({ group = augroup, buffer = ev.buf })
+              vim.api.nvim_clear_autocmds({ group = augroup })
               vim.api.nvim_create_autocmd("BufWritePre", {
                 group = augroup,
-                buffer = ev.buf,
                 pattern = pattern,
                 callback = function()
                   print("[LSP] " .. client.name .. " format")
