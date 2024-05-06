@@ -16,12 +16,7 @@ vim.keymap.set("n", "<Space>J", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<Space>K", ":cprevious<CR>", { silent = true })
 -- バッファ切り替え
 vim.keymap.set("n", "<Space>r", ":b#<CR>", { silent = true })
-vim.keymap.set("n", "<Space>e", ":BufferPick<CR>", { silent = true })
-vim.keymap.set("n", "<Space>l", ":BufferNext<CR>", { silent = true })
-vim.keymap.set("n", "<Space>h", ":BufferPrevious<CR>", { silent = true })
 vim.keymap.set("n", "<Space>q", ":Bdelete<CR>", { silent = true })
-vim.keymap.set("n", "<Space>t", ":BufferRestore<CR>", { silent = true })
-vim.keymap.set("n", "<Space>c", ":BufferCloseAllButVisible<CR>", { silent = true })
 -- windows split
 vim.keymap.set("n", "<C-w><F12>", ":vsplit<CR>", { silent = true })
 -- 行補完
