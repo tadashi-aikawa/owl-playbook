@@ -18,7 +18,7 @@ vim.api.nvim_set_hl(0, "Comment", { fg = "#888888" })
 vim.api.nvim_set_hl(0, "YankHighlight", { reverse = true })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#565612" })
 -- For illuminate.nvim
-vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = "black", bg = "#abab23" })
+vim.api.nvim_set_hl(0, "IlluminatedWordText", { reverse = true }) -- markdown.nvimでも動作するように
 vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = "white", bg = "#23ab23" })
 vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = "white", bg = "#ef7878" })
 -- Current line
@@ -32,6 +32,8 @@ vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "black" })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "black" })
 vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", { underline = true })
+-- markdown.nvim
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#454545" })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
