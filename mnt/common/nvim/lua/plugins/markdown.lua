@@ -27,6 +27,10 @@ return {
         (pipe_table_row) @table_row
     ]],
       fat_tables = false,
+      conceal = {
+        default = 1,
+        rendered = 2,
+      },
     })
   end,
 }
