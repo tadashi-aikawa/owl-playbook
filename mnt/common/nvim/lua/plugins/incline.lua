@@ -51,7 +51,8 @@ return {
           { get_git_diff() },
           ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
           " ",
-          { filename .. " ", gui = vim.bo[props.buf].modified and "bold,italic" or "bold" },
+          vim.bo[props.buf].modified and { filename .. " 󰄛  ", guifg = "orange", gui = "bold,italic" }
+            or { filename .. " ", gui = "bold" },
           " ",
           guibg = "#44406e",
         }
