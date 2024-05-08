@@ -75,6 +75,8 @@ local neovim_plugins = {
   require("plugins.smart-open"),
   -- エクスプローラー
   require("plugins.oil"),
+  -- バッファタブ
+  require("plugins.barbar"),
   -- ステータスライン
   require("plugins.lualine"),
   -- アウトラインの表示
