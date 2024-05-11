@@ -266,6 +266,9 @@ no marksman && {
 # CLI Tools
 #----------------------------------------------------------------------
 
+# fd
+mise use -g fd
+
 # ripgrep
 mise use -g ripgrep
 
