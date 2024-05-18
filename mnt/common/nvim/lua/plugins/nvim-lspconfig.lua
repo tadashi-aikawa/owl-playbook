@@ -252,10 +252,10 @@ return {
         -- LSP再起動
         vim.keymap.set("n", "<C-j>r", "<cmd>LspRestart<CR>", opts)
 
-        -- 保存時に自動フォーマット
-        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
+        -- 保存時に自動フォーマット
+        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
         if client.supports_method("textDocument/formatting") then
           local set_auto_format = function(lsp_name, pattern)
             if client.name == lsp_name then
@@ -275,6 +275,11 @@ return {
           set_auto_format("rust_analyzer", { "*.rs" })
           set_auto_format("ruff_lsp", { "*.py" })
           set_auto_format("denols", { "*.ts", "*.js" })
+        end
+
+        -- inlay hint
+        if client.supports_method("textDocument/inlayHint") then
+          vim.lsp.inlay_hint.enable()
         end
 
         -- 深刻度が高い方を優先して表示
