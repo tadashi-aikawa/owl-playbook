@@ -99,7 +99,7 @@ local neovim_plugins = {
   "kshenoy/vim-signature",
   -- 通知とコマンドラインを強化
   require("plugins.noice"),
-  -- コメントアウト(2)
+  -- コメントアウト. Neovim 0.10で不要になるかと思いきやVueファイルのようなblockでは対応不十分だったので
   require("plugins.nvim-ts-context-commentstring"),
   require("plugins.nvim-comment"),
   -- カラーコードの表示
