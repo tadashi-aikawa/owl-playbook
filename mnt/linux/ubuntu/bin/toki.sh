@@ -5,17 +5,18 @@ set -eu
 function show_usage() {
   echo "
 Usages:
-  toki bun <path>:    BunとBiomeのプロジェクトSandboxを作成します
-  toki node <path>:   Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
-  toki deno <path>:   DenoのプロジェクトSandboxを作成します
-  toki vue <path>:    Vue.js/Node.jsのプロジェクトSandboxを作成します
-  toki go <path>:     GoプロジェクトのSandboxを作成します
-  toki rust <path>:   RustプロジェクトのSandboxを作成します
-  toki python <path>: PythonプロジェクトのSandboxを作成します
+  toki bun <path>:        BunとBiomeのプロジェクトSandboxを作成します
+  toki node <path>:       Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+  toki deno <path>:       DenoのプロジェクトSandboxを作成します
+  toki vue <path>:        Vue.js/Node.jsのプロジェクトSandboxを作成します
+  toki tailwind <path>:   TailwindCSS + Vue + BunのプロジェクトSandboxを作成します
+  toki go <path>:         GoプロジェクトのSandboxを作成します
+  toki rust <path>:       RustプロジェクトのSandboxを作成します
+  toki python <path>:     PythonプロジェクトのSandboxを作成します
 
-  toki status:       関連するGitリポジトリの状態を取得します
-  toki pull:         関連するGitリポジトリをすべてpullします
-  toki update:       関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
+  toki status:           関連するGitリポジトリの状態を取得します
+  toki pull:             関連するGitリポジトリをすべてpullします
+  toki update:           関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
 
   toki -h|--help|help: ヘルプを表示します
   "
@@ -135,6 +136,58 @@ if [[ $command == "vue" ]]; then
 
 $ cd ${path}
 $ npm run dev
+"
+  exit 0
+
+fi
+
+# -------------------------------------------
+# TailwindCSS + Vue + BunのプロジェクトSandboxを作成します
+# -------------------------------------------
+
+if [[ $command == "tailwind" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  # https://tailwindcss.tw/docs/guides/vite
+  bun create vite "${path}" --template vue-ts
+  cd "${path}"
+  bun i
+  bun add --dev tailwindcss postcss autoprefixer
+  bun x tailwindcss init -p
+
+  cat <<EOL >tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+EOL
+
+  cat <<EOL >./src/style.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+EOL
+
+  cat <<EOL >./src/App.vue
+<template>
+  <div class="flex flex-col justify-center items-center w-screen h-screen">
+    <span class="text-red-500 text-5xl">Title</span>
+  </div>
+</template>
+EOL
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ bun dev
 "
   exit 0
 
