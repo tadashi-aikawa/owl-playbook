@@ -112,7 +112,14 @@ return {
     lspconfig.ruff_lsp.setup({ capabilities = capabilities })
     lspconfig.pyright.setup({ capabilities = capabilities })
 
-    lspconfig.gopls.setup({ capabilities = capabilities })
+    lspconfig.gopls.setup({
+      capabilities = capabilities,
+      settings = {
+        gopls = {
+          staticcheck = true,
+        },
+      },
+    })
     lspconfig.cssls.setup({ capabilities = capabilities })
     lspconfig.html.setup({ capabilities = capabilities })
     lspconfig.emmet_language_server.setup({ capabilities = capabilities })
