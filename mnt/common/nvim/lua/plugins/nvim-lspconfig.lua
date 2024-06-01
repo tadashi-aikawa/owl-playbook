@@ -120,6 +120,7 @@ return {
         },
       },
     })
+    lspconfig.golangci_lint_ls.setup({ capabilities = capabilities })
     lspconfig.cssls.setup({ capabilities = capabilities })
     lspconfig.html.setup({ capabilities = capabilities })
     lspconfig.emmet_language_server.setup({ capabilities = capabilities })
