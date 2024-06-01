@@ -219,6 +219,8 @@ ensure_zshrc 'export GOPATH=$HOME/go'
 # shellcheck disable=SC2016
 ensure_zshrc 'export PATH=$PATH:$GOPATH/bin'
 mise use --global gofumpt
+mise use -g golangci-lint
+mise x -- go install github.com/nametake/golangci-lint-langserver@latest
 
 # Python
 mise use -g python@3.12
