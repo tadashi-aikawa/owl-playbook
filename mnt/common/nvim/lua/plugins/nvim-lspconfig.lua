@@ -116,7 +116,7 @@ return {
       capabilities = capabilities,
       settings = {
         gopls = {
-          staticcheck = true,
+          gofumpt = true,
         },
       },
     })
@@ -286,6 +286,7 @@ return {
           set_auto_format("rust_analyzer", { "*.rs" })
           set_auto_format("ruff_lsp", { "*.py" })
           set_auto_format("denols", { "*.ts", "*.js" })
+          set_auto_format("gopls", { "*.go" })
         end
 
         -- inlay hint
