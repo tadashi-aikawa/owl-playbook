@@ -44,3 +44,18 @@ snippet _fori "for i"
   for i := 0; i < ${1}; i++ {
     ${2}
   }
+
+snippet _enum "enum"
+  type Fruit int
+  const (
+    ${1:Apple} Fruit = iota
+    ${2:Orange}
+  )
+
+snippet _switch "switch"
+  switch ${1} {
+  case ${2: Hoge}:
+    ${3}
+  default:
+    ${4}
+  }
