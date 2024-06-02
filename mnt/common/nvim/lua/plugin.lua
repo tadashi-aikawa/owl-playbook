@@ -11,45 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- vim-bookmarksのデフォルトキーマップ無効化
-vim.g.bookmark_no_default_key_mappings = 1
-
 local neovim_plugins = {
-  ---------------------
-  -- Vim like
-  ---------------------
-
-  -- text-object(2)
-  "kana/vim-textobj-user", -- ユーザーカスタマイズベース
-  require("plugins.vim-textobj-entire"), -- ファイル全体
-  -- 画面内瞬間移動
-  require("plugins.flash"),
-  -- ブラックホールレジスト+putの省略
-  require("plugins.ReplaceWithRegister"),
-  -- 囲まれているものの操作
-  require("plugins.nvim-surround"),
-  -- キャメルケースモーション
-  require("plugins.CamelCaseMotion"),
-  -- 様々なrepeat処理に対応
-  "tpope/vim-repeat",
-  -- quickfix強化(previewなど)
-  require("plugins.nvim-bqf"),
-  -- quickfixでそのまま一括編集
-  require("plugins.replacer"),
-  -- TODO系のコマンドを目立たせる --
-  require("plugins.todo-comments"),
-  -- アフタリスクコマンド改善
-  "rapan931/lasterisk.nvim",
-  -- ステータスバーをフローティング表示
-  require("plugins.incline"),
-  -- 1行ラインを分割
-  require("plugins.treesj"),
-
-  ---------------------
-  -- to be IDE
-  ---------------------
-
-  -- LSP
+  ----------------------------
+  -- 開発/IDE化 (補完系)
+  ----------------------------
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
@@ -64,8 +29,20 @@ local neovim_plugins = {
   require("plugins.lspsaga"),
   "j-hui/fidget.nvim",
   require("plugins.lsp_signature"),
-  -- IDEのような見やすいリスト表示
-  require("plugins.trouble"),
+  -- インデント
+  require("plugins.nvim-autopairs"),
+  -- init.lua用
+  "folke/neodev.nvim",
+
+  ----------------------------
+  -- 開発/IDE化 (補完系以外)
+  ----------------------------
+  -- Markdown browser preview
+  require("plugins.markdown-preview"),
+  -- Git
+  require("plugins.lazygit"), -- クライアント
+  require("plugins.gitsigns"), -- 行表示
+  require("plugins.blame"),
   -- シンタックスハイライト
   require("plugins.nvim-treesitter"),
   -- クラスや関数名の固定表示
@@ -73,63 +50,80 @@ local neovim_plugins = {
   -- Fuzzy finder
   require("plugins.telescope"),
   require("plugins.smart-open"),
-  -- エクスプローラー
-  require("plugins.oil"),
-  -- バッファタブ
-  require("plugins.barbar"),
-  -- ステータスライン
-  require("plugins.lualine"),
+  -- コメントアウト. Neovim 0.10で不要になるかと思いきやVueファイルのようなblockでは対応不十分だったので
+  require("plugins.nvim-comment"),
+  require("plugins.nvim-ts-context-commentstring"),
   -- アウトラインの表示
   require("plugins.aerial"),
-  -- カレントシンボルの強調
-  require("plugins.vim-illuminate"),
-  -- インデント
-  require("plugins.nvim-autopairs"),
-  -- スクロールバー表示
-  require("plugins.nvim-scrollbar"),
   -- 折り畳み
   require("plugins.nvim-ufo"),
-  -- Gitの行表示
-  require("plugins.gitsigns"),
-  -- Git blame
-  require("plugins.blame"),
-  -- Gitの行履歴詳細表示
-  require("plugins.git-messenger"),
-  -- マークの可視化
-  "kshenoy/vim-signature",
-  -- 通知とコマンドラインを強化
-  require("plugins.noice"),
-  -- コメントアウト. Neovim 0.10で不要になるかと思いきやVueファイルのようなblockでは対応不十分だったので
-  require("plugins.nvim-ts-context-commentstring"),
-  require("plugins.nvim-comment"),
-  -- カラーコードの表示
-  require("plugins.nvim-colorizer"),
-  -- CSVシンタックス強化
-  require("plugins.rainbow_csv"),
-  -- テーブルソート
-  require("plugins.vim-table-mode"),
-  -- ブックマーク
-  require("plugins.vim-bookmarks"),
-  -- 検索結果の詳細表示
-  require("plugins.nvim-hlslens"),
-  -- Markdown preview
-  require("plugins.markdown"), -- inline
-  require("plugins.markdown-preview"), -- browser
+  -- エクスプローラー
+  require("plugins.oil"),
   -- ターミナル
   require("plugins.toggleterm"),
+  -- バッファタブ
+  require("plugins.barbar"),
+  -- IDEのような見やすいリスト表示 (diagnostic, references)
+  require("plugins.trouble"),
 
-  ---------------------
-  -- 全体
-  ---------------------
-
-  -- バッファ削除のときにレイアウトを変更しない
-  "famiu/bufdelete.nvim",
-  -- Git
-  require("plugins.lazygit"),
+  ----------------------------
+  -- エディタの見た目
+  ----------------------------
   -- テーマ
   "folke/tokyonight.nvim",
+  -- TODO系のコマンドを目立たせる
+  require("plugins.todo-comments"),
+  -- バッファ削除のときにレイアウトを変更しない
+  "famiu/bufdelete.nvim",
+  -- カラーコードの表示
+  require("plugins.nvim-colorizer"),
+  -- ステータスライン
+  require("plugins.lualine"),
+  -- 検索結果の詳細表示
+  require("plugins.nvim-hlslens"),
+  -- スクロールバー表示
+  require("plugins.nvim-scrollbar"),
+  -- 通知とコマンドラインを強化
+  require("plugins.noice"),
   -- 横幅最適化
   require("plugins.no-neck-pain"),
+  -- ステータスバーをフローティング表示
+  require("plugins.incline"),
+  -- Markdown preview
+  require("plugins.markdown"), -- inline
+
+  -- CSVシンタックス強化
+  require("plugins.rainbow_csv"),
+  -- マークの可視化
+  "kshenoy/vim-signature",
+  -- カレントシンボルの強調
+  require("plugins.vim-illuminate"),
+
+  ----------------------------
+  -- エディタの操作性向上
+  ----------------------------
+  -- 画面内瞬間移動
+  require("plugins.flash"),
+  -- quickfix強化(previewなど)
+  require("plugins.nvim-bqf"),
+  -- 囲まれているものの操作
+  require("plugins.nvim-surround"),
+  -- アフタリスクコマンド改善
+  "rapan931/lasterisk.nvim",
+  -- 1行ラインを分割
+  require("plugins.treesj"),
+
+  -- キャメルケースモーション
+  require("plugins.CamelCaseMotion"),
+  -- ブラックホールレジスト+putの省略
+  require("plugins.ReplaceWithRegister"),
+  -- テーブル編集
+  require("plugins.vim-table-mode"),
+  -- 様々なrepeat処理に対応
+  "tpope/vim-repeat",
+  -- text-object(2)
+  "kana/vim-textobj-user", -- ユーザーカスタマイズベース
+  require("plugins.vim-textobj-entire"), -- ファイル全体
 }
 
 require("lazy").setup(neovim_plugins)

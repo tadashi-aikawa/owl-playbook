@@ -88,7 +88,7 @@ sudo apt-get update -y
 sudo apt-get install -y wl-clipboard
 # nvim-treesitterで使用
 sudo apt-get install -y build-essential
-# Pythonとtelescope-frecencyで使用
+# Pythonで使用
 sudo apt-get install -y libsqlite3-dev
 # Rustで使用
 sudo apt-get install -y pkg-config
