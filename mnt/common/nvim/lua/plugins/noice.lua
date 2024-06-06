@@ -37,6 +37,7 @@ return {
               { event = "msg_show", find = "lines >ed 1 time" },
               { event = "msg_show", find = "changes?; before" },
               { event = "msg_show", find = "changes?; after" },
+              { event = "notify", kind = "info", find = "No information available" },
             },
           },
           opts = { skip = true },
