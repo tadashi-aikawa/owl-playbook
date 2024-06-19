@@ -71,3 +71,19 @@ snippet _emit "emit定義" b
 snippet _computed "computed" b
   const ${1} = computed(() => ${2})
 
+snippet _ref "ref" b
+  const ${1} = ref(${2})
+
+snippet _reactive "reactive" b
+  const ${1} = reactive({
+    ${2}: ${3}
+  })
+
+snippet _watch "watch" b
+  watch(
+    () => ${1},
+    (${2}) => {
+      ${3}
+    }
+  )
+
