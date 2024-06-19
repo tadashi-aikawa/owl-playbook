@@ -9,6 +9,7 @@ Usages:
   toki node <path>:       Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
   toki deno <path>:       DenoのプロジェクトSandboxを作成します
   toki vue <path>:        Vue.js/Node.jsのプロジェクトSandboxを作成します
+  toki nuxt <path>:       Nuxt/BunのプロジェクトSandboxを作成します
   toki tailwind <path>:   TailwindCSS + Vue + BunのプロジェクトSandboxを作成します
   toki go <path>:         GoプロジェクトのSandboxを作成します
   toki rust <path>:       RustプロジェクトのSandboxを作成します
@@ -136,6 +137,26 @@ if [[ $command == "vue" ]]; then
 
 $ cd ${path}
 $ npm run dev
+"
+  exit 0
+
+fi
+
+# -------------------------------------------
+# Nuxt/BunのプロジェクトSandboxを作成します
+# -------------------------------------------
+if [[ $command == "nuxt" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  bun x nuxi@latest init "${path}"
+  cd "$path"
+  bun add --optional typescript
+  mkdir pages
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ bun dev -o
 "
   exit 0
 
