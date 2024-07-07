@@ -56,6 +56,7 @@ return {
               { event = "notify", kind = "info", find = " -> " },
               { event = "notify", kind = "info", find = "No information available" },
               { event = "notify", kind = "info", find = "No code actions available" },
+              { event = "notify", kind = "warn", find = "No results for %*%*diagnostics%*%*" },
             },
           },
           view = "mini",
