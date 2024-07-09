@@ -2,7 +2,7 @@
   // 見た目
   "editor.guides.indentation": false,
   "editor.fontFamily": "CaskaydiaCove Nerd Font",
-  "editor.fontSize": 18,
+  "editor.fontSize": 16,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "window.menuBarVisibility": "hidden",
@@ -11,7 +11,7 @@
   "editor.minimap.enabled": true,
   "breadcrumbs.enabled": true,
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "multiple",
@@ -139,5 +139,9 @@
   "jest.autoRun": {
     "watch": false
   },
-  "editor.multiCursorModifier": "ctrlCmd"
+  "editor.multiCursorModifier": "ctrlCmd",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "csv-edit.readOption_hasHeader": "true"
 }
