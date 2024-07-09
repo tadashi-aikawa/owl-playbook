@@ -124,8 +124,6 @@ local neovim_plugins = {
   -- text-object(2)
   "kana/vim-textobj-user", -- ユーザーカスタマイズベース
   require("plugins.vim-textobj-entire"), -- ファイル全体
-  -- 変換
-  require("plugins.general-converter"),
 }
 
 require("lazy").setup(neovim_plugins)
