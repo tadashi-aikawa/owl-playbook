@@ -223,7 +223,7 @@ if [[ $command == "go" ]]; then
   mkdir -p "$path"
   cd "$path"
   go mod init sandbox/"${path}"
-  go install github.com/cosmtrek/air@latest
+  go install github.com/air-verse/air@latest
 
   cat >main.go <<'EOF'
 package main
