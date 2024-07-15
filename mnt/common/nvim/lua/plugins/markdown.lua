@@ -18,18 +18,24 @@ return {
         (task_list_marker_unchecked) @checkbox_unchecked
         (task_list_marker_checked) @checkbox_checked
 
-        (block_quote (block_quote_marker) @quote_marker)
-        (block_quote (paragraph (inline (block_continuation) @quote_marker)))
+        (block_quote) @quote
 
         (pipe_table) @table
-        (pipe_table_header) @table_head
-        (pipe_table_delimiter_row) @table_delim
-        (pipe_table_row) @table_row
     ]],
       fat_tables = false,
-      conceal = {
-        default = 1,
-        rendered = 2,
+      checkbox = {
+        unchecked = { icon = "󰄰 " },
+        checked = { icon = "󰄳 " },
+      },
+      win_options = {
+        conceallevel = {
+          default = 2,
+          rendered = 2,
+        },
+        concealcursor = {
+          default = "",
+          rendered = "",
+        },
       },
     })
   end,
