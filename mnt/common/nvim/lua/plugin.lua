@@ -126,6 +126,8 @@ local neovim_plugins = {
   require("plugins.vim-textobj-entire"), -- ファイル全体
   -- case変換
   require("plugins.text-case"),
+  -- Markdownのリスト変換強化
+  require("plugins.markdown-toggle"),
 }
 
 require("lazy").setup(neovim_plugins)
