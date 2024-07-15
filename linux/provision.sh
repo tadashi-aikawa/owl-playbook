@@ -103,8 +103,12 @@ sudo apt-get install -y \
   libffi-dev \
   liblzma-dev \
   zlib1g-dev
-# PlantUMLで使用
-sudo apt-get install -y graphviz
+# ffmpegで使用
+sudo apt-get install -y \
+  libx264-dev \
+  libx265-dev \
+  libnuma-dev \
+  libvpx-dev
 
 #----------------------------------------------------------------------
 # Shell
@@ -325,6 +329,10 @@ mise use -g task
 
 # watchexec
 mise use -g watchexec
+
+# ffmpeg
+export ASDF_FFMPEG_ENABLE="libx264 libx265 libvpx gpl"
+mise use -g ffmpeg
 
 # toki
 ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki
