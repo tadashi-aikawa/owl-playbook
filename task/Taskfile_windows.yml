@@ -109,7 +109,7 @@ tasks:
     cmds:
       - |
         cd ~/work &&
-        7z a -p backup.zip ~/backup
+        7z a backup.zip ~/backup
       - cmd: |
           cd ~/work &&
           7z a minerva.7z minerva minerva-daily-note-backup &&
