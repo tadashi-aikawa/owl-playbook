@@ -61,6 +61,14 @@ return {
           },
           view = "mini",
         },
+        {
+          filter = {
+            any = {
+              { event = "msg_showmode", find = "^recording" },
+            },
+          },
+          view = "virtualtext",
+        },
       },
     })
   end,
