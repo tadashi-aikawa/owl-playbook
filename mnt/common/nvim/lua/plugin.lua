@@ -128,6 +128,11 @@ local neovim_plugins = {
   require("plugins.text-case"),
   -- Markdownのリスト変換強化
   require("plugins.markdown-toggle"),
+
+  ----------------------------
+  -- その他
+  ----------------------------
+  require("plugins.screenkey"),
 }
 
 require("lazy").setup(neovim_plugins)
