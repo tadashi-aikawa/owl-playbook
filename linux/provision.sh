@@ -332,6 +332,7 @@ mise use -g watchexec
 
 # ffmpeg
 export ASDF_FFMPEG_ENABLE="libx264 libx265 libvpx gpl"
+mise use -g nasm
 mise use -g ffmpeg
 
 # toki
