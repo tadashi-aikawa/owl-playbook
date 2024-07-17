@@ -10,7 +10,7 @@ return {
         ["<TAB>"] = "Tab",
       },
       win_opts = {
-        width = 80,
+        width = 50,
         height = 1,
         border = "single",
         title = "Keys",
