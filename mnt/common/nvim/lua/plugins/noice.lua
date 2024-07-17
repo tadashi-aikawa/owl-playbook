@@ -64,7 +64,7 @@ return {
         {
           filter = {
             any = {
-              { event = "msg_showmode", find = "^recording" },
+              { event = "msg_showmode", find = "recording @.$" },
             },
           },
           view = "virtualtext",
