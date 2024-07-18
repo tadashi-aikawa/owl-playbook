@@ -12,6 +12,9 @@ snippet _ifep "if err != nil -> panic"
     panic(err)
   }
 
+snippet :: "var := foo"
+  ${1} := ${2}
+
 snippet _fp "fmt.Println"
   fmt.Println("${0}")
 
@@ -31,6 +34,9 @@ snippet _struct "type struct"
   type ${1} struct {
     ${2}
   }
+
+snippet _slice "slice"
+  []${1}{${2}}
 
 snippet _json "`json:\"prop\"`"
   \`json:"${1}"\`
@@ -57,5 +63,10 @@ snippet _switch "switch"
   case ${2: Hoge}:
     ${3}
   default:
+    ${4}
+  }
+
+snippet _func "func hoge() fuga {}"
+  func ${1}(${2}) ${3} {
     ${4}
   }
