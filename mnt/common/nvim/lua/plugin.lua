@@ -87,8 +87,6 @@ local neovim_plugins = {
   require("plugins.noice"),
   -- 横幅最適化
   require("plugins.no-neck-pain"),
-  -- ステータスバーをフローティング表示
-  require("plugins.incline"),
   -- Markdown preview
   require("plugins.markdown"), -- inline
 
