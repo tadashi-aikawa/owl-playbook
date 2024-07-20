@@ -35,9 +35,6 @@ return {
         enable = true,
         disable = { "ini" },
       },
-      autotag = {
-        enable = true,
-      },
       -- texobjectsはパフォーマンスの問題から利用しない
     })
   end,

@@ -110,6 +110,8 @@ local neovim_plugins = {
   "rapan931/lasterisk.nvim",
   -- 1行ラインを分割
   require("plugins.treesj"),
+  -- タグを自動で閉じる
+  require("plugins.nvim-ts-autotag"),
 
   -- キャメルケースモーション
   require("plugins.CamelCaseMotion"),
