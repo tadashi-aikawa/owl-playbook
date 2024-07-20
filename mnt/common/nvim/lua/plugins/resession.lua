@@ -4,13 +4,13 @@ return {
     local resession = require("resession")
     resession.setup()
 
-    vim.api.nvim_create_user_command("SS", function()
+    vim.keymap.set("n", "gss", function()
       resession.save("last")
+      vim.cmd("wa")
       vim.cmd("qa!")
-    end, {})
-
-    vim.api.nvim_create_user_command("SL", function()
+    end)
+    vim.keymap.set("n", "gsp", function()
       resession.load("last")
-    end, {})
+    end)
   end,
 }
