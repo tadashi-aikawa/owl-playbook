@@ -260,6 +260,9 @@ return {
         vim.keymap.set("n", "<C-j>r", "<cmd>LspRestart<CR>", opts)
 
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client == nil then
+          return
+        end
 
         -- 保存時に自動フォーマット
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
