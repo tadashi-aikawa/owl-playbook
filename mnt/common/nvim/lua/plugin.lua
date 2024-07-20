@@ -25,7 +25,7 @@ local neovim_plugins = {
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
   require("plugins.nvim-lspconfig"),
-  require("plugins.none-ls"),
+  require("plugins.conform"),
   require("plugins.lspsaga"),
   "j-hui/fidget.nvim",
   require("plugins.lsp_signature"),
