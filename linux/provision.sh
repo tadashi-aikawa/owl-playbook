@@ -287,6 +287,9 @@ mise use -g dust
 # jq
 mise use -g jq
 
+# bottom
+mise use -g bottom
+
 # zoxide
 mise use -g zoxide
 ln -snf "$UBUNTU_MNT"/bashrc/zoxide.sh ~/.zoxide.sh
