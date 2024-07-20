@@ -10,7 +10,6 @@ return {
     { "<C-j>e", ":Telescope smart_open<CR>", silent = true },
     { "<C-j>g", ":Telescope live_grep<CR>", silent = true },
     { "<C-j>l", ":Telescope current_buffer_fuzzy_find<CR>", silent = true },
-    { "<C-j>p", ":Telescope commands<CR>", silent = true },
     { "<C-j>:", ":Telescope command_history<CR>", silent = true },
     { "<C-j>s", ":Telescope lsp_dynamic_workspace_symbols<CR>", silent = true },
     { "<C-j>c", ":lua require'telescope.builtin'.git_status{}<CR>", silent = true },

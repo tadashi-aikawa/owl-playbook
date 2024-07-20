@@ -128,6 +128,8 @@ local neovim_plugins = {
   require("plugins.markdown-toggle"),
   -- ウィンドウの最大化切り替え
   require("plugins.windows"),
+  -- セッションの保存・復元
+  require("plugins.resession"),
 
   ----------------------------
   -- その他
