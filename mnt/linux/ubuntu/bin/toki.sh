@@ -154,6 +154,14 @@ if [[ $command == "nuxt" ]]; then
   cd "$path"
   bun add --optional typescript
   mkdir pages
+
+  bun add -D @fsouza/prettierd prettier-plugin-organize-imports
+  cat >.prettierrc.json <<'EOF'
+{
+  "plugins": ["prettier-plugin-organize-imports"]
+}
+EOF
+
   echo "
 🚀 Try
 
