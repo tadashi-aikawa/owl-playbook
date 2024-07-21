@@ -333,6 +333,9 @@ mise use -g task
 # watchexec
 mise use -g watchexec
 
+# Marp CLI
+mise use -g marp-cli
+
 # ffmpeg
 export ASDF_FFMPEG_ENABLE="libx264 libx265 libvpx gpl"
 mise use -g nasm
