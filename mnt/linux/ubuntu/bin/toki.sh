@@ -44,6 +44,8 @@ if [[ $command == "bun" ]]; then
   bun init . -y
   bun add -d @biomejs/biome
   bun biome init
+  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
+  mv biome.json.tmp biome.json
 
   echo "
 🚀 Try
