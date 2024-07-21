@@ -9,7 +9,7 @@ return {
       vim.cmd("wa")
       vim.cmd("qa!")
     end)
-    vim.keymap.set("n", "gsp", function()
+    vim.keymap.set("n", "gsl", function()
       resession.load("last")
     end)
   end,
