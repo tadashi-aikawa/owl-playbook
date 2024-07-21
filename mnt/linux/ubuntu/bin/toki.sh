@@ -133,7 +133,16 @@ if [[ $command == "vue" ]]; then
 
   npm create vue@latest "${path}"
   cd "$path"
+
+  npm i -D @fsouza/prettierd prettier-plugin-organize-imports
+  cat >.prettierrc.json <<'EOF'
+{
+  "plugins": ["prettier-plugin-organize-imports"]
+}
+EOF
+
   npm i
+
   echo "
 🚀 Try
 
