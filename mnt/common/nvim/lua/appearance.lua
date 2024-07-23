@@ -36,7 +36,7 @@ vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", { underline = true }
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#454545" })
 
 -- XXX: boldがなぜか見た目にFBされないので。。
-vim.api.nvim_set_hl(0, "@markup.strong", { undercurl = true })
+vim.api.nvim_set_hl(0, "@markup.strong", { underdouble = true })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
