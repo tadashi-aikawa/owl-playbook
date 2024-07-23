@@ -28,11 +28,9 @@ function npm_install() {
   target="$1"
   command=${2:-${target}}
 
-  mise use -g node@18
-  mise_no "${command}" && mise x -- npm i -g "${target}"
-  mise use -g node@18.15.0
-  mise_no "${command}" && mise x -- npm i -g "${target}"
   mise use -g node@20
+  mise_no "${command}" && mise x -- npm i -g "${target}"
+  mise use -g node@22
   mise_no "${command}" && mise x -- npm i -g "${target}"
 
   return 0
