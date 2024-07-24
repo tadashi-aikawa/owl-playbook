@@ -51,8 +51,7 @@ local neovim_plugins = {
   require("plugins.telescope"),
   require("plugins.smart-open"),
   -- コメントアウト. Neovim 0.10で不要になるかと思いきやVueファイルのようなblockでは対応不十分だったので
-  require("plugins.nvim-comment"),
-  require("plugins.nvim-ts-context-commentstring"),
+  require("plugins.comment"),
   -- アウトラインの表示
   require("plugins.aerial"),
   -- 折り畳み
