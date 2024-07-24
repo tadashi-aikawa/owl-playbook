@@ -37,11 +37,11 @@ return {
       },
       winbar = {
         lualine_a = {},
-        lualine_b = { { "diagnostics", sources = { "nvim_lsp" } } },
-        lualine_c = {},
-        lualine_x = {
+        lualine_b = {},
+        lualine_c = {
           { "diff", symbols = { added = " ", modified = " ", removed = " " } },
         },
+        lualine_x = { { "diagnostics", sources = { "nvim_lsp" } } },
         lualine_y = {
           { "filetype", icon_only = true },
         },
@@ -58,11 +58,11 @@ return {
       },
       inactive_winbar = {
         lualine_a = {},
-        lualine_b = { { "diagnostics", sources = { "nvim_lsp" } } },
-        lualine_c = {},
-        lualine_x = {
+        lualine_b = {},
+        lualine_c = {
           { "diff", symbols = { added = " ", modified = " ", removed = " " } },
         },
+        lualine_x = { { "diagnostics", sources = { "nvim_lsp" } } },
         lualine_y = {
           { "filetype", icon_only = true },
         },
