@@ -75,7 +75,7 @@ local neovim_plugins = {
   -- バッファ削除のときにレイアウトを変更しない
   "famiu/bufdelete.nvim",
   -- カラーコードの表示
-  require("plugins.nvim-colorizer"),
+  require("plugins.nvim-highlight-colors"),
   -- ステータスライン
   require("plugins.lualine"),
   -- 検索結果の詳細表示
