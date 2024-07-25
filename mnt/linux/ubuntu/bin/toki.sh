@@ -8,7 +8,7 @@ Usages:
   toki bun <path>:        BunとBiomeのプロジェクトSandboxを作成します
   toki node <path>:       Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
   toki deno <path>:       DenoのプロジェクトSandboxを作成します
-  toki vue <path>:        Vue.js/Node.jsのプロジェクトSandboxを作成します
+  toki vue <path>:        Vue.js/BunのプロジェクトSandboxを作成します
   toki nuxt <path>:       Nuxt/BunのプロジェクトSandboxを作成します
   toki tailwind <path>:   TailwindCSS + Vue + BunのプロジェクトSandboxを作成します
   toki go <path>:         GoプロジェクトのSandboxを作成します
@@ -131,23 +131,23 @@ fi
 if [[ $command == "vue" ]]; then
   path="${1:?'pathは必須です'}"
 
-  npm create vue@latest "${path}"
+  bun create vue@latest "${path}"
   cd "$path"
 
-  npm i -D @fsouza/prettierd prettier-plugin-organize-imports
+  bun add -D @fsouza/prettierd prettier-plugin-organize-imports
   cat >.prettierrc.json <<'EOF'
 {
   "plugins": ["prettier-plugin-organize-imports"]
 }
 EOF
 
-  npm i
+  bun i
 
   echo "
 🚀 Try
 
 $ cd ${path}
-$ npm run dev
+$ bun dev
 "
   exit 0
 
