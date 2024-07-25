@@ -135,6 +135,7 @@ local neovim_plugins = {
   ----------------------------
   -- その他
   ----------------------------
+  require("plugins.gitlinker"),
   require("plugins.screenkey"),
 }
 
