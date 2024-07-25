@@ -282,6 +282,9 @@ mise use -g bat
 # dust
 mise use -g dust
 
+# xh
+mise use -g xh
+
 # jq
 mise use -g jq
 
