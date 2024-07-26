@@ -12,6 +12,7 @@ Usages:
   toki nuxt <path>:       Nuxt/BunのプロジェクトSandboxを作成します
   toki tailwind <path>:   TailwindCSS + Vue + BunのプロジェクトSandboxを作成します
   toki go <path>:         GoプロジェクトのSandboxを作成します
+  toki go-sqlx <path>:    sqlxをインストールしたGoプロジェクトのSandboxを作成します
   toki rust <path>:       RustプロジェクトのSandboxを作成します
   toki python <path>:     PythonプロジェクトのSandboxを作成します
 
@@ -258,6 +259,87 @@ func sum(x int, y int) int {
 func main() {
 	total := sum(1, 10)
 	log.Printf("x + y = %d", total)
+}
+EOF
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ air
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# sqlのGoプロジェクトのSandboxを作成します
+# -------------------------------------------
+if [[ $command == "go-sqlx" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  go mod init sandbox/"${path}"
+  go install github.com/air-verse/air@latest
+
+  go get github.com/jmoiron/sqlx
+  go get github.com/go-sql-driver/mysql
+
+  cat >main.go <<'EOF'
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"time"
+
+	"github.com/go-sql-driver/mysql"
+	"github.com/jmoiron/sqlx"
+)
+
+func PrintPrettyJson(obj interface{}) {
+	r, _ := json.MarshalIndent(obj, "", "  ")
+	fmt.Println(string(r))
+}
+
+type record struct {
+	Id   int    `db:"id"`
+	Name string `db:"name"`
+}
+
+func initDB() *sqlx.DB {
+	jst := time.FixedZone("Asia/Tokyo", 9*60*60)
+	cfg := mysql.Config{
+		User:      "foo",
+		Passwd:    "bar",
+		Net:       "tcp",
+		Addr:      "127.0.0.1:3366",
+		DBName:    "TESTDB",
+		ParseTime: true,
+		Loc:       jst,
+	}
+	dsn := cfg.FormatDSN()
+
+	db, err := sqlx.Open("mysql", dsn)
+	if err != nil {
+		panic(err)
+	}
+
+	return db
+}
+
+func main() {
+	db := initDB()
+
+	var results []record
+	err := db.Select(&results, `
+SELECT id, name from members
+;`)
+	if err != nil {
+		panic(err)
+	}
+
+	PrintPrettyJson(results)
 }
 EOF
 
