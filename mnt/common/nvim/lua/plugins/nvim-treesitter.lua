@@ -16,6 +16,7 @@ return {
         "http",
         "javascript",
         "json",
+        "kdl",
         "lua",
         "markdown",
         "markdown_inline",
