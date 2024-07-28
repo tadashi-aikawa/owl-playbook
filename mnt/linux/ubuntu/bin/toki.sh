@@ -5,23 +5,30 @@ set -eu
 function show_usage() {
   echo "
 Usages:
-  toki bun <path>:        BunとBiomeのプロジェクトSandboxを作成します
-  toki node <path>:       Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
-  toki pnpm <path>:       Node.js/pnpmのTypeScript/BiomeプロジェクトSandboxを作成します
-  toki deno <path>:       DenoのプロジェクトSandboxを作成します
-  toki vue <path>:        Vue.js/BunのプロジェクトSandboxを作成します
-  toki nuxt <path>:       Nuxt/BunのプロジェクトSandboxを作成します
-  toki tailwind <path>:   TailwindCSS + Vue + BunのプロジェクトSandboxを作成します
-  toki go <path>:         GoプロジェクトのSandboxを作成します
-  toki go-sqlx <path>:    sqlxをインストールしたGoプロジェクトのSandboxを作成します
-  toki rust <path>:       RustプロジェクトのSandboxを作成します
-  toki python <path>:     PythonプロジェクトのSandboxを作成します
+  toki <Target> <path>:  Sandbox環境を作成します
 
   toki status:           関連するGitリポジトリの状態を取得します
   toki pull:             関連するGitリポジトリをすべてpullします
   toki update:           関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
 
   toki -h|--help|help: ヘルプを表示します
+
+-----------------
+Available targets
+-----------------
+  | Target   | Language | Runtime    | PM    | Framework / Lib    | Linter    | Formatter |
+  | -------- | -------- | ---------- | ----- | ------------------ | --------- | --------- |
+  | node     | TS       | Node       | npm   | -                  | -         | prettierd |
+  | pnpm     | TS       | Node       | pnpm  | -                  | Biome     | Biome     |
+  | deno     | TS       | Deno       | Deno  | -                  | Deno      | Deno      |
+  | bun      | TS       | Bun        | Bun   | -                  | Biome     | Biome     |
+  | vue      | TS or JS | Bun        | Bun   | Vue                | ?(ESLint) | prettierd |
+  | nuxt     | TS       | *          | *     | Nuxt               | -         | prettierd |
+  | tailwind | TS       | Bun        | Bun   | Vue + TailwindCSS  | -         | prettierd |
+  | go       | Go       | -          | Go    | air                | -         | -         |
+  | go-sqlx  | Go       | -          | Go    | sqlx + mysql + air | -         | -         |
+  | rust     | Rust     | -          | Cargo | -                  | -         | -         |
+  | python   | Python   | Virtualenv | Pip   | -                  | -         | -         |
   "
 }
 
