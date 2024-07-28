@@ -7,6 +7,7 @@ function show_usage() {
 Usages:
   toki bun <path>:        BunとBiomeのプロジェクトSandboxを作成します
   toki node <path>:       Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+  toki pnpm <path>:       Node.js/pnpmのTypeScript/BiomeプロジェクトSandboxを作成します
   toki deno <path>:       DenoのプロジェクトSandboxを作成します
   toki vue <path>:        Vue.js/BunのプロジェクトSandboxを作成します
   toki nuxt <path>:       Nuxt/BunのプロジェクトSandboxを作成します
@@ -67,6 +68,7 @@ if [[ $command == "node" ]]; then
   cd "$path"
   npm init -y
   npm i -D typescript @fsouza/prettierd prettier-plugin-organize-imports @tsconfig/recommended
+
   npm pkg set scripts.dev="tsc -w"
   npm pkg set scripts.start="node --watch *.js"
 
@@ -104,6 +106,57 @@ $ cd ${path}
 $ npm run dev
 and
 $ npm run start
+"
+  exit 0
+fi
+
+# -------------------------------------------------------------
+# Node.js/pnpmのTypeScript/BiomeプロジェクトSandboxを作成します
+# -------------------------------------------------------------
+if [[ $command == "pnpm" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  npm init -y
+  corepack use pnpm
+  pnpm add -D typescript @tsconfig/recommended @biomejs/biome
+
+  npx biome init # pnpx だとなぜかだめ...
+  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
+  mv biome.json.tmp biome.json
+
+  pnpm pkg set scripts.dev="tsc -w"
+  pnpm pkg set scripts.start="node --watch *.js"
+
+  cat >tsconfig.json <<'EOF'
+{
+  "extends": "@tsconfig/recommended/tsconfig.json"
+}
+EOF
+
+  cat >index.ts <<'EOF'
+function sum(x: number, y: number): number {
+  return x + y;
+}
+
+function main() {
+  var a = 1;
+  var b = 10;
+  console.log(`sum(a, b): ${sum(a, b)}`);
+}
+
+main();
+EOF
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+
+$ pnpm dev
+and
+$ pnpm start
 "
   exit 0
 fi
