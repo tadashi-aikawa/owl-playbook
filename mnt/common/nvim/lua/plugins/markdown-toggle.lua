@@ -15,6 +15,15 @@ return {
 
         -- F12はCtrl+Enter
         vim.keymap.set({ "n", "v" }, "<F12>", toggle.checkbox, opts)
+        vim.keymap.set({ "i" }, "<F12>", function()
+          vim.api.nvim_command("stopinsert")
+          vim.schedule(function()
+            toggle.checkbox()
+          end)
+          vim.schedule(function()
+            vim.api.nvim_command("startinsert")
+          end)
+        end, opts)
       end,
     })
   end,
