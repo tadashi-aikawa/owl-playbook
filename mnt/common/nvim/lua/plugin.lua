@@ -142,3 +142,9 @@ local neovim_plugins = {
 require("lazy").setup(neovim_plugins)
 
 vim.cmd("colorscheme tokyonight")
+
+-- original
+local submarine = require("submarine")
+vim.api.nvim_create_user_command("Submarine", function()
+  submarine.run()
+end, { nargs = 0 })
