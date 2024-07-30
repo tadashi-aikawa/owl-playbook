@@ -12,6 +12,7 @@ return {
         { mark = "~", emoji = "loading" },
         { mark = "x", emoji = "ok_green" },
         { mark = "_", emoji = "rip" },
+        { mark = "-", emoji = "togowl_pause" },
         { mark = " ", emoji = "circle-success" },
       },
       indent = {
