@@ -28,6 +28,7 @@ return {
         checked = { icon = "󰄳 " },
         custom = {
           progress = { raw = "[~]", rendered = "󰲼 ", highlight = "RenderMarkdownTodo" },
+          pending = { raw = "[_]", rendered = "󰮢 ", highlight = "RenderMarkdownWait" },
         },
       },
       win_options = {
