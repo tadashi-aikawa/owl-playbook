@@ -12,10 +12,6 @@ local function print_table(t, indent)
   end
 end
 
-local function ends_with(str, ending)
-  return ending == "" or str:sub(-#ending) == ending
-end
-
 local function until_delimiter(arr, delimiter)
   local result = {}
   for i, value in ipairs(arr) do
@@ -31,6 +27,10 @@ local function double_indent(line)
   local leading_spaces = line:match("^%s*")
   local doubled_spaces = leading_spaces .. leading_spaces
   return doubled_spaces .. line:sub(#leading_spaces + 1)
+end
+
+local function convert_link_format(input)
+  return input:gsub("%[(.+)%]%((.+)%)", "<%2|%1>")
 end
 
 -- ここから本筋
@@ -100,13 +100,11 @@ local function post_current_buf()
 
   -- "---"より前
   local body_lines = vim.tbl_map(function(line)
-    if ends_with(line, "<-") then
-      line = string.gsub(line, "- %[ %] ", ":spinner-ripple: ")
-    else
-      line = string.gsub(line, "- %[ %] ", ":circle-failure: ")
-    end
+    line = string.gsub(line, "- %[~%] ", ":spinner-ripple: ")
     line = string.gsub(line, "- %[x%] ", ":done: ")
-    return double_indent(line)
+    line = string.gsub(line, "- %[ %] ", ":circle-failure: ")
+
+    return double_indent(convert_link_format(line))
   end, until_delimiter({ unpack(lines, 3) }, "---"))
   local contents = table.concat(body_lines, "\n")
 

@@ -26,6 +26,9 @@ return {
       checkbox = {
         unchecked = { icon = "󰄰 " },
         checked = { icon = "󰄳 " },
+        custom = {
+          progress = { raw = "[~]", rendered = "󰲼 ", highlight = "RenderMarkdownTodo" },
+        },
       },
       win_options = {
         conceallevel = {

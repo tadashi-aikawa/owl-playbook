@@ -3,7 +3,7 @@ return {
   config = function()
     require("markdown-toggle").setup({
       enable_box_cycle = true,
-      box_table = { "x" },
+      box_table = { "~", "x" },
     })
 
     vim.api.nvim_create_autocmd("FileType", {
