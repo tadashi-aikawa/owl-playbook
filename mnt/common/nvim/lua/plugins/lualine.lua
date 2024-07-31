@@ -37,7 +37,9 @@ return {
       },
       winbar = {
         lualine_a = {},
-        lualine_b = {},
+        lualine_b = {
+          { "filename", file_status = false, newfile_status = false, path = 1 },
+        },
         lualine_c = {
           { "diff", symbols = { added = " ", modified = " ", removed = " " } },
         },
@@ -58,7 +60,9 @@ return {
       },
       inactive_winbar = {
         lualine_a = {},
-        lualine_b = {},
+        lualine_b = {
+          { "filename", file_status = false, newfile_status = false, path = 1 },
+        },
         lualine_c = {
           { "diff", symbols = { added = " ", modified = " ", removed = " " } },
         },
