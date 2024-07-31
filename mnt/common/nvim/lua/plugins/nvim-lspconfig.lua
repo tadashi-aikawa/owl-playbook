@@ -245,6 +245,10 @@ return {
           vim.cmd([[ vsplit ]])
           vim.lsp.buf.definition()
         end, opts)
+        vim.keymap.set("n", "g<C-]>", function()
+          vim.cmd([[ split ]])
+          vim.lsp.buf.definition()
+        end, opts)
         -- 定義をホバー
         vim.keymap.set("n", "<M-s>", "<cmd>Lspsaga hover_doc<CR>", opts)
         -- 実装へ移動
