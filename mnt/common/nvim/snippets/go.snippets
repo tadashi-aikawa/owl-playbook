@@ -12,6 +12,11 @@ snippet _ifep "if err != nil -> panic"
     panic(err)
   }
 
+snippet _ifer "if err != nil -> return nil, err"
+  if err != nil {
+    return nil, err
+  }
+
 snippet :: "var := foo"
   ${1} := ${2}
 
