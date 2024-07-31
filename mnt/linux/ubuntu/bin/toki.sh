@@ -468,6 +468,8 @@ if [[ $command == "status" ]]; then
   cd "$GITHUB_AUTHOR_DIR/carnelian" && git status -s
   echo "--- 🐦 Fenice ---"
   cd "$GITHUB_AUTHOR_DIR/fenice" && git status -s
+  echo "--- 👻 ghostwriter.nvim ---"
+  cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git status -s
   exit 0
 fi
 
@@ -479,6 +481,8 @@ function pull() {
   cd "$GITHUB_AUTHOR_DIR/carnelian" && git pull
   echo "--- 🐦 Fenice ---"
   cd "$GITHUB_AUTHOR_DIR/fenice" && git pull
+  echo "--- 👻 ghostwriter.nvim ---"
+  cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git pull
 }
 
 # -------------------------------------------
