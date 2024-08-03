@@ -10,7 +10,6 @@ return {
     { "onsails/lspkind.nvim" },
     { "L3MON4D3/LuaSnip" },
     { "saadparwaiz1/cmp_luasnip" },
-    { "folke/neodev.nvim" },
   },
   config = function()
     ----------------------------------
@@ -18,10 +17,7 @@ return {
     ----------------------------------
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
     require("luasnip.loaders.from_snipmate").lazy_load()
-
-    require("neodev").setup({})
 
     cmp.setup({
       completion = {
@@ -62,6 +58,7 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "lazydev", group_index = 0 },
       }),
       formatting = {
         format = function(entry, item)

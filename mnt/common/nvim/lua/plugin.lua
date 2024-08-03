@@ -32,7 +32,7 @@ local neovim_plugins = {
   -- インデント
   require("plugins.nvim-autopairs"),
   -- init.lua用
-  "folke/neodev.nvim",
+  require("plugins.lazydev"),
 
   ----------------------------
   -- 開発/IDE化 (補完系以外)
