@@ -226,6 +226,11 @@ return {
             paramName = "Disable",
             semicolon = "Disable",
           },
+          diagnostics = {
+            groupFileStatus = {
+              await = "Opened",
+            },
+          },
         })
       end,
       settings = {
