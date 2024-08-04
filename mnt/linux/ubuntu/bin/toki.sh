@@ -22,6 +22,7 @@ Available targets
   | pnpm     | TS       | Node       | pnpm  | -                  | Biome     | Biome     |
   | deno     | TS       | Deno       | Deno  | -                  | Deno      | Deno      |
   | bun      | TS       | Bun        | Bun   | -                  | Biome     | Biome     |
+  | jest     | TS       | Node       | pnpm  | Jest               | Biome     | Biome     |
   | vue      | TS or JS | Bun        | Bun   | Vue                | ?(ESLint) | prettierd |
   | nuxt     | TS       | *          | *     | Nuxt               | -         | prettierd |
   | tailwind | TS       | Bun        | Bun   | Vue + TailwindCSS  | -         | prettierd |
@@ -43,7 +44,7 @@ fi
 shift
 
 # -------------------------------------------
-# BunとBiomeのプロジェクトSandboxを作成します
+# bun
 # -------------------------------------------
 if [[ $command == "bun" ]]; then
   path="${1:?'pathは必須です'}"
@@ -66,7 +67,7 @@ $ bun --hot .
 fi
 
 # -------------------------------------------------------------
-# Node.jsとTypeScript/PrettierのプロジェクトSandboxを作成します
+# node
 # -------------------------------------------------------------
 if [[ $command == "node" ]]; then
   path="${1:?'pathは必須です'}"
@@ -118,7 +119,7 @@ $ npm run start
 fi
 
 # -------------------------------------------------------------
-# Node.js/pnpmのTypeScript/BiomeプロジェクトSandboxを作成します
+# pnpm
 # -------------------------------------------------------------
 if [[ $command == "pnpm" ]]; then
   path="${1:?'pathは必須です'}"
@@ -129,7 +130,7 @@ if [[ $command == "pnpm" ]]; then
   corepack use pnpm
   pnpm add -D typescript @tsconfig/recommended @biomejs/biome
 
-  npx biome init # pnpx だとなぜかだめ...
+  pnpm exec biome init
   jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
   mv biome.json.tmp biome.json
 
@@ -169,7 +170,7 @@ $ pnpm start
 fi
 
 # -------------------------------------------
-# DenoのプロジェクトSandboxを作成します
+# deno
 # -------------------------------------------
 if [[ $command == "deno" ]]; then
   path="${1:?'pathは必須です'}"
@@ -186,8 +187,70 @@ $ deno test
   exit 0
 fi
 
+# -------------------------------------------------------------
+# jest
+# -------------------------------------------------------------
+if [[ $command == "jest" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  npm init -y
+  corepack use pnpm
+  pnpm add -D typescript @tsconfig/recommended @biomejs/biome \
+    jest babel-jest @babel/core @babel/preset-env \
+    @babel/preset-typescript @jest/globals
+
+  pnpm exec biome init
+  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
+  mv biome.json.tmp biome.json
+
+  pnpm pkg set scripts.test="jest"
+  pnpm pkg set scripts.test:watch="jest --watchAll"
+
+  cat >tsconfig.json <<'EOF'
+{
+  "extends": "@tsconfig/recommended/tsconfig.json"
+}
+EOF
+
+  cat >babel.config.js <<'EOF'
+module.exports = {
+  presets: [
+      ['@babel/preset-env', {targets: {node: 'current'}}],
+      '@babel/preset-typescript'
+  ],
+};
+EOF
+
+  cat >index.test.ts <<'EOF'
+import { describe, expect, test } from "@jest/globals";
+
+function sum(x: number, y: number): number {
+  return x + y;
+}
+
+describe("sum", () => {
+  test("1 + 1 = 2", () => {
+    expect(sum(1, 1)).toBe(2);
+  });
+});
+EOF
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+
+$ pnpm test
+or
+$ pnpm test:watch
+"
+  exit 0
+fi
+
 # -------------------------------------------
-# Vue.js/Node.jsのプロジェクトSandboxを作成します
+# vue
 # -------------------------------------------
 if [[ $command == "vue" ]]; then
   path="${1:?'pathは必須です'}"
@@ -215,7 +278,7 @@ $ bun dev
 fi
 
 # -------------------------------------------
-# Nuxt/BunのプロジェクトSandboxを作成します
+# nuxt
 # -------------------------------------------
 if [[ $command == "nuxt" ]]; then
   path="${1:?'pathは必須です'}"
@@ -243,7 +306,7 @@ $ bun dev -o
 fi
 
 # -------------------------------------------
-# TailwindCSS + Vue + BunのプロジェクトSandboxを作成します
+# tailwind
 # -------------------------------------------
 
 if [[ $command == "tailwind" ]]; then
@@ -295,7 +358,7 @@ $ bun dev
 fi
 
 # -------------------------------------------
-# GoプロジェクトのSandboxを作成します
+# go
 # -------------------------------------------
 if [[ $command == "go" ]]; then
   path="${1:?'pathは必須です'}"
@@ -332,7 +395,7 @@ $ air
 fi
 
 # -------------------------------------------
-# sqlのGoプロジェクトのSandboxを作成します
+# go-sqlx
 # -------------------------------------------
 if [[ $command == "go-sqlx" ]]; then
   path="${1:?'pathは必須です'}"
@@ -413,7 +476,7 @@ $ air
 fi
 
 # -------------------------------------------
-# RustプロジェクトのSandboxを作成します
+# rust
 # -------------------------------------------
 if [[ $command == "rust" ]]; then
   path="${1:?'pathは必須です'}"
@@ -430,7 +493,7 @@ $ cargo run
 fi
 
 # -------------------------------------------
-# PythonプロジェクトのSandboxを作成します
+# python
 # -------------------------------------------
 if [[ $command == "python" ]]; then
   path="${1:?'pathは必須です'}"
