@@ -23,6 +23,9 @@ return {
         (pipe_table) @table
     ]],
       fat_tables = false,
+      code = {
+        sign = false,
+      },
       checkbox = {
         unchecked = { icon = "󰄰 " },
         checked = { icon = "󰄳 " },
