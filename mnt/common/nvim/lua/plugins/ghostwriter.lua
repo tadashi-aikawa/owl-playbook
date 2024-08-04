@@ -16,7 +16,7 @@ return {
         { mark = " ", emoji = "circle-success" },
       },
       bullet = {
-        emoji = "dot",
+        emoji = "diamond_shape_with_a_dot_inside",
       },
     })
   end,
