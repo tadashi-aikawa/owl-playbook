@@ -15,8 +15,8 @@ return {
         { mark = "-", emoji = "togowl_pause" },
         { mark = " ", emoji = "circle-success" },
       },
-      indent = {
-        ratio = 2,
+      bullet = {
+        emoji = "dot",
       },
     })
   end,
