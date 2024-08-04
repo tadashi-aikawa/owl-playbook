@@ -223,6 +223,7 @@ return {
           },
           hint = {
             enable = true,
+            arrayIndex = "Disable",
             paramName = "Disable",
             semicolon = "Disable",
           },
