@@ -15,9 +15,6 @@ return {
         { mark = "-", emoji = "togowl_pause" },
         { mark = " ", emoji = "circle-success" },
       },
-      bullet = {
-        emoji = "diamond_shape_with_a_dot_inside",
-      },
     })
   end,
 }
