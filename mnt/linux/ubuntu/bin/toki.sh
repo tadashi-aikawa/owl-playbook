@@ -30,6 +30,7 @@ Available targets
   | go-sqlx  | Go       | -          | Go    | sqlx + mysql + air | -         | -         |
   | rust     | Rust     | -          | Cargo | -                  | -         | -         |
   | python   | Python   | Virtualenv | Pip   | -                  | -         | -         |
+  | nvim     | Lua      | Lua        |       | nvim               | -         | -         |
   "
 }
 
@@ -516,6 +517,29 @@ EOF
 $ cd ${path}
 $ source .venv/bin/activate
 $ python main.py
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# nvim
+# -------------------------------------------
+if [[ $command == "nvim" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  mkdir lua
+  cat >lua/init.lua <<'EOF'
+vim.notify("aa" .. "bb")
+EOF
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ nvim lua/init.lua
+$ exec 'luafile %'
 "
   exit 0
 fi
