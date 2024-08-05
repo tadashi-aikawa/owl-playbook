@@ -1,5 +1,6 @@
 export PATH=${PATH}:~/bin
 
+alias d="cd"
 alias e="/mnt/c/Windows/explorer.exe"
 
 alias ..='cd ..'
