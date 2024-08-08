@@ -27,10 +27,6 @@ return {
           quit = "<ESC>",
         },
       },
-      scroll_preview = {
-        scroll_down = "<Down>",
-        scroll_up = "<Up>",
-      },
       definition = {
         width = 0.9,
         height = 0.8,
