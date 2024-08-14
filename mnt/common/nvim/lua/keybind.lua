@@ -23,5 +23,7 @@ vim.keymap.set("n", "<Space>q", ":Bdelete<CR>", { silent = true })
 vim.keymap.set("n", "<Space>c", ":BufferCloseAllButVisible<CR>", { silent = true })
 -- windows split
 vim.keymap.set("n", "<C-w><F12>", ":vsplit<CR>", { silent = true })
+-- tab split
+vim.keymap.set("n", "<C-w>t", ":tab split<CR>", { silent = true })
 -- 行補完
 vim.keymap.set("i", "<C-l>", "<C-x><C-l>", { silent = true })
