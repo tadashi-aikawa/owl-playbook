@@ -27,3 +27,11 @@ vim.keymap.set("n", "<C-w><F12>", ":vsplit<CR>", { silent = true })
 vim.keymap.set("n", "<C-w>t", ":tab split<CR>", { silent = true })
 -- 行補完
 vim.keymap.set("i", "<C-l>", "<C-x><C-l>", { silent = true })
+-- markdown装飾
+vim.keymap.set("n", "<Space>b", function()
+  vim.cmd("normal ysiW*.")
+end, { silent = true })
+vim.keymap.set("n", "<Space>@", function()
+  vim.cmd("normal ysiW`")
+end, { silent = true })
+vim.keymap.set("n", "<Space>-", ":s/*/\\~/g<CR>", { silent = true })
