@@ -25,6 +25,7 @@ return {
       fat_tables = false,
       code = {
         sign = false,
+        width = "block",
       },
       checkbox = {
         unchecked = { icon = "󰄰 " },
@@ -37,7 +38,7 @@ return {
       },
       win_options = {
         conceallevel = {
-          default = 2,
+          default = 0,
           rendered = 2,
         },
         concealcursor = {
