@@ -2,7 +2,7 @@ return {
   "stevearc/resession.nvim",
   config = function()
     local resession = require("resession")
-    resession.setup()
+    resession.setup({})
 
     vim.keymap.set("n", "gss", function()
       resession.save("last")
