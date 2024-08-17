@@ -39,5 +39,56 @@ snippet _slide-cahpter "[Slide] 章のアジェンダ"
 
     </div>
 
+snippet _slide-footer "[Slide] フッタ. 基本は引用元"
+    <footer>
+
+    [${1}](URL)
+
+    </footer>
+
 snippet _slide-iframe "[Slide] iframeでサイトの紹介"
-    <iframe src="${1}" width="100%" height="560" frameborder="0" allowfullscreen class="mt-6"></iframe>
+    <iframe src="${1}" width="100%" height="540" frameborder="0" allowfullscreen class="mt-6"></iframe>
+
+snippet _slide-image-and-white-text "[Slide] 画像を暗くして白文字で主張"
+    <!-- _class: full lead text-dimmed-background -->
+
+    <h2 class="z-50">${1}</h2>
+
+    ![bg](${2: image url})
+
+    <div class="absolute bg-black/75 w-full h-full"></div>
+
+snippet _slide-3topics "[Slide] 3つのトピックを横並び"
+    <div class="grid-col-div-3 mt-12 text-primary">
+
+      <i class="nf nf-hogehoge text-[3em]"></i>
+
+      <i class="nf nf-hogehoge text-[3em]"></i>
+
+      <i class="nf nf-hogehoge text-[3em]"></i>
+
+    </div>
+
+    <div class="grid-col-div-3 pt-4">
+      <div class="text-3xl font-bold">Topic 1</div>
+      <div class="text-3xl font-bold">Topic 2</div>
+      <div class="text-3xl font-bold">Topic 3</div>
+    </div>
+
+    <div class="grid-col-div-3 text-justify" style="place-items: start;">
+      <div class="text-2xl">
+
+      Topic 1の説明
+
+      </div>
+      <div class="text-2xl">
+
+      Topic 2の説明
+
+      </div>
+      <div class="text-2xl">
+
+      Topic 3の説明
+
+      </div>
+    </div>
