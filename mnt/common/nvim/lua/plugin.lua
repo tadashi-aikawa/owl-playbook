@@ -137,6 +137,7 @@ local neovim_plugins = {
   require("plugins.screenkey"),
   -- オリジナル
   require("plugins.ghostwriter"),
+  require("plugins.silhouette"),
 }
 
 require("lazy").setup(neovim_plugins)
