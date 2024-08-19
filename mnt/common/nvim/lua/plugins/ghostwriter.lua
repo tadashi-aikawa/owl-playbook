@@ -15,6 +15,9 @@ return {
         { mark = "-", emoji = "togowl_pause" },
         { mark = " ", emoji = "circle-success" },
       },
+      link = {
+        disabled = true,
+      },
     })
   end,
 }
