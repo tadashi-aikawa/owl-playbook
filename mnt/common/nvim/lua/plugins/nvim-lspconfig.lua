@@ -111,20 +111,31 @@ return {
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
-    -- markdown-oxide
-    capabilities.workspace = {
-      didChangeWatchedFiles = {
-        dynamicRegistration = true,
-      },
-    }
     -- ufo
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
       lineFoldingOnly = true,
     }
 
-    require("lspconfig").markdown_oxide.setup({
-      capabilities = capabilities,
+    lspconfig.markdown_oxide.setup({
+      capabilities = vim.tbl_deep_extend("force", capabilities, {
+        workspace = {
+          didChangeWatchedFiles = {
+            dynamicRegistration = true,
+          },
+        },
+      }),
+      on_attach = function(client, bufnr)
+        -- server_capabilities の中身を確認
+        print(vim.inspect(client.server_capabilities.workspace))
+
+        -- ファイル監視が有効かを確認
+        if client.server_capabilities.workspace and client.server_capabilities.workspace.didChangeWatchedFiles then
+          print("didChangeWatchedFiles is enabled")
+        else
+          print("didChangeWatchedFiles is not enabled")
+        end
+      end,
     })
 
     lspconfig.ruff_lsp.setup({ capabilities = capabilities })
