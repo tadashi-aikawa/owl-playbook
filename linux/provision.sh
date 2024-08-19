@@ -273,6 +273,7 @@ npm_install svelte-language-server svelteserver
 no markdown-oxide && {
   cargo binstall --git 'https://github.com/feel-ix-343/markdown-oxide' markdown-oxide
 }
+ln -snf "$UBUNTU_MNT"/moxide/settings.toml ~/.config/moxide/settings.toml
 
 #----------------------------------------------------------------------
 # CLI Tools
