@@ -15,6 +15,6 @@ return {
         --   holidays_path = "./holidays.md",
         -- },
       })
-    end, 500)
+    end, 1000)
   end,
 }
