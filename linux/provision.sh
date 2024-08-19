@@ -151,6 +151,15 @@ ln -snf "$UBUNTU_MNT"/zshrc/mise.sh ~/.misez.sh
 ensure_zshrc "source ~/.misez.sh"
 
 #----------------------------------------------------------------------
+# Binary installer
+#----------------------------------------------------------------------
+
+# cargo-binstall
+no "cargo-binstall" && {
+  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+}
+
+#----------------------------------------------------------------------
 # Prompt
 #----------------------------------------------------------------------
 
@@ -261,9 +270,8 @@ npm_install @vue/language-server vue-language-server
 npm_install svelte-language-server svelteserver
 
 # Markdown
-no marksman && {
-  sudo wget https://github.com/artempyanykh/marksman/releases/download/2023-12-09/marksman-linux-x64 -O /usr/local/bin/marksman
-  sudo chmod +x /usr/local/bin/marksman
+no markdown-oxide && {
+  cargo binstall --git 'https://github.com/feel-ix-343/markdown-oxide' markdown-oxide
 }
 
 #----------------------------------------------------------------------

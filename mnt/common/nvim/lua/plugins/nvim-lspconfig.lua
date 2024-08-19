@@ -54,7 +54,14 @@ return {
         end, { "i", "s" }),
       }),
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
+        {
+          name = "nvim_lsp",
+          option = {
+            markdown_oxide = {
+              keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
+            },
+          },
+        },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
@@ -104,11 +111,21 @@ return {
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
+    -- markdown-oxide
+    capabilities.workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    }
     -- ufo
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
       lineFoldingOnly = true,
     }
+
+    require("lspconfig").markdown_oxide.setup({
+      capabilities = capabilities,
+    })
 
     lspconfig.ruff_lsp.setup({ capabilities = capabilities })
     lspconfig.pyright.setup({ capabilities = capabilities })
@@ -125,7 +142,6 @@ return {
     lspconfig.cssls.setup({ capabilities = capabilities })
     lspconfig.html.setup({ capabilities = capabilities })
     lspconfig.emmet_language_server.setup({ capabilities = capabilities })
-    lspconfig.marksman.setup({ capabilities = capabilities })
     lspconfig.bashls.setup({ capabilities = capabilities })
     lspconfig.svelte.setup({ capabilities = capabilities })
     lspconfig.jdtls.setup({ capabilities = capabilities })
@@ -269,6 +285,8 @@ return {
         vim.keymap.set("n", "<C-j>u", "<cmd>Lspsaga finder ref<CR>", opts)
         -- リネーム
         vim.keymap.set({ "n", "i" }, "<S-M-r>", "<cmd>Lspsaga rename<CR>", opts)
+        -- ファイルリネーム
+        vim.keymap.set("n", "<C-j>2", vim.lsp.buf.rename, opts)
         -- Code action
         vim.keymap.set({ "n", "i" }, "<M-CR>", "<cmd>Lspsaga code_action<CR>", opts)
         -- 次の診断へ移動
