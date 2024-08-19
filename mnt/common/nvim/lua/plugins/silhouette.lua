@@ -5,6 +5,9 @@ return {
   dependencies = {
     "vim-denops/denops.vim",
   },
+  keys = {
+    { "<Space>sp", ":SilhouetteMoveToProgress<CR>", silent = true },
+  },
   config = function()
     -- denops.nvimが起動し終わる前に実行されるとエラーになるためwaitを入れる
     -- マシンスペックや環境によって500(ms)の値を調整する必要あり
