@@ -570,6 +570,8 @@ function pull() {
   cd "$GITHUB_AUTHOR_DIR/fenice" && git pull
   echo "--- 👻 ghostwriter.nvim ---"
   cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git pull
+  echo "--- ✏️  silhouette.nvim ---"
+  cd "$GITHUB_AUTHOR_DIR/silhouette.nvim" && git pull
 }
 
 # -------------------------------------------
