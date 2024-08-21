@@ -557,6 +557,8 @@ if [[ $command == "status" ]]; then
   cd "$GITHUB_AUTHOR_DIR/fenice" && git status -s
   echo "--- 👻 ghostwriter.nvim ---"
   cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git status -s
+  echo "--- ✏️ silhouette.nvim ---"
+  cd "$GITHUB_AUTHOR_DIR/silhouette.nvim" && git status -s
   exit 0
 fi
 
@@ -570,7 +572,7 @@ function pull() {
   cd "$GITHUB_AUTHOR_DIR/fenice" && git pull
   echo "--- 👻 ghostwriter.nvim ---"
   cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git pull
-  echo "--- ✏️  silhouette.nvim ---"
+  echo "--- ✏️ silhouette.nvim ---"
   cd "$GITHUB_AUTHOR_DIR/silhouette.nvim" && git pull
 }
 
