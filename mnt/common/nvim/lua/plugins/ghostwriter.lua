@@ -8,6 +8,10 @@ return {
   },
   config = function()
     require("ghostwriter").setup({
+      replacers = {
+        { pattern = "202%d+_", replaced = " " },
+        { pattern = " %d%d:%d%d ", replaced = " " },
+      },
       check = {
         { mark = "~", emoji = "loading" },
         { mark = "x", emoji = "ok_green" },
