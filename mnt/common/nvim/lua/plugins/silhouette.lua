@@ -13,10 +13,10 @@ return {
     -- マシンスペックや環境によって500(ms)の値を調整する必要あり
     vim.defer_fn(function()
       require("silhouette").setup({
-        -- task = {
-        --   repetition_tasks_path = "./repetition-tasks.md",
-        --   holidays_path = "./holidays.md",
-        -- },
+        task = {
+          repetition_tasks_path = "./workspace/repetition-tasks.md",
+          holidays_path = "./workspace/holidays.md",
+        },
       })
     end, 1000)
   end,
