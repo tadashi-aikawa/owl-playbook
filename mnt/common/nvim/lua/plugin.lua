@@ -138,6 +138,8 @@ local neovim_plugins = {
   -- オリジナル
   require("plugins.ghostwriter"),
   require("plugins.silhouette"),
+
+  require("plugins.obsidian"),
 }
 
 require("lazy").setup(neovim_plugins)
