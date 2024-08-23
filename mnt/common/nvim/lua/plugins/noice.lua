@@ -50,6 +50,7 @@ return {
               { event = "msg_show", error = true, find = "E5107:" },
               { event = "msg_show", warning = true, find = "search hit BOTTOM, continuing at TOP" },
               { event = "msg_show", warning = true, find = "search hit TOP, continuing at BOTTOM" },
+              { event = "notify", warning = true, find = "Aborted" },
               { event = "notify", kind = "info", find = "CWD: " },
               { event = "notify", kind = "info", find = "was properly created" },
               { event = "notify", kind = "info", find = "was properly removed" },
