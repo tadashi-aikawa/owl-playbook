@@ -12,10 +12,7 @@ return {
   --   "BufNewFile path/to/my-vault/*.md",
   -- },
   dependencies = {
-    -- Required.
     "nvim-lua/plenary.nvim",
-
-    -- see below for full list of optional dependencies 👇
   },
   config = function()
     require("obsidian").setup({
@@ -23,6 +20,10 @@ return {
         {
           name = "work",
           path = "~/work/pkm",
+          ---@diagnostic disable-next-line: missing-fields
+          overrides = {
+            notes_subdir = "notes",
+          },
         },
       },
 
