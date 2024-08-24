@@ -8,8 +8,10 @@ Usages:
   toki <Target> <path>:  Sandbox環境を作成します
 
   toki status:           関連するGitリポジトリの状態を取得します
+       st
   toki pull:             関連するGitリポジトリをすべてpullします
   toki update:           関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
+       up
 
   toki -h|--help|help: ヘルプを表示します
 
@@ -547,7 +549,7 @@ fi
 # -------------------------------------------
 # 関連するGitリポジトリの状態を取得します
 # -------------------------------------------
-if [[ $command == "status" ]]; then
+if [[ $command == "status" || $command == "st" ]]; then
   GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
   echo "--- 🦉 owl-playbook ---"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git status -s
@@ -587,7 +589,7 @@ fi
 # -------------------------------------------
 # 関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
 # -------------------------------------------
-if [[ $command == "update" ]]; then
+if [[ $command == "update" || $command == "up" ]]; then
   pull
   cd "$GITHUB_AUTHOR_DIR/owl-playbook"
   bash ./linux/provision.sh
