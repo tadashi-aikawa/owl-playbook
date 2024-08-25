@@ -55,6 +55,10 @@ snippet _props_default "props定義 defaultつき" b
     ${2}
   });
 
+snippet _template_refs "Template Refs" b
+  const ${1:element} = ref<InstanceType<typeof ${2:Component}> | null>(null);
+  // Add -> <${2} ref="${1}" />
+
 snippet _state "state定義" b
   interface State {
     ${1}

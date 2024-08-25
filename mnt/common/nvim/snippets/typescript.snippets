@@ -79,6 +79,12 @@ snippet _reactive "reactive" b
     ${2}: ${3}
   })
 
+snippet _model "defineModel" b
+  const ${1} = defineModel<${2:T}>({required: true})
+
+snippet _model_named "defineModel named" b
+  const ${1} = defineModel<${2:T}>("${3:modelName}", {required: true})
+
 snippet _watch "watch" b
   watch(
     () => ${1},
