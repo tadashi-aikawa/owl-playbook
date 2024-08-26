@@ -10,6 +10,7 @@ return {
     require("ghostwriter").setup({
       replacers = {
         { pattern = "202%d+_", replaced = " " },
+        { pattern = "MTG_", replaced = "📅" },
         { pattern = " %d%d:%d%d ", replaced = " " },
       },
       check = {
@@ -18,9 +19,6 @@ return {
         { mark = "_", emoji = "rip" },
         { mark = "-", emoji = "togowl_pause" },
         { mark = " ", emoji = "circle-success" },
-      },
-      link = {
-        disabled = true,
       },
     })
   end,
