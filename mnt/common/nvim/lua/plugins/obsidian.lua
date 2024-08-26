@@ -45,7 +45,10 @@ return {
     })
 
     vim.keymap.set("n", "<C-j>h", ":ObsidianBacklinks<CR>", { silent = true })
-    vim.keymap.set("n", "<M-]>", ":ObsidianFollowLink vsplit<CR>", { silent = true })
+    vim.keymap.set("n", "<M-]>", function()
+      vim.cmd([[ vsplit ]])
+      vim.cmd([[ :ObsidianFollowLink ]])
+    end, { silent = true })
     vim.keymap.set("n", "g<C-]>", ":ObsidianFollowLink hsplit<CR>", { silent = true })
   end,
 }
