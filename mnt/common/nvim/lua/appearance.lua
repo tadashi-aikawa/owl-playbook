@@ -10,6 +10,9 @@ vim.opt.cursorline = true
 -- ステータスバーは分割しない
 vim.opt.laststatus = 3
 
+-- suggestionsの上限
+vim.o.pumheight = 10
+
 -- Line
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888" })
 -- Comment
