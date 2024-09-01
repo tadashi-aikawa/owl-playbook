@@ -1,5 +1,6 @@
 return {
-  "epwalsh/obsidian.nvim",
+  -- 細かい挙動が色々気になるのでfork版
+  dir = "~/git/github.com/tadashi-aikawa/obsidian.nvim",
   version = "*",
   lazy = true,
   ft = "markdown",
@@ -47,7 +48,6 @@ return {
         },
       },
 
-      -- 新規ノートは常にVault rootに
       new_notes_location = "notes_subdir",
       -- 見た目の変更はしない
       ui = { enable = false },
