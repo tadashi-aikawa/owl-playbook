@@ -13,20 +13,40 @@ return {
       local row = vim.fn.line(".")
       local col = vim.fn.col(".")
 
-      local cur = 1
-      while true do
-        local st, ed = string.find(line, "%[%[.-%]%]", cur)
-        if not st then
-          break
+      local get_cursor = function(pattern)
+        local cur = 1
+        while true do
+          local st, ed = string.find(line, pattern, cur)
+          vim.notify(tostring(st))
+          vim.notify(tostring(ed))
+          vim.notify(tostring(col))
+          if not st then
+            return nil
+          end
+          if col < st then
+            return st - 1
+          end
+          if col <= ed then
+            return col - 1
+          end
+          cur = ed + 1
         end
-        if col < st then
-          vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { row, st + 1 })
-          break
-        end
-        if col <= ed then
-          break
-        end
-        cur = ed + 1
+      end
+
+      local wiki_link_cursor = get_cursor("%[%[.-%]%]")
+      local url_cursor = get_cursor("https?://[%w-_%.%?%.:/%+=&]+")
+      if wiki_link_cursor == nil and url_cursor == nil then
+        return
+      end
+
+      if wiki_link_cursor ~= nil and url_cursor == nil then
+        vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { row, wiki_link_cursor })
+      end
+      if wiki_link_cursor == nil and url_cursor ~= nil then
+        vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { row, url_cursor })
+      end
+      if wiki_link_cursor ~= nil and url_cursor ~= nil then
+        vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { row, math.min(wiki_link_cursor, url_cursor) })
       end
 
       if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
@@ -90,7 +110,7 @@ return {
       forward_seek_gf()
     end, { silent = true })
 
-    vim.keymap.set("n", "<C-j>h", ":ObsidianBacklinks<CR>", { silent = true })
-    vim.keymap.set("n", "<C-j>e", ":ObsidianQuickSwitch<CR>", { silent = true })
+    vim.keymap.set({ "n", "i" }, "<C-j>h", "<cmd>ObsidianBacklinks<CR>", { silent = true, noremap = true })
+    vim.keymap.set({ "n", "i" }, "<C-j>e", "<cmd>ObsidianQuickSwitch<CR>", { silent = true, noremap = true })
   end,
 }
