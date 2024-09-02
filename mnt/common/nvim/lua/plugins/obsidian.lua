@@ -68,6 +68,17 @@ return {
           opts = { noremap = false, expr = false, buffer = true },
         },
       },
+
+      picker = {
+        note_mappings = {
+          new = "<F11>", -- Shift + Enter
+          insert_link = "<M-CR>",
+        },
+        tag_mappings = {
+          tag_note = "<F11>", -- Shift + Enter
+          insert_tag = "<M-CR>",
+        },
+      },
     })
 
     vim.keymap.set("n", "<M-]>", function()
@@ -80,5 +91,6 @@ return {
     end, { silent = true })
 
     vim.keymap.set("n", "<C-j>h", ":ObsidianBacklinks<CR>", { silent = true })
+    vim.keymap.set("n", "<C-j>e", ":ObsidianQuickSwitch<CR>", { silent = true })
   end,
 }
