@@ -84,6 +84,14 @@ return {
           action = forward_seek_gf,
           opts = { noremap = false, expr = false, buffer = true },
         },
+        ["<C-j>h"] = {
+          action = "<cmd>ObsidianBacklinks<CR>",
+          opts = { noremap = false, expr = false, buffer = true },
+        },
+        ["<C-j>e"] = {
+          action = "<cmd>ObsidianQuickSwitch<CR>",
+          opts = { noremap = false, expr = false, buffer = true },
+        },
       },
 
       picker = {
@@ -106,8 +114,5 @@ return {
       vim.cmd([[ split ]])
       forward_seek_gf()
     end, { silent = true })
-
-    vim.keymap.set({ "n", "i" }, "<C-j>h", "<cmd>ObsidianBacklinks<CR>", { silent = true, noremap = true })
-    vim.keymap.set({ "n", "i" }, "<C-j>e", "<cmd>ObsidianQuickSwitch<CR>", { silent = true, noremap = true })
   end,
 }
