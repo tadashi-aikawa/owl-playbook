@@ -17,9 +17,6 @@ return {
         local cur = 1
         while true do
           local st, ed = string.find(line, pattern, cur)
-          vim.notify(tostring(st))
-          vim.notify(tostring(ed))
-          vim.notify(tostring(col))
           if not st then
             return nil
           end
