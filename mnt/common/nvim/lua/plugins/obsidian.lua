@@ -89,6 +89,7 @@ return {
           opts = { noremap = false, expr = false, buffer = true },
         },
         ["<C-j>e"] = {
+          mode = { "n", "i" },
           action = "<cmd>ObsidianQuickSwitch<CR>",
           opts = { noremap = false, expr = false, buffer = true },
         },
