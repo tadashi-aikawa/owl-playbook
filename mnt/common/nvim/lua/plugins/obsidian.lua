@@ -84,6 +84,15 @@ return {
           action = forward_seek_gf,
           opts = { noremap = false, expr = false, buffer = true },
         },
+        ["<C-j>n"] = {
+          action = function()
+            vim.cmd([[
+              vnew
+              ObsidianNew
+            ]])
+          end,
+          opts = { noremap = false, expr = false, buffer = true },
+        },
         ["<C-j>h"] = {
           action = "<cmd>ObsidianBacklinks<CR>",
           opts = { noremap = false, expr = false, buffer = true },
