@@ -5,6 +5,7 @@ return {
       width = 140,
       autocmds = {
         enableOnVimEnter = true,
+        enableOnTabEnter = true,
       },
       buffers = {
         colors = { background = "tokyonight-moon" },
