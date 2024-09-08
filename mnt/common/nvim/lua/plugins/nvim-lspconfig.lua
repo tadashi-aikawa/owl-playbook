@@ -145,6 +145,7 @@ return {
     lspconfig.bashls.setup({ capabilities = capabilities })
     lspconfig.svelte.setup({ capabilities = capabilities })
     lspconfig.jdtls.setup({ capabilities = capabilities })
+    lspconfig.gleam.setup({ capabilities = capabilities })
     lspconfig.denols.setup({
       capabilities = capabilities,
       root_dir = util.root_pattern("deno.json", "deno.jsonc"),

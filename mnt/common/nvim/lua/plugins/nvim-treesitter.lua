@@ -11,6 +11,7 @@ return {
         "dockerfile",
         "elixir",
         "gitignore",
+        "gleam",
         "go",
         "html",
         "http",
