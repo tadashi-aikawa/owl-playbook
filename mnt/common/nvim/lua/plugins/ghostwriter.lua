@@ -4,7 +4,8 @@ return {
     "nvim-lua/plenary.nvim",
   },
   keys = {
-    { "<C-j>m", ":Ghostwrite<CR>", silent = true },
+    { "<C-j>m", ":GhostwriterPost<CR>", silent = true },
+    { "<C-j>y", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
   },
   config = function()
     require("ghostwriter").setup({
