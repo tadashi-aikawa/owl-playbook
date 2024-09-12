@@ -26,7 +26,7 @@ function validateKind() {
 # $1: scope
 function validateScope() {
   case $1 in
-  linux | windows | neovim | ahk | "") ;;
+  linux | windows | neovim | ahk | toki | "") ;;
   *)
     echo "Invalid scope: $1"
     exit 1
