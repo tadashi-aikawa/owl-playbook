@@ -109,6 +109,8 @@ tasks:
     desc: 仕事用のバックアップ
     cmds:
       - cp ~/.ssh/* ~/backup/secrets/.ssh/
+      - rm -rf ~/backup/pkm
+      - cp -r '\\wsl.localhost\Ubuntu\home\tadashi-aikawa\work\pkm' ~/backup/pkm
       - |
         cd ~/tmp &&
         7z a -p backup.zip ~/backup &&
