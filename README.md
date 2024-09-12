@@ -61,4 +61,10 @@ multipass exec ubuntu-sandbox -- bash
 bash ./linux/provision.sh
 ```
 
+## 開発者用
+
+```bash
+git config core.hooksPath hooks
+```
+
 [Multipass]: https://multipass.run/
