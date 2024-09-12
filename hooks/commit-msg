@@ -1,0 +1,39 @@
+#!/bin/bash
+
+text="$(cat "$1")"
+if [[ $text =~ ^([^()!]+)\(?([^()]*)\)?!?:\ (.+)$ ]]; then
+  kind="${BASH_REMATCH[1]}"
+  scope="${BASH_REMATCH[2]}"
+  message="${BASH_REMATCH[3]}"
+fi
+
+if [[ -z ${kind} && -z ${scope} && -z ${message} ]]; then
+  echo "Invalid commit message format -> ${text}"
+  exit 1
+fi
+
+# $1: kind
+function validateKind() {
+  case $1 in
+  feat | fix | docs | refactor | test | ci | chore) ;;
+  *)
+    echo "Invalid kind: $1"
+    exit 1
+    ;;
+  esac
+}
+
+# $1: scope
+function validateScope() {
+  case $1 in
+  linux | windows | neovim | ahk | "") ;;
+  *)
+    echo "Invalid scope: $1"
+    exit 1
+    ;;
+  esac
+}
+
+validateKind "${kind}"
+
+tr "/" \\n <<<"${scope}" | while read -r f; do validateScope "$f"; done || echo "scope: ${scope}"
