@@ -28,6 +28,8 @@ alias gbm='git merge --no-ff $(git branch -l | grep -vE "^\*" | tr -d " " | fzf)
 alias gs='git status --short'
 alias gss='git status -v'
 
+alias gpf="git push --force-with-lease --force-if-includes origin HEAD"
+
 alias show='bat --pager never'
 
 alias cdg='cd $(gowl list | fzf)'
