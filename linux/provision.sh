@@ -17,25 +17,6 @@ function no() {
   ! command -v "$1" >/dev/null
 }
 
-function mise_no() {
-  echo "🔍 $1 コマンドの存在確認"
-  ! which "$1" >/dev/null
-}
-
-# miseでインストールされている全Node.jsバージョンでインストール
-# $1: インストール対象, $2: コマンド名($1と異なる場合のみ)
-function npm_install() {
-  target="$1"
-  command=${2:-${target}}
-
-  mise use -g node@20
-  mise_no "${command}" && mise x -- npm i -g "${target}"
-  mise use -g node@22
-  mise_no "${command}" && mise x -- npm i -g "${target}"
-
-  return 0
-}
-
 # ~/.bashrcに引数と一致する文があることを保証します
 # 既に存在すれば何もせず、存在しなければ最後に追記します
 function ensure_bashrc() {
@@ -209,8 +190,7 @@ mise use -g lazydocker
 #----------------------------------------------------------------------
 
 # Node.js
-mise use -g node@18
-mise use -g node@20
+mise use -g node@22
 
 # Bun
 mise use -g bun
@@ -235,11 +215,11 @@ mise x -- go install github.com/nametake/golangci-lint-langserver@latest
 
 # Python
 mise use -g python@3.12
-npm_install pyright
+mise use -g npm:pyright
 no ruff-lsp && mise x -- pip install ruff-lsp
 
 # Bash
-npm_install bash-language-server
+mise use -g npm:bash-language-server
 mise use -g shellcheck
 mise use -g shfmt
 
@@ -248,26 +228,26 @@ mise use --global lua-language-server
 mise use --global stylua
 
 # Prettier
-npm_install @fsouza/prettierd prettierd
+mise use -g npm:@fsouza/prettierd
 
 # HTML/CSS/JSON LSP
-npm_install vscode-langservers-extracted vscode-css-language-server
-npm_install vscode-langservers-extracted vscode-json-language-server
-npm_install @olrtg/emmet-language-server emmet-language-server
-npm_install @tailwindcss/language-server tailwindcss-language-server
+mise use -g npm:vscode-langservers-extracted
+mise use -g npm:vscode-langservers-extracted
+mise use -g npm:@olrtg/emmet-language-server
+mise use -g npm:@tailwindcss/language-server
 
 # YAML
-npm_install yaml-language-server
+mise use -g npm:yaml-language-server
 
 # TypeScript
-npm_install typescript tsc
-npm_install typescript-language-server
+mise use -g npm:typescript
+mise use -g npm:typescript-language-server
 
 # Vue
-npm_install @vue/language-server vue-language-server
+mise use -g npm:@vue/language-server
 
 # Svelte
-npm_install svelte-language-server svelteserver
+mise use -g npm:svelte-language-server
 
 # Markdown
 no markdown-oxide && {
