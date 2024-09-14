@@ -15,7 +15,7 @@ fi
 # $1: kind
 function validateKind() {
   case $1 in
-  feat | fix | docs | refactor | test | ci | chore) ;;
+  feat | fix | docs | refactor | test | ci | build | dev | chore) ;;
   *)
     echo "Invalid kind: $1"
     exit 1
