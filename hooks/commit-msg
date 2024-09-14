@@ -38,4 +38,4 @@ function validateScope() {
 
 validateKind "${kind}"
 
-tr "/" \\n <<<"${scope}" | while read -r f; do validateScope "$f"; done || echo "scope: ${scope}"
+tr "/" \\n <<<"${scope}" | while read -r f; do validateScope "$f"; done
