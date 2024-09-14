@@ -209,7 +209,7 @@ ensure_bashrc 'export PATH=$PATH:$GOPATH/bin'
 ensure_zshrc 'export GOPATH=$HOME/go'
 # shellcheck disable=SC2016
 ensure_zshrc 'export PATH=$PATH:$GOPATH/bin'
-mise use --global gofumpt
+mise use -g gofumpt
 mise use -g golangci-lint
 mise x -- go install github.com/nametake/golangci-lint-langserver@latest
 
@@ -224,8 +224,8 @@ mise use -g shellcheck
 mise use -g shfmt
 
 # Lua
-mise use --global lua-language-server
-mise use --global stylua
+mise use -g lua-language-server
+mise use -g stylua
 
 # Prettier
 mise use -g npm:@fsouza/prettierd
