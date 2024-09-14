@@ -1,6 +1,11 @@
 #!/bin/bash
 
 commit_message_first_line="$(cat "$1")"
+
+if [[ "${commit_message_first_line}" == "fixup! "* ]]; then
+  exit 0
+fi
+
 if [[ $commit_message_first_line =~ ^([^()!]+)\(?([^()]*)\)?!?:\ (.+)$ ]]; then
   type="${BASH_REMATCH[1]}"
   scope="${BASH_REMATCH[2]}"
