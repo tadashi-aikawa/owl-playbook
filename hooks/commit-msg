@@ -1,19 +1,19 @@
 #!/bin/bash
 
-text="$(cat "$1")"
-if [[ $text =~ ^([^()!]+)\(?([^()]*)\)?!?:\ (.+)$ ]]; then
-  kind="${BASH_REMATCH[1]}"
+commit_message_first_line="$(cat "$1")"
+if [[ $commit_message_first_line =~ ^([^()!]+)\(?([^()]*)\)?!?:\ (.+)$ ]]; then
+  type="${BASH_REMATCH[1]}"
   scope="${BASH_REMATCH[2]}"
-  message="${BASH_REMATCH[3]}"
+  description="${BASH_REMATCH[3]}"
 fi
 
-if [[ -z ${kind} && -z ${scope} && -z ${message} ]]; then
-  echo "Invalid commit message format -> ${text}"
+if [[ -z ${type} && -z ${scope} && -z ${description} ]]; then
+  echo "Invalid commit message format -> ${commit_message_first_line}"
   exit 1
 fi
 
-# $1: kind
-function validateKind() {
+# $1: type
+function validateType() {
   case $1 in
   feat | fix | docs | refactor | test | ci | build | dev | chore) ;;
   *)
@@ -36,6 +36,6 @@ function validateScope() {
   esac
 }
 
-validateKind "${kind}"
+validateType "${type}"
 
 tr "/" \\n <<<"${scope}" | while read -r f; do validateScope "$f"; done
