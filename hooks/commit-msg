@@ -18,6 +18,7 @@ function validateKind() {
   feat | fix | docs | refactor | test | ci | build | dev | chore) ;;
   *)
     echo "Invalid kind: $1"
+    echo ">> feat | fix | docs | refactor | test | ci | build | dev | chore"
     exit 1
     ;;
   esac
@@ -29,6 +30,7 @@ function validateScope() {
   linux | windows | neovim | ahk | toki | "") ;;
   *)
     echo "Invalid scope: $1"
+    echo ">> linux | windows | neovim | ahk | toki"
     exit 1
     ;;
   esac
