@@ -33,6 +33,7 @@ Available targets
   | rust     | Rust     | -          | Cargo | -                  | -         | -         |
   | python   | Python   | Virtualenv | Pip   | -                  | -         | -         |
   | nvim     | Lua      | Lua        |       | nvim               | -         | -         |
+  | bash     | Bash     | Bash       |       | -                  | -         | -         |
   "
 }
 
@@ -542,6 +543,36 @@ EOF
 $ cd ${path}
 $ nvim lua/init.lua
 $ exec 'luafile %'
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# bash
+# -------------------------------------------
+if [[ $command == "bash" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+
+  cat >.mise.toml <<'EOF'
+[tasks.default]
+run = "./main.sh"
+EOF
+
+  cat >main.sh <<'EOF'
+#!/bin/bash
+
+echo "hogehoge"
+EOF
+  chmod +x main.sh
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ mise watch
 "
   exit 0
 fi
