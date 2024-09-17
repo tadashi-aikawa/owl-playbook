@@ -232,7 +232,6 @@ mise use -g npm:@fsouza/prettierd
 
 # HTML/CSS/JSON LSP
 mise use -g npm:vscode-langservers-extracted
-mise use -g npm:vscode-langservers-extracted
 mise use -g npm:@olrtg/emmet-language-server
 mise use -g npm:@tailwindcss/language-server
 
