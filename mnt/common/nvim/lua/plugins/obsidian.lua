@@ -31,7 +31,7 @@ return {
       end
 
       local wiki_link_cursor = get_cursor("%[%[.-%]%]")
-      local url_cursor = get_cursor("https?://[%w-_%.%?%.:/%+=&]+")
+      local url_cursor = get_cursor("https?://[%w-_%.%?%.:/%+=&%%]+")
       if wiki_link_cursor == nil and url_cursor == nil then
         return
       end
