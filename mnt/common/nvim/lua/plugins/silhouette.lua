@@ -6,7 +6,7 @@ return {
     "vim-denops/denops.vim",
   },
   keys = {
-    { "<C-j>p", ":SilhouetteMoveToProgress<CR>", silent = true },
+    { "<Space>.", ":SilhouetteMoveToProgress<CR>", silent = true },
   },
   config = function()
     -- denops.nvimが起動し終わる前に実行されるとエラーになるためwaitを入れる
