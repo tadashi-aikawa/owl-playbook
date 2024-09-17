@@ -4,8 +4,8 @@ return {
     "nvim-lua/plenary.nvim",
   },
   keys = {
-    { "<C-j>m", ":GhostwriterWrite<CR>", silent = true },
-    { "<C-j>p", ":GhostwriterPost times<CR>", mode = { "v" }, silent = true },
+    { "<C-j>w", ":GhostwriterWrite<CR>", silent = true },
+    { "<C-j>p", ":GhostwriterPost task", mode = { "v" } },
     { "<C-j>y", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
   },
   config = function()
@@ -26,6 +26,7 @@ return {
       channel = {
         { name = "times", id = "C1J80C5MF" },
         { name = "task", id = "C06J0RG1V2L" },
+        { name = "jh", id = "C072W42TPR7" },
       },
     })
   end,
