@@ -19,3 +19,7 @@ customCommands:
     description: Open the previous version of the file in Neovim
     command: "git show {{.SelectedLocalCommit.Sha}}^1:{{.SelectedCommitFile.Name}} > /tmp/$(basename {{.SelectedCommitFile.Name}}) && nvim /tmp/$(basename {{.SelectedCommitFile.Name}}) && rm /tmp/$(basename {{.SelectedCommitFile.Name}})"
     subprocess: true
+  - key: ""
+    description: Force push safety
+    context: global
+    command: "git push --force-with-lease --force-if-includes origin HEAD"
