@@ -5,7 +5,7 @@ return {
   },
   keys = {
     { "<C-j>w", ":GhostwriterWrite<CR>", silent = true },
-    { "<C-j>p", ":GhostwriterPost task", mode = { "v" } },
+    { "<C-j>p", ":GhostwriterPost ", mode = { "v" } },
     { "<C-j>y", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
   },
   config = function()
