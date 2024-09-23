@@ -63,6 +63,10 @@ ensure_zshrc 'export TERM="owlterm-256color"'
 # 依存関係インストール
 #----------------------------------------------------------------------
 sudo apt-get update -y
+# instead ntp
+sudo apt-get install -y chrony
+sudo systemctl enable chrony
+sudo systemctl start chrony
 # Neovimで使用
 sudo apt-get install -y wl-clipboard
 # nvim-treesitterで使用
