@@ -4,24 +4,9 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" },
   config = function()
     require("render-markdown").setup({
-      markdown_query = [[
-        (thematic_break) @dash
-
-        (fenced_code_block) @code
-
-        [
-            (list_marker_plus)
-            (list_marker_minus)
-            (list_marker_star)
-        ] @list_marker
-
-        (task_list_marker_unchecked) @checkbox_unchecked
-        (task_list_marker_checked) @checkbox_checked
-
-        (block_quote) @quote
-
-        (pipe_table) @table
-    ]],
+      heading = {
+        position = "inline",
+      },
       fat_tables = false,
       code = {
         sign = false,
