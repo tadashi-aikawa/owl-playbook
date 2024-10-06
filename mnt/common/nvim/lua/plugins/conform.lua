@@ -17,7 +17,7 @@ return {
         svelte = web_formatter,
         json = web_formatter,
         jsonc = web_formatter,
-        yaml = web_formatter,
+        yaml = { "prettierd" },
         html = web_formatter,
         css = web_formatter,
         scss = web_formatter,
