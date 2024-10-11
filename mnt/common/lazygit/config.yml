@@ -13,6 +13,8 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never --side-by-side --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  log:
+    showWholeGraph: true
 customCommands:
   - key: "<C-e>"
     context: commitFiles
