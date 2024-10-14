@@ -32,10 +32,10 @@ function validateType() {
 # $1: scope
 function validateScope() {
   case $1 in
-  linux | windows | neovim | ahk | toki | lazygit | "") ;;
+  linux | windows | neovim | ahk | toki | lazygit | owl | "") ;;
   *)
     echo "Invalid scope: $1"
-    echo ">> linux | windows | neovim | ahk | toki | lazygit"
+    echo ">> linux | windows | neovim | ahk | toki | lazygit | owl"
     exit 1
     ;;
   esac
