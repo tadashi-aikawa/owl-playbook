@@ -48,7 +48,7 @@ tasks:
   webp:
     desc: 直近にダウンロードしたファイル(画像の想定)をwebpファイルにする
     cmds:
-      - ffmpeg --i {{shellQuote .INPUT}} ~/tmp/{{now | date "2006-01-02-15-04-05"}}.webp
+      - ffmpeg -i {{shellQuote .INPUT}} ~/tmp/{{now | date "2006-01-02-15-04-05"}}.webp
       - cmd: cd ~/tmp && explorer .
         ignore_error: true # なぜか必ずエラーになる..
     vars:
