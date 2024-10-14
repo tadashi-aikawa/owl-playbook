@@ -37,6 +37,13 @@ vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", { underline = true })
 -- markdown.nvim
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#454545" })
+-- gitgraph.nvim
+vim.api.nvim_set_hl(0, "GitGraphHash", { fg = "#777777" })
+vim.api.nvim_set_hl(0, "GitGraphTimestamp", { fg = "#facbcb" })
+vim.api.nvim_set_hl(0, "GitGraphAuthor", { fg = "#45cd78" })
+vim.api.nvim_set_hl(0, "GitGraphBranchName", { bg = "#888888", fg = "#efef33" })
+vim.api.nvim_set_hl(0, "GitGraphBranchTag", { bg = "#3d59a1" })
+vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
 
 -- XXX: boldがなぜか見た目にFBされないので。。
 vim.api.nvim_set_hl(0, "@markup.strong", { underdouble = true })

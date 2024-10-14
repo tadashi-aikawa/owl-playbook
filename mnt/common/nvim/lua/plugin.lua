@@ -42,6 +42,7 @@ local neovim_plugins = {
   -- Git
   require("plugins.lazygit"), -- クライアント
   require("plugins.gitsigns"), -- 行表示
+  require("plugins.gitgraph"),
   require("plugins.blame"),
   -- シンタックスハイライト
   require("plugins.nvim-treesitter"),
