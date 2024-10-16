@@ -19,6 +19,9 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gf='git fetch --all'
 alias gl='git log'
+gbdl() {
+  git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+}
 
 alias gls='git-graph -n 30 -s round'
 alias gll='git-graph -n 5 -s round --format "%h %d %s%n 💿%ad 👤<%ae>%n%n"'
