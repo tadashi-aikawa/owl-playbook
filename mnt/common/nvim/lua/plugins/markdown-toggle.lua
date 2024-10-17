@@ -2,8 +2,9 @@ return {
   "roodolv/markdown-toggle.nvim",
   config = function()
     require("markdown-toggle").setup({
-      enable_box_cycle = true,
+      cycle_box_table = true,
       box_table = { "~", "x" },
+      list_before_box = true,
     })
 
     vim.api.nvim_create_autocmd("FileType", {
