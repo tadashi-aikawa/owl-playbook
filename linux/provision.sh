@@ -67,6 +67,8 @@ sudo apt-get update -y
 sudo apt-get install -y chrony
 sudo systemctl enable chrony
 sudo systemctl start chrony
+# calendar
+sudo apt-get install -y ncal
 # Neovimで使用
 sudo apt-get install -y wl-clipboard
 # nvim-treesitterで使用
