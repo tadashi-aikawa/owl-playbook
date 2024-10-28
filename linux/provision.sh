@@ -230,7 +230,7 @@ mise use -g shellcheck
 mise use -g shfmt
 
 # Lua
-mise use -g lua
+mise use -g lua@5.1 # Neovim 0.10にあわせる
 mise use -g lua-language-server
 mise use -g stylua
 
