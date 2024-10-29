@@ -11,9 +11,12 @@ return {
   config = function()
     require("ghostwriter").setup({
       replacers = {
-        { pattern = " %[?%[?202%d+_", replaced = " " },
-        { pattern = " %[?%[?MTG_202%d+_", replaced = " 📅 " },
-        { pattern = " %[?%[?MTG_", replaced = " 📅 " },
+        { pattern = " %[%[202%d+_", replaced = " [[" },
+        { pattern = " %[%[MTG_202%d+_", replaced = " [[📅 " },
+        { pattern = " %[%[MTG_", replaced = " [[📅 " },
+        { pattern = " 202%d+_", replaced = " " },
+        { pattern = " MTG_202%d+_", replaced = " 📅 " },
+        { pattern = " MTG_", replaced = " 📅 " },
         { pattern = " %d%d:%d%d ", replaced = " " },
       },
       check = {
