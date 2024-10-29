@@ -532,17 +532,19 @@ if [[ $command == "nvim" ]]; then
 
   mkdir -p "$path"
   cd "$path"
-  mkdir lua
-  cat >lua/init.lua <<'EOF'
+  cat >main.lua <<'EOF'
 vim.notify("aa" .. "bb")
+EOF
+  cat >.mise.toml <<'EOF'
+[tasks.default]
+run = "nvim -l main.lua"
 EOF
 
   echo "
 🚀 Try
 
 $ cd ${path}
-$ nvim lua/init.lua
-$ exec 'luafile %'
+$ mise watch
 "
   exit 0
 fi
