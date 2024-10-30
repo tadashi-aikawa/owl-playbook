@@ -104,6 +104,8 @@ local neovim_plugins = {
   require("plugins.flash"),
   -- quickfix強化(previewなど)
   require("plugins.nvim-bqf"),
+  -- quickfix強化(表示形式・buffer上で変更など)
+  require("plugins.quicker"),
   -- 囲まれているものの操作
   require("plugins.nvim-surround"),
   -- アフタリスクコマンド改善
