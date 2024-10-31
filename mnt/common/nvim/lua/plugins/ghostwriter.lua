@@ -18,6 +18,13 @@ return {
         { pattern = " MTG_202%d+_", replaced = " 📅 " },
         { pattern = " MTG_", replaced = " 📅 " },
         { pattern = " %d%d:%d%d ", replaced = " " },
+        { pattern = "^%| 9f", replaced = ":vertical-line::to9f:" },
+        { pattern = "^%| 8f", replaced = ":vertical-line::to8f:" },
+        { pattern = "^%| 7f", replaced = ":vertical-line::to7f:" },
+        { pattern = "^%| 6f", replaced = ":vertical-line::to6f:" },
+        { pattern = "^%| 2f", replaced = ":vertical-line::to2f:" },
+        { pattern = "^%| 1f", replaced = ":vertical-line::to1f:" },
+        { pattern = "^%|", replaced = ":vertical-line:" },
       },
       check = {
         { mark = "~", emoji = "loading" },
