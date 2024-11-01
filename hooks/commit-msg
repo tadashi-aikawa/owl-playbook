@@ -20,10 +20,10 @@ fi
 # $1: type
 function validateType() {
   case $1 in
-  feat | fix | docs | refactor | perf | test | ci | build | dev | chore) ;;
+  feat | fix | style | docs | refactor | perf | test | ci | build | dev | chore) ;;
   *)
     echo "Invalid kind: $1"
-    echo ">> feat | fix | docs | refactor | perf | test | ci | build | dev | chore"
+    echo ">> feat | fix | style | docs | refactor | perf | test | ci | build | dev | chore"
     exit 1
     ;;
   esac
