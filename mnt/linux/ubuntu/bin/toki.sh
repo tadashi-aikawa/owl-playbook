@@ -47,6 +47,26 @@ fi
 
 shift
 
+function print_with_width() {
+  text="$1"
+  width=$2
+
+  text_length=$(echo -n "$text" | awk '{print length()}')
+  left_padding=$(((width - text_length) / 2))
+  right_padding=$((width - text_length - left_padding))
+
+  printf "%${left_padding}s%s%${right_padding}s" "" "$text" ""
+}
+
+function section() {
+  echo ""
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+  printf "┃ "
+  print_with_width "$1" 40
+  printf " ┃\n"
+  echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+}
+
 # -------------------------------------------
 # bun
 # -------------------------------------------
@@ -584,34 +604,28 @@ fi
 # -------------------------------------------
 if [[ $command == "status" || $command == "st" ]]; then
   GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
-  echo "--- 🦉 owl-playbook ---"
+
+  section "🦉 owl-playbook"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git status -s
-  echo "--- 🍁 carnelian ---"
-  cd "$GITHUB_AUTHOR_DIR/carnelian" && git status -s
-  echo "--- 🐦 Fenice ---"
-  cd "$GITHUB_AUTHOR_DIR/fenice" && git status -s
-  echo "--- 👻 ghostwriter.nvim ---"
+  section "👻 ghostwriter.nvim"
   cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git status -s
-  echo "--- ✏️ silhouette.nvim ---"
+  section "👤 silhouette.nvim"
   cd "$GITHUB_AUTHOR_DIR/silhouette.nvim" && git status -s
-  echo "--- 💎 obsidian.nvim ---"
+  section "💎 obsidian.nvim"
   cd "$GITHUB_AUTHOR_DIR/obsidian.nvim" && git status -s
   exit 0
 fi
 
 function pull() {
   GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
-  echo "--- 🦉 owl-playbook ---"
+
+  section "🦉 owlplaybook"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git pull
-  echo "--- 🍁 carnelian ---"
-  cd "$GITHUB_AUTHOR_DIR/carnelian" && git pull
-  echo "--- 🐦 Fenice ---"
-  cd "$GITHUB_AUTHOR_DIR/fenice" && git pull
-  echo "--- 👻 ghostwriter.nvim ---"
+  section "👻 ghostwriter.nvim"
   cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git pull
-  echo "--- ✏️ silhouette.nvim ---"
+  section "👤 silhouette.nvim"
   cd "$GITHUB_AUTHOR_DIR/silhouette.nvim" && git pull
-  echo "--- 💎 obsidian.nvim ---"
+  section "💎 obsidian.nvim"
   cd "$GITHUB_AUTHOR_DIR/obsidian.nvim" && git pull
 }
 
