@@ -97,6 +97,9 @@ local neovim_plugins = {
   -- カレントシンボルの強調
   require("plugins.vim-illuminate"),
 
+  -- TypeScriptエラー表示の向上
+  require("plugins.better-ts-errors"),
+
   ----------------------------
   -- エディタの操作性向上
   ----------------------------
