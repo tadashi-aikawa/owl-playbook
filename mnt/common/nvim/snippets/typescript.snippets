@@ -59,6 +59,44 @@ snippet _exhaustiveError "ExhaustiveError"
     }
   }
 
+snippet _deno_parameterized_test "DenoのParameterized test" b
+  export function parameterizedTest<T>(
+    name: string,
+    cases: T[],
+    testFn: (input: T) => void,
+    toTitle?: (name: string, input: T) => string,
+  ) {
+    for (const testCase of cases) {
+      Deno.test(
+        toTitle?.(name, testCase) ?? \`\${name} -> \${JSON.stringify(testCase)}\`,
+        () => {
+          testFn(testCase);
+        },
+      );
+    }
+  }
+
+snippet _deno_parameterized_testcase "DenoのParameterized testのテストケース" b
+  parameterizedTest<
+    [
+      Parameters<typeof ${1:function}>[0],
+      Parameters<typeof ${1:function}>[1],
+      ReturnType<typeof ${1:function}>,
+    ]
+  >(
+    "$1",
+    // deno-fmt-ignore
+    // prettier-ignore
+    //   ${2:args1}         | ${3:args2}     | expected
+    [
+      [  "args1"       , "args2"   , "expected" ],
+      [  "args1"       , "args2"   , "expected" ],
+    ] as const,
+    ([$2, $3, expected]) => {
+      assertEquals($1($2, $3), expected);
+    },
+  );
+
 # -----------------------------------
 # Vueでも使うやつ
 # -----------------------------------
