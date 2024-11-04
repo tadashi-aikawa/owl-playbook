@@ -16,15 +16,18 @@ scoop install `
   7zip `
   bat `
   bind `
+  bottom `
   broot `
   busybox `
   clink `
   delta `
+  doggo `
   dust `
   fd `
   ffmpeg `
   fzf `
   git `
+  imhex `
   jid `
   jq `
   less `
