@@ -2,7 +2,7 @@
 # あえて直接インストールモノ (パス関係などでトラブルを起こしやすいので)
 # ----------------------------------------------------------
 #  - VSCode
-#  - Flow Launcher
+#  - Flow Launcher (今ならいける??)
 #  - AutoHotkey
 
 # Add versions bucket
