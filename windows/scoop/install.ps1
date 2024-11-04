@@ -9,8 +9,6 @@
 scoop bucket add versions
 # Add extras
 scoop bucket add extras
-# Add Java
-scoop bucket add java
 
 # CLI Tools
 # lessはbatなどで必要
