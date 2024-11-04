@@ -51,15 +51,5 @@ scoop install `
   windows-terminal `
   winmerge
 
-# Language / Framework / MiddleWare
-scoop install `
-  docker `
-  go `
-  rustup-msvc `
-  volta `
-  vcxsrv `
-  lua-language-server `
-  stylua
-
 # Python
 scoop install python
