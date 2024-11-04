@@ -52,5 +52,7 @@ scoop install `
   windows-terminal `
   winmerge
 
+# gcc
+scoop install gcc
 # Python
 scoop install python
