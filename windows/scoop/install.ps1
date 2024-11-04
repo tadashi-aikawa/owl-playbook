@@ -45,9 +45,7 @@ scoop install `
   bruno `
   dbeaver `
   ditto `
-  draw.io `
   gimp `
-  postman `
   windows-terminal `
   winmerge
 
