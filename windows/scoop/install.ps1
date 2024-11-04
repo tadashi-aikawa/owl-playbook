@@ -23,6 +23,7 @@ scoop install `
   delta `
   doggo `
   dust `
+  eza `
   fd `
   ffmpeg `
   fzf `
