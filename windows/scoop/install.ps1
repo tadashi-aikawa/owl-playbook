@@ -62,12 +62,4 @@ scoop install `
   stylua
 
 # Python
-scoop install `
-  python27 `
-  python37 `
-  python38 `
-  python39 `
-  python310 `
-  python311 `
-  python
-scoop reset python
+scoop install python
