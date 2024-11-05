@@ -599,22 +599,11 @@ $ mise watch
   exit 0
 fi
 
-# -------------------------------------------
-# 関連するGitリポジトリの状態を取得します
-# -------------------------------------------
-if [[ $command == "status" || $command == "st" ]]; then
-  GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
+#--- Git ---
 
-  section "🦉 owl-playbook"
-  cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git status -s
-  section "👻 ghostwriter.nvim"
-  cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && git status -s
-  section "👤 silhouette.nvim"
-  cd "$GITHUB_AUTHOR_DIR/silhouette.nvim" && git status -s
-  section "💎 obsidian.nvim"
-  cd "$GITHUB_AUTHOR_DIR/obsidian.nvim" && git status -s
-  exit 0
-fi
+function show_status() {
+  git -c color.status=always status -bs | grep -Ev "##.+[^]]$"
+}
 
 function pull() {
   GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
@@ -628,6 +617,24 @@ function pull() {
   section "💎 obsidian.nvim"
   cd "$GITHUB_AUTHOR_DIR/obsidian.nvim" && git pull
 }
+
+# -------------------------------------------
+# 関連するGitリポジトリの状態を取得します
+# -------------------------------------------
+
+if [[ $command == "status" || $command == "st" ]]; then
+  GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
+
+  section "🦉 owl-playbook"
+  cd "$GITHUB_AUTHOR_DIR/owl-playbook" && show_status
+  section "👻 ghostwriter.nvim"
+  cd "$GITHUB_AUTHOR_DIR/ghostwriter.nvim" && show_status
+  section "👤 silhouette.nvim"
+  cd "$GITHUB_AUTHOR_DIR/silhouette.nvim" && show_status
+  section "💎 obsidian.nvim"
+  cd "$GITHUB_AUTHOR_DIR/obsidian.nvim" && show_status
+  exit 0
+fi
 
 # -------------------------------------------
 # 関連するGitリポジトリをすべてpullします
