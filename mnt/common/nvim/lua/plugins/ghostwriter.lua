@@ -7,6 +7,7 @@ return {
     { "<C-j>w", ":GhostwriterWrite<CR>", silent = true },
     { "<C-j>p", ":GhostwriterPost ", mode = { "v" } },
     { "<C-j>y", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
+    { "<C-j>S", ":GhostwriterInsertChannelID<CR>", silent = true },
   },
   config = function()
     require("ghostwriter").setup({
