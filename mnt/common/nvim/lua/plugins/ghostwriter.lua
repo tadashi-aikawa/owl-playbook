@@ -30,7 +30,6 @@ return {
       check = {
         { mark = "~", emoji = "loading" },
         { mark = "x", emoji = "ok_green" },
-        { mark = "_", emoji = "rip" },
         { mark = "-", emoji = "m" },
         { mark = " ", emoji = "circle-success" },
       },
