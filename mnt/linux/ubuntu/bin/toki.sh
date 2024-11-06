@@ -602,7 +602,7 @@ fi
 #--- Git ---
 
 function show_status() {
-  git -c color.status=always status -bs | grep -Ev "##.+[^]]$"
+  git -c color.status=always status -bs | grep -Ev "##.+[^]]$" || echo ""
 }
 
 function pull() {
