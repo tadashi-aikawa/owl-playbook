@@ -127,7 +127,7 @@ return {
     --   }),
     -- })
 
-    lspconfig.ruff_lsp.setup({ capabilities = capabilities })
+    lspconfig.ruff.setup({ capabilities = capabilities })
     lspconfig.pyright.setup({ capabilities = capabilities })
 
     lspconfig.gopls.setup({
@@ -324,7 +324,7 @@ return {
           end
 
           set_auto_format("rust_analyzer", { "*.rs" })
-          set_auto_format("ruff_lsp", { "*.py" })
+          set_auto_format("ruff", { "*.py" })
           set_auto_format("denols", { "*.ts", "*.js" })
           set_auto_format("gopls", { "*.go" })
         end
