@@ -18,7 +18,7 @@ return {
         { pattern = " 202%d+_", replaced = " " },
         { pattern = " MTG_202%d+_", replaced = " 📅 " },
         { pattern = " MTG_", replaced = " 📅 " },
-        { pattern = " %d%d:%d%d ", replaced = " " },
+        { pattern = "%d%d:%d%d ([^📅][^📅][^📅][^📅].*)$", replaced = "%1" },
         { pattern = "^%| 9f", replaced = ":vertical-line::to9f:" },
         { pattern = "^%| 8f", replaced = ":vertical-line::to8f:" },
         { pattern = "^%| 7f", replaced = ":vertical-line::to7f:" },
