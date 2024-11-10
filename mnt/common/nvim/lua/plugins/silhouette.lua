@@ -7,6 +7,7 @@ return {
   },
   keys = {
     { "<Space>.", ":SilhouetteMoveToProgress<CR>", silent = true },
+    { "<A-a>", ":SilhouettePushTimer<CR>", silent = true },
   },
   config = function()
     -- denops.nvimが起動し終わる前に実行されるとエラーになるためwaitを入れる
@@ -16,6 +17,9 @@ return {
         task = {
           repetition_tasks_path = "./workspace/repetition-tasks.md",
           holidays_path = "./workspace/holidays.md",
+        },
+        timer = {
+          time_storage_path = "./workspace/time-storage.json",
         },
       })
     end, 1000)
