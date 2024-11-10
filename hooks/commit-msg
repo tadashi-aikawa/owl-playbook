@@ -30,17 +30,17 @@ function validateType() {
 }
 
 # $1: scope
-function validateScope() {
-  case $1 in
-  linux | windows | neovim | ahk | toki | lazygit | owl | git | "") ;;
-  *)
-    echo "Invalid scope: $1"
-    echo ">> linux | windows | neovim | ahk | toki | lazygit | owl | git"
-    exit 1
-    ;;
-  esac
-}
+# function validateScope() {
+#   case $1 in
+#   linux | windows | neovim | ahk | toki | lazygit | owl | git | "") ;;
+#   *)
+#     echo "Invalid scope: $1"
+#     echo ">> linux | windows | neovim | ahk | toki | lazygit | owl | git"
+#     exit 1
+#     ;;
+#   esac
+# }
 
 validateType "${type}"
 
-tr "/" \\n <<<"${scope}" | while read -r f; do validateScope "$f"; done
+# tr "/" \\n <<<"${scope}" | while read -r f; do validateScope "$f"; done
