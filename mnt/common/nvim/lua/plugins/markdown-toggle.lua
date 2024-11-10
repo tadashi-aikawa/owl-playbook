@@ -3,7 +3,7 @@ return {
   config = function()
     require("markdown-toggle").setup({
       cycle_box_table = true,
-      box_table = { "x" },
+      box_table = { "~", "x" },
       list_before_box = true,
     })
 
