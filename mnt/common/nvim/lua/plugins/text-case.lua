@@ -10,4 +10,7 @@ return {
     { "gak", "<cmd>:lua require('textcase').current_word('to_dash_case')<CR>", opts },
     { "gau", "<cmd>:lua require('textcase').current_word('to_constant_case')<CR>", opts },
   },
+  cmd = {
+    "Subs",
+  },
 }
