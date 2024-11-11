@@ -9,6 +9,7 @@ return {
     { "<C-j>y", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
     { "<C-j>S", ":GhostwriterInsertChannelID<CR>", silent = true },
   },
+  cmd = "GhostwriterWrite",
   config = function()
     require("ghostwriter").setup({
       replacers = {

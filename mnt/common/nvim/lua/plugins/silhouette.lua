@@ -7,7 +7,16 @@ return {
   },
   keys = {
     { "<Space>.", ":SilhouetteMoveToProgress<CR>", silent = true },
-    { "<A-a>", ":SilhouettePushTimer<CR>", silent = true },
+    {
+      "<A-a>",
+      function()
+        vim.cmd([[
+        SilhouettePushTimer
+        GhostwriterWrite
+      ]])
+      end,
+      silent = true,
+    },
   },
   config = function()
     -- denops.nvimが起動し終わる前に実行されるとエラーになるためwaitを入れる

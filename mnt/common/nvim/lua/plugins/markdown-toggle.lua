@@ -15,7 +15,16 @@ return {
         local toggle = require("markdown-toggle")
 
         -- F12はCtrl+Enter
-        vim.keymap.set({ "n", "v" }, "<F12>", toggle.checkbox, opts)
+        vim.keymap.set({ "n", "v" }, "<F12>", function()
+          toggle.checkbox()
+          local cline = vim.api.nvim_get_current_line()
+          if string.find(cline, "- %[x%] .+ ``") then
+            vim.cmd([[
+              SilhouettePushTimer
+              GhostwriterWrite
+            ]])
+          end
+        end, opts)
         vim.keymap.set({ "i" }, "<F12>", function()
           vim.api.nvim_command("stopinsert")
           vim.schedule(function()
