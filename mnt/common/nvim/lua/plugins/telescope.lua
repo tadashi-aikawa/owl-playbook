@@ -4,12 +4,11 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "danielfalk/smart-open.nvim",
-    "nvim-telescope/telescope-live-grep-args.nvim",
   },
   keys = {
     { "<C-j>f", ":Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>", silent = true },
     { "<C-j>e", ":Telescope smart_open<CR>", silent = true },
-    { "<C-j>g", ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", silent = true },
+    { "<C-j>g", ":Telescope live_grep<CR>", silent = true },
     { "<C-j>l", ":Telescope current_buffer_fuzzy_find<CR>", silent = true },
     { "<C-j>:", ":Telescope command_history<CR>", silent = true },
     { "<C-j>s", ":Telescope lsp_dynamic_workspace_symbols<CR>", silent = true },
@@ -48,14 +47,8 @@ return {
           },
         },
       },
-      extensions = {
-        live_grep_args = {
-          auto_quoting = false,
-        },
-      },
     })
 
     require("telescope").load_extension("smart_open")
-    require("telescope").load_extension("live_grep_args")
   end,
 }
