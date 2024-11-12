@@ -151,7 +151,7 @@ if [[ $command == "pnpm" ]]; then
   mkdir -p "$path"
   cd "$path"
   npm init -y
-  corepack use pnpm
+  corepack enable pnpm
   pnpm add -D typescript @tsconfig/recommended @biomejs/biome
 
   pnpm exec biome init
@@ -220,7 +220,7 @@ if [[ $command == "jest" ]]; then
   mkdir -p "$path"
   cd "$path"
   npm init -y
-  corepack use pnpm
+  corepack enable pnpm
   pnpm add -D typescript @tsconfig/recommended @biomejs/biome \
     jest babel-jest @babel/core @babel/preset-env \
     @babel/preset-typescript @jest/globals
