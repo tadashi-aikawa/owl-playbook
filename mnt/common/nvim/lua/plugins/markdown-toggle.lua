@@ -19,10 +19,7 @@ return {
           toggle.checkbox()
           local cline = vim.api.nvim_get_current_line()
           if string.find(cline, "- %[x%] .+ ``") then
-            vim.cmd([[
-              SilhouettePushTimer
-              GhostwriterWrite
-            ]])
+            vim.cmd("SilhouettePushTimer")
           end
         end, opts)
         vim.keymap.set({ "i" }, "<F12>", function()
