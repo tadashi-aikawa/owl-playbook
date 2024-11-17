@@ -21,7 +21,7 @@ Available targets
   | Target   | Language | Runtime    | PM    | Framework / Lib    | Linter    | Formatter |
   | -------- | -------- | ---------- | ----- | ------------------ | --------- | --------- |
   | node     | TS       | Node       | npm   | -                  | -         | prettierd |
-  | pnpm     | TS       | Node       | pnpm  | -                  | Biome     | Biome     |
+  | pnpm     | TS       | tsx(Node)  | pnpm  | -                  | Biome     | Biome     |
   | deno     | TS       | Deno       | Deno  | -                  | Deno      | Deno      |
   | bun      | TS       | Bun        | Bun   | -                  | Biome     | Biome     |
   | jest     | TS       | Node       | pnpm  | Jest               | Biome     | Biome     |
@@ -152,14 +152,14 @@ if [[ $command == "pnpm" ]]; then
   cd "$path"
   npm init -y
   corepack enable pnpm
-  pnpm add -D typescript @tsconfig/recommended @biomejs/biome
+  pnpm add -D typescript tsx @types/node @tsconfig/recommended @biomejs/biome
 
   pnpm exec biome init
   jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
   mv biome.json.tmp biome.json
 
-  pnpm pkg set scripts.dev="tsc -w"
-  pnpm pkg set scripts.start="node --watch *.js"
+  pnpm pkg set scripts.dev="tsx watch ./index.ts"
+  pnpm pkg set scripts.check="tsc --noEmit --watch"
 
   cat >tsconfig.json <<'EOF'
 {
@@ -188,7 +188,7 @@ $ cd ${path}
 
 $ pnpm dev
 and
-$ pnpm start
+$ pnpm typecheck
 "
   exit 0
 fi
