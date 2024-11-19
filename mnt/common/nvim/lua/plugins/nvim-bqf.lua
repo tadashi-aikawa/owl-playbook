@@ -1,5 +1,6 @@
 return {
   "kevinhwang91/nvim-bqf",
+  dependencies = { "junegunn/fzf" },
   config = function()
     require("bqf").setup({
       func_map = {
