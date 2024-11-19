@@ -111,8 +111,6 @@ local neovim_plugins = {
   require("plugins.quicker"),
   -- 囲まれているものの操作
   require("plugins.nvim-surround"),
-  -- インクリメント・デクリメント
-  require("plugins.dial"),
   -- アフタリスクコマンド改善
   "rapan931/lasterisk.nvim",
   -- 1行ラインを分割
