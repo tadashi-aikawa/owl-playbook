@@ -11,9 +11,13 @@ if u.is_windows then
 else
   vim.keymap.set("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 end
+
 -- cnext / cprevious
 vim.keymap.set("n", "<Space>J", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<Space>K", ":cprevious<CR>", { silent = true })
+-- quickfix list open
+vim.keymap.set("n", "<Space>L", ":botright cw<CR>", { silent = true })
+
 -- バッファ切り替え
 vim.keymap.set("n", "<Space>r", ":b#<CR>", { silent = true })
 vim.keymap.set("n", "<Space>e", ":BufferPick<CR>", { silent = true })
@@ -21,12 +25,14 @@ vim.keymap.set("n", "<Space>l", ":BufferNext<CR>", { silent = true })
 vim.keymap.set("n", "<Space>h", ":BufferPrevious<CR>", { silent = true })
 vim.keymap.set("n", "<Space>q", ":Bdelete<CR>", { silent = true })
 vim.keymap.set("n", "<Space>c", ":BufferCloseAllButVisible<CR>", { silent = true })
+
 -- windows split
 vim.keymap.set("n", "<C-w><F12>", ":vsplit<CR>", { silent = true })
 -- tab split
 vim.keymap.set("n", "<C-w>t", ":tab split<CR>", { silent = true })
 -- 行補完
 vim.keymap.set("i", "<C-l>", "<C-x><C-l>", { silent = true })
+
 -- markdown装飾
 vim.keymap.set("n", "<Space>b", function()
   vim.cmd("normal ysiW*.")
@@ -34,10 +40,12 @@ end, { silent = true })
 vim.keymap.set("n", "<Space>@", function()
   vim.cmd("normal ysiW`")
 end, { silent = true })
+
 -- Marpの強調タスクを取り消しに変更
 vim.keymap.set("n", "<Space>-", ":s/*/\\~/g<CR>", { silent = true })
 -- ghostwriter.nvimのタスク状態を初期化
 vim.keymap.set("n", "<Space>_", ":s/\\v- \\[.\\] (.+) `.+`/- [ ] \\1/<CR><Cmd>nohlsearch<CR>", { silent = true })
+
 -- カレントウィンドウのファイル相対パスをコピー
 vim.keymap.set("n", "<Space>y", function()
   local relative_path = vim.fn.expand("%:~:.")
