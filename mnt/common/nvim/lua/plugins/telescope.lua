@@ -4,7 +4,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "danielfalk/smart-open.nvim",
-    "atusy/qfscope.nvim",
   },
   keys = {
     { "<C-j>f", ":Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>", silent = true },
@@ -17,7 +16,6 @@ return {
   },
   config = function()
     local actions = require("telescope.actions")
-    local qfs_actions = require("qfscope.actions")
 
     require("telescope").setup({
       defaults = {
@@ -29,8 +27,6 @@ return {
             ["<C-s>"] = actions.select_horizontal,
             -- Ctrl+Enterがマッピングされている
             ["<F12>"] = actions.select_vertical,
-            --
-            ["<C-w>"] = qfs_actions.qfscope_search_filename,
           },
           n = { ["q"] = actions.close },
         },
