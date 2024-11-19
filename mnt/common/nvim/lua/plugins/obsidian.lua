@@ -63,14 +63,6 @@ return {
             notes_subdir = "notes",
           },
         },
-        {
-          name = "work",
-          path = "~/work/minerva",
-          ---@diagnostic disable-next-line: missing-fields
-          overrides = {
-            notes_subdir = "Notes",
-          },
-        },
       },
 
       new_notes_location = "notes_subdir",
