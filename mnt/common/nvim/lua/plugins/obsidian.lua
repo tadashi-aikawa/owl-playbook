@@ -56,11 +56,13 @@ return {
     require("obsidian").setup({
       workspaces = {
         {
-          name = "work",
-          path = "~/work/pkm",
+          name = "no-vault",
+          path = function()
+            return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+          end,
           ---@diagnostic disable-next-line: missing-fields
           overrides = {
-            notes_subdir = "notes",
+            notes_subdir = "Notes",
           },
         },
       },
