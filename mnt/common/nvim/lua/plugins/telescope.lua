@@ -28,6 +28,7 @@ return {
             ["<C-s>"] = actions.select_horizontal,
             -- Ctrl+Enterがマッピングされている
             ["<F12>"] = actions.select_vertical,
+            ["<C-w>t"] = actions.select_tab,
           },
           n = { ["q"] = actions.close },
         },
