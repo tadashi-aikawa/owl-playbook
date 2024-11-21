@@ -8,6 +8,7 @@ return {
         open = "o",
         split = "<C-s>",
         vsplit = "<F12>",
+        tabc = "<Space>t",
       },
     })
   end,
