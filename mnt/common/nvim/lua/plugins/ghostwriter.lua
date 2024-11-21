@@ -45,6 +45,7 @@ return {
         { mark = "~", emoji = "loading" },
         { mark = "x", emoji = "ok_green" },
         { mark = "-", emoji = "m" },
+        { mark = "_", emoji = "rip" },
         { mark = " ", emoji = "circle-success" },
       },
       channel = {
