@@ -62,13 +62,6 @@ return {
             notes_subdir = "Notes",
           },
         },
-        {
-          name = "minerva",
-          path = "~/work/minerva",
-          overrides = {
-            notes_subdir = "Notes",
-          },
-        },
       },
 
       new_notes_location = "notes_subdir",
