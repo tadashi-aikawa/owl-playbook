@@ -97,6 +97,17 @@ snippet _deno_parameterized_testcase "DenoのParameterized testのテストケ�
     },
   );
 
+snippet _deno_csv_load
+  import { parse } from "jsr:@std/csv";
+
+  parse(await Deno.readTextFile("data.tsv"), { skipFirstRow: true });
+
+snippet _deno_tsv_load
+  import { parse } from "jsr:@std/csv";
+
+  parse(await Deno.readTextFile("data.tsv"), { separator: "\t", skipFirstRow: true });
+
+
 # -----------------------------------
 # Vueでも使うやつ
 # -----------------------------------
