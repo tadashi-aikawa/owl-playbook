@@ -1,0 +1,23 @@
+version: "3.1"
+
+services:
+  db:
+    image: mysql:8
+    container_name: mysql-sample
+    ports:
+      - 13306:3306
+    volumes:
+      - ./conf.d:/etc/mysql/conf.d
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  dbserver:
+    image: denoland/deno:2.1.0
+    container_name: mysql-sample-server
+    ports:
+      - 18000:8000
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    command: ["run", "--watch", "--allow-net", "/app/main.ts"]

@@ -38,6 +38,7 @@ Available targets
   | python   | Python   | Virtualenv | Pip   | -                  | -         | -         |
   | nvim     | Lua      | Lua        |       | nvim               | -         | -         |
   | bash     | Bash     | Bash       |       | -                  | -         | -         |
+  | mysql    | TS       | Deno       | Deno  | MySQL + deno_mysql | Deno      | Deno      |
   "
 }
 
@@ -412,6 +413,29 @@ $ mise watch
   exit 0
 fi
 
+# -------------------------------------------
+# mysql
+# -------------------------------------------
+if [[ $command == "mysql" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  deno init
+
+  cp -r "${TEMPLATE_DIR}"/mysql/* .
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ docker compose up -d
+$ xh -b \"http://localhost:18000?table=users\"
+"
+  exit 0
+fi
+
+#==========================================================================
 #--- Git ---
 
 function show_status() {
