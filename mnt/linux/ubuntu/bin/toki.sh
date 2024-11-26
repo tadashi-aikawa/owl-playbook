@@ -2,6 +2,10 @@
 
 set -eu
 
+_PATH=$(readlink -f "${BASH_SOURCE:-$0}")
+DIR_PATH=$(dirname "$_PATH")
+TEMPLATE_DIR="${DIR_PATH}/template"
+
 function show_usage() {
   echo "
 Usages:
@@ -104,31 +108,7 @@ if [[ $command == "node" ]]; then
   npm pkg set scripts.dev="tsc -w"
   npm pkg set scripts.start="node --watch *.js"
 
-  cat >tsconfig.json <<'EOF'
-{
-  "extends": "@tsconfig/recommended/tsconfig.json"
-}
-EOF
-
-  cat >.prettierrc.json <<'EOF'
-{
-  "plugins": ["prettier-plugin-organize-imports"]
-}
-EOF
-
-  cat >index.ts <<'EOF'
-function sum(x: number, y: number): number {
-  return x + y;
-}
-
-function main() {
-  var a = 1;
-  var b = 10;
-  console.log(`sum(a, b): ${sum(a, b)}`);
-}
-
-main();
-EOF
+  cp -r "${TEMPLATE_DIR}"/node/* .
 
   echo "
 🚀 Try
@@ -161,25 +141,7 @@ if [[ $command == "pnpm" ]]; then
   pnpm pkg set scripts.dev="tsx watch ./index.ts"
   pnpm pkg set scripts.check="tsc --noEmit --watch"
 
-  cat >tsconfig.json <<'EOF'
-{
-  "extends": "@tsconfig/recommended/tsconfig.json"
-}
-EOF
-
-  cat >index.ts <<'EOF'
-function sum(x: number, y: number): number {
-  return x + y;
-}
-
-function main() {
-  var a = 1;
-  var b = 10;
-  console.log(`sum(a, b): ${sum(a, b)}`);
-}
-
-main();
-EOF
+  cp -r "${TEMPLATE_DIR}"/pnpm/* .
 
   echo "
 🚀 Try
@@ -232,34 +194,7 @@ if [[ $command == "jest" ]]; then
   pnpm pkg set scripts.test="jest"
   pnpm pkg set scripts.test:watch="jest --watchAll"
 
-  cat >tsconfig.json <<'EOF'
-{
-  "extends": "@tsconfig/recommended/tsconfig.json"
-}
-EOF
-
-  cat >babel.config.js <<'EOF'
-module.exports = {
-  presets: [
-      ['@babel/preset-env', {targets: {node: 'current'}}],
-      '@babel/preset-typescript'
-  ],
-};
-EOF
-
-  cat >index.test.ts <<'EOF'
-import { describe, expect, test } from "@jest/globals";
-
-function sum(x: number, y: number): number {
-  return x + y;
-}
-
-describe("sum", () => {
-  test("1 + 1 = 2", () => {
-    expect(sum(1, 1)).toBe(2);
-  });
-});
-EOF
+  cp -r "${TEMPLATE_DIR}"/jest/* .
 
   echo "
 🚀 Try
@@ -283,11 +218,8 @@ if [[ $command == "vue" ]]; then
   cd "$path"
 
   bun add -D @fsouza/prettierd prettier-plugin-organize-imports
-  cat >.prettierrc.json <<'EOF'
-{
-  "plugins": ["prettier-plugin-organize-imports"]
-}
-EOF
+
+  cp -r "${TEMPLATE_DIR}"/vue/* .
 
   bun i
 
@@ -313,11 +245,8 @@ if [[ $command == "nuxt" ]]; then
   mkdir pages
 
   bun add -D @fsouza/prettierd prettier-plugin-organize-imports
-  cat >.prettierrc.json <<'EOF'
-{
-  "plugins": ["prettier-plugin-organize-imports"]
-}
-EOF
+
+  cp -r "${TEMPLATE_DIR}"/nuxt/* .
 
   echo "
 🚀 Try
@@ -343,33 +272,7 @@ if [[ $command == "tailwind" ]]; then
   bun add --dev tailwindcss postcss autoprefixer
   bun x tailwindcss init -p
 
-  cat <<EOL >tailwind.config.js
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-EOL
-
-  cat <<EOL >./src/style.css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-EOL
-
-  cat <<EOL >./src/App.vue
-<template>
-  <div class="flex flex-col justify-center items-center w-screen h-screen">
-    <span class="text-red-500 text-5xl">Title</span>
-  </div>
-</template>
-EOL
+  cp -r "${TEMPLATE_DIR}"/tailwind/* .
 
   echo "
 🚀 Try
@@ -392,22 +295,7 @@ if [[ $command == "go" ]]; then
   go mod init sandbox/"${path}"
   go install github.com/air-verse/air@latest
 
-  cat >main.go <<'EOF'
-package main
-
-import (
-	"log"
-)
-
-func sum(x int, y int) int {
-	return x + y
-}
-
-func main() {
-	total := sum(1, 10)
-	log.Printf("x + y = %d", total)
-}
-EOF
+  cp -r "${TEMPLATE_DIR}"/go/* .
 
   echo "
 🚀 Try
@@ -432,63 +320,7 @@ if [[ $command == "go-sqlx" ]]; then
   go get github.com/jmoiron/sqlx
   go get github.com/go-sql-driver/mysql
 
-  cat >main.go <<'EOF'
-package main
-
-import (
-	"encoding/json"
-	"fmt"
-	"time"
-
-	"github.com/go-sql-driver/mysql"
-	"github.com/jmoiron/sqlx"
-)
-
-func PrintPrettyJson(obj interface{}) {
-	r, _ := json.MarshalIndent(obj, "", "  ")
-	fmt.Println(string(r))
-}
-
-type record struct {
-	Id   int    `db:"id"`
-	Name string `db:"name"`
-}
-
-func initDB() *sqlx.DB {
-	jst := time.FixedZone("Asia/Tokyo", 9*60*60)
-	cfg := mysql.Config{
-		User:      "foo",
-		Passwd:    "bar",
-		Net:       "tcp",
-		Addr:      "127.0.0.1:3366",
-		DBName:    "TESTDB",
-		ParseTime: true,
-		Loc:       jst,
-	}
-	dsn := cfg.FormatDSN()
-
-	db, err := sqlx.Open("mysql", dsn)
-	if err != nil {
-		panic(err)
-	}
-
-	return db
-}
-
-func main() {
-	db := initDB()
-
-	var results []record
-	err := db.Select(&results, `
-SELECT id, name from members
-;`)
-	if err != nil {
-		panic(err)
-	}
-
-	PrintPrettyJson(results)
-}
-EOF
+  cp -r "${TEMPLATE_DIR}"/go-sqlx/* .
 
   echo "
 🚀 Try
@@ -525,14 +357,8 @@ if [[ $command == "python" ]]; then
   mkdir -p "$path"
   cd "$path"
   python -m venv .venv
-  cat >main.py <<'EOF'
-def main():
-    print("Hello python!!")
 
-
-if __name__ == "__main__":
-    main()
-EOF
+  cp -r "${TEMPLATE_DIR}"/python/* .
 
   echo "
 🚀 Try
@@ -552,13 +378,8 @@ if [[ $command == "nvim" ]]; then
 
   mkdir -p "$path"
   cd "$path"
-  cat >main.lua <<'EOF'
-vim.notify("aa" .. "bb")
-EOF
-  cat >.mise.toml <<'EOF'
-[tasks.default]
-run = "nvim -l main.lua"
-EOF
+
+  cp -r "${TEMPLATE_DIR}"/nvim/* .
 
   echo "
 🚀 Try
@@ -578,16 +399,8 @@ if [[ $command == "bash" ]]; then
   mkdir -p "$path"
   cd "$path"
 
-  cat >.mise.toml <<'EOF'
-[tasks.default]
-run = "./main.sh"
-EOF
+  cp -r "${TEMPLATE_DIR}"/bash/* .
 
-  cat >main.sh <<'EOF'
-#!/bin/bash
-
-echo "hogehoge"
-EOF
   chmod +x main.sh
 
   echo "

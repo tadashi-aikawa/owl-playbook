@@ -1,0 +1,3 @@
+[tasks.default]
+run = "nvim -l main.lua"
+
