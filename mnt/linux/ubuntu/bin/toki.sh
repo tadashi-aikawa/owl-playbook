@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -eu
+# ドットファイルをtemplateのコピー対象に含めるため (*では含まれないので)
+shopt -s dotglob
 
 _PATH=$(readlink -f "${BASH_SOURCE:-$0}")
 DIR_PATH=$(dirname "$_PATH")
