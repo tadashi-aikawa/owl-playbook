@@ -1,5 +1,6 @@
 return {
   dir = "~/git/github.com/tadashi-aikawa/ghostwriter.nvim",
+  ft = "markdown",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
@@ -10,10 +11,6 @@ return {
     { "<C-j>m", ":GhostwriterRecentMessages " },
     { "<C-j>y", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
     { "<C-j>S", ":GhostwriterInsertChannelID " },
-  },
-  cmd = {
-    "GhostwriterPost",
-    "GhostwriterRecentMessages",
   },
   config = function()
     require("ghostwriter").setup({
