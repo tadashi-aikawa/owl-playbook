@@ -2,6 +2,7 @@ return {
   "MeanderingProgrammer/markdown.nvim",
   name = "render-markdown",
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" },
+  ft = { "markdown", "markdown.mdx" },
   opts = {
     heading = {
       position = "inline",
