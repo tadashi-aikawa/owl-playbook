@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },
+  event = { "LspAttach" },
   opts = {
     code_action = {
       extend_gitsigns = true,
