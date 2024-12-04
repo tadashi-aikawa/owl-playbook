@@ -3,6 +3,7 @@ return {
   dependencies = {
     "kevinhwang91/promise-async",
   },
+  event = "VeryLazy", -- hlslensでなぜか呼ばれるのでタイミングをあわせる
   config = function()
     vim.o.foldlevel = 99
     vim.o.foldlevelstart = 99
