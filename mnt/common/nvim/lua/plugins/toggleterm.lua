@@ -5,6 +5,7 @@ return {
   keys = {
     { "<Space>i", ":ToggleTerm direction=float<CR>", silent = true },
     { "<Space>,", ":ToggleTerm size=20<CR>", silent = true },
+    { "<Space>.", ":ToggleTerm size=35<CR>", silent = true },
     {
       "<Space>t",
       function()
