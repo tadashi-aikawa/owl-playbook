@@ -1,5 +1,6 @@
 return {
   "stevearc/conform.nvim",
+  event = "VeryLazy",
   opts = function()
     local web_formatter = { "biome-check", "prettierd", stop_after_first = true }
     return {
