@@ -15,15 +15,6 @@ local neovim_plugins = {
   ----------------------------
   -- 開発/IDE化 (補完系)
   ----------------------------
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "onsails/lspkind.nvim",
-  "b0o/schemastore.nvim",
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
   require("plugins.nvim-lspconfig"),
   require("plugins.conform"),
   require("plugins.lspsaga"),
