@@ -1,6 +1,6 @@
 return {
   "NStefan002/screenkey.nvim",
-  lazy = false,
+  cmd = "Screenkey",
   opts = {
     compress_after = 5,
     group_mappings = true,
