@@ -13,6 +13,6 @@ return {
       end,
       silent = true,
     },
-    { "t", "<ESC>", [[<C-\><C-n>]], silent = true },
+    { "<ESC>", [[<C-\><C-n>]], mode = "t", silent = true },
   },
 }
