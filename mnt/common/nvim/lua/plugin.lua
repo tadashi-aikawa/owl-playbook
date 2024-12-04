@@ -90,8 +90,6 @@ local neovim_plugins = {
   -- Markdown preview
   require("plugins.markdown"), -- inline
 
-  -- CSVシンタックス強化
-  require("plugins.rainbow_csv"),
   -- マークの可視化
   "kshenoy/vim-signature",
   -- カレントシンボルの強調
