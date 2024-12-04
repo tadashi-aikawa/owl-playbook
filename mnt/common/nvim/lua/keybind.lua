@@ -3,14 +3,8 @@
 -----------------------------------------------------
 -- プラグインのキーバインドはプラグインの方で行う
 
-local u = require("utils")
-
 -- Hippie completion
-if u.is_windows then
-  vim.keymap.set("i", "<S-F6>", "<C-x><C-p>")
-else
-  vim.keymap.set("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
-end
+vim.keymap.set("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 
 -- cnext / cprevious
 vim.keymap.set("n", "<Space>J", ":cnext<CR>", { silent = true })
