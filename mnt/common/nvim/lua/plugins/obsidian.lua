@@ -2,7 +2,6 @@ return {
   -- 細かい挙動が色々気になるのでfork版
   dir = "~/git/github.com/tadashi-aikawa/obsidian.nvim",
   version = "*",
-  lazy = true,
   ft = "markdown",
   dependencies = {
     "nvim-lua/plenary.nvim",
