@@ -6,7 +6,7 @@ return {
     "vim-denops/denops.vim",
   },
   keys = {
-    { "<Space>.", ":SilhouetteMoveToProgress<CR>", silent = true },
+    { "<Space>/", ":SilhouetteMoveToProgress<CR>", silent = true },
     {
       "<A-a>",
       function()
