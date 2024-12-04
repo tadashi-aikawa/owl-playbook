@@ -1,8 +1,8 @@
 return {
   "stevearc/conform.nvim",
-  config = function()
+  opts = function()
     local web_formatter = { "biome-check", "prettierd", stop_after_first = true }
-    require("conform").setup({
+    return {
       formatters_by_ft = {
         lua = { "stylua" },
         go = { "goimports" },
@@ -27,6 +27,6 @@ return {
         timeout_ms = 1500,
         lsp_format = "fallback",
       },
-    })
+    }
   end,
 }

@@ -1,21 +1,18 @@
 return {
   "stevearc/aerial.nvim",
-  opts = {},
+  opts = {
+    layout = {
+      default_direction = "float",
+      min_width = 50,
+    },
+    keymaps = {
+      ["<ESC>"] = "actions.close",
+    },
+  },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },
   keys = {
     { "<C-j>o", ":AerialOpen<CR>", silent = true },
   },
-  config = function()
-    require("aerial").setup({
-      layout = {
-        default_direction = "float",
-        min_width = 50,
-      },
-      keymaps = {
-        ["<ESC>"] = "actions.close",
-      },
-    })
-  end,
 }

@@ -2,10 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-web-devicons", opt = true },
   event = { "BufNewFile", "BufRead" },
-  options = { theme = "gruvbox-material" },
-  config = function()
-    local lualine = require("lualine")
-
+  opts = function()
     local theme_base = {
       a = { fg = "#1b1d2b", bg = "#82aaff", gui = "bold" },
       b = { fg = "#82aaff", bg = "#3b4261" },
@@ -25,7 +22,7 @@ return {
       inactive = theme_base,
     }
 
-    local config = {
+    return {
       options = {
         theme = custom_theme,
         component_separators = {},
@@ -90,6 +87,5 @@ return {
         lualine_z = {},
       },
     }
-    lualine.setup(config)
   end,
 }

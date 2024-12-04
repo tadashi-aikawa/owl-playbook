@@ -1,6 +1,7 @@
 return {
   "roodolv/markdown-toggle.nvim",
   config = function()
+    -- optsに設定を書くとCtrl+Enter実行後にSilhouettePushTimerが実行されないのでconfigに集約
     require("markdown-toggle").setup({
       cycle_box_table = true,
       box_table = { "x" },

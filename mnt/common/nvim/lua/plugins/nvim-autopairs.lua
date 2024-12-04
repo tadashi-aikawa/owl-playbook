@@ -2,6 +2,7 @@ return {
   "windwp/nvim-autopairs",
   event = "InsertEnter",
   config = function()
+    -- optsとconfigに分けると動かなかった
     local p = require("nvim-autopairs")
     p.setup({
       disable_filetype = { "TelescopePrompt", "vim" },

@@ -1,16 +1,20 @@
 return {
   "stevearc/resession.nvim",
-  config = function()
-    local resession = require("resession")
-    resession.setup({})
-
-    vim.keymap.set("n", "gss", function()
-      resession.save("last")
-      vim.cmd("wa")
-      vim.cmd("qa!")
-    end)
-    vim.keymap.set("n", "gsl", function()
-      resession.load("last")
-    end)
-  end,
+  opts = {},
+  keys = {
+    {
+      "gss",
+      function()
+        require("resession").save("last")
+        vim.cmd("wa")
+        vim.cmd("qa!")
+      end,
+    },
+    {
+      "gsl",
+      function()
+        require("resession").load("last")
+      end,
+    },
+  },
 }
