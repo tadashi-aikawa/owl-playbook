@@ -12,4 +12,5 @@ return {
       vim.g.sqlite_clib_path = home .. "/lib/sqlite3.dll"
     end
   end,
+  lazy = true,
 }
