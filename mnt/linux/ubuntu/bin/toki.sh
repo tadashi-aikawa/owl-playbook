@@ -7,6 +7,7 @@ shopt -s dotglob
 _PATH=$(readlink -f "${BASH_SOURCE:-$0}")
 DIR_PATH=$(dirname "$_PATH")
 TEMPLATE_DIR="${DIR_PATH}/template"
+GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
 
 function show_usage() {
   echo "
@@ -16,6 +17,7 @@ Usages:
   toki status:           関連するGitリポジトリの状態を取得します
        st
   toki pull:             関連するGitリポジトリをすべてpullします
+  toki provision:        owl-playbookのprovisioningをします
   toki update:           関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
        up
 
@@ -445,8 +447,6 @@ function show_status() {
 }
 
 function pull() {
-  GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
-
   section "🦉 owlplaybook"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && git pull
   section "👻 ghostwriter.nvim"
@@ -457,13 +457,15 @@ function pull() {
   cd "$GITHUB_AUTHOR_DIR/obsidian.nvim" && git pull
 }
 
+function provision() {
+  cd "$GITHUB_AUTHOR_DIR/owl-playbook" && bash ./linux/provision.sh
+}
+
 # -------------------------------------------
 # 関連するGitリポジトリの状態を取得します
 # -------------------------------------------
 
 if [[ $command == "status" || $command == "st" ]]; then
-  GITHUB_AUTHOR_DIR=$HOME/git/github.com/tadashi-aikawa
-
   section "🦉 owl-playbook"
   cd "$GITHUB_AUTHOR_DIR/owl-playbook" && show_status
   section "👻 ghostwriter.nvim"
@@ -484,12 +486,19 @@ if [[ $command == "pull" ]]; then
 fi
 
 # -------------------------------------------
+# owl-playbookのprovisioningをします
+# -------------------------------------------
+if [[ $command == "provision" ]]; then
+  provision
+  exit 0
+fi
+
+# -------------------------------------------
 # 関連するGitリポジトリを最新化し、owl-playbookのprovisioningをします
 # -------------------------------------------
 if [[ $command == "update" || $command == "up" ]]; then
   pull
-  cd "$GITHUB_AUTHOR_DIR/owl-playbook"
-  bash ./linux/provision.sh
+  provision
   exit 0
 fi
 
