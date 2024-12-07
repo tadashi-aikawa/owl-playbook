@@ -6,10 +6,10 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   keys = {
-    { "<C-j>w", ":GhostwriterWrite<CR>", silent = true },
-    { "<C-j>p", ":GhostwriterPost ", mode = { "v" } },
-    { "<C-j>m", ":GhostwriterRecentMessages " },
-    { "<C-j>y", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
+    { "gsw", ":GhostwriterWrite<CR>", silent = true },
+    { "gsp", ":GhostwriterPost ", mode = { "v" } },
+    { "gsm", ":GhostwriterRecentMessages " },
+    { "gsy", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
     { "<C-j>S", ":GhostwriterInsertChannelID " },
   },
   opts = {
