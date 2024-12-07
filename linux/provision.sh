@@ -138,15 +138,6 @@ ln -snf "$UBUNTU_MNT"/zshrc/mise.sh ~/.misez.sh
 ensure_zshrc "source ~/.misez.sh"
 
 #----------------------------------------------------------------------
-# Binary installer
-#----------------------------------------------------------------------
-
-# cargo-binstall
-no "cargo-binstall" && {
-  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-}
-
-#----------------------------------------------------------------------
 # Prompt
 #----------------------------------------------------------------------
 
@@ -236,13 +227,6 @@ mise use -g npm:@vue/language-server
 
 # Svelte
 mise use -g npm:svelte-language-server
-
-# Markdown
-no markdown-oxide && {
-  cargo binstall --git 'https://github.com/feel-ix-343/markdown-oxide' markdown-oxide
-}
-mkdir -p ~/.config/moxide
-ln -snf "$UBUNTU_MNT"/moxide/settings.toml ~/.config/moxide/settings.toml
 
 #----------------------------------------------------------------------
 # TUI Tools
