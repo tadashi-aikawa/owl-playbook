@@ -432,7 +432,7 @@ if [[ $command == "mysql" ]]; then
 
 $ cd ${path}
 $ docker compose up -d
-$ xh -b \"http://localhost:18000?table=users\"
+$ xh -b \"http://localhost:18000?table=types\"
 "
   exit 0
 fi
