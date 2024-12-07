@@ -173,25 +173,6 @@ ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
 ln -snf "${COMMON_MNT}"/nvim/snippets ~/.config/nvim/snippets
 
 #----------------------------------------------------------------------
-# TUI Tools
-#----------------------------------------------------------------------
-
-# Broot
-mise plugin install https://github.com/cmur2/asdf-broot.git
-mise use -g broot
-mkdir -p ~/.config/broot
-ln -snf "$UBUNTU_MNT"/broot.toml ~/.config/broot/conf.toml
-ln -snf "$UBUNTU_MNT"/broot.nvim.toml ~/.config/broot/conf.nvim.toml
-
-# LazyGit
-mise use -g lazygit
-ln -snf "${COMMON_MNT}"/lazygit/config.yml ~/.config/lazygit/config.yml
-
-# LazyDocker
-mise plugin install https://github.com/comdotlinux/asdf-lazydocker.git
-mise use -g lazydocker
-
-#----------------------------------------------------------------------
 # Languages / Runtimes / LSP
 #----------------------------------------------------------------------
 
@@ -262,6 +243,25 @@ no markdown-oxide && {
 }
 mkdir -p ~/.config/moxide
 ln -snf "$UBUNTU_MNT"/moxide/settings.toml ~/.config/moxide/settings.toml
+
+#----------------------------------------------------------------------
+# TUI Tools
+#----------------------------------------------------------------------
+
+# Broot
+mise plugin install https://github.com/cmur2/asdf-broot.git
+mise use -g broot
+mkdir -p ~/.config/broot
+ln -snf "$UBUNTU_MNT"/broot.toml ~/.config/broot/conf.toml
+ln -snf "$UBUNTU_MNT"/broot.nvim.toml ~/.config/broot/conf.nvim.toml
+
+# LazyGit
+mise use -g lazygit
+ln -snf "${COMMON_MNT}"/lazygit/config.yml ~/.config/lazygit/config.yml
+
+# LazyDocker
+mise plugin install https://github.com/comdotlinux/asdf-lazydocker.git
+mise use -g lazydocker
 
 #----------------------------------------------------------------------
 # CLI Tools
