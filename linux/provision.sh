@@ -191,6 +191,10 @@ mise use -g gofumpt
 mise use -g golangci-lint
 mise x -- go install github.com/nametake/golangci-lint-langserver@latest
 
+# Rust
+mise use -g rust
+rustup component add rust-analyzer
+
 # Python
 mise use -g python@3.12
 mise use -g npm:pyright
