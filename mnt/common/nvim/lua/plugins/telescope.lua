@@ -9,6 +9,14 @@ return {
     { "<C-j>f", ":Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>", silent = true },
     { "<C-j>e", ":Telescope smart_open<CR>", silent = true },
     { "<C-j>g", ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", silent = true },
+    {
+      "<C-j>t",
+      function()
+        local curdir = vim.bo.filetype == "oil" and require("oil").get_current_dir() or vim.fn.expand("%:p:h")
+        require("telescope").extensions.live_grep_args.live_grep_args({ search_dirs = { curdir } })
+      end,
+      silent = true,
+    },
     { "<C-j>l", ":Telescope current_buffer_fuzzy_find<CR>", silent = true },
     { "<C-j>:", ":Telescope command_history<CR>", silent = true },
     { "<C-j>s", ":Telescope lsp_dynamic_workspace_symbols<CR>", silent = true },
