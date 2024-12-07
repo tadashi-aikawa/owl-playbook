@@ -255,13 +255,16 @@ mkdir -p ~/.config/broot
 ln -snf "$UBUNTU_MNT"/broot.toml ~/.config/broot/conf.toml
 ln -snf "$UBUNTU_MNT"/broot.nvim.toml ~/.config/broot/conf.nvim.toml
 
-# LazyGit
+# Lazygit
 mise use -g lazygit
 ln -snf "${COMMON_MNT}"/lazygit/config.yml ~/.config/lazygit/config.yml
 
-# LazyDocker
+# Lazydocker
 mise plugin install https://github.com/comdotlinux/asdf-lazydocker.git
 mise use -g lazydocker
+
+# Lazysql
+mise use -g go:github.com/jorgerojas26/lazysql
 
 #----------------------------------------------------------------------
 # CLI Tools
