@@ -56,6 +56,8 @@ local neovim_plugins = {
   require("plugins.barbar"),
   -- IDEのような見やすいリスト表示 (diagnostic, references)
   require("plugins.trouble"),
+  -- SQLクライアント
+  require("plugins.nvim-dbee"),
 
   ----------------------------
   -- エディタの見た目

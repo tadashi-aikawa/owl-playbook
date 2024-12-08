@@ -24,6 +24,7 @@ return {
         "python",
         "rust",
         "scss",
+        "sql",
         "svelte",
         "toml",
         "tsx",
