@@ -10,7 +10,6 @@ return {
     { "gsp", ":GhostwriterPost ", mode = { "v" } },
     { "gsm", ":GhostwriterRecentMessages " },
     { "gsy", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
-    { "<C-j>S", ":GhostwriterInsertChannelID " },
   },
   opts = {
     replacers = {
