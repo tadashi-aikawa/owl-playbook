@@ -16,9 +16,9 @@ return {
       unchecked = { icon = "󰄰 " },
       checked = { icon = "󰄳 " },
       custom = {
-        progress = { raw = "[~]", rendered = "󰲼 ", highlight = "RenderMarkdownTodo" },
-        pending = { raw = "[_]", rendered = "󰮢 ", highlight = "RenderMarkdownWait" },
-        todo = { raw = "[-]", rendered = " ", highlight = "RenderMarkdownWarn" },
+        progress = { raw = "[~]", rendered = "󱥸 ", highlight = "RenderMarkdownUnchecked" },
+        todo = { raw = "[_]", rendered = "󰳜 ", highlight = "RenderMarkdownChecked" },
+        pending = { raw = "[-]", rendered = "󰄰 ", highlight = "RenderMarkdownError" },
       },
     },
     win_options = {
