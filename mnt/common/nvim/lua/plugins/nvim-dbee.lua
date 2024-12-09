@@ -34,6 +34,7 @@ return {
             url = "user:password@tcp(localhost:13306)/mydb",
           },
         }),
+        require("dbee.sources").EnvSource:new("DBEE_CONNECTIONS"),
       },
       result = {
         window_options = {
