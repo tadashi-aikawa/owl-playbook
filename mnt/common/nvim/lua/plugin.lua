@@ -127,6 +127,9 @@ local neovim_plugins = {
   -- セッションの保存・復元
   require("plugins.resession"),
 
+  -- ウィンドウのリサイズ
+  require("plugins.winresizer"),
+
   ----------------------------
   -- その他
   ----------------------------
