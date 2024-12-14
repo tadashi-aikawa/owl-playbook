@@ -81,7 +81,7 @@ local neovim_plugins = {
   -- 横幅最適化
   require("plugins.no-neck-pain"),
   -- Markdown preview
-  require("plugins.markdown"), -- inline
+  require("plugins.render-markdown"), -- inline
 
   -- マークの可視化
   "kshenoy/vim-signature",
