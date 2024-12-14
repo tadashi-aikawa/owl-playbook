@@ -30,5 +30,10 @@ return {
         rendered = "",
       },
     },
+    html = {
+      comment = {
+        conceal = false,
+      },
+    },
   },
 }
