@@ -1,27 +1,34 @@
-setopt histignorealldups sharehistory
-bindkey -e
-
+#--------------------------------------
+# コマンド履歴
+#--------------------------------------
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
+# 重複する古い履歴は削除
+setopt histignorealldups
+# セッションを跨いで履歴を共有
+setopt sharehistory
 
+#--------------------------------------
+# 補完
+#--------------------------------------
 autoload -Uz compinit
 compinit
 
-zstyle ':completion:*' auto-description 'specify: %d'
+# 高度な補完
 zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
+# 大文字小文字や各種記号をfuzzyに考慮して補完
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+# ドットファイルを.はじまりでなくても補完
+setopt globdots
+# TABを候補の選択ではなくインタラクティブな絞り込みとして使う
+zstyle ':completion:*' menu select interactive
+setopt menu_complete
+# 候補を ls -l のリストで表示
+zstyle ':completion:*' file-list all
+# cdの補完で自分自身を表示しない
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+# 補完候補のディレクトリには色をつける
 eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+autoload colors && colors
