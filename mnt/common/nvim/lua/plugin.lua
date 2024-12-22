@@ -83,8 +83,6 @@ local neovim_plugins = {
   -- Markdown preview
   require("plugins.render-markdown"), -- inline
 
-  -- マークの可視化
-  "kshenoy/vim-signature",
   -- カレントシンボルの強調
   require("plugins.vim-illuminate"),
 
