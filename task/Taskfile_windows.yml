@@ -95,6 +95,16 @@ tasks:
       INPUT:
         sh: ls -t ~/Pictures/Screenpresso/*.mp4 | head -1 | tr -d "'"
 
+  avif:sp:
+    desc: 直近にScreenpressoで撮影したファイル(画像の想定)をAVIFファイルにする
+    cmds:
+      - ffmpeg -i {{shellQuote .INPUT}} ~/tmp/{{now | date "2006-01-02-15-04-05"}}.avif
+      - cmd: cd ~/tmp && explorer .
+        ignore_error: true # なぜか必ずエラーになる..
+    vars:
+      INPUT:
+        sh: ls -t ~/Pictures/Screenpresso/* | head -1 | tr -d "'"
+
   hello:
     desc: 1日の開始に行う定型タスク
     cmds:
