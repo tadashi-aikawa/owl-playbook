@@ -228,6 +228,10 @@ return {
           new_config.init_options.typescript.tsdk = lib_path
         end
       end,
+      root_dir = util.root_pattern(
+        "package.json",
+        "manifest.json" -- Chrome Extension
+      ),
     })
 
     lspconfig.tailwindcss.setup({
