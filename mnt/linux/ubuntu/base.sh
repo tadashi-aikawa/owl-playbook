@@ -40,3 +40,5 @@ alias cdg='cd $(gowl list | fzf)'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias lq='lazysql'
+
+alias cpwd='pwd | xsel -bi'
