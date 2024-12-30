@@ -1,8 +1,5 @@
 vim.cmd("colorscheme tokyonight")
 
--- Color scheme
-vim.opt.background = "dark"
-
 -- 行番号の表示
 vim.opt.number = true
 
@@ -13,7 +10,7 @@ vim.opt.cursorline = true
 vim.opt.laststatus = 3
 
 -- suggestionsの上限
-vim.o.pumheight = 10
+vim.opt.pumheight = 10
 
 -- Line
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#888888" })
