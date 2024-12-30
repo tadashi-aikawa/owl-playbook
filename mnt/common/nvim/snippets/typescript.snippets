@@ -1,55 +1,29 @@
+#---------------------------------
+# Printデバッグ
+#---------------------------------
 snippet _cl console.log()
   console.log(${0})
 
 snippet _clt console.log(👺)
   console.log("👺 ${0}")
 
-snippet _doc "関数のdoc 簡易版"
-  /**
-   * ${1:description}
-   */
+# -----------------------------------
+# 定義
+# -----------------------------------
 
-snippet _docd "関数のdoc 詳細版"
-  /**
-   * ${1:description}
-   *
-   * \`\`\`ts
-   * ${2:example}
-   * \`\`\`
-   */
-
-snippet _buntestimport "Description" b
-  import { describe, test, expect } from "bun:test";
-
-snippet _test "testコード" b
-  test("${1:test name}", () => {
-    expect(${2:actual}).toBe(${3:expected});
-  });
-
-snippet _forof "for each"
-  for (const ${2} of ${1}) {
-    ${3}
-  }
-
-snippet _fori "for i"
-  for (let i = 0; i < ${1}; i++) {
-    ${2}
+snippet _function "function"
+  function ${1:funcName}(${2:args1: typeName, args2: typeName})${3:: typeName} {
+    ${0:// FIXME: 実装}
   }
 
 snippet _exfunction "export function"
-  export function ${1}(${2})${3} {
-    ${4}
+  export function ${1:funcName}(${2:args1: typeName, args2: typeName})${3:: typeName} {
+    ${0:// FIXME: 実装}
   }
 
 snippet _allowfunction "allow function"
-  (${1}) => { ${2} }
-
-snippet _switch "switch"
-  switch ($1) {
-    case $2:
-      break;
-    default:
-      throw new ExhaustiveError($1);
+  (${1:x}) => {
+    ${0:// FIXME: 実装}
   }
 
 snippet _exhaustiveError "ExhaustiveError"
@@ -58,6 +32,63 @@ snippet _exhaustiveError "ExhaustiveError"
       super(message);
     }
   }
+
+# -----------------------------------
+# docs
+# -----------------------------------
+
+snippet _doc "関数のdoc 簡易版"
+  /**
+   * ${0:description}
+   */
+
+snippet _docd "関数のdoc 詳細版"
+  /**
+   * ${0:description}
+   *
+   * \`\`\`ts
+   * // example
+   * \`\`\`
+   */
+
+# -----------------------------------
+# 制御構文
+# -----------------------------------
+
+snippet _forof "for each"
+  for (const ${2:value} of ${1:values}) {
+    ${0:// FIXME: 実装}
+  }
+
+snippet _fori "for i"
+  for (let i = 0; i < ${1:values.length}; i++) {
+    ${0:// FIXME: 実装}
+  }
+
+snippet _switch "switch"
+  switch (${1:value}) {
+    case ${2:"item1"}:
+      ${0:// FIXME: 実装}
+      break;
+    default:
+      throw new ExhaustiveError($1);
+  }
+
+# -----------------------------------
+# テストスニペット
+# -----------------------------------
+
+snippet _buntestimport "Description" b
+  import { describe, test, expect } from "bun:test";
+
+snippet _test "testコード" b
+  test("${1:test name}", () => {
+    expect(${2:actual}).toBe(${0:expected});
+  });
+
+# -----------------------------------
+# Deno
+# -----------------------------------
 
 snippet _deno_parameterized_test "DenoのParameterized test" b
   export function parameterizedTest<T>(
@@ -114,31 +145,26 @@ snippet _deno_tsv_load
 
 snippet _emit "emit定義" b
   const emit = defineEmits<{
-    "${1:click}": [${2:key}: ${3:any}]
+    "${1:click}": [${2:key}: ${0:any}]
   }>();
 
 snippet _computed "computed" b
-  const ${1} = computed(() => ${2})
+  const ${1} = computed(() => ${0:// FIXME: 実装})
 
 snippet _ref "ref" b
-  const ${1} = ref(${2})
-
-snippet _reactive "reactive" b
-  const ${1} = reactive({
-    ${2}: ${3}
-  })
+  const ${1} = ref(${0:initValue})
 
 snippet _model "defineModel" b
-  const ${1} = defineModel<${2:T}>({required: true})
+  const ${1} = defineModel<${0:TypeName}>({required: true})
 
 snippet _model_named "defineModel named" b
-  const ${1} = defineModel<${2:T}>("${3:modelName}", {required: true})
+  const ${1} = defineModel<${2:TypeName}>("${0:modelName}", {required: true})
 
 snippet _watch "watch" b
   watch(
-    () => ${1},
-    (${2}) => {
-      ${3}
+    () => ${1:reactiveVarName}.value,
+    (${1}) => {
+      ${0:// FIXME: 実装}
     }
   )
 

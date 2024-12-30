@@ -7,6 +7,9 @@ snippet _main package main
     fmt.Println("Hello Golang!")
   }
 
+#---------------------------------
+# 例外処理
+#---------------------------------
 snippet _ifep "if err != nil -> panic"
   if err != nil {
     panic(err)
@@ -17,9 +20,9 @@ snippet _ifer "if err != nil -> return nil, err"
     return nil, err
   }
 
-snippet :: "var := foo"
-  ${1} := ${2}
-
+#---------------------------------
+# Printデバッグ
+#---------------------------------
 snippet _fp "fmt.Println"
   fmt.Println("${0}")
 
@@ -30,48 +33,61 @@ snippet _fps "fmt.Printf"
   fmt.Printf("${0} = %s\n", ${0})
 
 snippet _logt "log.Println 👺"
-  log.Println("👺${1}")
+  log.Println("👺${0}")
 
 snippet _logv "log.Printf(%#v)"
-  log.Printf("👺%#v\n", ${1})
+  log.Printf("👺%#v\n", ${0})
+
+#---------------------------------
+# 定義
+#---------------------------------
+snippet :: "var := foo"
+  ${1:id} := ${0}
+
+snippet _func "func hoge() fuga {}"
+  func ${1:functionName}(${2:arg1 int, arg2 string}) ${3:(string, error)} {
+    ${0:// FIXME: 実装}
+  }
 
 snippet _struct "type struct"
-  type ${1} struct {
-    ${2}
+  type ${1:TypeName} struct {
+    ${0:PropName string}
   }
 
 snippet _slice "slice"
-  []${1}{${2}}
+  []${1:TypeName}{${0:1, 2}}
 
-snippet _json "`json:\"prop\"`"
-  \`json:"${1}"\`
+snippet _enum "enum"
+  type ${1:EnumName} int
+  const (
+    ${2:ConstVar1} ${1:EnumName} = iota
+    ${0:ConstVar2}
+  )
 
+#---------------------------------
+# 制御構文
+#---------------------------------
 snippet _forr "for range"
-  for _, ${1} := range ${2} {
-    ${3}
+  for _, ${2:v} := range ${1:values} {
+    ${0:// FIXME: 実装}
   }
 
 snippet _fori "for i"
-  for i := 0; i < ${1}; i++ {
-    ${2}
+  for i := 0; i < len(${1:values}); i++ {
+    ${0:// FIXME: 実装}
   }
-
-snippet _enum "enum"
-  type Fruit int
-  const (
-    ${1:Apple} Fruit = iota
-    ${2:Orange}
-  )
 
 snippet _switch "switch"
-  switch ${1} {
-  case ${2: Hoge}:
-    ${3}
+  switch ${1:value} {
+  case ${2:ConstVar1}:
+    ${0:// FIXME: 実装}
   default:
-    ${4}
+    ${0:// FIXME: 実装}
   }
 
-snippet _func "func hoge() fuga {}"
-  func ${1}(${2}) ${3} {
-    ${4}
-  }
+#---------------------------------
+# Annotation
+#---------------------------------
+snippet _json "`json:\"prop\"`"
+  \`json:"${0:propName}"\`
+

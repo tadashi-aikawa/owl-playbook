@@ -28,44 +28,35 @@ extends typescript
 
 snippet _script "<script setup>" b
   <script setup lang="ts">
-  ${1}
+  ${0}
   </script>
 
 snippet _template "<template>" b
   <template>
-  ${1}
+  ${0}
   </template>
 
 snippet _props "props定義" b
   defineProps<{
-    ${1}: ${2}
+    ${1:key}: ${2:TypeName}
   }>();
 
-snippet _iprops "interfaceつきprops定義" b
-  interface Props {
-    ${1}
-  }
-  const props = defineProps<Props>();
+snippet _props_default "defaultつき" b
+  const { ${1} = ${3:defaultvalue} } = defineProps<{
+    ${1:key}: ${2:TypeName}
+  }>();
 
-snippet _props_default "props定義 defaultつき" b
+snippet _props_default_old "props定義 defaultつき" b
   interface Props {
     ${1}
   }
   const props = withDefaults(defineProps<Props>(), {
-    ${2}
+    ${0}
   });
 
 snippet _template_refs "Template Refs" b
   const ${1:element} = ref<InstanceType<typeof ${2:Component}> | null>(null);
   // Add -> <${2} ref="${1}" />
-
-snippet _state "state定義" b
-  interface State {
-    ${1}
-  }
-  const state = reactive<State>({
-    ${2}
-  });
 
 snippet _ignore-organize-imports "// organize-imports-ignore"
   // organize-imports-ignore
