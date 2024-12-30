@@ -19,8 +19,6 @@ vim.opt.swapfile = false
 vim.opt.hidden = true
 -- バックスペースの有効化
 vim.opt.backspace = "indent,eol,start"
--- コマンドのタイムラグをなくす
-vim.opt.ttimeoutlen = 1
 -- タブを基本2文字に
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 0
