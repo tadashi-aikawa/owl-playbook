@@ -1,1 +1,4 @@
-return { "famiu/bufdelete.nvim" }
+return {
+  "famiu/bufdelete.nvim",
+  event = "VeryLazy",
+}
