@@ -25,4 +25,7 @@ require("lazy").setup({
     { import = "plugins" },
   },
   diff = { cmd = "terminal_git" },
+  change_detection = {
+    notify = false,
+  },
 })
