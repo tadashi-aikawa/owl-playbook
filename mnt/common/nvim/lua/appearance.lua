@@ -45,6 +45,8 @@ vim.api.nvim_set_hl(0, "GitGraphBranchTag", { bg = "#3d59a1" })
 vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
 -- better-ts-errors.nvim (fork & 次作ハイライトグループ)
 vim.api.nvim_set_hl(0, "BetterTsErrorsPrettified", { fg = "#ef7878" })
+-- render-markdown
+vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#070707" })
 
 -- XXX: boldがなぜか見た目にFBされないので。。
 vim.api.nvim_set_hl(0, "@markup.strong", { underdouble = true })
