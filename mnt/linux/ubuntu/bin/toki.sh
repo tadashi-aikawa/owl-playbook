@@ -169,6 +169,8 @@ if [[ $command == "deno" ]]; then
   mkdir -p "$path"
   cd "$path"
   deno init
+  sed -ri 's/(.+"dev": )".+"/\1"deno run -A --watch main.ts"/g' deno.json
+
   echo "
 🚀 Try
 
