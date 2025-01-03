@@ -198,7 +198,6 @@ rustup component add rust-analyzer
 # Python
 mise use -g python@3.12
 mise use -g npm:pyright
-no ruff-lsp && mise x -- pip install ruff-lsp
 
 # Bash
 mise use -g npm:bash-language-server
