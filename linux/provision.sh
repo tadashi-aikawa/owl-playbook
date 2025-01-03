@@ -197,6 +197,7 @@ rustup component add rust-analyzer
 
 # Python
 mise use -g python@3.12
+mise use -g python@3.13
 mise use -g npm:pyright
 mise use -g ruff
 mise use -g uv
