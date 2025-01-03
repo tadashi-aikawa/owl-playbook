@@ -348,7 +348,6 @@ return {
           end
 
           set_auto_format("rust_analyzer", { "*.rs" })
-          set_auto_format("ruff", { "*.py" })
           set_auto_format("denols", { "*.ts", "*.js" })
           set_auto_format("gopls", { "*.go" })
         end
