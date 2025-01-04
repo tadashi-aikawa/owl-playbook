@@ -11,6 +11,8 @@ vim.keymap.set("n", "<Space>J", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<Space>K", ":cprevious<CR>", { silent = true })
 -- quickfix list open
 vim.keymap.set("n", "<Space>L", ":botright cw<CR>", { silent = true })
+-- URLをブラウザで開く
+vim.keymap.set("n", "go", ":ObsidianFollowLink<CR>", { silent = true })
 
 -- バッファ切り替え
 vim.keymap.set("n", "<Space>r", ":b#<CR>", { silent = true })
