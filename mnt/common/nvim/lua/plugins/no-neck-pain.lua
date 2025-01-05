@@ -1,5 +1,7 @@
 return {
-  "shortcuts/no-neck-pain.nvim",
+  -- FIXME: If PR merged
+  --"shortcuts/no-neck-pain.nvim",
+  "tadashi-aikawa/no-neck-pain.nvim",
   keys = {
     {
       "<M-n>",
