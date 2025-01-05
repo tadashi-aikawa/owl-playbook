@@ -127,16 +127,6 @@ return {
       lineFoldingOnly = true,
     }
 
-    -- lspconfig.markdown_oxide.setup({
-    --   capabilities = vim.tbl_deep_extend("force", capabilities, {
-    --     workspace = {
-    --       didChangeWatchedFiles = {
-    --         dynamicRegistration = true,
-    --       },
-    --     },
-    --   }),
-    -- })
-
     lspconfig.ruff.setup({ capabilities = capabilities })
     lspconfig.pyright.setup({ capabilities = capabilities })
 
