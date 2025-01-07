@@ -254,7 +254,7 @@ mise plugin install https://github.com/comdotlinux/asdf-lazydocker.git
 mise use -g lazydocker
 
 # Lazysql
-mise use -g go:github.com/jorgerojas26/lazysql
+mise use -g go:github.com/jorgerojas26/lazysql@0.3.3
 
 #----------------------------------------------------------------------
 # CLI Tools
