@@ -5,6 +5,7 @@ return {
     require("illuminate").configure({
       delay = 300,
       modes_denylist = { "i" },
+      under_cursor = false,
       filetypes_denylist = {
         "aerial",
         "NvimTree",
