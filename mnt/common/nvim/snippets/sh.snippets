@@ -1,0 +1,5 @@
+snippet _ignore_shellcheck "shellcheck disabled"
+  # shellcheck disable=SC$0
+
+snippet _or_error
+  ${1:varName}="${${2:varName}:?'${0:errorMessage}'}"
