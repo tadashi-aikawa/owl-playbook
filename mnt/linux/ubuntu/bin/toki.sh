@@ -41,6 +41,7 @@ Available targets
   | rust     | Rust     | -          | Cargo | -                  | -         | -         |
   | python   | Python   | Virtualenv | Pip   | -                  | -         | -         |
   | nvim     | Lua      | Lua        |       | nvim               | -         | -         |
+  | nvimapp  | Lua      | Neovim     | lazy  | -                  | -         | -         |
   | bash     | Bash     | Bash       |       | -                  | -         | -         |
   | mysql    | TS       | Deno       | Deno  | MySQL + deno_mysql | Deno      | Deno      |
   "
@@ -393,6 +394,27 @@ if [[ $command == "nvim" ]]; then
 
 $ cd ${path}
 $ mise watch
+"
+  exit 0
+fi
+
+# -------------------------------------------
+# nvimapp
+# -------------------------------------------
+if [[ $command == "nvimapp" ]]; then
+  app_name="${1:?'app_nameは必須です'}"
+  path="${HOME}/.config/${app_name}"
+
+  mkdir -p "$path"
+  cd "$path"
+
+  cp -r "${TEMPLATE_DIR}"/nvimapp/* .
+
+  echo "
+🚀 Try
+
+$ alias svim=\"NVIM_APPNAME=${app_name} nvim\"
+$ svim
 "
   exit 0
 fi
