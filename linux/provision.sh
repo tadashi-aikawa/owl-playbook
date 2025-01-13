@@ -238,20 +238,12 @@ mise use -g npm:svelte-language-server
 # TUI Tools
 #----------------------------------------------------------------------
 
-# Broot
-mise plugin install https://github.com/cmur2/asdf-broot.git
-mise use -g broot
-mkdir -p ~/.config/broot
-ln -snf "$UBUNTU_MNT"/broot.toml ~/.config/broot/conf.toml
-ln -snf "$UBUNTU_MNT"/broot.nvim.toml ~/.config/broot/conf.nvim.toml
-
 # Lazygit
 mise use -g lazygit
 ln -snf "${COMMON_MNT}"/lazygit/config.yml ~/.config/lazygit/config.yml
 
 # Lazydocker
-mise plugin install https://github.com/comdotlinux/asdf-lazydocker.git
-mise use -g lazydocker
+mise use -g go:github.com/jesseduffield/lazydocker@0.24.1
 
 # Lazysql
 mise use -g go:github.com/jorgerojas26/lazysql@0.3.3
@@ -327,11 +319,6 @@ mise use -g watchexec
 # Marp CLI
 mise use -g marp-cli
 
-# ffmpeg
-export ASDF_FFMPEG_ENABLE="libx264 libx265 libvpx gpl"
-mise use -g nasm
-mise use -g ffmpeg
-
 # toki
 ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki
 
@@ -339,12 +326,7 @@ ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki
 # Before terminate
 #----------------------------------------------------------------------
 
-# Broot
-echo "Run broot"
 # fzf
 echo "Run ~/.local/share/mise/installs/fzf/latest/install"
 # Neovim
 echo "Run nvim"
-# Poetry
-echo mise use -g poetry
-echo mise x -- poetry config virtualenvs.in-project true
