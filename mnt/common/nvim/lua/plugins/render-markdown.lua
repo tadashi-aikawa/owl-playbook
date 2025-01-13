@@ -1,8 +1,9 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" },
-  ft = { "markdown", "markdown.mdx" },
+  ft = { "markdown", "markdown.mdx", "Avante" },
   opts = {
+    file_types = { "markdown", "Avante" },
     heading = {
       position = "inline",
     },
