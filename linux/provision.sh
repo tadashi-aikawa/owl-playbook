@@ -69,6 +69,8 @@ sudo systemctl enable chrony
 sudo systemctl start chrony
 # calendar
 sudo apt-get install -y ncal
+# watchexecで使用
+sudo apt-get install -y libc6
 # Neovimで使用
 sudo apt-get install -y wl-clipboard
 # nvim-treesitterで使用
@@ -243,7 +245,7 @@ mise use -g lazygit
 ln -snf "${COMMON_MNT}"/lazygit/config.yml ~/.config/lazygit/config.yml
 
 # Lazydocker
-mise use -g go:github.com/jesseduffield/lazydocker@0.24.1
+mise use -g lazydocker
 
 # Lazysql
 mise use -g go:github.com/jorgerojas26/lazysql@0.3.3
