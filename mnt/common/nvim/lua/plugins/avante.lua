@@ -1,10 +1,19 @@
 return {
   "yetone/avante.nvim",
-  event = "VeryLazy",
-  lazy = false,
-  -- 使うときだけ有効にする
-  enabled = true,
-  --
+  keys = {
+    {
+      "<Space>aa",
+      function()
+        require("avante").ask()
+      end,
+    },
+    {
+      "<Space>ae",
+      function()
+        require("avante").edit()
+      end,
+    },
+  },
   build = "make",
   dependencies = {
     "stevearc/dressing.nvim",
