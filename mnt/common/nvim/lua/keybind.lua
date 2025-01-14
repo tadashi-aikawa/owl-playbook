@@ -80,3 +80,12 @@ vim.api.nvim_create_autocmd("FileType", {
     end, opts)
   end,
 })
+
+-- avante.nvimのresults windowでESCを押すと閉じてしまう問題を防ぐ
+-- https://github.com/yetone/avante.nvim/issues/917
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "Avante",
+  callback = function()
+    vim.keymap.set({ "n", "o" }, "<ESC>", "<Nop>", { buffer = true })
+  end,
+})
