@@ -8,9 +8,9 @@ return {
       end,
     },
     {
-      "<Space>ae",
+      "<Space>at",
       function()
-        require("avante").edit()
+        require("avante").toggle()
       end,
     },
   },
@@ -26,14 +26,24 @@ return {
       mappings = {
         ask = "<Space>aa",
         edit = "<Space>ae",
+        focus = "<Space>af",
+        toggle = {
+          default = "<Space>at",
+        },
         --- @class AvanteConflictMappings
         submit = {
-          normal = "<CR>",
           insert = "<F12>", -- Ctrl+Enter
+        },
+        sidebar = {
+          switch_windows = "<Space>j",
+          reverse_switch_windows = "<Space>k",
         },
       },
       windows = {
         width = 40,
+        ask = {
+          floating = true,
+        },
       },
     }, require("envs.avante").opts)
   end,
