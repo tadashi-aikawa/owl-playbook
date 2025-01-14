@@ -12,7 +12,18 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
-    provider = "openai",
-    auto_suggestions_provider = "openai",
+    hints = { enabled = false },
+    mappings = {
+      ask = "<Space>aa",
+      edit = "<Space>ae",
+      --- @class AvanteConflictMappings
+      submit = {
+        normal = "<CR>",
+        insert = "<F12>", -- Ctrl+Enter
+      },
+    },
+    windows = {
+      width = 40,
+    },
   },
 }
