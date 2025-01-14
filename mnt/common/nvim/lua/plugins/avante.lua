@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   lazy = false,
   -- 使うときだけ有効にする
-  enabled = false,
+  enabled = true,
   --
   build = "make",
   dependencies = {
@@ -11,19 +11,21 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
   },
-  opts = {
-    hints = { enabled = false },
-    mappings = {
-      ask = "<Space>aa",
-      edit = "<Space>ae",
-      --- @class AvanteConflictMappings
-      submit = {
-        normal = "<CR>",
-        insert = "<F12>", -- Ctrl+Enter
+  opts = function(_, opts)
+    return vim.tbl_deep_extend("force", opts, {
+      hints = { enabled = false },
+      mappings = {
+        ask = "<Space>aa",
+        edit = "<Space>ae",
+        --- @class AvanteConflictMappings
+        submit = {
+          normal = "<CR>",
+          insert = "<F12>", -- Ctrl+Enter
+        },
       },
-    },
-    windows = {
-      width = 40,
-    },
-  },
+      windows = {
+        width = 40,
+      },
+    }, require("envs.avante").opts)
+  end,
 }
