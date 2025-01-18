@@ -52,14 +52,6 @@ sudo mkdir -p /etc/systemd/system/systemd-timesyncd.service.d
 sudo ln -snf "$LINUX_MNT"/systemd-timesyncd.service.d/override.conf /etc/systemd/system/systemd-timesyncd.service.d/override.conf
 
 #----------------------------------------------------------------------
-# 環境変数
-#----------------------------------------------------------------------
-
-# xterm-256colorをベースに波線などのエスケープに対応した独自のterminfo
-ensure_bashrc 'export TERM="owlterm-256color"'
-ensure_zshrc 'export TERM="owlterm-256color"'
-
-#----------------------------------------------------------------------
 # 依存関係インストール
 #----------------------------------------------------------------------
 sudo apt-get update -y
