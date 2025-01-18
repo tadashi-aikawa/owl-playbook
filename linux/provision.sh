@@ -308,7 +308,7 @@ mise use -g awscli
 mise use -g task
 
 # watchexec
-mise use -g watchexec@2.1.2 # 2.2.1がGLIBC_2.39エラーで動かない
+mise use -g watchexec
 
 # Marp CLI
 mise use -g marp-cli
