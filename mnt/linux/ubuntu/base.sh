@@ -1,5 +1,12 @@
 export PATH=${PATH}:~/bin
 
+# INFO: wl-copy を動かすため https://zenn.dev/junkor/articles/cf64671f4fc637
+# もし$XDG_RUNTIME_DIR/wayland-0 が存在しなかったら、/mnt/wslg/runtime_dir/wayland-0のシンボリックリンクを貼る
+if [ ! -S "$XDG_RUNTIME_DIR/wayland-0" ]; then
+  # wayland-0に加えて、wayland-0.lockというファイルもあるのでまとめてシンボリックリンクを貼る(※無くても一応動いた)
+  ln -s /mnt/wslg/runtime-dir/wayland-0* "$XDG_RUNTIME_DIR"
+fi
+
 alias i="cd"
 alias s="bat"
 alias e="/mnt/c/Windows/explorer.exe"
