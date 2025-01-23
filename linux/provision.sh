@@ -168,8 +168,7 @@ mise use -g node@22
 mise use -g bun
 
 # Deno
-# TODO: 2.1.7がリリースされるまで https://github.com/vim-denops/denops.vim/issues/433
-mise use -g deno@2.1.5
+mise use -g deno
 
 # Golang
 mise use -g go@1.22
