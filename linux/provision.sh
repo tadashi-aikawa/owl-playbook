@@ -88,6 +88,11 @@ sudo apt-get install -y \
   libx265-dev \
   libnuma-dev \
   libvpx-dev
+# Playwrightで使用
+sudo apt-get install -y \
+  libevent-2.1-7t64 \
+  libgstreamer-plugins-bad1.0-0 \
+  libflite1
 
 #----------------------------------------------------------------------
 # Shell

@@ -26,24 +26,25 @@ Usages:
 -----------------
 Available targets
 -----------------
-  | Target   | Language | Runtime    | PM    | Framework / Lib    | Linter    | Formatter |
-  | -------- | -------- | ---------- | ----- | ------------------ | --------- | --------- |
-  | node     | TS       | Node       | npm   | -                  | -         | prettierd |
-  | pnpm     | TS       | tsx(Node)  | pnpm  | -                  | Biome     | Biome     |
-  | deno     | TS       | Deno       | Deno  | -                  | Deno      | Deno      |
-  | bun      | TS       | Bun        | Bun   | -                  | Biome     | Biome     |
-  | jest     | TS       | Node       | pnpm  | Jest               | Biome     | Biome     |
-  | vue      | TS or JS | Bun        | Bun   | Vue                | ?(ESLint) | prettierd |
-  | nuxt     | TS       | *          | *     | Nuxt               | -         | prettierd |
-  | tailwind | TS       | Bun        | Bun   | Vue + TailwindCSS  | -         | prettierd |
-  | go       | Go       | -          | Go    | air                | -         | -         |
-  | go-sqlx  | Go       | -          | Go    | sqlx + mysql + air | -         | -         |
-  | rust     | Rust     | -          | Cargo | -                  | -         | -         |
-  | python   | Python   | Virtualenv | Pip   | -                  | -         | -         |
-  | nvim     | Lua      | Lua        |       | nvim               | -         | -         |
-  | nvimapp  | Lua      | Neovim     | lazy  | -                  | -         | -         |
-  | bash     | Bash     | Bash       |       | -                  | -         | -         |
-  | mysql    | TS       | Deno       | Deno  | MySQL + deno_mysql | Deno      | Deno      |
+  | Target     | Language | Runtime    | PM    | Framework / Lib    | Linter    | Formatter |
+  | --------   | -------- | ---------- | ----- | ------------------ | --------- | --------- |
+  | node       | TS       | Node       | npm   | -                  | -         | prettierd |
+  | pnpm       | TS       | tsx(Node)  | pnpm  | -                  | Biome     | Biome     |
+  | deno       | TS       | Deno       | Deno  | -                  | Deno      | Deno      |
+  | bun        | TS       | Bun        | Bun   | -                  | Biome     | Biome     |
+  | jest       | TS       | Node       | pnpm  | Jest               | Biome     | Biome     |
+  | vue        | TS or JS | Bun        | Bun   | Vue                | ?(ESLint) | prettierd |
+  | nuxt       | TS       | *          | *     | Nuxt               | -         | prettierd |
+  | tailwind   | TS       | Bun        | Bun   | Vue + TailwindCSS  | -         | prettierd |
+  | playwright | TS       | Node       | pnpm  | -                  | -         | Biome     |
+  | go         | Go       | -          | Go    | air                | -         | -         |
+  | go-sqlx    | Go       | -          | Go    | sqlx + mysql + air | -         | -         |
+  | rust       | Rust     | -          | Cargo | -                  | -         | -         |
+  | python     | Python   | Virtualenv | Pip   | -                  | -         | -         |
+  | nvim       | Lua      | Lua        |       | nvim               | -         | -         |
+  | nvimapp    | Lua      | Neovim     | lazy  | -                  | -         | -         |
+  | bash       | Bash     | Bash       |       | -                  | -         | -         |
+  | mysql      | TS       | Deno       | Deno  | MySQL + deno_mysql | Deno      | Deno      |
   "
 }
 
@@ -287,6 +288,37 @@ if [[ $command == "tailwind" ]]; then
 
 $ cd ${path}
 $ bun dev
+"
+  exit 0
+
+fi
+
+# -------------------------------------------
+# playwright
+# -------------------------------------------
+
+if [[ $command == "playwright" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  echo "⏎ -> ⏎ -> ⏎ -> n -> ⏎"
+  pnpm create playwright
+  pnpm exec playwright install chromium
+  rm -rf tests-examples
+
+  pnpm add -D @biomejs/biome
+  pnpm exec biome init
+  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
+  mv biome.json.tmp biome.json
+
+  cp -r "${TEMPLATE_DIR}"/playwright/* .
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ pnpm exec playwright test
 "
   exit 0
 
