@@ -1,7 +1,7 @@
 return {
   "romgrk/barbar.nvim",
   dependencies = { "nvim-web-devicons" },
-  event = "VeryLazy",
+  lazy = false,
   opts = {
     animation = false,
     sidebar_filetypes = {
