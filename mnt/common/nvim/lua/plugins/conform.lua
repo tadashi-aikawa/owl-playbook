@@ -9,6 +9,7 @@ return {
         go = { "goimports" },
         bash = { "shfmt" },
         python = { "ruff_organize_imports", "ruff_fix" },
+        sql = { "sleek" },
 
         -- Web
         typescript = web_formatter,

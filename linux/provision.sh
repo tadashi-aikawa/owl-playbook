@@ -233,6 +233,10 @@ mise use -g npm:@vue/language-server
 # Svelte
 mise use -g npm:svelte-language-server
 
+# SQL
+mise use -g go:github.com/sqls-server/sqls
+mise use -g cargo:sleek
+
 #----------------------------------------------------------------------
 # TUI Tools
 #----------------------------------------------------------------------

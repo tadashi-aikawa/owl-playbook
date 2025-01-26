@@ -137,6 +137,14 @@ return {
     lspconfig.svelte.setup({ capabilities = capabilities })
     lspconfig.jdtls.setup({ capabilities = capabilities })
     lspconfig.gleam.setup({ capabilities = capabilities })
+
+    lspconfig.sqls.setup({
+      capabilities = capabilities,
+      on_attach = function(client, bufnr)
+        require("sqls").on_attach(client, bufnr)
+      end,
+    })
+
     lspconfig.denols.setup({
       capabilities = capabilities,
       root_dir = util.root_pattern("deno.json", "deno.jsonc"),
