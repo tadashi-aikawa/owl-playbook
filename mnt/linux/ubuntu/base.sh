@@ -49,3 +49,6 @@ alias ld='lazydocker'
 alias lq='lazysql'
 
 alias cpwd='pwd | xsel -bi'
+
+# shellcheck disable=SC2154
+alias zvim='dst=$(nvim --headless -c "lua for _, f in ipairs(vim.tbl_filter(function(file) return vim.fn.filereadable(file) == 1 end, vim.v.oldfiles)) do io.stdout:write(f .. \"\n\") end" -c "qa" | fzf --no-sort) && [[ -n $dst ]] && nvim $dst'
