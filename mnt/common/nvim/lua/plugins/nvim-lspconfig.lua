@@ -8,14 +8,6 @@ return {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
-    {
-      "MattiasMTS/cmp-dbee",
-      dependencies = {
-        { "kndndrj/nvim-dbee" },
-      },
-      ft = "sql",
-      opts = {},
-    },
     { "b0o/schemastore.nvim" },
     { "onsails/lspkind.nvim" },
   },
@@ -75,7 +67,6 @@ return {
         { name = "buffer" },
         { name = "path" },
         { name = "lazydev", group_index = 0 },
-        { name = "cmp-dbee" },
       }),
       formatting = {
         format = function(entry, item)
