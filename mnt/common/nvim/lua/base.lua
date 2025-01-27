@@ -41,3 +41,10 @@ vim.api.nvim_create_autocmd({ "WinEnter", "FocusGained" }, {
   pattern = "*",
   command = "checktime",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.cmd("wincmd J")
+  end,
+})
