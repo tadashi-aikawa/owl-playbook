@@ -4,6 +4,7 @@ return {
     "nvim-lua/plenary.nvim",
     "danielfalk/smart-open.nvim",
     "nvim-telescope/telescope-live-grep-args.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
   },
   keys = {
     { "<C-j>f", ":Telescope find_files find_command=rg,--files,--hidden,--glob,!*.git <CR>", silent = true },
@@ -61,10 +62,14 @@ return {
         live_grep_args = {
           auto_quoting = false,
         },
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown({}),
+        },
       },
     })
 
     require("telescope").load_extension("smart_open")
     require("telescope").load_extension("live_grep_args")
+    require("telescope").load_extension("ui-select")
   end,
 }
