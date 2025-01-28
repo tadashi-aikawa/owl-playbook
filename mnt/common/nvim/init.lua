@@ -1,4 +1,5 @@
 require("base")
+require("autocmds")
 require("clipboard")
 require("plugin")
 require("appearance")
