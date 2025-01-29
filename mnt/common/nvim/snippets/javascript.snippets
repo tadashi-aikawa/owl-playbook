@@ -1,0 +1,118 @@
+#---------------------------------
+# Printデバッグ
+#---------------------------------
+snippet _cl console.log()
+  console.log(${0})
+
+snippet _clt console.log(👺)
+  console.log("👺 ${0}")
+
+# -----------------------------------
+# 定義
+# -----------------------------------
+
+snippet _function "function"
+  function ${1:funcName}(${2:args1, args2}) {
+    ${0:// FIXME: 実装}
+  }
+
+snippet _exfunction "export function"
+  export function ${1:funcName}(${2:args1, args2}) {
+    ${0:// FIXME: 実装}
+  }
+
+snippet _allowfunction "allow function"
+  (${1:x}) => {
+    ${0:// FIXME: 実装}
+  }
+
+snippet _exhaustiveError "ExhaustiveError"
+  export class ExhaustiveError extends Error {
+    constructor(value, message = \`Unsupported type: \${value}\`) {
+      super(message);
+    }
+  }
+
+# -----------------------------------
+# docs
+# -----------------------------------
+
+snippet _doc "関数のdoc 簡易版"
+  /**
+   * ${0:description}
+   */
+
+snippet _docd "関数のdoc 詳細版"
+  /**
+   * ${0:description}
+   *
+   * \`\`\`js
+   * // example
+   * \`\`\`
+   */
+
+# -----------------------------------
+# 制御構文
+# -----------------------------------
+
+snippet _forof "for each"
+  for (const ${2:value} of ${1:values}) {
+    ${0:// FIXME: 実装}
+  }
+
+snippet _fori "for i"
+  for (let i = 0; i < ${1:values.length}; i++) {
+    ${0:// FIXME: 実装}
+  }
+
+snippet _switch "switch"
+  switch (${1:value}) {
+    case ${2:"item1"}:
+      ${0:// FIXME: 実装}
+      break;
+    default:
+      throw new ExhaustiveError($1);
+  }
+
+# -----------------------------------
+# テストスニペット
+# -----------------------------------
+
+snippet _buntestimport "Description" b
+  import { describe, test, expect } from "bun:test";
+
+snippet _test "testコード" b
+  test("${1:test name}", () => {
+    expect(${2:actual}).toBe(${0:expected});
+  });
+
+# -----------------------------------
+# Deno
+# -----------------------------------
+
+snippet _deno_parameterized_test "DenoのParameterized test" b
+  export function parameterizedTest(name, cases, testFn, toTitle) {
+    for (const testCase of cases) {
+      Deno.test(
+        toTitle?.(name, testCase) ?? \`\${name} -> \${JSON.stringify(testCase)}\`,
+        () => {
+          testFn(testCase);
+        },
+      );
+    }
+  }
+
+snippet _deno_parameterized_testcase "DenoのParameterized testのテストケース" b
+  parameterizedTest(
+    "$1",
+    // deno-fmt-ignore
+    // prettier-ignore
+    //   ${2:args1}         | ${3:args2}     | expected
+    [
+      [  "args1"       , "args2"   , "expected" ],
+      [  "args1"       , "args2"   , "expected" ],
+    ],
+    ([$2, $3, expected]) => {
+      assertEquals($1($2, $3), expected);
+    },
+  );
