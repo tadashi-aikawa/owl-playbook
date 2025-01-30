@@ -161,6 +161,7 @@ mkdir -p ~/.config/nvim
 ln -snf "${COMMON_MNT}"/nvim/lua ~/.config/nvim/lua
 ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
 ln -snf "${COMMON_MNT}"/nvim/snippets ~/.config/nvim/snippets
+ln -snf "${COMMON_MNT}"/nvim/luasnippets ~/.config/nvim/luasnippets
 
 #----------------------------------------------------------------------
 # Languages / Runtimes / LSP
