@@ -2,3 +2,10 @@ snippet _doc "function document"
   ---@param ${1:param_name} ${2:type}
   ---@return ${0:type}
 
+snippet _ignore_stylua "ignore stylua"
+  -- stylua: ignore
+
+snippet _ignore_stylua_range "ignore stylua range"
+  -- stylua: ignore start
+  ${0}
+  -- stylua: ignore end
