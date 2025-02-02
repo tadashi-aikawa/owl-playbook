@@ -35,6 +35,7 @@ Available targets
   | jest       | TS       | Node       | pnpm  | Jest               | Biome     | Biome     |
   | vue        | TS or JS | Bun        | Bun   | Vue                | ?(ESLint) | prettierd |
   | nuxt       | TS       | *          | *     | Nuxt               | -         | prettierd |
+  | tailwind3  | TS       | Bun        | Bun   | Vue + TailwindCSS3 | -         | prettierd |
   | tailwind   | TS       | Bun        | Bun   | Vue + TailwindCSS  | -         | prettierd |
   | playwright | TS       | Node       | pnpm  | -                  | -         | Biome     |
   | go         | Go       | -          | Go    | air                | -         | -         |
@@ -268,6 +269,31 @@ $ bun dev -o
 fi
 
 # -------------------------------------------
+# tailwind3
+# -------------------------------------------
+
+if [[ $command == "tailwind3" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  # https://tailwindcss.tw/docs/guides/vite
+  bun create vite "${path}" --template vue-ts
+  cd "${path}"
+  bun add --dev tailwindcss@3 postcss autoprefixer
+  bun x tailwindcss init -p
+
+  cp -r "${TEMPLATE_DIR}"/tailwind3/* .
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ bun dev
+"
+  exit 0
+
+fi
+
+# -------------------------------------------
 # tailwind
 # -------------------------------------------
 
@@ -277,9 +303,7 @@ if [[ $command == "tailwind" ]]; then
   # https://tailwindcss.tw/docs/guides/vite
   bun create vite "${path}" --template vue-ts
   cd "${path}"
-  bun i
-  bun add --dev tailwindcss postcss autoprefixer
-  bun x tailwindcss init -p
+  bun add tailwindcss @tailwindcss/vite
 
   cp -r "${TEMPLATE_DIR}"/tailwind/* .
 
