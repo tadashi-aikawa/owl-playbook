@@ -122,12 +122,6 @@ return {
 
     lspconfig.tailwindcss.setup({
       capabilities = capabilities,
-      root_dir = util.root_pattern(
-        "tailwind.config.js",
-        "tailwind.config.cjs",
-        "tailwind.config.mjs",
-        "tailwind.config.ts"
-      ),
     })
 
     lspconfig.lua_ls.setup({
