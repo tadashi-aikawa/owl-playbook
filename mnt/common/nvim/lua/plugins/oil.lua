@@ -8,7 +8,7 @@ return {
     keymaps = {
       ["<C-s>"] = "actions.select_split",
       ["<F12>"] = "actions.select_vsplit",
-      ["<C-o>"] = { "actions.send_to_qflist", opts = { action = "a", only_matching_search = true } },
+      -- ["<C-o>"] = { "actions.send_to_qflist", opts = { action = "a", only_matching_search = true } },
     },
     view_options = {
       show_hidden = true,
