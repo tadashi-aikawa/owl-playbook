@@ -79,6 +79,12 @@ function section() {
   echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
 }
 
+function edit_biome_json() {
+  # 削除しないように交互に上書きする
+  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
+  jq '.formatter.indentStyle|="space"' <biome.json.tmp >biome.json
+}
+
 # -------------------------------------------
 # bun
 # -------------------------------------------
@@ -90,8 +96,7 @@ if [[ $command == "bun" ]]; then
   bun init . -y
   bun add -d @biomejs/biome
   bun biome init
-  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
-  mv biome.json.tmp biome.json
+  edit_biome_json
 
   echo "
 🚀 Try
@@ -143,8 +148,7 @@ if [[ $command == "pnpm" ]]; then
   pnpm add -D typescript tsx @types/node @tsconfig/recommended @biomejs/biome
 
   pnpm exec biome init
-  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
-  mv biome.json.tmp biome.json
+  edit_biome_json
 
   pnpm pkg set scripts.dev="tsx watch ./index.ts"
   pnpm pkg set scripts.check="tsc --noEmit --watch"
@@ -198,8 +202,7 @@ if [[ $command == "jest" ]]; then
     @babel/preset-typescript @jest/globals
 
   pnpm exec biome init
-  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
-  mv biome.json.tmp biome.json
+  edit_biome_json
 
   pnpm pkg set scripts.test="jest"
   pnpm pkg set scripts.test:watch="jest --watchAll"
@@ -333,8 +336,7 @@ if [[ $command == "playwright" ]]; then
 
   pnpm add -D @biomejs/biome
   pnpm exec biome init
-  jq '.linter.rules.correctness.noUnusedImports|="warn"' <biome.json >biome.json.tmp
-  mv biome.json.tmp biome.json
+  edit_biome_json
 
   cp -r "${TEMPLATE_DIR}"/playwright/* .
 
