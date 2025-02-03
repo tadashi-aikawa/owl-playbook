@@ -29,7 +29,7 @@ return {
         section_separators = {},
         disabled_filetypes = {
           statusline = { "no-neck-pain" },
-          winbar = { "no-neck-pain", "Avante", "AvanteInput" },
+          winbar = { "no-neck-pain", "Avante", "AvanteInput", "codecompanion" },
         },
       },
       winbar = {
