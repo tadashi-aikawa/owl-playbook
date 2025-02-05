@@ -19,6 +19,8 @@ return {
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,noinsert",
+        -- LuaSnipが{}で暴発するのを防ぐ & 1文字の補完は必要ない
+        keyword_length = 2,
       },
       snippet = {
         expand = function(args)
