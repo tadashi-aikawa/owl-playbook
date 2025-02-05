@@ -29,11 +29,13 @@ return {
         section_separators = {},
         disabled_filetypes = {
           statusline = { "no-neck-pain" },
-          winbar = { "no-neck-pain", "Avante", "AvanteInput", "codecompanion" },
+          winbar = { "no-neck-pain", "Avante", "AvanteInput" },
         },
       },
       winbar = {
-        lualine_a = {},
+        lualine_a = {
+          { require("lualine/cc-component") },
+        },
         lualine_b = {
           { "filename", file_status = false, newfile_status = false, path = 1 },
         },
@@ -56,7 +58,9 @@ return {
         },
       },
       inactive_winbar = {
-        lualine_a = {},
+        lualine_a = {
+          { require("lualine/cc-component") },
+        },
         lualine_b = {
           { "filename", file_status = false, newfile_status = false, path = 1 },
         },
