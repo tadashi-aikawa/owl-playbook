@@ -17,10 +17,23 @@ return {
     require("luasnip.loaders.from_lua").lazy_load()
 
     cmp.setup({
+      enabled = function()
+        local line = vim.api.nvim_get_current_line()
+        local col = vim.fn.col(".") - 1
+        if col <= 0 then
+          return true
+        end
+
+        local char_before_cursor = line:sub(col, col)
+        -- LuaSnipが暴発するので括弧に対しては補完が出ないようにする
+        if char_before_cursor:match("[{}()%[%]]") then
+          return false
+        end
+
+        return true
+      end,
       completion = {
         completeopt = "menu,menuone,noinsert",
-        -- LuaSnipが{}で暴発するのを防ぐ & 1文字の補完は必要ない
-        keyword_length = 2,
       },
       snippet = {
         expand = function(args)
