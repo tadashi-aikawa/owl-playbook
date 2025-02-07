@@ -86,6 +86,11 @@ snippet _test "testコード" b
     expect(${2:actual}).toBe(${0:expected});
   });
 
+snippet _teststep "Playwrightのtest.step" b
+  await test.step("${1:step name}", async () => {
+    ${0}
+  });
+
 # -----------------------------------
 # Deno
 # -----------------------------------
