@@ -52,6 +52,7 @@ return {
       { name = "times", id = "C1J80C5MF" },
       { name = "task", id = "C06J0RG1V2L" },
       { name = "jh", id = "C072W42TPR7" },
+      { name = "info_jh", id = "C06HXFVFZ4M" },
       { name = "vim", id = "C8NFWKY56" },
       { name = "ts", id = "C8K77FCH2" },
     },
