@@ -250,7 +250,7 @@ ln -snf "${COMMON_MNT}"/lazygit/config.yml ~/.config/lazygit/config.yml
 mise use -g lazydocker
 
 # Lazysql
-mise use -g go:github.com/jorgerojas26/lazysql@0.3.3
+mise use -g go:github.com/jorgerojas26/lazysql@0.3.4
 
 #----------------------------------------------------------------------
 # CLI Tools
