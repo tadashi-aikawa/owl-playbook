@@ -36,7 +36,7 @@ function normalize(row: Row, fieldInfos: FieldInfo[]): Row {
       case 10: // date は 2024-12-03 形式に
         return format(v as Date, "yyyy-MM-dd");
       case 12: // date は 2024-12-03 11:35:00 形式に
-        return format(v as Date, "yyyy-MM-dd hh:mm:ss");
+        return format(v as Date, "yyyy-MM-dd HH:mm:ss");
       default:
         return v;
     }
