@@ -90,6 +90,13 @@ snippet _test "testコード" b
 # Deno
 # -----------------------------------
 
+snippet _deno_test "Denoのテスト" b
+  import { expect } from "jsr:@std/expect";
+  Deno.test("test", () => {
+    expect(2).toBe(2);
+    expect({ id: 1 }).toEqual({ id: 1 });
+  })
+
 snippet _deno_parameterized_test "DenoのParameterized test" b
   export function parameterizedTest(name, cases, testFn, toTitle) {
     for (const testCase of cases) {
