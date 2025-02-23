@@ -53,15 +53,7 @@ return {
     end
 
     require("obsidian").setup({
-      workspaces = {
-        {
-          name = "pkm",
-          path = "~/work/pkm",
-          overrides = {
-            notes_subdir = "Notes",
-          },
-        },
-      },
+      workspaces = require("envs.obsidian").workspaces,
 
       new_notes_location = "notes_subdir",
       -- 見た目の変更はしない
