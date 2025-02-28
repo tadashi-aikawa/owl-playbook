@@ -68,10 +68,23 @@ return {
       follow_url_func = function(url)
         vim.fn.jobstart({ "windows-chrome", url })
       end,
-      -- <C-]>でリンク先を開く
       mappings = {
         ["<C-]>"] = {
           action = forward_seek_gf,
+          opts = { noremap = false, expr = false, buffer = true },
+        },
+        ["<M-]>"] = {
+          action = function()
+            vim.cmd([[ vsplit ]])
+            forward_seek_gf()
+          end,
+          opts = { noremap = false, expr = false, buffer = true },
+        },
+        ["g<C-]>"] = {
+          action = function()
+            vim.cmd([[ split ]])
+            forward_seek_gf()
+          end,
           opts = { noremap = false, expr = false, buffer = true },
         },
         ["<C-j>n"] = {
@@ -105,14 +118,5 @@ return {
         },
       },
     })
-
-    vim.keymap.set("n", "<M-]>", function()
-      vim.cmd([[ vsplit ]])
-      forward_seek_gf()
-    end, { silent = true })
-    vim.keymap.set("n", "g<C-]>", function()
-      vim.cmd([[ split ]])
-      forward_seek_gf()
-    end, { silent = true })
   end,
 }
