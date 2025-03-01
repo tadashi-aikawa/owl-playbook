@@ -8,7 +8,7 @@ return {
   keys = {
     { "gsw", ":GhostwriterWrite<CR>", silent = true },
     { "gsp", ":GhostwriterPost ", mode = { "v" } },
-    { "gsm", ":GhostwriterRecentMessages " },
+    { "gsm", ":GhostwriterRecentMessages" },
     { "gsy", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
   },
   opts = {
