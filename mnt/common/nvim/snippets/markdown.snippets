@@ -192,10 +192,25 @@ snippet _slide-3topics "[Slide] 3つのトピックを横並び"
       </div>
     </div>
 
-snippet _slide-definition-and-site "[Slide] 定義 & サイト"
+snippet _slide-definition-and-site-iframe "[Slide] 定義 & サイト iframe"
     ## XXXとはYYY
 
     <iframe src="${1:URL}" width="100%" height="540" frameborder="0" allowfullscreen class="mt-6"></iframe>
+
+    <footer>
+
+    ${0:Markdown Link}
+
+    </footer>
+
+snippet _slide-definition-and-site-image "[Slide] 定義 & サイト image"
+    ## XXXとは
+
+    <div class="drop-shadow">
+
+    ![center h:540](./resources/${1:image_file})
+
+    </div>
 
     <footer>
 
