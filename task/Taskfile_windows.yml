@@ -128,12 +128,12 @@ tasks:
   backup:work:
     desc: 仕事用のバックアップ
     cmds:
-      - cp ~/.ssh/* ~/backup/secrets/.ssh/
-      - rm -rf ~/backup/pkm
-      - cp -r '\\wsl.localhost\Ubuntu\home\tadashi-aikawa\work\pkm' ~/backup/pkm
+      - cp $env:HOMEPATH/.ssh/* $env:HOMEPATH/backup/secrets/.ssh/
+      - rm -rf $env:HOMEPATH/backup/pkm
+      - cp -r '\\wsl.localhost\Ubuntu\home\tadashi-aikawa\work\pkm' $env:HOMEPATH/backup/pkm
       - |
-        cd ~/tmp &&
-        7z a -p backup.zip ~/backup &&
+        cd $env:HOMEPATH/tmp &&
+        7z a -p backup.zip $env:HOMEPATH/backup &&
         e .
 
   backup:private:
