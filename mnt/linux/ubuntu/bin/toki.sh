@@ -35,6 +35,7 @@ Available targets
   | jest       | TS       | Node       | pnpm  | Jest               | Biome     | Biome     |
   | vue        | TS or JS | Bun        | Bun   | Vue                | ?(ESLint) | prettierd |
   | nuxt       | TS       | *          | *     | Nuxt               | -         | prettierd |
+  | html       | HTML     | Bun        | Bun   | TailwindCSS        | -         | -         |
   | tailwind3  | TS       | Bun        | Bun   | Vue + TailwindCSS3 | -         | prettierd |
   | tailwind   | TS       | Bun        | Bun   | Vue + TailwindCSS  | -         | prettierd |
   | playwright | TS       | Node       | pnpm  | -                  | -         | Biome     |
@@ -266,6 +267,26 @@ if [[ $command == "nuxt" ]]; then
 
 $ cd ${path}
 $ bun dev -o
+"
+  exit 0
+
+fi
+
+# -------------------------------------------
+# html
+# -------------------------------------------
+if [[ $command == "html" ]]; then
+  path="${1:?'pathは必須です'}"
+
+  mkdir -p "$path"
+  cd "$path"
+  cp -r "${TEMPLATE_DIR}"/html/* .
+
+  echo "
+🚀 Try
+
+$ cd ${path}
+$ bun index.html
 "
   exit 0
 
