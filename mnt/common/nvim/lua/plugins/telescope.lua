@@ -22,6 +22,7 @@ return {
     { "<C-j>:", ":Telescope command_history<CR>", silent = true },
     { "<C-j>s", ":Telescope lsp_dynamic_workspace_symbols<CR>", silent = true },
     { "<C-j>c", ":lua require'telescope.builtin'.git_status{}<CR>", silent = true },
+    { "<C-j>j", ":lua require'telescope.builtin'.resume{}<CR>", silent = true },
   },
   config = function()
     local actions = require("telescope.actions")
