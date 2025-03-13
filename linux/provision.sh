@@ -327,6 +327,9 @@ mise use -g marp-cli
 # toki
 ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki
 
+# img2sixel
+sudo apt install libsixel-bin
+
 #----------------------------------------------------------------------
 # Before terminate
 #----------------------------------------------------------------------
