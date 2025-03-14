@@ -77,6 +77,10 @@ return {
       capabilities = capabilities,
       settings = {
         yaml = {
+          customTags = {
+            "!ENV scalar",
+            "!ENV sequence",
+          },
           schemaStore = {
             enable = false,
             url = "",
