@@ -25,3 +25,13 @@ customCommands:
     description: Force push safely
     context: global
     command: "git push --force-with-lease --force-if-includes origin HEAD"
+  - key: "<a-enter>"
+    context: files
+    description: Open file diff in Neovim
+    command: "nvim -d <(git show HEAD:{{.SelectedFile.Name}}) $(git rev-parse --show-toplevel)/{{.SelectedFile.Name}}"
+    subprocess: true
+  - key: "<a-enter>"
+    context: commitFiles
+    description: Open commit diff in Neovim
+    command: "git show {{.SelectedLocalCommit.Sha}}^1:{{.SelectedCommitFile.Name}} > /tmp/prev_$(basename {{.SelectedCommitFile.Name}}) && nvim -d /tmp/prev_$(basename {{.SelectedCommitFile.Name}}) $(git rev-parse --show-toplevel)/{{.SelectedCommitFile.Name}} && rm /tmp/prev_$(basename {{.SelectedCommitFile.Name}})"
+    subprocess: true
