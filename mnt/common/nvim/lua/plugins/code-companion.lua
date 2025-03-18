@@ -23,7 +23,11 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
+    "j-hui/fidget.nvim",
   },
+  init = function()
+    require("codecompanion.fidget-spinner"):init()
+  end,
   opts = function(_, opts)
     -- 環境に依存しない設定
     local base_opts = {
