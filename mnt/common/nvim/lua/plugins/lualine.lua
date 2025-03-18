@@ -33,9 +33,7 @@ return {
         },
       },
       winbar = {
-        lualine_a = {
-          { require("lualine/cc-component") },
-        },
+        lualine_a = {},
         lualine_b = {
           { "filename", file_status = false, newfile_status = false, path = 1 },
         },
@@ -58,9 +56,7 @@ return {
         },
       },
       inactive_winbar = {
-        lualine_a = {
-          { require("lualine/cc-component") },
-        },
+        lualine_a = {},
         lualine_b = {
           { "filename", file_status = false, newfile_status = false, path = 1 },
         },
@@ -85,7 +81,7 @@ return {
       sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {},
+        lualine_c = { require("lualine/cc-component") },
         lualine_x = { { "filename", path = 3 } },
         lualine_y = { "encoding", "fileformat" },
         lualine_z = {},
