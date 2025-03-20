@@ -2,7 +2,7 @@ return {
   "olimorris/codecompanion.nvim",
   keys = {
     {
-      "<Space>cf",
+      "<Space>cp",
       ":CodeCompanion<CR>",
       mode = { "n", "v" },
       silent = true,
