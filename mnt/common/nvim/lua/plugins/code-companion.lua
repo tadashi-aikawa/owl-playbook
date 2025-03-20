@@ -19,6 +19,14 @@ return {
       mode = { "n", "v" },
       silent = true,
     },
+    {
+      "<Space>ct",
+      function()
+        require("codecompanion").prompt("trans_to_en")
+      end,
+      mode = { "v" },
+      silent = true,
+    },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -51,6 +59,32 @@ return {
           keymaps = {
             send = {
               modes = { n = "<F12>", i = "<F12>" }, -- Ctrl+Enter
+            },
+          },
+        },
+      },
+      prompt_library = {
+        ["Translate to English"] = {
+          strategy = "inline",
+          description = "選択したテキストを英語に翻訳します",
+          opts = {
+            short_name = "trans_to_en",
+            modes = { "v" },
+            adapter = {
+              name = "copilot",
+              model = "gpt-4o",
+            },
+            -- INFO: コードを見るとstrategy = "inline" で対応してなさそう
+            -- ignore_system_prompt = true,
+          },
+          prompts = {
+            {
+              role = "system",
+              content = "あなたは優れた開発者であり、日本語と英語のプロ翻訳者でもあります。",
+            },
+            {
+              role = "user",
+              content = "<user_prompt>選択したコードドキュメントを英語に変換してください。</user_prompt>",
             },
           },
         },
