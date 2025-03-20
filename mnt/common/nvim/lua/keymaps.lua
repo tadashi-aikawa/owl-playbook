@@ -29,6 +29,27 @@ vim.keymap.set("n", "<C-w>t", ":tab split<CR>", { silent = true })
 -- 行補完
 vim.keymap.set("i", "<C-l>", "<C-x><C-l>", { silent = true })
 
+-- diff
+local function update_diff_maps()
+  local buf = vim.api.nvim_get_current_buf()
+
+  if vim.o.diff then
+    vim.keymap.set("n", "<Space>k", "[c", { buffer = buf, desc = "前の差分に移動" })
+    vim.keymap.set("n", "<Space>j", "]c", { buffer = buf, desc = "次の差分に移動" })
+  else
+    pcall(function()
+      vim.keymap.del("n", "<Space>k", { buffer = buf })
+    end)
+    pcall(function()
+      vim.keymap.del("n", "<Space>j", { buffer = buf })
+    end)
+  end
+end
+vim.api.nvim_create_autocmd({ "BufEnter", "OptionSet" }, {
+  pattern = { "*", "diff" },
+  callback = update_diff_maps,
+})
+
 -- lazy.nvim
 vim.keymap.set("n", "glp", ":Lazy profile<CR>", { silent = true })
 vim.keymap.set("n", "gls", ":Lazy sync<CR>", { silent = true })
