@@ -3,10 +3,6 @@ return {
   cmd = "Trouble",
   keys = {
     {
-      "<Space>w",
-      "<cmd>Trouble diagnostics toggle<cr>",
-    },
-    {
       "<C-j>h",
       "<cmd>Trouble lsp_references<cr>",
     },
