@@ -105,7 +105,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         scope = "cursor",
         focusable = true,
         border = "rounded",
-        source = "always",
       })
     end, opts)
 
