@@ -89,10 +89,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<C-j>2", vim.lsp.buf.rename, opts)
     -- Code action
     vim.keymap.set({ "n", "i" }, "<M-CR>", "<cmd>Lspsaga code_action<CR>", opts)
+
     -- 次の診断へ移動
-    vim.keymap.set("n", "<M-j>", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+    vim.keymap.set("n", "<M-j>", function()
+      vim.diagnostic.goto_next({ float = false })
+    end, opts)
     -- 前の診断へ移動
-    vim.keymap.set("n", "<M-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+    vim.keymap.set("n", "<M-k>", function()
+      vim.diagnostic.goto_prev({ float = false })
+    end, opts)
+
+    -- 診断をフローティングウィンドウで表示する
+    vim.keymap.set("n", "<M-w>", function()
+      vim.diagnostic.open_float({
+        scope = "cursor",
+        focusable = true,
+        border = "rounded",
+        source = "always",
+      })
+    end, opts)
 
     -- LSP再起動
     vim.keymap.set("n", "<C-j>r", "<cmd>LspRestart<CR>", opts)
