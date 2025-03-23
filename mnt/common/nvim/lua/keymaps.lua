@@ -3,6 +3,8 @@
 -----------------------------------------------------
 -- プラグインのキーバインドはプラグインの方で行う
 
+vim.g.maplocalleader = ","
+
 -- Hippie completion
 vim.keymap.set("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 
@@ -20,7 +22,7 @@ vim.keymap.set("n", "<Space>e", ":BufferPick<CR>", { silent = true })
 vim.keymap.set("n", "<Space>l", ":BufferNext<CR>", { silent = true })
 vim.keymap.set("n", "<Space>h", ":BufferPrevious<CR>", { silent = true })
 vim.keymap.set("n", "<Space>q", ":Bdelete<CR>", { silent = true })
-vim.keymap.set("n", "<Space>c", ":BufferCloseAllButVisible<CR>", { silent = true })
+vim.keymap.set("n", "<Space>w", ":BufferCloseAllButVisible<CR>", { silent = true })
 
 -- windows split
 vim.keymap.set("n", "<C-w><F12>", ":vsplit<CR>", { silent = true })
