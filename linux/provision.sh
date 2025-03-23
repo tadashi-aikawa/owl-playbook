@@ -215,7 +215,7 @@ mise use -g stylua
 
 # Prettier
 mise use -g npm:@fsouza/prettierd
-mise use -g npm:prettier # better-ts-errors.nvim で使う
+mise use -g npm:prettier
 
 # HTML/CSS/JSON LSP
 mise use -g npm:vscode-langservers-extracted

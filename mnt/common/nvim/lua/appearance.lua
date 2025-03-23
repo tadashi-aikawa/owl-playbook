@@ -43,8 +43,6 @@ vim.api.nvim_set_hl(0, "GitGraphAuthor", { fg = "#45cd78" })
 vim.api.nvim_set_hl(0, "GitGraphBranchName", { bg = "#888888", fg = "#efef33" })
 vim.api.nvim_set_hl(0, "GitGraphBranchTag", { bg = "#3d59a1" })
 vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
--- better-ts-errors.nvim (fork & 次作ハイライトグループ)
-vim.api.nvim_set_hl(0, "BetterTsErrorsPrettified", { fg = "#ef7878" })
 -- render-markdown
 vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#070707" })
 
