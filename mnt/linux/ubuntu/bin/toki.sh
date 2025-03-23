@@ -472,7 +472,7 @@ if [[ $command == "nvim" ]]; then
 🚀 Try
 
 $ cd ${path}
-$ mise watch
+$ mise watch dev
 "
   exit 0
 fi
@@ -515,7 +515,7 @@ if [[ $command == "bash" ]]; then
 🚀 Try
 
 $ cd ${path}
-$ mise watch
+$ mise watch dev
 "
   exit 0
 fi
