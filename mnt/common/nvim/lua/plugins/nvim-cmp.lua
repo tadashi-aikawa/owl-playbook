@@ -6,6 +6,7 @@ return {
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
+    { "uga-rosa/cmp-dictionary" },
     { "b0o/schemastore.nvim" },
     { "onsails/lspkind.nvim" },
   },
@@ -90,6 +91,27 @@ return {
           return item
         end,
       },
+    })
+
+    -- markdownの場合だけdictionaryを有効にする
+    cmp.setup.filetype("markdown", {
+      sources = cmp.config.sources({
+        {
+          name = "nvim_lsp",
+        },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
+        {
+          name = "dictionary",
+          keyword_length = 2,
+        },
+      }),
+    })
+
+    require("cmp_dictionary").setup({
+      paths = { vim.fn.stdpath("config") .. "/lua/envs/cmp-dictionary.txt" },
+      exact_length = 2,
     })
 
     cmp.setup.cmdline(":", {
