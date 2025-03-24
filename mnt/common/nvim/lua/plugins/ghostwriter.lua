@@ -17,7 +17,7 @@ return {
         { mark = "~", emoji = "loading" },
         { mark = "x", emoji = "ok_green" },
         { mark = "_", emoji = "circle_to_be_continued" },
-        { mark = "-", emoji = "circle-failure" },
+        { mark = "-", emoji = "no_entry" },
         { mark = " ", emoji = "circle-success" },
       },
     }, require("envs.ghostwriter").opts)

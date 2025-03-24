@@ -18,7 +18,7 @@ return {
       custom = {
         progress = { raw = "[~]", rendered = "󱥸 ", highlight = "RenderMarkdownUnchecked" },
         todo = { raw = "[_]", rendered = "󰳜 ", highlight = "RenderMarkdownChecked" },
-        pending = { raw = "[-]", rendered = "󰄰 ", highlight = "RenderMarkdownError" },
+        pending = { raw = "[-]", rendered = " ", highlight = "RenderMarkdownError" },
       },
     },
     win_options = {
