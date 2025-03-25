@@ -104,7 +104,7 @@ return {
         { name = "path" },
         {
           name = "dictionary",
-          keyword_length = 2,
+          keyword_length = 1,
         },
       }),
     })
