@@ -8,7 +8,7 @@ return {
         show_source = true,
         multilines = {
           enabled = true,
-          always_show = true,
+          always_show = false,
         },
       },
     })
