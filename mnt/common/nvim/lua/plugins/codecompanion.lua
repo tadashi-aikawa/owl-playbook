@@ -85,6 +85,36 @@ return {
             },
           },
         },
+        ["github issues translation"] = {
+          strategy = "chat",
+          opts = {
+            use_promt = true,
+            is_slash_cmd = true,
+            auto_submit = true,
+            short_name = "github issues translation",
+          },
+          prompts = {
+            {
+              role = "user",
+              content = [[あなたは日本語と英語のプロの翻訳者であり、かつGitHubでEnglish nativeとしてIssuesのやりとりに慣れているエンジニアでもあります。引用句の英語メッセージに対して以下日本語の内容を返信する場合に適切な英語へと翻訳してください。]],
+            },
+          },
+        },
+        ["github commit translation"] = {
+          strategy = "chat",
+          opts = {
+            use_promt = true,
+            is_slash_cmd = true,
+            auto_submit = true,
+            short_name = "github commit translation",
+          },
+          prompts = {
+            {
+              role = "user",
+              content = [[あなたは日本語と英語のプロの翻訳者であり、かつGitHubでEnglish nativeとして開発に慣れているエンジニアでもあります。以下日本語のコミットメッセージを適切な英語へと翻訳してください。コミットメッセージにはConventional Commitsを利用しています。]],
+            },
+          },
+        },
       },
     }
     -- 環境ごとに切り分けたい設定
