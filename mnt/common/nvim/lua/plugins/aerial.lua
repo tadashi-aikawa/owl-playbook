@@ -14,6 +14,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   keys = {
-    { "<C-j>o", ":AerialOpen<CR>", silent = true },
+    { ft = "markdown", "<C-j>o", ":AerialOpen<CR>", silent = true },
   },
 }
