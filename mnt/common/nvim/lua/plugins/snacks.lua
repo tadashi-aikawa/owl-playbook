@@ -22,7 +22,7 @@ return {
     { "<C-j>b", function() Snacks.picker.git_log_line() end, silent = true },
     { "<C-j>m", function() Snacks.picker.todo_comments() end, silent = true },
     { "<C-j>j", function() Snacks.picker.resume() end, silent = true },
-    { "<C-j>o", function() Snacks.picker.treesitter() end, silent = true },
+    -- { "<C-j>o", function() Snacks.picker.treesitter() end, silent = true },
   },
   -- stylua: ignore end
   opts = {
