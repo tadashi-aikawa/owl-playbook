@@ -3,6 +3,7 @@ return {
   "folke/snacks.nvim",
   -- stylua: ignore start
   keys = {
+    {"<Space>q", function() Snacks.bufdelete() end, silent = true},
     { "<C-j>f", function() Snacks.picker.files() end, silent = true },
     { "<C-j>e", function() Snacks.picker.smart() end, silent = true },
     { "<C-j>r", function() Snacks.picker.recent() end, silent = true },
