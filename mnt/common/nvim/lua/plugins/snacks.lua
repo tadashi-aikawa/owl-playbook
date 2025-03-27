@@ -30,6 +30,9 @@ return {
   opts = {
     picker = {
       sources = {
+        lines = {
+          layout = { preview = true },
+        },
         explorer = {
           focus = "input",
           auto_close = true,
