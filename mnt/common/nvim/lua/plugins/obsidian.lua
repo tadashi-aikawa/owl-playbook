@@ -96,10 +96,12 @@ return {
           end,
           opts = { noremap = false, expr = false, buffer = true },
         },
+        -- FIXME: snacks.pickerに対応する
         ["<C-j>h"] = {
           action = "<cmd>ObsidianBacklinks<CR>",
           opts = { noremap = false, expr = false, buffer = true },
         },
+        -- TODO: snacks.pickerに変更する?
         ["<C-j>e"] = {
           mode = { "n", "i" },
           action = "<cmd>ObsidianQuickSwitch<CR>",
