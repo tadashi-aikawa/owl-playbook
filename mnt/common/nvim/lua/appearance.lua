@@ -45,6 +45,8 @@ vim.api.nvim_set_hl(0, "GitGraphBranchTag", { bg = "#3d59a1" })
 vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
 -- render-markdown
 vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#070707" })
+-- snacks.picker
+vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "LineNr" })
 
 -- XXX: boldがなぜか見た目にFBされないので。。
 vim.api.nvim_set_hl(0, "@markup.strong", { underdouble = true })
