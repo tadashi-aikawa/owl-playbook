@@ -1,6 +1,6 @@
 return {
-  enabled = false,
   "stevearc/aerial.nvim",
+  ft = "markdown",
   opts = {
     layout = {
       default_direction = "float",
