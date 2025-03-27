@@ -5,6 +5,7 @@ return {
   keys = {
     { "<C-j>f", function() Snacks.picker.files() end, silent = true },
     { "<C-j>e", function() Snacks.picker.smart() end, silent = true },
+    { "<C-j>r", function() Snacks.picker.recent() end, silent = true },
     { "<C-j>t", function() Snacks.picker.explorer() end, silent = true },
     { "<C-j>g", function() Snacks.picker.grep() end, silent = true },
     {
@@ -23,6 +24,7 @@ return {
     { "<C-j>m", function() Snacks.picker.todo_comments() end, silent = true },
     { "<C-j>j", function() Snacks.picker.resume() end, silent = true },
     { "<C-j>o", function() Snacks.picker.treesitter() end, silent = true },
+    { "<C-j>p", function() Snacks.picker.pickers() end, silent = true },
   },
   -- stylua: ignore end
   opts = {
