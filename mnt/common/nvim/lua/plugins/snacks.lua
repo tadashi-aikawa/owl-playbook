@@ -84,6 +84,12 @@ return {
           { win = "list", border = "none" },
         },
       },
+      formatters = {
+        file = {
+          filename_first = true,
+          truncate = 100,
+        },
+      },
       -- TODO: linesの設定を返る
       -- TODO: explorerの設定を返る
     },
