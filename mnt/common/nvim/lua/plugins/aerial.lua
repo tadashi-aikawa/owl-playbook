@@ -1,6 +1,5 @@
 return {
   "stevearc/aerial.nvim",
-  ft = "markdown",
   opts = {
     layout = {
       default_direction = "float",
@@ -14,6 +13,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   keys = {
-    { ft = "markdown", "<C-j>o", ":AerialOpen<CR>", silent = true },
+    { "<C-j>o", ":AerialOpen<CR>", silent = true },
   },
 }
