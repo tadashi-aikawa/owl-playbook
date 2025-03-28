@@ -7,6 +7,7 @@ return {
     {"<Space>z", function() Snacks.zen.zoom() end, silent = true},
     { "<C-j>f", function() Snacks.picker.files() end, silent = true },
     { "<C-j>e", function() Snacks.picker.smart() end, silent = true },
+    -- TODO: sort順をマッチ順ではなく時間順にしたい
     { "<C-j>r", function() Snacks.picker.recent() end, silent = true },
     { "<C-j>t", function() Snacks.picker.explorer() end, silent = true },
     { "<C-j>g", function() Snacks.picker.grep() end, silent = true },
@@ -39,6 +40,7 @@ return {
       },
     },
     picker = {
+      hidden = true,
       sources = {
         lines = {
           layout = { preview = true },
