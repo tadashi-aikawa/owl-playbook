@@ -6,6 +6,7 @@ return {
     file_types = { "markdown", "codecompanion" },
     heading = {
       position = "inline",
+      sign = false,
     },
     fat_tables = false,
     code = {

@@ -34,8 +34,6 @@ vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "black" })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "black" })
 vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", { underline = true })
--- markdown.nvim
-vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#454545" })
 -- gitgraph.nvim
 vim.api.nvim_set_hl(0, "GitGraphHash", { fg = "#777777" })
 vim.api.nvim_set_hl(0, "GitGraphTimestamp", { fg = "#facbcb" })
@@ -45,6 +43,8 @@ vim.api.nvim_set_hl(0, "GitGraphBranchTag", { bg = "#3d59a1" })
 vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
 -- render-markdown
 vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#070707" })
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#454545" })
+
 -- snacks.picker
 vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "LineNr" })
 
