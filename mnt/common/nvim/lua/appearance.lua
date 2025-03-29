@@ -44,12 +44,15 @@ vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
 -- render-markdown
 vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#070707" })
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#454545" })
+vim.api.nvim_set_hl(0, "RenderMarkdownDash", { fg = "lightgray" })
 
 -- snacks.picker
 vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "LineNr" })
 
 -- XXX: boldがなぜか見た目にFBされないので。。
 vim.api.nvim_set_hl(0, "@markup.strong", { underdouble = true })
+-- 水平dividerは目立たせない
+vim.api.nvim_set_hl(0, "@punctuation.special.markdown", { fg = "lightgray" })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {

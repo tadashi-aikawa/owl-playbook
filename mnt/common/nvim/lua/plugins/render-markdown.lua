@@ -9,6 +9,9 @@ return {
       sign = false,
     },
     fat_tables = false,
+    dash = {
+      icon = " ",
+    },
     code = {
       sign = false,
       width = "block",
