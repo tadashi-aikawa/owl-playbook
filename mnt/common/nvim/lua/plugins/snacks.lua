@@ -59,7 +59,7 @@ return {
           focus = "input",
           auto_close = true,
           layout = { preview = true },
-          matcher = { sort_empty = false, fuzzy = true },
+          matcher = { sort_empty = false },
           win = {
             list = {
               keys = {
