@@ -1,5 +1,4 @@
 return {
-  -- TODO: oil.nvimから起動すると開く場所がおかしい
   "folke/snacks.nvim",
   -- stylua: ignore start
   keys = {
@@ -39,6 +38,9 @@ return {
     },
     picker = {
       hidden = true,
+      main = {
+        current = true,
+      },
       sources = {
         lines = {
           layout = { preview = true },
