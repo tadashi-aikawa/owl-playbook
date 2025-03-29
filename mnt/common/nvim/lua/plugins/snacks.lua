@@ -7,7 +7,6 @@ return {
     {"<Space>z", function() Snacks.zen.zoom() end, silent = true},
     { "<C-j>f", function() Snacks.picker.files() end, silent = true },
     { "<C-j>e", function() Snacks.picker.smart() end, silent = true },
-    -- TODO: sort順をマッチ順ではなく時間順にしたい
     { "<C-j>r", function() Snacks.picker.recent() end, silent = true },
     { "<C-j>t", function() Snacks.picker.explorer() end, silent = true },
     { "<C-j>g", function() Snacks.picker.grep() end, silent = true },
@@ -20,7 +19,6 @@ return {
       silent = true
     },
     { "<C-j>l", function() Snacks.picker.lines() end, silent = true },
-    -- TODO: sort順をマッチ順ではなく時間順にしたい
     { "<C-j>:", function() Snacks.picker.command_history() end, silent = true },
     { "<C-j>c", function() Snacks.picker.git_status() end, silent = true },
     { "<C-j>b", function() Snacks.picker.git_log_line() end, silent = true },
@@ -44,6 +42,16 @@ return {
       sources = {
         lines = {
           layout = { preview = true },
+          sort = { fields = { "idx", "score:desc" } },
+          matcher = { fuzzy = false },
+        },
+        recent = {
+          sort = { fields = { "idx", "score:desc" } },
+          matcher = { fuzzy = false },
+        },
+        command_history = {
+          sort = { fields = { "idx", "score:desc" } },
+          matcher = { fuzzy = false },
         },
         explorer = {
           focus = "input",
@@ -102,8 +110,6 @@ return {
           truncate = 100,
         },
       },
-      -- TODO: linesの設定を返る
-      -- TODO: explorerの設定を返る
     },
   },
 }
