@@ -45,14 +45,26 @@ vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
 vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#070707" })
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#454545" })
 vim.api.nvim_set_hl(0, "RenderMarkdownDash", { fg = "lightgray" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { fg = "#efef33", bg = "#3d59a1" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { bg = "#493e4a" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { fg = "#FFC777", bg = "#38343D" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { fg = "#FFC777", bg = nil })
+vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { fg = "#FFC777", bg = nil })
 
 -- snacks.picker
 vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "LineNr" })
 
+-- Markdown
 -- XXX: boldがなぜか見た目にFBされないので。。
 vim.api.nvim_set_hl(0, "@markup.strong", { underdouble = true })
 -- 水平dividerは目立たせない
 vim.api.nvim_set_hl(0, "@punctuation.special.markdown", { fg = "lightgray" })
+-- ヘッダ (render-markdownにあわせる)
+vim.api.nvim_set_hl(0, "@markup.heading.1.markdown", { fg = "#efef33", bg = "#3d59a1" })
+vim.api.nvim_set_hl(0, "@markup.heading.2.markdown", { fg = "#FFC777", bg = "#493e4a" })
+vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", { fg = "#FFC777", bg = "#38343D" })
+vim.api.nvim_set_hl(0, "@markup.heading.4.markdown", { fg = "#FFC777", bg = nil })
+vim.api.nvim_set_hl(0, "@markup.heading.5.markdown", { fg = "#FFC777", bg = nil })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
