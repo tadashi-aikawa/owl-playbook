@@ -5,6 +5,9 @@ return {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
   },
+  keys = {
+    { "<C-j>n", ":NoicePick<CR>", silent = true },
+  },
   opts = {
     lsp = {
       signature = {
