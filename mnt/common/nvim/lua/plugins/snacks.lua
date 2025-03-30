@@ -41,6 +41,7 @@ return {
     { "<C-j>m", function() Snacks.picker.todo_comments() end, silent = true },
   },
   -- stylua: ignore end
+  ---@type snacks.Config
   opts = {
     dashboard = {
       row = 10,
@@ -140,9 +141,10 @@ return {
       },
       sources = {
         lines = {
-          layout = { preview = true },
           sort = { fields = { "idx", "score:desc" } },
           matcher = { fuzzy = false },
+          ---@diagnostic disable-next-line: assign-type-mismatch 普通にプレビュー
+          layout = { preview = true },
         },
         recent = {
           sort = { fields = { "idx", "score:desc" } },
@@ -155,7 +157,6 @@ return {
         explorer = {
           focus = "input",
           auto_close = true,
-          layout = { preview = true },
           matcher = { sort_empty = false },
           win = {
             list = {
@@ -170,6 +171,8 @@ return {
               },
             },
           },
+          ---@diagnostic disable-next-line: assign-type-mismatch 普通にプレビュー
+          layout = { preview = true },
         },
       },
       win = {
