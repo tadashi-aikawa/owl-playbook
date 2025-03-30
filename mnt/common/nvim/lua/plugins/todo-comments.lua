@@ -1,11 +1,8 @@
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
-  event = { 'BufNewFile', 'BufRead' },
-  keys = {
-    { '<C-j>x', ':TodoTelescope<cr>', silent = true },
-  },
+  event = { "BufNewFile", "BufRead" },
   opts = {
-    sign_priority = 1
+    sign_priority = 1,
   },
 }
