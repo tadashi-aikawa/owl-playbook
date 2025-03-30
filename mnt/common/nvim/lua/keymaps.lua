@@ -21,7 +21,6 @@ vim.keymap.set("n", "<Space>r", ":b#<CR>", { silent = true })
 vim.keymap.set("n", "<Space>e", ":BufferPick<CR>", { silent = true })
 vim.keymap.set("n", "<Space>l", ":BufferNext<CR>", { silent = true })
 vim.keymap.set("n", "<Space>h", ":BufferPrevious<CR>", { silent = true })
-vim.keymap.set("n", "<Space>q", ":Bdelete<CR>", { silent = true })
 vim.keymap.set("n", "<Space>w", ":BufferCloseAllButVisible<CR>", { silent = true })
 
 -- windows split
