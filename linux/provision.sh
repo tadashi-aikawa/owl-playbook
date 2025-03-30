@@ -330,6 +330,9 @@ ln -snf "$UBUNTU_MNT"/bin/toki.sh ~/.local/bin/toki
 # img2sixel
 sudo apt install libsixel-bin
 
+# chafa
+sudo apt install -y chafa
+
 #----------------------------------------------------------------------
 # Before terminate
 #----------------------------------------------------------------------
