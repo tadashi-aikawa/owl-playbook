@@ -2,8 +2,12 @@
 local preventFlicker = function(handler)
   vim.schedule(function()
     Snacks.bufdelete()
+  end)
+  vim.schedule(function()
     vim.cmd([[:BarbarEnable]])
     vim.cmd([[:NoNeckPain]])
+  end)
+  vim.schedule(function()
     handler()
   end)
 end
