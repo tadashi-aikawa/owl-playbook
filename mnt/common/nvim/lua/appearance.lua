@@ -66,6 +66,10 @@ vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", { fg = "#FFC777", bg = "#38
 vim.api.nvim_set_hl(0, "@markup.heading.4.markdown", { fg = "#FFC777", bg = nil })
 vim.api.nvim_set_hl(0, "@markup.heading.5.markdown", { fg = "#FFC777", bg = nil })
 
+-- Dashboard
+vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = "#57A143" })
+--
+
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",

@@ -7,7 +7,7 @@ return {
       silent = true,
     },
   },
-  lazy = false,
+  cmd = "NoNeckPain",
   opts = {
     width = 140,
     autocmds = {

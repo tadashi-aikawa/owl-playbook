@@ -1,6 +1,19 @@
+-- dashboard で picker を開いて移動する際に発生するチラツキを防止する
+local preventFlicker = function(handler)
+  vim.schedule(function()
+    Snacks.bufdelete()
+    vim.cmd([[:BarbarEnable]])
+    vim.cmd([[:NoNeckPain]])
+    handler()
+  end)
+end
+
+local dashboardImagePath = vim.fn.stdpath("config") .. "/lua/snacks/dashboard.png"
+
 return {
   "folke/snacks.nvim",
   -- stylua: ignore start
+  lazy = false,
   keys = {
     {"<Space>q", function() Snacks.bufdelete() end, silent = true},
     {"<Space>z", function() Snacks.zen.zoom() end, silent = true},
@@ -21,12 +34,95 @@ return {
     { "<C-j>:", function() Snacks.picker.command_history() end, silent = true },
     { "<C-j>c", function() Snacks.picker.git_status() end, silent = true },
     { "<C-j>b", function() Snacks.picker.git_log_line() end, silent = true },
-    { "<C-j>m", function() Snacks.picker.todo_comments() end, silent = true },
     { "<C-j>j", function() Snacks.picker.resume() end, silent = true },
-    { "<C-j>p", function() Snacks.picker.pickers() end, silent = true },
+    { "<C-j>k", function() Snacks.picker.pickers() end, silent = true },
+    { "<C-j>p", function() Snacks.picker.projects() end, silent = true },
+    --- @diagnostic disable-next-line: undefined-field todo_commentsはsnacks以外に定義があるため無視
+    { "<C-j>m", function() Snacks.picker.todo_comments() end, silent = true },
   },
   -- stylua: ignore end
   opts = {
+    dashboard = {
+      row = 10,
+      preset = {
+        keys = {
+          {
+            icon = " ",
+            key = "f",
+            desc = "files",
+            action = function()
+              preventFlicker(Snacks.picker.files)
+            end,
+          },
+          {
+            icon = "󰧑 ",
+            key = "e",
+            desc = "smart",
+            action = function()
+              preventFlicker(Snacks.picker.smart)
+            end,
+          },
+          {
+            icon = " ",
+            key = "r",
+            desc = "recent",
+            action = function()
+              preventFlicker(Snacks.picker.recent)
+            end,
+          },
+          {
+            icon = " ",
+            key = "t",
+            desc = "explorer",
+            action = function()
+              preventFlicker(Snacks.picker.explorer)
+            end,
+          },
+          {
+            icon = " ",
+            key = "p",
+            desc = "project",
+            action = function()
+              preventFlicker(Snacks.picker.projects)
+            end,
+          },
+          {
+            icon = " ",
+            key = "g",
+            desc = "grep",
+            action = function()
+              preventFlicker(Snacks.picker.grep)
+            end,
+          },
+          {
+            icon = " ",
+            key = "i",
+            desc = "edit",
+            action = function()
+              preventFlicker(function()
+                vim.cmd([[:startinsert]])
+              end)
+            end,
+          },
+          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = " ", key = "q", desc = "quit", action = ":qa" },
+        },
+      },
+      sections = {
+        {
+          section = "terminal",
+          cmd = "chafa " .. dashboardImagePath .. " --size 48 --symbols vhalf; sleep .1",
+          height = 30,
+          padding = 0,
+        },
+        {
+          pane = 2,
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+        },
+      },
+    },
     zen = {
       zoom = {
         show = { statusline = true, tabline = true },
@@ -37,6 +133,7 @@ return {
       },
     },
     picker = {
+      preview = chafa_preview,
       hidden = true,
       main = {
         current = true,
