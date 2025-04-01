@@ -128,13 +128,15 @@ tasks:
   backup:work:
     desc: 仕事用のバックアップ
     cmds:
-      - cp $env:HOMEPATH/.ssh/* $env:HOMEPATH/backup/secrets/.ssh/
-      - rm -rf $env:HOMEPATH/backup/pkm
-      - cp -r '\\wsl.localhost\Ubuntu\home\tadashi-aikawa\work\pkm' $env:HOMEPATH/backup/pkm
+      - cp ~/.ssh/* ~/backup/secrets/.ssh/
+      - rm -rf ~/backup/pkm
+      - cmd: |
+          cp -r '//wsl$/Ubuntu/home/tadashi-aikawa/work/pkm' ~/backup/pkm
+        ignore_error: true # なぜか必ずエラーになる..
       - |
-        cd $env:HOMEPATH/tmp &&
-        7z a -p backup.zip $env:HOMEPATH/backup &&
-        e .
+        cd ~/tmp &&
+        7z a -p backup.zip ~/backup &&
+        explorer .
 
   backup:private:
     desc: プライベートのバックアップ
