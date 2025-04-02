@@ -32,3 +32,8 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload colors && colors
+
+# OSC 133 sequences
+preexec() { printf "\033]133;A\033\\" }
+precmd()  { printf "\033]133;B\033\\" }
+

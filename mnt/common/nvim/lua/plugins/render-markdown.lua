@@ -17,6 +17,7 @@ return {
     code = {
       sign = false,
       width = "block",
+      border = "thin",
     },
     checkbox = {
       unchecked = { icon = "󰄰 " },
