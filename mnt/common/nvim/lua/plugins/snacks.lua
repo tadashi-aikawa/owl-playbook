@@ -107,6 +107,7 @@ return {
             action = function()
               preventFlicker(function()
                 vim.cmd([[:startinsert]])
+                vim.cmd([[:stopinsert]])
               end)
             end,
           },
