@@ -224,7 +224,7 @@ mise use -g stylua
 mise use -g npm:@fsouza/prettierd
 mise use -g npm:prettier
 
-# HTML/CSS/JSON LSP
+# HTML/CSS/JSON/ESLint LSP
 mise use -g npm:vscode-langservers-extracted
 mise use -g npm:@olrtg/emmet-language-server
 mise use -g npm:@tailwindcss/language-server
