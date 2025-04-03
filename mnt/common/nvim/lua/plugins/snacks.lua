@@ -17,8 +17,9 @@ local dashboardImagePath = vim.fn.stdpath("config") .. "/lua/snacks/dashboard.pn
 
 return {
   "folke/snacks.nvim",
-  -- stylua: ignore start
+  priority = 1000,
   lazy = false,
+  -- stylua: ignore start
   keys = {
     {"<Space>q", function() Snacks.bufdelete() end, silent = true},
     {"<Space>z", function() Snacks.zen.zoom() end, silent = true},
@@ -140,7 +141,6 @@ return {
       },
     },
     picker = {
-      preview = chafa_preview,
       hidden = true,
       main = {
         current = true,
