@@ -102,6 +102,16 @@ return {
             end,
           },
           {
+            icon = " ",
+            key = "o",
+            desc = "oil",
+            action = function()
+              vim.cmd([[:Oil]])
+              vim.cmd([[:NoNeckPain]])
+              vim.cmd([[:BarbarEnable]])
+            end,
+          },
+          {
             icon = " ",
             key = "i",
             desc = "edit",

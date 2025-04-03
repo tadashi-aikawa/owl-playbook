@@ -3,6 +3,7 @@ return {
   keys = {
     { "<Space>o", ":Oil<CR>", silent = true },
   },
+  cmd = "Oil",
   opts = {
     skip_confirm_for_simple_edits = true,
     keymaps = {
