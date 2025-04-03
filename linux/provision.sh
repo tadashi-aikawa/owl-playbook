@@ -157,6 +157,13 @@ ln -snf "$COMMON_MNT"/starship/starship.toml ~/.config/starship.toml
 mise use -g neovim
 ensure_bashrc 'alias vim=nvim'
 ensure_zshrc 'alias vim=nvim'
+ensure_zshrc '# <C-j>でNeovimを起動
+function run_vim() {
+  LBUFFER="vim"
+  zle accept-line
+}
+zle -N run_vim
+bindkey '^J' run_vim'
 mkdir -p ~/.config/nvim
 ln -snf "${COMMON_MNT}"/nvim/lua ~/.config/nvim/lua
 ln -snf "${COMMON_MNT}"/nvim/init.lua ~/.config/nvim/init.lua
