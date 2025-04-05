@@ -5,6 +5,11 @@
 
 vim.g.maplocalleader = ","
 
+-- ウィンドウのクローズ
+vim.keymap.set("n", "<Space>m", ":q<CR>", { silent = true })
+vim.keymap.set("n", "<Space><Space>m", ":qa<CR>", { silent = true })
+vim.keymap.set("n", "<Space><Space>n", ":qa!<CR>", { silent = true })
+
 -- Hippie completion
 vim.keymap.set("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 
