@@ -8,6 +8,9 @@ fi
 if [[ "${commit_message_first_line}" == "Merge "* ]]; then
   exit 0
 fi
+if [[ "${commit_message_first_line}" == "WIP"* ]]; then
+  exit 0
+fi
 
 if [[ $commit_message_first_line =~ ^([^()!]+)\(?([^()]*)\)?!?:\ (.+)$ ]]; then
   type="${BASH_REMATCH[1]}"
