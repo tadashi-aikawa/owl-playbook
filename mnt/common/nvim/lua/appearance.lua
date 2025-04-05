@@ -68,7 +68,12 @@ vim.api.nvim_set_hl(0, "@markup.heading.5.markdown", { fg = "#FFC777", bg = nil 
 
 -- Dashboard
 vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = "#57A143" })
---
+
+-- blink.cmp
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#565656" })
+vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#565656" })
+vim.api.nvim_set_hl(0, "BlinkCmpSignatureBorder", { fg = "#565656" })
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#565656" })
 
 -- Yankした範囲をハイライトさせる
 vim.api.nvim_create_autocmd("TextYankPost", {
