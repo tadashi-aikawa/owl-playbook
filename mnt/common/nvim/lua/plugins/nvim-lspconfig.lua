@@ -1,19 +1,25 @@
 return {
   "neovim/nvim-lspconfig",
+  dependencies = { "saghen/blink.cmp", "b0o/schemastore.nvim" },
   event = { "BufReadPre", "BufNewFile" },
-  dependencies = { { "hrsh7th/cmp-nvim-lsp" } },
   config = function()
     local util = require("lspconfig.util")
     local lspconfig = require("lspconfig")
     require("lspconfig.ui.windows").default_options.border = "single"
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    -- ufo
-    capabilities.textDocument.foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true,
-    }
+    local capabilities = require("blink.cmp").get_lsp_capabilities({
+      textDocument = {
+        completion = {
+          completionItem = {
+            snippetSupport = true,
+          },
+        },
+        foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true,
+        },
+      },
+    })
 
     lspconfig.ruff.setup({ capabilities = capabilities })
     lspconfig.pyright.setup({ capabilities = capabilities })
