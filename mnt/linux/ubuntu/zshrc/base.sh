@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 #--------------------------------------
 # コマンド履歴
 #--------------------------------------
@@ -36,4 +38,22 @@ autoload colors && colors
 # OSC 133 sequences
 preexec() { printf "\033]133;A\033\\" }
 precmd()  { printf "\033]133;B\033\\" }
+
+# ESC 2回押しでNeovimを起動
+function run_vim() {
+  LBUFFER="vim"
+  zle accept-line
+}
+zle -N run_vim
+bindkey '\e\e' run_vim
+
+# ESC単独の無効化
+function ignore_esc() { true }
+zle -N ignore_esc
+bindkey '\e' ignore_esc
+
+# ESC 1回押しのあとにアルファベットが入力されたらプロンプトに入力する
+for char in {a..z}; do
+  bindkey -r "\e$char"
+done
 
