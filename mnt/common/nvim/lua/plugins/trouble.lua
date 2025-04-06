@@ -6,20 +6,6 @@ return {
       "<C-j>h",
       "<cmd>Trouble lsp_references<cr>",
     },
-    {
-      "<Space>n",
-      function()
-        ---@diagnostic disable-next-line: missing-parameter, missing-fields READMEと引数の数が違う...
-        require("trouble").next({ skip_groups = true, jump = true })
-      end,
-    },
-    {
-      "<Space>p",
-      function()
-        ---@diagnostic disable-next-line: missing-parameter, missing-fields READMEと引数の数が違う...
-        require("trouble").prev({ skip_groups = true, jump = true })
-      end,
-    },
   },
   opts = {
     focus = true,
