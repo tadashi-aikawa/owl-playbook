@@ -1,6 +1,9 @@
 return {
   "saghen/blink.cmp",
-  dependencies = { "L3MON4D3/LuaSnip" },
+  dependencies = {
+    "L3MON4D3/LuaSnip",
+    { "saghen/blink.compat", lazy = true, version = "*" },
+  },
   event = { "InsertEnter", "CmdlineEnter" },
   version = "*",
   ---@module 'blink.cmp'
@@ -48,7 +51,11 @@ return {
     signature = { window = { border = "rounded" } },
     snippets = { preset = "luasnip" },
     sources = {
-      default = { "dictionary", "lazydev", "lsp", "path", "snippets", "buffer" },
+      default = { "dictionary", "lsp", "path", "snippets", "buffer" },
+      per_filetype = {
+        lua = { "dictionary", "lazydev", "lsp", "path", "snippets", "buffer" },
+        markdown = { "obsidian", "dictionary", "path", "snippets" },
+      },
       providers = {
         lazydev = {
           name = "LazyDev",
@@ -64,6 +71,11 @@ return {
               vim.fn.stdpath("config") .. "/lua/envs/cmp-dictionary.txt",
             },
           },
+        },
+        obsidian = {
+          name = "obsidian",
+          module = "blink.compat.source",
+          score_offset = 1000,
         },
       },
     },
