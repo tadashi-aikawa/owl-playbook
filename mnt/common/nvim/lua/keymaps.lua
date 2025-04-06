@@ -7,6 +7,7 @@ vim.g.maplocalleader = ","
 
 -- ウィンドウのクローズ
 vim.keymap.set("n", "<Space>m", ":q<CR>", { silent = true })
+vim.keymap.set("n", "<Space>n", ":q!<CR>", { silent = true })
 vim.keymap.set("n", "<Space><Space>m", ":qa<CR>", { silent = true })
 vim.keymap.set("n", "<Space><Space>n", ":qa!<CR>", { silent = true })
 -- タブのクローズ
