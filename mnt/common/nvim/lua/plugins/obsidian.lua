@@ -103,7 +103,6 @@ return {
           action = "<cmd>ObsidianBacklinks<CR>",
           opts = { noremap = false, expr = false, buffer = true },
         },
-        -- TODO: snacks.pickerに対応したい... けど大変なのでやらなそう...
         ["<C-j>e"] = {
           mode = { "n", "i" },
           action = "<cmd>ObsidianQuickSwitch<CR>",
@@ -112,6 +111,7 @@ return {
       },
 
       picker = {
+        name = "snacks.pick",
         note_mappings = {
           new = "<F11>", -- Shift + Enter
           insert_link = "<M-CR>",
