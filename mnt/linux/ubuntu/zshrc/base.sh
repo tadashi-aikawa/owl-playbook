@@ -56,4 +56,6 @@ function run_vim() {
 }
 zle -N run_vim
 bindkey '\ej' run_vim
-
+# Ctrl+jでNeovimを起動
+bindkey '^j' run_vim
+bindkey '\e^j' run_vim
