@@ -53,6 +53,15 @@ return {
             tailwind_color_icon = "",
           },
         },
+        snippets = {
+          transform_items = function(ctx, items)
+            local ch = string.sub(ctx.get_keyword(), 1, 1)
+            if ch == "_" then
+              return items
+            end
+            return {}
+          end,
+        },
       },
     },
   },
