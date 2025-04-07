@@ -77,15 +77,16 @@ return {
           module = "blink.compat.source",
           score_offset = 1000,
         },
-        snippets = {
-          transform_items = function(ctx, items)
-            local ch = string.sub(ctx.get_keyword(), 1, 1)
-            if ch == "_" then
-              return items
-            end
-            return {}
-          end,
-        },
+        -- FIXME: 初回に表示されないことがある問題
+        -- snippets = {
+        --   transform_items = function(ctx, items)
+        --     local ch = string.sub(ctx.get_keyword(), 1, 1)
+        --     if ch == "_" then
+        --       return items
+        --     end
+        --     return {}
+        --   end,
+        -- },
       },
     },
   },
