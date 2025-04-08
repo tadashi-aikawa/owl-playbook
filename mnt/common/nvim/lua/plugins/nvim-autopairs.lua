@@ -5,7 +5,7 @@ return {
     -- optsとconfigに分けると動かなかった
     local p = require("nvim-autopairs")
     p.setup({
-      disable_filetype = { "TelescopePrompt", "vim" },
+      disable_filetype = { "vim" },
     })
 
     -- 閉じ括弧補完を無効化
