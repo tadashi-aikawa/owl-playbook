@@ -13,6 +13,10 @@ vim.keymap.set("n", "<Space><Space>n", ":qa!<CR>", { silent = true })
 -- タブのクローズ
 vim.keymap.set("n", "<Space><Space>q", ":tabclose<CR>", { silent = true })
 
+-- Windowsからのyank put
+vim.keymap.set({ "n", "v" }, "<Space><Space>p", '"*p', { silent = true })
+vim.keymap.set({ "n", "v" }, "<Space><Space>P", '"*P', { silent = true })
+
 -- Hippie completion
 vim.keymap.set("i", "<F18>", "<C-x><C-p>") -- Ubuntu(WSL)ではS-F6がF18となるため
 
