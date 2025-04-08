@@ -26,27 +26,27 @@ Usages:
 -----------------
 Available targets
 -----------------
-  | Target     | Language | Runtime    | PM    | Framework / Lib    | Linter    | Formatter |
-  | --------   | -------- | ---------- | ----- | ------------------ | --------- | --------- |
-  | node       | TS       | Node       | npm   | -                  | -         | prettierd |
-  | pnpm       | TS       | tsx(Node)  | pnpm  | -                  | Biome     | Biome     |
-  | deno       | TS       | Deno       | Deno  | -                  | Deno      | Deno      |
-  | bun        | TS       | Bun        | Bun   | -                  | Biome     | Biome     |
-  | jest       | TS       | Node       | pnpm  | Jest               | Biome     | Biome     |
-  | vue        | TS or JS | Bun        | Bun   | Vue                | ?(ESLint) | prettierd |
-  | nuxt       | TS       | *          | *     | Nuxt               | -         | prettierd |
-  | html       | HTML     | Bun        | Bun   | TailwindCSS        | -         | -         |
-  | tailwind3  | TS       | Bun        | Bun   | Vue + TailwindCSS3 | -         | prettierd |
-  | tailwind   | TS       | Bun        | Bun   | Vue + TailwindCSS  | -         | prettierd |
-  | playwright | TS       | Node       | pnpm  | -                  | -         | Biome     |
-  | go         | Go       | -          | Go    | air                | -         | -         |
-  | go-sqlx    | Go       | -          | Go    | sqlx + mysql + air | -         | -         |
-  | rust       | Rust     | -          | Cargo | -                  | -         | -         |
-  | python     | Python   | Virtualenv | Pip   | -                  | -         | -         |
-  | nvim       | Lua      | Lua        |       | nvim               | -         | -         |
-  | nvimapp    | Lua      | Neovim     | lazy  | -                  | -         | -         |
-  | bash       | Bash     | Bash       |       | -                  | -         | -         |
-  | mysql      | TS       | Deno       | Deno  | MySQL + deno_mysql | Deno      | Deno      |
+  | Target     | Language | Runtime    | PM    | Framework / Lib    | Linter        | Formatter |
+  | --------   | -------- | ---------- | ----- | ------------------ | ---------     | --------- |
+  | node       | TS       | Node       | npm   | -                  | -             | prettierd |
+  | pnpm       | TS       | tsx(Node)  | pnpm  | -                  | Biome         | Biome     |
+  | deno       | TS       | Deno       | Deno  | -                  | Deno          | Deno      |
+  | bun        | TS       | Bun        | Bun   | -                  | Biome         | Biome     |
+  | jest       | TS       | Node       | pnpm  | Jest               | Biome         | Biome     |
+  | vue        | TS or JS | Bun        | Bun   | Vue                | ?(ESLint)     | prettierd |
+  | nuxt       | TS       | *          | *     | Nuxt               | -             | prettierd |
+  | html       | HTML     | Bun        | Bun   | TailwindCSS        | -             | -         |
+  | tailwind3  | TS       | Bun        | Bun   | Vue + TailwindCSS3 | -             | prettierd |
+  | tailwind   | TS       | Bun        | Bun   | Vue + TailwindCSS  | -             | prettierd |
+  | playwright | TS       | Node       | pnpm  | -                  | -             | Biome     |
+  | go         | Go       | -          | Go    | air                | golangci-lint | -         |
+  | go-sqlx    | Go       | -          | Go    | sqlx + mysql + air | golangci-lint | -         |
+  | rust       | Rust     | -          | Cargo | -                  | -             | -         |
+  | python     | Python   | Virtualenv | Pip   | -                  | -             | -         |
+  | nvim       | Lua      | Lua        |       | nvim               | -             | -         |
+  | nvimapp    | Lua      | Neovim     | lazy  | -                  | -             | -         |
+  | bash       | Bash     | Bash       |       | -                  | -             | -         |
+  | mysql      | TS       | Deno       | Deno  | MySQL + deno_mysql | Deno          | Deno      |
   "
 }
 
