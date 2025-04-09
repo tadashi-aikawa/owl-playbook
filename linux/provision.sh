@@ -333,6 +333,9 @@ sudo apt install libsixel-bin
 # chafa
 sudo apt install -y chafa
 
+# 7z
+sudo apt install -y p7zip-full
+
 #----------------------------------------------------------------------
 # Before terminate
 #----------------------------------------------------------------------
