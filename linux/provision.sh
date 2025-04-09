@@ -336,6 +336,9 @@ sudo apt install -y chafa
 # 7z
 sudo apt install -y p7zip-full
 
+# Bruno CLI
+mise use -g npm:@usebruno/cli
+
 #----------------------------------------------------------------------
 # Before terminate
 #----------------------------------------------------------------------
