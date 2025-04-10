@@ -201,6 +201,8 @@ return {
             ["<c-]>"] = { "toggle_live", mode = { "i", "n" } },
             ["<F12>"] = { "edit_vsplit", mode = { "i", "n" } },
             ["<C-w>t"] = { "tab", mode = { "i", "n" } },
+            ["<C-j>"] = { "history_forward", mode = { "i", "n" } },
+            ["<C-k>"] = { "history_back", mode = { "i", "n" } },
           },
         },
       },
