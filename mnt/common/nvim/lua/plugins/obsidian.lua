@@ -98,14 +98,23 @@ return {
           end,
           opts = { noremap = false, expr = false, buffer = true },
         },
-        -- TODO: snacks.pickerに対応したい... けど大変なのでやらなそう...
         ["<C-j>h"] = {
           action = "<cmd>ObsidianBacklinks<CR>",
+          opts = { noremap = false, expr = false, buffer = true },
+        },
+        ["<C-j>f"] = {
+          mode = { "n", "i" },
+          action = "<cmd>ObsidianQuickSwitch<CR>",
           opts = { noremap = false, expr = false, buffer = true },
         },
         ["<C-j>e"] = {
           mode = { "n", "i" },
           action = "<cmd>ObsidianQuickSwitch<CR>",
+          opts = { noremap = false, expr = false, buffer = true },
+        },
+        ["<C-j>r"] = {
+          mode = { "n", "i" },
+          action = "<cmd>ObsidianQuickSwitchRecent<CR>",
           opts = { noremap = false, expr = false, buffer = true },
         },
       },
