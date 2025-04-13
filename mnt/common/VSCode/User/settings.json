@@ -1,29 +1,111 @@
 {
+  //
+  //------------------------------------------------------------------------
   // 見た目
+  //------------------------------------------------------------------------
+  //
+  // インデントガイドを非表示にする
   "editor.guides.indentation": false,
+  // フォント設定
   "editor.fontFamily": "CaskaydiaCove Nerd Font",
   "editor.fontSize": 16,
+  // アイコン/テーマ設定
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark Hard",
+  // メニューバー非表示
   "window.menuBarVisibility": "hidden",
-  "editor.minimap.showSlider": "always",
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.enabled": true,
-  "breadcrumbs.enabled": true,
+  // ミニマップは非表示
+  "editor.minimap.enabled": false,
+  // ターミナル設定
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
+  //
+  //------------------------------------------------------------------------
+  // 操作
+  //------------------------------------------------------------------------
+  //
+  // ファイルを開いたときにプレビューモードで表示しない
   "workbench.editor.enablePreview": false,
-  "workbench.editor.showTabs": "multiple",
+  // Diffはside-by-side表示
   "diffEditor.renderSideBySide": true,
-  // 挙動
+  // TABキー補完を利用
   "editor.tabCompletion": "on",
+  // 自動でクォートやカッコは閉じない
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
+  // 保存時に自動でフォーマット
   "editor.formatOnSave": true,
-  // デフォルトファイル設定
+  // 改行コード設定
   "files.eol": "\n",
-  // ファイルごとの特殊設定
+  // エントリの削除確認は不要
+  "explorer.confirmDelete": false,
+  // ドラッグ&ドロップ時の確認は不要
+  "explorer.confirmDragAndDrop": false,
+  // カーソル移動後に上下あける最低行数
+  "editor.cursorSurroundingLines": 5,
+  // カーソルは点滅させない
+  "editor.cursorBlinking": "solid",
+  // ペースト時にもフォーマット
+  "editor.formatOnPaste": true,
+  // git fetchは自動で行う
+  "git.autofetch": true,
+  // gitのLegacy警告を非表示
+  "git.ignoreLegacyWarning": true,
+  // 特に指定がない場合のタブサイズ
+  "editor.tabSize": 4,
+  // タブをスペースとして挿入する
+  "editor.insertSpaces": true,
+  // 挿入モード時のカーソルスタイル
+  "editor.cursorStyle": "line",
+  // 単語の切れ目 (いる?)
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  // ???
+  "security.workspace.trust.untrustedFiles": "open",
+  // ウィンドウ分割時のデフォルトレイアウト
+  "workbench.editor.splitInGroupLayout": "vertical",
+  // 全文検索
+  // -- 全文検索で開くタブは1つ
+  "search.mode": "reuseEditor",
+  // -- 検索結果が出たら、自動で結果側にカーソルをフォーカス
+  "search.searchEditor.focusResultsOnSearch": true,
+  // -- Enterなしで検索しない
+  "search.searchOnType": false,
+  //
+  //------------------------------------------------------------------------
+  // Vim設定
+  //------------------------------------------------------------------------
+  //
+  "vim.enableNeovim": true,
+  "vim.easymotion": true,
+  "vim.easymotionMarkerForegroundColorOneChar": "#efef33",
+  "vim.camelCaseMotion.enable": true,
+  "vim.replaceWithRegister": true,
+  "vim.leader": "[",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["_"],
+      "after": ["g", "r"]
+    },
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "2", "s", "<char>", "<char>"]
+    }
+  ],
+  "vim.highlightedyank.enable": true,
+  "vim.useSystemClipboard": true,
+  //
+  //------------------------------------------------------------------------
+  // GitHub Copilotの設定
+  //------------------------------------------------------------------------
+  //
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "chat.agent.enabled": true,
+  //
+  //------------------------------------------------------------------------
+  // ファイルタイプごとの設定
+  //------------------------------------------------------------------------
+  //
   "[plaintext]": {
     "files.autoGuessEncoding": true
   },
@@ -36,112 +118,14 @@
   "[bat]": {
     "files.encoding": "shiftjis"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": null
+  },
+  // 一部のファイルの言語モードを指定
   "files.associations": {
     "Vagrantfile": "ruby",
     "*.txt": "csv",
     "*.ahk": "ahk"
-  },
-  // ターミナル
-  "editWithShell.shell.windows": "bash",
-  "editWithShell.shellArgs.windows": [
-    "-c"
-  ],
-  "editWithShell.processEntireTextIfNoneSelected": true,
-  // JS/TS
-  "eslint.validate": [
-    "javascript",
-    "typescript"
-  ],
-  // Markdown
-  "markdownlint.config": {
-    "MD003": false,
-    "MD012": false,
-    "MD024": false,
-    "MD026": false,
-    "MD033": false,
-    "MD034": false,
-    "MD040": false,
-    "MD041": false,
-    "MD045": false
-  },
-  // AutoHotkey Plus Plus
-  "ahk++.file.interpreterPathV1": "${env:USERPROFILE}/scoop/apps/autohotkey-installer/current/AutoHotkeyU64.exe",
-  // その他
-  "terminal.integrated.rendererType": "dom",
-  "explorer.confirmDelete": false,
-  "editor.cursorSurroundingLines": 5,
-  "editor.cursorBlinking": "solid",
-  "editor.formatOnPaste": true,
-  "git.autofetch": true,
-  "git.ignoreLegacyWarning": true,
-  "C_Cpp.intelliSenseEngine": "Tag Parser",
-  "explorer.confirmDragAndDrop": false,
-  "git.enableSmartCommit": true,
-  "pasteImage.path": "${currentFileDir}/images",
-  "python.formatting.provider": "black",
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[markdown]": {
-    "editor.defaultFormatter": null
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  "[go]": {
-    "editor.insertSpaces": false,
-  },
-  "gopls": {
-    "ui.semanticTokens": true
-  },
-  "editor.tabSize": 4,
-  "editor.cursorStyle": "line",
-  "editor.insertSpaces": true,
-  "editor.lineNumbers": "on",
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "security.workspace.trust.untrustedFiles": "open",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  "workbench.editor.splitInGroupLayout": "vertical",
-  "rust-analyzer.checkOnSave.command": "clippy",
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "svelte.plugin.svelte.note-new-transformation": false,
-  "playwright.reuseBrowser": true,
-  "svelte.enable-ts-plugin": true,
-  "[python]": {
-    "editor.formatOnType": true
-  },
-  "workbench.editor.empty.hint": "hidden",
-  // "extensions.autoUpdate": false,
-  "jest.autoRun": {
-    "watch": false
-  },
-  "editor.multiCursorModifier": "ctrlCmd",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "csv-edit.readOption_hasHeader": "true"
+  }
 }
+
