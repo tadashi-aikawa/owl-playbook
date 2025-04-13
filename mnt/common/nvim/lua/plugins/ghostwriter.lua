@@ -9,6 +9,7 @@ return {
     { "gsw", ":GhostwriterWrite<CR>", silent = true },
     { "gsp", ":GhostwriterPost ", mode = { "v" } },
     { "gsm", ":GhostwriterRecentMessages" },
+    { "gss", ":GhostwriterSearchMessages" },
     { "gsy", ":GhostwriterCopy<CR>", mode = { "v" }, silent = true },
   },
   opts = function(_, opts)
