@@ -151,7 +151,6 @@ return {
       },
     },
     picker = {
-      hidden = true,
       main = {
         current = true,
       },
@@ -165,6 +164,10 @@ return {
         recent = {
           sort = { fields = { "idx", "score:desc" } },
           matcher = { fuzzy = false },
+          hidden = true,
+        },
+        files = {
+          hidden = true,
         },
         command_history = {
           sort = { fields = { "idx", "score:desc" } },
@@ -174,6 +177,7 @@ return {
           focus = "input",
           auto_close = true,
           matcher = { sort_empty = false },
+          hidden = true,
           win = {
             list = {
               keys = {
