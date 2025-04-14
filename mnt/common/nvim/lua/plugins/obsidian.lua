@@ -111,6 +111,11 @@ return {
         action = "<cmd>ObsidianQuickSwitchRecent<CR>",
         opts = { noremap = false, expr = false, buffer = true },
       },
+      ["<C-j>s"] = {
+        mode = { "n", "i" },
+        action = "<cmd>ObsidianQuickSwitchSmart<CR>",
+        opts = { noremap = false, expr = false, buffer = true },
+      },
     },
 
     picker = {
