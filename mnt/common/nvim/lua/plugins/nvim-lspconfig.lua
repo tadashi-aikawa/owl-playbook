@@ -23,15 +23,8 @@ return {
 
     lspconfig.ruff.setup({
       capabilities = capabilities,
-      -- ルートディレクトリ名がaster-bffのときだけは無効化する(Black, isortを使うため)
       single_file_support = false,
       root_dir = function(fname)
-        local cwd = vim.fn.getcwd()
-        local root_dir = vim.fn.fnamemodify(cwd, ":t")
-        if root_dir == "aster-bff" then
-          return nil
-        end
-
         return util.root_pattern("pyproject.toml", ".git")(fname)
           or vim.fs.dirname(vim.fs.find(".git", { path = fname, upward = true })[1])
       end,

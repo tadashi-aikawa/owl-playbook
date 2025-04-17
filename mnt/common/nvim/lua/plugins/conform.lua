@@ -15,22 +15,12 @@ return {
       return { "biome-check", "prettierd", stop_after_first = true }
     end
 
-    local python_formatter = function()
-      -- ルートディレクトリ名がaster-bffのときだけBlack、isortを使う
-      local cwd = vim.fn.getcwd()
-      local root_dir = vim.fn.fnamemodify(cwd, ":t")
-      if root_dir == "aster-bff" then
-        return { "black", "isort" }
-      end
-
-      return { "ruff_organize_imports", "ruff_fix" }
-    end
     return {
       formatters_by_ft = {
         lua = { "stylua" },
         go = { "goimports" },
         bash = { "shfmt" },
-        python = python_formatter,
+        python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
         sql = { "sleek" },
 
         -- Web
