@@ -121,6 +121,15 @@
   "[markdown]": {
     "editor.defaultFormatter": null
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // 一部のファイルの言語モードを指定
   "files.associations": {
     "Vagrantfile": "ruby",
@@ -128,4 +137,3 @@
     "*.ahk": "ahk"
   }
 }
-
