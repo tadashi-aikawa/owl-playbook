@@ -115,5 +115,22 @@
   {
     "key": "ctrl+shift+q",
     "command": "workbench.action.closeActiveEditor"
+  },
+  // GitHub Copilotの補完確定
+  {
+    "key": "alt+k",
+    "command": "editor.action.inlineSuggest.commit"
+  },
+  {
+    "key": "alt+k",
+    "command": "-keybindings.editor.recordSearchKeys"
+  },
+  {
+    "key": "alt+k",
+    "command": "-editor.action.accessibilityHelpConfigureKeybindings"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit"
   }
 ]
