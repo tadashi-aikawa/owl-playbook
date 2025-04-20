@@ -231,6 +231,7 @@ mise use -g npm:typescript-language-server
 
 # Vue
 mise use -g npm:@vue/language-server
+mise use -g npm:@vue/typescript-plugin
 
 # Svelte
 mise use -g npm:svelte-language-server
