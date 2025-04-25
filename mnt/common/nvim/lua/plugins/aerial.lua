@@ -7,6 +7,7 @@ return {
     },
     keymaps = {
       ["<ESC>"] = "actions.close",
+      ["o"] = "actions.scroll",
     },
   },
   dependencies = {
