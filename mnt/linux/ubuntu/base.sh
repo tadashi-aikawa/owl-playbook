@@ -52,3 +52,24 @@ alias cpwd='pwd | xsel -bi'
 
 # shellcheck disable=SC2154
 alias zvim='dst=$(nvim --headless -c "lua for _, f in ipairs(vim.tbl_filter(function(file) return vim.fn.filereadable(file) == 1 end, vim.v.oldfiles)) do io.stdout:write(f .. \"\n\") end" -c "qa" | fzf --no-sort) && [[ -n $dst ]] && nvim $dst'
+
+function v() {
+  if [ -n "$VIRTUAL_ENV" ]; then
+    deactivate
+    echo "⏹️ Deactivated previous virtual environment: $(basename "$VIRTUAL_ENV")"
+    return 0
+  fi
+
+  if [ -d ".venv" ]; then
+    # shellcheck disable=SC1091
+    source .venv/bin/activate
+    echo "🔌 Activated .venv virtual environment"
+  elif [ -d "venv" ]; then
+    # shellcheck disable=SC1091
+    source venv/bin/activate
+    echo "🔌 Activated venv virtual environment"
+  else
+    echo "Error: No virtual environment (.venv or venv) found in current directory" >&2
+    return 1
+  fi
+}
