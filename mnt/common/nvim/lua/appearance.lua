@@ -29,6 +29,8 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#888888", fg = "#efef33" })
 -- Flash.nvim
 vim.api.nvim_set_hl(0, "FlashLabel", { fg = "#efef33", bold = true })
 vim.api.nvim_set_hl(0, "FlashMatch", { fg = "#3d59a1", bold = true })
+-- aerial.nvim
+vim.api.nvim_set_hl(0, "AerialLine", { fg = "#efef33", bg = "#565612", bold = true })
 -- nvim-treesitter-context
 vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "black" })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "black" })
