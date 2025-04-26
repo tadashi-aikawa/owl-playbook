@@ -56,4 +56,16 @@ return {
       desc = "GitGraph - Draw",
     },
   },
+  init = function()
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        vim.api.nvim_set_hl(0, "GitGraphHash", { fg = "#777777" })
+        vim.api.nvim_set_hl(0, "GitGraphTimestamp", { fg = "#facbcb" })
+        vim.api.nvim_set_hl(0, "GitGraphAuthor", { fg = "#45cd78" })
+        vim.api.nvim_set_hl(0, "GitGraphBranchName", { bg = "#888888", fg = "#efef33" })
+        vim.api.nvim_set_hl(0, "GitGraphBranchTag", { bg = "#3d59a1" })
+        vim.api.nvim_set_hl(0, "GitGraphBranchMsg", { fg = "lightgray" })
+      end,
+    })
+  end,
 }

@@ -236,4 +236,12 @@ return {
       },
     },
   },
+  init = function()
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "LineNr" })
+        vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = "#57A143" })
+      end,
+    })
+  end,
 }

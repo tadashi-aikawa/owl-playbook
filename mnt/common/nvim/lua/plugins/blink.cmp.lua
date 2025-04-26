@@ -90,6 +90,15 @@ return {
       },
     },
   },
-
   opts_extend = { "sources.default" },
+  init = function()
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#565656" })
+        vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#565656" })
+        vim.api.nvim_set_hl(0, "BlinkCmpSignatureBorder", { fg = "#565656" })
+        vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#565656" })
+      end,
+    })
+  end,
 }
