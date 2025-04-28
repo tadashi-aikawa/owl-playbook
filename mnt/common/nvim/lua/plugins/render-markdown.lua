@@ -9,6 +9,7 @@ return {
       sign = false,
       icons = { "󰉫 ████ ", "󰉬 ██ ", "󰉭 █ ", "󰉮  ", "󰉯 ▌", "󰉰 " },
       width = { "full", "full", "block", "block", "block", "block" },
+      setext = false,
     },
     fat_tables = false,
     dash = {
