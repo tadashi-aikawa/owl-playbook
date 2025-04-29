@@ -1,7 +1,6 @@
 return {
-  root_dir = require("lsp.utils").root_dir_patterns({
-    "tsconfig.json",
-  }),
+  workspace_required = true,
+  root_markers = { "tsconfig.json", "jsconfig.json" },
   init_options = {
     plugins = {
       {
