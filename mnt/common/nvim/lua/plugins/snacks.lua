@@ -24,8 +24,8 @@ return {
     {"<Space>q", function() Snacks.bufdelete() end, silent = true},
     {"<Space>z", function() Snacks.zen.zoom() end, silent = true},
     { "<C-j>f", function() Snacks.picker.files() end, silent = true },
-    { "<C-j>s", function() Snacks.picker.smart() end, silent = true },
-    { "<C-j>e", function() Snacks.picker.recent() end, silent = true },
+    { "<C-j>e", function() Snacks.picker.smart() end, silent = true },
+    { "<C-j>r", function() Snacks.picker.recent() end, silent = true },
     { "<C-j>t", function() Snacks.picker.explorer() end, silent = true },
     { "<C-j>g", function() Snacks.picker.grep() end, silent = true },
     {
@@ -63,7 +63,7 @@ return {
           },
           {
             icon = "󰧑 ",
-            key = "s",
+            key = "e",
             desc = "smart",
             action = function()
               preventFlicker(Snacks.picker.smart)
@@ -71,7 +71,7 @@ return {
           },
           {
             icon = " ",
-            key = "e",
+            key = "r",
             desc = "recent",
             action = function()
               preventFlicker(Snacks.picker.recent)
