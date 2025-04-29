@@ -9,6 +9,11 @@ return {
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
 
-    require("ufo").setup()
+    require("ufo").setup({
+      provider_selector = function()
+        -- defaultの { "lsp", "indent" } だと vueファイルで発動しないので
+        return { "treesitter", "indent" }
+      end,
+    })
   end,
 }

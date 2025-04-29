@@ -215,6 +215,8 @@ return {
             ["<C-w>t"] = { "tab", mode = { "i", "n" } },
             ["<C-j>"] = { "history_forward", mode = { "i", "n" } },
             ["<C-k>"] = { "history_back", mode = { "i", "n" } },
+            ["<C-h>"] = { "toggle_help_input", mode = { "i", "n" } },
+            -- TODO: 正規表現切り替えやignoredはなぜか効かない...
           },
         },
       },
