@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end, opts)
 
     -- LSP再起動
-    vim.keymap.set("n", "<C-j><C-r>", "<cmd>LspRestart<CR>", opts)
+    vim.keymap.set("n", "<Space><Space>r", "<cmd>LspRestart<CR>", opts)
 
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     if client == nil then
