@@ -106,12 +106,12 @@ return {
         action = "<cmd>ObsidianQuickSwitch<CR>",
         opts = { noremap = false, expr = false, buffer = true },
       },
-      ["<C-j>e"] = {
+      ["<C-j>r"] = {
         mode = { "n", "i" },
         action = "<cmd>ObsidianQuickSwitchRecent<CR>",
         opts = { noremap = false, expr = false, buffer = true },
       },
-      ["<C-j>s"] = {
+      ["<C-j>e"] = {
         mode = { "n", "i" },
         action = "<cmd>ObsidianQuickSwitchSmart<CR>",
         opts = { noremap = false, expr = false, buffer = true },

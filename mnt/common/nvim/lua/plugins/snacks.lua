@@ -24,8 +24,8 @@ return {
     {"<Space>q", function() Snacks.bufdelete() end, silent = true},
     {"<Space>z", function() Snacks.zen.zoom() end, silent = true},
     { "<C-j>f", function() Snacks.picker.files() end, silent = true },
-    { "<C-j>s", function() Snacks.picker.smart() end, silent = true },
-    { "<C-j>e", function() Snacks.picker.recent() end, silent = true },
+    { "<C-j>e", function() Snacks.picker.smart() end, silent = true },
+    { "<C-j>r", function() Snacks.picker.recent() end, silent = true },
     { "<C-j>t", function() Snacks.picker.explorer() end, silent = true },
     { "<C-j>g", function() Snacks.picker.grep() end, silent = true },
     {
@@ -38,7 +38,7 @@ return {
     },
     { "<C-j>l", function() Snacks.picker.lines() end, silent = true },
     { "<C-j>:", function() Snacks.picker.command_history() end, silent = true },
-    { "<C-j>c", function() Snacks.picker.git_status() end, silent = true },
+    { "<C-j>s", function() Snacks.picker.git_status() end, silent = true },
     { "<C-j>b", function() Snacks.picker.git_log_line() end, silent = true },
     { "<C-j>j", function() Snacks.picker.resume() end, silent = true },
     { "<C-j>k", function() Snacks.picker.pickers() end, silent = true },
@@ -63,7 +63,7 @@ return {
           },
           {
             icon = "󰧑 ",
-            key = "s",
+            key = "e",
             desc = "smart",
             action = function()
               preventFlicker(Snacks.picker.smart)
@@ -71,7 +71,7 @@ return {
           },
           {
             icon = " ",
-            key = "e",
+            key = "r",
             desc = "recent",
             action = function()
               preventFlicker(Snacks.picker.recent)
@@ -83,6 +83,14 @@ return {
             desc = "explorer",
             action = function()
               preventFlicker(Snacks.picker.explorer)
+            end,
+          },
+          {
+            icon = "󰊢 ",
+            key = "s",
+            desc = "git status",
+            action = function()
+              preventFlicker(Snacks.picker.git_status)
             end,
           },
           {
@@ -207,6 +215,8 @@ return {
             ["<C-w>t"] = { "tab", mode = { "i", "n" } },
             ["<C-j>"] = { "history_forward", mode = { "i", "n" } },
             ["<C-k>"] = { "history_back", mode = { "i", "n" } },
+            ["<C-h>"] = { "toggle_help_input", mode = { "i", "n" } },
+            -- TODO: 正規表現切り替えやignoredはなぜか効かない...
           },
         },
       },
