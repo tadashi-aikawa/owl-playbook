@@ -38,7 +38,7 @@ return {
     },
     { "<C-j>l", function() Snacks.picker.lines() end, silent = true },
     { "<C-j>:", function() Snacks.picker.command_history() end, silent = true },
-    { "<C-j>c", function() Snacks.picker.git_status() end, silent = true },
+    { "<C-j>s", function() Snacks.picker.git_status() end, silent = true },
     { "<C-j>b", function() Snacks.picker.git_log_line() end, silent = true },
     { "<C-j>j", function() Snacks.picker.resume() end, silent = true },
     { "<C-j>k", function() Snacks.picker.pickers() end, silent = true },
@@ -83,6 +83,14 @@ return {
             desc = "explorer",
             action = function()
               preventFlicker(Snacks.picker.explorer)
+            end,
+          },
+          {
+            icon = "󰊢 ",
+            key = "s",
+            desc = "git status",
+            action = function()
+              preventFlicker(Snacks.picker.git_status)
             end,
           },
           {
